@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 7 - The Bureaucracy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #3A0F14; /* Constitutional Crimson */
+            --color-cream: #F5EBDD;    /* Archival Linen */
+            --color-navy: #3F5A4B;     /* Executive Laurel */
+            --color-steel-nib: #8A8F95; /* Judicial Stone */
+            --color-gold: #D4A017;     /* Seal Gold */
+            --color-gold-light: #F9E596;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background-color: var(--color-navy-deep); color: var(--color-cream); line-height: 1.8; font-size: 1.15rem; }
+        
+        /* Background Effects */
+        #bg-slideshow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out; }
+        body::after { content: ''; position: fixed; inset: 0; background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%); z-index: 1; pointer-events: none; }
+        
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+        
+        /* Left Navigation Panel */
+        .side-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column; padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem; }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { background: transparent; border: 1px solid transparent; color: var(--color-cream); text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer; transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+        
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { background: rgba(43, 33, 24, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; }
+        
+        @media (max-width: 1024px) { 
+            .side-nav { display: none; } 
+            .main-content { margin-left: 0; } 
+            .content-wrapper { padding: 30px 20px; } 
+            .content-block { padding: 2rem; } 
+        }
+        
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        
+        /* UI Elements */
+        .id-panel { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem; }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+        
+        .textarea-dark { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px; font-family: var(--font-body); font-size: 1.1rem; resize: vertical; }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+        
+        /* Spotlights */
+        .spotlight-wrapper { width: 35%; max-width: 300px; float: right; margin: 10px 0 20px 30px; transition: transform 0.3s ease; position: relative; z-index: 10; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transform-origin: center right; }
+        .spotlight-wrapper.left { float: left; margin: 10px 30px 20px 0; transform-origin: center left; }
+        .spotlight-wrapper:hover { transform: scale(1.5); z-index: 50; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: var(--color-gold); }
+        .spotlight-wrapper img { width: 100%; border: 2px solid var(--color-gold-light); border-radius: 4px; display: block; }
+        .spotlight-caption { font-size: 0.9rem; text-align: center; margin-top: 10px; font-style: italic; color: #ddd; line-height: 1.4; }
+        
+        /* Full Sized Visuals */
+        .visual-wrapper { width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+        
+        @media (max-width: 768px) { 
+            .spotlight-wrapper, .spotlight-wrapper.left { float: none; width: 100%; max-width: 100%; margin: 20px 0; } 
+            .spotlight-wrapper:hover { transform: none; margin: 0; padding: 0; } 
+            .id-panel { grid-template-columns: 1fr; }
+        }
+        
+        /* Compact Checkpoint System */
+        .checkpoint-block { margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4); border-radius: 8px; background: rgba(0,0,0,0.2); clear: both; }
+        .checkpoint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 768px) { .checkpoint-grid { grid-template-columns: 1fr; } }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; cursor: pointer; padding: 8px 12px; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid transparent; transition: all 0.2s; font-size: 0.9rem; line-height: 1.3; }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(212,160,23,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+        
+        /* Vocab & Cloze Specific */
+        .word-bank { display: flex; flex-wrap: wrap; gap: 12px; padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--color-steel-nib); border-radius: 8px; margin-bottom: 2rem; }
+        .word-pill { background: rgba(63, 90, 75, 0.8); border: 1px solid var(--color-gold); color: var(--color-cream); padding: 8px 18px; border-radius: 25px; font-size: 1rem; font-weight: bold; }
+        .cloze-input { background: rgba(0,0,0,0.5); border: none; border-bottom: 2px solid var(--color-gold); color: var(--color-gold-light); padding: 4px 8px; font-size: 1.15rem; width: 100%; max-width: 300px; margin-top: 10px; font-family: var(--font-body); border-radius: 2px; transition: all 0.2s; }
+        .cloze-input:focus { outline: none; border-bottom-color: white; background: rgba(0,0,0,0.8); }
+        .vocab-item { margin-bottom: 1.5rem; }
+        
+        /* Buttons & Navigation */
+        .action-btn { padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold; cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5); color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%; }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3); margin-top: 3rem; gap: 20px; clear: both; }
+        .bottom-nav .action-btn { width: auto; }
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div id="bg-slideshow"></div>
+
+<div class="app-container">
+    <!-- Left Navigation Panel -->
+    <nav class="side-nav">
+        <div class="nav-title">Table of Contents</div>
+        <div class="nav-links">
+            <button id="nav-sec-start" class="nav-btn active-nav" onclick="switchTab('sec-start')">Start Page</button>
+            <button id="nav-sec-1" class="nav-btn" onclick="switchTab('sec-1')">I. The Mechanics of Government: Administrative Structure</button>
+            <button id="nav-sec-2" class="nav-btn" onclick="switchTab('sec-2')">II. Implementation and Rulemaking: Policy in Practice</button>
+            <button id="nav-sec-3" class="nav-btn" onclick="switchTab('sec-3')">III. Policy Networks and the "Iron Triangle"</button>
+            <button id="nav-sec-4" class="nav-btn" onclick="switchTab('sec-4')">IV. Bureaucratic Accountability: Democratic Control</button>
+            <button id="nav-sec-5" class="nav-btn" onclick="switchTab('sec-5')">V. Conclusion</button>
+            <button id="nav-sec-6" class="nav-btn" onclick="switchTab('sec-6')">VI. Assessment</button>
+        </div>
+        
+        <div class="nav-actions">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px;" onclick="exportProgress()">Save Progress</button>
+            <input type="file" id="upload-progress-btn" style="display: none;" accept=".json" onchange="loadProgress(event)">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="document.getElementById('upload-progress-btn').click()">Upload Progress</button>
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="resetProgress()">Reset Progress</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Start Page -->
+        <section id="sec-start" class="chapter-section active-section">
+            <img src="assets/Hero%20Banner%207.png" class="hero-banner-flush" alt="Chapter 7 Hero Banner">
+            
+            <div class="content-wrapper">
+                <div class="id-panel">
+                    <div>
+                        <label>Student Name</label>
+                        <input type="text" id="student-name" placeholder="Enter Full Name">
+                    </div>
+                    <div>
+                        <label>Class Period</label>
+                        <select id="student-period">
+                            <option value="">Select...</option>
+                            <option value="1">Period 1</option>
+                            <option value="2">Period 2</option>
+                            <option value="3">Period 3</option>
+                            <option value="4">Period 4</option>
+                            <option value="5">Period 5</option>
+                            <option value="6">Period 6</option>
+                            <option value="7">Period 7</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Date Completed</label>
+                        <input type="text" id="completion-date" readonly placeholder="Auto-fills on Finish">
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Core Objectives</h3>
+                    <ul>
+                        <li>Analyze the structural evolution of the federal bureaucracy from the 19th-century patronage system to the modern merit system.</li>
+                        <li>Explain how discretionary authority and the rulemaking process empower bureaucratic agencies to transform legislative intent into enforceable regulations.</li>
+                        <li>Evaluate the impact of policy networks, specifically iron triangles and issue networks, on the durability of federal programs and the legislative process.</li>
+                        <li>Assess the constitutional mechanisms utilized by the President, Congress, and the Judiciary to maintain democratic accountability over unelected administrators.</li>
+                    </ul>
+
+                    <h3>Key Terms</h3>
+                    <div class="word-bank">
+                        <span class="word-pill">Merit System</span>
+                        <span class="word-pill">Iron Triangle</span>
+                        <span class="word-pill">Discretionary Authority</span>
+                        <span class="word-pill">Red Tape</span>
+                        <span class="word-pill">Rulemaking</span>
+                        <span class="word-pill">Compliance Monitoring</span>
+                        <span class="word-pill">Administrative Adjudication</span>
+                    </div>
+
+                    <h3>Introduction</h3>
+                    <p class="first-p">When Americans think of their government, they often visualize the iconic symbols of democracy: the white dome of the Capitol building, the portico of the White House, or the nine justices of the Supreme Court posing for their official photograph. They imagine the high drama of debates on the Senate floor or the President signing a historic bill into law before a cheering crowd. However, these visible moments are only the beginning of governance. Once the cameras are turned off and the ink is dry, a law does not magically enforce itself. The Clean Air Act did not immediately purify the sky, nor did the Social Security Act instantly mail checks to the elderly. The bridge between a written law and its actual result in the real world is built by the federal bureaucracy.</p>
+                    <p>Often described as the "Fourth Branch" of government, the bureaucracy consists of the millions of unelected employees, departments, and agencies charged with the constitutional duty to "faithfully execute" the laws. While the Constitution grants legislative power to Congress and executive power to the President, it says remarkably little about how the day-to-day business of government should be conducted. It does not mention the Environmental Protection Agency, the Federal Aviation Administration, or the Department of Education. Yet, without these institutions, the laws passed by Congress would be nothing more than paper suggestions. The bureaucracy is the engine of the modern state, translating the abstract promises of democracy into the concrete reality of daily life.</p>
+                    <p>For many citizens, the term "bureaucracy" carries a negative connotation. It summons images of endless lines at the Department of Motor Vehicles, confusing tax forms, and faceless clerks mindlessly following rigid procedures. This frustration is often captured by the term red tape, which refers to the complex rules and procedures that must be followed to get something done. While complaints about inefficiency are a legitimate part of political discourse, they often obscure the essential function of these agencies. The bureaucracy is the air traffic controller guiding planes safely to the runway; it is the food inspector ensuring the safety of the meat supply; it is the scientist tracking infectious diseases; and it is the ranger preserving national forests. It is the mechanism through which modern society functions.</p>
+                    <p>The power of the bureaucracy lies in its expertise and its permanence. Presidents come and go, and control of Congress shifts with election cycles, but the bureaucracy remains. This permanence creates a unique tension in the American political system. The United States was founded on the principle of consent of the governed, yet the vast majority of the people who make the daily decisions about how laws are enforced are never elected by the people. When the Federal Reserve adjusts interest rates or the Food and Drug Administration approves a new vaccine, they are exercising immense power without direct voter approval.</p>
+                    <p>This reality forces citizens to grapple with difficult questions about the nature of democratic governance. How much power should unelected experts have? How can a free society ensure that these powerful agencies serve the public interest rather than their own? Throughout American history, the bureaucracy has grown from a small group of departments in the late 1700s to a vast, complex network today. This growth has been driven by the increasing demands of the public. As the nation industrialized, fought global wars, and sought to regulate a complex economy, the government needed more specialized hands to do the work. Understanding how this system functions—how it is structured, how it creates rules, and how it is held accountable—is essential to understanding how power actually operates in the United States. It is in the halls of these agencies that the broad strokes of public policy are painted into the fine details of American life.</p>
+                </div>
+                
+                <div class="bottom-nav">
+                    <div></div>
+                    <button class="action-btn" onclick="switchTab('sec-1')">Begin Chapter &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 1 -->
+        <section id="sec-1" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>I. The Mechanics of Government: Administrative Structure</h2>
+                    <p class="first-p">The federal bureaucracy is often discussed as if it were a single, monolithic entity—a giant "Washington" that acts with one mind. In reality, the executive branch is a sprawling, fragmented collection of organizations, each designed to solve specific problems and structured to reflect different balances of independence and political control. The way the bureaucracy looks today is not the result of a single architectural blueprint drafted by the Founding Fathers. Instead, it is the accumulation of over two centuries of political battles, emergency responses, and reforms. To understand why the government functions the way it does, one must first examine the people who staff it and the specific types of agencies that house them.</p>
+
+                    <h3>From Patronage to Professionalism</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_1.png" class="visual-img" alt="Patronage vs Merit System">
+                        <p class="caption-text">The merit system transformed the federal workforce from a reward for political loyalty into a professionalized service. By requiring competitive examinations and protecting employees from political firing, the civil service gained the stability and neutrality required to manage a complex modern state.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> Why did the transition to a merit-based system increase the expertise within government agencies?</p>
+                            <textarea id="va_1" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">For much of the nineteenth century, the federal workforce was governed by the political maxim "to the victor belong the spoils." This philosophy, known as the patronage system or the spoils system, allowed newly elected presidents to fire existing government workers en masse and replace them with their own political supporters, campaign donors, and friends. President Andrew Jackson was a fierce defender of this practice in the 1830s. He argued that the duties of public office were simple enough that any intelligent person could perform them, and that "rotation in office" was a democratic necessity to prevent the development of an arrogant, permanent elite. While this system helped build strong political parties by rewarding loyalty with jobs, it created a government staffed by amateurs who often lacked the skills to manage a growing nation.</p>
+                    <p>The inefficiencies and inherent corruption of the spoils system eventually turned deadly. In 1881, a mentally unstable lawyer named Charles Guiteau stalked President James A. Garfield for weeks. Guiteau believed he was largely responsible for Garfield’s election victory and felt entitled to a consulship in Paris as a reward. When the administration repeatedly rejected his applications, Guiteau shot the President at a train station in Washington, D.C., shouting that he was a "Stalwart" of the Republican party. Garfield lingered for months before dying, and his assassination shocked the nation into action. The tragedy highlighted the dangers of a system where government employment was treated as personal property rather than a public trust.</p>
+                    <p>In response to public outrage, Congress passed the Pendleton Civil Service Act of 1883. This landmark legislation began the dismantling of the old spoils system and replaced it with the merit system. Under the merit system, government jobs are no longer handed out as political favors. Instead, hiring and promotion are based on proven competence, usually demonstrated through competitive examinations, educational credentials, and experience. The goal was to create a professional, neutral civil service—a corps of experts who could serve the nation effectively regardless of which political party controlled the White House.</p>
+                    <p>Today, the vast majority of federal bureaucrats are protected from political firing. This protection allows a scientist at the Environmental Protection Agency to report inconvenient data on climate change, or an economist at the Labor Department to release accurate unemployment numbers, without fear of retribution from a politician who might want different results. However, this insulation also creates a persistent challenge for presidents. While they can appoint the heads of agencies, they often find it difficult to force the permanent bureaucracy—the millions of career employees who stay for decades—to change direction quickly. This tension between the temporary, elected leadership and the permanent, unelected workforce is a defining feature of modern governance.</p>
+
+                    <div id="cp-block-1" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.1.1</strong><br>Which event served as the primary catalyst for the passage of the Pendleton Civil Service Act?</p>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A. The impeachment of Andrew Johnson</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B. The assassination of President James A. Garfield</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C. The corruption scandals of the Grant administration</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D. The election of Andrew Jackson</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-1', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-1', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Cabinet and Executive Departments</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_2.png" class="visual-img" alt="Dual Loyalty Diagram">
+                        <p class="caption-text">Cabinet Secretaries operate under a structural tension between their loyalty to the President's policy goals and their duty to lead thousands of permanent career experts. This often results in a "dual loyalty" where secretaries must balance political pressure with bureaucratic reality.</p>
+                    </div>
+
+                    <p class="first-p">The most visible component of the federal bureaucracy consists of the fifteen Executive Departments. These are the major administrative units of the federal government, each responsible for a broad area of public policy. They employ more than 60 percent of all federal workers. The original departments created in 1789—State, Treasury, and War (now Defense)—reflected the limited role of the early federal government. As the nation’s needs grew, Congress added new departments. The Department of the Interior was created to manage the westward expansion; the Department of Labor was established to address the rights of workers in the industrial age; and the Department of Homeland Security was formed in 2002 to centralize national safety efforts following the September 11 terrorist attacks.</p>
+                    <p>Each of these departments is headed by a Secretary (except for the Justice Department, which is led by the Attorney General). These Secretaries are appointed by the President and must be confirmed by the Senate. Together, they form the President's Cabinet. Theoretically, the Cabinet serves as the President's primary advisory council. In practice, however, Cabinet Secretaries often face a "dual loyalty" dilemma. They are appointed to advocate for the President's policy agenda, but they must also manage the massive, entrenched bureaucracy within their own department.</p>
+                    <p>A Secretary of Defense, for instance, must represent the President's foreign policy goals to the military, but must also represent the military's needs and culture to the President. If a Secretary becomes too focused on defending their department's budget and interests, they may be accused of "going native"—siding with the bureaucracy over the President. Conversely, if they ignore the advice of their career experts to please the White House, they risk policy failure. This structural reality means that presidents often rely less on their Cabinet for advice and more on their immediate White House staff, who have no loyalty other than to the President.</p>
+
+                    <div id="cp-block-2" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.1.2</strong><br>Why do Cabinet Secretaries often experience "dual loyalty"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-2')"> A. They must serve both the President and the Supreme Court.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-2')"> B. They are elected by the people but paid by Congress.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-2')"> C. They must serve the President's agenda while also representing the interests of their department's career employees.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-2')"> D. They must balance their duties to the federal government with their loyalty to their home states.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-2', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-2', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Independent Agencies and Corporations</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_3.png" class="visual-img" alt="Government Structures Chart">
+                        <p class="caption-text">Federal agencies are structured based on their specific missions. While departments cover broad policy areas, independent agencies allow for scientific or technical focus, and government corporations provide essential public services that might not be profitable in a private market.</p>
+                    </div>
+
+                    <p class="first-p">Not all government business can be conducted effectively within the rigid hierarchy of a massive Cabinet department. Congress has created Independent Executive Agencies to handle specific tasks that require a degree of focus or insulation from the daily political management of a Cabinet Secretary. These agencies, such as the National Aeronautics and Space Administration (NASA), the Central Intelligence Agency (CIA), or the Environmental Protection Agency (EPA), still report to the President. Their administrators are appointed by the President and can be fired by him. However, by standing outside the fifteen main departments, they avoid getting lost in the bureaucracy of a larger organization. NASA, for example, was kept separate from the military (Department of Defense) to ensure that the American space program would have a civilian, scientific focus rather than a purely martial one.</p>
+                    <p>Even further removed from standard government operations are Government Corporations. These are businesses established by Congress to provide a market-oriented public service. Unlike private companies, they do not pay dividends to shareholders; instead, their goal is to sustain themselves through the fees they charge, though they often rely on government subsidies to stay afloat.</p>
+                    <p>The United States Postal Service (USPS) is the most prominent example. In a purely free market, a private delivery company might refuse to deliver mail to a remote farmhouse in rural North Dakota because the cost of gasoline and time would exceed the price of the stamp. However, the USPS is mandated by law to provide "universal service"—to deliver mail to every address in the country at a uniform price. Because this mission is essential for national communication but not necessarily profitable, the government operates the service itself. Amtrak, the national passenger rail service, functions similarly. These corporations exist in a hybrid state, expected to act like efficient businesses but tethered to government funding and congressional mandates that dictate where they must operate and how much they can charge.</p>
+
+                    <div id="cp-block-3" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.1.3</strong><br>What distinguishes a Government Corporation from a private corporation?</p>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-3')"> A. Government corporations are illegal monopolies.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-3')"> B. Government corporations provide a public service and are not designed to generate profit for shareholders.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-3')"> C. Government corporations are funded entirely by charitable donations.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-3')"> D. Government corporations are run directly by members of Congress.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-3', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-3', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Regulatory Commissions</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_4.png" class="visual-img" alt="Regulatory Commissions Fixed Terms">
+                        <p class="caption-text">Independent Regulatory Commissions are insulated from short-term political pressure through fixed, staggered terms for their leadership. This independence allows experts to make sensitive economic decisions, such as adjusting interest rates, without the influence of election-year politics.</p>
+                    </div>
+
+                    <p class="first-p">Perhaps the most powerful entities within the modern bureaucracy are the Independent Regulatory Commissions. Agencies such as the Federal Reserve Board (the Fed), the Federal Communications Commission (FCC), and the Securities and Exchange Commission (SEC) are responsible for regulating specific sectors of the economy. These commissions are unique because they are structurally designed to be independent of presidential control.</p>
+                    <p>While Commissioners are appointed by the President and confirmed by the Senate, they serve fixed, staggered terms that do not align with presidential elections. For example, members of the Federal Reserve Board serve 14-year terms. Furthermore, unlike Cabinet Secretaries, these commissioners cannot be fired by the President simply for disagreeing with his policies; they can only be removed for specific causes like corruption or neglect of duty. This independence is intentional. Congress recognized that decisions about interest rates, media licensing, or stock market rules are technically complex and politically sensitive. If a President could manipulate interest rates to boost the economy right before an election, it might help their campaign but wreck the nation's long-term financial stability.</p>
+                    <p>By insulating these commissions, the system attempts to prioritize long-term economic health and neutral enforcement over short-term political gain. These agencies possess a unique combination of powers: they write rules (legislative), enforce them (executive), and punish violators (judicial). This concentration of power in independent bodies makes them formidable centers of authority, often leading to debates about whether they are too removed from democratic accountability.</p>
+
+                    <div id="cp-block-4" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.1.4</strong><br>Why are Independent Regulatory Commissions given fixed terms and protection from removal by the President?</p>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-4')"> A. To ensure they can be easily replaced after an election.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-4')"> B. To allow the President to have total control over the economy.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-4')"> C. To insulate their decision-making from short-term partisan politics.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-4')"> D. To ensure they always agree with the majority party in Congress.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-4', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-4', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Architecture of Expertise</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_5.png" class="visual-img" alt="Architecture of Bureaucracy">
+                        <p class="caption-text">The architecture of the federal bureaucracy is built on specialized expertise and institutional permanence. While this structure ensures professional administration, the proliferation of agencies can lead to fragmentation, where different offices may overlap or conflict in their duties.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> How does the "permanence" of the bureaucracy create a challenge for a newly elected President?</p>
+                            <textarea id="va_5" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">The structure of the federal bureaucracy is not accidental; it is a reflection of American political values and historical lessons. The shift to the merit system prioritized competence over loyalty, ensuring that the engineers who build bridges and the doctors who approve medicines are qualified for the job. The creation of independent agencies and commissions acknowledged that some decisions—like monetary policy or intelligence gathering—require insulation from the heat of partisan politics.</p>
+                    <p>However, this complexity comes with a cost. The sheer number of agencies, each with its own culture, rules, and congressional committees overseeing it, can lead to fragmentation. Agencies may unknowingly duplicate work or, worse, work at cross-purposes. Yet, this architecture serves as the foundation for modern governance, allowing the state to handle the immense responsibilities of a superpower while attempting to maintain a professional distance from the whims of electoral politics. As we will see in the next section, these structures are merely the vehicle; the actual power of the bureaucracy lies in how it interprets and enforces the law.</p>
+
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-start')">&larr; Previous Section</button>
+                    <button id="btn-next-sec-1" class="action-btn" disabled onclick="switchTab('sec-2')">🔒 Answer Checkpoints to Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2 -->
+        <section id="sec-2" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>II. Implementation and Rulemaking: Policy in Practice</h2>
+                    <p class="first-p">When Congress passes a law, it is rarely a detailed instruction manual. Legislation is often the product of difficult compromise, written in broad, vague language to ensure enough votes for passage. A law might instruct the government to "ensure safe working conditions" or "protect endangered species," but it rarely specifies the exact chemical limits for factory air or the precise radius of a habitat protection zone. This gap between the intent of the law and the reality of its enforcement is filled by the bureaucracy through the process of implementation.</p>
+
+                    <h3>The Power of Discretionary Authority</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_6.png" class="visual-img" alt="Discretionary Authority Bridge">
+                        <p class="caption-text">Discretionary authority allows expert bureaucrats to fill the gaps left by broad or vague legislation. Because Congress cannot be expert in every field, it delegates the power to define technical standards and enforcement details to specialized agencies.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> Why is it practically necessary for Congress to delegate this authority to unelected experts?</p>
+                            <textarea id="va_6" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">The most significant power held by the modern bureaucracy is discretionary authority. This is the power given to appointed bureaucrats to decide how a law is implemented and to decide what Congress meant when it passed a bill. Because members of Congress cannot be experts on every subject—from nuclear safety to pharmaceutical chemistry—they delegate the details to the experts within the agencies.</p>
+                    <p>For example, when Congress passed the Controlled Substances Act, it created schedules for classifying drugs but left much of the decision-making on which drugs fit into which schedule to the Drug Enforcement Administration (DEA) and the Department of Health and Human Services. This means that unelected officials have the power to decide whether a new synthetic substance is legal or illegal. Similarly, the Department of Transportation determines exactly what safety features a car must have to be sold in the United States. This transfer of power is necessary for a modern government to function; if Congress had to vote on every safety latch or chemical formula, the government would grind to a halt. However, it also means that significant policy decisions are made by people whose names never appear on a ballot.</p>
+
+                    <div id="cp-block-5" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.2.1</strong><br>What is discretionary authority?</p>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-5')"> A. The power of the President to pardon criminals.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-5')"> B. The ability of bureaucrats to decide how to implement laws when legislation is vague.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-5')"> C. The authority of the Supreme Court to declare laws unconstitutional.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-5')"> D. The right of Congress to override a presidential veto.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-5', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-5', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Rulemaking Process</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_7.png" class="visual-img" alt="Rulemaking Assembly Line">
+                        <p class="caption-text">Rulemaking is the process by which agencies create enforceable regulations. By requiring notice and public comment, the Administrative Procedure Act ensures that businesses, interest groups, and citizens have a formal role in shaping the rules that affect them.</p>
+                    </div>
+
+                    <p class="first-p">The primary tool agencies use to exercise their discretion is rulemaking. This is the formal process by which bureaucratic agencies create regulations that have the force of law. These regulations are not mere suggestions; a violation of an Environmental Protection Agency (EPA) rule regarding toxic waste carries the same legal weight as violating a statute passed by Congress. In this sense, agencies function as "sub-legislatures," filling in the gaps of the law.</p>
+                    <p>The process of rulemaking is governed by strict procedures to ensure transparency, most notably under the Administrative Procedure Act of 1946. When an agency like the EPA wants to create a new regulation—for instance, setting a new limit on carbon emissions from power plants—it cannot simply issue a decree. First, it must propose the rule and publish it in the Federal Register. Then, it must offer a period for public comment, during which citizens, businesses, and interest groups can submit arguments and evidence supporting or opposing the rule.</p>
+                    <p>This period is often a battleground where industry lobbyists and environmental advocates clash, armed with scientific studies and economic forecasts. The agency must review this feedback and often revises the rule before publishing the final version. This process is designed to prevent arbitrary decisions, but it can be incredibly slow. It allows stakeholders to participate in the process, ensuring that the experts hear from the people who will be affected by the regulations. However, once the rule is finalized, it becomes the standard by which the law is enforced.</p>
+
+                    <div id="cp-block-6" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.2.2</strong><br>What is the primary purpose of the "notice and comment" period in rulemaking?</p>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-6')"> A. To allow the President to secretly change the rules.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-6')"> B. To allow the public and stakeholders to provide feedback on proposed regulations.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-6')"> C. To delay the implementation of laws indefinitely.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-6')"> D. To ensure that only experts can read the new rules.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-6', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-6', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Compliance and Monitoring</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_8.png" class="visual-img" alt="Compliance Monitoring Collage">
+                        <p class="caption-text">Compliance monitoring is the "beat cop" function of the bureaucracy. Agencies must actively verify that the rules they have written are being followed by individuals and corporations to ensure public safety and economic stability.</p>
+                    </div>
+
+                    <p class="first-p">Writing the rules is only half the battle; ensuring they are followed is the other. This is the function of compliance monitoring. Agencies must actively verify that businesses and individuals are adhering to the regulations they have set. This takes many forms, from on-site inspections of meatpacking plants by the Department of Agriculture to the auditing of tax returns by the Internal Revenue Service (IRS).</p>
+                    <p>Compliance monitoring is the "beat cop" function of the bureaucracy. Without it, regulations would be meaningless. For example, the Federal Aviation Administration (FAA) does not just set safety standards for airlines; it employs inspectors to examine maintenance logs and test pilots. This oversight is crucial for public safety, but it is often where the tension between government and the private sector is highest. Businesses often complain that excessive monitoring creates administrative burdens that stifle innovation and profit. Yet, history—such as the 2008 financial crisis—has shown that when compliance monitoring creates blind spots or is relaxed, the consequences for the economy and public safety can be catastrophic.</p>
+
+                    <div id="cp-block-7" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.2.3</strong><br>Which of the following best describes the function of compliance monitoring?</p>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-7')"> A. Agencies creating new laws.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-7')"> B. Agencies verifying that businesses and individuals are following established rules.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-7')"> C. Agencies resolving disputes between two parties.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-7')"> D. Agencies lobbying Congress for more funding.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-7', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-7', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Adjudication: The Agency as Court</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_9.png" class="visual-img" alt="Administrative Adjudication Court">
+                        <p class="caption-text">Administrative adjudication allows agencies to resolve disputes over their own regulations without immediately involving the federal court system. These hearings provide a faster, expert-led resolution for technical legal disagreements between the government and private parties.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> Why might some critics find it problematic that an agency acts as both the prosecutor and the judge in these hearings?</p>
+                            <textarea id="va_9" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">Beyond making and enforcing rules, agencies also have the power to resolve disputes, a process known as administrative adjudication. This is a quasi-judicial process in which a bureaucratic agency settles arguments between two parties, much like a court. If a factory owner believes the EPA has unfairly fined them for pollution, they do not immediately go to a federal courtroom. Instead, they often go before an Administrative Law Judge (ALJ) within the agency itself.</p>
+                    <p>These proceedings look very much like trials. Evidence is presented, witnesses are called, and a decision is rendered. The National Labor Relations Board (NLRB), for example, frequently adjudicates disputes between labor unions and employers regarding unfair labor practices. This system allows for faster resolution of technical disputes by judges who are experts in that specific field of law. However, critics argue that this system can be unfair, as the agency acts as both the prosecutor (bringing the charges) and the judge (deciding the case). While decisions can usually be appealed to the federal court system, the initial power of adjudication firmly places the bureaucracy in a role that blends executive, legislative, and judicial functions.</p>
+
+                    <div id="cp-block-8" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.2.4</strong><br>What is a potential criticism of administrative adjudication?</p>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-8')"> A. It is too slow compared to federal courts.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-8')"> B. It allows agencies to act as both prosecutor and judge.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-8')"> C. It requires a jury of peers for every decision.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-8')"> D. It prevents agencies from enforcing their own rules.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-8', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-8', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Power of the Unelected</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_10.png" class="visual-img" alt="Expertise vs Accountability Scale">
+                        <p class="caption-text">The power of the unelected rests on their specialized knowledge. This creates a tension in a democracy, as many of the most impactful daily rules are written by officials who are not directly accountable to the voters.</p>
+                    </div>
+
+                    <p class="first-p">The implementation of policy through discretionary authority, rulemaking, and administrative adjudication highlights the immense power of the bureaucracy. It transforms the "Fourth Branch" from a simple clerkship into a dynamic political force. While this system allows for the expertise needed to run a complex modern society, it constantly challenges the democratic ideal. The regulations that determine the purity of our water, the safety of our workplace, and the stability of our banks are largely written by people we did not elect. This reality makes the mechanisms of accountability—how we watch the watchers—one of the most critical aspects of American constitutional government.</p>
+
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-1')">&larr; Previous Section</button>
+                    <button id="btn-next-sec-2" class="action-btn" disabled onclick="switchTab('sec-3')">🔒 Answer Checkpoints to Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3 -->
+        <section id="sec-3" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>III. Policy Networks and the "Iron Triangle"</h2>
+                    <p class="first-p">Bureaucratic agencies do not exist in a vacuum, sealed off from the rest of the political world behind concrete walls. They are active, hungry players in a high-stakes game of influence, funding, and policy survival. To protect their budgets, expand their powers, and ensure their programs survive, agencies cultivate deep relationships with the very people they are supposed to regulate and the politicians who control their bank accounts. These relationships often solidify into powerful, exclusive alliances that can dominate the policymaking process. To understand why some government programs seem impossible to cut or why certain industries seem to get favorable treatment, one must look at the geometry of political power known as the iron triangle.</p>
+
+                    <h3>The Anatomy of an Alliance</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_11.png" class="visual-img" alt="Iron Triangle Diagram">
+                        <p class="caption-text">The iron triangle is a mutually beneficial relationship that stabilizes policy and funding. By exchanging political support, budget authority, and favorable regulations, these three groups create a closed system that is difficult for outside reformers to penetrate.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> Who is typically excluded from the decision-making process within an Iron Triangle?</p>
+                            <textarea id="va_11" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">An iron triangle is a stable, mutually beneficial relationship between three distinct entities: a bureaucratic agency, a congressional committee, and an interest group. Imagine these three groups as the corners of a fortress. Inside the fortress, policy is made efficiently and quietly; outside the fortress, the general public and the President are often kept in the dark.</p>
+                    <p>The strength of the triangle comes from the exchange of resources. Each point of the triangle possesses something the other two need. The bureaucratic agency needs funding and political protection. The congressional committee members need electoral support and success stories to tell their constituents. The interest group needs favorable regulations and government contracts.</p>
+                    <p>Consider the classic example of the "military-industrial complex," a term popularized by President Dwight D. Eisenhower. In this triangle, the three points are the Department of Defense (the agency), the Armed Services Committees in the House and Senate (the congressional committees), and defense contractors like Lockheed Martin or Boeing (the interest groups).</p>
+                    <p>The defense contractors provide millions of dollars in campaign contributions to the members of the Armed Services Committees. They also build factories in the members' home districts, creating jobs that help the politicians get reelected. In return, the committee members vote to approve massive budgets for new fighter jets or submarines, ensuring the contractors get paid. The Department of Defense gets the new equipment and expanded budget authority it wants. To complete the cycle, the Department of Defense gives the contractors favorable treatment and low-regulation contracts, often hiring retired generals to work as consultants for the very companies they used to oversee.</p>
+
+                    <div id="cp-block-9" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.3.1</strong><br>Which three entities make up an "Iron Triangle"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-9')"> A. The President, the Supreme Court, and Congress.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-9')"> B. A bureaucratic agency, a congressional committee, and an interest group.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-9')"> C. The media, the voters, and the political parties.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-9')"> D. The state governors, the federal government, and the United Nations.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-9', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-9', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Logic of Mutual Benefit</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_12.png" class="visual-img" alt="Cycle of Mutual Benefit">
+                        <p class="caption-text">The durability of iron triangles stems from the logic of mutual benefit. Each participant receives exactly what they need for survival—reelection for politicians, budget growth for agencies, and profitable contracts for interest groups.</p>
+                    </div>
+
+                    <p class="first-p">The reason iron triangles are so durable is that everyone inside the loop wins. There is no incentive for any of the three participants to break the alliance. If a budget hawk in Congress tries to cancel a weapon system that the Pentagon says is unnecessary, the interest group will mobilize workers in the committee chairman's district to protest the "loss of jobs." The committee chairman will then pressure the Pentagon to keep the program.</p>
+                    <p>This dynamic explains the resilience of agricultural subsidies. The Department of Agriculture, the House Agriculture Committee, and powerful interest groups like the American Farm Bureau Federation work in lockstep. The Farm Bureau delivers rural votes and money to the committee members. The committee funds price support programs. The Department of Agriculture implements these programs, ensuring that subsidies flow smoothly to the farmers. If a President tries to cut these subsidies to save money, the triangle mobilizes to block the cut in Congress, arguing it is an attack on the "American family farmer."</p>
+                    <p>This system creates a form of "client politics," where the government agency serves the specific needs of the interest group (the client) rather than the general welfare of the public. While this is highly efficient for the groups involved, it can be detrimental to democracy. It shuts out opposing voices and makes it incredibly difficult to reform wasteful or outdated programs.</p>
+
+                    <div id="cp-block-10" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.3.2</strong><br>Why are Iron Triangles considered difficult to break?</p>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-10')"> A. Because the Constitution explicitly protects them.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-10')"> B. Because the three groups involved provide mutual benefits to one another, creating a closed system of support.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-10')"> C. Because the Supreme Court has ruled that they are essential for national security.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-10')"> D. Because they are the only way to pass laws in Congress.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-10', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-10', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>From Triangles to Webs: Issue Networks</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_13.png" class="visual-img" alt="Iron Triangle vs Issue Network Map">
+                        <p class="caption-text">While iron triangles are closed and stable, modern issue networks are fluid and contentious. These networks involve a wide range of actors who debate policy, often leading to more diverse viewpoints but also more political gridlock.</p>
+                    </div>
+
+                    <p class="first-p">While iron triangles are known for their rigidity and durability, the modern political landscape has become too complex for simple three-way alliances to dominate every issue. The explosion of interest groups in the 1970s and the rise of 24-hour media have given rise to a more fluid system known as "issue networks."</p>
+                    <p>Unlike the tight, closed nature of an iron triangle, an issue network is a loose, complex, and often contentious cloud of actors who debate a specific policy area. An issue network includes not just the agency, committee, and industry lobbyists, but also university scholars, think tanks, media pundits, environmental activists, and White House staffers.</p>
+                    <p>Take the debate over healthcare reform. There is no single "healthcare triangle." Instead, there is a massive issue network involving insurance companies, doctor associations (like the AMA), patient advocacy groups, hospital unions, academic researchers, and partisan think tanks. Unlike the cooperative nature of an iron triangle, issue networks are often battlegrounds. The players disagree on the facts and the solutions. Environmental policy is another prime example. The EPA does not just work with industrial polluters; it is constantly pressured by the Sierra Club, climate scientists, legal foundations, and state governors. These networks are easier to join than iron triangles, allowing for a broader range of voices, but they also make policymaking messier and more prone to gridlock.</p>
+
+                    <div id="cp-block-11" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.3.3</strong><br>How does an "Issue Network" differ from an "Iron Triangle"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-11')"> A. Issue networks are smaller and more exclusive.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-11')"> B. Issue networks are illegal, while iron triangles are legal.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-11')"> C. Issue networks are more fluid, include more diverse participants (like media and academics), and are often more contentious.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-11')"> D. Issue networks only exist in foreign policy, while iron triangles exist in domestic policy.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-11', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-11', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Danger of Agency Capture</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_14.png" class="visual-img" alt="Revolving Door Illustration">
+                        <p class="caption-text">Agency capture occurs when a regulatory body begins to prioritize the interests of the industry it is supposed to oversee. This is often facilitated by the "revolving door," where officials move between government roles and high-paying private sector positions.</p>
+                    </div>
+
+                    <p class="first-p">The existence of these policy networks—whether rigid triangles or messy webs—leads to a phenomenon that political scientists call "agency capture." This occurs when a regulatory agency, created to act in the public interest, effectively advances the commercial or political concerns of the special interest groups it is charged with regulating.</p>
+                    <p>Imagine a watchdog who is fed, housed, and walked by the burglar. Eventually, the watchdog stops barking. This happens in the bureaucracy when the "revolving door" spins too freely. The "revolving door" refers to the practice of government officials leaving public service to take high-paying jobs as lobbyists or consultants for the very industries they used to regulate. A regulator at the Securities and Exchange Commission (SEC) who hopes to get a lucrative job at a Wall Street bank next year may be hesitant to enforce strict regulations on that bank today.</p>
+                    <p>Agency capture distorts the purpose of the bureaucracy. The Department of the Interior is tasked with protecting public lands, but if it is "captured" by mining and timber interests, it may prioritize extraction over conservation. The Federal Aviation Administration (FAA) is supposed to ensure passenger safety, but critics argued that prior to the Boeing 737 MAX crashes, the agency had allowed the manufacturer to essentially self-certify its own safety features to save money. When agencies are captured, the iron triangle is working perfectly for its members, but the "Fourth Branch" fails in its constitutional duty to serve the American people as a whole.</p>
+
+                    <div id="cp-block-12" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.3.4</strong><br>What is "Agency Capture"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-12')"> A. When the President takes control of an agency by firing all its employees.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-12')"> B. When a foreign government infiltrates a federal department.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-12')"> C. When a regulatory agency prioritizes the interests of the industry it regulates over the public interest.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-12')"> D. When Congress defunds an agency, effectively closing it down.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-12', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-12', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-2')">&larr; Previous Section</button>
+                    <button id="btn-next-sec-3" class="action-btn" disabled onclick="switchTab('sec-4')">🔒 Answer Checkpoints to Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4 -->
+        <section id="sec-4" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>IV. Bureaucratic Accountability: Democratic Control</h2>
+                    <p class="first-p">The framers of the Constitution did not anticipate a massive federal bureaucracy, but they did understand the danger of unchecked power. As the "Fourth Branch" grew in size and influence, the other three branches—the Legislative, Executive, and Judicial—had to adapt their constitutional powers to ensure that unelected bureaucrats remained accountable to the people. This struggle for control is constant. If the bureaucracy becomes too independent, it threatens democracy; if it becomes too controlled by politics, it loses its competence and neutrality.</p>
+
+                    <h3>Presidential Checks: The Power of Appointment and Orders</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_15.png" class="visual-img" alt="Presidential Checks Tools">
+                        <p class="caption-text">The President exercises control over the bureaucracy through the power of appointment and the issuance of executive orders. Additionally, the Office of Management and Budget serves as a central clearinghouse to ensure agency spending aligns with the President's policy agenda.</p>
+                    </div>
+
+                    <p class="first-p">The President is the Chief Executive, meaning the bureaucracy nominally works for them. The most direct tool the President has to control the bureaucracy is the power of appointment. By nominating the heads of Cabinet departments and independent agencies, the President puts people in charge who share their ideology and policy goals. If a President wants to focus on deregulation, they will appoint an agency head who is skeptical of red tape. If they want to focus on strict environmental protection, they will appoint an aggressive regulator.</p>
+                    <p>However, appointments have limits. The President can only appoint the top layer of officials; the thousands of career civil servants below them are protected by the merit system. To direct these career employees, Presidents use Executive Orders to issue binding instructions to agencies. A President might sign an order directing the Department of Homeland Security to change how it prioritizes deportations, effectively changing the law's impact without Congress passing a new bill. Additionally, the Office of Management and Budget (OMB) is the President’s primary arm for controlling the bureaucracy. The OMB reviews the budget requests of every agency before they go to Congress, allowing the President to cut funding for agencies that are not following his agenda and boost funding for those that are.</p>
+
+                    <div id="cp-block-13" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.4.1</strong><br>What is the primary limit on the President's power to control the bureaucracy?</p>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-13')"> A. The President cannot fire Cabinet Secretaries.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-13')"> B. The President can only appoint the top layer of officials, while career civil servants are protected.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-13')"> C. The President cannot issue Executive Orders to agencies.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-13')"> D. The President has no control over the budget.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-13', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-13', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Congressional Checks: Purse Strings and Oversight</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_16.png" class="visual-img" alt="Congressional Oversight Hearing">
+                        <p class="caption-text">Congress holds the ultimate authority over the bureaucracy through its control of the federal budget. By threatening to "defund" agencies or summoning leaders to testify at public oversight hearings, legislators can force administrative accountability.</p>
+                        <div class="question-box">
+                            <p><strong>Analysis Question:</strong> How does the "power of the purse" act as the most effective check on bureaucratic behavior?</p>
+                            <textarea id="va_16" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">Congress created the bureaucracy, and it retains the ultimate authority to shape it. The most potent weapon in Congress's arsenal is the "power of the purse." No agency can spend a dime unless Congress appropriates the money. If the FBI or the EPA engages in behavior that angers Congress, legislators can simply slash the agency's budget, crippling its ability to function. This threat forces agency heads to listen carefully to the concerns of congressional committees.</p>
+                    <p>Beyond money, Congress utilizes "oversight hearings" to hold bureaucrats accountable. When a scandal occurs—such as a failure to care for veterans or a data breach at a government agency—Congress summons the agency leaders to testify. These hearings are often televised and can be grueling interrogations where agency heads must explain their failures under oath. This public shaming can force resignations and policy changes. Furthermore, the Government Accountability Office (GAO) acts as Congress's watchdog, auditing agency spending and investigating inefficiencies to ensure tax dollars are not wasted.</p>
+                    <p>Congress can also rewrite the legislation that authorizes an agency. If Congress feels that an agency has abused its discretionary authority, it can pass new, more detailed laws that strip away that discretion, forcing the agency to follow strict procedures.</p>
+
+                    <div id="cp-block-14" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.4.2</strong><br>What is Congress's most potent weapon for controlling the bureaucracy?</p>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-14')"> A. The power to declare war.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-14')"> B. The power to impeach the President.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-14')"> C. The "Power of the Purse" to fund or defund agencies.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-14')"> D. The power to appoint judges.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-14', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-14', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Judicial Checks: The Courts and Due Process</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_17.png" class="visual-img" alt="Judicial Struck Down Regulation">
+                        <p class="caption-text">The federal courts ensure that bureaucratic actions do not exceed the authority granted by Congress. Through judicial review, courts can strike down regulations that are found to be arbitrary or that violate the constitutional rights of citizens.</p>
+                    </div>
+
+                    <p class="first-p">The federal courts serve as the final check on bureaucratic power. When an agency issues a rule or penalizes a company, that action can be challenged in court. The judiciary reviews these actions to ensure they are constitutional and that the agency has not exceeded the authority granted to it by Congress.</p>
+                    <p>Citizens and businesses often sue agencies on the grounds that a regulation is arbitrary, capricious, or outside the scope of the law. For example, if the OSHA (Occupational Safety and Health Administration) issues a safety rule that is technically impossible for businesses to follow, a court can strike it down. The courts also ensure that the administrative adjudication process follows due process—meaning that agencies cannot simply seize property or fine individuals without a fair hearing. This judicial review ensures that the drive for bureaucratic efficiency does not trample on individual rights.</p>
+
+                    <div id="cp-block-15" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.4.3</strong><br>What role do federal courts play in checking bureaucratic power?</p>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="A" onchange="handleRadioChange('cp-block-15')"> A. They appoint agency heads.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="B" onchange="handleRadioChange('cp-block-15')"> B. They write the budget for agencies.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="C" onchange="handleRadioChange('cp-block-15')"> C. They review agency actions to ensure they are constitutional and follow due process.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="D" onchange="handleRadioChange('cp-block-15')"> D. They conduct oversight hearings.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-15', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-15', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Balancing Efficiency and Liberty</h3>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_18.png" class="visual-img" alt="Balancing Engine and Steering Wheel">
+                        <p class="caption-text">The American system seeks to balance the efficiency of a professional bureaucracy with the liberty protected by democratic accountability. While the bureaucracy provides the expertise to run the state, the constitutional branches maintain control over its direction.</p>
+                    </div>
+
+                    <p class="first-p">The "Fourth Branch" presents a perpetual dilemma for American democracy. We need the expertise and capacity of the bureaucracy to inspect our food, manage our economy, and protect our environment. We want a government that is efficient and effective. Yet, we also fear a government that is too powerful, intrusive, and unresponsive to the public will. The complex system of checks and balances—involving presidential appointments, congressional budgets, and judicial review—is the mechanism by which the American system attempts to thread this needle. It ensures that while the bureaucracy may be the engine of government, the steering wheel remains in the hands of the constitutional branches accountable to the people.</p>
+
+                    <div id="cp-block-16" class="checkpoint-block" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7.4.4</strong><br>Why is the bureaucracy sometimes called the "Fourth Branch" of government?</p>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="A" onchange="handleRadioChange('cp-block-16')"> A. Because it is explicitly mentioned in the Constitution as the fourth branch.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="B" onchange="handleRadioChange('cp-block-16')"> B. Because it operates independently of the other three branches.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="C" onchange="handleRadioChange('cp-block-16')"> C. Because it exercises significant power (rulemaking, enforcement, adjudication) similar to the other branches, despite being unelected.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="D" onchange="handleRadioChange('cp-block-16')"> D. Because it is the only branch that can declare war.</label>
+                            </div>
+                            <div style="text-align: right; padding-top: 10px;">
+                                <div class="cp-indicator" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); margin-bottom: 15px;">1 of 1</div>
+                                <button class="action-btn cp-prev-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem; margin-right: 10px;" onclick="navigateCp('cp-block-16', -1)">Previous</button>
+                                <button class="action-btn cp-next-btn" style="width: auto; padding: 6px 12px; font-size: 0.8rem;" onclick="navigateCp('cp-block-16', 1)">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-3')">&larr; Previous Section</button>
+                    <button id="btn-next-sec-4" class="action-btn" disabled onclick="switchTab('sec-5')">🔒 Answer Checkpoints to Continue</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 5: Conclusion -->
+        <section id="sec-5" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>V. Conclusion: The Machinery of Modern Governance</h2>
+                    <p class="first-p">The federal bureaucracy is the complex, often unseen machinery that powers the American government. It is the place where the lofty promises of the Constitution and the statutes of Congress collide with the messy reality of the world. While the transition from the spoils system to the merit system professionalized the government, it created a new set of challenges regarding the power of unelected experts. Through discretionary authority and rulemaking, these agencies define the rules of daily life, from the air we breathe to the interest rates on our student loans.</p>
+                    <p>Yet, this power is not unchecked. The intricate web of iron triangles shows how agencies are tethered to political interests, while the oversight powers of the President, Congress, and the Courts ensure that the bureaucracy remains a servant of the law rather than a master of the people. As we move forward to study the Judicial Branch in the next chapter, we will see how the courts serve as the ultimate arbiter in the disputes between these agencies and the citizens they regulate, further illustrating the complex checks and balances that define the American experiment.</p>
+                </div>
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-4')">&larr; Previous Section</button>
+                    <button class="action-btn" onclick="switchTab('sec-6')">Proceed to Assessment &rarr;</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 6: Assessment -->
+        <section id="sec-6" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>VI. Assessment</h2>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section I – Vocabulary</h3>
+                        <p>Instructions: Match the term from the word bank to the correct definition.</p>
+                        <div class="word-bank">
+                            <span class="word-pill">Merit System</span>
+                            <span class="word-pill">Iron Triangle</span>
+                            <span class="word-pill">Discretionary Authority</span>
+                            <span class="word-pill">Red Tape</span>
+                            <span class="word-pill">Rulemaking</span>
+                            <span class="word-pill">Compliance Monitoring</span>
+                            <span class="word-pill">Administrative Adjudication</span>
+                        </div>
+
+                        <div class="vocab-item">
+                            <p>1. The quasi-judicial process in which a bureaucratic agency settles disputes between two parties in a manner similar to a court is known as <input type="text" class="cloze-input" placeholder="Type answer here..."></p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>2. <input type="text" class="cloze-input" placeholder="Type answer here..."> refers to the complex bureaucratic rules and procedures that must be followed to get something done, often seen as a barrier to efficiency.</p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>3. The <input type="text" class="cloze-input" placeholder="Type answer here..."> is the process of promoting and hiring government employees based on their ability to perform a job rather than on political connections.</p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>4. The extent to which appointed bureaucrats can choose courses of action and make policies not spelled out in advance by laws is called <input type="text" class="cloze-input" placeholder="Type answer here...">.</p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>5. A(n) <input type="text" class="cloze-input" placeholder="Type answer here..."> is a stable, three-way alliance among bureaucratic agencies, congressional committees, and interest groups to stabilize and preserve specific policies.</p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>6. The formal process by which agencies interpret statutes, establish procedures, and enforce standards to implement federal law is called <input type="text" class="cloze-input" placeholder="Type answer here...">.</p>
+                        </div>
+                        <div class="vocab-item">
+                            <p>7. <input type="text" class="cloze-input" placeholder="Type answer here..."> involves activities undertaken by regulatory agencies to ensure that overseen firms and individuals are following government rules.</p>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section II – Comprehension</h3>
+                        
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q1" class="first-p">1. Which historical event served as the primary catalyst for the passage of the Pendleton Civil Service Act?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="A"> A. The Great Depression</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="B"> B. The assassination of President James A. Garfield</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="C"> C. The Watergate Scandal</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="D"> D. The Civil War</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q2" class="first-p">2. Which of the following best describes the primary function of a Regulatory Commission like the FCC or SEC?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="A"> A. To manage the military and foreign affairs of the nation.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="B"> B. To provide market-oriented public services like mail delivery.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="C"> C. To create and enforce rules protecting the public interest in specific sectors of the economy.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="D"> D. To conduct intelligence gathering and covert operations.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q3" class="first-p">3. Why does Congress delegate discretionary authority to bureaucratic agencies?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="A"> A. Because the Constitution forbids Congress from writing detailed laws.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="B"> B. Because members of Congress lack the specific technical expertise required to regulate complex areas.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="C"> C. To allow the President to have total control over all laws.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="D"> D. To ensure that interest groups have no say in the policymaking process.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q4" class="first-p">4. In the context of the "Iron Triangle," what does the Congressional Committee provide to the Bureaucratic Agency?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="A"> A. Electoral support and campaign contributions.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="B"> B. Low regulation and special favors.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="C"> C. Funding and political support.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="D"> D. Technical expertise and lobbying.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q5" class="first-p">5. How do Independent Executive Agencies differ from Cabinet Departments?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="A"> A. They are owned by private shareholders.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="B"> B. They report to Congress rather than the President.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="C"> C. They have a narrower focus and are not part of a department.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="D"> D. They are completely immune from federal laws.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q6" class="first-p">6. Which of the following is a check Congress can use to control the bureaucracy?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="A"> A. Declaring agency rules unconstitutional.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="B"> B. Firing civil service employees without cause.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="C"> C. The "Power of the Purse" to fund or defund agencies.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="D"> D. Issuing Executive Orders to change agency priorities.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q7" class="first-p">7. What is the purpose of the "notice and comment" period in the rulemaking process?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="A"> A. To allow the President to secretly change the rules.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="B"> B. To allow the public and stakeholders to provide feedback on proposed regulations.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="C"> C. To delay the implementation of laws indefinitely.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="D"> D. To ensure that only experts can read the new rules.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="margin-bottom: 20px;">
+                            <p id="assess_mc_q8" class="first-p">8. The shift from the Patronage System to the Merit System was intended to:</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="A"> A. Increase the political loyalty of government workers.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="B"> B. Create a professional, neutral civil service based on competence.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="C"> C. Reduce the size of the federal government.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="D"> D. Give the President absolute power over hiring.</label>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section III – Guided Analysis</h3>
+                        <p>1. Explain how the process of rulemaking transforms a vague law passed by Congress into a concrete regulation that affects daily life. Use a hypothetical or real example to illustrate your point.</p>
+                        <textarea id="pq_1" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+
+                        <p>2. Describe the tension between the Merit System and the President's desire to implement their policy agenda. Why might career bureaucrats resist a new President's directives?</p>
+                        <textarea id="pq_2" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+
+                        <p>3. Analyze the concept of "Agency Capture." How does the Iron Triangle contribute to this phenomenon, and why is it considered a problem for democratic governance?</p>
+                        <textarea id="pq_3" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+
+                        <p>4. Compare and contrast Compliance Monitoring and Administrative Adjudication. How do these two functions work together to ensure laws are followed?</p>
+                        <textarea id="pq_4" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section IV – Visual Analysis</h3>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_1.png" class="visual-img" alt="Visual 1: The Iron Triangle Diagram">
+                            <div class="question-box">
+                                <p><strong>Analysis Question 1:</strong> Based on the description of the visual, explain how the relationship between the Interest Group and the Congressional Committee ultimately benefits the Bureaucratic Agency.</p>
+                                <textarea id="va_19" class="textarea-dark" placeholder="Enter your analysis here..." style="margin-bottom: 15px;"></textarea>
+                                
+                                <p><strong>Analysis Question 2:</strong> Why might a reform group representing the general public find it difficult to break into this triangular relationship to change policy?</p>
+                                <textarea id="va_20" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_2.png" class="visual-img" alt="Visual 2: Growth of the Federal Register">
+                            <div class="question-box">
+                                <p><strong>Analysis Question 1:</strong> What does the dramatic increase in the size of the Federal Register suggest about the role of the federal government in the economy and society over the last century?</p>
+                                <textarea id="va_21" class="textarea-dark" placeholder="Enter your analysis here..." style="margin-bottom: 15px;"></textarea>
+
+                                <p><strong>Analysis Question 2:</strong> Connecting this to the concept of Discretionary Authority, who is actually writing the content filling these thousands of pages?</p>
+                                <textarea id="va_22" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section V – Primary Source (CER)</h3>
+                        <div style="background: rgba(0,0,0,0.3); padding: 20px; border-left: 4px solid var(--color-steel-nib); font-style: italic; margin-bottom: 20px;">
+                            "The administration of government, in its largest sense, comprehends all the operations of the body politic, whether legislative, executive, or judiciary; but in its most usual, and perhaps its most precise signification, it is limited to executive details, and falls peculiarly within the province of the executive department. The actual conduct of foreign negotiations, the preparatory plans of finance, the application and disbursement of the public moneys in conformity to the general appropriations of the legislature, the arrangement of the army and navy, the direction of the operations of war... these, and other preparations of a like nature, constitute what seems to be most properly understood by the administration of government."<br>— Alexander Hamilton, The Federalist Papers No. 72
+                        </div>
+                        <p><strong>Writing Prompt:</strong> Using the excerpt above and your knowledge of the chapter, write a Claim-Evidence-Reasoning (CER) paragraph responding to the following: <em>Does Hamilton’s view of "administration" support the modern concept of a vast bureaucracy with discretionary authority?</em></p>
+                        <p style="font-size: 0.95rem; color: #ccc;">Claim: State clearly whether Hamilton’s definition aligns with the modern bureaucracy.<br>Evidence: Quote specific phrases from the text regarding "executive details" or specific duties.<br>Reasoning: Explain how the modern reality of rulemaking and independent agencies either fulfills or exceeds the "executive details" Hamilton describes.</p>
+                        <textarea id="pq_5" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+                    </div>
+
+                    <div style="margin-bottom: 40px;">
+                        <h3>Section VI – Modern Reflection</h3>
+                        <p><strong>Prompt:</strong> In recent years, there has been significant political debate regarding the "Deep State"—a term used by critics to describe career bureaucrats who they believe secretly manipulate policy to undermine elected leaders. Using the concepts of the Merit System, Discretionary Authority, and Bureaucratic Accountability learned in this chapter, evaluate this modern argument. Is the resistance of career officials to radical policy changes a "threat to democracy" or a "constitutional safety valve" designed to ensure stability and legal compliance? Defend your position.</p>
+                        <textarea id="pq_6" class="textarea-dark" style="margin-bottom: 20px;"></textarea>
+                    </div>
+                </div>
+                
+                <div class="bottom-nav">
+                    <button class="action-btn" onclick="switchTab('sec-5')">&larr; Previous Section</button>
+                    <button class="action-btn" style="background-color: var(--color-navy); border-color: var(--color-navy); color: var(--color-cream);" onclick="finishChapter()">Finished ✓</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<script>
+    /* Background Management */
+    const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+    let bgIndex = 0;
+    function rotateBackground() {
+        if (bgImages.length === 0) return;
+        const bgEl = document.getElementById('bg-slideshow');
+        if (!bgEl) return;
+        bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+        bgIndex = (bgIndex + 1) % bgImages.length;
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+        rotateBackground();
+        setInterval(rotateBackground, 10000); 
+    });
+
+    /* Navigation */
+    function switchTab(id) {
+        document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+        document.getElementById(id).classList.add('active-section');
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+        document.getElementById('nav-' + id).classList.add('active-nav');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* Finishing Chapter & JSON Export */
+    function finishChapter() {
+        const dateField = document.getElementById('completion-date');
+        const now = new Date().toLocaleDateString();
+        if(dateField) dateField.value = now;
+
+        const studentName = document.getElementById('student-name').value || "Unknown_Student";
+        const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+
+        const assignmentData = {
+            assignmentTitle: "Interactive Chapter 7 - The Bureaucracy",
+            studentInfo: { name: studentName, period: studentPeriod, dateCompleted: now },
+            responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {}, clozeActivity: {} }
+        };
+
+        // Gather Visual Analysis Answers (Inline + Assessment)
+        for(let i=1; i<=30; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Checkpoint Answers
+        for(let i=1; i<=40; i++) {
+            let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+            if(inputs.length > 0) {
+                let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Assessment MC Answers
+        for(let i=1; i<=15; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            let qEl = document.getElementById('assess_mc_q' + i);
+            if(qEl) {
+                let qText = qEl.innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Perspective Questions
+        for(let i=1; i<=15; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Vocabulary Activity Answers 
+        document.querySelectorAll('.cloze-input').forEach((input, index) => {
+            assignmentData.responses.clozeActivity[`Blank_${index + 1}`] = input.value.trim();
+        });
+
+        const dataStr = JSON.stringify(assignmentData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        a.download = `Chapter_Export_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        alert('Upload JSON file to Canvas');
+        switchTab('sec-1');
+    }
+
+    /* Save, Load & Reset Logic */
+    function exportProgress() {
+        const studentName = document.getElementById('student-name').value || "";
+        const studentPeriod = document.getElementById('student-period').value || "";
+
+        if (!studentName.trim() || !studentPeriod.trim()) {
+            alert("Please enter your name and select a period on the Start Page before saving your progress.");
+            switchTab('sec-start');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const progressData = {
+            studentName: studentName,
+            studentPeriod: studentPeriod,
+            visualAnalysis: {},
+            checkpoints: {},
+            assess_mc: {},
+            perspectiveQuestions: {},
+            clozeActivity: {}
+        };
+
+        // Gather VAs
+        for(let i=1; i<=30; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) progressData.visualAnalysis['va_' + i] = el.value;
+        }
+        // Gather Checkpoints
+        for(let i=1; i<=40; i++) {
+            let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+            if(checked) progressData.checkpoints['cp' + i] = checked.value;
+        }
+        // Gather Assessment MC
+        for(let i=1; i<=15; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            if(checked) progressData.assess_mc['assess_mc' + i] = checked.value;
+        }
+        // Gather Perspective Questions
+        for(let i=1; i<=15; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) progressData.perspectiveQuestions['pq_' + i] = el.value;
+        }
+        // Gather Vocabulary Activity
+        let clozeInputs = document.querySelectorAll('.cloze-input');
+        clozeInputs.forEach((input, index) => {
+            progressData.clozeActivity['cloze_' + index] = input.value;
+        });
+
+        const dataStr = JSON.stringify(progressData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName ? studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase() : 'student';
+        a.download = `Chapter_SaveFile_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function loadProgress(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                
+                // Burn Name and Period
+                const nameEl = document.getElementById('student-name');
+                const periodEl = document.getElementById('student-period');
+                
+                if (data.studentName) {
+                    nameEl.value = data.studentName;
+                    nameEl.setAttribute('readonly', 'true');
+                    nameEl.style.opacity = '0.7';
+                    nameEl.style.cursor = 'not-allowed';
+                }
+                if (data.studentPeriod) {
+                    periodEl.value = data.studentPeriod;
+                    periodEl.setAttribute('disabled', 'true');
+                    periodEl.style.opacity = '0.7';
+                    periodEl.style.cursor = 'not-allowed';
+                }
+
+                // Restore Textareas
+                if(data.visualAnalysis) {
+                    for (const [key, value] of Object.entries(data.visualAnalysis)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+                if(data.perspectiveQuestions) {
+                    for (const [key, value] of Object.entries(data.perspectiveQuestions)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+
+                // Restore Radio Buttons
+                if(data.checkpoints) {
+                    for (const [key, value] of Object.entries(data.checkpoints)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+                if(data.assess_mc) {
+                    for (const [key, value] of Object.entries(data.assess_mc)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+
+                // Restore Vocab Inputs
+                if(data.clozeActivity) {
+                    let clozeInputs = document.querySelectorAll('.cloze-input');
+                    for (const [key, value] of Object.entries(data.clozeActivity)) {
+                        let idx = parseInt(key.split('_')[1]);
+                        if (clozeInputs[idx]) clozeInputs[idx].value = value;
+                    }
+                }
+
+                // Advance checkpoint carousels to their furthest answered state
+                document.querySelectorAll('.checkpoint-block').forEach(block => {
+                    const questions = block.querySelectorAll('.checkpoint-q');
+                    let lastAnswered = 0;
+                    questions.forEach((q, idx) => {
+                        if (q.querySelector('input[type="radio"]:checked')) {
+                            lastAnswered = idx;
+                        }
+                    });
+                    block.setAttribute('data-current', lastAnswered);
+                });
+
+                initCheckpoints();
+                event.target.value = ''; // Reset file input
+                alert('Progress restored successfully!');
+
+            } catch (err) {
+                alert('Error loading progress file. Please make sure it is a valid JSON save file.');
+                console.error(err);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    function resetProgress() {
+        if(confirm('Are you sure you want to reset all progress?')) {
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('.cloze-input, .textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+            
+            const nameEl = document.getElementById('student-name');
+            const periodEl = document.getElementById('student-period');
+            nameEl.removeAttribute('readonly'); nameEl.style.opacity = '1'; nameEl.style.cursor = 'text';
+            periodEl.removeAttribute('disabled'); periodEl.style.opacity = '1'; periodEl.style.cursor = 'pointer';
+
+            document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+            initCheckpoints();
+            switchTab('sec-start');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    /* Checkpoint Management */
+    const TOTAL_CHECKPOINT_BLOCKS = 16; 
+
+    function initCheckpoints() {
+        for(let i=1; i<=TOTAL_CHECKPOINT_BLOCKS; i++) { updateCpUI(`cp-block-${i}`); }
+        checkSectionUnlock();
+    }
+
+    function updateCpUI(blockId) {
+        const block = document.getElementById(blockId);
+        if(!block) return;
+        const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        const indicator = block.querySelector('.cp-indicator');
+        const prevBtn = block.querySelector('.cp-prev-btn');
+        const nextBtn = block.querySelector('.cp-next-btn');
+
+        questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+        if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+        if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+        if(nextBtn) {
+            const currentQ = questions[currentIndex];
+            const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+            if (currentIndex === questions.length - 1) {
+                if (isAnswered) {
+                    nextBtn.innerText = "Checkpoint Completed ✓";
+                    nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                    nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                } else {
+                    nextBtn.innerText = "Finish Checkpoint";
+                    nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                }
+            } else {
+                nextBtn.innerText = "Next Question \u2192";
+                nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; } 
+                else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+            }
+        }
+        checkSectionUnlock();
+    }
+
+    function navigateCp(blockId, dir) {
+        const block = document.getElementById(blockId);
+        let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        currentIndex += dir;
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+        block.setAttribute('data-current', currentIndex);
+        updateCpUI(blockId);
+    }
+
+    function handleRadioChange(blockId) { updateCpUI(blockId); }
+    
+    function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+    
+    function setNavButtonState(btnId, enabled) {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        if (enabled) {
+            btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+            btn.innerHTML = 'Next Section &rarr;'; btn.style.borderColor = 'var(--color-gold)';
+        } else {
+            btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+            btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+        }
+    }
+
+    function checkSectionUnlock() {
+        setNavButtonState('btn-next-sec-1', isAnswered('cp1') && isAnswered('cp2') && isAnswered('cp3') && isAnswered('cp4'));
+        setNavButtonState('btn-next-sec-2', isAnswered('cp5') && isAnswered('cp6') && isAnswered('cp7') && isAnswered('cp8'));
+        setNavButtonState('btn-next-sec-3', isAnswered('cp9') && isAnswered('cp10') && isAnswered('cp11') && isAnswered('cp12'));
+        setNavButtonState('btn-next-sec-4', isAnswered('cp13') && isAnswered('cp14') && isAnswered('cp15') && isAnswered('cp16'));
+    }
+
+    // Initialize UI on load
+    window.onload = () => {
+        initCheckpoints();
+    };
+</script>
+
+</body>
+</html>
