@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4 - Congress</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #3A0F14; /* Constitutional Crimson */
+            --color-cream: #F5EBDD;    /* Archival Linen */
+            --color-navy: #3F5A4B;     /* Executive Laurel */
+            --color-steel-nib: #8A8F95; /* Judicial Stone */
+            --color-gold: #D4A017;     /* Seal Gold */
+            --color-gold-light: #F9E596;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background-color: var(--color-navy-deep); color: var(--color-cream); line-height: 1.8; font-size: 1.15rem; }
+        
+        /* Background Effects */
+        #bg-slideshow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out; }
+        body::after { content: ''; position: fixed; inset: 0; background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%); z-index: 1; pointer-events: none; }
+        
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+        
+        /* Left Navigation Panel */
+        .side-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column; padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem; }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { background: transparent; border: 1px solid transparent; color: var(--color-cream); text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer; transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+        
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { background: rgba(43, 33, 24, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; }
+        
+        @media (max-width: 1024px) { 
+            .side-nav { display: none; } 
+            .main-content { margin-left: 0; } 
+            .content-wrapper { padding: 30px 20px; } 
+            .content-block { padding: 2rem; } 
+        }
+        
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        
+        /* UI Elements */
+        .id-panel { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem; }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+        .textarea-dark { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px; font-family: var(--font-body); font-size: 1.1rem; resize: vertical; }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+        
+        /* Spotlights */
+        .spotlight-wrapper { width: 35%; max-width: 300px; float: right; margin: 10px 0 20px 30px; transition: transform 0.3s ease; position: relative; z-index: 10; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transform-origin: center right; }
+        .spotlight-wrapper.left { float: left; margin: 10px 30px 20px 0; transform-origin: center left; }
+        .spotlight-wrapper:hover { transform: scale(1.5); z-index: 50; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: var(--color-gold); }
+        .spotlight-wrapper img { width: 100%; border: 2px solid var(--color-gold-light); border-radius: 4px; display: block; }
+        .spotlight-caption { font-size: 0.9rem; text-align: center; margin-top: 10px; font-style: italic; color: #ddd; line-height: 1.4; }
+        
+        /* Full Sized Visuals */
+        .visual-wrapper { width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+        
+        @media (max-width: 768px) { 
+            .spotlight-wrapper, .spotlight-wrapper.left { float: none; width: 100%; max-width: 100%; margin: 20px 0; } 
+            .spotlight-wrapper:hover { transform: none; margin: 0; padding: 0; } 
+            .id-panel { grid-template-columns: 1fr; }
+        }
+        
+        /* Compact Checkpoint System */
+        .checkpoint-block { margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4); border-radius: 8px; background: rgba(0,0,0,0.2); clear: both; }
+        .checkpoint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 768px) { .checkpoint-grid { grid-template-columns: 1fr; } }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; cursor: pointer; padding: 8px 12px; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid transparent; transition: all 0.2s; font-size: 0.9rem; line-height: 1.3; }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(212,160,23,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+        
+        /* Vocab & Cloze Specific */
+        .word-bank { display: flex; flex-wrap: wrap; gap: 12px; padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--color-steel-nib); border-radius: 8px; margin-bottom: 2rem; }
+        .word-pill { background: rgba(63, 90, 75, 0.8); border: 1px solid var(--color-gold); color: var(--color-cream); padding: 8px 18px; border-radius: 25px; font-size: 1rem; font-weight: bold; }
+        .cloze-input { background: rgba(0,0,0,0.5); border: none; border-bottom: 2px solid var(--color-gold); color: var(--color-gold-light); padding: 4px 8px; font-size: 1.15rem; width: 100%; max-width: 300px; margin-top: 10px; font-family: var(--font-body); border-radius: 2px; transition: all 0.2s; }
+        .cloze-input:focus { outline: none; border-bottom-color: white; background: rgba(0,0,0,0.8); }
+        .vocab-item { margin-bottom: 1.5rem; }
+        
+        /* Buttons & Navigation */
+        .action-btn { padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold; cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5); color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%; }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3); margin-top: 3rem; gap: 20px; clear: both; }
+        .bottom-nav .action-btn { width: auto; }
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div id="bg-slideshow"></div>
+
+<div class="app-container">
+    <!-- Left Navigation Panel -->
+    <nav class="side-nav">
+        <div class="nav-title">Table of Contents</div>
+        <div class="nav-links">
+            <button class="nav-btn active-nav" id="nav-sec-start" onclick="switchTab('sec-start')">Start Page</button>
+            <button class="nav-btn" id="nav-sec-2" onclick="switchTab('sec-2')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 I. The Structural Equilibrium</button>
+            <button class="nav-btn" id="nav-sec-3" onclick="switchTab('sec-3')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 II. The Legislative Process</button>
+            <button class="nav-btn" id="nav-sec-4" onclick="switchTab('sec-4')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 III. Representation vs. Governance</button>
+            <button class="nav-btn" id="nav-sec-5" onclick="switchTab('sec-5')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 IV. Congressional Oversight</button>
+            <button class="nav-btn" id="nav-sec-6" onclick="switchTab('sec-6')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 V. Conclusion</button>
+            <button class="nav-btn" id="nav-sec-assessment" onclick="switchTab('sec-assessment')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 VI. Chapter Assessment</button>
+        </div>
+        
+        <div class="nav-actions">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px;" onclick="exportProgress()">Save Progress</button>
+            <input type="file" id="upload-progress-btn" style="display: none;" accept=".json" onchange="loadProgress(event)">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="document.getElementById('upload-progress-btn').click()">Upload Progress</button>
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="resetProgress()">Reset Progress</button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <img class="hero-banner-flush" src="assets/Hero%20Banner%204.png" alt="Chapter 4 Header Banner">
+        
+        <div class="content-wrapper">
+            
+            <!-- START PAGE / INTRODUCTION -->
+            <section id="sec-start" class="chapter-section active-section">
+                <div class="id-panel">
+                    <div>
+                        <label>Student Name</label>
+                        <input type="text" id="student-name" placeholder="First and Last Name">
+                    </div>
+                    <div>
+                        <label>Class Period</label>
+                        <select id="student-period">
+                            <option value="">Select...</option>
+                            <option value="1">Period 1</option>
+                            <option value="2">Period 2</option>
+                            <option value="3">Period 3</option>
+                            <option value="4">Period 4</option>
+                            <option value="5">Period 5</option>
+                            <option value="6">Period 6</option>
+                            <option value="7">Period 7</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label>Date Completed</label>
+                        <input type="text" id="completion-date" readonly placeholder="Auto-fills on finish">
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <h3>Core Objectives</h3>
+                    <ul class="first-p">
+                        <li>Analyze the structural and philosophical differences between the House of Representatives and the Senate to understand bicameralism.</li>
+                        <li>Evaluate the strategic roles of committees, leadership, and procedural rules like the filibuster in the lawmaking process.</li>
+                        <li>Examine the tension between local representation and national governance, specifically through the lenses of incumbency, gerrymandering, and pork barrel legislation.</li>
+                        <li>Assess the mechanisms of congressional oversight, including the power of the purse and investigative hearings, as checks on executive power.</li>
+                    </ul>
+
+                    <h3>Key Terms</h3>
+                    <ul class="first-p">
+                        <li>Bicameralism</li>
+                        <li>Constituent</li>
+                        <li>Incumbency Advantage</li>
+                        <li>Gerrymandering</li>
+                        <li>Power of the Purse</li>
+                        <li>Filibuster</li>
+                        <li>Cloture</li>
+                        <li>Seniority System</li>
+                        <li>Logrolling</li>
+                        <li>Pork Barrel Legislation</li>
+                    </ul>
+
+                    <h2>Introduction</h2>
+                    <p class="first-p">In the summer of 1787, the delegates to the Constitutional Convention were deadlocked. The small states, fearing they would be swallowed up by the larger states, demanded equal representation in the new national legislature. The large states, believing that power should derive from the people, insisted that representation should be based on population. The convention nearly collapsed until Roger Sherman of Connecticut proposed a solution that would become known as the Great Compromise. He suggested a legislature divided into two distinct chambers: a House of Representatives based on population to satisfy the large states, and a Senate based on equal state representation to satisfy the small states. This moment created the concept of American <strong>bicameralism</strong>, the division of a legislature into two distinct houses with distinct powers and constituencies.</p>
+                    <p>However, this division was not merely a political deal to save the convention; it was a deliberate philosophical choice. James Madison and the other Framers of the Constitution intended for Article I—the Legislative Branch—to be the "First Branch" of government, the engine that translates the will of the people into law. Yet, they were equally terrified of what they called the "tyranny of the majority." They feared that a single, powerful legislative body could act too quickly, swept up by the passions of the moment to strip away the rights of the minority. By splitting the legislature in two, they created an internal check. For a bill to become law, it cannot simply pass; it must survive two entirely different gauntlets. It must pass the House, which is designed to be hot, loud, and responsive to the immediate demands of the people. Then, it must pass the Senate, which is designed to be cool, slow, and insulated from public pressure.</p>
+                    <p>This structural design creates a government that is intentionally inefficient. In the American system, efficiency is not the primary goal; liberty is. The logic of internal restraints suggests that if it is difficult to pass laws, the government will only act when there is a broad, sustained consensus. This dynamic creates a perpetual friction between the two chambers. The House often views the Senate as an elitist graveyard for good ideas, while the Senate views the House as a chaotic source of radicalism. This chapter explores how this friction is not a bug in the system, but its primary feature. We will examine how the complex machinery of committees, the strategic use of the <strong>filibuster</strong>, and the pressure of <strong>gerrymandering</strong> shape the laws that govern the United States. We will look beyond the diagrams of how a bill becomes a law to understand the political realities of <strong>logrolling</strong>, the <strong>incumbency advantage</strong>, and the fierce battle for the <strong>power of the purse</strong>. Ultimately, we will see that Congress is the arena where the diverse and often conflicting interests of 330 million Americans are forced to meet, argue, and, occasionally, compromise.</p>
+                    
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_1.png" alt="The Great Compromise">
+                        <p class="caption-text first-p">The foundation of the American legislature is a strategic bargain. By satisfying large states with population-based representation and small states with equal representation, the Framers created a bicameral system that balances the weight of people against the sovereignty of states.</p>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <div></div>
+                        <button class="action-btn" id="btn-next-sec-1" onclick="switchTab('sec-2')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2 -->
+            <section id="sec-2" class="chapter-section">
+                <div class="content-block">
+                    <h2>The Structural Equilibrium of Congress: House vs. Senate</h2>
+                    <p class="first-p">The architecture of the U.S. Congress is a study in contrasts. While both the House of Representatives and the Senate are responsible for writing federal law, they were built to represent different slices of American society and to operate on different timelines. This concept, often called "institutional differentiation," ensures that the legislative branch can simultaneously be responsive to the people and responsible for the long-term stability of the state. To understand how Congress functions, one must understand that the House and Senate are not just different in size; they are different in soul.</p>
+
+                    <h3>The People’s House: Immediacy and Majoritarianism</h3>
+                    
+                    <div class="spotlight-wrapper right">
+                        <img src="assets/Visual_3.png" alt="Mood Barometer">
+                        <div class="spotlight-caption first-p">The House is the "gas pedal" of government. Designed to be hyper-responsive to public opinion, its short terms and majoritarian rules allow it to translate shifts in the national mood into immediate legislative action.</div>
+                    </div>
+
+                    <p class="first-p">The House of Representatives was designed to be the most democratic institution in the federal government. The Framers referred to it as the "Grand Inquest of the Nation." With 435 voting members, it is the larger of the two chambers, and its structure is defined by the frequency of its elections. Every member of the House serves a two-year term. This is an incredibly short period in political time. A member of the House is effectively always running for reelection. The moment they take the oath of office, they are looking toward the next campaign. This creates a chamber that is hyper-responsive to shifts in public opinion. When the mood of the country changes, the composition of the House changes with it.</p>
+                    <p>For example, in the midterm elections of 1994, American voters, frustrated with the Democratic administration, swept the Republican party into power in the House for the first time in forty years. This "Republican Revolution" was immediate and dramatic, reflecting the specific frustrations of voters in that specific year. Similarly, in 2018, a wave of dissatisfaction with the presidency led to a Democratic takeover of the House. In both cases, the House functioned exactly as intended: it acted as a barometer of the national mood.</p>
+                    <p>Because the House represents the population, the number of representatives varies wildly between states. California, with its massive population, sends dozens of representatives to Washington, while Wyoming sends only one. Each representative serves a specific geographic area known as a district. The residents of this district are the representative's <strong>constituents</strong>. The link between a House member and their <strong>constituent</strong> is intended to be intimate and direct. If a local factory closes or a natural disaster strikes, the House member is expected to respond immediately.</p>
+                    <p>To manage 435 members, the House relies on strict, hierarchical rules. It is a majoritarian institution, meaning a simple majority (218 votes) can do almost anything it wants, provided the leadership stays united. Debate is limited, often to just minutes per member. The Speaker of the House holds immense power to control what bills reach the floor and how they are debated. There is no room for a lone wolf to stop the gears of the House; the majority rules, and it rules with an iron fist. This structure allows the House to move quickly, passing sweeping legislation regarding taxes, budgets, and regulations—assuming the majority party agrees.</p>
+
+                    <div class="checkpoint-block" id="cp-block-1" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 1:</strong> Why is the House of Representatives considered more responsive to public opinion than the Senate?</p>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A. Its members serve shorter terms and face frequent elections</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B. Its members are appointed by governors</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C. It has fewer members</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D. It has unlimited debate</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-1', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-1', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Senate: The Cooling Saucer</h3>
+                    
+                    <div class="spotlight-wrapper left">
+                        <img src="assets/Visual_4.png" alt="Washington and Jefferson">
+                        <div class="spotlight-caption first-p">The Senate serves as the "cooling saucer" for legislation. Its staggered six-year terms and unlimited debate rules are intentional brakes, designed to cool the "hot" passions of the House and prevent the passage of impulsive laws.</div>
+                    </div>
+
+                    <p class="first-p">If the House is the gas pedal of American government, the Senate is the brakes. The Senate consists of 100 members, two from each state, regardless of population. This means that the 40 million residents of California have the same number of votes in the Senate as the 600,000 residents of Wyoming. This design feature creates a federalist balance, ensuring that the interests of sovereign states are protected against the sheer demographic weight of the large population centers.</p>
+                    <p>Senators serve six-year terms, with only one-third of the chamber up for election every two years. This "staggered" timeline is crucial. It insulates the Senate from the sudden "transient passions" of the electorate. While a political wave might wipe out a majority in the House, it rarely flips the entire Senate in a single cycle. This allows Senators to take a longer view of policy, theoretically making decisions based on long-term national interest rather than immediate popularity.</p>
+                    <p>There is a famous, perhaps apocryphal, story involving George Washington and Thomas Jefferson that illustrates this dynamic. Jefferson, who had been in France during the Constitutional Convention, asked Washington why they had created a second chamber. Washington asked Jefferson, "Why do you pour your coffee into your saucer?" Jefferson replied, "To cool it." Washington answered, "Even so, we pour legislation into the senatorial saucer to cool it."</p>
+                    <p>Because it is smaller, the Senate operates with much looser rules than the House. It prizes deliberation over speed. In the Senate, the minority has tremendous power. Unlike the House, where the majority can cut off debate at will, the Senate has traditionally operated on the principle of unlimited debate. This tradition gave rise to the <strong>filibuster</strong>, a tactic used by a minority of senators to delay or block a vote on a bill by holding the floor and refusing to yield. To stop a filibuster, the Senate requires a procedure called <strong>cloture</strong>, which demands a supermajority of 60 votes. This means that in the modern Senate, passing a controversial law effectively requires 60 votes, not 51. This high threshold forces bipartisan compromise, but it also leads to frequent gridlock.</p>
+
+                    <div class="checkpoint-block" id="cp-block-2" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 2:</strong> Why is the Senate described as the “cooling saucer” of Congress?</p>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-2')"> A. It represents only large states</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-2')"> B. Its longer terms and rules slow down legislation</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-2')"> C. It meets less often than the House</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-2')"> D. It cannot block legislation</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-2', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-2', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Necessity of Institutional Friction</h3>
+                    <p class="first-p">The contrast between the House and the Senate creates a purposeful legislative friction. In 2010, the House passed a cap-and-trade bill to address climate change. It passed because the majority party in the House could push it through quickly. However, when the bill reached the Senate, it died. The Senate, representing different constituencies and requiring a higher threshold for action, refused to take it up. To some, this was a failure of government. To the Framers, this was the system working.</p>
+                    <p>The requirement that a bill must pass two chambers with different bases of power ensures that no law is passed simply because it is popular in the moment. It must have broad, sustained support across both the population (House) and the states (Senate). This dynamic can be frustrating, especially during times of crisis when the public demands action. Yet, this friction is the primary defense against authoritarianism. By dividing the legislative power against itself, the Constitution forces the government to slow down, encouraging negotiation and preventing any single faction from dominating the entire apparatus of the state. The "Logic of Internal Restraints" posits that a government that moves too fast is dangerous; therefore, the House pushes, the Senate pulls, and the result is a slow, steady, often agonizing march toward policy.</p>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_5.png" alt="Mechanical Friction">
+                        <p class="caption-text first-p">Institutional friction is a feature, not a bug. The clash between the democratic pressure of the House and the federalist caution of the Senate forces the government to slow down, ensuring that only laws with broad, sustained consensus can survive the grind.</p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> How does "friction" serve as a defense mechanism for liberty in the legislative process?</p>
+                            <textarea class="textarea-dark" id="va_1" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkpoint-block" id="cp-block-3" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 3:</strong> What is the main purpose of requiring both chambers of Congress to approve a bill?</p>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-3')"> A. To increase the speed of lawmaking</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-3')"> B. To ensure laws have broad support and prevent hasty decisions</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-3')"> C. To reduce the influence of voters</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-3')"> D. To eliminate compromise</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-3', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-3', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-start')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-2" onclick="switchTab('sec-3')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3 -->
+            <section id="sec-3" class="chapter-section">
+                <div class="content-block">
+                    <h2>The Legislative Process: Committees, Leadership, and Lawmaking</h2>
+                    <p class="first-p">For the average observer, Congress appears to be a room where people make speeches. C-SPAN cameras show members standing in the well of the House or at the desks of the Senate, delivering impassioned arguments about justice and liberty. However, this is largely theater. The real work of legislating—the drafting, the arguing, the compromising, and the deal-making—happens not on the floor, but in committee rooms. Woodrow Wilson, a political scientist before he was President, famously wrote, "Congress in session is Congress on public exhibition, whilst Congress in its committee-rooms is Congress at work."</p>
+
+                    <h3>The Committee System: Where Laws are Born (and Buried)</h3>
+
+                    <div class="spotlight-wrapper right">
+                        <img src="assets/Visual_7.png" alt="Committee Funnel">
+                        <div class="spotlight-caption first-p">Committees act as the primary gatekeepers of legislation. The vast majority of bills introduced in Congress die quietly in committee, "pigeonholed" and forgotten, allowing members to focus only on the few measures that have genuine political traction.</div>
+                    </div>
+
+                    <p class="first-p">It is impossible for any single member of Congress to be an expert on everything. A representative cannot simultaneously master the intricacies of nuclear energy policy, agricultural subsidies, interstate highway engineering, and healthcare tax codes. To manage this vast workload, Congress divides itself into specialized groups called committees.</p>
+                    <p>Standing committees are permanent panels with jurisdiction over specific policy areas. In the House, the Ways and Means Committee is one of the most powerful because it controls tax law. In the Senate, the Judiciary Committee holds immense sway because it vets federal judges and oversees the legal system. When a bill is introduced, it is not immediately debated by the whole Congress. Instead, it is referred to the relevant committee. This is where the "weeding out" process begins. Of the thousands of bills introduced in each session of Congress, the vast majority die in committee. They are "pigeonholed," meaning they are set aside and never looked at again.</p>
+                    <p>For the bills that survive, the committee process involves hearings and "markups." During hearings, experts, bureaucrats, and citizens testify about the merits and flaws of the bill. During markup, the committee members go through the bill line by line, rewriting the text, adding amendments, and removing sections. This is where the technical details of the law are hammered out. For example, during the drafting of the Clean Air Act, it was in the committees that scientists and industry lobbyists argued over the exact parts per million of pollutants that would be permissible.</p>
+                    <p>Committee assignments are crucial for a legislator's career. A representative from rural Iowa will fight for a seat on the Agriculture Committee to protect the interests of their farming <strong>constituents</strong>. A representative from New York City might seek a seat on the Financial Services Committee to oversee Wall Street. Historically, committee leadership was determined strictly by the <strong>seniority system</strong>, which awarded the position of Committee Chair to the member of the majority party who had served on the committee the longest. While this system ensures experienced leadership, it also meant that younger, more energetic members were shut out of power. Today, while seniority is still a major factor, parties also consider loyalty and fundraising ability when selecting chairs.</p>
+
+                    <div class="checkpoint-block" id="cp-block-4" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 4:</strong> What is the main role of congressional committees?</p>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-4')"> A. To approve presidential appointments</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-4')"> B. To review, revise, and decide whether to advance bills</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-4')"> C. To elect party leaders</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-4')"> D. To enforce laws</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-4', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-4', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Leadership and the Iron Triangle of Power</h3>
+                    <p class="first-p">While committees do the work, the party leadership directs the traffic. In the House of Representatives, the Speaker of the House is the most powerful figure. The Speaker is elected by the majority party and serves as both the presiding officer of the chamber and the political leader of their party. The Speaker decides which bills reach the floor, appoints members to committees, and controls the flow of debate. A strong Speaker can essentially dictate the legislative agenda.</p>
+                    <p>In the early 20th century, Speaker Joe Cannon was known as "Czar Cannon" because of his absolute control over the House. He could single-handedly kill any bill he disliked. Modern Speakers have less absolute power but still wield tremendous influence through negotiation and the control of information. Assisting the Speaker are the Majority Leader and the "Whips." The Whips are responsible for counting votes and enforcing party discipline, ensuring that members vote the way the leadership wants them to.</p>
+                    <p>In the Senate, the leadership structure is different. The Constitution names the Vice President of the United States as the President of the Senate, but they have no real power and only vote to break a tie. The true power lies with the Senate Majority Leader. However, because the Senate gives so much power to individual senators, the Majority Leader cannot simply command the room like the Speaker of the House. They must function more like a diplomat, negotiating with all 100 distinct egos to move legislation forward.</p>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_8.png" alt="Leadership Styles">
+                        <p class="caption-text first-p">Leadership styles are dictated by chamber rules. The Speaker of the House commands a hierarchy with the power to silence dissent, while the Senate Majority Leader must act as a diplomat, negotiating with 100 independent power centers who can each stop the show.</p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> Contrast the leadership tools available to the Speaker of the House versus the Senate Majority Leader based on this illustration?</p>
+                            <textarea class="textarea-dark" id="va_2" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkpoint-block" id="cp-block-5" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 5:</strong> What is one key power of the Speaker of the House?</p>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-5')"> A. Declaring laws unconstitutional</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-5')"> B. Deciding which bills reach the House floor</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-5')"> C. Appointing Supreme Court justices</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-5')"> D. Approving state laws</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-5', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-5', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Strategic Logic of Legislative Procedure</h3>
+                    
+                    <div class="spotlight-wrapper left">
+                        <img src="assets/Visual_9.png" alt="Veto Points Maze">
+                        <div class="spotlight-caption first-p">The legislative process is a gauntlet of "veto points." Because opponents only need to win once to kill a bill, while proponents must win every single stage, the system is heavily biased against change, requiring strategic deal-making to succeed.</div>
+                    </div>
+
+                    <p class="first-p">The process of a bill becoming a law is often described as a maze, but it is more accurately described as a series of veto points—places where a bill can be killed. The opponents of a bill have a structural advantage over the proponents. To pass a law, you must win at every stage: the subcommittee, the full committee, the Rules Committee (in the House), the floor vote, the other chamber's committee, the other chamber's floor, and finally, the President's desk. To kill a law, you only have to win once.</p>
+                    <p>This bias against action leads to unique legislative strategies. One such strategy is <strong>logrolling</strong>, a practice where members trade votes to ensure the passage of their own priorities. A representative from Florida might agree to vote for a corn subsidy that helps a representative from Iowa, in exchange for the Iowa representative voting for a hurricane relief bill that helps Florida. While critics call this vote-trading, defenders argue it is the only way to build national coalitions in a diverse country.</p>
+                    <p>Another controversial aspect of this process is <strong>pork barrel legislation</strong>. This refers to government spending for localized projects intended primarily to bring money to a representative's district. The famous "Bridge to Nowhere" in Alaska became a symbol of this practice—a multimillion-dollar federal project to connect a small town to an island with 50 residents. While often ridiculed as wasteful, "pork" is the grease that turns the gears of Congress. A leader often secures a reluctant member's vote for a major bill by promising a new federally funded hospital or highway in that member's district.</p>
+                    <p>This complex interplay of committees, leadership pressure, and vote-trading means that the law is rarely pure. It is a patchwork of compromises. The "Logic of Internal Restraints" ensures that legislation is not the result of a single brilliant author, but the product of a thousand small concessions. This makes the process ugly to watch, but it ensures that the final product has enough buy-in to survive the turbulent political landscape of the United States.</p>
+
+                    <div class="checkpoint-block" id="cp-block-6" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 6:</strong> What is logrolling in Congress?</p>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-6')"> A. Delaying a vote on legislation</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-6')"> B. Trading votes to gain support for different bills</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-6')"> C. Blocking committee assignments</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-6')"> D. Drawing district boundaries</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-6', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-6', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-2')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-3" onclick="switchTab('sec-4')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4 -->
+            <section id="sec-4" class="chapter-section">
+                <div class="content-block">
+                    <h2>Representation vs. Governance: Constituents, Interests, and Oversight</h2>
+                    <p class="first-p">A member of Congress wears two hats. In one capacity, they are a national legislator, responsible for writing laws that affect the economy, national security, and the welfare of the entire United States. In the other capacity, they are a local representative, hired by the voters of a specific geographic area to fight for their specific needs. These two roles—governance and representation—are often in direct conflict. This tension defines the career of every member of Congress and explains many of the seemingly contradictory actions taken by the legislative branch.</p>
+
+                    <h3>The Two Modes of Representation</h3>
+
+                    <div class="spotlight-wrapper right">
+                        <img src="assets/Visual_11.png" alt="Politico Balancing Modes">
+                        <div class="spotlight-caption first-p">The "Politico" balances two philosophies. The Delegate acts as a mouthpiece for the voters, while the Trustee acts on their own wisdom. Most legislators switch between these roles depending on whether the issue is a hot-button scandal or a complex technical regulation.</div>
+                    </div>
+
+                    <p class="first-p">Political philosophers have long debated how a representative should act. Edmund Burke, an 18th-century British philosopher and politician, articulated the "Trustee Model." He argued that a representative is elected for their judgment and wisdom. Once in office, they should vote based on what they believe is best for the nation, even if it goes against the wishes of their constituents. Burke famously told his voters, "Your representative owes you, not his industry only, but his judgment; and he betrays, instead of serving you, if he sacrifices it to your opinion."</p>
+                    <p>Opposed to this is the "Delegate Model." This theory argues that a representative is merely the mouthpiece of the people who elected them. If the constituents want a specific policy, the representative must vote for it, regardless of their own personal feelings. In reality, most members of Congress operate as "Politicos," switching between these models depending on the issue. On a high-profile, emotional issue like gun control or abortion, they act as delegates, closely following public opinion to avoid being voted out of office. On complex, technical issues like international trade regulations, where the public pays less attention, they act as trustees, relying on their own judgment and expert advice.</p>
+
+                    <div class="checkpoint-block" id="cp-block-7" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 7:</strong> What does the delegate model of representation require legislators to do?</p>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-7')"> A. Vote based on personal judgment</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-7')"> B. Follow the wishes of their constituents</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-7')"> C. Follow the orders of the President</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-7')"> D. Ignore public opinion</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-7', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-7', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Fortress of Incumbency</h3>
+
+                    <div class="spotlight-wrapper left">
+                        <img src="assets/Visual_12.png" alt="Incumbency Fortress">
+                        <div class="spotlight-caption first-p">The "Incumbency Advantage" creates a fortress around sitting members. Through free mail, constituent service, and established fundraising, incumbents build a barrier that makes it statistically improbable for them to lose, insulating them from national political waves.</div>
+                    </div>
+
+                    <p class="first-p">While the theory of representation suggests that voters can easily fire a representative they dislike, the reality of modern politics is different. The single most powerful force in congressional elections is the <strong>incumbency advantage</strong>. An incumbent is the current holder of the office. In the House of Representatives, incumbents win reelection at staggering rates, often exceeding 90%.</p>
+                    <p>This advantage is structural. Incumbents have name recognition; voters know who they are. They have the "franking privilege," which allows them to send mail to their constituents for free, keeping their accomplishments in the public eye. They have an established fundraising network of donors and interest groups who want to back a winner. But most importantly, they have a record of "casework." Casework is the service a member provides to individual constituents—helping a grandmother get her Social Security check, helping a veteran navigate the VA hospital system, or helping a high school student get a nomination to West Point. When a member of Congress solves a personal problem for a voter, that voter often becomes a supporter for life, regardless of the member's political party.</p>
+                    <p>This dynamic creates a class of professional legislators who can become insulated from national political waves. Even when Congress as an institution has an approval rating of 15%, individual members remain popular in their own districts. Voters tend to believe that "Congress is broken, but my representative is doing a good job."</p>
+
+                    <div class="checkpoint-block" id="cp-block-8" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 8:</strong> What is the incumbency advantage?</p>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-8')"> A. The ability of voters to remove officials easily</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-8')"> B. The structural advantages that help current officeholders win reelection</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-8')"> C. The power of Congress to redraw district lines</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-8')"> D. The President’s ability to appoint legislators</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-8', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-8', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Geometry of Power: Gerrymandering</h3>
+                    <p class="first-p">The House of Representatives is further shaped by the practice of <strong>gerrymandering</strong>. Every ten years, following the U.S. Census, states must redraw their congressional district lines to account for population changes. The goal is to ensure that each district has roughly the same number of people. However, in most states, this process is controlled by the state legislature. This allows the majority party in the state to draw the lines in a way that benefits their own party.</p>
+                    <p>The term comes from Elbridge Gerry, an early 19th-century governor of Massachusetts, who signed a bill creating a district so misshapen it resembled a salamander. Today, computers allow mapmakers to draw these lines with surgical precision. They can "pack" opposition voters into a single district to limit their influence, or "crack" them across multiple districts to dilute their vote.</p>
+                    <p>Gerrymandering creates "safe seats"—districts where the winner is effectively determined in the primary election because the general election is mathematically impossible for the other party to win. If a district is drawn to be 80% Republican, the Republican representative has no fear of losing to a Democrat. Their only fear is losing to a more conservative Republican in the primary. This pulls the representative away from the political center and toward the ideological extremes. The same is true for Democrats in safe blue districts. Consequently, gerrymandering reduces the incentive for compromise. If a member of Congress compromises with the other side, they risk looking weak to their base, which is the only group that can remove them from office.</p>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_13.png" alt="Packing and Cracking Districts">
+                        <p class="caption-text first-p">Gerrymandering manipulates the geometry of representation. By packing opponents into a single district or cracking them apart, parties can draw "safe seats" that predetermine the winner, reducing competition and encouraging extremism.</p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> Explain the difference between "packing" and "cracking" opposition voters in a district.</p>
+                            <textarea class="textarea-dark" id="va_3" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkpoint-block" id="cp-block-9" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 9:</strong> What is the main purpose of gerrymandering?</p>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-9')"> A. To ensure fair representation</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-9')"> B. To favor a political party when drawing district lines</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-9')"> C. To increase voter turnout</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-9')"> D. To reduce the number of representatives</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-9', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-9', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Permanent Campaign</h3>
+
+                    <div class="spotlight-wrapper right">
+                        <img src="assets/Visual_14.png" alt="Permanent Campaign Cycle">
+                        <div class="spotlight-caption first-p">The "Permanent Campaign" forces governance to take a backseat to survival. With the House facing reelection every two years, decisions on long-term national problems are often deferred in favor of short-term actions that satisfy the immediate demands of the next election cycle.</div>
+                    </div>
+
+                    <p class="first-p">The combination of the incumbency advantage and gerrymandering means that for many members of Congress, the primary goal is not necessarily legislating, but maintaining their coalition. The modern Congress operates in a state of the "permanent campaign." Decisions on governance are filtered through the lens of electoral survival. This helps explain why Congress struggles to tackle long-term problems like the national debt or entitlement reform. Solving these problems requires painful sacrifices—raising taxes or cutting benefits—that act as poison in an election.</p>
+                    <p>However, this focus on the local is also what tethers the government to the people. A senator might block a defense bill until it guarantees that a fighter jet engine is built in their state. Critics call this corruption; supporters call it representation. By fighting for the specific economic interests of their state, the legislator ensures that the federal government does not ignore the local realities of the citizens. The tension between the national need for efficient governance and the local need for specific representation is the engine that drives the political strategy of the legislative branch.</p>
+
+                    <div class="checkpoint-block" id="cp-block-10" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 10:</strong> What does the “permanent campaign” refer to in Congress?</p>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-10')"> A. Legislators constantly focusing on reelection</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-10')"> B. Continuous presidential elections</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-10')"> C. Military campaigns</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-10')"> D. Judicial investigations</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-10', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-10', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-3')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-4" onclick="switchTab('sec-5')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5 -->
+            <section id="sec-5" class="chapter-section">
+                <div class="content-block">
+                    <h2>Congressional Oversight: Constraining the Executive</h2>
+                    <p class="first-p">The Constitution does not just give Congress the power to write laws; it gives Congress the duty to watch over the people who enforce them. This is the function of oversight. As the federal bureaucracy has grown into a massive apparatus of agencies, departments, and commissions, the role of Congress as a watchdog has become increasingly vital. If the President is the CEO of the government, Congress is the Board of Directors, with the power to investigate, defund, and even remove the executives.</p>
+
+                    <h3>The Power of the Purse</h3>
+
+                    <div class="spotlight-wrapper left">
+                        <img src="assets/Visual_16.png" alt="Power of the Purse Valve">
+                        <div class="spotlight-caption first-p">The "Power of the Purse" is the ultimate check. By controlling the flow of money, Congress can starve specific agencies or wars of the resources they need, effectively forcing the President to change course without passing a new law.</div>
+                    </div>
+
+                    <p class="first-p">The most potent weapon in Congress's arsenal is the <strong>power of the purse</strong>. Article I, Section 9 of the Constitution states, "No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law." This means the President cannot spend a single dime unless Congress gives it to them. This financial authority is the ultimate check on executive ambition.</p>
+                    <p>History is filled with examples of Congress using this power to change national policy. In the 1970s, as the Vietnam War dragged on, public support collapsed. Presidents Nixon and Ford wanted to continue supporting the South Vietnamese government. However, in 1973, Congress passed the Case-Church Amendment, which prohibited the use of government funds for U.S. military operations in Vietnam, Laos, and Cambodia. By cutting off the money, Congress effectively ended the war.</p>
+                    <p>More recently, the power of the purse has led to high-stakes brinkmanship known as government shutdowns. If Congress and the President cannot agree on a budget, the funding for the government expires, and non-essential services close. In 2018-2019, the government shut down for 35 days due to a dispute over funding for a border wall. These conflicts highlight the reality that while the President commands the military and the bureaucracy, Congress supplies the fuel. Without the legislature's financial consent, the executive engine stalls.</p>
+
+                    <div class="checkpoint-block" id="cp-block-11" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 11:</strong> How does Congress use the power of the purse to check the President?</p>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-11')"> A. By appointing executive officials</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-11')"> B. By controlling government funding</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-11')"> C. By declaring executive orders illegal</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-11')"> D. By supervising court decisions</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-11', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-11', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>Investigative Authority and "Advice and Consent"</h3>
+
+                    <div class="spotlight-wrapper right">
+                        <img src="assets/Visual_17.png" alt="Oversight Spotlight">
+                        <div class="spotlight-caption first-p">Oversight shines a light on the executive branch. Through subpoena power and public hearings, committees expose corruption and malfunction, forcing unelected bureaucrats to answer to the people's representatives.</div>
+                    </div>
+
+                    <p class="first-p">Beyond money, Congress uses its committee structure to investigate executive behavior. Committees have the power of subpoena, allowing them to force documents to be released and witnesses to testify under oath. The most famous example of this is the Watergate investigation in 1973. The Senate Watergate Committee, led by Senator Sam Ervin, held televised hearings that revealed the depth of corruption in the Nixon White House. These hearings were not a criminal trial, but a public education. They unraveled the cover-up and eventually led to Nixon's resignation.</p>
+                    <p>Similarly, the "Advice and Consent" power of the Senate serves as a quality control check on the President's personnel. The President appoints cabinet secretaries, ambassadors, and federal judges, but the Senate must confirm them. This process was originally intended to ensure that nominees were qualified and free of corruption. However, in the modern era, it has become a tool of political warfare. The rejection of Robert Bork to the Supreme Court in 1987 and the refusal to hold hearings for Merrick Garland in 2016 demonstrate how the Senate uses its confirmation power to shape the ideological direction of the judicial and executive branches.</p>
+
+                    <div class="checkpoint-block" id="cp-block-12" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 12:</strong> What is the purpose of the Senate’s confirmation power?</p>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-12')"> A. To approve presidential appointments</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-12')"> B. To pass laws</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-12')"> C. To control elections</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-12')"> D. To override vetoes</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-12', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-12', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>The Struggle for Supremacy</h3>
+                    <p class="first-p">Congressional oversight is the practical application of checks and balances. It is inherently adversarial. An executive branch that is never questioned will naturally expand its power, hide its mistakes, and interpret the law to suit its own ends. Congress acts as the "Logic of Internal Restraints" brought to life. By hauling agency directors before committees, auditing agency budgets, and scrutinizing presidential appointees, Congress forces the executive branch to justify its actions.</p>
+                    <p>This relationship is often hostile. Presidents of all parties complain about congressional "meddling" and "micromanagement." Yet, this hostility is necessary. The separation of powers was not designed to maximize efficiency; it was designed to maximize accountability. When Congress aggressively oversees the executive, it is not obstructing the government; it is ensuring that the government remains a servant of the law, rather than a tool of the ruler.</p>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_18.png" alt="Struggle for Supremacy">
+                        <p class="caption-text first-p">The struggle for supremacy is constant. Oversight is inherently adversarial, a necessary conflict where Congress pushes to restrain the executive and the President pushes to expand their authority, maintaining the delicate balance of the Constitution.</p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> Why is the relationship between Congress and the President described as "inherently adversarial"?</p>
+                            <textarea class="textarea-dark" id="va_4" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="checkpoint-block" id="cp-block-13" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 13:</strong> Why is conflict between Congress and the President considered necessary?</p>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-13')"> A. It ensures checks and balances between branches</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-13')"> B. It increases the speed of lawmaking</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-13')"> C. It prevents elections</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-13')"> D. It eliminates political parties</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-13', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-13', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-4')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-5" onclick="switchTab('sec-6')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6 -->
+            <section id="sec-6" class="chapter-section">
+                <div class="content-block">
+                    <h2>Conclusion</h2>
+                    <p class="first-p">The United States Congress is a paradox. It is the most powerful legislature in the world, yet it often seems paralyzed by its own internal divisions. It is designed to represent the will of the people, yet it frequently acts to frustrate the immediate desires of the majority. To understand Congress, one must return to the <strong>Essential Question</strong>: <em>How does the structure of Congress reflect the strategic compromise between state interests, popular will, and the "Logic of Internal Restraints"?</em></p>
+                    <p>The answer lies in the realization that Congress was never intended to be a streamlined machine for passing laws. It was designed as a battlefield. The House brings the raw energy of popular sentiment, demanding immediate action. The Senate brings the caution of the states, demanding deliberation and consensus. The committee system disperses power, ensuring that expertise guides policy, while the <strong>filibuster</strong> and procedural rules protect the minority from being steamrolled by the majority.</p>
+                    <p>The frustrations that Americans feel with Congress—the gridlock, the <strong>pork barrel</strong> spending, the slow pace of change—are often the byproducts of its design. The structure forces compromise. It forces the rural interests of Wyoming to sit at the table with the urban interests of New York. It forces the trustee to listen to the delegate. In a nation as vast and diverse as the United States, this forced negotiation is the only alternative to disunion. The friction of Congress is the heat generated by democracy working exactly as it was designed: slowly, argumentatively, and publicly. As we move to the next chapter, we will see how the Executive Branch attempts to navigate this legislative maze to lead the nation.</p>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Visual_19.png" alt="Congress Compromise Marketplace">
+                        <p class="caption-text first-p">Congress is a designed battlefield. The noise, the delay, and the frustration are the visible signs of diverse interests being forced to negotiate. It is an arena where the "Logic of Internal Restraints" turns conflict into the slow, steady progress of democratic law.</p>
+                    </div>
+
+                    <div class="checkpoint-block" id="cp-block-14" data-current="0">
+                        <div class="checkpoint-grid">
+                            <div class="checkpoint-q">
+                                <p class="first-p"><strong>Checkpoint 14:</strong> Why was Congress designed with internal friction between the House and Senate?</p>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-14')"> A. To weaken the legislative branch</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-14')"> B. To force compromise and prevent abuse of power</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-14')"> C. To eliminate minority voices</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-14')"> D. To increase executive authority</label>
+                            </div>
+                            <div class="flex flex-col justify-between items-end">
+                                <span class="cp-indicator font-ui text-sm text-steel-nib uppercase tracking-wider mb-4">1 of 1</span>
+                                <div class="flex gap-2">
+                                    <button class="cp-prev-btn action-btn" style="display:none;" onclick="navigateCp('cp-block-14', -1)">&larr; Back</button>
+                                    <button class="cp-next-btn action-btn" onclick="navigateCp('cp-block-14', 1)" disabled>Next &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-5')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-6" onclick="switchTab('sec-assessment')" disabled style="opacity:0.5; cursor:not-allowed;">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CHAPTER ASSESSMENT -->
+            <section id="sec-assessment" class="chapter-section">
+                <div class="content-block">
+                    <h2>Chapter 4 Assessment</h2>
+
+                    <h3>Section I – Vocabulary</h3>
+                    <p class="first-p text-sm mb-4"><strong>Directions:</strong> Use the Word Bank to fill in the missing terms below.</p>
+                    <div class="word-bank">
+                        <span class="word-pill">Bicameralism</span>
+                        <span class="word-pill">Constituent</span>
+                        <span class="word-pill">Incumbency Advantage</span>
+                        <span class="word-pill">Gerrymandering</span>
+                        <span class="word-pill">Power of the Purse</span>
+                        <span class="word-pill">Filibuster</span>
+                        <span class="word-pill">Cloture</span>
+                        <span class="word-pill">Seniority System</span>
+                        <span class="word-pill">Logrolling</span>
+                        <span class="word-pill">Pork Barrel Legislation</span>
+                    </div>
+
+                    <div class="vocab-item">
+                        <p class="first-p">1. The strategic drawing of district lines to favor a specific political party and create "safe seats" is known as <input type="text" class="cloze-input" id="cloze_1" placeholder="Type answer...">.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">2. A <input type="text" class="cloze-input" id="cloze_2" placeholder="Type answer..."> is a tactic used in the Senate to delay a vote by extending debate, often requiring a supermajority to end.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">3. The constitutional authority of Congress to tax and spend, effectively controlling the funding of the executive branch, is called the <input type="text" class="cloze-input" id="cloze_3" placeholder="Type answer...">.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">4. The practice of <input type="text" class="cloze-input" id="cloze_4" placeholder="Type answer..."> involves legislators trading votes on each other's bills to ensure mutual passage.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">5. A resident of a district or state represented by an elected official is referred to as a <input type="text" class="cloze-input" id="cloze_5" placeholder="Type answer...">.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">6. The division of the legislature into two distinct chambers, the House and the Senate, is defined as <input type="text" class="cloze-input" id="cloze_6" placeholder="Type answer...">.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">7. Funding for local projects that is often criticized as wasteful but is used to build political support in a specific district is called <input type="text" class="cloze-input" id="cloze_7" placeholder="Type answer...">.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">8. The <input type="text" class="cloze-input" id="cloze_8" placeholder="Type answer..."> refers to the structural benefits, such as name recognition and franking privileges, that help current officeholders win reelection.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">9. To end a filibuster, the Senate must pass a motion of <input type="text" class="cloze-input" id="cloze_9" placeholder="Type answer...">, which currently requires 60 votes.</p>
+                    </div>
+                    <div class="vocab-item">
+                        <p class="first-p">10. The <input type="text" class="cloze-input" id="cloze_10" placeholder="Type answer..."> historically assigned leadership roles, such as Committee Chair, to the member with the longest continuous service on a committee.</p>
+                    </div>
+
+                    <hr class="my-10 border-steel-nib opacity-30">
+
+                    <h3>Section II – Comprehension</h3>
+                    <p class="first-p text-sm mb-4"><strong>Directions:</strong> Select the best answer for each question.</p>
+                    
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q1" class="font-bold mb-2">1. Which of the following best describes the "Great Compromise" regarding the structure of Congress?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc1" value="A"> A. It established a single chamber based on population.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc1" value="B"> B. It created a bicameral legislature with one house based on population and one on equal state representation.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc1" value="C"> C. It gave the President the power to appoint Senators.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc1" value="D"> D. It established the Supreme Court as the final arbiter of legislative disputes.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q2" class="font-bold mb-2">2. Why did the Framers envision the Senate as a "cooling saucer"?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc2" value="A"> A. Senators are older and therefore have less energy for debate.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc2" value="B"> B. The Senate has shorter terms, making it more responsive to the people.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc2" value="C"> C. The Senate’s longer terms and staggered elections insulate it from immediate shifts in public opinion.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc2" value="D"> D. The Senate has strict rules that limit debate time, forcing quick decisions.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q3" class="font-bold mb-2">3. What is the primary function of a Conference Committee?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc3" value="A"> A. To override a presidential veto.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc3" value="B"> B. To investigate executive branch corruption.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc3" value="C"> C. To reconcile differences between House and Senate versions of a bill.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc3" value="D"> D. To determine the rules of debate for the House floor.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q4" class="font-bold mb-2">4. How does the "Incumbency Advantage" impact congressional elections?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc4" value="A"> A. It makes it very difficult for current members to win reelection.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc4" value="B"> B. It ensures that Congress creates new laws every session.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc4" value="C"> C. It leads to high reelection rates due to name recognition and casework.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc4" value="D"> D. It prevents political parties from raising money.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q5" class="font-bold mb-2">5. Which model of representation suggests that a legislator should vote according to the specific wishes of their constituents, regardless of their own personal views?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc5" value="A"> A. The Trustee Model</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc5" value="B"> B. The Delegate Model</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc5" value="C"> C. The Politico Model</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc5" value="D"> D. The Executive Model</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q6" class="font-bold mb-2">6. What is the practical effect of the threat of a filibuster in the modern Senate?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc6" value="A"> A. It allows the minority party to pass laws without the majority.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc6" value="B"> B. It effectively raises the threshold to pass major legislation from 51 votes to 60 votes.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc6" value="C"> C. It forces the President to sign executive orders.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc6" value="D"> D. It allows the House of Representatives to override the Senate.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q7" class="font-bold mb-2">7. How does Congress use the "Power of the Purse" as an oversight tool?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc7" value="A"> A. By declaring laws unconstitutional.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc7" value="B"> B. By refusing to fund specific executive agencies or military operations.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc7" value="C"> C. By firing Cabinet members directly.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc7" value="D"> D. By redrawing the President's electoral map.</label>
+                    </div>
+                    <div class="mb-6 bg-black/20 p-5 rounded">
+                        <p id="assess_mc_q8" class="font-bold mb-2">8. What creates the "safe seat" phenomenon in the House of Representatives?</p>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc8" value="A"> A. The natural geographic distribution of voters.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc8" value="B"> B. The use of Gerrymandering to draw districts that heavily favor one party.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc8" value="C"> C. The Constitutional requirement for term limits.</label>
+                        <label class="block mb-2 cursor-pointer"><input type="radio" name="assess_mc8" value="D"> D. The ban on political advertising.</label>
+                    </div>
+
+                    <hr class="my-10 border-steel-nib opacity-30">
+
+                    <h3>Section III – Guided Analysis</h3>
+                    <p class="first-p mb-2"><strong>1.</strong> Explain how the differing term lengths of the House (2 years) and the Senate (6 years) influence the legislative behavior of their respective members.</p>
+                    <textarea class="textarea-dark mb-6" id="pq_1" placeholder="Type your answer here..."></textarea>
+
+                    <p class="first-p mb-2"><strong>2.</strong> Describe the role of committees in the legislative process. Why did Woodrow Wilson describe committees as "Congress at work"?</p>
+                    <textarea class="textarea-dark mb-6" id="pq_2" placeholder="Type your answer here..."></textarea>
+
+                    <p class="first-p mb-2"><strong>3.</strong> Analyze the tension between "pork barrel legislation" and "fiscal responsibility." How does pork barrel spending serve a strategic purpose in building coalitions?</p>
+                    <textarea class="textarea-dark mb-6" id="pq_3" placeholder="Type your answer here..."></textarea>
+
+                    <p class="first-p mb-2"><strong>4.</strong> In what ways does the confirmation power (Advice and Consent) allowing the Senate to shape the long-term ideology of the federal government?</p>
+                    <textarea class="textarea-dark mb-6" id="pq_4" placeholder="Type your answer here..."></textarea>
+
+                    <hr class="my-10 border-steel-nib opacity-30">
+
+                    <h3>Section IV – Visual Analysis</h3>
+                    
+                    <div class="visual-wrapper">
+                        <div class="grid grid-cols-2 gap-4">
+                            <img class="visual-img" src="assets/Assessment_1.png" alt="1812 Gerry-mander Cartoon">
+                            <img class="visual-img" src="assets/Assessment_2.png" alt="Modern Gerrymandered District">
+                        </div>
+                        <p class="caption-text first-p"><strong>Visual Concept 1: The Gerrymandering Salamander vs. Computer Precision</strong></p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> Compare the shapes of the two districts. How does the modern use of computer technology make the practice of gerrymandering more effective and precise than it was in 1812?</p>
+                            <textarea class="textarea-dark" id="va_5" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <div class="visual-wrapper">
+                        <img class="visual-img" src="assets/Assessment_3.png" alt="Incumbency Reelection Rate Chart">
+                        <p class="caption-text first-p"><strong>Visual Concept 2: The Incumbency Reelection Rate Chart</strong></p>
+                        <div class="question-box">
+                            <p class="first-p"><strong>Analysis Question:</strong> Based on the data in the chart, how does the high reelection rate of incumbents challenge the concept of democratic accountability? If 90% of members are safe, how can voters effectively change the direction of government?</p>
+                            <textarea class="textarea-dark" id="va_6" placeholder="Type your answer here..."></textarea>
+                        </div>
+                    </div>
+
+                    <hr class="my-10 border-steel-nib opacity-30">
+
+                    <h3>Section V – Primary Source (CER)</h3>
+                    <p class="first-p text-sm text-steel-nib uppercase mb-2">Source: Federalist No. 51 (James Madison, 1788)</p>
+                    <blockquote class="border-l-4 border-gold pl-4 py-2 italic bg-black/30 mb-4 rounded">
+                        "In republican government, the legislative authority necessarily predominates. The remedy for this inconveniency is to divide the legislature into different branches; and to render them, by different modes of election and different principles of action, as little connected with each other as the nature of their common functions and their common dependence on the society will admit."
+                    </blockquote>
+                    <p class="first-p mb-2"><strong>Prompt: Did the Framers intend for Congress to be efficient?</strong> Using the excerpt above and your knowledge of Chapter 4, write a Claim-Evidence-Reasoning (CER) paragraph answering the prompt directly (Yes or No), quoting specific phrases from the excerpt as evidence, and reasoning how this division creates a necessary safety feature.</p>
+                    <textarea class="textarea-dark mb-6" id="pq_5" placeholder="Claim:\n\nEvidence:\n\nReasoning:"></textarea>
+
+                    <hr class="my-10 border-steel-nib opacity-30">
+
+                    <h3>Section VI – Modern Reflection</h3>
+                    <p class="first-p mb-2">The chapter discusses the <strong>Filibuster</strong> as a tool that protects minority rights but causes legislative gridlock. In recent years, there have been calls to abolish the filibuster to allow the majority party to pass laws more easily.</p>
+                    <ul class="first-p mb-4">
+                        <li>Reflecting on the "Logic of Internal Restraints," do you believe the filibuster is necessary to prevent the "tyranny of the majority," or is it an outdated obstruction that prevents the government from solving modern problems?</li>
+                        <li>Identify one modern issue (e.g., climate change, healthcare, immigration) and explain how abolishing or keeping the filibuster would impact legislation regarding that issue.</li>
+                    </ul>
+                    <textarea class="textarea-dark mb-6" id="pq_6" placeholder="Type your answer here..."></textarea>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-6')">&larr; Previous</button>
+                        <button class="action-btn" style="background:var(--color-gold); color:var(--color-navy-deep);" onclick="finishChapter()">Finished &check;</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>
+
+<script>
+    /* Background Management */
+    const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+    let bgIndex = 0;
+    
+    function rotateBackground() {
+        if (bgImages.length === 0) return;
+        const bgEl = document.getElementById('bg-slideshow');
+        if (!bgEl) return;
+        bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+        bgIndex = (bgIndex + 1) % bgImages.length;
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+        rotateBackground();
+        setInterval(rotateBackground, 10000); 
+    });
+
+    /* Navigation */
+    function switchTab(id) {
+        document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+        document.getElementById(id).classList.add('active-section');
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+        document.getElementById('nav-' + id).classList.add('active-nav');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* Finishing Chapter & JSON Export */
+    function finishChapter() {
+        const dateField = document.getElementById('completion-date');
+        const now = new Date().toLocaleDateString();
+        if(dateField) dateField.value = now;
+
+        const studentName = document.getElementById('student-name').value || "Unknown_Student";
+        const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+
+        const assignmentData = {
+            assignmentTitle: "Interactive Chapter 4 - Congress",
+            studentInfo: { name: studentName, period: studentPeriod, dateCompleted: now },
+            responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {}, clozeActivity: {} }
+        };
+
+        // Gather Visual Analysis Answers (Inline + Assessment)
+        for(let i=1; i<=30; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Checkpoint Answers
+        for(let i=1; i<=40; i++) {
+            let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+            if(inputs.length > 0) {
+                let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Assessment MC Answers
+        for(let i=1; i<=15; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            let qEl = document.getElementById('assess_mc_q' + i);
+            if(qEl) {
+                let qText = qEl.innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Perspective Questions
+        for(let i=1; i<=15; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Vocabulary Activity Answers 
+        document.querySelectorAll('.cloze-input').forEach((input, index) => {
+            assignmentData.responses.clozeActivity[`Blank_${index + 1}`] = input.value.trim();
+        });
+
+        const dataStr = JSON.stringify(assignmentData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        a.download = `Chapter_Export_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        alert('Upload JSON file to Canvas');
+        switchTab('sec-start');
+    }
+
+    /* Save, Load & Reset Logic */
+    function exportProgress() {
+        const studentName = document.getElementById('student-name').value || "";
+        const studentPeriod = document.getElementById('student-period').value || "";
+
+        if (!studentName.trim() || !studentPeriod.trim()) {
+            alert("Please enter your name and select a period on the Start Page before saving your progress.");
+            switchTab('sec-start');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const progressData = {
+            studentName: studentName,
+            studentPeriod: studentPeriod,
+            visualAnalysis: {},
+            checkpoints: {},
+            assess_mc: {},
+            perspectiveQuestions: {},
+            clozeActivity: {}
+        };
+
+        // Gather VAs
+        for(let i=1; i<=30; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) progressData.visualAnalysis['va_' + i] = el.value;
+        }
+        // Gather Checkpoints
+        for(let i=1; i<=40; i++) {
+            let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+            if(checked) progressData.checkpoints['cp' + i] = checked.value;
+        }
+        // Gather Assessment MC
+        for(let i=1; i<=15; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            if(checked) progressData.assess_mc['assess_mc' + i] = checked.value;
+        }
+        // Gather Perspective Questions
+        for(let i=1; i<=15; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) progressData.perspectiveQuestions['pq_' + i] = el.value;
+        }
+        // Gather Vocabulary Activity
+        let clozeInputs = document.querySelectorAll('.cloze-input');
+        clozeInputs.forEach((input, index) => {
+            progressData.clozeActivity['cloze_' + index] = input.value;
+        });
+
+        const dataStr = JSON.stringify(progressData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName ? studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase() : 'student';
+        a.download = `Chapter_SaveFile_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function loadProgress(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                
+                // Burn Name and Period
+                const nameEl = document.getElementById('student-name');
+                const periodEl = document.getElementById('student-period');
+                
+                if (data.studentName) {
+                    nameEl.value = data.studentName;
+                    nameEl.setAttribute('readonly', 'true');
+                    nameEl.style.opacity = '0.7';
+                    nameEl.style.cursor = 'not-allowed';
+                }
+                if (data.studentPeriod) {
+                    periodEl.value = data.studentPeriod;
+                    periodEl.setAttribute('disabled', 'true');
+                    periodEl.style.opacity = '0.7';
+                    periodEl.style.cursor = 'not-allowed';
+                }
+
+                // Restore Textareas
+                if(data.visualAnalysis) {
+                    for (const [key, value] of Object.entries(data.visualAnalysis)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+                if(data.perspectiveQuestions) {
+                    for (const [key, value] of Object.entries(data.perspectiveQuestions)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+
+                // Restore Radio Buttons
+                if(data.checkpoints) {
+                    for (const [key, value] of Object.entries(data.checkpoints)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+                if(data.assess_mc) {
+                    for (const [key, value] of Object.entries(data.assess_mc)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+
+                // Restore Vocab Inputs
+                if(data.clozeActivity) {
+                    let clozeInputs = document.querySelectorAll('.cloze-input');
+                    for (const [key, value] of Object.entries(data.clozeActivity)) {
+                        let idx = parseInt(key.split('_')[1]);
+                        if (clozeInputs[idx]) clozeInputs[idx].value = value;
+                    }
+                }
+
+                // Advance checkpoint carousels to their furthest answered state
+                document.querySelectorAll('.checkpoint-block').forEach(block => {
+                    const questions = block.querySelectorAll('.checkpoint-q');
+                    let lastAnswered = 0;
+                    questions.forEach((q, idx) => {
+                        if (q.querySelector('input[type="radio"]:checked')) {
+                            lastAnswered = idx;
+                        }
+                    });
+                    block.setAttribute('data-current', lastAnswered);
+                });
+
+                initCheckpoints();
+                event.target.value = ''; // Reset file input
+                alert('Progress restored successfully!');
+
+            } catch (err) {
+                alert('Error loading progress file. Please make sure it is a valid JSON save file.');
+                console.error(err);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    function resetProgress() {
+        if(confirm('Are you sure you want to reset all progress?')) {
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('.cloze-input, .textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+            
+            const nameEl = document.getElementById('student-name');
+            const periodEl = document.getElementById('student-period');
+            nameEl.removeAttribute('readonly'); nameEl.style.opacity = '1'; nameEl.style.cursor = 'text';
+            periodEl.removeAttribute('disabled'); periodEl.style.opacity = '1'; periodEl.style.cursor = 'pointer';
+
+            document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+            initCheckpoints();
+            switchTab('sec-start');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    /* Checkpoint Management */
+    const TOTAL_CHECKPOINT_BLOCKS = 14; 
+
+    function initCheckpoints() {
+        for(let i=1; i<=TOTAL_CHECKPOINT_BLOCKS; i++) { updateCpUI(`cp-block-${i}`); }
+        checkSectionUnlock();
+    }
+
+    function updateCpUI(blockId) {
+        const block = document.getElementById(blockId);
+        if(!block) return;
+        const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        const indicator = block.querySelector('.cp-indicator');
+        const prevBtn = block.querySelector('.cp-prev-btn');
+        const nextBtn = block.querySelector('.cp-next-btn');
+
+        questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+        if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+        if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+        if(nextBtn) {
+            const currentQ = questions[currentIndex];
+            const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+            if (currentIndex === questions.length - 1) {
+                if (isAnswered) {
+                    nextBtn.innerText = "Checkpoint Completed ✓";
+                    nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                    nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                } else {
+                    nextBtn.innerText = "Finish Checkpoint";
+                    nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                }
+            } else {
+                nextBtn.innerText = "Next Question \u2192";
+                nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; } 
+                else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+            }
+        }
+        checkSectionUnlock();
+    }
+
+    function navigateCp(blockId, dir) {
+        const block = document.getElementById(blockId);
+        let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        currentIndex += dir;
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+        block.setAttribute('data-current', currentIndex);
+        updateCpUI(blockId);
+    }
+
+    function handleRadioChange(blockId) { updateCpUI(blockId); }
+    
+    function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+    
+    function setNavButtonState(btnId, enabled, navId) {
+        const btn = document.getElementById(btnId);
+        const navBtn = document.getElementById(navId);
+        
+        if (btn) {
+            if (enabled) {
+                btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                btn.innerHTML = 'Next Section &rarr;'; btn.style.borderColor = 'var(--color-gold)';
+            } else {
+                btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+                btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+            }
+        }
+        
+        if (navBtn) {
+            if (enabled) {
+                navBtn.removeAttribute('disabled'); navBtn.style.opacity = '1'; navBtn.style.cursor = 'pointer';
+                navBtn.innerHTML = navBtn.innerHTML.replace('🔒 ', '');
+            } else {
+                navBtn.setAttribute('disabled', 'true'); navBtn.style.opacity = '0.5'; navBtn.style.cursor = 'not-allowed';
+                if (!navBtn.innerHTML.includes('🔒')) {
+                    navBtn.innerHTML = '🔒 ' + navBtn.innerHTML;
+                }
+            }
+        }
+    }
+
+    function checkSectionUnlock() {
+        // Section 2 Unlocks Section 3 (Checkpoints 1, 2, 3)
+        setNavButtonState('btn-next-sec-2', isAnswered('cp1') && isAnswered('cp2') && isAnswered('cp3'), 'nav-sec-3');
+        
+        // Section 3 Unlocks Section 4 (Checkpoints 4, 5, 6)
+        setNavButtonState('btn-next-sec-3', isAnswered('cp4') && isAnswered('cp5') && isAnswered('cp6'), 'nav-sec-4');
+        
+        // Section 4 Unlocks Section 5 (Checkpoints 7, 8, 9, 10)
+        setNavButtonState('btn-next-sec-4', isAnswered('cp7') && isAnswered('cp8') && isAnswered('cp9') && isAnswered('cp10'), 'nav-sec-5');
+        
+        // Section 5 Unlocks Section 6 (Checkpoints 11, 12, 13)
+        setNavButtonState('btn-next-sec-5', isAnswered('cp11') && isAnswered('cp12') && isAnswered('cp13'), 'nav-sec-6');
+
+        // Section 6 Unlocks Assessment (Checkpoint 14)
+        setNavButtonState('btn-next-sec-6', isAnswered('cp14'), 'nav-sec-assessment');
+    }
+
+    // Initialize Checkpoints on load
+    document.addEventListener('DOMContentLoaded', initCheckpoints);
+</script>
+
+</body>
+</html>
