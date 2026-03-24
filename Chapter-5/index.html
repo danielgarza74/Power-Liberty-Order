@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5 - The Presidency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #3A0F14; /* Constitutional Crimson */
+            --color-cream: #F5EBDD;    /* Archival Linen */
+            --color-navy: #3F5A4B;     /* Executive Laurel */
+            --color-steel-nib: #8A8F95; /* Judicial Stone */
+            --color-gold: #D4A017;     /* Seal Gold */
+            --color-gold-light: #F9E596;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background-color: var(--color-navy-deep); color: var(--color-cream); line-height: 1.8; font-size: 1.15rem; }
+        
+        /* Background Effects */
+        #bg-slideshow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out; }
+        body::after { content: ''; position: fixed; inset: 0; background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%); z-index: 1; pointer-events: none; }
+        
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+        
+        /* Left Navigation Panel */
+        .side-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column; padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem; }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { background: transparent; border: 1px solid transparent; color: var(--color-cream); text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer; transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+        
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { background: rgba(43, 33, 24, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; }
+        
+        @media (max-width: 1024px) { 
+            .side-nav { display: none; } 
+            .main-content { margin-left: 0; } 
+            .content-wrapper { padding: 30px 20px; } 
+            .content-block { padding: 2rem; } 
+        }
+        
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        
+        /* UI Elements */
+        .id-panel { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem; }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+        .textarea-dark { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px; font-family: var(--font-body); font-size: 1.1rem; resize: vertical; }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+        
+        /* Spotlights */
+        .spotlight-wrapper { width: 35%; max-width: 300px; float: right; margin: 10px 0 20px 30px; transition: transform 0.3s ease; position: relative; z-index: 10; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transform-origin: center right; }
+        .spotlight-wrapper.left { float: left; margin: 10px 30px 20px 0; transform-origin: center left; }
+        .spotlight-wrapper:hover { transform: scale(1.5); z-index: 50; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: var(--color-gold); }
+        .spotlight-wrapper img { width: 100%; border: 2px solid var(--color-gold-light); border-radius: 4px; display: block; }
+        .spotlight-caption { font-size: 0.9rem; text-align: center; margin-top: 10px; font-style: italic; color: #ddd; line-height: 1.4; }
+        
+        /* Full Sized Visuals */
+        .visual-wrapper { width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+        
+        @media (max-width: 768px) { 
+            .spotlight-wrapper, .spotlight-wrapper.left { float: none; width: 100%; max-width: 100%; margin: 20px 0; } 
+            .spotlight-wrapper:hover { transform: none; margin: 0; padding: 0; } 
+            .id-panel { grid-template-columns: 1fr; }
+        }
+        
+        /* Compact Checkpoint System */
+        .checkpoint-block { margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4); border-radius: 8px; background: rgba(0,0,0,0.2); clear: both; }
+        .checkpoint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 768px) { .checkpoint-grid { grid-template-columns: 1fr; } }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; cursor: pointer; padding: 8px 12px; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid transparent; transition: all 0.2s; font-size: 0.9rem; line-height: 1.3; }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(212,160,23,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+        
+        /* Vocab & Cloze Specific */
+        .word-bank { display: flex; flex-wrap: wrap; gap: 12px; padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--color-steel-nib); border-radius: 8px; margin-bottom: 2rem; }
+        .word-pill { background: rgba(63, 90, 75, 0.8); border: 1px solid var(--color-gold); color: var(--color-cream); padding: 8px 18px; border-radius: 25px; font-size: 1rem; font-weight: bold; }
+        .cloze-input { background: rgba(0,0,0,0.5); border: none; border-bottom: 2px solid var(--color-gold); color: var(--color-gold-light); padding: 4px 8px; font-size: 1.15rem; width: 100%; max-width: 300px; margin-top: 10px; font-family: var(--font-body); border-radius: 2px; transition: all 0.2s; }
+        .cloze-input:focus { outline: none; border-bottom-color: white; background: rgba(0,0,0,0.8); }
+        .vocab-item { margin-bottom: 1.5rem; }
+        
+        /* Buttons & Navigation */
+        .action-btn { padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold; cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5); color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%; }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3); margin-top: 3rem; gap: 20px; clear: both; }
+        .bottom-nav .action-btn { width: auto; }
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="bg-slideshow"></div>
+
+    <div class="app-container">
+        
+        <!-- Left Navigation Panel -->
+        <nav class="side-nav">
+            <div class="nav-title">Table of Contents</div>
+            <div class="nav-links">
+                <button id="nav-sec-1" class="nav-btn active-nav" onclick="switchTab('sec-1')">Start Page</button>
+                <button id="nav-sec-2" class="nav-btn" onclick="switchTab('sec-2')" disabled>I. The Many Hats of the President</button>
+                <button id="nav-sec-3" class="nav-btn" onclick="switchTab('sec-3')" disabled>II. Executive Authority</button>
+                <button id="nav-sec-4" class="nav-btn" onclick="switchTab('sec-4')" disabled>III. Electoral Legitimacy</button>
+                <button id="nav-sec-5" class="nav-btn" onclick="switchTab('sec-5')" disabled>IV. Institutional Constraints</button>
+                <button id="nav-sec-6" class="nav-btn" onclick="switchTab('sec-6')" disabled>V. Conclusion</button>
+                <button id="nav-sec-7" class="nav-btn" onclick="switchTab('sec-7')" disabled>VI. Assessment</button>
+            </div>
+            <div class="nav-actions">
+                <button class="action-btn" style="font-size: 0.8rem; padding: 8px;" onclick="exportProgress()">Save Progress</button>
+                <input type="file" id="upload-progress-btn" style="display: none;" accept=".json" onchange="loadProgress(event)">
+                <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="document.getElementById('upload-progress-btn').click()">Upload Progress</button>
+                <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="resetProgress()">Reset Progress</button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- SECTION 1: START PAGE & INTRODUCTION -->
+            <section id="sec-1" class="chapter-section active-section">
+                <img src="assets/Hero%20Banner%205.png" alt="Chapter 5 Hero Banner" class="hero-banner-flush">
+                
+                <div class="content-wrapper">
+                    <div class="id-panel">
+                        <div>
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label for="student-period">Class Period</label>
+                            <select id="student-period">
+                                <option value="" disabled selected>Select...</option>
+                                <option value="1">Period 1</option>
+                                <option value="2">Period 2</option>
+                                <option value="3">Period 3</option>
+                                <option value="4">Period 4</option>
+                                <option value="5">Period 5</option>
+                                <option value="6">Period 6</option>
+                                <option value="7">Period 7</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="completion-date">Date</label>
+                            <input type="text" id="completion-date" readonly placeholder="Auto-fills on finish">
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="first-p">Objectives</h3>
+                        <ul>
+                            <li><strong>Analyze</strong> the multifaceted roles of the president, distinguishing between constitutional duties (like Commander-in-Chief) and political expectations (like Party Leader).</li>
+                            <li><strong>Evaluate</strong> the strategic use of unilateral executive tools, including executive orders, vetoes, and signing statements, in the context of the separation of powers.</li>
+                            <li><strong>Examine</strong> the structure and historical evolution of the Electoral College and its profound impact on presidential legitimacy and campaign strategy.</li>
+                            <li><strong>Identify</strong> the specific institutional checks available to Congress and the Courts—from the "power of the purse" to impeachment—that constrain executive overreach.</li>
+                        </ul>
+
+                        <h3>Key Terms</h3>
+                        <ul>
+                            <li>Executive Order</li>
+                            <li>Veto</li>
+                            <li>Electoral College</li>
+                            <li>Bully Pulpit</li>
+                            <li>Cabinet</li>
+                            <li>Executive Privilege</li>
+                            <li>Signing Statement</li>
+                            <li>Commander-in-Chief</li>
+                        </ul>
+
+                        <h3>Introduction</h3>
+                        <p class="first-p">When the delegates to the Constitutional Convention gathered in Philadelphia in 1787, Article II of the proposed Constitution was a source of profound, almost paralyzing anxiety. Having just fought a bloody revolution to escape the tyranny of King George III, the Framers were deeply suspicious of centralized executive power. They viewed a strong single executive as a potential "fetus of monarchy," a gateway back to the oppression they had just escaped. Yet, the failures of the Articles of Confederation—which lacked a separate executive branch entirely—had taught them a hard lesson: a government without a head is paralyzed. Without an executive to enforce laws, collect revenue, or coordinate defense, the young nation was vulnerable to internal rebellion and foreign invasion.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_1.png" class="visual-img" alt="Visual 1">
+                            <p class="caption-text">The presidency was conceived as a solution to the administrative paralysis of the Articles of Confederation, designed to provide a single, energetic leader capable of swift action while remaining anchored by constitutional law.</p>
+                        </div>
+
+                        <p class="first-p">The challenge, therefore, was to thread a constitutional needle. They needed to create an office with enough "energy," as Alexander Hamilton famously argued in <em>Federalist No. 70</em>, to lead the nation during crises, but with enough safety mechanisms to prevent the rise of an American despot. They needed a leader who could act with "decision, activity, secrecy, and dispatch," yet remain strictly bound by the rule of law.</p>
+                        <p>The result was a presidency defined by a unique tension between vague constitutional authority and immense political expectation. The Constitution itself is surprisingly brief regarding the president. While Article I provides an exhaustive, specific list of congressional powers, Article II offers broad, often ambiguous grants of authority, vesting the "executive Power" in a single individual. It commands the president to ensure laws are "faithfully executed" and names them commander of the military, yet it leaves the mechanics of these powers largely undefined. This ambiguity was not an oversight; it was a compromise that has allowed the office to evolve significantly over two centuries.</p>
+                        <p>What began as a modest role intended primarily for administration has grown into the "modern presidency"—a central position of global leadership that would likely be unrecognizable to George Washington or Thomas Jefferson. Today, the public looks to the White House to solve economic crises, respond to natural disasters, manage global conflicts, and even comfort the nation during cultural tragedies. This creates a "paradox of expectations," where the president is held responsible for every aspect of national life, yet often lacks the explicit constitutional authority to act alone. To bridge this gap between limited legal power and unlimited public demand, presidents have developed a strategic arsenal of tools—from the veto to the executive order—to negotiate with Congress and the courts.</p>
+                        <p>This chapter explores that evolution and the strategic operation of the executive branch today. We will examine how the president manages the impossible balancing act of conflicting roles, serving simultaneously as the head of government and the head of state. We will investigate the tools of unilateral action that allow presidents to bypass a gridlocked Congress. We will analyze the source of the president's legitimacy through the lens of the Electoral College and the "bully pulpit." Finally, we will confront the hard boundaries of presidential power, looking at how the Supreme Court and Congress have used constitutional checks to rein in executives who overstep their legal bounds. Throughout this inquiry, the essential question remains: In a system designed to limit power, how does the president actually lead?</p>
+
+                        <!-- CHECKPOINT BLOCK 1 -->
+                        <div class="checkpoint-block" id="cp-block-1" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 1</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">1. Why were the Framers of the Constitution initially hesitant to create a strong executive branch?</p>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A. They believed the Articles of Confederation were working perfectly.</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B. They feared a single executive would become a "fetus of monarchy."</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C. They wanted the state governors to handle all national defense.</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D. They believed only the Supreme Court should enforce federal laws.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">2. According to the text, what is the "paradox of expectations" regarding the modern presidency?</p>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-1')"> A. Presidents have too much constitutional power but choose not to use it.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-1')"> B. The public expects the president to be a monarch, but the Constitution forbids it.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-1')"> C. The president is held responsible for national life but often lacks the explicit legal authority to act alone.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-1')"> D. Voters expect the president to be a "Chief of State" but never a "Party Leader."</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-1', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-1', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" style="visibility: hidden;">Previous</button>
+                            <button id="btn-next-sec-2" class="action-btn" onclick="switchTab('sec-2')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: THE MANY HATS -->
+            <section id="sec-2" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">The Many Hats of the President</h2>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_2.png" class="visual-img" alt="Visual 2">
+                            <p class="caption-text">The American presidency fuses ceremonial duties with administrative and political powers, requiring a single individual to act as both the symbolic head of the nation and the active head of its government.</p>
+                        </div>
+                        
+                        <p class="first-p">When a citizen looks at the White House, they see a single building occupied by a single individual. However, in terms of constitutional function and political reality, the American presidency is a crowded office. The President of the United States is required to perform a series of distinct, often conflicting roles that, in many other democracies, are separated into different offices. In the United Kingdom, for example, the monarch serves as the Head of State, a ceremonial symbol of national unity who remains above the fray of partisan politics. The Prime Minister, conversely, is the Head of Government, a purely political figure who runs the administration and battles in Parliament.</p>
+                        <p>The American framers, however, fused these two functions into one office. The result is that the president must simultaneously be the "majestic" symbol of the American people—lighting the national Christmas tree, comforting the grieving after a tragedy, and welcoming foreign dignitaries—while also acting as the gritty, partisan "prime minister" responsible for passing controversial budgets and enforcing polarizing laws. This fusion creates a unique burden: the president must try to unify the nation while simultaneously leading only one political party. To understand the American presidency, one must deconstruct these overlapping "hats," or institutional roles, and examine how history has forced presidents to wear them all at once.</p>
+
+                        <h3>Chief Executive: The Administrator of the State</h3>
+                        <p class="first-p">The most foundational role of the president is that of Chief Executive. This authority is derived from the "Take Care Clause" of Article II, which mandates that the president "take Care that the Laws be faithfully executed." While this sounds like a simple administrative instruction, in practice, it makes the president the CEO of the largest organization in human history: the federal bureaucracy. When George Washington took office in 1789, the executive branch consisted of a handful of clerks and a few distinct departments. Today, the Chief Executive oversees a workforce of nearly three million civilians and a budget of trillions of dollars.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_3.png" class="visual-img" alt="Visual 3">
+                            <p class="caption-text">As Chief Executive, the president manages a vast federal bureaucracy through the Cabinet, though department heads often face conflicting loyalties between the White House and the Congress that oversees their budgets.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: Why might a Cabinet secretary feel a "dual loyalty" to both the President and Congress?</label>
+                                <textarea id="va_3" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">To manage this sprawling apparatus, the president relies on the <strong>Cabinet</strong>, an advisory body composed of the heads of the 15 executive departments, such as the Department of State, the Department of Defense, and the Department of the Treasury. The Cabinet represents the first major test of a president’s administrative skill. Cabinet secretaries are appointed by the president, but they must be confirmed by the Senate. This creates a dual loyalty; while secretaries serve at the pleasure of the president, they are also beholden to the Congress that funds their departments and the specific laws that govern their agencies.</p>
+                        <p>A skilled Chief Executive, like Washington, assembles a "team of rivals"—diverse voices who can debate policy before the president makes a final decision. Washington famously balanced the opposing views of Thomas Jefferson (State) and Alexander Hamilton (Treasury). Conversely, a president who lacks administrative focus may find that the bureaucracy runs itself, often ignoring the White House’s directives. The challenge of the Chief Executive is to ensure that the massive machinery of government actually reflects the policy goals of the person elected to run it.</p>
+
+                        <!-- CHECKPOINT BLOCK 2 -->
+                        <div class="checkpoint-block" id="cp-block-2" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 2</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">3. What is the constitutional basis for the President’s role as Chief Executive?</p>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-2')"> A. The "Power of the Purse" in Article I.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-2')"> B. The "Advice and Consent" clause.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-2')"> C. The "Take Care Clause" of Article II.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-2')"> D. The "Necessary and Proper Clause."</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">4. Why do Cabinet secretaries often face a "dual loyalty"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-2')"> A. They are elected by the public but serve the president.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-2')"> B. They serve at the pleasure of the president but depend on Congress for funding and confirmation.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-2')"> C. They must be members of both the House and the Senate.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-2')"> D. They report to both the President of the United States and the Supreme Court.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-2', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-2', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Commander-in-Chief: Civilian Control of the Military</h3>
+                        <p class="first-p">Perhaps the most consequential "hat" is that of <strong>Commander-in-Chief</strong>. The Constitution explicitly places the nation's armed forces under the command of the president. This was a deliberate choice by the Framers to ensure "civilian control of the military." They feared that a military led by a general, independent of civilian oversight, could easily turn into a tyranny. By placing a civilian—elected by the people—in charge, the military becomes an instrument of democratic policy rather than a force unto itself.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_4.png" class="visual-img" alt="Visual 4">
+                            <p class="caption-text">The role of Commander-in-Chief ensures that the nation's military remains under the ultimate authority of an elected civilian official, preventing the rise of independent military power.</p>
+                        </div>
+
+                        <p class="first-p">This role requires the president to make life-and-death decisions, often with imperfect information. The weight of this responsibility was most vividly illustrated during the Korean War in 1951. General Douglas MacArthur, a legendary military hero, publicly disagreed with President Harry Truman’s strategy. MacArthur wanted to expand the war into China, potentially using nuclear weapons, while Truman wanted to keep the conflict limited to avoid World War III. When MacArthur continued to publicly criticize the president’s policy, Truman faced a crisis of authority.</p>
+                        <p>Despite MacArthur’s immense popularity and Truman’s low approval ratings, Truman fired the general. It was a politically unpopular move, but it affirmed a critical constitutional principle: the Commander-in-Chief, not the generals, decides the nation's strategy. The military advises, but the civilian president commands. This role has only grown in complexity as the definition of "war" has shifted from formal declarations by Congress to ongoing counter-terrorism operations, drone strikes, and cyber-warfare, all of which are directed from the Oval Office.</p>
+
+                        <!-- CHECKPOINT BLOCK 3 -->
+                        <div class="checkpoint-block" id="cp-block-3" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 3</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">5. What was the Framers' primary reason for naming the President as Commander-in-Chief?</p>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-3')"> A. To ensure the president has military experience before taking office.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-3')"> B. To allow the president to declare war without Congressional approval.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-3')"> C. To maintain civilian control over the military and prevent tyranny.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-3')"> D. To simplify the process of military recruitment and funding.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">6. The conflict between President Truman and General MacArthur illustrated that:</p>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-3')"> A. Generals have the final say in wartime strategy.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-3')"> B. The President must follow the advice of popular military leaders.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-3')"> C. The civilian Commander-in-Chief has ultimate authority over military personnel and strategy.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-3')"> D. Only Congress can fire a high-ranking general during a conflict.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-3', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-3', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Chief Diplomat: The Face of the Nation</h3>
+                        <p class="first-p">While Congress has significant power over domestic law, the president is the primary architect of American foreign policy, serving as the Chief Diplomat. The Constitution grants the president the power to make treaties (subject to Senate approval) and to receive ambassadors. This second power—receiving ambassadors—implies the power of "recognition." When the president accepts the credentials of a foreign diplomat, the United States effectively recognizes the legitimacy of that government.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_5.png" class="visual-img" alt="Visual 5">
+                            <p class="caption-text">While the president acts as the primary architect of foreign policy and has the power to recognize foreign governments, the Senate serves as a critical check by requiring a two-thirds majority for treaty ratification.</p>
+                        </div>
+
+                        <p class="first-p">This power allows presidents to alter the geopolitical landscape overnight. In 1948, President Truman recognized the new state of Israel just minutes after it declared independence, committing the United States to a long-term alliance in the Middle East without consulting Congress. Similarly, in 1972, President Richard Nixon traveled to Beijing to meet with Mao Zedong. For decades, the U.S. had refused to recognize the communist government of the People's Republic of China. Nixon’s trip—and his handshake with Mao—effectively ended that isolation, splitting the communist bloc and reshaping the Cold War.</p>
+                        <p>However, the role of Chief Diplomat is not absolute. The Senate’s power to ratify treaties acts as a severe check. The most tragic example of this limit occurred in 1919. President Woodrow Wilson spent months in Europe negotiating the Treaty of Versailles to end World War I, which included his dream of a League of Nations. He campaigned across the country to sell the treaty to the American people. Yet, the Senate, led by Wilson's political rivals, refused to ratify it. Wilson, the Chief Diplomat, had made a promise to the world that his own government refused to keep. This failure illustrates that while the president can negotiate on the world stage, they cannot bind the nation without legislative support.</p>
+
+                        <!-- CHECKPOINT BLOCK 4 -->
+                        <div class="checkpoint-block" id="cp-block-4" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 4</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">7. Which presidential action is considered an act of "recognition" of a foreign government?</p>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-4')"> A. Delivering the State of the Union address.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-4')"> B. Receiving a foreign diplomat’s credentials.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-4')"> C. Vetoing a bill related to foreign aid.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-4')"> D. Appointing a new Secretary of State.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">8. What happened when President Woodrow Wilson attempted to join the League of Nations?</p>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-4')"> A. The Supreme Court ruled the League of Nations was unconstitutional.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-4')"> B. The Senate refused to ratify the treaty, demonstrating a check on the Chief Diplomat.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-4')"> C. Wilson used an executive order to join the League without Senate approval.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-4')"> D. The public voted against the treaty in a national referendum.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-4', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-4', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Chief Legislator: The Agenda Setter</h3>
+                        <p class="first-p">The Constitution calls for the president to give Congress information on the "State of the Union" and recommend measures they judge "necessary and expedient." Over time, this modest requirement has evolved into the role of Chief Legislator. Modern presidents are expected to act as the primary drafters of public policy. Voters rarely choose a president based on how well they will manage the bureaucracy; they choose them based on what laws they promise to pass—whether it is healthcare reform, tax cuts, or infrastructure investment.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_6.png" class="visual-img" alt="Visual 6">
+                            <p class="caption-text">The president serves as the primary agenda setter for the nation, using a combination of personal persuasion, political leverage, and the threat of the veto to drive the legislative process.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: What tools can a president use to master the "art of persuasion" when dealing with a reluctant Congress?</label>
+                                <textarea id="va_6" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The gold standard for this role was set by Franklin D. Roosevelt in 1933. Taking office during the depths of the Great Depression, FDR did not wait for Congress to propose solutions. He sent a flurry of bills to Capitol Hill—banking reform, agricultural relief, public works programs—that became known as the "First Hundred Days." Congress, desperate for leadership, passed nearly everything he requested. This established the modern expectation that the president should drive the legislative agenda.</p>
+                        <p>To succeed as Chief Legislator, a president must master the art of persuasion. They must use the threat of the veto to shape bills and the allure of patronage (federal projects or support) to win votes. President Lyndon B. Johnson, a former Senate Majority Leader, was a master of this internal game. He would famously "give the treatment" to reluctant Senators—bullying, flattering, and horse-trading until he secured the votes for the Civil Rights Act of 1964. A president who cannot navigate the halls of Congress acts merely as a spectator to the lawmaking process.</p>
+
+                        <!-- CHECKPOINT BLOCK 5 -->
+                        <div class="checkpoint-block" id="cp-block-5" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 5</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">9. Which president set the "gold standard" for the Chief Legislator role during his "First Hundred Days"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-5')"> A. George Washington</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-5')"> B. Lyndon B. Johnson</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-5')"> C. Franklin D. Roosevelt</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-5')"> D. Richard Nixon</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">10. How does a president typically use the "threat of the veto" in the legislative process?</p>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-5')"> A. To prevent Congress from meeting for a new session.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-5')"> B. To force Congress to rewrite a bill to include the president’s preferences.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-5')"> C. To automatically turn a bill into an executive order.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-5')"> D. To dissolve a committee that is investigating the White House.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-5', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-5', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>The Partisan Dilemma: Party Leader vs. Chief of State</h3>
+                        <p class="first-p">Finally, the president serves as the unofficial Party Leader. They choose the chairperson of their national party committee, headline fundraising dinners, and campaign for members of Congress. Their success or failure often dictates the fate of their party in midterm elections. This role is strictly political; it is about winning and maintaining power.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_7.png" class="visual-img" alt="Visual 7">
+                            <p class="caption-text">The fusion of the symbolic Chief of State and the partisan Party Leader creates an inherent tension, as the president must attempt to unify the country while simultaneously fighting for a specific political agenda.</p>
+                        </div>
+
+                        <p class="first-p">This creates the fundamental tension of the office. As Chief of State, the president is the symbolic "parent" of the country, expected to represent all citizens regardless of their politics. We see this role when a president speaks at a funeral for victims of a national tragedy or awards the Medal of Honor. In those moments, they speak for "We the People." Yet, an hour later, that same president may stand at a podium to attack the opposition party as dangerous or incompetent.</p>
+                        <p>This toggling between unifier and fighter is exhausting and often confusing for the public. When a president attacks their political opponents, half the country feels alienated, making it harder for the president to then pivot back to the role of unifying Chief of State. In the modern era of hyper-partisanship, the role of Party Leader often overshadows the role of Chief of State, making it increasingly difficult for any president to claim they truly represent the entire nation.</p>
+
+                        <!-- CHECKPOINT BLOCK 6 -->
+                        <div class="checkpoint-block" id="cp-block-6" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 6</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">11. In the role of Party Leader, the president is primarily focused on:</p>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-6')"> A. Representing all citizens regardless of their political affiliation.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-6')"> B. Winning elections and maintaining the political power of their party.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-6')"> C. Managing the day-to-day operations of the Department of Justice.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-6')"> D. Overturning Supreme Court decisions that affect their base.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">12. Why is the fusion of "Party Leader" and "Chief of State" considered a dilemma?</p>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-6')"> A. The roles are identical and create a redundant workload.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-6')"> B. Attacking political rivals as Party Leader can undermine the president’s ability to unify the nation as Chief of State.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-6')"> C. The Constitution prohibits the president from being a member of a political party.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-6')"> D. It prevents the president from being able to act as Commander-in-Chief.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-6', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-6', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-1')">← Previous</button>
+                            <button id="btn-next-sec-3" class="action-btn" onclick="switchTab('sec-3')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: EXECUTIVE AUTHORITY -->
+            <section id="sec-3" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">Executive Authority: Orders, Vetoes, and Unilateral Action</h2>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_8.png" class="visual-img" alt="Visual 8">
+                            <p class="caption-text">When the traditional legislative process stalls, presidents often utilize unilateral tools—such as executive orders—to implement policy, though these actions lack the permanence of law.</p>
+                        </div>
+
+                        <p class="first-p">When a president cannot persuade Congress to act, or when a crisis demands an immediate response, they often turn to tools of unilateral action. These are powers that allow the executive branch to implement policy without the direct consent of the legislature. While these tools are essential for the operation of government, their use often sparks intense debate about the separation of powers and the potential for executive overreach. The modern presidency is defined by the strategic use of these tools to bypass legislative gridlock.</p>
+
+                        <h3>The Power of the Pen: Executive Orders</h3>
+                        <p class="first-p">The <strong>Executive Order</strong> is the most direct tool of unilateral power. It is a directive issued by the president to federal agencies that has the force of law. Constitutionally, executive orders are derived from the president's Article II power to "take Care that the Laws be faithfully executed." In theory, they are meant to be instructions on how to enforce existing laws—for example, telling the Department of the Interior how to manage a new national park. In practice, however, they are often used to create new policy when Congress is unable or unwilling to act.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_9.png" class="visual-img" alt="Visual 9">
+                            <p class="caption-text">Executive orders allow presidents to bypass legislative hurdles to implement significant social and military policies, yet they also possess the potential to infringe upon civil liberties during times of crisis.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: Compare the historical outcomes of Executive Order 9981 and Executive Order 9066.</label>
+                                <textarea id="va_9" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">History provides stark examples of the power and peril of executive orders. In 1948, President Harry Truman issued Executive Order 9981, which desegregated the U.S. military. At the time, Congress was dominated by Southern segregationists who would never have passed such legislation. Truman used his authority as Commander-in-Chief to bypass Congress and advance civil rights. Conversely, executive orders have been used to restrict civil liberties. In 1942, President Franklin D. Roosevelt issued Executive Order 9066, which authorized the internment of over 100,000 Japanese Americans during World War II. This order illustrated the terrifying scope of executive power during wartime, a move later upheld by the Supreme Court in <em>Korematsu v. United States</em> (1944) but condemned by history and formally apologized for decades later.</p>
+                        <p>Modern presidents from both parties rely heavily on executive orders because of legislative polarization. If Congress cannot pass an immigration bill or environmental regulations, the president may order the Department of Homeland Security or the EPA to alter their enforcement priorities. However, this power has a significant weakness: an executive order issued by one president can be immediately revoked by the next. This creates a "pendulum effect" in policy, where regulations on industry or social policy can swing wildly from one administration to the next, lacking the stability of permanent legislation passed by Congress.</p>
+
+                        <!-- CHECKPOINT BLOCK 7 -->
+                        <div class="checkpoint-block" id="cp-block-7" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 7</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">13. What is a major limitation of policies created through executive orders?</p>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-7')"> A. They require a two-thirds vote of the Senate to take effect.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-7')"> B. They can be immediately revoked by the next president.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-7')"> C. They only apply to state governments, not the federal government.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-7')"> D. They expire automatically after six months.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">14. President Truman’s Executive Order 9981 (desegregating the military) is an example of:</p>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-7')"> A. A president using executive authority to restrict civil liberties.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-7')"> B. A president bypassing a gridlocked Congress to implement a major policy change.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-7')"> C. A president following a direct mandate from the Supreme Court.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-7')"> D. An unconstitutional use of power that was later overturned.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-7', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-7', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>The Veto as a Weapon of Policy</h3>
+                        <p class="first-p">The <strong>Veto</strong> is the president's primary weapon in the legislative process. It allows the president to reject a bill passed by Congress, sending it back with objections. Congress can override a veto, but it requires a difficult two-thirds majority in both the House and Senate. Because overrides are rare—occurring in less than 5% of all vetoes throughout history—the mere threat of a veto gives the president immense leverage. By threatening to veto a bill while it is still in committee, the president can force Congress to rewrite the legislation to suit the administration's preferences.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_10.png" class="visual-img" alt="Visual 10">
+                            <p class="caption-text">The veto serves as the president's most powerful legislative weapon, with the mere threat of its use often being enough to force Congress to alter the content of proposed bills.</p>
+                        </div>
+
+                        <p class="first-p">The philosophy behind the veto has shifted dramatically over time. Early presidents, like George Washington and James Madison, believed the veto should only be used if a bill was strictly unconstitutional. They did not believe the president should veto a bill simply because they disagreed with the policy; that was a decision for the people's representatives in Congress. This changed forever in 1832 with Andrew Jackson. Jackson vetoed the re-charter of the Second Bank of the United States not just because he questioned its legality, but because he believed it was bad for the common man and favored the elite. In his veto message, Jackson asserted that the president, as the only official elected by the entire country, had a right to judge the merit of legislation. This precedent transformed the president from an administrator into a major player in the legislative process.</p>
+                        <p>There are two distinct types of vetoes. The <strong>Regular Veto</strong> is a formal rejection where the president returns the bill to Congress with a message explaining their objections. The <strong>Pocket Veto</strong> is a more passive, procedural tool. The Constitution states that if the president does not sign a bill within ten days, it becomes law—unless Congress adjourns during that ten-day period. If Congress adjourns and the president does nothing, the bill dies. This "pocket veto" cannot be overridden, making it a powerful strategic tool at the end of a legislative session when Congress is rushing to leave Washington.</p>
+
+                        <!-- CHECKPOINT BLOCK 8 -->
+                        <div class="checkpoint-block" id="cp-block-8" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 8</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">15. How did Andrew Jackson fundamentally change the use of the presidential veto?</p>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="A" onchange="handleRadioChange('cp-block-8')"> A. He was the first president to never use a veto.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="B" onchange="handleRadioChange('cp-block-8')"> B. He argued that the president could veto a bill based on policy disagreement, not just constitutionality.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="C" onchange="handleRadioChange('cp-block-8')"> C. He allowed the Supreme Court to decide whether a veto was valid.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="D" onchange="handleRadioChange('cp-block-8')"> D. He required Congress to get his permission before even drafting a bill.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">16. A "pocket veto" occurs when:</p>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="A" onchange="handleRadioChange('cp-block-8')"> A. The president signs a bill but refuses to let anyone see it.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="B" onchange="handleRadioChange('cp-block-8')"> B. Congress overrides a regular veto with a two-thirds vote.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="C" onchange="handleRadioChange('cp-block-8')"> C. The president does not sign a bill within ten days and Congress has adjourned.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="D" onchange="handleRadioChange('cp-block-8')"> D. The president issues an executive order that contradicts a newly passed law.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-8', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-8', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Interpretive Power: Signing Statements</h3>
+                        <p class="first-p">In recent decades, presidents have increasingly used the <strong>Signing Statement</strong> to expand their interpretive power. When signing a bill into law, a president may issue a written statement declaring that they believe a specific part of the law is unconstitutional and that they will not enforce that specific provision. This allows the president to technically sign a bill—avoiding a political fight or a veto override—while effectively nullifying the parts they dislike. It is a way of saying, "I am signing this law, but I will enforce it as I see fit."</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_11.png" class="visual-img" alt="Visual 11">
+                            <p class="caption-text">Signing statements allow presidents to offer their own interpretation of a law, sometimes declaring intent to ignore specific provisions they deem unconstitutional, effectively bypassing the formal veto process.</p>
+                        </div>
+
+                        <p class="first-p">This practice became highly controversial during the administration of George W. Bush. In 2005, Congress passed the Detainee Treatment Act, which prohibited the torture of prisoners. President Bush signed the bill but issued a signing statement asserting his right as Commander-in-Chief to bypass the ban if necessary for national security. Critics argue that signing statements violate the separation of powers, as they effectively give the president a "line-item veto"—the ability to strike out parts of a law—which the Supreme Court has previously ruled unconstitutional.</p>
+                        <p>The strategic logic of these unilateral tools—orders, vetoes, and signing statements—points to a broader trend in American politics: the expansion of the "administrative state." As society has become more complex, Congress has often written broad laws that leave the details to be filled in by executive agencies. This delegation of power gives the president vast discretion. Whether it is the Environmental Protection Agency setting air quality standards or the Department of Education managing student loans, the president directs the daily reality of American law. This creates a friction that the Framers might not have anticipated—a system where the execution of the law is often as consequential, and as political, as the writing of it.</p>
+
+                        <!-- CHECKPOINT BLOCK 9 -->
+                        <div class="checkpoint-block" id="cp-block-9" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 9</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">17. Why are signing statements controversial among critics of executive power?</p>
+                                <label class="checklist-item"><input type="radio" name="cp17" value="A" onchange="handleRadioChange('cp-block-9')"> A. They require the president to pay a fine to Congress.</label>
+                                <label class="checklist-item"><input type="radio" name="cp17" value="B" onchange="handleRadioChange('cp-block-9')"> B. They allow the president to effectively nullify parts of a law without a veto.</label>
+                                <label class="checklist-item"><input type="radio" name="cp17" value="C" onchange="handleRadioChange('cp-block-9')"> C. They prevent the president from ever running for re-election.</label>
+                                <label class="checklist-item"><input type="radio" name="cp17" value="D" onchange="handleRadioChange('cp-block-9')"> D. They force the Supreme Court to rewrite the Constitution.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">18. How do signing statements differ from a "line-item veto"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp18" value="A" onchange="handleRadioChange('cp-block-9')"> A. A line-item veto is constitutional, while a signing statement is not.</label>
+                                <label class="checklist-item"><input type="radio" name="cp18" value="B" onchange="handleRadioChange('cp-block-9')"> B. A signing statement is a written interpretation issued during signing, whereas a line-item veto would allow the president to strike parts of a bill before it becomes law.</label>
+                                <label class="checklist-item"><input type="radio" name="cp18" value="C" onchange="handleRadioChange('cp-block-9')"> C. Signing statements apply only to the military, while line-item vetoes apply only to taxes.</label>
+                                <label class="checklist-item"><input type="radio" name="cp18" value="D" onchange="handleRadioChange('cp-block-9')"> D. There is no difference; they are two names for the same power.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-9', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-9', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-2')">← Previous</button>
+                            <button id="btn-next-sec-4" class="action-btn" onclick="switchTab('sec-4')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: ELECTORAL LEGITIMACY -->
+            <section id="sec-4" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">Electoral Legitimacy and the Modern Presidency</h2>
+                        
+                        <p class="first-p">A president's ability to lead depends not just on legal authority, but on political legitimacy. Unlike a monarch who rules by birthright, a president must claim a mandate from the people. However, the unique and often misunderstood mechanics of the American electoral system mean that this mandate is rarely straightforward. The path to the White House shapes how presidents govern and how they view their obligation to the electorate.</p>
+
+                        <h3>The Electoral College Framework</h3>
+                        <p class="first-p">The president is not elected by the national popular vote, but by the <strong>Electoral College</strong>. This system was a compromise reached at the Constitutional Convention between delegates who wanted Congress to select the president and those who wanted a direct popular vote. The Framers feared that a direct vote would lead to "mob rule" or that citizens in a vast, pre-industrial nation wouldn't have enough information to judge candidates. They created an intermediate body of electors chosen by the states, hoping this group would be a buffer of wisdom and deliberation.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_12.png" class="visual-img" alt="Visual 12">
+                            <p class="caption-text">The Electoral College forces presidential candidates to focus their strategy and resources on a small number of "swing states," often leading to a focus on regional interests over the national popular vote.</p>
+                        </div>
+
+                        <p class="first-p">Today, there are 538 electoral votes (corresponding to the number of Representatives and Senators for each state, plus three for Washington D.C.), and a candidate needs 270 to win. Most states award their electors on a "winner-take-all" basis. If a candidate wins California by one vote or one million votes, they receive all of California's electoral votes. This structure fundamentally dictates campaign strategy. Candidates rarely campaign in "safe" states where the outcome is certain; instead, they pour resources into a handful of "swing states" like Pennsylvania, Michigan, or Florida. This state-centric model ensures the president must appeal to a geographically diverse coalition rather than just the population centers of the coasts.</p>
+                        <p>However, this system can produce a misalignment between the popular will and the electoral outcome. In the election of 1824, Andrew Jackson won the most popular votes but failed to secure an Electoral College majority, leading the House of Representatives to select John Quincy Adams—a result Jackson denounced as a "corrupt bargain." More recently, in 2000 and 2016, the winner of the presidency received fewer popular votes than their opponent. This phenomenon challenges the democratic legitimacy of the office. When a president enters the White House without a popular majority, they often face a "legitimacy gap," making it harder to claim they speak for the entire nation.</p>
+
+                        <!-- CHECKPOINT BLOCK 10 -->
+                        <div class="checkpoint-block" id="cp-block-10" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 10</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">19. How does the "winner-take-all" system in most states affect presidential campaigns?</p>
+                                <label class="checklist-item"><input type="radio" name="cp19" value="A" onchange="handleRadioChange('cp-block-10')"> A. Candidates focus equally on every state in the union.</label>
+                                <label class="checklist-item"><input type="radio" name="cp19" value="B" onchange="handleRadioChange('cp-block-10')"> B. Candidates ignore "safe" states and focus their resources on "swing states."</label>
+                                <label class="checklist-item"><input type="radio" name="cp19" value="C" onchange="handleRadioChange('cp-block-10')"> C. Candidates only campaign in the most populated cities like New York and Los Angeles.</label>
+                                <label class="checklist-item"><input type="radio" name="cp19" value="D" onchange="handleRadioChange('cp-block-10')"> D. Candidates are prohibited from spending money on television ads in small states.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">20. What happens if no candidate reaches the required 270 electoral votes?</p>
+                                <label class="checklist-item"><input type="radio" name="cp20" value="A" onchange="handleRadioChange('cp-block-10')"> A. The sitting president remains in office for another four years.</label>
+                                <label class="checklist-item"><input type="radio" name="cp20" value="B" onchange="handleRadioChange('cp-block-10')"> B. The election is decided by the House of Representatives.</label>
+                                <label class="checklist-item"><input type="radio" name="cp20" value="C" onchange="handleRadioChange('cp-block-10')"> C. The candidate with the most popular votes automatically wins.</label>
+                                <label class="checklist-item"><input type="radio" name="cp20" value="D" onchange="handleRadioChange('cp-block-10')"> D. A new election is held exactly one month later.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-10', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-10', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>The Rise of the Modern Presidency</h3>
+                        <p class="first-p">The role of the president has transformed significantly since the Founding. While the early executive was largely an administrator, the modern presidency is a "singular" figure of national power. The turning point was the presidency of Franklin D. Roosevelt (FDR). Before FDR, the federal government was relatively small, and presidents generally deferred to Congress. The Great Depression and World War II demanded a massive expansion of federal power. FDR reorganized the executive branch, creating the Executive Office of the President to provide the support staff necessary to manage the growing bureaucracy.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_13.png" class="visual-img" alt="Visual 13">
+                            <p class="caption-text">The modern presidency, characterized by central leadership in economic and social policy, was largely forged during the crises of the Great Depression and World War II under Franklin D. Roosevelt.</p>
+                        </div>
+
+                        <p class="first-p">This era birthed the concept of the "Modern Presidency," characterized by a president who is the lead policy maker, the manager of a massive economy, and the central figure in American culture. Technology accelerated this shift. Radio, television, and eventually social media allowed presidents to bypass Congress and the press to speak directly to the people. FDR’s "Fireside Chats" brought his voice into American living rooms, creating a personal bond between the citizen and the leader. This connection fueled the expectation that the president—not Congress—is responsible for the voter's well-being.</p>
+                        <p>As the office evolved, so did the concept of the "Presidential Mandate." Presidents often claim that their election victory gives them authorization to enact their platform. However, mandates are often overstated. A president who wins by a narrow margin in the Electoral College may claim a broad mandate to transform society, but Congress—which may be controlled by the opposing party—often disagrees. This clash between the president's perception of their mandate and Congress's resistance is a defining feature of modern governance.</p>
+
+                        <!-- CHECKPOINT BLOCK 11 -->
+                        <div class="checkpoint-block" id="cp-block-11" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 11</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">21. Which president is credited with transforming the office into the "Modern Presidency"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp21" value="A" onchange="handleRadioChange('cp-block-11')"> A. George Washington</label>
+                                <label class="checklist-item"><input type="radio" name="cp21" value="B" onchange="handleRadioChange('cp-block-11')"> B. Andrew Jackson</label>
+                                <label class="checklist-item"><input type="radio" name="cp21" value="C" onchange="handleRadioChange('cp-block-11')"> C. Franklin D. Roosevelt</label>
+                                <label class="checklist-item"><input type="radio" name="cp21" value="D" onchange="handleRadioChange('cp-block-11')"> D. Abraham Lincoln</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">22. How did technology like radio and television change the relationship between the president and the public?</p>
+                                <label class="checklist-item"><input type="radio" name="cp22" value="A" onchange="handleRadioChange('cp-block-11')"> A. It made the president more dependent on Congress for communication.</label>
+                                <label class="checklist-item"><input type="radio" name="cp22" value="B" onchange="handleRadioChange('cp-block-11')"> B. It allowed presidents to speak directly to the people and build a personal bond.</label>
+                                <label class="checklist-item"><input type="radio" name="cp22" value="C" onchange="handleRadioChange('cp-block-11')"> C. It decreased the public’s expectations of what the president could achieve.</label>
+                                <label class="checklist-item"><input type="radio" name="cp22" value="D" onchange="handleRadioChange('cp-block-11')"> D. It forced the president to get approval from the Supreme Court before making a speech.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-11', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-11', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>The Bully Pulpit: Persuasion as Power</h3>
+                        <p class="first-p">Theodore Roosevelt, serving decades before FDR, famously described the presidency as a <strong>Bully Pulpit</strong>. In the slang of his time, "bully" meant "excellent" or "superb." He meant that the presidency provided a terrific platform from which to advocate for an agenda. The prestige of the office allows the president to command media attention and shape public opinion in a way no Senator or Governor can. When the president speaks, the world listens.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_14.png" class="visual-img" alt="Visual 14">
+                            <p class="caption-text">The "Bully Pulpit" provides the president with a unique platform to mobilize public opinion, creating political pressure that can compel an otherwise reluctant Congress to act.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: How has modern technology changed the way presidents use the "bully pulpit"?</label>
+                                <textarea id="va_14" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">Effective use of the bully pulpit can force Congress to act. When President Lyndon B. Johnson advocated for the Voting Rights Act of 1965, he used a televised address to frame the issue as a moral crisis for the nation, famously adopting the anthem of the civil rights movement, "We Shall Overcome." By mobilizing public sentiment, Johnson made it politically difficult for Congress to block the legislation. Similarly, Ronald Reagan used televised addresses to rally public support for his tax cuts, putting pressure on Democrats in Congress to acquiesce.</p>
+                        <p>However, the bully pulpit has limits. If a president is unpopular, their attempts to persuade the public can backfire, polarizing the issue rather than building consensus. In the modern era of fragmented media, where citizens get their news from highly partisan sources, the unifying power of the bully pulpit has diminished. Presidents often find themselves speaking only to their own base of supporters, rather than persuading the undecided. This "preaching to the choir" limits the ability of the modern president to build the broad coalitions necessary for major legislative achievements.</p>
+
+                        <!-- CHECKPOINT BLOCK 12 -->
+                        <div class="checkpoint-block" id="cp-block-12" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 12</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">23. What did Theodore Roosevelt mean when he called the presidency a "Bully Pulpit"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp23" value="A" onchange="handleRadioChange('cp-block-12')"> A. The president should bully members of Congress into voting for his bills.</label>
+                                <label class="checklist-item"><input type="radio" name="cp23" value="B" onchange="handleRadioChange('cp-block-12')"> B. The presidency provides an excellent platform to advocate for an agenda and shape public opinion.</label>
+                                <label class="checklist-item"><input type="radio" name="cp23" value="C" onchange="handleRadioChange('cp-block-12')"> C. The president is the only person allowed to speak in the Senate.</label>
+                                <label class="checklist-item"><input type="radio" name="cp23" value="D" onchange="handleRadioChange('cp-block-12')"> D. The White House is a sacred religious site for all Americans.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">24. Why is the "bully pulpit" often less effective in the modern era of fragmented media?</p>
+                                <label class="checklist-item"><input type="radio" name="cp24" value="A" onchange="handleRadioChange('cp-block-12')"> A. Presidents are no longer allowed to use social media.</label>
+                                <label class="checklist-item"><input type="radio" name="cp24" value="B" onchange="handleRadioChange('cp-block-12')"> B. Citizens often consume news from partisan sources, making it harder to persuade the "other side."</label>
+                                <label class="checklist-item"><input type="radio" name="cp24" value="C" onchange="handleRadioChange('cp-block-12')"> C. Congress has passed laws limiting how many minutes a president can speak on TV.</label>
+                                <label class="checklist-item"><input type="radio" name="cp24" value="D" onchange="handleRadioChange('cp-block-12')"> D. Most people no longer care what the president says about policy.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-12', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-12', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-3')">← Previous</button>
+                            <button id="btn-next-sec-5" class="action-btn" onclick="switchTab('sec-5')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: INSTITUTIONAL CONSTRAINTS -->
+            <section id="sec-5" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">Institutional Constraints: Checks and Balances</h2>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_15.png" class="visual-img" alt="Visual 15">
+                            <p class="caption-text">To prevent the rise of a "monarchy," the U.S. system places specific institutional constraints—from funding control to judicial review—on the president's ability to act unilaterally.</p>
+                        </div>
+
+                        <p class="first-p">If the presidency is an engine of energy and action, the other branches of government are the brakes. The Framers knew that a singular executive would naturally seek to expand its power. To prevent tyranny, they designed a system of friction. They granted Congress and the Judiciary specific tools to investigate, limit, and even remove a president. These checks are not merely technicalities; they are the active defense mechanisms of the republic, ensuring that the president remains a servant of the law rather than a master of it.</p>
+
+                        <h3>Congressional Funding Control and Oversight</h3>
+                        <p class="first-p">Congress possesses the most potent weapon against executive overreach: the "power of the purse." The president is the Commander-in-Chief, but they cannot pay a single soldier, launch a single ship, or buy a single bullet without money appropriated by Congress. This funding power can stop executive policies in their tracks. While presidents can order military action, they cannot sustain it indefinitely without congressional financial support.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_16.png" class="visual-img" alt="Visual 16">
+                            <p class="caption-text">Congress holds the "power of the purse," a fundamental check that ensures no executive policy can be sustained without the explicit financial authorization of the legislature.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: How can Congress use its funding power to end a war started by the President?</label>
+                                <textarea id="va_16" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">A prime example of this check occurred in the 1970s regarding the Vietnam War. As the war became increasingly unpopular, Congress grew frustrated with the executive branch's continued escalation. Eventually, Congress passed legislation prohibiting the use of funds for combat operations in Southeast Asia. This effectively forced the executive branch to end the war, not because of a change in military strategy, but because the checkbook had been closed. Similarly, in domestic policy, a president may want to build a border wall or expand a social program, but if Congress refuses to allocate the funds, the president’s policy remains merely a wish.</p>
+                        <p>Congress also holds the power of oversight and investigation. Committees in the House and Senate can subpoena administration officials, demand documents, and hold hearings to expose executive misconduct. This was vividly displayed during the Watergate scandal in the 1970s, where Senate hearings revealed President Nixon's involvement in the cover-up of the Democratic National Committee headquarters break-in. These investigations eroded Nixon's political support and demonstrated that the executive branch is not immune to public scrutiny.</p>
+
+                        <!-- CHECKPOINT BLOCK 13 -->
+                        <div class="checkpoint-block" id="cp-block-13" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 13</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">25. How did Congress use the "power of the purse" to end the Vietnam War?</p>
+                                <label class="checklist-item"><input type="radio" name="cp25" value="A" onchange="handleRadioChange('cp-block-13')"> A. They voted to impeach the president.</label>
+                                <label class="checklist-item"><input type="radio" name="cp25" value="B" onchange="handleRadioChange('cp-block-13')"> B. They passed legislation prohibiting the use of federal funds for combat operations in the region.</label>
+                                <label class="checklist-item"><input type="radio" name="cp25" value="C" onchange="handleRadioChange('cp-block-13')"> C. They sued the president in the Supreme Court.</label>
+                                <label class="checklist-item"><input type="radio" name="cp25" value="D" onchange="handleRadioChange('cp-block-13')"> D. They ordered the military to stop listening to the president.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">26. Congressional oversight committees use which tool to force administration officials to testify?</p>
+                                <label class="checklist-item"><input type="radio" name="cp26" value="A" onchange="handleRadioChange('cp-block-13')"> A. Executive Orders</label>
+                                <label class="checklist-item"><input type="radio" name="cp26" value="B" onchange="handleRadioChange('cp-block-13')"> B. Subpoenas</label>
+                                <label class="checklist-item"><input type="radio" name="cp26" value="C" onchange="handleRadioChange('cp-block-13')"> C. Signing Statements</label>
+                                <label class="checklist-item"><input type="radio" name="cp26" value="D" onchange="handleRadioChange('cp-block-13')"> D. The Veto</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-13', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-13', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Judicial Review and Executive Privilege</h3>
+                        <p class="first-p">The Supreme Court serves as the arbiter of the boundaries of presidential power. While presidents often claim <strong>Executive Privilege</strong>—the right to keep internal communications confidential to ensure candid advice from aides—the Court has ruled that this right is not absolute. The courts act as a referee, stepping in when the president claims authority that the Constitution does not grant.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_17.png" class="visual-img" alt="Visual 17">
+                            <p class="caption-text">While presidents claim executive privilege to protect internal communications, the Supreme Court has ruled that this right is limited and cannot be used to obstruct the judicial process or conceal evidence.</p>
+                        </div>
+
+                        <p class="first-p">The landmark case <em>United States v. Nixon</em> (1974) established this limit. President Nixon attempted to use executive privilege to withhold audio recordings of Oval Office conversations sought by a special prosecutor investigating the Watergate scandal. Nixon argued that the separation of powers gave the president absolute confidentiality. The Supreme Court ruled unanimously that while the need for confidential advice is valid, it cannot be used to conceal evidence of a crime. Nixon was forced to release the tapes, which contained incriminating evidence leading to his resignation.</p>
+                        <p>Another critical limitation came in <em>Youngstown Sheet & Tube Co. v. Sawyer</em> (1952). During the Korean War, President Truman attempted to seize private steel mills to prevent a labor strike that threatened war production. He argued his powers as Commander-in-Chief gave him inherent authority to act during a national emergency. The Supreme Court struck down Truman's action, ruling that the president could not seize private property without congressional authorization. Justice Robert Jackson’s concurring opinion in this case remains the standard for assessing presidential power, establishing that the president’s authority is at its "lowest ebb" when they act against the expressed will of Congress.</p>
+
+                        <!-- CHECKPOINT BLOCK 14 -->
+                        <div class="checkpoint-block" id="cp-block-14" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 14</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">27. In United States v. Nixon, the Supreme Court ruled that executive privilege:</p>
+                                <label class="checklist-item"><input type="radio" name="cp27" value="A" onchange="handleRadioChange('cp-block-14')"> A. Is an absolute right that protects all presidential communications.</label>
+                                <label class="checklist-item"><input type="radio" name="cp27" value="B" onchange="handleRadioChange('cp-block-14')"> B. Does not exist and is unconstitutional.</label>
+                                <label class="checklist-item"><input type="radio" name="cp27" value="C" onchange="handleRadioChange('cp-block-14')"> C. Is valid for confidential advice but cannot be used to withhold evidence in a criminal trial.</label>
+                                <label class="checklist-item"><input type="radio" name="cp27" value="D" onchange="handleRadioChange('cp-block-14')"> D. Can only be used by the president during a formal declaration of war.</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">28. According to the Youngstown decision, presidential power is at its "lowest ebb" when the president:</p>
+                                <label class="checklist-item"><input type="radio" name="cp28" value="A" onchange="handleRadioChange('cp-block-14')"> A. Acts in coordination with the Cabinet.</label>
+                                <label class="checklist-item"><input type="radio" name="cp28" value="B" onchange="handleRadioChange('cp-block-14')"> B. Acts against the expressed will of Congress.</label>
+                                <label class="checklist-item"><input type="radio" name="cp28" value="C" onchange="handleRadioChange('cp-block-14')"> C. Issues a signing statement.</label>
+                                <label class="checklist-item"><input type="radio" name="cp28" value="D" onchange="handleRadioChange('cp-block-14')"> D. Is campaigning for re-election.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-14', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-14', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <h3>Impeachment: The Ultimate Check</h3>
+                        <p class="first-p">The Constitution provides a final, "break-glass-in-case-of-emergency" check: <strong>Impeachment</strong>. Article II states that the President can be removed for "Treason, Bribery, or other high Crimes and Misdemeanors." The process requires the House of Representatives to impeach (essentially an indictment or formal accusation) by a simple majority, and the Senate to hold a trial, requiring a two-thirds vote to convict and remove.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_18.png" class="visual-img" alt="Visual 18">
+                            <p class="caption-text">Impeachment serves as the ultimate constitutional check on executive misconduct, though the high threshold for conviction ensures it remains a rare and politically difficult process.</p>
+                        </div>
+
+                        <p class="first-p">Impeachment is a political, not criminal, process. History has seen only a handful of presidential impeachments—Andrew Johnson, Bill Clinton, and Donald Trump (twice). In none of these cases did the Senate reach the two-thirds threshold to remove the president. Andrew Johnson was impeached in 1868 primarily over a fierce policy disagreement regarding Reconstruction. Bill Clinton was impeached in 1998 for perjury and obstruction of justice. Donald Trump was impeached in 2019 for abuse of power regarding Ukraine and in 2021 for incitement of insurrection. While no president has been removed through this process, the threat of impeachment serves as a powerful deterrent and a reminder that the president is not above the law.</p>
+
+                        <!-- CHECKPOINT BLOCK 15 -->
+                        <div class="checkpoint-block" id="cp-block-15" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 15</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">29. Which body has the power to "impeach" (formally accuse) the president?</p>
+                                <label class="checklist-item"><input type="radio" name="cp29" value="A" onchange="handleRadioChange('cp-block-15')"> A. The Senate</label>
+                                <label class="checklist-item"><input type="radio" name="cp29" value="B" onchange="handleRadioChange('cp-block-15')"> B. The House of Representatives</label>
+                                <label class="checklist-item"><input type="radio" name="cp29" value="C" onchange="handleRadioChange('cp-block-15')"> C. The Supreme Court</label>
+                                <label class="checklist-item"><input type="radio" name="cp29" value="D" onchange="handleRadioChange('cp-block-15')"> D. The Electoral College</label>
+                            </div>
+
+                            <div class="checkpoint-q" style="display: none;">
+                                <p class="first-p">30. Why has no U.S. President ever been removed from office through the impeachment process?</p>
+                                <label class="checklist-item"><input type="radio" name="cp30" value="A" onchange="handleRadioChange('cp-block-15')"> A. No president has ever been impeached by the House.</label>
+                                <label class="checklist-item"><input type="radio" name="cp30" value="B" onchange="handleRadioChange('cp-block-15')"> B. The Senate has never reached the required two-thirds majority for conviction.</label>
+                                <label class="checklist-item"><input type="radio" name="cp30" value="C" onchange="handleRadioChange('cp-block-15')"> C. The Supreme Court has the power to veto an impeachment.</label>
+                                <label class="checklist-item"><input type="radio" name="cp30" value="D" onchange="handleRadioChange('cp-block-15')"> D. Presidents automatically resign as soon as they are impeached.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-15', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-15', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-4')">← Previous</button>
+                            <button id="btn-next-sec-6" class="action-btn" onclick="switchTab('sec-6')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: CONCLUSION -->
+            <section id="sec-6" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">Conclusion: The Negotiated Office</h2>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_19.png" class="visual-img" alt="Visual 19">
+                            <p class="caption-text">The American presidency is defined by the constant negotiation between the need for decisive executive energy and the constitutional requirement for accountability and shared power.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: Based on this chapter, why is the presidency best described as a "negotiated office"?</label>
+                                <textarea id="va_19" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The American presidency is a paradox of power. It is an office of immense authority, capable of launching nuclear weapons and commanding the world's largest economy. Yet, it is also an office of profound constraints, hemmed in by the courts, Congress, the press, and the realities of the electoral map. The essential question—"What are the limits of executive power?"—has no permanent answer. It is renegotiated by every administration.</p>
+                        <p>From the administrative modesty of George Washington to the expansive "modern presidency" of the 20th and 21st centuries, the office has grown to meet the demands of a changing world. Presidents leverage their many roles, from Commander-in-Chief to Party Leader, and utilize tools like executive orders and the bully pulpit to advance their agendas. However, the Constitution ensures that this "energy" in the executive is always checked by the "deliberation" of the legislature and the judgment of the courts.</p>
+                        <p>Ultimately, the presidency is a "negotiated office." A president cannot simply command; they must persuade. They must persuade Congress to pass laws, persuade the courts to uphold them, and persuade the public to support them. When this negotiation fails, the system gridlocks. But when it succeeds, the presidency can be the engine of immense national progress. As we move forward to study the Federal Bureaucracy in the next chapter, keep in mind that the president sits atop a vast pyramid of non-elected officials. The will of the president must filter down through layers of civil servants before it impacts the daily life of the citizen, adding yet another layer of complexity to the execution of democracy.</p>
+
+                        <!-- CHECKPOINT BLOCK 16 -->
+                        <div class="checkpoint-block" id="cp-block-16" data-current="0">
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="font-bold text-gold uppercase tracking-widest text-sm">📍 Checkpoint 16</span>
+                                <span class="cp-indicator text-steel-nib text-sm"></span>
+                            </div>
+                            
+                            <div class="checkpoint-q" style="display: block;">
+                                <p class="first-p">31. Why does the text describe the presidency as a "negotiated office"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp31" value="A" onchange="handleRadioChange('cp-block-16')"> A. Because presidents have to pay Congress to pass laws.</label>
+                                <label class="checklist-item"><input type="radio" name="cp31" value="B" onchange="handleRadioChange('cp-block-16')"> B. Because a president’s success depends on persuading other branches and the public rather than just commanding them.</label>
+                                <label class="checklist-item"><input type="radio" name="cp31" value="C" onchange="handleRadioChange('cp-block-16')"> C. Because the president is chosen through a negotiation between the states.</label>
+                                <label class="checklist-item"><input type="radio" name="cp31" value="D" onchange="handleRadioChange('cp-block-16')"> D. Because the Supreme Court negotiates the president's salary every year.</label>
+                            </div>
+
+                            <div class="mt-4 flex justify-between">
+                                <button class="action-btn cp-prev-btn" style="display: none; width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-16', -1)">← Back</button>
+                                <button class="action-btn cp-next-btn ml-auto" style="width: auto; font-size: 0.8rem; padding: 6px 12px;" onclick="navigateCp('cp-block-16', 1)">Next Question →</button>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-5')">← Previous</button>
+                            <button id="btn-next-sec-7" class="action-btn" onclick="switchTab('sec-7')" disabled>🔒 Answer Checkpoints to Continue</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: CHAPTER ASSESSMENT -->
+            <section id="sec-7" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2 class="first-p">Chapter Assessment</h2>
+                        
+                        <h3>Section I – Vocabulary</h3>
+                        <div class="word-bank">
+                            <span class="word-pill">Executive Order</span>
+                            <span class="word-pill">Veto</span>
+                            <span class="word-pill">Electoral College</span>
+                            <span class="word-pill">Bully Pulpit</span>
+                            <span class="word-pill">Cabinet</span>
+                            <span class="word-pill">Executive Privilege</span>
+                            <span class="word-pill">Signing Statement</span>
+                            <span class="word-pill">Commander-in-Chief</span>
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">1. The advisory group selected by the president to head the major executive departments.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">2. A directive issued by the president that has the force of law and manages federal agency operations.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">3. The president’s role as the supreme head of the nation’s military forces.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">4. The constitutional power of the president to reject a bill passed by Congress.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">5. A written comment issued by a president when signing legislation, often asserting that they will ignore certain provisions they believe are unconstitutional.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">6. The right of the president to withhold information from Congress or the courts to preserve confidential decision-making.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">7. The system established by the Constitution for the indirect election of the president.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+                        <div class="vocab-item">
+                            <p class="first-p">8. The ability of the president to use the prestige of the office to influence public opinion and the legislative agenda.</p>
+                            <input type="text" class="cloze-input" placeholder="Enter term...">
+                        </div>
+
+                        <h3>Section II – Comprehension</h3>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q1">1. Which role of the president was most significantly expanded by the precedent set by Harry Truman during the Korean War?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="A"> A. Chief Legislator</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="B"> B. Commander-in-Chief</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="C"> C. Party Leader</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc1" value="D"> D. Chief of State</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q2">2. In Federalist No. 70, Alexander Hamilton argued that the most essential quality of the executive branch is:</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="A"> A. Deliberation</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="B"> B. Frugality</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="C"> C. Energy</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc2" value="D"> D. Secrecy</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q3">3. A "Pocket Veto" differs from a regular veto because:</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="A"> A. It can be overridden by a simple majority vote.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="B"> B. It occurs only when Congress adjourns within 10 days of submitting a bill.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="C"> C. It involves the Supreme Court striking down a law.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc3" value="D"> D. It allows the president to cross out specific lines of a bill.</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q4">4. The Supreme Court case United States v. Nixon (1974) ruled that:</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="A"> A. The president has absolute immunity from all legal processes.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="B"> B. Executive Privilege cannot be used to conceal evidence of a crime.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="C"> C. The president can seize private property during wartime.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc4" value="D"> D. Executive Orders are unconstitutional during peacetime.</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q5">5. Which of the following best describes the "Winner-Take-All" system in the Electoral College?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="A"> A. Candidates receive electoral votes proportional to their share of the popular vote in a state.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="B"> B. The candidate who wins the national popular vote automatically wins the election.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="C"> C. The candidate who wins the popular vote in a state receives all of that state's electoral votes.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc5" value="D"> D. Electors are free to vote for whomever they choose regardless of the state vote.</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q6">6. The "Bully Pulpit" is most effective when:</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="A"> A. The president is suffering from low approval ratings.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="B"> B. The government is under a divided administration.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="C"> C. The president uses media to mobilize public support for a specific policy.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc6" value="D"> D. The Supreme Court refuses to hear a case.</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q7">7. Why did the Supreme Court rule against President Truman in Youngstown Sheet & Tube Co. v. Sawyer?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="A"> A. Truman tried to declare war on Korea without Congress.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="B"> B. Truman attempted to seize private property without congressional authorization.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="C"> C. Truman refused to sign a peace treaty.</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc7" value="D"> D. Truman fired his Vice President without cause.</label>
+                        </div>
+                        <div class="checkpoint-q" style="margin-bottom: 2rem; border-left: 3px solid var(--color-gold); padding-left: 1rem;">
+                            <p class="first-p" id="assess_mc_q8">8. Which body has the sole power to try an impeachment case and remove a president from office?</p>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="A"> A. The House of Representatives</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="B"> B. The Supreme Court</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="C"> C. The Senate</label>
+                            <label class="checklist-item"><input type="radio" name="assess_mc8" value="D"> D. The Cabinet</label>
+                        </div>
+
+                        <h3>Section III – Guided Analysis</h3>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">1. Explain how the roles of Chief Diplomat and Chief Legislator can come into conflict, using the example of Woodrow Wilson and the Treaty of Versailles.</label>
+                            <textarea id="pq_1" class="textarea-dark"></textarea>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">2. Analyze how the growth of the federal bureaucracy and the "administrative state" has increased the power of the president's Executive Orders.</label>
+                            <textarea id="pq_2" class="textarea-dark"></textarea>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">3. Contrast the "Stewardship Theory" of the presidency (exemplified by Teddy Roosevelt and the Bully Pulpit) with the limited view of the office held by early presidents like George Washington.</label>
+                            <textarea id="pq_3" class="textarea-dark"></textarea>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">4. Describe how the Electoral College forces presidential candidates to focus on specific geographic regions rather than the national population as a whole.</label>
+                            <textarea id="pq_4" class="textarea-dark"></textarea>
+                        </div>
+
+                        <h3>Section IV – Visual Analysis</h3>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_1.png" class="visual-img" alt="Electoral Maps Comparison">
+                            <p class="caption-text">A historical electoral map comparison showing the Election of 1824 vs. the Election of 2016. The map highlights the divergence between the popular vote winner and the Electoral College winner.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: Based on the map of 1824, how does the regional breakdown of votes illustrate the failure of any candidate to secure an Electoral College majority?</label>
+                                <textarea id="va_20" class="textarea-dark"></textarea>
+                            </div>
+                            <div class="question-box">
+                                <label>Analysis Question: Compare the distribution of "swing states" in the modern map to the 1824 map. How does the "winner-take-all" system represented in the visual influence where a modern candidate spends their campaign funds?</label>
+                                <textarea id="va_21" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_2.png" class="visual-img" alt="The Rise of Executive Orders">
+                            <p class="caption-text">A timeline graphic titled "The Rise of Executive Orders." A bar chart showing the number of Executive Orders issued per president from Washington to the present, featuring distinct spikes during times of war or crisis.</p>
+                            <div class="question-box">
+                                <label>Analysis Question: According to the chart, which historical events correspond with the most dramatic spikes in the use of Executive Orders?</label>
+                                <textarea id="va_22" class="textarea-dark"></textarea>
+                            </div>
+                            <div class="question-box">
+                                <label>Analysis Question: Using the visual and the text, explain why a president might rely on Executive Orders more frequently during periods of congressional gridlock.</label>
+                                <textarea id="va_23" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <h3>Section V – Primary Source (CER)</h3>
+                        <p class="first-p" style="font-style: italic; background: rgba(0,0,0,0.3); padding: 15px; border-left: 3px solid var(--color-gold);">
+                            <strong>Alexander Hamilton, Federalist No. 70 (1788)</strong><br><br>
+                            "Energy in the Executive is a leading character in the definition of good government. It is essential to the protection of the community against foreign attacks; it is not less essential to the steady administration of the laws; to the protection of property against those irregular and high-handed combinations which sometimes interrupt the ordinary course of justice... A feeble Executive implies a feeble execution of the government. A feeble execution is but another phrase for a bad execution; and a government ill executed, whatever it may be in theory, must be, in practice, a bad government."
+                        </p>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">CER Prompt: Using the excerpt above and your knowledge of the chapter, write a Claim-Evidence-Reasoning (CER) paragraph addressing the following: Does the modern use of unilateral executive power (such as Executive Orders) fulfill Hamilton’s vision of "Energy in the Executive," or does it violate the constitutional separation of powers?</label>
+                            <textarea id="pq_5" class="textarea-dark" placeholder="Include a clear claim, quote evidence from Hamilton and cite a modern tool, and provide reasoning connecting to the fear of a feeble government vs. bypassing the legislative process..."></textarea>
+                        </div>
+
+                        <h3>Section VI – Modern Reflection</h3>
+                        <div style="margin-bottom: 2rem;">
+                            <label style="display:block; margin-bottom:0.5rem; font-weight:bold;">Reflection: In recent years, presidents from both political parties have declared national emergencies to access funds or powers that Congress denied them (e.g., for border wall construction or student loan forgiveness). Based on what you learned about the checks and balances system (specifically the "power of the purse" and Youngstown v. Sawyer), write a reflection on whether this trend threatens the constitutional balance. If Congress refuses to act on a major issue, is the President justified in acting alone? Why or why not?</label>
+                            <textarea id="pq_6" class="textarea-dark"></textarea>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-6')">← Previous</button>
+                            <button class="action-btn" style="background: var(--color-gold); color: var(--color-navy-deep);" onclick="finishChapter()">Finished ✓</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        /* Background Management */
+        const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+        let bgIndex = 0;
+        function rotateBackground() {
+            if (bgImages.length === 0) return;
+            const bgEl = document.getElementById('bg-slideshow');
+            if (!bgEl) return;
+            bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            rotateBackground();
+            setInterval(rotateBackground, 10000); 
+        });
+
+        /* Navigation */
+        function switchTab(id) {
+            document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+            document.getElementById('nav-' + id).classList.add('active-nav');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        /* Finishing Chapter & JSON Export */
+        function finishChapter() {
+            const dateField = document.getElementById('completion-date');
+            const now = new Date().toLocaleDateString();
+            if(dateField) dateField.value = now;
+
+            const studentName = document.getElementById('student-name').value || "Unknown_Student";
+            const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+
+            const assignmentData = {
+                assignmentTitle: "Interactive Chapter 5 - The Presidency",
+                studentInfo: { name: studentName, period: studentPeriod, dateCompleted: now },
+                responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {}, clozeActivity: {} }
+            };
+
+            // Gather Visual Analysis Answers (Inline + Assessment)
+            for(let i=1; i<=30; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                    assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+                }
+            }
+
+            // Gather Checkpoint Answers
+            for(let i=1; i<=40; i++) {
+                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                if(inputs.length > 0) {
+                    let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            // Gather Assessment MC Answers
+            for(let i=1; i<=15; i++) {
+                let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+                let qEl = document.getElementById('assess_mc_q' + i);
+                if(qEl) {
+                    let qText = qEl.innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            // Gather Perspective Questions
+            for(let i=1; i<=15; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                    assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+                }
+            }
+
+            // Gather Vocabulary Activity Answers 
+            document.querySelectorAll('.cloze-input').forEach((input, index) => {
+                assignmentData.responses.clozeActivity[`Blank_${index + 1}`] = input.value.trim();
+            });
+
+            const dataStr = JSON.stringify(assignmentData, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            const safeName = studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+            a.download = `Chapter_Export_${safeName}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            alert('Upload JSON file to Canvas');
+            switchTab('sec-1');
+        }
+
+        /* Save, Load & Reset Logic */
+        function exportProgress() {
+            const studentName = document.getElementById('student-name').value || "";
+            const studentPeriod = document.getElementById('student-period').value || "";
+
+            if (!studentName.trim() || !studentPeriod.trim()) {
+                alert("Please enter your name and select a period on the Start Page before saving your progress.");
+                switchTab('sec-1');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                return;
+            }
+
+            const progressData = {
+                studentName: studentName,
+                studentPeriod: studentPeriod,
+                visualAnalysis: {},
+                checkpoints: {},
+                assess_mc: {},
+                perspectiveQuestions: {},
+                clozeActivity: {}
+            };
+
+            // Gather VAs
+            for(let i=1; i<=30; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) progressData.visualAnalysis['va_' + i] = el.value;
+            }
+            // Gather Checkpoints
+            for(let i=1; i<=40; i++) {
+                let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                if(checked) progressData.checkpoints['cp' + i] = checked.value;
+            }
+            // Gather Assessment MC
+            for(let i=1; i<=15; i++) {
+                let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+                if(checked) progressData.assess_mc['assess_mc' + i] = checked.value;
+            }
+            // Gather Perspective Questions
+            for(let i=1; i<=15; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) progressData.perspectiveQuestions['pq_' + i] = el.value;
+            }
+            // Gather Vocabulary Activity
+            let clozeInputs = document.querySelectorAll('.cloze-input');
+            clozeInputs.forEach((input, index) => {
+                progressData.clozeActivity['cloze_' + index] = input.value;
+            });
+
+            const dataStr = JSON.stringify(progressData, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            
+            const a = document.createElement('a');
+            a.href = url;
+            const safeName = studentName ? studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase() : 'student';
+            a.download = `Chapter_SaveFile_${safeName}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function loadProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    
+                    // Burn Name and Period
+                    const nameEl = document.getElementById('student-name');
+                    const periodEl = document.getElementById('student-period');
+                    
+                    if (data.studentName) {
+                        nameEl.value = data.studentName;
+                        nameEl.setAttribute('readonly', 'true');
+                        nameEl.style.opacity = '0.7';
+                        nameEl.style.cursor = 'not-allowed';
+                    }
+                    if (data.studentPeriod) {
+                        periodEl.value = data.studentPeriod;
+                        periodEl.setAttribute('disabled', 'true');
+                        periodEl.style.opacity = '0.7';
+                        periodEl.style.cursor = 'not-allowed';
+                    }
+
+                    // Restore Textareas
+                    if(data.visualAnalysis) {
+                        for (const [key, value] of Object.entries(data.visualAnalysis)) {
+                            const el = document.getElementById(key);
+                            if (el) el.value = value;
+                        }
+                    }
+                    if(data.perspectiveQuestions) {
+                        for (const [key, value] of Object.entries(data.perspectiveQuestions)) {
+                            const el = document.getElementById(key);
+                            if (el) el.value = value;
+                        }
+                    }
+
+                    // Restore Radio Buttons
+                    if(data.checkpoints) {
+                        for (const [key, value] of Object.entries(data.checkpoints)) {
+                            const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                            if (el) el.checked = true;
+                        }
+                    }
+                    if(data.assess_mc) {
+                        for (const [key, value] of Object.entries(data.assess_mc)) {
+                            const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                            if (el) el.checked = true;
+                        }
+                    }
+
+                    // Restore Vocab Inputs
+                    if(data.clozeActivity) {
+                        let clozeInputs = document.querySelectorAll('.cloze-input');
+                        for (const [key, value] of Object.entries(data.clozeActivity)) {
+                            let idx = parseInt(key.split('_')[1]);
+                            if (clozeInputs[idx]) clozeInputs[idx].value = value;
+                        }
+                    }
+
+                    // Advance checkpoint carousels to their furthest answered state
+                    document.querySelectorAll('.checkpoint-block').forEach(block => {
+                        const questions = block.querySelectorAll('.checkpoint-q');
+                        let lastAnswered = 0;
+                        questions.forEach((q, idx) => {
+                            if (q.querySelector('input[type="radio"]:checked')) {
+                                lastAnswered = idx;
+                            }
+                        });
+                        block.setAttribute('data-current', lastAnswered);
+                    });
+
+                    initCheckpoints();
+                    event.target.value = ''; // Reset file input
+                    alert('Progress restored successfully!');
+
+                } catch (err) {
+                    alert('Error loading progress file. Please make sure it is a valid JSON save file.');
+                    console.error(err);
+                }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetProgress() {
+            if(confirm('Are you sure you want to reset all progress?')) {
+                document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+                document.querySelectorAll('.cloze-input, .textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+                
+                const nameEl = document.getElementById('student-name');
+                const periodEl = document.getElementById('student-period');
+                nameEl.removeAttribute('readonly'); nameEl.style.opacity = '1'; nameEl.style.cursor = 'text';
+                periodEl.removeAttribute('disabled'); periodEl.style.opacity = '1'; periodEl.style.cursor = 'pointer';
+
+                document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+                initCheckpoints();
+                switchTab('sec-1');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        /* Checkpoint Management */
+        const TOTAL_CHECKPOINT_BLOCKS = 16;
+        
+        function initCheckpoints() {
+            for(let i=1; i<=TOTAL_CHECKPOINT_BLOCKS; i++) { updateCpUI(`cp-block-${i}`); }
+            checkSectionUnlock();
+        }
+
+        function updateCpUI(blockId) {
+            const block = document.getElementById(blockId);
+            if(!block) return;
+            const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            const indicator = block.querySelector('.cp-indicator');
+            const prevBtn = block.querySelector('.cp-prev-btn');
+            const nextBtn = block.querySelector('.cp-next-btn');
+
+            questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+            if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+            if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+            if(nextBtn) {
+                const currentQ = questions[currentIndex];
+                const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+                if (currentIndex === questions.length - 1) {
+                    if (isAnswered) {
+                        nextBtn.innerText = "Checkpoint Completed ✓";
+                        nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                        nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                    } else {
+                        nextBtn.innerText = "Finish Checkpoint";
+                        nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                        nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    }
+                } else {
+                    nextBtn.innerText = "Next Question \u2192";
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; } 
+                    else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+                }
+            }
+            checkSectionUnlock();
+        }
+
+        function navigateCp(blockId, dir) {
+            const block = document.getElementById(blockId);
+            let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+            block.setAttribute('data-current', currentIndex);
+            updateCpUI(blockId);
+        }
+
+        function handleRadioChange(blockId) { updateCpUI(blockId); }
+        function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+        
+        function setNavButtonState(btnId, enabled) {
+            const btn = document.getElementById(btnId);
+            const sideBtn = document.getElementById('nav-' + btnId.replace('btn-next-', ''));
+            if (!btn) return;
+            if (enabled) {
+                btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                btn.innerHTML = 'Next Section &rarr;'; btn.style.borderColor = 'var(--color-gold)';
+                if(sideBtn) { sideBtn.removeAttribute('disabled'); sideBtn.style.opacity = '1'; sideBtn.style.cursor = 'pointer'; }
+            } else {
+                btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+                btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+                if(sideBtn) { sideBtn.setAttribute('disabled', 'true'); sideBtn.style.opacity = '0.5'; sideBtn.style.cursor = 'not-allowed'; }
+            }
+        }
+
+        function checkSectionUnlock() {
+            // Unlocks Section 2 (Many Hats) after CP 1 (Questions 1-2)
+            setNavButtonState('btn-next-sec-2', isAnswered('cp1') && isAnswered('cp2'));
+            
+            // Unlocks Section 3 (Executive Authority) after CP 2-6 (Questions 3-12)
+            setNavButtonState('btn-next-sec-3', isAnswered('cp3') && isAnswered('cp4') && isAnswered('cp5') && isAnswered('cp6') && isAnswered('cp7') && isAnswered('cp8') && isAnswered('cp9') && isAnswered('cp10') && isAnswered('cp11') && isAnswered('cp12'));
+            
+            // Unlocks Section 4 (Electoral Legitimacy) after CP 7-9 (Questions 13-18)
+            setNavButtonState('btn-next-sec-4', isAnswered('cp13') && isAnswered('cp14') && isAnswered('cp15') && isAnswered('cp16') && isAnswered('cp17') && isAnswered('cp18'));
+
+            // Unlocks Section 5 (Institutional Constraints) after CP 10-12 (Questions 19-24)
+            setNavButtonState('btn-next-sec-5', isAnswered('cp19') && isAnswered('cp20') && isAnswered('cp21') && isAnswered('cp22') && isAnswered('cp23') && isAnswered('cp24'));
+
+            // Unlocks Section 6 (Conclusion) after CP 13-15 (Questions 25-30)
+            setNavButtonState('btn-next-sec-6', isAnswered('cp25') && isAnswered('cp26') && isAnswered('cp27') && isAnswered('cp28') && isAnswered('cp29') && isAnswered('cp30'));
+
+            // Unlocks Section 7 (Assessment) after CP 16 (Question 31)
+            setNavButtonState('btn-next-sec-7', isAnswered('cp31'));
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', () => {
+            initCheckpoints();
+            
+            // Smart Image Fallback: Auto-detects spaces, underscores, and caps variations
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    let currentSrc = decodeURIComponent(this.getAttribute('src'));
+                    if (!this.dataset.fallbackState) this.dataset.fallbackState = 0;
+                    
+                    let state = parseInt(this.dataset.fallbackState);
+                    
+                    if (state === 0) {
+                        // Attempt 1: Swap underscore to space, or space to underscore
+                        this.setAttribute('src', currentSrc.includes('_') ? currentSrc.replace('_', ' ') : currentSrc.replace(' ', '_'));
+                        this.dataset.fallbackState = 1;
+                    } else if (state === 1) {
+                        // Attempt 2: Remove spaces and underscores completely (e.g., Visual1.png)
+                        this.setAttribute('src', currentSrc.replace(/[ _]/g, ''));
+                        this.dataset.fallbackState = 2;
+                    } else if (state === 2) {
+                        // Attempt 3: Try all lowercase (e.g., visual 1.png)
+                        this.setAttribute('src', currentSrc.toLowerCase());
+                        this.dataset.fallbackState = 3;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
