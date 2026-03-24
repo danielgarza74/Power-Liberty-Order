@@ -1,0 +1,1484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 6 - The Judiciary</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #3A0F14; /* Constitutional Crimson */
+            --color-cream: #F5EBDD;    /* Archival Linen */
+            --color-navy: #3F5A4B;     /* Executive Laurel */
+            --color-steel-nib: #8A8F95; /* Judicial Stone */
+            --color-gold: #D4A017;     /* Seal Gold */
+            --color-gold-light: #F9E596;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { font-family: var(--font-body); background-color: var(--color-navy-deep); color: var(--color-cream); line-height: 1.8; font-size: 1.15rem; }
+
+        /* Background Effects */
+        #bg-slideshow { position: fixed; inset: 0; z-index: 0; pointer-events: none; background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out; }
+        body::after { content: ''; position: fixed; inset: 0; background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%); z-index: 1; pointer-events: none; }
+
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+
+        /* Left Navigation Panel */
+        .side-nav { position: fixed; top: 0; left: 0; bottom: 0; width: 280px; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column; padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem; }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { background: transparent; border: 1px solid transparent; color: var(--color-cream); text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer; transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { background: rgba(43, 33, 24, 0.45); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem; margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; }
+
+        @media (max-width: 1024px) { 
+            .side-nav { display: none; } 
+            .main-content { margin-left: 0; } 
+            .content-wrapper { padding: 30px 20px; } 
+            .content-block { padding: 2rem; } 
+        }
+
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+
+        /* UI Elements */
+        .id-panel { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem; }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+
+        .textarea-dark { width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px; font-family: var(--font-body); font-size: 1.1rem; resize: vertical; }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+
+        /* Spotlights */
+        .spotlight-wrapper { width: 35%; max-width: 300px; float: right; margin: 10px 0 20px 30px; transition: transform 0.3s ease; position: relative; z-index: 10; background: rgba(0,0,0,0.5); padding: 12px; border-radius: 6px; border: 1px solid rgba(255,255,255,0.1); transform-origin: center right; }
+        .spotlight-wrapper.left { float: left; margin: 10px 30px 20px 0; transform-origin: center left; }
+        .spotlight-wrapper:hover { transform: scale(1.5); z-index: 50; box-shadow: 0 10px 40px rgba(0,0,0,0.8); border-color: var(--color-gold); }
+        .spotlight-wrapper img { width: 100%; border: 2px solid var(--color-gold-light); border-radius: 4px; display: block; }
+        .spotlight-caption { font-size: 0.9rem; text-align: center; margin-top: 10px; font-style: italic; color: #ddd; line-height: 1.4; }
+
+        /* Full Sized Visuals */
+        .visual-wrapper { width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+
+        @media (max-width: 768px) { 
+            .spotlight-wrapper, .spotlight-wrapper.left { float: none; width: 100%; max-width: 100%; margin: 20px 0; } 
+            .spotlight-wrapper:hover { transform: none; margin: 0; padding: 0; } 
+            .id-panel { grid-template-columns: 1fr; }
+        }
+
+        /* Compact Checkpoint System */
+        .checkpoint-block { margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4); border-radius: 8px; background: rgba(0,0,0,0.2); clear: both; }
+        .checkpoint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 768px) { .checkpoint-grid { grid-template-columns: 1fr; } }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; cursor: pointer; padding: 8px 12px; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid transparent; transition: all 0.2s; font-size: 0.9rem; line-height: 1.3; }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(212,160,23,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+
+        /* Cloze Specific */
+        .word-bank { display: flex; flex-wrap: wrap; gap: 12px; padding: 1.5rem; background: rgba(0,0,0,0.3); border: 1px dashed var(--color-steel-nib); border-radius: 8px; margin-bottom: 2rem; }
+        .word-pill { background: rgba(63, 90, 75, 0.8); border: 1px solid var(--color-gold); color: var(--color-cream); padding: 8px 18px; border-radius: 25px; font-size: 1rem; font-weight: bold; }
+        .cloze-input { background: rgba(0,0,0,0.5); border: none; border-bottom: 2px solid var(--color-gold); color: var(--color-gold-light); padding: 4px 8px; font-size: 1.15rem; width: 100%; max-width: 300px; margin-top: 10px; font-family: var(--font-body); border-radius: 2px; transition: all 0.2s; }
+        .cloze-input:focus { outline: none; border-bottom-color: white; background: rgba(0,0,0,0.8); }
+        .vocab-item { margin-bottom: 1.5rem; }
+
+        /* Buttons & Navigation */
+        .action-btn { padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold; cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5); color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%; }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3); margin-top: 3rem; gap: 20px; clear: both; }
+        .bottom-nav .action-btn { width: auto; }
+
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+<div id="bg-slideshow"></div>
+
+<div class="app-container">
+    
+    <!-- Left Navigation Panel -->
+    <div class="side-nav">
+        <div class="nav-title">Table of Contents</div>
+        <div class="nav-links">
+            <button class="nav-btn active-nav" id="nav-sec-1" onclick="switchTab('sec-1')">Start Page</button>
+            <button class="nav-btn" id="nav-sec-2" onclick="switchTab('sec-2')">I. The Power of Judicial Review</button>
+            <button class="nav-btn" id="nav-sec-3" onclick="switchTab('sec-3')">II. The Federal Court System</button>
+            <button class="nav-btn" id="nav-sec-4" onclick="switchTab('sec-4')">III. Constitutional Interpretation</button>
+            <button class="nav-btn" id="nav-sec-5" onclick="switchTab('sec-5')">IV. Judicial Independence</button>
+            <button class="nav-btn" id="nav-sec-6" onclick="switchTab('sec-6')">V. Conclusion</button>
+            <button class="nav-btn" id="nav-sec-7" onclick="switchTab('sec-7')">VI. Assessment</button>
+        </div>
+        <div class="nav-actions">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px;" onclick="exportProgress()">Save Progress</button>
+            <input type="file" id="upload-progress-btn" style="display: none;" accept=".json" onchange="loadProgress(event)">
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="document.getElementById('upload-progress-btn').click()">Upload Progress</button>
+            <button class="action-btn" style="font-size: 0.8rem; padding: 8px; border-color: var(--color-steel-nib); color: var(--color-steel-nib);" onclick="resetProgress()">Reset Progress</button>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+        
+        <!-- Section 1: Start Page & Introduction -->
+        <div id="sec-1" class="chapter-section active-section">
+            <img src="assets/Hero%20Banner%206.png" class="hero-banner-flush" alt="Chapter 6 Banner">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <div class="id-panel">
+                        <div>
+                            <label>Student Name</label>
+                            <input type="text" id="student-name" placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label>Period</label>
+                            <select id="student-period">
+                                <option value="">Select...</option>
+                                <option value="1">Period 1</option>
+                                <option value="2">Period 2</option>
+                                <option value="3">Period 3</option>
+                                <option value="4">Period 4</option>
+                                <option value="6">Period 6</option>
+                                <option value="7">Period 7</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Date Completed</label>
+                            <input type="text" id="completion-date" readonly placeholder="Auto-fills on finish">
+                        </div>
+                    </div>
+
+                    <h3 style="margin-top: 0 !important;">Core Objectives</h3>
+                    <ul>
+                        <li>Analyze the historical origins and strategic establishment of judicial review in <em>Marbury v. Madison</em>.</li>
+                        <li>Differentiate between the jurisdiction and functions of the dual court system, including the specific roles of district and appellate courts.</li>
+                        <li>Evaluate the competing judicial philosophies of activism and restraint in the context of constitutional interpretation.</li>
+                        <li>Assess the structural mechanisms that preserve judicial independence and the checks available to the legislative and executive branches.</li>
+                    </ul>
+
+                    <h3>Key Terms</h3>
+                    <div class="word-bank">
+                        <span class="word-pill">Judicial Review</span>
+                        <span class="word-pill">Precedent</span>
+                        <span class="word-pill">Stare Decisis</span>
+                        <span class="word-pill">Writ of Certiorari</span>
+                        <span class="word-pill">Judicial Activism</span>
+                        <span class="word-pill">Judicial Restraint</span>
+                        <span class="word-pill">Amicus Curiae</span>
+                        <span class="word-pill">Original Jurisdiction</span>
+                        <span class="word-pill">Appellate Jurisdiction</span>
+                        <span class="word-pill">Federal Question Cases</span>
+                    </div>
+
+                    <h2>Introduction</h2>
+                    <p class="first-p">In the intricate architecture of the American government, the judiciary occupies a position that is both paradoxical and essential. Writing in <em>The Federalist Papers</em> (No. 78), Alexander Hamilton famously described the judiciary as the "least dangerous" branch of the proposed government. He reasoned that unlike the President, the courts commanded no armies and controlled no weapons; they held no "sword." Unlike the Congress, the courts controlled no treasury and levied no taxes; they held no "purse." The judiciary, Hamilton argued, possessed neither force nor will, but merely judgment. Yet, despite these structural limitations, the Supreme Court has evolved into the final arbiter of the Constitution, possessing the immense power to strike down laws passed by Congress, invalidate actions taken by the President, and reorder the fundamental rights of American society. This transformation from a "least dangerous" branch to a co-equal partner in governance is one of the most significant developments in the history of the republic.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_1.png" class="visual-img" alt="Visual 1">
+                        <p class="caption-text">The structural design of the federal government purposefully deprives the judiciary of both financial and military power. By possessing neither the "purse" nor the "sword," the courts must rely entirely on the perceived legitimacy of their legal judgments to influence national policy.</p>
+                    </div>
+
+                    <p class="first-p">The essential function of the judiciary is to serve as the specific interpreter of the law. In a dictatorship or an absolute monarchy, the law is simply the will of the ruler, changeable at a moment's notice to suit the needs of power. In a constitutional democracy, however, the law is a public contract—a set of binding rules that restricts both the government and the people. When disagreements arise regarding this contract—whether between two citizens, between a citizen and the government, or between different branches of government—there must be a neutral referee to resolve the conflict. Without such a referee, the system would devolve into a contest of raw power, where the strong simply dominate the weak. The Founders established the judiciary to serve as this stabilizing force, ensuring that the passions of the majority do not trample the fundamental rights of the minority or violate the terms of the constitutional contract.</p>
+
+                    <p>This role requires the courts to navigate a permanent, structural tension between democratic will and constitutional boundaries. The legislative and executive branches are designed to be responsive to voters; they are political by nature, driven by elections, public opinion, polls, and the immediate demands of their constituents. The judiciary, conversely, is designed to be insulated from these pressures. Federal judges are appointed rather than elected, and they serve for life. This insulation allows them to make decisions that are legally correct but politically toxic. Whether ruling that a popular law violates free speech, or that a specific executive action exceeds presidential authority, the courts act as a brake on the immediate desires of the majority in favor of long-term constitutional principles. They are the guardians of the rules of the game, even when the spectators—and the players—are shouting for a different outcome.</p>
+
+                    <p>However, the authority of the court is not automatic, nor is it unlimited. Because the Court lacks the power of enforcement—it cannot send the police to arrest a defiant governor, nor can it cut the funding of a defiant agency—it relies entirely on legitimacy. Legitimacy is the public’s belief that the court’s decisions are grounded in law rather than politics. If the public begins to view the Supreme Court as merely a "super-legislature" of unelected politicians in robes, the court’s power evaporates. Throughout American history, the judiciary has had to carefully balance its duty to interpret the Constitution with the need to maintain its standing in the eyes of the nation. From the early struggles of the Marshall Court to define its own power, to the modern battles over social issues, the story of the judiciary is the story of the struggle to maintain the rule of law in a dynamic, divided, and often turbulent democracy.</p>
+
+                    <div class="checkpoint-block" id="cp-block-1" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. Why did Alexander Hamilton consider the judiciary the "least dangerous" branch of government?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A) Because judges are elected by the people and directly accountable to them</label>
+                            <label class="checklist-item"><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B) Because it possesses neither the power of the sword nor the power of the purse</label>
+                            <label class="checklist-item"><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C) Because the Constitution specifically restricts the courts from striking down laws</label>
+                            <label class="checklist-item"><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D) Because the judiciary is intentionally divided into multiple layers to dilute its power</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. What is the primary function of the judiciary in a constitutional democracy?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-1')"> A) To represent the immediate desires and passions of the electoral majority</label>
+                            <label class="checklist-item"><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-1')"> B) To act as a neutral referee resolving conflicts over the constitutional contract</label>
+                            <label class="checklist-item"><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-1')"> C) To enforce the political agenda of the executive branch</label>
+                            <label class="checklist-item"><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-1')"> D) To rewrite the Constitution whenever social conditions change</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>3. How does the structural design of the judiciary affect its relationship with public pressure?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-1')"> A) Direct elections force judges to poll the public before issuing major rulings</label>
+                            <label class="checklist-item"><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-1')"> B) Frequent reappointments ensure that the judiciary remains responsive to congressional will</label>
+                            <label class="checklist-item"><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-1')"> C) Life tenure and appointed positions insulate judges from immediate political demands</label>
+                            <label class="checklist-item"><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-1')"> D) Budgetary control by the President keeps the courts aligned with popular opinion</label>
+                        </div>
+
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-1', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 3</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-1', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <div></div>
+                        <button class="action-btn" id="btn-next-sec-1" onclick="switchTab('sec-2')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: The Power of Judicial Review -->
+        <div id="sec-2" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>The Power of Judicial Review: Defining Authority</h2>
+                    <p class="first-p">The United States Constitution is remarkably brief regarding the judicial branch. While Article I outlines the powers of Congress in exhaustive detail, and Article II clearly defines the role of the President as Commander-in-Chief, Article III is comparatively vague. It creates "one supreme Court" and gives Congress the authority to create lower courts, but it says very little about what the Court actually <em>does</em>. Crucially, the text of the Constitution does not explicitly grant the Supreme Court the power to strike down laws passed by Congress. This silence created a massive constitutional void in the early years of the republic. If Congress passed a law that violated the Constitution, and the President signed it, was that law valid? If the answer was yes, then the Constitution was not the supreme law of the land; it was merely a suggestion. If the answer was no, who had the specific authority to declare the law void?</p>
+
+                    <p>The answer to this question was not written in the Philadelphia Convention of 1787. Instead, it was forged in the bitter political fires of the election of 1800. The power of <strong>Judicial Review</strong>—the authority of the federal courts to declare laws or executive actions unconstitutional—was not a gift from the Founders, but a strategic victory seized by the Court itself under the leadership of Chief Justice John Marshall. To understand this power, one must understand the political crisis that birthed it.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_2.png" class="visual-img" alt="Visual 2">
+                        <p class="caption-text">The text of Article III of the Constitution is remarkably brief compared to the detailed powers granted to the legislative and executive branches. This brevity created a constitutional ambiguity regarding who possessed the final authority to interpret the legality of federal laws.</p>
+                    </div>
+
+                    <h3>The Revolution of 1800 and the Midnight Appointments</h3>
+                    <p class="first-p">The election of 1800 was one of the most contentious in American history. It pitted the incumbent President, John Adams, and his Federalist Party against Thomas Jefferson and the Democratic-Republicans. The two sides viewed each other not just as political opponents, but as existential threats to the nation. The Federalists believed Jefferson was a dangerous radical who would bring the chaos of the French Revolution to American shores. When the votes were counted, Adams lost. For the first time in modern history, power was to be transferred peacefully from one political faction to another.</p>
+                    
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_3.png" class="visual-img" alt="Visual 3">
+                        <p class="caption-text">The peaceful transfer of power in 1800 was complicated by a lame-duck administration attempting to pack the judicial branch with partisan loyalists. This last-minute strategy aimed to preserve political influence within the unelected courts after losing control of the elected branches.</p>
+                    </div>
+
+                    <p class="first-p">However, the transition was anything but smooth. In the "lame duck" period between the election in November and Jefferson’s inauguration in March, the Federalist Congress passed the Judiciary Act of 1801. This law created dozens of new federal judgeships and justice of the peace positions. Adams, determined to preserve Federalist influence in the only branch of government left open to them, rushed to fill these seats with loyal party members. These appointees became known as the "Midnight Judges" because Adams was said to be signing their commissions late into the night of his final day in office.</p>
+                    
+                    <p>The Senate confirmed the appointments, and Adams signed the commissions. The final step was for the Secretary of State to affix the Great Seal of the United States and physically deliver the papers to the new judges. In the chaotic final hours of the administration, the Secretary of State—John Marshall, who had just been appointed Chief Justice of the Supreme Court but was serving out his term in the cabinet—failed to deliver all of them. When Thomas Jefferson took the oath of office the next day, he found several undelivered commissions sitting on a desk in the State Department. Jefferson, furious at Adams’s attempt to "pack" the courts, ordered his new Secretary of State, James Madison, not to deliver them. One of those undelivered commissions belonged to William Marbury, a Maryland businessman who had been appointed as a Justice of the Peace for the District of Columbia. Marbury, wanting the job he had been promised, sued.</p>
+
+                    <div class="checkpoint-block" id="cp-block-2" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What caused William Marbury to file a lawsuit directly with the Supreme Court?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-2')"> A) He was impeached from his position by the new Congress</label>
+                            <label class="checklist-item"><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-2')"> B) The new Secretary of State refused to deliver his confirmed judicial commission</label>
+                            <label class="checklist-item"><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-2')"> C) President Adams refused to sign his appointment before leaving office</label>
+                            <label class="checklist-item"><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-2')"> D) He wanted to challenge the constitutionality of the Judiciary Act of 1801</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-2', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-2', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Marshall Dilemma</h3>
+                    <p class="first-p">Marbury took his case directly to the Supreme Court. He asked the Court to issue a <em>writ of mandamus</em>—a legal order commanding a government official to perform a mandatory duty. In this case, Marbury wanted the Court to order James Madison to hand over the commission. This lawsuit, <em>Marbury v. Madison</em> (1803), placed Chief Justice John Marshall in a catastrophic political dilemma.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_4.png" class="visual-img" alt="Visual 4">
+                        <p class="caption-text">Political conflicts often force the judiciary into situations where any legal ruling risks damaging the institution's authority. Navigating a dispute between a defiant executive branch and a wronged citizen requires strategic legal maneuvering to avoid exposing the court's lack of enforcement power.</p>
+                    </div>
+
+                    <p class="first-p">Marshall knew that the new Jefferson administration was hostile to the Court. If Marshall ruled in favor of Marbury and ordered Madison to deliver the commission, Jefferson would almost certainly tell Madison to ignore the order. The Supreme Court had no army to enforce its ruling. If the President simply ignored the Chief Justice, the Court would be revealed as powerless and irrelevant, destroying its authority for generations. However, if Marshall ruled against Marbury, he would appear to be caving to political pressure, afraid to stand up to the President. This would also make the Court look weak and subservient.</p>
+                    
+                    <p>Marshall was trapped between a rock and a hard place. A ruling for Marbury would provoke a constitutional crisis the Court would lose; a ruling against Marbury would surrender the independence of the judiciary. Marshall needed a third option, a way to escape the trap while asserting the power of his branch.</p>
+
+                    <div class="checkpoint-block" id="cp-block-3" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What consequence would likely result if Chief Justice Marshall ordered the commission delivered and the President ignored it?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-3')"> A) The President would be immediately removed from office</label>
+                            <label class="checklist-item"><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-3')"> B) The Supreme Court would be revealed as powerless, permanently damaging its institutional authority</label>
+                            <label class="checklist-item"><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-3')"> C) Congress would automatically grant the Supreme Court enforcement powers</label>
+                            <label class="checklist-item"><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-3')"> D) The state courts would step in to enforce the federal order</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. Why was a ruling strictly against Marbury dangerous for the Supreme Court's reputation?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-3')"> A) It would make the Court appear subservient and afraid of political pressure</label>
+                            <label class="checklist-item"><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-3')"> B) It would require the Court to significantly expand its own original jurisdiction</label>
+                            <label class="checklist-item"><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-3')"> C) It would immediately force the resignation of the Chief Justice</label>
+                            <label class="checklist-item"><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-3')"> D) It would give state governments the power to veto federal appointments</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-3', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-3', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>The Grand Strategic Ruling</h3>
+                    <p class="first-p">Marshall’s opinion in <em>Marbury v. Madison</em> is considered the single most important decision in American constitutional law because of how he navigated this trap. Marshall broke the decision into three parts. First, he asked: Did Marbury have a right to the commission? Marshall answered yes. Once the President signed it and the Seal was affixed, the appointment was complete. Second, he asked: Did the laws of the country afford Marbury a remedy? Again, Marshall answered yes. To have a right without a remedy is a logical absurdity in law.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_5.png" class="visual-img" alt="Visual 5">
+                        <p class="caption-text">Judicial review is established not by direct confrontation, but by strategically limiting the court's own jurisdiction. By declaring a legislative act unconstitutional because it improperly expands judicial power, a court can assert its supremacy over constitutional interpretation while avoiding a direct political standoff.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: How did striking down a minor provision of the Judiciary Act of 1789 fundamentally expand the power of the Supreme Court?</label>
+                            <textarea class="textarea-dark" id="va_5" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">It was the third question where Marshall executed his legal maneuver. He asked: Was the Supreme Court the proper place for Marbury to seek this remedy? Marbury had come to the Supreme Court because a section of the Judiciary Act of 1789 explicitly gave the Court the power to issue <em>writs of mandamus</em> in cases like this. Marshall, however, looked at Article III of the Constitution. Article III defined the "original jurisdiction" of the Supreme Court—the types of cases it could hear first, without an appeal. The Constitution’s list was very short and specific, involving ambassadors and states. It did not mention <em>writs of mandamus</em> or administrative disputes.</p>
+                    
+                    <p>Marshall concluded that when Congress passed the Judiciary Act of 1789, it had attempted to expand the Supreme Court’s original jurisdiction beyond what the Constitution allowed. Marshall argued that Congress could not simply change the Constitution by passing a regular law. If the Constitution is the supreme law, then any legislative act that conflicts with it must be void. Therefore, the section of the Judiciary Act that gave Marbury the right to sue in the Supreme Court was unconstitutional. Marshall dismissed the case. Marbury never got his job, and Jefferson technically "won" the battle. But by striking down a federal law, Marshall established the power of <strong>Judicial Review</strong>. He famously wrote, "It is emphatically the province and duty of the judicial department to say what the law is."</p>
+
+                    <div class="checkpoint-block" id="cp-block-4" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How did Chief Justice Marshall strategically navigate the dilemma of Marbury's commission?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-4')"> A) He ordered the military to enforce the delivery of the commission</label>
+                            <label class="checklist-item"><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-4')"> B) He ruled that Marbury deserved the commission but struck down the law that allowed Marbury to sue in the Supreme Court</label>
+                            <label class="checklist-item"><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-4')"> C) He deferred the decision to Congress, allowing them to vote on the matter</label>
+                            <label class="checklist-item"><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-4')"> D) He resigned from the Court in protest of the President's actions</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. What was the long-term institutional impact of dismissing Marbury's case?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-4')"> A) The Executive branch gained the power to dissolve the federal courts</label>
+                            <label class="checklist-item"><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-4')"> B) The Constitution was immediately amended to change the appointment process</label>
+                            <label class="checklist-item"><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-4')"> C) The Supreme Court surrendered its authority to interpret the Constitution</label>
+                            <label class="checklist-item"><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-4')"> D) The Supreme Court established the binding precedent of Judicial Review over federal laws</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-4', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-4', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>Expanding Authority: The Supremacy Clause</h3>
+                    <p class="first-p">Having established the power to strike down federal laws, the Court soon faced challenges regarding the relationship between the federal government and the states. The principle of judicial review needed to extend beyond Congress to include state legislatures if the "Supremacy Clause" of Article VI was to have any meaning. The test of this power came in the case of <em>McCulloch v. Maryland</em> (1819).</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_6.png" class="visual-img" alt="Visual 6">
+                        <p class="caption-text">The Supremacy Clause ensures that state governments cannot utilize their legislative powers to undermine or destroy federal operations. Asserting federal supremacy prevents states from effectively vetoing national laws through taxation or local regulation.</p>
+                    </div>
+
+                    <p class="first-p">The state of Maryland, hostile to the newly created Second Bank of the United States, passed a law imposing a heavy tax on any bank not chartered by the state legislature. The clear intent was to tax the federal bank out of existence. James McCulloch, the cashier of the Baltimore branch of the Bank of the United States, refused to pay the tax. The case reached the Supreme Court, presenting two questions: Could Congress create a bank? And could a state tax a federal entity?</p>
+
+                    <p>Marshall again wrote the opinion. He first upheld the power of Congress to create the bank under the "Necessary and Proper Clause," engaging in a broad interpretation of implied powers. More importantly for the judiciary, he struck down the Maryland tax law. Marshall declared that "the power to tax involves the power to destroy." He reasoned that if a state could tax a federal agency, it could effectively veto federal laws. This violated the Supremacy Clause, which states that the Constitution and federal laws are supreme over state laws. By striking down the Maryland law, the Court asserted its authority to referee disputes between the national government and the states, firmly establishing the federal judiciary as the ultimate overseer of the entire constitutional system.</p>
+
+                    <div class="checkpoint-block" id="cp-block-5" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How did the ruling in McCulloch v. Maryland shape the balance of federalism?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-5')"> A) It prioritized state laws over federal administrative actions</label>
+                            <label class="checklist-item"><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-5')"> B) It affirmed the Supremacy Clause by preventing states from interfering with constitutional federal operations</label>
+                            <label class="checklist-item"><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-5')"> C) It eliminated the concept of implied powers within the Constitution</label>
+                            <label class="checklist-item"><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-5')"> D) It granted states the power to veto Supreme Court decisions</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-5', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-5', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Strategic Logic of Constitutional Guardianship</h3>
+                    <p class="first-p">The establishment of judicial review transformed the nature of American politics. It meant that the "will of the majority" had limits. In a pure democracy, 51 percent of the voters can do whatever they wish to the other 49 percent. In a constitutional republic equipped with judicial review, the majority can only act within the boundaries of the higher law. The genius of Marshall’s logic was to tether the Court’s power to the people’s own document. He argued that when the Court strikes down a law, it is not elevating its own will above the Congress; rather, it is elevating the "permanent will" of the people (the Constitution) above the "temporary whims" of their representatives.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_7.png" class="visual-img" alt="Visual 7">
+                        <p class="caption-text">In a constitutional republic, the principle of majority rule is restricted by fundamental legal boundaries. The judiciary acts as a mechanism to elevate the enduring principles of the constitutional framework above the immediate, temporary desires of electoral majorities.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: How does judicial review prevent a pure democracy from devolving into what the founders feared as "the tyranny of the majority"?</label>
+                            <textarea class="textarea-dark" id="va_7" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">This power creates a unique feature of American governance: the legalization of political conflict. Major debates over slavery, economic regulation, civil rights, and personal privacy eventually find their way to the Supreme Court. While this puts immense pressure on the nine justices, it also serves as a stabilizing mechanism. It forces political combatants to frame their arguments in terms of rights, precedents, and text, rather than merely force and numbers. Judicial review ensures that the Constitution remains a living, enforceable reality rather than a dusty historical artifact. It creates a government where, in theory, the law is king, rather than the king being the law.</p>
+
+                    <div class="checkpoint-block" id="cp-block-6" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How does the mechanism of judicial review alter the dynamic of majority rule in the United States?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-6')"> A) It guarantees that the 51 percent majority can freely dictate national policy</label>
+                            <label class="checklist-item"><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-6')"> B) It replaces the electoral process entirely with judicial appointments</label>
+                            <label class="checklist-item"><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-6')"> C) It requires the majority to act strictly within the established boundaries of the higher constitutional law</label>
+                            <label class="checklist-item"><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-6')"> D) It forces all legislative debates to occur inside the chambers of the Supreme Court</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-6', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-6', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-1')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-2" onclick="switchTab('sec-3')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: The Federal Court System -->
+        <div id="sec-3" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>The Federal Court System: Hierarchy and Jurisdiction</h2>
+                    <p class="first-p">The American judiciary is not a monolith; it is a complex, multi-layered system designed to reflect the federal structure of the nation. At its core, the United States operates under a <strong>Dual Court System</strong>. This means there are two distinct, parallel judicial systems in operation at all times: the federal court system and the court systems of the fifty individual states. While they often interact, they serve different purposes and derive their power from different sources. The state courts, created by state constitutions and laws, handle the vast majority of legal disputes—over 90 percent—ranging from traffic violations and divorce proceedings to most criminal cases and contract disputes. The federal courts, established by Article III of the Constitution and acts of Congress, are reserved for cases involving national laws, interstate conflicts, and constitutional questions.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_8.png" class="visual-img" alt="Visual 8">
+                        <p class="caption-text">The American legal framework operates as a dual system, dividing authority between massive state-level legal infrastructures and a specialized, narrower federal hierarchy. This separation ensures that localized disputes are handled locally, while national and constitutional issues are escalated to federal authorities.</p>
+                    </div>
+
+                    <p class="first-p">The federal system itself is organized as a three-tiered hierarchy. This structure is not accidental; it is designed to filter cases efficiently, ensuring that minor disputes are resolved locally while major questions of national law rise to the top. The hierarchy consists of the U.S. District Courts at the bottom, the U.S. Courts of Appeals in the middle, and the U.S. Supreme Court at the apex. Understanding the function of each tier requires understanding the concept of <strong>Jurisdiction</strong>—the legal authority of a court to hear and decide a case.</p>
+
+                    <h3>The Foundation: U.S. District Courts</h3>
+                    <p class="first-p">The first level of the federal judiciary is the <strong>U.S. District Court</strong>. These are the trial courts of the federal system. There are 94 district courts spread across the United States and its territories, with at least one in every state. Larger states like California, Texas, and New York have multiple districts (e.g., the Southern District of New York or the Central District of California) to handle the heavy caseload.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_9.png" class="visual-img" alt="Visual 9">
+                        <p class="caption-text">Fact-finding is the foundational step of the legal process. At the trial court level, evidence is evaluated, witnesses are heard, and juries determine the factual reality of a dispute before constitutional or federal law is applied to the verdict.</p>
+                    </div>
+
+                    <p class="first-p">District courts possess <strong>Original Jurisdiction</strong> for most federal cases. This means they are the first courts to hear a case. This is the only level of the federal system where trials occur. In a district court, witnesses testify, evidence is presented, and a jury is impaneled to determine the facts of the case. A single judge presides over the proceedings to ensure that the law is followed and the rules of evidence are respected.</p>
+
+                    <p>The primary function of the district court is fact-finding. Did the defendant rob the bank? Did the company pollute the river in violation of federal law? Did the employer discriminate against the employee based on race? The judge or jury answers these factual questions and applies the relevant law to reach a verdict. Most federal cases end here. The losing party may accept the decision, or they may choose to appeal to the next level.</p>
+
+                    <div class="checkpoint-block" id="cp-block-7" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What distinguishes the function of U.S. District Courts within the federal hierarchy?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-7')"> A) They are the only courts that can overturn constitutional amendments</label>
+                            <label class="checklist-item"><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-7')"> B) They solely review the written records of lower state courts for procedural errors</label>
+                            <label class="checklist-item"><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-7')"> C) They are the trial courts where initial fact-finding, evidence presentation, and juries are utilized</label>
+                            <label class="checklist-item"><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-7')"> D) They have the final, unappealable say on all constitutional interpretations</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-7', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-7', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Filter: U.S. Courts of Appeals</h3>
+                    <p class="first-p">Sitting directly above the district courts are the <strong>U.S. Courts of Appeals</strong>, often referred to as Circuit Courts. The nation is divided geographically into twelve regional circuits, plus a specialized Court of Appeals for the Federal Circuit which handles specific nationwide issues like patents and international trade. For example, the Ninth Circuit covers a vast area of the American West, including California, Oregon, Washington, and Arizona.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_10.png" class="visual-img" alt="Visual 10">
+                        <p class="caption-text">Appellate review serves as a procedural filter, focusing strictly on the misapplication of law rather than the re-evaluation of evidence. By analyzing written records and legal briefs, appellate courts correct procedural errors and establish uniform legal interpretations for their geographic circuits.</p>
+                    </div>
+
+                    <p class="first-p">These courts possess <strong>Appellate Jurisdiction</strong>. This means they have the authority to review decisions made by lower courts. Crucially, appellate courts do not hold new trials. There are no witness stands, no juries, and no dramatic introduction of new evidence. Instead, a panel of three judges reviews the written record of the trial court to determine if a legal error occurred. Lawyers for both sides submit legal briefs—written arguments explaining why the lower court was right or wrong—and may present oral arguments before the judges.</p>
+                    
+                    <p>The focus of the appellate court is strictly on questions of law, not questions of fact. The court does not ask "Is the defendant guilty?" but rather "Did the district judge allow illegal evidence to be used?" or "Did the judge misinterpret the federal statute?" If the appellate court finds a significant legal error, it can reverse the lower court’s decision or send the case back for a new trial. This level serves as a vital filter, correcting mistakes and ensuring that federal law is applied consistently within each region. A decision by a Circuit Court is binding on all district courts within that circuit.</p>
+
+                    <div class="checkpoint-block" id="cp-block-8" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How does the operational process of a U.S. Court of Appeals differ from that of a District Court?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-8')"> A) Appellate courts conduct new trials with multiple juries to verify facts</label>
+                            <label class="checklist-item"><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-8')"> B) Appellate courts possess original jurisdiction over all newly filed constitutional matters</label>
+                            <label class="checklist-item"><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-8')"> C) Appellate courts focus exclusively on reviewing written records for legal errors rather than re-evaluating facts</label>
+                            <label class="checklist-item"><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-8')"> D) Appellate courts are comprised solely of elected state officials</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-8', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-8', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Apex: The Supreme Court</h3>
+                    <p class="first-p">At the top of the pyramid stands the <strong>United States Supreme Court</strong>. It is the final court of appeals and the ultimate authority on the interpretation of the Constitution and federal law. While the Supreme Court has <strong>Original Jurisdiction</strong> in a very small number of cases—specifically those involving ambassadors, public ministers, or disputes where a state is a party (e.g., <em>New Jersey v. New York</em>)—its primary workload consists of cases heard under its appellate jurisdiction.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_11.png" class="visual-img" alt="Visual 11">
+                        <p class="caption-text">The apex of the federal judiciary operates with nearly complete discretionary control over its docket. By utilizing internal voting mechanisms, the highest court selectively targets cases that resolve regional legal inconsistencies or address matters of profound national significance.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: How does the discretionary nature of the Supreme Court's docket change its role compared to lower courts that must hear all filed cases?</label>
+                            <textarea class="textarea-dark" id="va_11" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">The Supreme Court is unique because it has almost total control over its own agenda. Unlike district courts, which must hear cases filed within their jurisdiction, the Supreme Court chooses which cases it wants to decide. This process begins with a petition for a <strong>Writ of Certiorari</strong>, a formal request asking the Court to order up the records from a lower court for review. The Court receives between 7,000 and 8,000 such petitions every year but accepts fewer than 80 for full argument and decision.</p>
+
+                    <p>The selection process is governed by an unwritten rule known as the "Rule of Four." At least four of the nine justices must vote to grant <em>certiorari</em> for a case to be heard. The justices do not simply look for cases where they think the lower court was wrong. They look for cases with national significance or cases that resolve a "circuit split." A circuit split occurs when different Courts of Appeals have interpreted the same law in different ways. For instance, if the Fifth Circuit rules that a certain police tactic is constitutional, but the Ninth Circuit rules that the exact same tactic is unconstitutional, the Supreme Court must step in to establish a uniform rule for the entire nation.</p>
+
+                    <div class="checkpoint-block" id="cp-block-9" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How does the Supreme Court's case selection process differ from lower federal courts?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-9')"> A) The Supreme Court relies entirely on Congress to assign cases to its docket</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-9')"> B) The Supreme Court exercises near-total discretionary control by choosing which cases to hear</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-9')"> C) The Supreme Court is constitutionally required to hear every case submitted to it</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-9')"> D) The Supreme Court only accepts cases that originate directly from state legislatures</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-9', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-9', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>Pathways to Federal Court: Diversity and Federal Questions</h3>
+                    <p class="first-p">Not every legal dispute can enter the federal system. The Constitution limits federal judicial power to specific types of cases. The two most common pathways are <strong>Federal Question Cases</strong> and Diversity of Citizenship cases.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_12.png" class="visual-img" alt="Visual 12">
+                        <p class="caption-text">Federal jurisdiction is strictly limited to cases involving constitutional interpretations, federal statutes, or disputes designed to prevent regional bias. Providing a neutral federal forum for interstate disputes facilitates economic fairness and prevents local courts from unfairly favoring their own residents.</p>
+                    </div>
+
+                    <p class="first-p">A <strong>Federal Question</strong> exists when a case involves the U.S. Constitution, a federal law, or a treaty. For example, if a student is suspended from a public school for wearing a political armband, they can sue in federal court arguing that their First Amendment rights were violated. This is a federal question because it turns on the interpretation of the Constitution. However, if a student is suspended for fighting, which violates school policy but usually not the Constitution, that matter stays in state court.</p>
+
+                    <p><strong>Diversity of Citizenship</strong> jurisdiction allows federal courts to hear civil cases where the parties are citizens of different states and the amount in controversy exceeds $75,000. This provision was included by the Founders to prevent bias. If a citizen of New York sues a citizen of Georgia in a Georgia state court, there is a fear that the local judge and jury might favor their own resident. By allowing the case to be moved to federal court, the system provides a neutral forum for resolving interstate disputes, facilitating commerce and fairness across state lines.</p>
+
+                    <div class="checkpoint-block" id="cp-block-10" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. Under what condition does a legal dispute qualify as a "Federal Question" case?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-10')"> A) The dispute involves trade between two different countries</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-10')"> B) The case revolves around purely local criminal matters like assault or robbery</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-10')"> C) The lawsuit centers on the interpretation of the U.S. Constitution, federal laws, or treaties</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-10')"> D) The lawsuit seeks financial damages strictly under $75,000</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-10', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-10', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Standardization of Justice</h3>
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_13.png" class="visual-img" alt="Visual 13">
+                        <p class="caption-text">A hierarchical judicial structure ensures the standardization of justice across a massive geographic republic. As final interpretations of law cascade downward from the highest appellate authority, they bind all local and state jurisdictions, preventing the fracturing of constitutional rights based on geography.</p>
+                    </div>
+                    
+                    <p class="first-p">The hierarchical structure of the federal judiciary serves a critical function in a large, diverse republic: the standardization of justice. Without a Supreme Court with appellate authority over the state and lower federal courts, the meaning of the Constitution could vary wildly from place to place. Freedom of speech could mean one thing in Texas and something entirely different in Massachusetts. A federal environmental regulation could be enforced strictly in Oregon but ignored in Louisiana.</p>
+
+                    <p>By filtering cases up through the pyramid, the system ensures that while local communities handle local problems, the fundamental rights of citizenship and the meaning of national laws remain consistent. The Supreme Court is not a court of error correction for every litigant who feels wronged; it is a court of constitutional clarification. Its rulings ripple down the hierarchy, binding every lower court and every state court, weaving a single legal fabric for the nation. This structure balances the need for local judicial administration with the necessity of a unified national law.</p>
+
+                    <div class="checkpoint-block" id="cp-block-11" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What is a primary consequence of the federal judiciary's hierarchical structure?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="A" onchange="handleRadioChange('cp-block-11')"> A) It standardizes justice by creating a unified legal fabric that binds all lower courts nationally</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="B" onchange="handleRadioChange('cp-block-11')"> B) It completely removes state courts from functioning within the American legal system</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="C" onchange="handleRadioChange('cp-block-11')"> C) It ensures that the meaning of constitutional rights varies significantly from state to state</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="D" onchange="handleRadioChange('cp-block-11')"> D) It severely limits the Supreme Court to handling only minor local traffic violations</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-11', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-11', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-2')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-3" onclick="switchTab('sec-4')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Constitutional Interpretation -->
+        <div id="sec-4" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>Constitutional Interpretation and Judicial Philosophy</h2>
+                    <p class="first-p">The Constitution of the United States is a remarkably concise document. It contains fewer than 5,000 words, yet it governs a nation of over 330 million people in a world that the Founders could barely imagine. It prohibits "unreasonable searches and seizures," but it does not define what "unreasonable" means in the age of thermal imaging, GPS tracking, and digital data mining. It guarantees "due process of law," but it does not list every procedural step that phrase requires. Because the text is often broad and the world is constantly changing, the judiciary must interpret the document. This necessity has given rise to deep ideological debates regarding how judges should read the Constitution. These debates are not merely academic; they determine who has the right to marry, how elections are conducted, and the limits of government power in times of crisis.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_14.png" class="visual-img" alt="Visual 14">
+                        <p class="caption-text">The application of concise, centuries-old constitutional text to modern technological and social realities requires deep judicial interpretation. This ongoing necessity forces the legal system to constantly reconcile historical language with unprecedented modern conditions.</p>
+                    </div>
+
+                    <h3>The Anchor of Stability: Precedent and Stare Decisis</h3>
+                    <p class="first-p">The bedrock of the American legal system is the principle of <strong>Stare Decisis</strong>, a Latin phrase meaning "to stand by things decided." This principle dictates that courts should follow <strong>Precedent</strong>—authoritative rules established in prior cases—when ruling on similar issues. Precedent provides the legal system with stability, predictability, and fairness. A citizen needs to know that the law today is the same as it was yesterday. If a court ruled last year that a certain type of business contract was valid, a business owner needs the confidence to sign that contract today without fear that a new judge will suddenly declare it illegal. Without <em>stare decisis</em>, the law would be fluid and chaotic, changing with the whims of every new judicial appointment.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_15.png" class="visual-img" alt="Visual 15">
+                        <p class="caption-text">The adherence to established legal precedent provides society with necessary predictability and fairness. However, the stability of the law must occasionally yield when historical precedents are recognized as fundamentally flawed, unworkable, or rooted in deep societal injustice.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: What societal risks are created when the Supreme Court frequently overturns its own recent precedents?</label>
+                            <textarea class="textarea-dark" id="va_15" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">However, precedent is not absolute. If it were, the Supreme Court would be permanently bound by its own past mistakes. The most famous example of overturning precedent is the transition from <em>Plessy v. Ferguson</em> (1896) to <em>Brown v. Board of Education</em> (1954). In <em>Plessy</em>, the Court interpreted the Equal Protection Clause of the 14th Amendment to allow "separate but equal" racial segregation. For fifty-eight years, this was the law of the land. In 1954, however, the Court looked at the same Constitution and the same segregated society but reached a fundamentally different conclusion: that "separate educational facilities are inherently unequal."</p>
+
+                    <p>This shift illustrates the delicate balance judges must maintain. They must respect the accumulated wisdom of the past (precedent) while remaining open to the reality that historical rulings may have been based on flawed reasoning or deep societal injustice. Overturning precedent is rare and usually requires a "special justification"—a realization that the old rule has become unworkable or that facts have changed so drastically that the old law no longer makes sense.</p>
+
+                    <div class="checkpoint-block" id="cp-block-12" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What is the primary benefit of adhering to the principle of stare decisis?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="A" onchange="handleRadioChange('cp-block-12')"> A) It allows judges to easily impose their personal political views on the law</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="B" onchange="handleRadioChange('cp-block-12')"> B) It ensures that the law is frequently changing to keep the public engaged</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="C" onchange="handleRadioChange('cp-block-12')"> C) It guarantees that all Supreme Court decisions are completely unanimous</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="D" onchange="handleRadioChange('cp-block-12')"> D) It provides the legal system with stability, predictability, and fairness for citizens</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. What condition generally prompts the Supreme Court to overturn an established precedent?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="A" onchange="handleRadioChange('cp-block-12')"> A) When a newly elected President formally requests the change</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="B" onchange="handleRadioChange('cp-block-12')"> B) When public opinion polls show temporary disagreement with a ruling</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="C" onchange="handleRadioChange('cp-block-12')"> C) When an old rule is deemed unworkable or foundational facts have drastically changed</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="D" onchange="handleRadioChange('cp-block-12')"> D) When the justices wish to reduce their heavy appellate workload</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-12', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-12', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>Competing Philosophies: Originalism vs. Living Constitution</h3>
+                    <p class="first-p">When a case has no clear precedent, or when the precedent is challenged, justices must interpret the Constitution’s text directly. Two primary schools of thought dominate this process: <strong>Originalism</strong> and the <strong>Living Constitution</strong>.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_16.png" class="visual-img" alt="Visual 16">
+                        <p class="caption-text">The philosophical debate over constitutional interpretation centers on whether the document is a fixed contract or an evolving framework. Strict adherence to original historical understanding competes with the view that underlying principles must be adapted to prevent the legal system from becoming obsolete.</p>
+                    </div>
+
+                    <p class="first-p"><strong>Originalism</strong> (often associated with Textualism) holds that the Constitution should be interpreted based on the original understanding of the text at the time it was adopted. An originalist asks: "What did the public understand 'freedom of speech' to mean in 1791?" or "What did 'equal protection' mean to the ratifiers of the 14th Amendment in 1868?" Proponents of this view, such as the late Justice Antonin Scalia, argue that the Constitution is a contract with a fixed meaning. If the meaning changes over time, then judges are essentially rewriting the contract without the people's consent. They argue that if society wants to change the Supreme Law, they should use the Amendment process (Article V), not rely on unelected judges to update it.</p>
+                    
+                    <p>The <strong>Living Constitution</strong> approach takes a different view. Proponents argue that the Framers wrote the Constitution in broad, flexible language specifically so it could evolve to meet the needs of a changing society. They argue that relying solely on 18th-century understandings would lead to absurd results in a modern world. For example, the Founders could not have conceived of wiretapping, the internet, or modern semi-automatic weaponry. A "living constitutionalist" judge looks at the underlying <em>principles</em> of the text—such as "liberty" or "dignity"—and applies them to modern contexts. This philosophy suggests that the Constitution must grow with the nation, or it will become brittle and break.</p>
+
+                    <div class="checkpoint-block" id="cp-block-13" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What is a key argument made by proponents of the Living Constitution against Originalism?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="A" onchange="handleRadioChange('cp-block-13')"> A) Relying solely on 18th-century understandings leads to absurd results in the modern world</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="B" onchange="handleRadioChange('cp-block-13')"> B) Originalism forces judges to invent new rights not found in the original text</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="C" onchange="handleRadioChange('cp-block-13')"> C) Originalism illegally gives too much power to the legislative branch</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="D" onchange="handleRadioChange('cp-block-13')"> D) The Founders strictly forbade looking at historical context when reading laws</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-13', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-13', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Scope of Power: Activism vs. Restraint</h3>
+                    <p class="first-p">The debate over <em>how</em> to read the Constitution often bleeds into a debate over <em>how much power</em> the Court should exert. This is framed as the conflict between <strong>Judicial Activism</strong> and <strong>Judicial Restraint</strong>. While these terms are frequently used as political insults in the media, they represent distinct legal philosophies regarding the role of the unelected branch in a democracy.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_17.png" class="visual-img" alt="Visual 17">
+                        <p class="caption-text">Judicial philosophy dictates the appropriate balance of power between unelected judges and democratic legislatures. A willingness to strike down legislative acts prioritizes minority protections, while deference to lawmakers prioritizes the democratic process, regardless of the policy outcome.</p>
+                    </div>
+
+                    <p class="first-p"><strong>Judicial Activism</strong> is the philosophy that the courts should play a bold, active role in policy-making and in correcting injustices that the other branches have failed to address. An activist judge is more willing to strike down laws and overturn precedents to protect minority rights or expand personal liberties. The Warren Court (1953-1969) is the archetype of this philosophy. Under Chief Justice Earl Warren, the Court aggressively expanded civil rights, banning segregation (<em>Brown</em>), requiring attorneys for the poor (<em>Gideon v. Wainwright</em>), and mandating police warnings (<em>Miranda v. Arizona</em>). Activists argue that because the political process often ignores the rights of the powerless (who may not have the money or votes to influence Congress), the courts have a moral and constitutional obligation to intervene.</p>
+
+                    <p><strong>Judicial Restraint</strong>, in contrast, holds that judges should be highly reluctant to overturn the acts of democratically elected legislatures. A judge practicing restraint assumes that laws passed by Congress or state legislatures are constitutional unless they clearly and undeniably violate the text of the Constitution. They believe that policy decisions—such as how to manage healthcare, abortion, or environmental protection—should be left to the elected branches because those branches can be voted out of office. Advocates of restraint argue that when unelected judges strike down laws based on vague interpretations, they are undermining democracy and acting as a "super-legislature."</p>
+                    
+                    <p>It is critical to understand that "activism" is not a synonym for "liberal," and "restraint" is not a synonym for "conservative." A conservative court striking down a strict gun control law passed by a city council is exercising <em>activism</em> (overturning the democratic will of that city). A liberal court upholding a strict death penalty law because the Constitution does not explicitly ban it is exercising <em>restraint</em> (deferring to the legislature). The core tension is not about the <em>outcome</em> of the case (who wins), but about the <em>process</em>—should the Court lead the nation toward justice, or should it stand back and let the democratic process work, even if that process produces results the judges personally dislike?</p>
+
+                    <div class="checkpoint-block" id="cp-block-14" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. Which action best exemplifies a judge practicing judicial activism?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="A" onchange="handleRadioChange('cp-block-14')"> A) Upholding a controversial state law because the Constitution is silent on the issue</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="B" onchange="handleRadioChange('cp-block-14')"> B) Deferring entirely to the policy preferences of the current President</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="C" onchange="handleRadioChange('cp-block-14')"> C) Striking down a long-standing law to proactively protect the rights of a minority group</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="D" onchange="handleRadioChange('cp-block-14')"> D) Refusing to hear any cases that involve constitutional questions</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. What core belief underpins the philosophy of judicial restraint?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="A" onchange="handleRadioChange('cp-block-14')"> A) Courts should actively manage the daily operations of federal agencies</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="B" onchange="handleRadioChange('cp-block-14')"> B) Judges are inherently better equipped than legislatures to make complex policy decisions</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="C" onchange="handleRadioChange('cp-block-14')"> C) Laws passed by democratically elected branches should be presumed constitutional unless clearly violating the text</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="D" onchange="handleRadioChange('cp-block-14')"> D) The judiciary should frequently overturn precedents to demonstrate its political independence</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-14', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-14', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>The Dialogue of Law</h3>
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_18.png" class="visual-img" alt="Visual 18">
+                        <p class="caption-text">Constitutional law is shaped not in isolation, but through active dialogue with external societal forces. By analyzing extensive written input from experts, interest groups, and government agencies, the judiciary evaluates the real-world, practical consequences of their abstract legal interpretations.</p>
+                    </div>
+
+                    <p class="first-p">The interaction between these philosophies ensures that constitutional law is never static. It is a dialogue between the past and the present. When the Court hears a case on digital privacy, it is listening to the voices of James Madison (who wrote the Fourth Amendment) and modern tech companies simultaneously.</p>
+
+                    <p>Furthermore, the Court does not make these decisions in a vacuum. It accepts <strong>Amicus Curiae</strong> briefs ("friend of the court" briefs) from interest groups, states, and experts. In a major case regarding affirmative action, the Court might receive briefs from the U.S. Military, major corporations, and civil rights groups, all explaining how a ruling would affect the real world. This input helps the justices understand the practical consequences of their abstract legal theories.</p>
+
+                    <p>Ultimately, the legitimacy of the Court depends on its ability to justify its decisions. Whether a justice uses Originalism or the Living Constitution, they must write a written opinion explaining their logic. This requirement of reason distinguishes the judiciary from the other branches. A President can issue an order because "I decided so." A Congress can pass a law because "we have the votes." A Court, however, must say, "We rule this way because the law requires it," and they must show their work. This intellectual rigor is what allows the Constitution to survive as the unifying force of the nation.</p>
+
+                    <div class="checkpoint-block" id="cp-block-15" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What purpose do Amicus Curiae briefs serve in the judicial process?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp21" value="A" onchange="handleRadioChange('cp-block-15')"> A) They are secret orders from the President dictating how the Court must rule</label>
+                            <label class="checklist-item"><input type="radio" name="cp21" value="B" onchange="handleRadioChange('cp-block-15')"> B) They allow state governors to formally veto Supreme Court decisions</label>
+                            <label class="checklist-item"><input type="radio" name="cp21" value="C" onchange="handleRadioChange('cp-block-15')"> C) They serve as the final written verdict of the trial court</label>
+                            <label class="checklist-item"><input type="radio" name="cp21" value="D" onchange="handleRadioChange('cp-block-15')"> D) They provide the justices with input on the practical, real-world consequences of their rulings</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-15', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-15', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-3')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-4" onclick="switchTab('sec-5')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: Judicial Independence -->
+        <div id="sec-5" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>Judicial Independence and Institutional Constraints</h2>
+                    <p class="first-p">The legitimacy of the judicial branch rests entirely on the concept of independence. If a judge rules in favor of the government because they fear being fired by the President, or if they rule in favor of a wealthy corporation because they need campaign donations to keep their job, the concept of "justice" becomes a sham. In such a system, the courts would merely be an extension of political power, not a check on it. To prevent this, the Framers of the Constitution built structural protections into Article III to insulate federal judges from the rough-and-tumble world of politics. However, they also feared the tyranny of an unaccountable judiciary—a group of elites who could never be removed. Therefore, while the courts are independent, they are not supreme; they are subject to a complex system of checks and balances designed to keep them within their constitutional bounds.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_19.png" class="visual-img" alt="Visual 19">
+                        <p class="caption-text">The legitimacy of a justice system relies on structural independence from political coercion. While insulated from immediate electoral pressures and financial threats, the judiciary remains physically and procedurally tethered to the other branches through a complex web of constitutional checks.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: Why is it dangerous for a democracy if its judiciary is completely independent and entirely unaccountable to the public?</label>
+                            <textarea class="textarea-dark" id="va_19" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <h3>The Shield of Tenure</h3>
+                    <p class="first-p">The primary mechanism for ensuring judicial independence is life tenure. Article III states that federal judges shall hold their offices "during good Behaviour." This means that once a federal judge is appointed and confirmed, they serve for life. They cannot be fired by the President who appointed them, nor can they be removed simply because Congress dislikes their decisions. They serve until they resign, retire, or die. This is a radical departure from the other branches. Presidents must face the voters every four years; members of the House every two years. Judges never face the voters.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_20.png" class="visual-img" alt="Visual 20">
+                        <p class="caption-text">Permanent judicial appointments shield legal officers from the threat of political retaliation. This structural insulation empowers the courts to uphold unpopular constitutional rights and make legally correct but politically toxic decisions without fear of losing their livelihoods.</p>
+                    </div>
+
+                    <p class="first-p">This insulation allows judges to make necessary but unpopular rulings. A perfect example of this dynamic occurred in <em>Texas v. Johnson</em> (1989). In this case, the Supreme Court ruled that burning the American flag was a form of "symbolic speech" protected by the First Amendment. The decision was incredibly unpopular with the American public and politicians of both parties. If the justices had been elected officials worrying about their next campaign, it is almost certain they would have upheld the ban on flag burning to avoid angering voters. But because they possessed life tenure, they were free to uphold the Constitution's protection of free expression, even when it was painful and controversial to do so.</p>
+
+                    <p>Furthermore, the Constitution prohibits Congress from reducing a judge's salary during their service. This prevents the legislative branch from using the "power of the purse" as a weapon to punish the courts. If Congress could cut the pay of the Supreme Court justices every time the Court struck down a law, the judiciary would quickly become subservient to the legislature. These protections—life tenure and salary security—are designed to create a class of public servants who owe allegiance only to the Constitution and the law, not to a political party, a patron, or a mob.</p>
+
+                    <div class="checkpoint-block" id="cp-block-16" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What constitutional provision serves as the primary shield for judicial independence?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp22" value="A" onchange="handleRadioChange('cp-block-16')"> A) The requirement that judges face confirmation hearings every ten years</label>
+                            <label class="checklist-item"><input type="radio" name="cp22" value="B" onchange="handleRadioChange('cp-block-16')"> B) The rule that judges must belong to the President's political party</label>
+                            <label class="checklist-item"><input type="radio" name="cp22" value="C" onchange="handleRadioChange('cp-block-16')"> C) The guarantee that federal judges hold their offices during good behavior (life tenure)</label>
+                            <label class="checklist-item"><input type="radio" name="cp22" value="D" onchange="handleRadioChange('cp-block-16')"> D) The stipulation that judges are absolutely immune from all criminal prosecution</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-16', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-16', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <h3>The Political Check of Appointment</h3>
+                    <p class="first-p">While judges are independent once they are seated on the bench, the process of getting them there is deeply political. The power to appoint federal judges is shared between the President and the Senate. The President nominates candidates, usually selecting individuals who share their ideological views. A conservative President will nominate judges who believe in judicial restraint or originalism; a liberal President will nominate judges who believe in a living constitution. This allows a President to leave a legacy that lasts decades beyond their own term.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_21.png" class="visual-img" alt="Visual 21">
+                        <p class="caption-text">The process of staffing the judiciary serves as a delayed democratic check on an unelected branch. Through the nomination and confirmation powers, victorious political parties gradually infuse long-term ideological shifts into the courts, ensuring the judiciary loosely tracks with generational political trends.</p>
+                    </div>
+
+                    <p class="first-p">The Senate must provide "Advice and Consent" for these nominations. Historically, this process was often routine, focusing on the nominee's qualifications and character. However, in recent decades, it has become a high-stakes partisan battleground. The rejection of Robert Bork in 1987 marked a turning point. Bork, a conservative scholar nominated by Ronald Reagan, was rejected by the Senate not because he was unqualified, but because Democrats fundamentally disagreed with his judicial philosophy regarding civil rights and privacy. Similarly, in 2016, the Republican-controlled Senate refused to even hold hearings for Merrick Garland, a nominee of President Barack Obama, arguing that the vacancy should be filled by the next President.</p>
+                    
+                    <p>These battles highlight how the appointment process serves as a democratic check on the judiciary. By winning elections, political parties earn the right to nominate and confirm judges, thereby indirectly infusing the popular will into the courts. The composition of the Court shifts slowly, but it does shift, reflecting the long-term political trends of the nation.</p>
+
+                    <div class="checkpoint-block" id="cp-block-17" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. In what way does the appointment process inject democratic influence into the independent judiciary?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp23" value="A" onchange="handleRadioChange('cp-block-17')"> A) By requiring judges to win a national popular vote before taking the bench</label>
+                            <label class="checklist-item"><input type="radio" name="cp23" value="B" onchange="handleRadioChange('cp-block-17')"> B) By forcing the Supreme Court to consult with the House of Representatives on every ruling</label>
+                            <label class="checklist-item"><input type="radio" name="cp23" value="C" onchange="handleRadioChange('cp-block-17')"> C) By allowing elected Presidents and Senators to select judges who reflect long-term political trends</label>
+                            <label class="checklist-item"><input type="radio" name="cp23" value="D" onchange="handleRadioChange('cp-block-17')"> D) By limiting the President to appointing judges only from specific states</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. What is a consequence of the modern, highly partisan nature of Senate confirmation hearings?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp24" value="A" onchange="handleRadioChange('cp-block-17')"> A) The Supreme Court has been officially disbanded and replaced by temporary panels</label>
+                            <label class="checklist-item"><input type="radio" name="cp24" value="B" onchange="handleRadioChange('cp-block-17')"> B) The President has permanently lost the power to nominate judicial candidates</label>
+                            <label class="checklist-item"><input type="radio" name="cp24" value="C" onchange="handleRadioChange('cp-block-17')"> C) All federal judges are now confirmed with unanimous consent to avoid conflict</label>
+                            <label class="checklist-item"><input type="radio" name="cp24" value="D" onchange="handleRadioChange('cp-block-17')"> D) The process focuses less on pure legal qualifications and more on ideological philosophy</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-17', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-17', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>The Ultimate Checks: Impeachment and Enforcement</h3>
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_22.png" class="visual-img" alt="Visual 22">
+                        <p class="caption-text">The ultimate limitation of judicial power is its reliance on external enforcement. Without the active cooperation of the executive branch to carry out its rulings, a court's decrees possess no physical authority, highlighting the fragile nature of judicial supremacy.</p>
+                    </div>
+
+                    <p class="first-p">Despite their life tenure, judges are not kings. The other branches possess significant tools to check the judiciary if it overreaches or engages in misconduct.</p>
+
+                    <p><strong>Impeachment:</strong> Like the President, federal judges can be impeached by the House of Representatives and removed by the Senate for "Treason, Bribery, or other high Crimes and Misdemeanors." While rare, this mechanism ensures that independence does not equal immunity from the law. Throughout history, several federal judges have been removed for corruption or perjury.</p>
+
+                    <p><strong>Constitutional Amendments:</strong> If the Supreme Court interprets the Constitution in a way that the nation finds unacceptable, the people can amend the Constitution to override the Court. For example, in <em>Chisholm v. Georgia</em> (1793), the Court ruled that citizens of one state could sue another state in federal court. This decision caused an uproar among advocates of state sovereignty. In response, Congress and the states rapidly ratified the 11th Amendment, which explicitly blocked such lawsuits, effectively overruling the Supreme Court. Similarly, when the Court struck down the federal income tax in the 1890s, the 16th Amendment was passed to legalize it. This is the ultimate trump card of the democratic process.</p>
+
+                    <p><strong>The Power of Enforcement:</strong> Perhaps the most practical check on the Court is its lack of enforcement power. The Court can issue a ruling, but it relies on the Executive branch to enforce it. In the 1830s, the Supreme Court ruled in <em>Worcester v. Georgia</em> that the state of Georgia could not seize Cherokee lands. President Andrew Jackson, who supported Indian Removal, famously (and perhaps apocryphally) challenged the ruling by saying, "John Marshall has made his decision; now let him enforce it." The executive branch ignored the Court, and the Cherokee were forcibly removed on the Trail of Tears. Conversely, in 1957, when the Governor of Arkansas refused to obey federal court orders to integrate Central High School in Little Rock, President Eisenhower sent the 101st Airborne Division to enforce the Court's will. The Court depends on the respect and cooperation of the other branches. If it acts too radically or without legal basis, it risks being ignored, which would destroy its authority.</p>
+
+                    <div class="checkpoint-block" id="cp-block-18" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. What tool does the Constitution provide to address serious legal misconduct by a federal judge?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp25" value="A" onchange="handleRadioChange('cp-block-18')"> A) Executive order removal</label>
+                            <label class="checklist-item"><input type="radio" name="cp25" value="B" onchange="handleRadioChange('cp-block-18')"> B) Impeachment by the House and removal by the Senate</label>
+                            <label class="checklist-item"><input type="radio" name="cp25" value="C" onchange="handleRadioChange('cp-block-18')"> C) A national recall election</label>
+                            <label class="checklist-item"><input type="radio" name="cp25" value="D" onchange="handleRadioChange('cp-block-18')"> D) Immediate suspension by the Chief Justice</label>
+                        </div>
+                        <div class="checkpoint-q" style="display:none;">
+                            <p class="first-p"><strong>2. How can the democratic process legally override a Supreme Court decision interpreting the Constitution?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp26" value="A" onchange="handleRadioChange('cp-block-18')"> A) By the President issuing a formal letter of disagreement</label>
+                            <label class="checklist-item"><input type="radio" name="cp26" value="B" onchange="handleRadioChange('cp-block-18')"> B) By Congress passing a standard law to cancel the decision</label>
+                            <label class="checklist-item"><input type="radio" name="cp26" value="C" onchange="handleRadioChange('cp-block-18')"> C) By ratifying a new Constitutional Amendment that changes the underlying text</label>
+                            <label class="checklist-item"><input type="radio" name="cp26" value="D" onchange="handleRadioChange('cp-block-18')"> D) By the states collectively ignoring the ruling for ten years</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-18', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 2</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-18', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Next Question &rarr;</button>
+                        </div>
+                    </div>
+
+                    <h3>The Necessity of Friction</h3>
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_23.png" class="visual-img" alt="Visual 23">
+                        <p class="caption-text">Institutional friction between government branches is an intentional design feature meant to prevent centralized tyranny. The structural necessity of compromise and overlapping authority forces the branches to moderate their actions, ensuring no single entity achieves unchecked dominance.</p>
+                    </div>
+
+                    <p class="first-p">The relationship between the judiciary and the other branches is defined by friction. This is not a flaw in the system; it is a feature. The design of the Constitution ensures that no single branch can dominate the others. The President appoints judges, but the Senate must confirm them. The Court can strike down laws, but Congress can rewrite them or amend the Constitution. The Court can issue rulings, but the Executive must enforce them.</p>
+
+                    <p>This "strategic logic" forces compromise and moderation. It prevents the judiciary from becoming a "judicial aristocracy" while preventing the political branches from becoming a "legislative tyranny." The survival of this system depends on a shared commitment to the rule of law. When a President obeys a court order they disagree with (as Richard Nixon did when the Court ordered him to turn over the Watergate tapes), they are reinforcing the stability of the republic. The checks and balances ensure that while the Supreme Court is the final arbiter of the Constitution, it is never the only voice in the conversation.</p>
+
+                    <div class="checkpoint-block" id="cp-block-19" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. Why is the friction between the judiciary and the political branches considered a feature rather than a flaw?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp27" value="A" onchange="handleRadioChange('cp-block-19')"> A) It guarantees that the government will eventually collapse into tyranny</label>
+                            <label class="checklist-item"><input type="radio" name="cp27" value="B" onchange="handleRadioChange('cp-block-19')"> B) It ensures that no laws can ever be passed by Congress</label>
+                            <label class="checklist-item"><input type="radio" name="cp27" value="C" onchange="handleRadioChange('cp-block-19')"> C) It allows the military to step in and resolve constitutional disputes</label>
+                            <label class="checklist-item"><input type="radio" name="cp27" value="D" onchange="handleRadioChange('cp-block-19')"> D) It forces compromise, moderation, and prevents any single branch from dominating the others</label>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-19', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-19', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-4')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-5" onclick="switchTab('sec-6')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 6: Conclusion -->
+        <div id="sec-6" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>Conclusion</h2>
+                    <p class="first-p">The Supreme Court acts as the final arbiter of the Constitution not by force, but by judgment. From the strategic brilliance of John Marshall in <em>Marbury v. Madison</em>, the Court carved out the power of judicial review, positioning itself as the guardian of the constitutional text against the temporary passions of legislative majorities. Through the dual court system, the judiciary filters thousands of disputes to ensure that federal law is applied uniformly, whether in a district court in Kansas or the Supreme Court in Washington, D.C.</p>
+
+                    <div class="visual-wrapper">
+                        <img src="assets/Visual_24.png" class="visual-img" alt="Visual 24">
+                        <p class="caption-text">The judiciary shapes the boundaries of society through judgment and legal reasoning rather than brute force or financial power. By establishing the definitive interpretation of the law, the courts serve as the final stabilizing mechanism within a dynamic and frequently turbulent democratic system.</p>
+                        <div class="question-box">
+                            <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: In what ways does the requirement to issue written legal opinions distinguish the power of the courts from the power of the president?</label>
+                            <textarea class="textarea-dark" id="va_24" placeholder="Enter your analysis here..."></textarea>
+                        </div>
+                    </div>
+
+                    <p class="first-p">The debates over judicial philosophy—activism versus restraint, originalism versus the living constitution—are not merely academic exercises. They determine the scope of our rights and the limits of our government. By balancing the stability of <em>stare decisis</em> with the need to correct historical injustices, the Court navigates the changing currents of American society. Yet, this power is not unchecked. The appointment process, the threat of impeachment, and the amendment process ensure that the judiciary remains tethered to the democratic will. As we look toward the interaction of the branches, we see that while Congress makes the law and the President enforces it, it is the Judiciary that defines it. In the next chapter, we will explore how these defined rights apply to the individual through the lens of Civil Liberties.</p>
+
+                    <div class="checkpoint-block" id="cp-block-20" data-current="0">
+                        <h3 style="margin-top:0!important; color:var(--color-gold);">Checkpoint</h3>
+                        
+                        <div class="checkpoint-q">
+                            <p class="first-p"><strong>1. How does the judiciary primarily exercise its influence within the framework of government?</strong></p>
+                            <label class="checklist-item"><input type="radio" name="cp28" value="A" onchange="handleRadioChange('cp-block-20')"> A) Through the direct command of law enforcement agencies</label>
+                            <label class="checklist-item"><input type="radio" name="cp28" value="B" onchange="handleRadioChange('cp-block-20')"> B) Through legal judgment and the interpretation of the Constitution</label>
+                            <label class="checklist-item"><input type="radio" name="cp28" value="C" onchange="handleRadioChange('cp-block-20')"> C) Through the allocation of the national budget</label>
+                            <label class="checklist-item"><input type="radio" name="cp28" value="D" onchange="handleRadioChange('cp-block-20')"> D) Through the rapid creation of temporary executive orders</label>
+                        </div>
+                        
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:20px;">
+                            <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-20', -1)" style="display:none; width:auto; padding:5px 15px;">&larr; Previous</button>
+                            <span class="cp-indicator" style="font-family:var(--font-ui); font-size:0.9rem; color:var(--color-steel-nib);">1 of 1</span>
+                            <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-20', 1)" disabled style="width:auto; padding:5px 15px; opacity:0.5; cursor:not-allowed;">Finish Checkpoint</button>
+                        </div>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-5')">&larr; Previous</button>
+                        <button class="action-btn" id="btn-next-sec-6" onclick="switchTab('sec-7')" disabled>🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 7: Assessment -->
+        <div id="sec-7" class="chapter-section">
+            <div class="content-wrapper">
+                <div class="content-block">
+                    <h2>Chapter Assessment</h2>
+
+                    <h3>Section I – Vocabulary</h3>
+                    <p class="first-p">Instructions: Match the correct term from the Word Bank to the definition below.</p>
+                    <div class="word-bank">
+                        <span class="word-pill">Judicial Review</span>
+                        <span class="word-pill">Precedent</span>
+                        <span class="word-pill">Stare Decisis</span>
+                        <span class="word-pill">Writ of Certiorari</span>
+                        <span class="word-pill">Judicial Activism</span>
+                        <span class="word-pill">Judicial Restraint</span>
+                        <span class="word-pill">Amicus Curiae</span>
+                        <span class="word-pill">Original Jurisdiction</span>
+                        <span class="word-pill">Appellate Jurisdiction</span>
+                        <span class="word-pill">Federal Question Cases</span>
+                    </div>
+
+                    <div class="vocab-item">
+                        <p>1. The power of the courts to declare laws or executive actions unconstitutional.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>2. A legal brief submitted by a "friend of the court" to influence the justices' decision.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>3. The authority of a court to hear a case for the first time and determine the facts.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>4. The legal principle of respecting past court decisions; Latin for "to stand by things decided."</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>5. A formal order from the Supreme Court to a lower court requesting the records of a case for review.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>6. The philosophy that judges should use their power to correct social wrongs and advance constitutional rights.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>7. The authority of a court to review decisions made by lower courts to check for errors of law.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>8. Cases that involve the U.S. Constitution, federal laws, or treaties.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>9. A previous court ruling that serves as a guide or rule for future cases.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+                    <div class="vocab-item">
+                        <p>10. The philosophy that judges should defer to the elected branches of government unless a law is clearly unconstitutional.</p>
+                        <input type="text" class="cloze-input" placeholder="Enter term...">
+                    </div>
+
+                    <h3>Section II – Comprehension</h3>
+                    <p class="first-p">Instructions: Select the best answer for each question based on the chapter text.</p>
+                    
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q1" style="font-weight: bold; margin-bottom: 1rem;">1. Which Supreme Court case established the power of judicial review?</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc1" value="A"> A. McCulloch v. Maryland</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc1" value="B"> B. Marbury v. Madison</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc1" value="C"> C. Brown v. Board of Education</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc1" value="D"> D. Plessy v. Ferguson</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q2" style="font-weight: bold; margin-bottom: 1rem;">2. Which of the following best describes the "Rule of Four"?</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc2" value="A"> A. A case must be heard by four judges in a District Court.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc2" value="B"> B. Four justices must agree to grant a Writ of Certiorari for a case to be heard.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc2" value="C"> C. A majority opinion requires only four votes if the Chief Justice agrees.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc2" value="D"> D. There are four levels of courts in the federal system.</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q3" style="font-weight: bold; margin-bottom: 1rem;">3. Federal judges serve for a term of:</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc3" value="A"> A. 10 years</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc3" value="B"> B. 6 years, renewable once</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc3" value="C"> C. Life, during good behavior</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc3" value="D"> D. Until the President who appointed them leaves office</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q4" style="font-weight: bold; margin-bottom: 1rem;">4. Most cases heard by the Supreme Court come from:</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc4" value="A"> A. Original Jurisdiction</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc4" value="B"> B. Appellate Jurisdiction</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc4" value="C"> C. State Legislatures</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc4" value="D"> D. Presidential Executive Orders</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q5" style="font-weight: bold; margin-bottom: 1rem;">5. Which court in the federal system uses juries and calls witnesses?</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc5" value="A"> A. U.S. District Court</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc5" value="B"> B. U.S. Court of Appeals</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc5" value="C"> C. The Supreme Court</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc5" value="D"> D. The Bankruptcy Court</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q6" style="font-weight: bold; margin-bottom: 1rem;">6. If a judge believes that the Constitution should be interpreted based strictly on what the Framers intended in 1787, they are practicing:</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc6" value="A"> A. The Living Constitution model</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc6" value="B"> B. Judicial Activism</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc6" value="C"> C. Originalism</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc6" value="D"> D. Stare Decisis</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q7" style="font-weight: bold; margin-bottom: 1rem;">7. Which of the following is a check the Legislative Branch has on the Judiciary?</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc7" value="A"> A. The power to fire judges who make bad decisions.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc7" value="B"> B. The power to reduce the salary of sitting judges.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc7" value="C"> C. The power to confirm or reject judicial nominees.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc7" value="D"> D. The power to override a Supreme Court ruling with a 50% vote.</label>
+                    </div>
+
+                    <div class="vocab-item" style="margin-bottom: 2rem; background: rgba(0,0,0,0.2); padding: 1.5rem; border-radius: 8px;">
+                        <p id="assess_mc_q8" style="font-weight: bold; margin-bottom: 1rem;">8. Why are federal judges appointed rather than elected?</p>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc8" value="A"> A. To ensure they are wealthy enough to serve.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc8" value="B"> B. To insulate them from political pressure and public opinion.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc8" value="C"> C. Because elections are too expensive for the government.</label>
+                        <label class="checklist-item" style="display:block; margin-bottom:8px; cursor:pointer;"><input type="radio" name="assess_mc8" value="D"> D. To ensure they belong to the same political party as the President.</label>
+                    </div>
+
+                    <h3>Section III – Guided Analysis</h3>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">1. Explain the "strategic dilemma" John Marshall faced in Marbury v. Madison and how his ruling strengthened the Court while appearing to limit its power.</label>
+                        <textarea class="textarea-dark" id="pq_1" placeholder="Type your answer here..."></textarea>
+                    </div>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">2. Compare and contrast the roles of the U.S. District Courts and the U.S. Courts of Appeals. Why is the distinction between "finding facts" and "reviewing law" important?</label>
+                        <textarea class="textarea-dark" id="pq_2" placeholder="Type your answer here..."></textarea>
+                    </div>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">3. Analyze why Stare Decisis is considered essential for a stable legal system, but also explain a historical scenario where the Court found it necessary to break from precedent.</label>
+                        <textarea class="textarea-dark" id="pq_3" placeholder="Type your answer here..."></textarea>
+                    </div>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">4. Discuss how the Amicus Curiae brief allows the Supreme Court to understand the broader societal impact of a specific legal case.</label>
+                        <textarea class="textarea-dark" id="pq_4" placeholder="Type your answer here..."></textarea>
+                    </div>
+
+                    <h3>Section IV – Visual Analysis Concepts</h3>
+                    <div class="question-box">
+                        <img src="assets/Assessment_1.png" class="visual-img" style="margin-bottom: 15px;" alt="Visual Concept 1">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: Based on the structure described, why does the pyramid get narrower at the top? What happens to the volume of cases as they move from District Courts to the Supreme Court?</label>
+                        <textarea class="textarea-dark" id="va_25" placeholder="Type your analysis here..."></textarea>
+                    </div>
+                    <div class="question-box">
+                        <img src="assets/Assessment_2.png" class="visual-img" style="margin-bottom: 15px;" alt="Visual Concept 2">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Analysis Question: How does the "Rule of Four" depicted in this process demonstrate the Supreme Court's control over its own agenda compared to the District Courts, which must hear cases filed within their jurisdiction?</label>
+                        <textarea class="textarea-dark" id="va_26" placeholder="Type your analysis here..."></textarea>
+                    </div>
+
+                    <h3>Section V – Primary Source (CER)</h3>
+                    <div style="background: rgba(0,0,0,0.3); padding: 1.5rem; border-left: 4px solid var(--color-steel-nib); margin-bottom: 1.5rem;">
+                        <p class="first-p" style="font-style: italic;">"The judiciary, on the contrary, has no influence over either the sword or the purse; no direction either of the strength or of the wealth of the society; and can take no active resolution whatever. It may truly be said to have neither FORCE nor WILL, but merely judgment; and must ultimately depend upon the aid of the executive arm even for the efficacy of its judgments." - Excerpt from Federalist No. 78 by Alexander Hamilton (1788)</p>
+                    </div>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">Writing Prompt: Based on the excerpt above and your reading of the chapter, write a paragraph arguing whether Hamilton’s description of the judiciary as "weak" is still accurate today. Include a Claim, Evidence (Quote from text + Chapter Example), and Reasoning.</label>
+                        <textarea class="textarea-dark" id="pq_5" placeholder="Write your CER paragraph here..."></textarea>
+                    </div>
+
+                    <h3>Section VI – Modern Reflection</h3>
+                    <div class="question-box">
+                        <label style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold;">In recent years, the confirmation process for Supreme Court justices has become increasingly partisan and contentious. Given that justices serve for life, some modern critics have proposed setting term limits (e.g., 18-year terms) for Supreme Court justices to reduce the political stakes of each vacancy. Based on what you learned about Judicial Independence and Institutional Constraints, what would be one potential benefit and one potential risk of ending life tenure for justices? Connect your answer to the concept of the Court being insulated from political pressure.</label>
+                        <textarea class="textarea-dark" id="pq_6" placeholder="Write your reflection here..."></textarea>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-6')">&larr; Previous</button>
+                        <button class="action-btn" style="background: var(--color-gold); color: var(--color-navy-deep);" onclick="finishChapter()">Finished ✓</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /* Background Management */
+    const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+    let bgIndex = 0;
+
+    function rotateBackground() {
+        if (bgImages.length === 0) return;
+        const bgEl = document.getElementById('bg-slideshow');
+        if (!bgEl) return;
+        bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+        bgIndex = (bgIndex + 1) % bgImages.length;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        rotateBackground();
+        setInterval(rotateBackground, 10000); 
+    });
+
+    /* Navigation */
+    function switchTab(id) {
+        document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+        document.getElementById(id).classList.add('active-section');
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+        document.getElementById('nav-' + id).classList.add('active-nav');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    /* Finishing Chapter & JSON Export */
+    function finishChapter() {
+        const dateField = document.getElementById('completion-date');
+        const now = new Date().toLocaleDateString();
+        if(dateField) dateField.value = now;
+
+        const studentName = document.getElementById('student-name').value || "Unknown_Student";
+        const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+
+        const assignmentData = {
+            assignmentTitle: "Interactive Chapter 6 - The Judiciary",
+            studentInfo: { name: studentName, period: studentPeriod, dateCompleted: now },
+            responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {}, clozeActivity: {} }
+        };
+
+        // Gather Visual Analysis Answers (Inline + Assessment)
+        for(let i=1; i<=26; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Checkpoint Answers (28 Checkpoints total)
+        for(let i=1; i<=28; i++) {
+            let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+            if(inputs.length > 0) {
+                let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Assessment MC Answers (8 total)
+        for(let i=1; i<=8; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            let qEl = document.getElementById('assess_mc_q' + i);
+            if(qEl) {
+                let qText = qEl.innerText.trim();
+                assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+            }
+        }
+
+        // Gather Perspective Questions (Guided Analysis, CER, Reflection)
+        for(let i=1; i<=6; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) {
+                let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+            }
+        }
+
+        // Gather Vocabulary Activity Answers (Mapped to clozeActivity)
+        document.querySelectorAll('.cloze-input').forEach((input, index) => {
+            assignmentData.responses.clozeActivity[`Blank_${index + 1}`] = input.value.trim();
+        });
+
+        const dataStr = JSON.stringify(assignmentData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+        a.download = `Chapter_6_Export_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        alert('Upload JSON file to Canvas');
+        switchTab('sec-1');
+    }
+
+    /* Save & Reset Logic */
+    function exportProgress() {
+        const studentName = document.getElementById('student-name').value || "";
+        const studentPeriod = document.getElementById('student-period').value || "";
+
+        if (!studentName.trim() || !studentPeriod.trim()) {
+            alert("Please enter your name and select a period on the Start Page before saving your progress.");
+            switchTab('sec-1');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return;
+        }
+
+        const progressData = {
+            studentName: studentName,
+            studentPeriod: studentPeriod,
+            visualAnalysis: {},
+            checkpoints: {},
+            assess_mc: {},
+            perspectiveQuestions: {},
+            clozeActivity: {}
+        };
+
+        // Gather VAs
+        for(let i=1; i<=26; i++) {
+            let el = document.getElementById('va_' + i);
+            if(el) progressData.visualAnalysis['va_' + i] = el.value;
+        }
+
+        // Gather Checkpoints
+        for(let i=1; i<=28; i++) {
+            let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+            if(checked) progressData.checkpoints['cp' + i] = checked.value;
+        }
+
+        // Gather Assessment MC
+        for(let i=1; i<=8; i++) {
+            let checked = document.querySelector('input[name="assess_mc' + i + '"]:checked');
+            if(checked) progressData.assess_mc['assess_mc' + i] = checked.value;
+        }
+
+        // Gather Perspective Questions
+        for(let i=1; i<=6; i++) {
+            let el = document.getElementById('pq_' + i);
+            if(el) progressData.perspectiveQuestions['pq_' + i] = el.value;
+        }
+
+        // Gather Vocabulary Activity
+        let clozeInputs = document.querySelectorAll('.cloze-input');
+        clozeInputs.forEach((input, index) => {
+            progressData.clozeActivity['cloze_' + index] = input.value;
+        });
+
+        const dataStr = JSON.stringify(progressData, null, 2);
+        const blob = new Blob([dataStr], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        const safeName = studentName ? studentName.replace(/[^a-z0-9]/gi, '_').toLowerCase() : 'student';
+        a.download = `Chapter_6_SaveFile_${safeName}.json`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function loadProgress(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                
+                // Burn Name and Period
+                const nameEl = document.getElementById('student-name');
+                const periodEl = document.getElementById('student-period');
+                
+                if (data.studentName) {
+                    nameEl.value = data.studentName;
+                    nameEl.setAttribute('readonly', 'true');
+                    nameEl.style.opacity = '0.7';
+                    nameEl.style.cursor = 'not-allowed';
+                }
+                if (data.studentPeriod) {
+                    periodEl.value = data.studentPeriod;
+                    periodEl.setAttribute('disabled', 'true');
+                    periodEl.style.opacity = '0.7';
+                    periodEl.style.cursor = 'not-allowed';
+                }
+
+                // Restore Textareas
+                if(data.visualAnalysis) {
+                    for (const [key, value] of Object.entries(data.visualAnalysis)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+
+                if(data.perspectiveQuestions) {
+                    for (const [key, value] of Object.entries(data.perspectiveQuestions)) {
+                        const el = document.getElementById(key);
+                        if (el) el.value = value;
+                    }
+                }
+
+                // Restore Radio Buttons
+                if(data.checkpoints) {
+                    for (const [key, value] of Object.entries(data.checkpoints)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+
+                if(data.assess_mc) {
+                    for (const [key, value] of Object.entries(data.assess_mc)) {
+                        const el = document.querySelector(`input[name="${key}"][value="${value}"]`);
+                        if (el) el.checked = true;
+                    }
+                }
+
+                // Restore Vocab Inputs
+                if(data.clozeActivity) {
+                    let clozeInputs = document.querySelectorAll('.cloze-input');
+                    for (const [key, value] of Object.entries(data.clozeActivity)) {
+                        let idx = parseInt(key.split('_')[1]);
+                        if (clozeInputs[idx]) clozeInputs[idx].value = value;
+                    }
+                }
+
+                // Advance checkpoint carousels to their furthest answered state
+                document.querySelectorAll('.checkpoint-block').forEach(block => {
+                    const questions = block.querySelectorAll('.checkpoint-q');
+                    let lastAnswered = 0;
+                    questions.forEach((q, idx) => {
+                        if (q.querySelector('input[type="radio"]:checked')) {
+                            lastAnswered = idx;
+                        }
+                    });
+                    block.setAttribute('data-current', lastAnswered);
+                });
+
+                initCheckpoints();
+                event.target.value = ''; // Reset file input
+                alert('Progress restored successfully!');
+
+            } catch (err) {
+                alert('Error loading progress file. Please make sure it is a valid JSON save file.');
+                console.error(err);
+            }
+        };
+        reader.readAsText(file);
+    }
+
+    function resetProgress() {
+        if(confirm('Are you sure you want to reset all progress?')) {
+            document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+            document.querySelectorAll('.cloze-input, .textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+            document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+            initCheckpoints();
+            switchTab('sec-1');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    }
+
+    /* Checkpoint Management */
+    const TOTAL_CHECKPOINT_BLOCKS = 20; 
+
+    function initCheckpoints() {
+        for(let i=1; i<=TOTAL_CHECKPOINT_BLOCKS; i++) { updateCpUI(`cp-block-${i}`); }
+        checkSectionUnlock();
+    }
+
+    function updateCpUI(blockId) {
+        const block = document.getElementById(blockId);
+        if(!block) return;
+        const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        const indicator = block.querySelector('.cp-indicator');
+        const prevBtn = block.querySelector('.cp-prev-btn');
+        const nextBtn = block.querySelector('.cp-next-btn');
+
+        questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+        if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+        if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+        if(nextBtn) {
+            const currentQ = questions[currentIndex];
+            const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+            if (currentIndex === questions.length - 1) {
+                if (isAnswered) {
+                    nextBtn.innerText = "Checkpoint Completed ✓";
+                    nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                    nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                } else {
+                    nextBtn.innerText = "Finish Checkpoint";
+                    nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                }
+            } else {
+                nextBtn.innerText = "Next Question \u2192";
+                nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; } 
+                else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+            }
+        }
+        checkSectionUnlock();
+    }
+
+    function navigateCp(blockId, dir) {
+        const block = document.getElementById(blockId);
+        let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+        const questions = block.querySelectorAll('.checkpoint-q');
+        currentIndex += dir;
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+        block.setAttribute('data-current', currentIndex);
+        updateCpUI(blockId);
+    }
+
+    function handleRadioChange(blockId) { updateCpUI(blockId); }
+    function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+
+    function setNavButtonState(btnId, enabled) {
+        const btn = document.getElementById(btnId);
+        if (!btn) return;
+        if (enabled) {
+            btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+            btn.innerHTML = 'Next Section &rarr;'; btn.style.borderColor = 'var(--color-gold)';
+        } else {
+            btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+            btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+        }
+    }
+
+    function checkSectionUnlock() {
+        setNavButtonState('btn-next-sec-1', isAnswered('cp1') && isAnswered('cp2') && isAnswered('cp3'));
+        setNavButtonState('btn-next-sec-2', isAnswered('cp4') && isAnswered('cp5') && isAnswered('cp6') && isAnswered('cp7') && isAnswered('cp8') && isAnswered('cp9') && isAnswered('cp10'));
+        setNavButtonState('btn-next-sec-3', isAnswered('cp11') && isAnswered('cp12') && isAnswered('cp13') && isAnswered('cp14') && isAnswered('cp15'));
+        setNavButtonState('btn-next-sec-4', isAnswered('cp16') && isAnswered('cp17') && isAnswered('cp18') && isAnswered('cp19') && isAnswered('cp20') && isAnswered('cp21'));
+        setNavButtonState('btn-next-sec-5', isAnswered('cp22') && isAnswered('cp23') && isAnswered('cp24') && isAnswered('cp25') && isAnswered('cp26') && isAnswered('cp27'));
+        setNavButtonState('btn-next-sec-6', isAnswered('cp28'));
+    }
+
+    initCheckpoints();
+</script>
+</body>
+</html>
