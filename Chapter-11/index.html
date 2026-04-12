@@ -1,0 +1,1218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 11: Civil Rights and the Fourteenth Amendment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #241B2F;
+            --color-cream: #F6F3EE;
+            --color-navy: #6D5BA6;
+            --color-steel-nib: #9DA7B1;
+            --color-gold: #E0B84C;
+            --color-gold-light: #F0D58C;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-body); background-color: var(--color-navy-deep);
+            color: var(--color-cream); line-height: 1.8; font-size: 1.15rem;
+        }
+
+        /* Background Effects */
+        #bg-slideshow {
+            position: fixed; inset: 0; z-index: 0; pointer-events: none;
+            background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out;
+        }
+        body::after {
+            content: ''; position: fixed; inset: 0;
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%);
+            z-index: 1; pointer-events: none;
+        }
+
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+
+        /* Left Navigation Panel */
+        .side-nav {
+            position: fixed; top: 0; left: 0; bottom: 0; width: 280px;
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px);
+            border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column;
+            padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none;
+        }
+        .side-nav::-webkit-scrollbar { display: none; }
+
+        .nav-title {
+            font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem;
+            margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px;
+            border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem;
+        }
+
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+
+        .nav-btn {
+            background: transparent; border: 1px solid transparent; color: var(--color-cream);
+            text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer;
+            transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold;
+        }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+
+        .content-block {
+            background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem;
+            margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root;
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav { display: none; }
+            .main-content { margin-left: 0; }
+            .content-wrapper { padding: 30px 20px; }
+            .content-block { padding: 2rem; }
+        }
+
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        h4 { font-family: var(--font-heading); color: var(--color-cream) !important; font-size: 1.75rem !important; line-height: 1.3; margin-bottom: 1.25rem !important; margin-top: 2rem !important; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+        h5 { font-family: var(--font-heading); color: var(--color-steel-nib) !important; font-size: 1.35rem !important; line-height: 1.3; margin-bottom: 1rem !important; margin-top: 2rem !important; font-weight: bold; }
+        
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        .chapter-assessment p { text-indent: 0 !important; }
+
+        /* UI Elements */
+        .id-panel {
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem;
+            background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);
+        }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select {
+            width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib);
+            color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem;
+        }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+
+        .textarea-dark {
+            width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib);
+            color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px;
+            font-family: var(--font-body); font-size: 1.1rem; resize: vertical; margin-bottom: 1rem;
+        }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+
+        /* Inline Vocab Inputs */
+        .inline-vocab-input {
+            background: rgba(0,0,0,0.4);
+            border: none;
+            border-bottom: 2px solid var(--color-steel-nib);
+            color: var(--color-gold);
+            font-family: var(--font-ui);
+            font-size: 1rem;
+            padding: 2px 8px;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        .inline-vocab-input:focus {
+            outline: none;
+            border-bottom-color: var(--color-gold);
+            background: rgba(0,0,0,0.6);
+        }
+
+        /* Full Sized Visuals */
+        .visual-wrapper {
+            width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px;
+            border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both;
+        }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+
+        /* Portrait Visual Constraints */
+        .visual-wrapper.portrait { width: 35%; clear: none; margin: 0.5rem 0 1rem 0; }
+        .visual-wrapper.portrait.float-left { float: left; margin-right: 2rem; }
+        .visual-wrapper.portrait.float-right { float: right; margin-left: 2rem; }
+        @media (max-width: 768px) { .visual-wrapper.portrait { width: 100%; float: none; margin: 2.5rem 0; clear: both; } }
+
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0 !important; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+
+        /* Compact Checkpoint System */
+        .checkpoint-block {
+            margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4);
+            border-radius: 8px; background: rgba(0,0,0,0.2); clear: both;
+        }
+        .checkpoint-grid { display: flex; flex-direction: column; gap: 1.5rem; align-items: stretch; }
+        .checkpoint-grid > div:last-child { flex-direction: row !important; justify-content: flex-end !important; align-items: center; height: auto !important; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+        .checkpoint-grid > div:last-child .cp-indicator { margin-right: auto; text-align: left !important; }
+        .checkpoint-grid > div:last-child .action-btn { width: auto; min-width: 160px; }
+
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; width: 100%; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q label { display: block; margin-bottom: 0.5rem; cursor: pointer; padding: 8px; border-radius: 4px; transition: background 0.2s; font-size: 1rem; }
+        .checkpoint-q label:hover { background: rgba(255,255,255,0.05); }
+        .checkpoint-q input[type="radio"] { margin-right: 10px; accent-color: var(--color-gold); }
+
+        /* Buttons & Navigation */
+        .action-btn {
+            padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold;
+            cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5);
+            color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%;
+        }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+
+        .bottom-nav {
+            display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3);
+            margin-top: 3rem; gap: 20px; clear: both;
+        }
+        .bottom-nav .action-btn { width: auto; }
+
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="bg-slideshow"></div>
+
+    <div class="app-container">
+        <nav class="side-nav">
+            <div class="nav-title">Table of Contents</div>
+            <div class="nav-links">
+                <button id="nav-start" class="nav-btn active-nav" onclick="switchTab('start', 'nav-start')">Start Page</button>
+                <button id="nav-sec-1" class="nav-btn" onclick="switchTab('sec-1', 'nav-sec-1')">I. The Fourteenth Amendment: The "Second Founding"</button>
+                <button id="nav-sec-2" class="nav-btn" onclick="switchTab('sec-2', 'nav-sec-2')">II. The Three Standards of Review</button>
+                <button id="nav-sec-3" class="nav-btn" onclick="switchTab('sec-3', 'nav-sec-3')">III. Legislative Milestones and Social Movements</button>
+                <button id="nav-sec-4" class="nav-btn" onclick="switchTab('sec-4', 'nav-sec-4')">IV. The Modern Debate | Equity and Affirmative Action</button>
+                <button id="nav-sec-5" class="nav-btn" onclick="switchTab('sec-5', 'nav-sec-5')">V. Chapter Conclusion</button>
+                <button id="nav-sec-6" class="nav-btn" onclick="switchTab('sec-6', 'nav-sec-6')">VI. Chapter Assessment</button>
+            </div>
+            <div class="nav-actions">
+                <button class="action-btn" onclick="document.getElementById('file-upload').click()">Load Progress</button>
+                <input type="file" id="file-upload" accept=".json" style="display: none;" onchange="loadProgress(event)">
+                <button class="action-btn" onclick="downloadProgress()">Save Progress</button>
+                <button class="action-btn" onclick="resetProgress()" style="border-color: var(--color-wax-red); color: var(--color-wax-red);">Reset</button>
+            </div>
+        </nav>
+
+        <main class="main-content">
+            <!-- Start Page -->
+            <div id="start" class="chapter-section active-section">
+                <img src="assets/Header%20Banner%20Chapter%2011.png" alt="Header Banner" class="hero-banner-flush">
+                <div class="content-wrapper">
+                    <div class="id-panel">
+                        <div>
+                            <label>Student Name</label>
+                            <input type="text" id="student-name" placeholder="First & Last Name">
+                        </div>
+                        <div>
+                            <label>Class Period</label>
+                            <select id="student-period">
+                                <option value="">Select...</option>
+                                <option value="1">Period 1</option>
+                                <option value="2">Period 2</option>
+                                <option value="3">Period 3</option>
+                                <option value="4">Period 4</option>
+                                <option value="5">Period 5</option>
+                                <option value="6">Period 6</option>
+                                <option value="7">Period 7</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Date Completed</label>
+                            <input type="text" id="completion-date" readonly placeholder="Auto-fills on finish">
+                        </div>
+                    </div>
+                    
+                    <div class="content-block">
+                        <h3>Core Objectives</h3>
+                        <ul>
+                            <li><strong>Trace</strong> the historical evolution of the Fourteenth Amendment from the post-Civil War Reconstruction era to the present, explaining how its meaning has been contested, narrowed, and ultimately expanded across more than a century of constitutional history.</li>
+                            <li><strong>Analyze</strong> the strategic shift in judicial reasoning from <em>Plessy v. Ferguson</em> to <em>Brown v. Board of Education</em>, and evaluate the role of the NAACP's legal campaign in transforming the constitutional meaning of equal protection.</li>
+                            <li><strong>Evaluate</strong> the three standards of judicial review — strict scrutiny, intermediate scrutiny, and the rational basis test — and explain how each standard determines whether a law's distinction between groups is constitutionally permissible.</li>
+                            <li><strong>Assess</strong> the impact of the Civil Rights Movement on landmark legislative achievements, including the Civil Rights Act of 1964, the Voting Rights Act of 1965, Title IX, and the Americans with Disabilities Act, and explain how each extended the constitutional promise of equal protection into new domains of American life.</li>
+                            <li><strong>Explain</strong> the ongoing constitutional debate over affirmative action and the tension between "colorblind" and "equity-based" interpretations of the Equal Protection Clause, with particular attention to the Supreme Court's recent decisions.</li>
+                        </ul>
+
+                        <h3>Key Terms</h3>
+                        <ul>
+                            <li>Civil Rights</li>
+                            <li>Equal Protection Clause</li>
+                            <li>Strict Scrutiny</li>
+                            <li>Intermediate Scrutiny</li>
+                            <li>Rational Basis Test</li>
+                            <li>De Jure Segregation</li>
+                            <li>De Facto Segregation</li>
+                            <li>Affirmative Action</li>
+                            <li>Title IX</li>
+                            <li>Civil Rights Act of 1964</li>
+                        </ul>
+
+                        <h4>Introduction</h4>
+                        <p class="first-p">The Fourteenth Amendment to the United States Constitution contains thirty-eight words that have shaped more of American legal history than almost any other passage in the nation's founding documents: "No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws." When Congress and the states ratified these words in 1868, they were attempting nothing less than a refounding of the American republic — a second act of constitutional creation designed to correct the fundamental contradiction that the original document had failed to resolve: the coexistence of a declaration that "all men are created equal" with a legal and social system built on the forced enslavement of millions.</p>
+                        <p>The distinction between civil liberties and civil rights is essential to understanding what this chapter examines and why it matters. Civil liberties, as explored in earlier chapters, are the "negative rights" enshrined primarily in the Bill of Rights — protections against government action, the spaces where the state is forbidden to reach. The First Amendment's protections of speech and religion, the Fourth Amendment's protection against unreasonable searches, the Fifth and Sixth Amendments' procedural guarantees — all of these tell the government what it cannot do. Civil rights are something different. They are the "positive rights" — the affirmative obligations that the Constitution places on government to ensure that all persons are treated equally under the law, regardless of race, gender, religion, national origin, or other characteristics that have historically been used to deny full membership in the political community. Where civil liberties restrain government, civil rights require it to act — to strike down discriminatory laws, to protect individuals from discriminatory treatment, and in some cases to take affirmative steps to remedy the effects of past discrimination.</p>
+                        <p>The history of civil rights in America is, at its core, the history of who counts as a full member of the political community. That history is neither simple nor complete. It involves constitutional amendments achieved through war, a hundred years of violent resistance to their implementation, a mass social movement of extraordinary courage and discipline, landmark legislation that transformed the legal landscape, and ongoing constitutional debates about what equality actually requires. It encompasses the experiences of Black Americans fighting for basic legal dignity in the era of Jim Crow, women challenging a legal system that treated them as dependent on men in virtually every domain of civic and economic life, people with disabilities demanding that public spaces and institutions be made accessible to them, and LGBTQ+ Americans arguing that the Constitution's guarantee of equal dignity extends to the most fundamental choices about how to live and whom to love.</p>
+                        <p>Each of these struggles has played out, at least in part, in the language of the Equal Protection Clause. That clause — deceptively simple in its text, extraordinarily complex in its application — is the central constitutional tool through which the American legal system has been asked to make good on the founding promise of equality. Understanding how it works, why it has sometimes fallen short, and what it demands in the present moment is essential to understanding both the progress American democracy has made and the distance it still has to travel.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_1.png" alt="Fourteenth Amendment document" class="visual-img">
+                            <p class="caption-text">The Fourteenth Amendment fundamentally redefined American citizenship by establishing national protection for fundamental rights, ultimately shifting the balance of power between the states and the federal government after the Civil War.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> How did the Fourteenth Amendment attempt to resolve the fundamental contradiction of inequality present at the nation's founding?</p>
+                                <textarea id="va_1" class="textarea-dark" placeholder="Enter your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cp-block-1" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What is the primary conceptual distinction between civil liberties and civil rights as described in the text?</p>
+                                    <label><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A) Civil liberties require the government to take affirmative actions, while civil rights are designed to restrain government power.</label>
+                                    <label><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B) Civil liberties are "negative rights" that limit government action, while civil rights are "positive rights" that mandate equal treatment by the state.</label>
+                                    <label><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C) Civil liberties apply only to the federal government, whereas civil rights apply exclusively to state and local governments.</label>
+                                    <label><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D) Civil liberties were established by the Fourteenth Amendment, while civil rights were the primary focus of the original Bill of Rights.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-1', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-1', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" disabled style="opacity: 0;">Previous Section</button>
+                            <button id="btn-next-sec-1" class="action-btn" onclick="switchTab('sec-1', 'nav-sec-1', 'sec-1')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 1 -->
+            <div id="sec-1" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Fourteenth Amendment: The "Second Founding"</h2>
+                        <p class="first-p">The Fourteenth Amendment did not emerge from an abstract philosophical debate about the nature of equality. It was forged in the crucible of the Civil War and its aftermath — a period of extraordinary violence, political struggle, and moral reckoning that forced the nation to confront what it had always known but refused to acknowledge: that a republic dedicated to liberty could not also be a republic dedicated to slavery. Understanding the Amendment requires understanding the historical conditions from which it emerged, the purposes its drafters intended it to serve, and the ways in which those purposes were frustrated, preserved, and ultimately advanced over the following century and a half.</p>
+
+                        <h4>The Failure of Reconstruction and the Rise of Jim Crow</h4>
+                        <p class="first-p">The Fourteenth Amendment was ratified in 1868, three years after the end of the Civil War, as part of a broader Reconstruction program designed to integrate formerly enslaved people into the civic and political life of the nation. Alongside it, the Thirteenth Amendment had abolished slavery in 1865 and the Fifteenth Amendment would guarantee the right to vote regardless of "race, color, or previous condition of servitude" in 1870. Together, these three amendments constituted what historians call the "Reconstruction Amendments" — a constitutional revolution that transformed the relationship between citizens and the national government and, at least in principle, promised Black Americans the full status of citizenship with all its attendant rights.</p>
+                        <p>In practice, the promise of Reconstruction was rapidly and violently suppressed. As federal troops withdrew from the former Confederate states following the Compromise of 1877, Southern state governments enacted a comprehensive system of racial subordination known as Jim Crow laws — statutes that segregated virtually every domain of public and private life, from railroad cars and water fountains to schools and courtrooms. These laws were backed not only by the coercive power of state governments but by the terrorism of organizations like the Ku Klux Klan, which used murder, arson, and intimidation to prevent Black Americans from exercising the rights the Reconstruction Amendments had promised.</p>
+                        <p>The Supreme Court provided the constitutional cover for this system. In the Civil Rights Cases of 1883, the Court struck down the Civil Rights Act of 1875, which had prohibited racial discrimination in public accommodations, on the grounds that the Fourteenth Amendment only prohibited discriminatory state action, not discrimination by private individuals or businesses. This ruling gutted the federal government's ability to protect Black Americans from discrimination by private actors and established a distinction — between state action and private conduct — that would constrain civil rights law for the next eight decades. Thirteen years later, in <em>Plessy v. Ferguson</em> (1896), the Court went further, providing explicit constitutional sanction for the entire Jim Crow system.</p>
+                        <p>Homer Plessy was a man of mixed racial ancestry who deliberately boarded a whites-only railroad car in Louisiana as part of a planned legal challenge to the state's Separate Car Act. He was arrested and convicted, and his case reached the Supreme Court. Writing for a seven-to-one majority, Justice Henry Billings Brown held that Louisiana's law did not violate the Fourteenth Amendment's Equal Protection Clause because it provided separate but equal facilities for Black passengers. The Amendment, Brown wrote, was intended to establish political equality, not social equality. It did not prohibit "distinctions based on color" that were within "the established usages, customs and traditions of the people." The famous lone dissent came from Justice John Marshall Harlan, who insisted that "our Constitution is color-blind, and neither knows nor tolerates classes among citizens." But Harlan's view was not law for nearly sixty years.</p>
+                        <p>The <em>Plessy</em> decision had consequences that extended far beyond railroad cars. It provided the constitutional framework for the entire apparatus of de jure segregation — the system of legal separation enforced by state and local law across not just the South but significant portions of the North and West. Schools, hospitals, parks, swimming pools, libraries, and courtrooms were segregated by law. The "equal" part of the "separate but equal" doctrine was, from the beginning, a legal fiction. Facilities designated for Black Americans were almost invariably inferior in every measurable respect — less well funded, less well maintained, staffed by teachers and doctors paid far less than their white counterparts. The Supreme Court had looked at this system and declared it constitutional. The Fourteenth Amendment's promise of equal protection had been, in the space of three decades, effectively nullified.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_2.png" alt="1890s segregated railroad station" class="visual-img">
+                            <p class="caption-text">Following the withdrawal of federal troops in 1877, southern states systematically dismantled Reconstruction-era civil rights, substituting legal segregation and political disenfranchisement in their place.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> In what ways did the Supreme Court's ruling in Plessy v. Ferguson provide constitutional cover for the expansion of Jim Crow systems across the South?</p>
+                                <textarea id="va_2" class="textarea-dark" placeholder="Enter your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cp-block-2" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What was the constitutional significance of the Supreme Court's decision in <em>Plessy v. Ferguson</em> (1896)?</p>
+                                    <label><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-2')"> A) It held that the Fourteenth Amendment prohibited all forms of racial separation in public facilities.</label>
+                                    <label><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-2')"> B) It established the "separate but equal" doctrine, providing constitutional sanction for de jure segregation under the Equal Protection Clause.</label>
+                                    <label><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-2')"> C) It ruled that private businesses were required to serve customers regardless of race under the Commerce Clause.</label>
+                                    <label><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-2')"> D) It incorporated the Equal Protection Clause to the federal government for the first time.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-2', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-2', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The NAACP's Legal Strategy and the Road to Brown</h4>
+                        <p class="first-p">The legal campaign to dismantle "separate but equal" did not happen spontaneously. It was the product of a carefully constructed, decades-long strategy developed and executed by the Legal Defense Fund of the National Association for the Advancement of Colored People, led in its critical years by Thurgood Marshall, a brilliant lawyer who would later become the first Black justice on the Supreme Court. Marshall and his colleagues understood that the Supreme Court would not simply reverse <em>Plessy</em> in a frontal assault. Instead, they pursued a gradualist strategy: they would force the Court to apply the "separate but equal" standard with genuine rigor, demonstrating in case after case that the separate facilities provided for Black Americans were, in fact, dramatically unequal — and then, when the ground had been sufficiently prepared, they would strike at the doctrine itself.</p>
+                        <p>The strategy produced a series of important victories in the 1930s and 1940s. In <em>Missouri ex rel. Gaines v. Canada</em> (1938), the Court held that Missouri could not satisfy the equal protection requirement by paying Black law students' tuition to attend law schools in other states — it had to either admit them to the state law school or provide a genuinely equal alternative within the state. In <em>Sweatt v. Painter</em> (1950), the Court ordered the University of Texas to admit a Black applicant to its law school, finding that the hastily constructed alternative Black law school Texas had created was not genuinely equal in any meaningful sense — lacking the faculty, library, prestige, and professional networks that the established school provided. These cases established that real equality, not formal equality, was what the Constitution demanded — and they made it increasingly clear that the entire enterprise of "separate but equal" rested on a foundation that could not survive serious scrutiny.</p>
+                        <p>The culminating case was <em>Brown v. Board of Education</em> (1954), a consolidated set of cases from Kansas, South Carolina, Virginia, Delaware, and the District of Columbia, each challenging the constitutionality of racially segregated public schools. Thurgood Marshall's argument before the Court was both legal and social scientific. He presented the testimony of psychologist Kenneth Clark, who had conducted experiments with Black children and dolls demonstrating the psychological damage that segregation inflicted on Black children — the way it taught them to internalize a sense of their own inferiority. Chief Justice Earl Warren, who had taken over the Court the previous year and was determined to produce a unanimous decision on an issue he considered a matter of fundamental justice, wrote an opinion that met Marshall's argument directly.</p>
+                        <p>Warren's opinion in <em>Brown</em> was notably brief and direct. He acknowledged that the historical record about the Framers' intent regarding school segregation was inconclusive and largely irrelevant — what mattered was the role of education in American life in the mid-twentieth century. "In these days," Warren wrote, "it is doubtful that any child may reasonably be expected to succeed in life if he is denied the opportunity of an education." Given that reality, segregation on the basis of race in public schools "generates a feeling of inferiority as to their status in the community that may affect their hearts and minds in a way unlikely ever to be undone." Therefore, "in the field of public education, the doctrine of 'separate but equal' has no place. Separate educational facilities are inherently unequal."</p>
+                        <p>The unanimous decision was a constitutional watershed. But the Court's follow-up implementation decision — <em>Brown II</em> (1955) — introduced language that tempered the triumph. Faced with the practical problem of ordering the desegregation of thousands of school districts across the South in the face of fierce political resistance, Warren instructed that desegregation should proceed "with all deliberate speed." This phrase, deliberately ambiguous, provided an opening for delay that Southern states exploited for decades. Some school districts did not fully desegregate until the 1970s or later. The gap between the constitutional principle announced in <em>Brown</em> and the lived reality of American schools illustrated a truth that would recur throughout the civil rights era: winning in court was necessary, but it was not sufficient.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_3.png" alt="Thurgood Marshall in law library" class="visual-img">
+                            <p class="caption-text">The NAACP Legal Defense Fund dismantled de jure educational segregation not through sudden sweeping victories, but through a deliberate, gradual strategy of proving that separate facilities were inherently unequal.</p>
+                        </div>
+
+                        <div id="cp-block-3" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What was the central legal and social argument Thurgood Marshall made before the Supreme Court in <em>Brown v. Board of Education</em>?</p>
+                                    <label><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-3')"> A) That segregated schools were unequal in physical facilities and therefore violated the "separate but equal" standard.</label>
+                                    <label><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-3')"> B) That racial segregation in public schools was inherently unequal because of the psychological harm it inflicted on Black children and its effect on their educational opportunities.</label>
+                                    <label><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-3')"> C) That the Fourteenth Amendment's framers intended to prohibit all racial classification in public institutions.</label>
+                                    <label><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-3')"> D) That the federal government had the authority under the Commerce Clause to desegregate public schools in every state.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-3', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-3', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Constitutional Legacy of the "Second Founding"</h4>
+                        <p class="first-p">The journey from <em>Plessy</em> to <em>Brown</em> illustrates one of the central truths of American constitutional history: the meaning of a constitutional provision is not fixed at the moment of its ratification. It is contested, interpreted, and reinterpreted across generations, in response to changing social conditions, political movements, and judicial philosophies. The Equal Protection Clause of 1868 contained within it the potential for both the degradation of <em>Plessy</em> and the transformation of <em>Brown</em>. Which potential was realized depended on who was on the Court, who was making arguments before it, and what kind of social and political pressure was being exerted on the constitutional system.</p>
+                        <p>This insight is central to understanding the history of civil rights in America. The Constitution does not enforce itself. It requires human agents — lawyers, activists, legislators, judges — to interpret its principles, apply them to new circumstances, and insist that the gap between constitutional text and constitutional reality be closed. The NAACP's legal strategy was not just a series of lawsuits; it was a sustained effort to shape the interpretation of a constitutional provision that had been dormant for nearly a century. The success of that strategy remade American constitutional law — and the work of remaking it continued long after <em>Brown</em>.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_4.png" alt="Steps of the U.S. Supreme Court building" class="visual-img">
+                            <p class="caption-text">The interpretation of the Equal Protection Clause evolves over time as legal activists and social movements force the courts to reconsider previous precedents in light of changing historical contexts.</p>
+                        </div>
+
+                        <div id="cp-block-4" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What does the gap between the <em>Brown</em> decision and the actual pace of school desegregation reveal about the relationship between constitutional law and social change?</p>
+                                    <label><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-4')"> A) That Supreme Court decisions automatically and immediately change social practices throughout the country.</label>
+                                    <label><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-4')"> B) That winning a constitutional ruling is necessary but not sufficient — implementation depends on political will, enforcement, and sustained social pressure.</label>
+                                    <label><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-4')"> C) That the Supreme Court lacks the authority to require state governments to change their educational policies.</label>
+                                    <label><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-4')"> D) That the "all deliberate speed" standard was intended to require immediate desegregation within one school year.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-4', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-4', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('start', 'nav-start', 'start')">&larr; Previous Section</button>
+                            <button id="btn-next-sec-2" class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2', 'sec-2')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div id="sec-2" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Three Standards of Review</h2>
+                        <p class="first-p">One of the most practically important doctrinal contributions of Fourteenth Amendment jurisprudence is the development of a tiered framework for evaluating laws that distinguish between groups of people. Not every distinction the law makes between different categories of individuals is unconstitutional. The government distinguishes between people all the time — between those old enough to drive and those who are not, between those who have passed a bar examination and those who have not, between citizens and non-citizens in the context of voting rights. The constitutional question is not whether the government is drawing a distinction, but whether that distinction serves a constitutionally legitimate purpose and is implemented in a constitutionally permissible way. The Supreme Court's answer to this question depends, in the first instance, on what kind of distinction is being drawn.</p>
+
+                        <h4>Strict Scrutiny and the Protection of Suspect Classifications</h4>
+                        <p class="first-p">The most demanding standard of judicial review — strict scrutiny — applies when a law draws a distinction based on a "suspect classification": a characteristic like race or national origin that has historically been used to subject a group to systematic discrimination, that bears no relationship to a person's ability to contribute to society, and that is so tied to a person's identity as to be effectively immutable. When a law uses such a classification, the Court treats it with deep constitutional suspicion — hence the term "suspect" — and subjects it to the most searching judicial examination available.</p>
+                        <p>Under strict scrutiny, a law that classifies on the basis of race or national origin is presumed to be unconstitutional. To survive, the government must demonstrate two things: first, that the law serves a compelling state interest — not merely a reasonable or important one, but one of the most serious and urgent purposes a government can have; and second, that the law is narrowly tailored to achieve that interest — meaning that it uses the least restrictive means available to accomplish its goal and does not sweep up more people or situations than are necessary to address the specific problem. In practice, strict scrutiny is frequently described as "strict in theory, fatal in fact," because very few laws survive it. When the Court applies strict scrutiny to a racial classification, the overwhelming likelihood is that the law will be struck down.</p>
+                        <p>The historical application of strict scrutiny illustrates both its power and its limits. The doctrine was articulated in the 1940s, in part as a response to one of the most notorious failures of civil rights protection in American history: the internment of Japanese Americans during World War II. In <em>Korematsu v. United States</em> (1944), the Supreme Court actually upheld the internment under what it called strict scrutiny, finding that the military necessity of preventing espionage justified the forced relocation of over 120,000 people of Japanese ancestry, most of them American citizens, to concentration camps based solely on their ethnicity. The decision was a profound constitutional failure, later formally repudiated by the Court in <em>Trump v. Hawaii</em> (2018) when Chief Justice Roberts called <em>Korematsu</em> "objectively unlawful" and "gravely wrong." It stands as a reminder that even the most demanding standard of judicial review is only as strong as the judges applying it — and that constitutional protections are most vulnerable precisely when the political pressure to override them is greatest.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_5.png" alt="Judicial infographic balance scales" class="visual-img">
+                            <p class="caption-text">Strict scrutiny requires the highest burden of proof, demanding that the government demonstrate a compelling interest and narrowly tailor its methods when classifying groups based on race or national origin.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> Why does the judicial system differentiate between "suspect classifications" like race and other types of classifications when reviewing the constitutionality of a law?</p>
+                                <textarea id="va_3" class="textarea-dark" placeholder="Enter your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cp-block-5" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">Why does the Supreme Court apply strict scrutiny to laws that classify on the basis of race or national origin?</p>
+                                    <label><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-5')"> A) Because the Constitution explicitly prohibits all racial classifications in any law or government program.</label>
+                                    <label><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-5')"> B) Because race and national origin are suspect classifications that have historically been used to discriminate, bear no relationship to individual ability, and are effectively immutable.</label>
+                                    <label><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-5')"> C) Because Congress required the Court to apply the highest standard of review to all civil rights cases after the Civil Rights Act of 1964.</label>
+                                    <label><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-5')"> D) Because strict scrutiny is the only standard that can effectively prevent the government from passing any law that mentions race.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-5', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-5', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Intermediate Scrutiny and the Evolution of Gender Equality</h4>
+                        <p class="first-p">The middle tier of the Court's scrutiny framework — intermediate scrutiny — developed primarily in the context of laws that classify on the basis of gender. For much of American history, legal distinctions based on sex were treated by courts as presumptively reasonable, reflecting what judges and legislators accepted as natural differences in the roles and capacities of men and women. The constitutional revolution in gender equality that occurred in the 1970s was, in significant part, the result of a sustained litigation strategy analogous to the NAACP's campaign against racial segregation — and the lawyer most responsible for it was Ruth Bader Ginsburg, then a professor at Columbia Law School and director of the ACLU Women's Rights Project, who would later serve on the Supreme Court.</p>
+                        <p>Ginsburg's strategy was to persuade the Court that sex-based classifications, like race-based ones, reflected stereotypes rather than genuine differences, and that they harmed not just women but the operation of a legal system premised on equal treatment. In <em>Reed v. Reed</em> (1971), she persuaded a unanimous Court to strike down an Idaho law that automatically preferred male relatives over female relatives as estate administrators — the first time the Court had ever invalidated a law on the grounds of sex discrimination. She followed this with a series of cases that, cumulatively, established that sex was a constitutionally sensitive classification requiring a meaningful level of judicial scrutiny.</p>
+                        <p>The standard that emerged — intermediate scrutiny — requires that a law classifying on the basis of sex be substantially related to an important government objective. This is less demanding than the "compelling interest" and "narrow tailoring" required under strict scrutiny, but it is meaningfully more demanding than the rational basis test that had previously allowed any plausible justification to suffice. Under intermediate scrutiny, stereotypical assumptions about the different roles or abilities of men and women — the kind of reasoning that underlies laws requiring women but not men to pay alimony, or excluding women but not men from military service positions — will not survive constitutional challenge. The government must demonstrate that its sex-based distinction responds to a genuine and significant difference relevant to the purpose of the law, not simply to social convention about how men and women are supposed to behave.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_6.png" alt="1970s courtroom scene Ruth Bader Ginsburg" class="visual-img">
+                            <p class="caption-text">The establishment of intermediate scrutiny forced the government to prove that sex-based legal classifications served an important objective rather than merely reflecting traditional gender stereotypes.</p>
+                        </div>
+
+                        <div id="cp-block-6" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What is the constitutional standard applied to laws that classify on the basis of sex, and what must the government demonstrate to justify such a law?</p>
+                                    <label><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-6')"> A) Strict scrutiny — the government must show a compelling state interest and narrow tailoring.</label>
+                                    <label><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-6')"> B) Intermediate scrutiny — the government must show the law is substantially related to an important government objective.</label>
+                                    <label><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-6')"> C) The rational basis test — the government must show the law is reasonably related to any legitimate government interest.</label>
+                                    <label><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-6')"> D) There is no special standard; sex-based laws are evaluated the same as all other legislation.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-6', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-6', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Rational Basis Test and the Outer Limits of Equal Protection</h4>
+                        <p class="first-p">At the base of the Court's scrutiny framework sits the rational basis test — the standard applied to laws that distinguish between groups based on characteristics that are neither suspect classifications nor sex-based. Age, wealth, educational attainment, disability, and countless other characteristics that governments routinely use to classify people for various purposes are evaluated under this deferential standard. Under rational basis review, a law is presumed to be constitutional, and a court will uphold it as long as it is reasonably related to any legitimate government interest — even one the legislature did not explicitly articulate and even one that is somewhat speculative. The government does not need to prove that its classification actually achieves its stated purpose; it needs only to show that a rational lawmaker could have believed it would.</p>
+                        <p>The rational basis test is, by design, a highly permissive standard. It reflects the principle that legislative bodies, as the democratically elected representatives of the people, have wide latitude to make policy judgments about how to regulate social and economic conditions, and that courts should not second-guess those judgments absent a compelling constitutional reason. A law setting the minimum driving age at sixteen, requiring certain professionals to hold specific licenses, or imposing higher tax rates on higher incomes — all of these make distinctions between people, and all of them easily satisfy the rational basis standard because there are obvious, legitimate reasons a legislature might choose to enact them.</p>
+                        <p>The rational basis test has occasionally been applied with somewhat greater scrutiny in cases involving classifications that, while not formally suspect, have been used to target particularly vulnerable groups. The Court's decision in <em>Romer v. Evans</em> (1996), which struck down a Colorado constitutional amendment that prohibited any governmental protection for gay and lesbian individuals, applied the rational basis label while reasoning in a manner that suggested something more demanding was at work. Justice Kennedy's opinion held that a law motivated by "bare... desire to harm a politically unpopular group" could not satisfy even the rational basis standard — a principle that has had significant implications for subsequent equal protection litigation involving LGBTQ+ individuals.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_7.png" alt="City intersection and state building" class="visual-img">
+                            <p class="caption-text">The rational basis test permits legislatures broad latitude to govern routine economic and social policies, provided the law is reasonably related to a legitimate public interest.</p>
+                        </div>
+
+                        <h4>The Logic of Tiered Scrutiny</h4>
+                        <p class="first-p">The three-tier framework of judicial review reflects a considered judgment about which distinctions are most likely to reflect prejudice rather than legitimate policy, and which groups are most in need of judicial protection because they have the least ability to protect themselves through the political process. Racial minorities, who were subject to systematic legal discrimination backed by state violence and who were excluded from political participation through devices like the white primary, the literacy test, and the grandfather clause, clearly could not rely on ordinary democratic politics to protect their rights — which is precisely why the Court treats race-based classifications with the deepest constitutional suspicion. Women, who were excluded from political participation for most of American history and who continue to face stereotyping and structural barriers in many domains, receive an intermediate level of protection. Groups that face discrimination but that have not historically been as systematically excluded from political power receive the more deferential rational basis review.</p>
+                        <p>This framework is not without its critics. Some scholars argue that the tier system is too rigid — that it fails to capture the full complexity of different kinds of discrimination and produces results that are sometimes arbitrary. Others argue that it is too loose — that the rational basis test provides essentially no protection at all for groups that fall below the scrutiny threshold. But the framework has proven durable because it offers what constitutional adjudication requires: a principled, somewhat predictable method for deciding some of the most politically charged questions a court can face.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_8.png" alt="Judicial gavel showing tiers" class="visual-img">
+                            <p class="caption-text">The tier system of judicial review provides a predictable framework for courts to determine which legal distinctions reflect legitimate policy and which are likely born of historic prejudice.</p>
+                        </div>
+
+                        <div id="cp-block-7" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">Under which circumstances does the Supreme Court apply the rational basis test, and what must the government demonstrate under this standard?</p>
+                                    <label><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-7')"> A) The rational basis test applies to all equal protection claims and requires the government to show a compelling state interest.</label>
+                                    <label><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-7')"> B) The rational basis test applies to classifications not involving race or sex, and requires only that the law be reasonably related to any legitimate government interest.</label>
+                                    <label><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-7')"> C) The rational basis test applies to laws involving disability and requires the government to demonstrate the classification serves an important objective.</label>
+                                    <label><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-7')"> D) The rational basis test applies only when a law is challenged on both equal protection and due process grounds simultaneously.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-7', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-7', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-1', 'nav-sec-1', 'sec-1')">&larr; Previous Section</button>
+                            <button id="btn-next-sec-3" class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3', 'sec-3')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div id="sec-3" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Legislative Milestones and Social Movements</h2>
+                        <p class="first-p">Constitutional adjudication, even at its most transformative, is only one dimension of the civil rights story. The Supreme Court's decisions in <em>Brown</em> and the cases that followed provided a constitutional framework — they established that racial segregation was incompatible with the Equal Protection Clause and that legal distinctions based on race or sex could not simply be assumed to be reasonable. But converting those constitutional principles into the lived experience of millions of Americans required something the courts could not provide: mass social mobilization, political organizing, and legislative action. The Civil Rights Movement of the 1950s and 1960s, and the social movements that followed it, forced the political system to translate constitutional principles into statutory law — into the specific rules, institutions, and enforcement mechanisms through which the promise of equal protection became a practical reality.</p>
+
+                        <h4>The Civil Rights Act of 1964 and the Commerce Clause</h4>
+                        <p class="first-p">The Civil Rights Act of 1964 was the most comprehensive civil rights legislation enacted since Reconstruction, and its passage required overcoming one of the most determined congressional filibusters in American history — twenty-two senators from the South held the Senate floor for sixty days in an attempt to prevent a vote. When President Lyndon Johnson finally signed the Act on July 2, 1964, it fundamentally changed the legal landscape of American life.</p>
+                        <p>Title II of the Act prohibited discrimination on the basis of race, color, religion, or national origin in "public accommodations" — hotels, motels, restaurants, theaters, and other establishments open to the general public. This was the provision that the Civil Rights Cases of 1883 had held Congress could not enact under the Fourteenth Amendment, which only reached state action. Congress in 1964 found a constitutional foundation elsewhere: the Commerce Clause, which grants Congress the power to regulate interstate commerce. Because hotels and restaurants that discriminated against Black customers were businesses engaged in interstate commerce — they served interstate travelers, purchased goods shipped across state lines — Congress could regulate their conduct directly. The Supreme Court unanimously upheld this reasoning in <em>Heart of Atlanta Motel v. United States</em> (1964), decided just months after the Act's passage.</p>
+                        <p>Title VII of the Act prohibited employment discrimination based on race, color, religion, sex, or national origin — a prohibition that applied to virtually all employers of significant size. It created the Equal Employment Opportunity Commission to investigate and address complaints of discriminatory employment practices. Title VII's inclusion of sex as a protected category was, somewhat remarkably, the result of an amendment offered by Virginia Representative Howard Smith, a fierce opponent of the legislation who added "sex" to the list of prohibited categories in the belief that it would make the bill too radical to pass. The amendment had the opposite effect, and Title VII's prohibition on sex discrimination in employment became one of the most consequential legal provisions of the twentieth century.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_9.png" alt="1964 signing of the Civil Rights Act" class="visual-img">
+                            <p class="caption-text">The Civil Rights Act of 1964 leveraged the commerce clause to dismantle segregation in public accommodations, proving that sweeping legislative action was necessary to enforce constitutional principles.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> How did the Civil Rights Act of 1964 and the Voting Rights Act of 1965 achieve goals that the Supreme Court's earlier desegregation rulings could not accomplish on their own?</p>
+                                <textarea id="va_4" class="textarea-dark" placeholder="Enter your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cp-block-8" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What constitutional basis did Congress use to prohibit racial discrimination in private businesses in the Civil Rights Act of 1964, and why was this approach necessary?</p>
+                                    <label><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-8')"> A) The Fourteenth Amendment's Equal Protection Clause, because it applies directly to private businesses as well as state governments.</label>
+                                    <label><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-8')"> B) The Commerce Clause, because the Fourteenth Amendment only prohibits discriminatory state action, not discrimination by private actors.</label>
+                                    <label><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-8')"> C) The First Amendment, because discrimination in public accommodations amounts to government-compelled speech.</label>
+                                    <label><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-8')"> D) The Thirteenth Amendment's prohibition on involuntary servitude, which applies to both public and private conduct.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-8', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-8', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Voting Rights Act of 1965 and the Right to Participate</h4>
+                        <p class="first-p">If the Civil Rights Act of 1964 addressed the denial of equal access to public life, the Voting Rights Act of 1965 addressed a denial even more fundamental to democratic government: the systematic exclusion of Black Americans from the political process itself. Across the South, a battery of devices — literacy tests administered selectively and in bad faith, poll taxes, registration systems designed to confuse and discourage, and outright violence against those who attempted to register — had maintained near-total Black disenfranchisement in many states for decades after the Fifteenth Amendment had guaranteed the right to vote regardless of race.</p>
+                        <p>The events that precipitated the Act's passage occurred in Selma, Alabama, in early 1965. When peaceful marchers attempting to cross the Edmund Pettus Bridge on their way to the state capital were met by state troopers with clubs and tear gas on March 7 — a day that became known as Bloody Sunday — the images broadcast on national television shocked the conscience of much of the country and produced irresistible political pressure for federal action. President Johnson appeared before a joint session of Congress eight days later and, in one of the most consequential presidential addresses of the twentieth century, declared that "we shall overcome" — adopting the anthem of the Civil Rights Movement as the statement of his administration's legislative purpose.</p>
+                        <p>The Voting Rights Act that Congress enacted prohibited literacy tests and other discriminatory voting devices in states and jurisdictions with demonstrated histories of voting discrimination. Its most powerful provision — Section 5, the "preclearance" requirement — mandated that covered states and localities obtain approval from the federal government before implementing any change to their voting laws or procedures. The preclearance requirement was a direct response to the experience of the preceding century, during which Southern states had repeatedly devised new discriminatory mechanisms as fast as courts struck down old ones. By requiring advance federal approval of any voting change, Section 5 shifted the burden: rather than civil rights lawyers having to challenge each new discriminatory innovation after the fact, the covered jurisdiction had to demonstrate in advance that its proposed change would not have a discriminatory purpose or effect.</p>
+                        <p>The Act produced dramatic and rapid results. Black voter registration in the South increased substantially within just a few years of its enactment, and Black political representation at every level of government began to grow for the first time in nearly a century. The preclearance provision remained a central feature of American voting rights law for nearly five decades, until the Supreme Court's decision in <em>Shelby County v. Holder</em> (2013) effectively invalidated it by holding that the coverage formula Congress had used to determine which jurisdictions were subject to preclearance was based on outdated data and therefore exceeded Congress's constitutional authority. In the years following <em>Shelby County</em>, many of the jurisdictions previously subject to preclearance moved quickly to enact voting restrictions that critics argued had discriminatory effects — a development that reignited intense national debate about the continuing vitality of the Voting Rights Act and the adequacy of existing protections for minority voting rights.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_10.png" alt="Selma to Montgomery march Edmund Pettus Bridge" class="visual-img">
+                            <p class="caption-text">The Voting Rights Act of 1965 instituted federal oversight and the preclearance requirement, systematically reversing decades of state-enacted voter suppression and disenfranchisement.</p>
+                        </div>
+
+                        <div id="cp-block-9" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What was the purpose of the "preclearance" requirement in the Voting Rights Act of 1965, and how did <em>Shelby County v. Holder</em> (2013) affect it?</p>
+                                    <label><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-9')"> A) Preclearance required states to obtain federal approval before any election, and <em>Shelby County</em> eliminated federal oversight of all state elections.</label>
+                                    <label><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-9')"> B) Preclearance required covered jurisdictions with histories of voting discrimination to obtain federal approval before changing their voting laws; <em>Shelby County</em> effectively invalidated it by striking down the coverage formula.</label>
+                                    <label><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-9')"> C) Preclearance required federal courts to review all state voting laws annually; <em>Shelby County</em> transferred this responsibility to the states.</label>
+                                    <label><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-9')"> D) Preclearance required states to submit voter registration data to the federal government; <em>Shelby County</em> held that this violated the Fourth Amendment.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-9', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-9', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Expanding the Circle: Title IX, the ADA, and LGBTQ+ Rights</h4>
+                        <p class="first-p">The legislative and constitutional work of the Civil Rights Movement created a framework and a language — the language of equal protection, non-discrimination, and equal access — that subsequent social movements drew upon to extend civil rights protections to new groups and new domains of American life. Three expansions are particularly significant both for their scope and for the constitutional and legislative principles they illustrate.</p>
+                        <p>Title IX of the Education Amendments of 1972 prohibited discrimination based on sex in any educational program or activity receiving federal financial assistance. The law's most visible impact has been in collegiate and high school athletics, where it requires that women and girls have athletic opportunities substantially proportionate to their enrollment, that institutions provide equivalent scholarships and resources, and that the general sporting experiences offered to men and women be comparably adequate. But Title IX's scope extends far beyond athletics. It prohibits sexual harassment in schools, requires institutions to respond meaningfully to complaints of sexual assault and relationship violence, and has been interpreted to protect students from discrimination based on gender identity. The law reflects the same principle as the Voting Rights Act and the Civil Rights Act: that federal financial support carries with it the condition of equal treatment, and that the federal spending power can be used to leverage non-discrimination requirements even in domains where direct constitutional prohibition might be more difficult to establish.</p>
+                        <p>The Americans with Disabilities Act of 1990 extended the civil rights framework to Americans with physical and mental disabilities, requiring that public buildings, transportation systems, employers, and government programs be made accessible through "reasonable accommodations." The ADA reflected a conceptual shift in how disability was understood: from a personal misfortune that removed a person from the mainstream of social life to a social condition — one in which the barriers people with disabilities faced were created not by their impairments themselves but by a built environment and social organization designed around the assumption of able-bodiedness. By requiring reasonable accommodations, the ADA placed the burden of adjustment on institutions rather than individuals, treating access as a civil right rather than a charity.</p>
+                        <p>The extension of civil rights protections to LGBTQ+ Americans has been one of the most rapid and contested developments in the recent history of constitutional law. The Supreme Court's decision in <em>Obergefell v. Hodges</em> (2015) held that the Constitution's guarantees of liberty and equal protection require states to license and recognize same-sex marriages. Justice Kennedy's majority opinion drew on both the Due Process Clause — treating the right to marry as a fundamental liberty — and the Equal Protection Clause — treating the exclusion of same-sex couples from marriage as a denial of equal dignity. The decision was a constitutional landmark, but it did not resolve all questions about the legal status of LGBTQ+ individuals in other contexts, including employment discrimination, housing, and access to public accommodations — areas where litigation and legislation continue to define the boundaries of constitutional protection.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_11.png" alt="Collage of Title IX, ADA, and LGBTQ+ milestones" class="visual-img">
+                            <p class="caption-text">The legal framework developed during the mid-twentieth century provided the language and constitutional leverage for subsequent movements to secure protections against sex, disability, and sexual orientation discrimination.</p>
+                        </div>
+
+                        <div id="cp-block-10" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What shared constitutional and legislative principle underlies Title IX, the Americans with Disabilities Act, and the civil rights protections extended to LGBTQ+ Americans?</p>
+                                    <label><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-10')"> A) Each was enacted under the Fourteenth Amendment's Equal Protection Clause and applies directly to private conduct without the need for federal legislation.</label>
+                                    <label><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-10')"> B) Each reflects the principle that equal access and equal dignity are civil rights that must extend to all Americans, regardless of sex, disability, or sexual orientation, and uses federal law to enforce that principle in specific domains of life.</label>
+                                    <label><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-10')"> C) Each was required by the Supreme Court as a condition of federal funding for state programs.</label>
+                                    <label><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-10')"> D) Each prohibits discrimination only in government employment and does not apply to private businesses or educational institutions.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-10', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-10', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2', 'sec-2')">&larr; Previous Section</button>
+                            <button id="btn-next-sec-4" class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4', 'sec-4')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div id="sec-4" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Modern Debate | Equity and Affirmative Action</h2>
+                        <p class="first-p">The civil rights struggles of the twentieth century — the litigation campaign against segregation, the mass social movement that produced the Civil Rights Act and the Voting Rights Act, the legislative extensions of equal protection to women, people with disabilities, and LGBTQ+ Americans — were organized around a relatively clear constitutional principle: the government may not discriminate against individuals because of their membership in a protected group. The harder constitutional question — and the one that has generated the most contentious legal and political debate in recent decades — is whether the Constitution permits or requires the government to take the membership of individuals in historically disadvantaged groups into account in order to remedy the effects of past discrimination. This is the question at the heart of affirmative action.</p>
+
+                        <h4>Affirmative Action, the Courts, and the Limits of Race-Conscious Policy</h4>
+                        <p class="first-p">Affirmative action policies emerged in the late 1960s and 1970s as a response to the recognition that eliminating formal legal discrimination was necessary but not sufficient to produce genuine equality of opportunity. A century of legally enforced subordination had produced profound and persistent inequalities in education, wealth, employment, and housing that did not simply dissolve when the laws requiring discrimination were repealed. If universities, employers, and government agencies continued to use traditional selection criteria — standardized test scores, grades, prior work experience, professional networks — without modification, they would continue to produce workforces and student bodies that reflected the inequalities produced by the discriminatory past, not the equal opportunity that the Constitution now nominally guaranteed.</p>
+                        <p>The Supreme Court first addressed the constitutionality of race-conscious university admissions in <em>Regents of the University of California v. Bakke</em> (1978). Allan Bakke, a white applicant, challenged the University of California at Davis Medical School's admissions program, which reserved sixteen seats in each entering class for minority applicants. Justice Lewis Powell, writing a pivotal opinion that no other justice joined in its entirety, held that the specific program before the Court was unconstitutional because it amounted to a rigid racial quota — a fixed numerical allocation of positions based solely on race. The Equal Protection Clause, Powell concluded, required that each individual be evaluated as an individual, not merely as a representative of a racial group. But Powell also held — crucially — that diversity in higher education was a compelling state interest that could justify the consideration of race as one factor among many in an individualized admissions process. Race could be a "plus factor," but it could not be a quota.</p>
+                        <p>For the next twenty-five years, <em>Bakke</em> remained the governing precedent, with universities designing admissions processes that considered race as one element of a holistic review. In <em>Grutter v. Bollinger</em> (2003), the Supreme Court — in an opinion by Justice Sandra Day O'Connor — upheld the University of Michigan Law School's race-conscious admissions program, affirming that student body diversity was a compelling state interest and that the law school's individualized, holistic process was narrowly tailored to achieve it. O'Connor's opinion contained a notable prediction: that the Court expected race-conscious admissions to be unnecessary in twenty-five years, as the pipeline of qualified minority students grew and other means of achieving diversity became available.</p>
+                        <p>That prediction proved prophetic in an unexpected way. In <em>Students for Fair Admissions v. Harvard</em> (2023), a six-to-three majority of the Supreme Court held that the race-conscious admissions programs at Harvard University and the University of North Carolina violated the Equal Protection Clause. Chief Justice Roberts's majority opinion concluded that the universities' programs did not satisfy strict scrutiny because they lacked sufficiently measurable objectives, used race as a negative factor against Asian American applicants in some respects, and had no defined endpoint. More fundamentally, Roberts wrote, "eliminating racial discrimination means eliminating all of it" — a statement that reflected the majority's adoption of a strongly "colorblind" interpretation of the Equal Protection Clause. The decision did not explicitly overrule <em>Grutter</em> but effectively ended race-conscious admissions in American higher education.</p>
+                        <p>The <em>Students for Fair Admissions</em> decision crystallized the deepest constitutional disagreement in contemporary civil rights law: whether the Equal Protection Clause is best understood as a mandate for colorblindness — a rule that the government may never classify individuals by race, regardless of purpose — or as a mandate for equal status — a rule that permits race-conscious remedies when they are necessary to achieve genuine equality of opportunity for groups that have been systematically disadvantaged by race-conscious oppression. The majority's position reflects the former view; the dissenters, led by Justice Sonia Sotomayor, argued forcefully for the latter.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_12.png" alt="University admissions office desk" class="visual-img">
+                            <p class="caption-text">Affirmative action policies were originally implemented to address the generational effects of historical discrimination by ensuring equal opportunity within institutions that had long practiced exclusion.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> How does the debate between an "equity-based" and a "colorblind" interpretation of the Equal Protection Clause reflect differing views on the lingering impact of systemic discrimination?</p>
+                                <textarea id="va_5" class="textarea-dark" placeholder="Enter your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div id="cp-block-11" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What distinguishes the Supreme Court's ruling in <em>Regents of the University of California v. Bakke</em> (1978) from its ruling in <em>Students for Fair Admissions v. Harvard</em> (2023)?</p>
+                                    <label><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-11')"> A) <em>Bakke</em> permitted racial quotas in admissions; <em>Students for Fair Admissions</em> permitted holistic race-conscious review.</label>
+                                    <label><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-11')"> B) <em>Bakke</em> prohibited racial quotas but permitted race as a plus factor in holistic admissions; <em>Students for Fair Admissions</em> effectively ended race-conscious admissions in higher education entirely.</label>
+                                    <label><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-11')"> C) Both decisions held that race-conscious admissions programs are unconstitutional under any circumstances.</label>
+                                    <label><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-11')"> D) <em>Bakke</em> applied strict scrutiny; <em>Students for Fair Admissions</em> applied intermediate scrutiny to university admissions programs.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-11', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-11', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>De Facto Segregation and the Limits of Legal Remedies</h4>
+                        <p class="first-p">The end of de jure segregation — the formal legal separation of the races mandated by state law — was a constitutional and legislative achievement of the highest order. But the elimination of legal segregation did not produce integrated schools, integrated neighborhoods, or equal educational and economic opportunity for Black Americans and other historically excluded groups. In its place, de facto segregation — the separation of races that results not from explicit legal mandate but from the interaction of housing patterns, economic inequality, school district boundaries, and private choices — became one of the most persistent and most difficult civil rights challenges of the post-Civil War era.</p>
+                        <p>The roots of contemporary de facto segregation are not, however, purely "natural" or the result of individual choices made freely and independently. They are substantially the product of deliberate government and private policies — "redlining," the practice by which the Federal Housing Administration and private banks denied mortgages and insurance to residents of Black neighborhoods in the mid-twentieth century; racially restrictive covenants in housing deeds that prohibited the sale of property to Black buyers; public housing policies that concentrated poverty in segregated neighborhoods; and school district boundaries drawn to maintain racial separation after the explicit legal apparatus of segregation was dismantled. De facto segregation, in other words, is not simply what happened naturally after de jure segregation ended. It is what was engineered to replace it.</p>
+                        <p>The constitutional challenge posed by de facto segregation is significant. The Equal Protection Clause, as interpreted since the civil rights era, prohibits intentional discrimination — the deliberate use of race to disadvantage a group. It does not, in most circumstances, require the government to remedy the unintentional racially disparate effects of facially neutral policies. A school district whose racial composition reflects residential segregation produced by redlining decades earlier is not necessarily engaged in unconstitutional discrimination, even if the result is schools that are as racially segregated as anything produced by Jim Crow. This gap between the constitutional prohibition on intentional discrimination and the persistent reality of structural inequality remains one of the central unresolved tensions in American civil rights law — a reminder that the Fourteenth Amendment's promise of equal protection is still, more than a century and a half after its ratification, incompletely fulfilled.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_13.png" alt="Divided modern urban neighborhood" class="visual-img">
+                            <p class="caption-text">Unlike de jure segregation, which was mandated by explicit laws, de facto segregation persists through structural inequalities, geographic housing patterns, and historical economic disparities.</p>
+                        </div>
+
+                        <div id="cp-block-12" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">What is the primary difference between de jure segregation and de facto segregation as described in the text?</p>
+                                    <label><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-12')"> A) De jure segregation results from private housing choices, while de facto segregation is mandated by state law.</label>
+                                    <label><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-12')"> B) De jure segregation is a legal separation mandated by law, while de facto segregation results from factors like housing patterns and economic inequality.</label>
+                                    <label><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-12')"> C) De jure segregation was unaffected by the Civil Rights Movement, while de facto segregation was eliminated by the Fourteenth Amendment.</label>
+                                    <label><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-12')"> D) De jure segregation is the result of facially neutral policies, while de facto segregation is the deliberate use of race to disadvantage a group.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-12', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-12', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Unfinished Work of Equal Protection</h4>
+                        <p class="first-p">The constitutional debates over affirmative action and de facto segregation are not abstract legal puzzles. They reflect genuine and deeply felt disagreements about the nature of equality, the obligations of a democratic republic to remedy the injustices of its past, and the role that government institutions — courts, legislatures, executive agencies — can and should play in producing a more just society. These debates will not be resolved quickly or easily, because they engage competing values that each have legitimate constitutional grounding: the principle that individuals should be treated as individuals, not as representatives of racial groups; and the principle that genuine equal opportunity cannot be achieved by ignoring the historical and structural conditions that have made opportunity so unequal for so long.</p>
+                        <p>What the Fourteenth Amendment provides is not a resolution of this debate, but a framework within which it must be conducted. It insists that the conversation about equality be conducted in constitutional terms — that distinctions between citizens be justified, that the most vulnerable groups receive the most searching judicial protection, and that the government's claim to be treating all persons equally be subjected to meaningful scrutiny. That insistence, imperfectly honored as it has often been, is the Fourteenth Amendment's enduring contribution to the ongoing project of American democracy.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_14.png" alt="Equal Justice Under Law Supreme Court" class="visual-img">
+                            <p class="caption-text">The fulfillment of the equalization promise of the Fourteenth Amendment remains an ongoing societal debate, continuously testing the capacity of constitutional frameworks to address systemic disparity.</p>
+                        </div>
+
+                        <div id="cp-block-13" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">Why does de facto segregation present a more difficult constitutional challenge than de jure segregation?</p>
+                                    <label><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-13')"> A) Because the Supreme Court has held that de facto segregation is constitutionally equivalent to de jure segregation and requires the same judicial remedies.</label>
+                                    <label><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-13')"> B) Because the Equal Protection Clause generally prohibits intentional discrimination, but de facto segregation often results from the cumulative effects of structural inequalities rather than explicit discriminatory intent.</label>
+                                    <label><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-13')"> C) Because de facto segregation affects only private institutions, which are not subject to the Equal Protection Clause.</label>
+                                    <label><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-13')"> D) Because Congress has not passed legislation addressing de facto segregation, leaving courts without a statutory basis for intervention.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-13', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-13', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3', 'sec-3')">&larr; Previous Section</button>
+                            <button id="btn-next-sec-5" class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5', 'sec-5')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div id="sec-5" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Chapter Conclusion</h2>
+                        
+                        <div class="visual-wrapper" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: flex-start; clear: both; margin-bottom: 3rem;">
+                            <div style="flex: 1 1 35%; min-width: 250px;">
+                                <img src="assets/Visual_15.png" alt="National Mall at twilight" class="visual-img" style="width: 100%;">
+                            </div>
+                            <div style="flex: 2 1 50%;">
+                                <p class="caption-text" style="margin-top: 0; font-size: 1.05rem;">While a century of civil rights advancements successfully dismantled the formal architecture of state-sponsored discrimination, the challenge of securing genuine social and economic justice remains a defining feature of the American democratic project.</p>
+                                <div class="question-box" style="margin-top: 1.5rem; padding-left: 1.5rem;">
+                                    <p class="first-p" style="margin-bottom: 1rem;"><strong>Analysis Question:</strong> Based on the evolution of civil rights, what role do you believe both the courts and active citizens must play in addressing the unfinished realities of structural inequality?</p>
+                                    <textarea id="va_6" class="textarea-dark" placeholder="Enter your response here..." style="min-height: 150px;"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The history of the Fourteenth Amendment's Equal Protection Clause is, in microcosm, the history of the American promise of equality — a promise made and broken, contested and reclaimed, partially honored and persistently incomplete. The Amendment was ratified in 1868 to transform the constitutional order after the Civil War, to make the Declaration of Independence's assertion that "all men are created equal" into enforceable constitutional law. Within three decades, the Supreme Court had effectively nullified it through <em>Plessy v. Ferguson</em>. It took another fifty-eight years of organizing, litigation, and social movement struggle to produce <em>Brown v. Board of Education</em>, and another decade of mass protest, legislative effort, and political courage to produce the Civil Rights Act of 1964 and the Voting Rights Act of 1965. And the work has continued — through the expansion of civil rights protections to women, people with disabilities, and LGBTQ+ Americans, and through ongoing debates about what genuine equality requires in a society still shaped by the inequalities of the past.</p>
+                        
+                        <p>This chapter's essential question — how the Equal Protection Clause has been strategically utilized to move the United States toward a "more perfect union" — invites a sober assessment of both the progress that has been made and the distance that remains. The progress is real and extraordinary. A country that in 1896 provided constitutional sanction for the systematic legal degradation of millions of its citizens has, over the course of a century, prohibited discrimination in virtually every domain of public life, extended full political participation to groups previously excluded from it, and developed a constitutional framework that subjects government discrimination to rigorous judicial scrutiny. The distance is also real. De facto segregation persists in American schools and neighborhoods. Economic inequality maps closely onto racial inequality in ways that formal legal equality has not remedied. The debate over affirmative action reflects genuine uncertainty about what the Constitution requires when formal equality is insufficient to produce genuine opportunity.</p>
+                        
+                        <p>The constitutional framework of the Fourteenth Amendment does not resolve these questions automatically. It provides tools — the Equal Protection Clause, the tiered scrutiny framework, the incorporation of civil rights protections through federal legislation — that successive generations have deployed to move the constitutional promise closer to constitutional reality. Whether those tools are adequate to the challenges of the twenty-first century — the challenges of algorithmic discrimination, structural economic inequality, and the persistence of racial disparities in virtually every domain of American life — is a question that the next generation of constitutional interpreters, legislators, activists, and citizens will have to answer. The Fourteenth Amendment's invitation to that work remains open.</p>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4', 'sec-4')">&larr; Previous Section</button>
+                            <button id="btn-next-sec-6" class="action-btn" onclick="switchTab('sec-6', 'nav-sec-6', 'sec-6')">Next Section &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section 6 -->
+            <div id="sec-6" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block chapter-assessment">
+                        <h2>Chapter Assessment</h2>
+
+                        <h4>Section I — Vocabulary</h4>
+                        <p><strong>Word Bank:</strong> Civil Rights, Equal Protection Clause, Strict Scrutiny, Intermediate Scrutiny, Rational Basis Test, De Jure Segregation, De Facto Segregation, Affirmative Action, Title IX, Civil Rights Act of 1964</p>
+                        
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">1. The Fourteenth Amendment provision that prohibits states from denying "any person within its jurisdiction the equal protection of the laws" is called the <input type="text" id="pq_1" class="inline-vocab-input" data-qtext="1. The Fourteenth Amendment provision that prohibits states from denying 'any person within its jurisdiction the equal protection of the laws' is called the...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">2. Segregation that is imposed by law — such as the Jim Crow statutes that mandated separate facilities for Black and white Americans — is called <input type="text" id="pq_2" class="inline-vocab-input" data-qtext="2. Segregation that is imposed by law — such as the Jim Crow statutes that mandated separate facilities for Black and white Americans — is called...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">3. The highest level of judicial review, applied to laws that classify on the basis of race or national origin, requiring the government to demonstrate a compelling state interest and narrow tailoring, is called <input type="text" id="pq_3" class="inline-vocab-input" data-qtext="3. The highest level of judicial review, applied to laws that classify on the basis of race or national origin, requiring the government to demonstrate a compelling state interest and narrow tailoring, is called...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">4. The legal and constitutional protections provided by the government to ensure equal treatment and prevent discrimination based on group characteristics are called <input type="text" id="pq_4" class="inline-vocab-input" data-qtext="4. The legal and constitutional protections provided by the government to ensure equal treatment and prevent discrimination based on group characteristics are called...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">5. A mid-level judicial standard applied to laws that classify on the basis of sex, requiring the government to demonstrate that the law is substantially related to an important government objective, is called <input type="text" id="pq_5" class="inline-vocab-input" data-qtext="5. A mid-level judicial standard applied to laws that classify on the basis of sex, requiring the government to demonstrate that the law is substantially related to an important government objective, is called...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">6. Policy initiatives designed to increase opportunities for historically underrepresented groups in education and employment in order to address the effects of past discrimination are called <input type="text" id="pq_6" class="inline-vocab-input" data-qtext="6. Policy initiatives designed to increase opportunities for historically underrepresented groups in education and employment in order to address the effects of past discrimination are called...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">7. The federal law that prohibits discrimination based on sex in educational programs receiving federal financial assistance is <input type="text" id="pq_7" class="inline-vocab-input" data-qtext="7. The federal law that prohibits discrimination based on sex in educational programs receiving federal financial assistance is...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">8. The landmark 1964 legislation that prohibited discrimination based on race, color, religion, sex, or national origin in public accommodations and employment is the <input type="text" id="pq_8" class="inline-vocab-input" data-qtext="8. The landmark 1964 legislation that prohibited discrimination based on race, color, religion, sex, or national origin in public accommodations and employment is the...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">9. The lowest level of judicial scrutiny, under which a law is upheld if it is reasonably related to any legitimate government interest, is the <input type="text" id="pq_9" class="inline-vocab-input" data-qtext="9. The lowest level of judicial scrutiny, under which a law is upheld if it is reasonably related to any legitimate government interest, is the...">.</p>
+
+                        <p style="margin-bottom: 1.5rem; line-height: 2;">10. Segregation that occurs not because of legal mandate but because of residential patterns, economic inequality, and social conditions is called <input type="text" id="pq_10" class="inline-vocab-input" data-qtext="10. Segregation that occurs not because of legal mandate but because of residential patterns, economic inequality, and social conditions is called...">.</p>
+
+                        <h4>Section II — Comprehension</h4>
+                        <div id="cp-block-14" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint (Assessment)</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q">
+                                    <p class="first-p">1. What did the Supreme Court hold in <em>Plessy v. Ferguson</em> (1896), and on what constitutional reasoning did it rely?</p>
+                                    <label><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-14')"> A) It held that racial segregation in public schools violated the Fourteenth Amendment's Equal Protection Clause.</label>
+                                    <label><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-14')"> B) It held that "separate but equal" facilities for Black and white Americans did not violate the Equal Protection Clause, because the Amendment was intended to establish political, not social, equality.</label>
+                                    <label><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-14')"> C) It held that private businesses were prohibited from discriminating on the basis of race under the Commerce Clause.</label>
+                                    <label><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-14')"> D) It held that literacy tests used to prevent Black voter registration were unconstitutional under the Fifteenth Amendment.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">2. The NAACP's legal strategy before <em>Brown v. Board of Education</em> was primarily designed to:</p>
+                                    <label><input type="radio" name="cp15" value="A" onchange="handleRadioChange('cp-block-14')"> A) Persuade Congress to pass a new constitutional amendment overruling <em>Plessy v. Ferguson</em>.</label>
+                                    <label><input type="radio" name="cp15" value="B" onchange="handleRadioChange('cp-block-14')"> B) Challenge racial segregation in graduate and professional schools to demonstrate that truly equal separate facilities could not realistically be provided.</label>
+                                    <label><input type="radio" name="cp15" value="C" onchange="handleRadioChange('cp-block-14')"> C) File criminal charges against state officials who enforced Jim Crow laws.</label>
+                                    <label><input type="radio" name="cp15" value="D" onchange="handleRadioChange('cp-block-14')"> D) Obtain executive orders from the president desegregating federal facilities before taking the issue to court.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">3. What phrase in the Supreme Court's <em>Brown II</em> decision (1955) allowed many Southern states to delay school desegregation for years?</p>
+                                    <label><input type="radio" name="cp16" value="A" onchange="handleRadioChange('cp-block-14')"> A) "With immediate and complete compliance"</label>
+                                    <label><input type="radio" name="cp16" value="B" onchange="handleRadioChange('cp-block-14')"> B) "As soon as practicable"</label>
+                                    <label><input type="radio" name="cp16" value="C" onchange="handleRadioChange('cp-block-14')"> C) "With all deliberate speed"</label>
+                                    <label><input type="radio" name="cp16" value="D" onchange="handleRadioChange('cp-block-14')"> D) "Without further delay or resistance"</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">4. Under strict scrutiny, a law that classifies on the basis of race is:</p>
+                                    <label><input type="radio" name="cp17" value="A" onchange="handleRadioChange('cp-block-14')"> A) Automatically constitutional as long as it serves a legitimate government interest.</label>
+                                    <label><input type="radio" name="cp17" value="B" onchange="handleRadioChange('cp-block-14')"> B) Presumed unconstitutional unless the government shows a compelling interest and that the law is narrowly tailored to achieve it.</label>
+                                    <label><input type="radio" name="cp17" value="C" onchange="handleRadioChange('cp-block-14')"> C) Evaluated using the same standard as a law classifying on the basis of age or wealth.</label>
+                                    <label><input type="radio" name="cp17" value="D" onchange="handleRadioChange('cp-block-14')"> D) Automatically struck down without any review of the government's justification.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">5. Congress grounded the Civil Rights Act of 1964's prohibition on discrimination in public accommodations primarily in:</p>
+                                    <label><input type="radio" name="cp18" value="A" onchange="handleRadioChange('cp-block-14')"> A) The Fourteenth Amendment's Equal Protection Clause, which applies directly to private conduct.</label>
+                                    <label><input type="radio" name="cp18" value="B" onchange="handleRadioChange('cp-block-14')"> B) The Commerce Clause, because the Supreme Court's earlier decisions had held that the Fourteenth Amendment only reached state action.</label>
+                                    <label><input type="radio" name="cp18" value="C" onchange="handleRadioChange('cp-block-14')"> C) The First Amendment, because discrimination in public accommodations amounts to compelled speech.</label>
+                                    <label><input type="radio" name="cp18" value="D" onchange="handleRadioChange('cp-block-14')"> D) The Thirteenth Amendment, because the Court had ruled it applied to both public and private discrimination.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">6. The "preclearance" provision of the Voting Rights Act of 1965 required that:</p>
+                                    <label><input type="radio" name="cp19" value="A" onchange="handleRadioChange('cp-block-14')"> A) All states obtain federal approval before conducting any federal election.</label>
+                                    <label><input type="radio" name="cp19" value="B" onchange="handleRadioChange('cp-block-14')"> B) Covered jurisdictions with histories of voting discrimination obtain federal approval before changing their voting laws or procedures.</label>
+                                    <label><input type="radio" name="cp19" value="C" onchange="handleRadioChange('cp-block-14')"> C) Black voters in covered states be pre-registered on federal voting rolls before state elections.</label>
+                                    <label><input type="radio" name="cp19" value="D" onchange="handleRadioChange('cp-block-14')"> D) States submit literacy test results to the federal government for review before using them to determine voter eligibility.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">7. In <em>Regents of the University of California v. Bakke</em> (1978), the Supreme Court held that:</p>
+                                    <label><input type="radio" name="cp20" value="A" onchange="handleRadioChange('cp-block-14')"> A) All race-conscious admissions programs are unconstitutional under the Equal Protection Clause.</label>
+                                    <label><input type="radio" name="cp20" value="B" onchange="handleRadioChange('cp-block-14')"> B) Racial quotas in university admissions are unconstitutional, but race may be considered as one factor among many in a holistic admissions process.</label>
+                                    <label><input type="radio" name="cp20" value="C" onchange="handleRadioChange('cp-block-14')"> C) Diversity in higher education is not a compelling state interest sufficient to justify any race-conscious admissions policy.</label>
+                                    <label><input type="radio" name="cp20" value="D" onchange="handleRadioChange('cp-block-14')"> D) Race-conscious admissions programs are constitutional only at public universities, not at private institutions.</label>
+                                </div>
+                                <div class="checkpoint-q">
+                                    <p class="first-p">8. What was the primary constitutional basis for the Supreme Court's decision in <em>Obergefell v. Hodges</em> (2015)?</p>
+                                    <label><input type="radio" name="cp21" value="A" onchange="handleRadioChange('cp-block-14')"> A) The First Amendment's protection of freedom of association.</label>
+                                    <label><input type="radio" name="cp21" value="B" onchange="handleRadioChange('cp-block-14')"> B) Both the Due Process Clause's protection of marriage as a fundamental liberty and the Equal Protection Clause's requirement that same-sex couples receive equal dignity under the law.</label>
+                                    <label><input type="radio" name="cp21" value="C" onchange="handleRadioChange('cp-block-14')"> C) The Equal Protection Clause alone, without reference to the Due Process Clause.</label>
+                                    <label><input type="radio" name="cp21" value="D" onchange="handleRadioChange('cp-block-14')"> D) The Ninth Amendment's reservation of unenumerated rights to the people.</label>
+                                </div>
+                                <div>
+                                    <span class="cp-indicator"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-14', -1)">Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-14', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Section III — Guided Analysis</h4>
+                        <label>1. The chapter traces the Supreme Court's shift from Plessy v. Ferguson (1896) to Brown v. Board of Education (1954). Using evidence from the chapter, explain what changed in the Court's constitutional reasoning between these two decisions. What role did the NAACP's litigation strategy play in creating the conditions for that change?</label>
+                        <textarea id="pq_11" class="textarea-dark"></textarea>
+
+                        <label>2. The chapter describes three standards of judicial review — strict scrutiny, intermediate scrutiny, and the rational basis test. Using specific examples for each standard, explain the logic behind applying different levels of review to different kinds of classifications. Do you think the framework adequately protects the groups most vulnerable to discrimination? Why or why not?</label>
+                        <textarea id="pq_12" class="textarea-dark"></textarea>
+
+                        <label>3. The chapter argues that winning in court was "necessary but not sufficient" to produce civil rights change, and that legislative action and mass social movements were also essential. Using the Civil Rights Act of 1964 and the Voting Rights Act of 1965 as examples, explain what legislation was able to accomplish that court decisions alone could not. What does this reveal about the relationship between constitutional law and democratic politics?</label>
+                        <textarea id="pq_13" class="textarea-dark"></textarea>
+
+                        <label>4. The chapter describes two competing interpretations of the Equal Protection Clause — the "colorblind" interpretation and the "equity-based" interpretation. Using Bakke, Grutter v. Bollinger, and Students for Fair Admissions v. Harvard as evidence, explain the constitutional argument for each interpretation. Which interpretation do you find more consistent with the Fourteenth Amendment's original purposes and its history? Support your answer with evidence from the chapter.</label>
+                        <textarea id="pq_14" class="textarea-dark"></textarea>
+
+                        <h4>Section IV — Visual Analysis</h4>
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_1.png" alt="Timeline - Civil Rights Milestones, 1865-2023" class="visual-img">
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> What pattern do you notice in the timing and clustering of civil rights milestones? What does the fifty-eight-year gap between Plessy and Brown reveal about the relationship between constitutional text and constitutional enforcement?</p>
+                                <textarea id="va_7" class="textarea-dark"></textarea>
+                                
+                                <p class="first-p"><strong>Analysis Question:</strong> Identify one Supreme Court decision on the timeline that you believe expanded civil rights and one that you believe limited them. Using evidence from the chapter, explain the constitutional reasoning behind each and assess which had the greater long-term impact on the lives of Americans.</p>
+                                <textarea id="va_8" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_2.png" alt="Comparison Chart - The Three Standards of Judicial Review" class="visual-img">
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> Based on the chart, which standard of review provides the strongest protection for individuals against government discrimination? Which provides the least? What constitutional logic justifies this difference?</p>
+                                <textarea id="va_9" class="textarea-dark"></textarea>
+                                
+                                <p class="first-p"><strong>Analysis Question:</strong> The chapter notes that the rational basis test has occasionally been applied with greater scrutiny in cases involving laws targeting politically unpopular groups. Using the chart as a reference, explain why this variation matters. Should courts apply a more demanding standard to laws that target groups based on sexual orientation? Why or why not?</p>
+                                <textarea id="va_10" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <h4>Section V — Primary Source (CER)</h4>
+                        <p class="first-p"><strong>Primary Source Excerpt:</strong> <em>Brown v. Board of Education</em>, 347 U.S. 483 (1954) — Chief Justice Earl Warren, writing for a unanimous Court:<br>
+                        <em>"We conclude that, in the field of public education, the doctrine of 'separate but equal' has no place. Separate educational facilities are inherently unequal. Therefore, we hold that the plaintiffs and others similarly situated for whom the actions have been brought are, by reason of the segregation complained of, deprived of the equal protection of the laws guaranteed by the Fourteenth Amendment."</em></p>
+                        
+                        <p><strong>Claim:</strong> Make a claim about whether the Supreme Court's reasoning in <em>Brown</em> was a faithful interpretation of the Fourteenth Amendment's original constitutional meaning, or whether it represented a departure from original meaning justified by changing social and historical circumstances.</p>
+                        <textarea id="pq_15" class="textarea-dark" placeholder="State your Claim..."></textarea>
+                        
+                        <p><strong>Evidence:</strong> Quote or closely paraphrase at least one specific phrase from the excerpt above. Then connect the Court's reasoning to at least one other case, concept, or historical development from the chapter.</p>
+                        <textarea id="pq_16" class="textarea-dark" placeholder="Provide Evidence..."></textarea>
+                        
+                        <p><strong>Reasoning:</strong> Explain how the evidence supports your claim. Consider whether Chief Justice Warren's argument represents an evolution of constitutional interpretation or a betrayal of it. What does your answer reveal about how the meaning of constitutional provisions changes over time?</p>
+                        <textarea id="pq_17" class="textarea-dark" placeholder="Explain your Reasoning..."></textarea>
+
+                        <h4>Section VI — Modern Reflection</h4>
+                        <label>The chapter describes the tension between two interpretations of the Equal Protection Clause: a "colorblind" interpretation and an "equity-based" interpretation. Does a "colorblind" interpretation of the Equal Protection Clause adequately fulfill the Fourteenth Amendment's promise of equal protection in a society still shaped by the legacy of racial discrimination? Apply the constitutional principles discussed in this chapter — including the history of the "Second Founding," the three-tier scrutiny framework, the distinction between de jure and de facto segregation, and the reasoning of Brown v. Board of Education — to construct an argument about what genuine equal protection requires in the twenty-first century. Where should the constitutional line be drawn, and why?</label>
+                        <textarea id="pq_18" class="textarea-dark" style="min-height: 200px;"></textarea>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5', 'sec-5')">&larr; Previous Section</button>
+                            <button class="action-btn" onclick="finishChapter()" style="background-color: var(--color-gold); color: var(--color-navy-deep);">Finished &rarr;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        /* Background Management */
+        const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+        let bgIndex = 0;
+
+        function rotateBackground() {
+            if (bgImages.length === 0) return;
+            const bgEl = document.getElementById('bg-slideshow');
+            if (!bgEl) return;
+            bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            rotateBackground();
+            setInterval(rotateBackground, 10000);
+            initCheckpoints();
+        });
+
+        /* Navigation */
+        function switchTab(id, btnId = null, scrollTarget = null) {
+            document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+            
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+            const activeBtnId = btnId || ('nav-' + id);
+            const activeBtn = document.getElementById(activeBtnId);
+            if (activeBtn) { activeBtn.classList.add('active-nav'); }
+            
+            if (scrollTarget) {
+                setTimeout(() => {
+                    const target = document.getElementById(scrollTarget);
+                    if(target) {
+                        const offset = 40;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = target.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            saveProgress();
+        }
+
+        /* Data Collection & Export */
+        function collectAssignmentData(isFinal) {
+            const studentName = document.getElementById('student-name').value || "Unknown_Student";
+            const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+            const now = new Date().toLocaleDateString();
+            
+            const assignmentData = {
+                assignmentTitle: "Interactive Chapter 11 - Civil Rights and the Fourteenth Amendment",
+                studentInfo: { name: studentName, period: studentPeriod, dateCompleted: isFinal ? now : "In Progress" },
+                responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {} }
+            };
+
+            for(let i=1; i<=25; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                    assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+                }
+            }
+
+            for(let i=1; i<=30; i++) {
+                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                if(inputs.length > 0) {
+                    let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            for(let i=1; i<=25; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) {
+                    let qText = el.hasAttribute('data-qtext') ? el.getAttribute('data-qtext') : (el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i);
+                    assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+                }
+            }
+            return assignmentData;
+        }
+
+        function triggerDownload(data, filename) {
+            const dataStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadProgress() {
+            const data = collectAssignmentData(false);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Progress_${safeName}.json`);
+        }
+
+        function finishChapter() {
+            const dateField = document.getElementById('completion-date');
+            const now = new Date().toLocaleDateString();
+            if(dateField) dateField.value = now;
+            const data = collectAssignmentData(true);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Export_${safeName}.json`);
+            alert('Upload JSON file to Canvas');
+            switchTab('sec-1', 'nav-sec-1');
+        }
+
+        /* Loading Progress */
+        function loadProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const loadedData = JSON.parse(e.target.result);
+                    const nameInput = document.getElementById('student-name');
+                    const periodInput = document.getElementById('student-period');
+                    
+                    if (loadedData.studentInfo) {
+                        if (loadedData.studentInfo.name && loadedData.studentInfo.name !== "Unknown_Student") {
+                            nameInput.value = loadedData.studentInfo.name;
+                            nameInput.setAttribute('readonly', 'true');
+                            nameInput.style.opacity = '0.7'; 
+                        }
+                        if (loadedData.studentInfo.period && loadedData.studentInfo.period !== "Unknown_Period") {
+                            periodInput.value = loadedData.studentInfo.period;
+                            periodInput.setAttribute('disabled', 'true');
+                            periodInput.style.opacity = '0.7'; 
+                        }
+                    }
+
+                    if (loadedData.responses) {
+                        if (loadedData.responses.visualAnalysis) {
+                            for(let i=1; i<=25; i++) {
+                                let el = document.getElementById('va_' + i);
+                                if(el) {
+                                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                                    if(loadedData.responses.visualAnalysis[qText]) el.value = loadedData.responses.visualAnalysis[qText];
+                                }
+                            }
+                        }
+                        
+                        if (loadedData.responses.checkpoints) {
+                            for(let i=1; i<=30; i++) {
+                                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                                if(inputs.length > 0) {
+                                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                                    let savedVal = loadedData.responses.checkpoints[qText];
+                                    if (savedVal && savedVal !== "No Answer") {
+                                        let radio = document.querySelector(`input[name="cp${i}"][value="${savedVal}"]`);
+                                        if(radio) radio.checked = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (loadedData.responses.perspectiveQuestions) {
+                            for(let i=1; i<=25; i++) {
+                                let el = document.getElementById('pq_' + i);
+                                if(el) {
+                                    let qText = el.hasAttribute('data-qtext') ? el.getAttribute('data-qtext') : (el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i);
+                                    if(loadedData.responses.perspectiveQuestions[qText]) el.value = loadedData.responses.perspectiveQuestions[qText];
+                                }
+                            }
+                        }
+                    }
+                    initCheckpoints();
+                    alert('Progress loaded successfully!');
+                } catch (err) {
+                    console.error(err);
+                    alert('Error loading progress file. Please make sure it is a valid JSON file.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        /* Save & Reset Logic */
+        function saveProgress() { console.log('Progress stored in memory. Click Save Progress to download.'); }
+        
+        function resetProgress() {
+            if(confirm('Are you sure you want to reset all progress?')) {
+                document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+                document.querySelectorAll('.textarea-dark, .inline-vocab-input, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+                const nameInput = document.getElementById('student-name');
+                const periodInput = document.getElementById('student-period');
+                nameInput.removeAttribute('readonly'); nameInput.style.opacity = '1';
+                periodInput.removeAttribute('disabled'); periodInput.style.opacity = '1';
+
+                document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+                initCheckpoints();
+                switchTab('start', 'nav-start');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        /* Checkpoint Management */
+        const TOTAL_CHECKPOINTS = 14; 
+
+        function initCheckpoints() {
+            for(let i=1; i<=TOTAL_CHECKPOINTS; i++) { updateCpUI(`cp-block-${i}`); }
+            checkSectionUnlock();
+        }
+
+        function updateCpUI(blockId) {
+            const block = document.getElementById(blockId);
+            if(!block) return;
+            const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            const indicator = block.querySelector('.cp-indicator');
+            const prevBtn = block.querySelector('.cp-prev-btn');
+            const nextBtn = block.querySelector('.cp-next-btn');
+            
+            questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+            if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+            if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+            if(nextBtn) {
+                const currentQ = questions[currentIndex];
+                const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+                if (currentIndex === questions.length - 1) {
+                    if (isAnswered) {
+                        nextBtn.innerText = "Checkpoint Completed ✓";
+                        nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                        nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                    } else {
+                        nextBtn.innerText = "Finish Checkpoint";
+                        nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                        nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    }
+                } else {
+                    nextBtn.innerText = "Next Question \u2192";
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; }
+                    else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+                }
+            }
+            checkSectionUnlock();
+        }
+
+        function navigateCp(blockId, dir) {
+            const block = document.getElementById(blockId);
+            let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+            block.setAttribute('data-current', currentIndex);
+            updateCpUI(blockId);
+        }
+
+        function handleRadioChange(blockId) { saveProgress(); updateCpUI(blockId); }
+        function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+        
+        function setNavButtonState(btnId, enabled) {
+            const btn = document.getElementById(btnId);
+            if (!btn) return;
+            if (enabled) {
+                btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                btn.innerHTML = 'Next Section →'; btn.style.borderColor = 'var(--color-gold)';
+            } else {
+                btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+                btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+            }
+        }
+
+        function checkSectionUnlock() {
+            setNavButtonState('btn-next-sec-1', isAnswered('cp1'));
+            setNavButtonState('btn-next-sec-2', isAnswered('cp2') && isAnswered('cp3') && isAnswered('cp4'));
+            setNavButtonState('btn-next-sec-3', isAnswered('cp5') && isAnswered('cp6') && isAnswered('cp7'));
+            setNavButtonState('btn-next-sec-4', isAnswered('cp8') && isAnswered('cp9') && isAnswered('cp10'));
+            setNavButtonState('btn-next-sec-5', isAnswered('cp11') && isAnswered('cp12') && isAnswered('cp13'));
+            // Section 5 (Conclusion) naturally flows into Section 6
+            setNavButtonState('btn-next-sec-6', true);
+        }
+    </script>
+</body>
+</html>

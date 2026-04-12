@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Chapter 9 - Selective Incorporation, the Fourth Amendment, and Privacy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #241B2F;
+            --color-cream: #F6F3EE;
+            --color-navy: #6D5BA6;
+            --color-steel-nib: #9DA7B1;
+            --color-gold: #E0B84C;
+            --color-gold-light: #E8C97A;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { 
+            font-family: var(--font-body); background-color: var(--color-navy-deep); 
+            color: var(--color-cream); line-height: 1.8; font-size: 1.15rem; 
+        }
+        /* Background Effects */
+        #bg-slideshow { 
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; 
+            background-size: cover; background-position: center; transition: background-image 1.5s ease-in-out; 
+        }
+        body::after { 
+            content: ''; position: fixed; inset: 0; 
+            background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.45) 50%, rgba(0, 0, 0, 0.75) 100%); 
+            z-index: 1; pointer-events: none; 
+        }
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+        /* Left Navigation Panel */
+        .side-nav { 
+            position: fixed; top: 0; left: 0; bottom: 0; width: 280px; 
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); 
+            border-right: 1px solid rgba(212,160,23,0.3); display: flex; flex-direction: column; 
+            padding: 2rem 1.5rem; z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; 
+        }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { 
+            font-family: var(--font-heading); color: var(--color-gold); font-size: 1.3rem; 
+            margin-bottom: 2rem; text-transform: uppercase; letter-spacing: 1px; 
+            border-bottom: 1px solid rgba(212,160,23,0.2); padding-bottom: 0.5rem; 
+        }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { 
+            background: transparent; border: 1px solid transparent; color: var(--color-cream); 
+            text-align: left; padding: 10px 12px; font-family: var(--font-ui); cursor: pointer; 
+            transition: all 0.3s; border-radius: 4px; font-size: 0.85rem; font-weight: bold; 
+        }
+        .nav-btn.active-nav { background: rgba(212,160,23,0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { 
+            background: rgba(0, 0, 0, 0.1); backdrop-filter: blur(5px); 
+            border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 3rem; 
+            margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; 
+        }
+        @media (max-width: 1024px) {
+            .side-nav { display: none; }
+            .main-content { margin-left: 0; }
+            .content-wrapper { padding: 30px 20px; }
+            .content-block { padding: 2rem; }
+        }
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        h4 { font-family: var(--font-heading); color: var(--color-cream) !important; font-size: 1.75rem !important; line-height: 1.3; margin-bottom: 1.25rem !important; margin-top: 2rem !important; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+        h5 { font-family: var(--font-heading); color: var(--color-steel-nib) !important; font-size: 1.35rem !important; line-height: 1.3; margin-bottom: 1rem !important; margin-top: 2rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        .chapter-assessment p { text-indent: 0 !important; }
+        /* UI Elements */
+        .id-panel { 
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; margin-bottom: 2rem; 
+            background: rgba(0,0,0,0.4); padding: 25px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); 
+        }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { 
+            width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); 
+            color: var(--color-cream); padding: 12px; border-radius: 4px; font-family: var(--font-ui); font-size: 1rem; 
+        }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+        .textarea-dark { 
+            width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); 
+            color: var(--color-cream); padding: 1.5rem; border-radius: 4px; min-height: 120px; 
+            font-family: var(--font-body); font-size: 1.1rem; resize: vertical; 
+        }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+        /* Full Sized Visuals */
+        .visual-wrapper { 
+            width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); padding: 20px; 
+            border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; 
+        }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        
+        /* Portrait Visual Constraints */
+        .visual-wrapper.portrait { 
+            width: 35%; 
+            clear: none;
+            margin: 0.5rem 0 1rem 0;
+        }
+        .visual-wrapper.portrait.float-left {
+            float: left;
+            margin-right: 2rem;
+        }
+        .visual-wrapper.portrait.float-right {
+            float: right;
+            margin-left: 2rem;
+        }
+        @media (max-width: 768px) {
+            .visual-wrapper.portrait {
+                width: 100%;
+                float: none;
+                margin: 2.5rem 0;
+                clear: both;
+            }
+        }
+
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0 !important; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+        
+        /* Compact Checkpoint System */
+        .checkpoint-block { 
+            margin-top: 3rem; margin-bottom: 2rem; padding: 25px; border: 2px dashed rgba(212,160,23,0.4); 
+            border-radius: 8px; background: rgba(0,0,0,0.2); clear: both; 
+        }
+        .checkpoint-grid { display: flex; flex-direction: column; gap: 1.5rem; align-items: stretch; }
+        .checkpoint-grid > div:last-child { flex-direction: row !important; justify-content: flex-end !important; align-items: center; height: auto !important; margin-top: 1rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1rem; }
+        .checkpoint-grid > div:last-child .cp-indicator { margin-right: auto; text-align: left !important; }
+        .checkpoint-grid > div:last-child .action-btn { width: auto; min-width: 160px; }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; width: 100%; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { 
+            display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; cursor: pointer; 
+            padding: 8px 12px; background: rgba(0,0,0,0.2); border-radius: 4px; border: 1px solid transparent; 
+            transition: all 0.2s; font-size: 0.9rem; line-height: 1.3; 
+        }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(212,160,23,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+        /* Buttons & Navigation */
+        .action-btn { 
+            padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); font-weight: bold; 
+            cursor: pointer; text-transform: uppercase; transition: all 0.3s; background: rgba(0,0,0,0.5); 
+            color: var(--color-gold); border: 1.5px solid var(--color-gold); width: 100%; 
+        }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { 
+            display: flex; justify-content: space-between; padding-top: 2rem; border-top: 1px solid rgba(212,160,23,0.3); 
+            margin-top: 3rem; gap: 20px; clear: both; 
+        }
+        .bottom-nav .action-btn { width: auto; }
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+    <div id="bg-slideshow"></div>
+
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="side-nav">
+            <div class="nav-title">Table of Contents</div>
+            <div class="nav-links">
+                <button id="nav-sec-1" class="nav-btn active-nav" onclick="switchTab('sec-1', this.id)">Start Page</button>
+                <button id="nav-sec-2" class="nav-btn" onclick="switchTab('sec-2', this.id)">I. Selective Incorporation and the Fourteenth Amendment</button>
+                <button id="nav-sec-3" class="nav-btn" onclick="switchTab('sec-3', this.id)">II. The Fourth Amendment: Privacy and Policing</button>
+                <button id="nav-sec-4" class="nav-btn" onclick="switchTab('sec-4', this.id)">III. Exceptions to the Warrant Requirement</button>
+                <button id="nav-sec-5" class="nav-btn" onclick="switchTab('sec-5', this.id)">IV. The Technological Renegotiation of Privacy</button>
+                <button id="nav-sec-6" class="nav-btn" onclick="switchTab('sec-6', this.id)">V. Chapter Conclusion</button>
+                <button id="nav-sec-7" class="nav-btn" onclick="switchTab('sec-7', this.id)">VI. Chapter Assessment</button>
+            </div>
+            <div class="nav-actions">
+                <button class="action-btn" onclick="downloadProgress()">Save Progress</button>
+                <label class="action-btn" style="text-align: center; margin: 0;">
+                    Load Progress
+                    <input type="file" accept=".json" style="display: none;" onchange="loadProgress(event)">
+                </label>
+                <button class="action-btn" style="border-color: var(--color-wax-red); color: var(--color-wax-red);" onclick="resetProgress()">Reset</button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- START PAGE -->
+            <section id="sec-1" class="chapter-section active-section">
+                <img src="assets/Header%20Banner%20Chapter%209.png" alt="Chapter Header" class="hero-banner-flush">
+                <div class="content-wrapper">
+                    <div class="id-panel">
+                        <div>
+                            <label>Student Name</label>
+                            <input type="text" id="student-name" placeholder="First & Last Name">
+                        </div>
+                        <div>
+                            <label>Class Period</label>
+                            <select id="student-period">
+                                <option value="">Select...</option>
+                                <option value="1">Period 1</option><option value="2">Period 2</option><option value="3">Period 3</option><option value="4">Period 4</option><option value="5">Period 5</option><option value="6">Period 6</option><option value="7">Period 7</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Completion Date</label>
+                            <input type="text" id="completion-date" readonly placeholder="Auto-fills on finish">
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 style="margin-top: 0 !important;">Core Objectives</h3>
+                        <ul>
+                            <li><strong>Analyze</strong> the doctrine of selective incorporation and explain how the Fourteenth Amendment's Due Process Clause has been used by the Supreme Court to apply the Bill of Rights to state governments.</li>
+                            <li><strong>Identify</strong> the core requirements of a lawful search and seizure under the Fourth Amendment, including probable cause, judicial warrants, and specificity.</li>
+                            <li><strong>Evaluate</strong> the constitutional tensions between public safety and individual privacy rights as illustrated by surveillance legislation and landmark Supreme Court cases.</li>
+                            <li><strong>Explain</strong> how advances in digital technology have forced courts to reconsider traditional definitions of "search" and "reasonable expectation of privacy."</li>
+                        </ul>
+
+                        <h3>Key Terms</h3>
+                        <ul>
+                            <li>Selective Incorporation</li>
+                            <li>Exclusionary Rule</li>
+                            <li>Search and Seizure</li>
+                            <li>Probable Cause</li>
+                            <li>Reasonable Expectation of Privacy</li>
+                            <li>Right to Privacy</li>
+                            <li>Warrant</li>
+                            <li>Surveillance</li>
+                        </ul>
+
+                        <h4>Introduction</h4>
+                        <p class="first-p">Few documents in American history have generated as much controversy, litigation, and philosophical debate as the Fourth Amendment to the United States Constitution. Written in fewer than sixty words, it declares that "the right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated." At its core, the Fourth Amendment is a statement about power — specifically, about the limits of government power over the private lives of citizens. It reflects the founders' hard-won conviction, shaped by their experiences under British colonial rule, that a government left unchecked would inevitably abuse its authority. The general warrants and writs of assistance that British officials had used to ransack colonial homes without any specific justification were still fresh wounds in the American political memory when James Madison drafted the Bill of Rights in 1789.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_1.png" alt="Historical recreation of colonial search" class="visual-img">
+                            <p class="caption-text">The broad usage of general warrants and writs of assistance by British officials during the colonial era deeply impacted the framers' understanding of government overreach, directly inspiring the strict limits on search and seizure drafted into the Fourth Amendment.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">How did the historical experience of being subjected to unchecked searches by British authorities shape the specific requirements written into the Fourth Amendment?</p>
+                                <textarea id="va_1" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">Yet the Fourth Amendment did not spring into full effect across the entire American system of government the moment it was ratified. For much of American history, its protections applied only to the actions of the federal government. State governments — with their own police forces, prosecutors, and courts — operated outside its reach. It was not until the twentieth century, through the slow, deliberate process known as selective incorporation, that the Supreme Court began extending the Bill of Rights to the states, one provision at a time. This process fundamentally transformed the relationship between individual citizens and their state governments, ensuring that the constitutional protections meant to shield Americans from federal overreach would apply with equal force when a local police officer knocked on the door.</p>
+                        
+                        <p>Today, the Fourth Amendment operates in an environment the Framers could never have imagined. The "papers and effects" that the amendment was written to protect now include text messages, cloud storage, GPS location data, and the entire digital architecture of a person's life. As the government develops ever more sophisticated tools for surveillance — facial recognition software, algorithmic monitoring systems, bulk data collection programs — courts are forced to ask whether the constitutional principles of 1791 can be adapted to the technological realities of the twenty-first century. This chapter explores that ongoing negotiation: between security and liberty, between the state's obligation to protect its citizens and the citizen's right to be left alone.</p>
+                        
+                        <p>Understanding this balance requires examining three interlocking questions. First, how did the Fourth Amendment come to apply to the states? Second, what does it actually require of law enforcement, and where does it draw the line between permissible policing and unconstitutional intrusion? Third, how have modern challenges — from the Patriot Act to smartphone searches — forced a renegotiation of constitutional principles that were once thought settled? The answers reveal not just the technical law of the Fourth Amendment, but the deeper democratic logic that makes privacy a precondition for freedom.</p>
+                    </div>
+
+                    <div class="bottom-nav">
+                        <div></div>
+                        <button id="btn-next-sec-1" class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION I -->
+            <section id="sec-2" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Selective Incorporation and the Fourteenth Amendment</h2>
+                        
+                        <p class="first-p">When the Bill of Rights was ratified in 1791, its protections were understood to constrain only the federal government. This interpretation was not merely assumed — it was legally established by the Supreme Court in the 1833 case <em>Barron v. Baltimore</em>. John Barron, a wharf owner, sued the city of Baltimore after municipal construction projects diverted streams and deposited silt that made his previously deep-water wharf nearly useless. He argued that the Fifth Amendment's requirement that the government pay "just compensation" when it takes private property applied to the city. Chief Justice John Marshall, writing for a unanimous Court, disagreed. The Bill of Rights, Marshall explained, had been drafted to address fears about the newly created federal government. It placed no limitations on the power of state governments. As far as the Constitution was concerned, states were free to manage their own affairs — including their relationships with their own citizens — as they saw fit.</p>
+
+                        <p>This ruling left a significant gap in the constitutional protection of American liberty. For decades, state governments could restrict speech, conduct searches without warrants, and deny accused persons the right to counsel, all without triggering any constitutional objection from federal courts. The Bill of Rights, the nation's most celebrated guarantee of individual freedom, was simply irrelevant to how states exercised power over the people who lived within their borders.</p>
+
+                        <h4>The Fourteenth Amendment and the "Second Founding"</h4>
+                        
+                        <p class="first-p">The Civil War changed everything. When the Southern states were defeated and the nation began the process of Reconstruction, Congress recognized that the prewar constitutional structure had tolerated — and in many ways enabled — the subjugation of millions of Americans. The Thirteenth Amendment abolished slavery. The Fourteenth, ratified in 1868, went further. Among its most consequential provisions was the Due Process Clause, which declared that no state could "deprive any person of life, liberty, or property, without due process of law." Alongside this was the Equal Protection Clause, ensuring that states must apply their laws equally to all persons within their jurisdiction.</p>
+                        
+                        <p>Historians and legal scholars sometimes call this era the "Second Founding" — a moment when the constitutional order was fundamentally restructured to prioritize national citizenship and limit the autonomy of states to oppress their residents. The Fourteenth Amendment did not immediately produce this transformation in practice, particularly in the South, where Reconstruction-era protections for formerly enslaved people were eroded through violence and legal maneuvering within a generation. But the Amendment's language established a constitutional foundation that later generations would use to demand that the promises of the Bill of Rights be honored at every level of American government.</p>
+                        
+                        <p>The mechanism through which this happened was a legal doctrine called incorporation. The theory, as it developed in the twentieth century, held that certain rights listed in the Bill of Rights were so fundamental to liberty and justice that they were necessarily included in the "liberty" protected by the Fourteenth Amendment's Due Process Clause. If a state denied a person one of these fundamental rights, it was violating the Constitution — and federal courts could intervene.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_2.png" alt="Barron v. Baltimore harbor scene" class="visual-img">
+                            <p class="caption-text">Before the Civil War, the Supreme Court ruled in Barron v. Baltimore that the Bill of Rights only constrained the federal government, leaving state and local governments free to operate without federal constitutional limitations on their interactions with citizens.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">Why did the Supreme Court initially rule that the Bill of Rights did not protect citizens against the actions of their state and local governments?</p>
+                                <textarea id="va_2" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Checkpoint 1 -->
+                        <div class="checkpoint-block" id="cp-block-1" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What was the significance of the Supreme Court's ruling in <em>Barron v. Baltimore</em> (1833)?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp1" value="A) It established that the federal government must compensate states for public works projects." onchange="handleRadioChange('cp-block-1')"> A) It established that the federal government must compensate states for public works projects.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp1" value="B) It determined that the Bill of Rights limited only the federal government, not the states." onchange="handleRadioChange('cp-block-1')"> B) It determined that the Bill of Rights limited only the federal government, not the states.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp1" value="C) It ruled that the Fifth Amendment's takings clause applied to all levels of government." onchange="handleRadioChange('cp-block-1')"> C) It ruled that the Fifth Amendment's takings clause applied to all levels of government.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp1" value="D) It created the doctrine of selective incorporation for the first time." onchange="handleRadioChange('cp-block-1')"> D) It created the doctrine of selective incorporation for the first time.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-1', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-1', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Mechanics of Selective Incorporation</h4>
+                        
+                        <p class="first-p">The Court did not incorporate the entire Bill of Rights at once. Instead, it adopted what became known as selective incorporation — a case-by-case approach in which the Court examined each right individually and asked whether it was fundamental to a "scheme of ordered liberty" or "deeply rooted in this nation's history and tradition." If the answer was yes, the right would be incorporated — meaning it would apply to state governments through the Fourteenth Amendment, just as it applied to the federal government directly through the original Bill of Rights.</p>
+                        
+                        <p>The process began tentatively in the 1920s. In <em>Gitlow v. New York</em> (1925), the Supreme Court upheld the conviction of a socialist pamphleteer under a New York criminal anarchy law, but the majority assumed — without extended analysis — that freedom of speech and press were among the fundamental liberties protected against state infringement by the Fourteenth Amendment. This was a significant step: for the first time, the Court was treating a Bill of Rights provision as applicable to a state action. The pace quickened in the 1930s and 1940s, as the Court incorporated rights related to freedom of religion, the right to counsel in capital cases, and protections against coerced confessions.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_3.png" alt="Selective incorporation infographic" class="visual-img">
+                            <p class="caption-text">Rather than applying the entire Bill of Rights to the states at once, the Supreme Court utilized selective incorporation to gradually extend fundamental protections—such as those found in the First, Fourth, Fifth, and Sixth Amendments—to the state level on a case-by-case basis.</p>
+                        </div>
+
+                        <p class="first-p">The most dramatic era of incorporation came during the 1960s, under Chief Justice Earl Warren. The Warren Court transformed American constitutional law by systematically extending the criminal procedure protections of the Fourth, Fifth, and Sixth Amendments to the states. The exclusionary rule — the principle that evidence obtained in violation of the Fourth Amendment cannot be used in a criminal trial — was applied to state courts in <em>Mapp v. Ohio</em> (1961). The right to counsel in all felony cases was extended to state defendants in <em>Gideon v. Wainwright</em> (1963). The protection against self-incrimination was applied to state police interrogations in <em>Miranda v. Arizona</em> (1966). Each of these decisions represented a judgment that the right in question was not merely a technical legal rule, but a fundamental protection without which a genuinely fair criminal justice system could not exist.</p>
+                        
+                        <p>The practical effect of selective incorporation was to nationalize the standards of criminal justice. Before incorporation, a defendant in Mississippi had vastly fewer constitutional protections than a defendant in federal court. After incorporation, the same constitutional rules governed both. The states did not lose all authority over criminal procedure, but they could no longer operate in a constitutional vacuum. The federal judiciary became the ultimate arbiter of what due process required, regardless of whether the government in question was located in Washington, D.C., or in a county courthouse in rural Alabama.</p>
+
+                        <!-- Checkpoint 2 -->
+                        <div class="checkpoint-block" id="cp-block-2" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">Which Supreme Court decision applied the exclusionary rule to state criminal courts?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp2" value="A) Barron v. Baltimore (1833)" onchange="handleRadioChange('cp-block-2')"> A) <em>Barron v. Baltimore</em> (1833)</label>
+                                        <label class="checklist-item"><input type="radio" name="cp2" value="B) Gitlow v. New York (1925)" onchange="handleRadioChange('cp-block-2')"> B) <em>Gitlow v. New York</em> (1925)</label>
+                                        <label class="checklist-item"><input type="radio" name="cp2" value="C) Mapp v. Ohio (1961)" onchange="handleRadioChange('cp-block-2')"> C) <em>Mapp v. Ohio</em> (1961)</label>
+                                        <label class="checklist-item"><input type="radio" name="cp2" value="D) Miranda v. Arizona (1966)" onchange="handleRadioChange('cp-block-2')"> D) <em>Miranda v. Arizona</em> (1966)</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-2', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-2', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Enduring Logic of Incorporation</h4>
+
+                        <p class="first-p">The doctrine of selective incorporation rests on a fundamental premise: that the constitutional rights of Americans should not depend on which government — federal or state — happens to be violating them. This premise reflects a particular understanding of citizenship. Before the Civil War, a person's primary legal identity was as a citizen of their state; national citizenship was secondary. The Fourteenth Amendment reversed this hierarchy. It created a direct bond between the individual citizen and the national government, one that no state could sever.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_4.png" alt="Federal and state officers bound by same rules" class="visual-img">
+                            <p class="caption-text">Through selective incorporation, the Fourteenth Amendment created a constitutional framework where local and state governments must adhere to the same fundamental due process rules as federal agencies, effectively nationalizing core civil rights.</p>
+                        </div>
+
+                        <p class="first-p">This shift in the constitutional understanding of citizenship has had lasting consequences. It means that a local police department must follow the same constitutional rules as a federal law enforcement agency. It means that a state legislature cannot abridge freedoms that Congress could not touch. And it means that the Supreme Court, as the interpreter of the national Constitution, has authority to review and invalidate the actions of every government in the American system, from the smallest municipality to the most powerful state. Critics of this development have argued that it diminishes the diversity and experimentation that federalism is supposed to enable. Defenders respond that there are some rights — the right not to have your home searched without a warrant, the right not to be compelled to confess to a crime — that are too fundamental to leave to the discretion of any particular state. Selective incorporation reflects the Court's judgment that the basic dignity of the individual is a national commitment, not a local option.</p>
+
+                        <!-- Checkpoint 3 -->
+                        <div class="checkpoint-block" id="cp-block-3" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What principle underlies the doctrine of selective incorporation?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp3" value="A) That states have the power to expand, but not restrict, federal rights." onchange="handleRadioChange('cp-block-3')"> A) That states have the power to expand, but not restrict, federal rights.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp3" value="B) That constitutional rights should not depend on which level of government is violating them." onchange="handleRadioChange('cp-block-3')"> B) That constitutional rights should not depend on which level of government is violating them.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp3" value="C) That the Supreme Court should defer to state courts on all criminal procedure matters." onchange="handleRadioChange('cp-block-3')"> C) That the Supreme Court should defer to state courts on all criminal procedure matters.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp3" value="D) That only rights explicitly mentioned in the Fourteenth Amendment can be incorporated." onchange="handleRadioChange('cp-block-3')"> D) That only rights explicitly mentioned in the Fourteenth Amendment can be incorporated.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-3', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-3', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-1', 'nav-sec-1')">&larr; Previous</button>
+                        <button id="btn-next-sec-2" class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION II -->
+            <section id="sec-3" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Fourth Amendment: Privacy and Policing</h2>
+                        
+                        <p class="first-p">With selective incorporation establishing that the Fourth Amendment applies to state and local law enforcement, the next question is what the Amendment actually requires. At its simplest, the Fourth Amendment prohibits "unreasonable" searches and seizures and generally requires that warrants be supported by probable cause and describe with particularity the place to be searched and the things to be seized. But the meaning of these words — particularly the word "unreasonable" — has been contested in hundreds of Supreme Court decisions spanning more than a century.</p>
+
+                        <h4>The Warrant Requirement and Its Logic</h4>
+                        
+                        <p class="first-p">The warrant requirement is the Fourth Amendment's most important structural feature. Before law enforcement can search a person's home, rifle through their belongings, or intercept their communications, they must ordinarily obtain a warrant from a neutral and detached magistrate — a judge who has no stake in the investigation and whose job is to serve as an independent check on police enthusiasm.</p>
+                        
+                        <p>To obtain a warrant, officers must demonstrate probable cause: a reasonable belief, based on specific articulable facts, that evidence of a crime will be found in the place to be searched or that the person to be arrested has committed a crime. This is a meaningful standard, though not an overwhelming one. Probable cause is more than a hunch, but it does not require the certainty of proof beyond a reasonable doubt. The key is that the officer must be able to point to concrete, specific facts — not vague suspicions or stereotypes — that would lead a reasonable person to believe a search was justified.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_5.png" alt="Judge signing search warrant" class="visual-img">
+                            <p class="caption-text">The warrant requirement serves as a critical structural check on law enforcement, mandating that an independent judge verify the existence of probable cause and ensuring the search is strictly limited to specific places and items.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">How does the requirement for a warrant to describe "with particularity" the place to be searched protect individuals from government overreach?</p>
+                                <textarea id="va_3" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The warrant must also be specific. The Fourth Amendment, drawing directly on the colonial experience with British general warrants, requires that the warrant describe "the place to be searched, and the persons or things to be seized." A warrant that simply authorizes police to search "wherever they think appropriate" or to seize "whatever they find" is constitutionally insufficient. The specificity requirement serves a crucial function: it forces law enforcement to identify in advance exactly what they are looking for and where, limiting the scope of any intrusion and protecting areas and items not connected to the alleged crime.</p>
+                        
+                        <p>The home occupies the most protected position in Fourth Amendment jurisprudence. The Supreme Court has repeatedly described the home as the most private sphere in American life, the one place where citizens have the strongest claim to be free from government observation. An officer who enters a home without a warrant, without consent, and without an applicable exception is committing a constitutional violation, regardless of what they find inside.</p>
+
+                        <!-- Checkpoint 4 -->
+                        <div class="checkpoint-block" id="cp-block-4" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What is the primary purpose of the Fourth Amendment's specificity requirement for warrants?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp4" value="A) To allow police to search broad areas when investigating serious crimes." onchange="handleRadioChange('cp-block-4')"> A) To allow police to search broad areas when investigating serious crimes.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp4" value="B) To limit the scope of government intrusion to exactly what has been authorized by a judge." onchange="handleRadioChange('cp-block-4')"> B) To limit the scope of government intrusion to exactly what has been authorized by a judge.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp4" value="C) To require law enforcement to notify homeowners before conducting a search." onchange="handleRadioChange('cp-block-4')"> C) To require law enforcement to notify homeowners before conducting a search.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp4" value="D) To ensure that warrants are reviewed by multiple judges before being issued." onchange="handleRadioChange('cp-block-4')"> D) To ensure that warrants are reviewed by multiple judges before being issued.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-4', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-4', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Reasonable Expectation of Privacy</h4>
+                        
+                        <div class="visual-wrapper portrait float-left">
+                            <img src="assets/Visual_6.png" alt="Man making phone call in booth with bug" class="visual-img">
+                            <p class="caption-text">In Katz v. United States, the Supreme Court established that the Fourth Amendment protects people, not just physical spaces, shifting the legal focus to whether an individual has exhibited a reasonable expectation of privacy recognized by society.</p>
+                        </div>
+
+                        <p class="first-p">Not every government intrusion constitutes a Fourth Amendment "search." The Court has developed a framework — originating in <em>Katz v. United States</em> (1967) — to determine when the Fourth Amendment is implicated at all. In <em>Katz</em>, FBI agents placed a listening device on the outside of a public telephone booth to record the defendant's phone calls. The government argued that because the booth was a public place and agents had not physically entered it, there was no search. The Supreme Court disagreed. Justice Potter Stewart's majority opinion established that "the Fourth Amendment protects people, not places." What mattered was not the physical location but whether the person had a reasonable expectation of privacy.</p>
+
+                        <p>Justice John Marshall Harlan's concurring opinion in <em>Katz</em> elaborated the test into two parts, which courts have applied ever since. First, had the person exhibited a subjective expectation of privacy — did they actually believe their conversation was private? Second, was that expectation one that society was prepared to recognize as reasonable — was it, in other words, an objectively justified expectation? In <em>Katz</em>, the defendant had taken the precaution of closing the telephone booth's door and lowering his voice. The Court concluded that he had exhibited a reasonable expectation that his conversation was private, even in a public booth. The government's eavesdropping without a warrant therefore constituted an unconstitutional search.</p>
+                        
+                        <p>The <em>Katz</em> framework has proven remarkably durable, but its application to new situations has required constant refinement. When law enforcement flies a plane over a backyard to observe marijuana plants, or uses a thermal imaging device to detect heat patterns inside a home, or attaches a GPS tracker to a car, or subpoenas cell phone location records from a wireless carrier, does the <em>Katz</em> test produce clear answers? These are not hypothetical questions. Each scenario has generated significant Supreme Court litigation, and in each case the Court has had to ask whether the intrusion at issue was the kind that the Fourth Amendment was designed to prevent.</p>
+
+                        <!-- Checkpoint 5 -->
+                        <div class="checkpoint-block" id="cp-block-5" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">According to <em>Katz v. United States</em>, what is the central question in determining whether a Fourth Amendment "search" has occurred?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp5" value="A) Whether law enforcement physically entered private property." onchange="handleRadioChange('cp-block-5')"> A) Whether law enforcement physically entered private property.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp5" value="B) Whether the person had a reasonable expectation of privacy in the thing searched." onchange="handleRadioChange('cp-block-5')"> B) Whether the person had a reasonable expectation of privacy in the thing searched.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp5" value="C) Whether the search took place in a public or private location." onchange="handleRadioChange('cp-block-5')"> C) Whether the search took place in a public or private location.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp5" value="D) Whether law enforcement had a warrant before beginning their investigation." onchange="handleRadioChange('cp-block-5')"> D) Whether law enforcement had a warrant before beginning their investigation.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-5', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-5', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2')">&larr; Previous</button>
+                        <button id="btn-next-sec-3" class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION III -->
+            <section id="sec-4" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Exceptions to the Warrant Requirement</h2>
+                        
+                        <p class="first-p">The warrant requirement is the general rule, but the Supreme Court has recognized a significant number of exceptions in circumstances where the need for immediate action outweighs the practicality of obtaining judicial authorization in advance. Understanding these exceptions is essential to understanding how the Fourth Amendment operates in practice.</p>
+
+                        <p>The plain view doctrine permits officers to seize evidence they observe while lawfully present in a location. If an officer is inside a home on a valid warrant to search for stolen electronics and notices a bag of illegal drugs sitting on the kitchen counter, the drugs may be seized even though the warrant did not authorize a search for narcotics. The key is that the officer must be lawfully present, and the incriminating nature of the evidence must be immediately apparent.</p>
+
+                        <p>Consent is another significant exception. If a person voluntarily agrees to allow law enforcement to search their home, car, or belongings, no warrant is required. Courts have sometimes struggled to determine whether consent was truly voluntary in situations where officers were imposing and assertive, but the basic principle remains: a person may choose to waive their Fourth Amendment rights, and that waiver eliminates the need for a warrant.</p>
+
+                        <p>Exigent circumstances — genuine emergencies — also justify warrantless action. If officers in hot pursuit of a fleeing suspect follow him into a private dwelling, they need not stop and obtain a warrant at the threshold. Similarly, if officers have strong reason to believe that evidence is being destroyed inside a home at that very moment, they may enter without waiting for judicial authorization. The emergency must be real and immediate, not manufactured by officers as a pretext for avoiding the warrant process.</p>
+
+                        <p>Perhaps the most debated exception is the "stop-and-frisk," or <em>Terry</em> stop, authorized by <em>Terry v. Ohio</em> (1968). Chief Justice Warren's opinion held that police may briefly detain a person and pat down the outer layer of their clothing for weapons based on "reasonable suspicion" — a standard lower than probable cause — that criminal activity is afoot and that the person may be armed and dangerous. The <em>Terry</em> stop was designed as a limited tool: brief, focused, and based on articulable facts. In practice, its application has generated profound controversy, particularly in major American cities where the policy has been used in ways that raise serious questions about equity and constitutional compliance.</p>
+
+                        <h4>The Boundaries of Permissible Intrusion</h4>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_7.png" alt="Plain view doctrine illustration" class="visual-img">
+                            <p class="caption-text">While a warrant is the general rule, courts recognize exceptions when immediate action is necessary or when evidence is in plain view, balancing practical law enforcement needs with constitutional boundaries.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">Why do the courts allow certain exceptions to the warrant requirement, such as exigent circumstances or the "plain view" doctrine, rather than demanding a warrant for every search?</p>
+                                <textarea id="va_4" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">Each of these exceptions to the warrant requirement reflects a balance struck by the Court between the legitimate needs of law enforcement and the constitutional right to be free from arbitrary government intrusion. The Fourth Amendment has never been read to require that every search be preceded by a warrant — the Framers themselves recognized the practical impossibility of that standard in every circumstance. What the Amendment demands, at its core, is that government intrusions into private life be reasonable: grounded in specific facts, authorized by appropriate legal mechanisms, and limited in scope to what the circumstances actually require.</p>
+
+                        <p>The exclusionary rule, established in <em>Mapp v. Ohio</em>, is the primary enforcement mechanism for these requirements. Evidence obtained in violation of the Fourth Amendment — the product of an unconstitutional search or seizure — cannot be introduced at trial. The exclusionary rule is controversial because it can result in the suppression of reliable evidence and the acquittal of demonstrably guilty defendants. Critics argue that it protects the guilty at the expense of public safety. Defenders respond that it is the only mechanism that gives law enforcement a genuine incentive to comply with constitutional requirements. If unconstitutionally obtained evidence could be used freely at trial, the Fourth Amendment would become a pious aspiration rather than an enforceable legal standard.</p>
+
+                        <!-- Checkpoint 6 -->
+                        <div class="checkpoint-block" id="cp-block-6" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">Which of the following best describes the purpose of the exclusionary rule?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp6" value="A) To allow judges to sentence defendants more leniently when police misconduct occurred." onchange="handleRadioChange('cp-block-6')"> A) To allow judges to sentence defendants more leniently when police misconduct occurred.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp6" value="B) To prevent prosecutors from using evidence obtained through unconstitutional searches or seizures." onchange="handleRadioChange('cp-block-6')"> B) To prevent prosecutors from using evidence obtained through unconstitutional searches or seizures.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp6" value="C) To require law enforcement to disclose all evidence gathered during an investigation." onchange="handleRadioChange('cp-block-6')"> C) To require law enforcement to disclose all evidence gathered during an investigation.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp6" value="D) To establish a clear definition of probable cause for issuing warrants." onchange="handleRadioChange('cp-block-6')"> D) To establish a clear definition of probable cause for issuing warrants.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-6', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-6', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Public Safety vs. Personal Freedom</h4>
+                        
+                        <p class="first-p">The tension between security and liberty is not a new feature of American constitutional life. Every generation of Americans has faced some version of this dilemma — some crisis, whether foreign or domestic, that has prompted calls to expand government authority at the expense of individual rights. What changes across eras is the technology available to governments and the scale at which surveillance can be conducted. The twenty-first century, with its digital infrastructure and interconnected communications networks, has created surveillance capabilities that would have seemed fantastical to the framers of the Constitution — and that present constitutional challenges of unprecedented complexity.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_8.png" alt="Stop and frisk urban scene" class="visual-img">
+                            <p class="caption-text">The use of "stop-and-frisk" policies raised profound constitutional challenges about whether such tactics effectively prevented violence or disproportionately violated the Fourth Amendment rights of minority populations without genuine probable cause.</p>
+                        </div>
+
+                        <h5>Surveillance, National Security, and the Patriot Act</h5>
+                        
+                        <p class="first-p">The September 11, 2001 terrorist attacks on the United States triggered the most dramatic expansion of domestic surveillance authority in a generation. Six weeks after the attacks, Congress passed the USA PATRIOT Act — an acronym standing for "Uniting and Strengthening America by Providing Appropriate Tools Required to Intercept and Obstruct Terrorism." The Act significantly expanded the government's authority to collect intelligence on individuals within the United States, including American citizens.</p>
+
+                        <p>Among the Act's most significant provisions were those that broadened the authority to conduct "roving wiretaps" — eavesdropping that follows an individual from phone to phone rather than being attached to a specific device — and those that permitted law enforcement to access business records, including library and internet records, in the course of intelligence investigations. The Act also lowered the standard for obtaining authorization from the Foreign Intelligence Surveillance Court (FISA court), the specialized judicial body that oversees domestic intelligence gathering. Traditional criminal wiretaps required a showing of probable cause that the target was engaged in criminal activity. National security surveillance under FISA required only a showing that the target was connected to a foreign power or terrorist organization — a different and in some respects lower bar.</p>
+                        
+                        <p>The Patriot Act also authorized "sneak and peek" warrants — court orders permitting law enforcement to search a home or office without immediately notifying the occupant. In ordinary criminal investigations, notice is required because it serves an important Fourth Amendment function: it allows the person whose property has been searched to know what the government has done and to challenge the legality of the search. Delayed notification, critics argued, deprived citizens of this protection. Defenders responded that immediate notification could compromise ongoing terrorism investigations by alerting suspects that they were under surveillance.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_9.png" alt="Intelligence operations center data servers" class="visual-img">
+                            <p class="caption-text">Following the September 11 attacks, the USA PATRIOT Act significantly expanded federal surveillance authority, lowering the threshold for intelligence gathering and altering how search warrants were executed.</p>
+                        </div>
+
+                        <!-- Checkpoint 7 -->
+                        <div class="checkpoint-block" id="cp-block-7" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What was the primary justification Congress offered for expanding government surveillance authority under the USA PATRIOT Act?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp7" value="A) Reducing the federal court backlog in criminal cases." onchange="handleRadioChange('cp-block-7')"> A) Reducing the federal court backlog in criminal cases.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp7" value="B) Strengthening the constitutional protections of the Fourth Amendment." onchange="handleRadioChange('cp-block-7')"> B) Strengthening the constitutional protections of the Fourth Amendment.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp7" value="C) Providing law enforcement with tools needed to investigate and prevent terrorism." onchange="handleRadioChange('cp-block-7')"> C) Providing law enforcement with tools needed to investigate and prevent terrorism.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp7" value="D) Creating a uniform national standard for criminal wiretapping." onchange="handleRadioChange('cp-block-7')"> D) Creating a uniform national standard for criminal wiretapping.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-7', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-7', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Mass Surveillance and Its Constitutional Complications</h4>
+                        
+                        <p class="first-p">The full scope of post-September 11 surveillance programs did not become publicly known until 2013, when former National Security Agency contractor Edward Snowden disclosed classified documents revealing that the NSA had been collecting telephone metadata — records of who called whom, when, and for how long — on virtually all Americans. The program was authorized under a provision of the Patriot Act that permitted the government to collect "business records" relevant to a terrorism investigation. The government's position was that because the metadata was held by telephone companies — third parties — rather than by individuals themselves, users had no Fourth Amendment interest in it.</p>
+                        
+                        <p>This argument drew on a legal doctrine called the "third-party doctrine," established in cases from the 1970s holding that when a person voluntarily shares information with a third party — a bank, a telephone company — they assume the risk that the third party will disclose that information to the government. The doctrine reflected the technology of its time: a bank deposit slip or a list of phone numbers dialed might reveal limited information about a person's activities. In the digital age, however, the same principle applied to the entirety of a person's digital life — their emails, their browsing history, their location data, the complete record of their movement and communication — would expose an extraordinary portrait of their private existence. Whether the third-party doctrine could or should apply at this scale was a question the courts had not previously had to confront.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_10.png" alt="Smartphone and metadata tracking nodes" class="visual-img">
+                            <p class="caption-text">The third-party doctrine traditionally held that individuals surrendered privacy protections for information shared with businesses, but the immense scope of modern digital metadata collection forced courts to begin rethinking those rules.</p>
+                        </div>
+
+                        <p class="first-p">The Supreme Court addressed a related question in <em>Carpenter v. United States</em> (2018). Timothy Carpenter was convicted of robbery in part based on cell phone location records — data that showed his phone's location over a period of weeks and placed him near the scenes of multiple crimes. The government obtained the records from his wireless carrier using a court order under a standard lower than probable cause. Carpenter argued that the government needed a warrant to access this information. Chief Justice John Roberts, writing for a five-member majority, agreed. The Court held that cell phone location records are qualitatively different from the information at issue in the older third-party doctrine cases. Because people carry their phones nearly everywhere and generate constant location data without any conscious decision to share it, the third-party doctrine did not eliminate their Fourth Amendment interest in that information. The government needed a warrant.</p>
+
+                        <p><em>Carpenter</em> was a significant decision, but it was also a deliberately narrow one. Chief Justice Roberts was careful to note that the Court was not overruling the third-party doctrine or resolving questions about email content, foreign intelligence collection, or real-time tracking. The decision left many of the most pressing digital privacy questions for future cases to resolve.</p>
+
+                        <!-- Checkpoint 8 -->
+                        <div class="checkpoint-block" id="cp-block-8" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">Why did the Supreme Court rule in <em>Carpenter v. United States</em> that accessing cell phone location records required a warrant?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp8" value="A) Because the records were held by the defendant personally, not a third party." onchange="handleRadioChange('cp-block-8')"> A) Because the records were held by the defendant personally, not a third party.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp8" value="B) Because the sheer volume and sensitivity of location data created a distinct constitutional privacy interest." onchange="handleRadioChange('cp-block-8')"> B) Because the sheer volume and sensitivity of location data created a distinct constitutional privacy interest.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp8" value="C) Because cell phones are protected personal property under the Third Amendment." onchange="handleRadioChange('cp-block-8')"> C) Because cell phones are protected personal property under the Third Amendment.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp8" value="D) Because the third-party doctrine had been overruled by Congress before the case was decided." onchange="handleRadioChange('cp-block-8')"> D) Because the third-party doctrine had been overruled by Congress before the case was decided.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-8', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-8', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Civil Liberties Under Pressure</h4>
+                        
+                        <p class="first-p">Beyond the specific legal questions raised by surveillance legislation, the post-September 11 era generated a broader debate about the relationship between security and liberty in a democratic society. This debate is not merely academic. When government surveillance is pervasive and secret, it can exert what legal scholars call "chilling effects" on constitutionally protected activity. A person who believes their phone calls are being monitored, their email read, and their internet activity tracked may self-censor — choosing not to call a controversial organization, not to visit a politically sensitive website, not to express an unpopular opinion — even if they have done nothing wrong. In this way, the erosion of Fourth Amendment privacy can directly undermine the First Amendment freedoms of speech and assembly.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_11.png" alt="Person on laptop with code overlay showing chilling effect" class="visual-img">
+                            <p class="caption-text">Pervasive government surveillance programs can create chilling effects, leading citizens to self-censor their behavior and fundamentally threatening the exercise of First Amendment freedoms under the shadow of observation.</p>
+                        </div>
+
+                        <p class="first-p">The stop-and-frisk programs implemented by major city police departments in the early 2000s raised similar concerns, but with a more direct and visible impact on affected communities. In New York City, the stop-and-frisk program reached its peak in 2011, when police recorded over 685,000 stops. Critics documented that Black and Latino residents accounted for nearly 87 percent of those stops, despite comprising approximately 52 percent of the city's population. The vast majority of those stopped were found to be carrying nothing illegal. In <em>Floyd v. City of New York</em> (2013), a federal district court found that the city had engaged in a pattern of unconstitutional stops that amounted to indirect racial profiling in violation of the Fourth and Fourteenth Amendments. The decision did not simply turn on the raw numbers, but on the city's policy of encouraging officers to make stops based on criteria that correlated with race rather than with specific, articulable facts suggesting criminal activity.</p>
+                        
+                        <p>The deeper constitutional question raised by stop-and-frisk, the Patriot Act, and mass surveillance programs is the same one that has animated Fourth Amendment jurisprudence since the founding era: at what point does the government's pursuit of security become an infringement on the liberty it is supposed to protect? The Fourth Amendment does not answer that question directly — it speaks only of "reasonableness" and "probable cause" — but it establishes the framework within which the answer must be found. And it insists that the answer cannot simply be that security always wins.</p>
+
+                        <!-- Checkpoint 9 -->
+                        <div class="checkpoint-block" id="cp-block-9" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What does the legal concept of "chilling effects" mean in the context of Fourth Amendment surveillance?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp9" value="A) That cold weather reduces the effectiveness of electronic surveillance equipment." onchange="handleRadioChange('cp-block-9')"> A) That cold weather reduces the effectiveness of electronic surveillance equipment.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp9" value="B) That awareness of government surveillance may deter people from exercising their First Amendment rights." onchange="handleRadioChange('cp-block-9')"> B) That awareness of government surveillance may deter people from exercising their First Amendment rights.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp9" value="C) That the exclusionary rule prevents the use of evidence in cases involving national security." onchange="handleRadioChange('cp-block-9')"> C) That the exclusionary rule prevents the use of evidence in cases involving national security.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp9" value="D) That surveillance programs slow down the criminal justice process by producing too much information." onchange="handleRadioChange('cp-block-9')"> D) That surveillance programs slow down the criminal justice process by producing too much information.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-9', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-9', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3')">&larr; Previous</button>
+                        <button id="btn-next-sec-4" class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION IV -->
+            <section id="sec-5" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Technological Renegotiation of Privacy</h2>
+                        
+                        <p class="first-p">The fourth and perhaps most complex chapter in the ongoing story of the Fourth Amendment is being written right now, in courtrooms and legislative chambers across the country, as American law attempts to keep pace with technological change. The Framers of the Constitution understood privacy in physical terms: the security of the home, the integrity of personal papers, the freedom to move about without government observation. The twenty-first century has made privacy both more essential and more fragile, creating new forms of intimate information that existing legal categories struggle to capture.</p>
+
+                        <h4>Digital Data and the "Privacies of Life"</h4>
+                        
+                        <p class="first-p">In <em>Riley v. California</em> (2014), the Supreme Court unanimously held that police cannot search the digital contents of an arrested person's cell phone without a warrant. The case arose from two separate incidents in which officers, after making lawful arrests, searched the defendants' smartphones without obtaining warrants. The government argued that the searches were permissible under the "search incident to arrest" exception — the well-established rule that police may search the person of an arrested individual and the area within their immediate control to protect officer safety and prevent the destruction of evidence.</p>
+                        
+                        <p>Chief Justice Roberts rejected this argument in an opinion that displayed an unusually clear understanding of digital technology. The search incident to arrest exception, he explained, was designed to address physical threats — a concealed weapon, a destructible document. A modern smartphone poses neither of these dangers. But a smartphone does contain extraordinary amounts of information: photographs, messages, emails, financial records, medical data, location histories, browsing activity. Roberts noted that a cell phone could contain more information about a person's private life than a search of an entire home — information that, if exposed without constitutional protection, would reveal the "privacies of life" in their entirety. The government's argument that officers should be allowed to scroll through an arrestee's phone simply because they were in physical possession of it was, in Roberts's words, "like saying a ride on horseback is materially indistinguishable from a flight to the moon."</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_12.png" alt="Officer holding smartphone of arrested suspect" class="visual-img">
+                            <p class="caption-text">In Riley v. California, the Supreme Court ruled that a smartphone contains too much sensitive, encompassing personal data to be casually searched without a warrant under the traditional search-incident-to-arrest exception.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">How did the Supreme Court justify treating a cell phone differently than physical objects found on a person during an arrest?</p>
+                                <textarea id="va_5" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p"><em>Riley</em> was significant not only for its result but for its reasoning. The Court acknowledged directly that digital technology requires Fourth Amendment doctrine to evolve. The categories and precedents developed for a world of physical objects and paper documents do not automatically translate to a world of cloud storage and metadata. Courts must think carefully about the nature of digital information — its quantity, its sensitivity, its permanence — rather than simply mapping old doctrine onto new facts.</p>
+
+                        <!-- Checkpoint 10 -->
+                        <div class="checkpoint-block" id="cp-block-10" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">Why did the Supreme Court in <em>Riley v. California</em> hold that police cannot search a cell phone incident to arrest without a warrant?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp10" value="A) Because cell phones are protected under the Third Amendment as personal property." onchange="handleRadioChange('cp-block-10')"> A) Because cell phones are protected under the Third Amendment as personal property.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp10" value="B) Because the volume and sensitivity of digital data distinguish it from physical objects the search-incident-to-arrest exception was designed to address." onchange="handleRadioChange('cp-block-10')"> B) Because the volume and sensitivity of digital data distinguish it from physical objects the search-incident-to-arrest exception was designed to address.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp10" value="C) Because the defendant had not been formally charged with a crime at the time of the search." onchange="handleRadioChange('cp-block-10')"> C) Because the defendant had not been formally charged with a crime at the time of the search.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp10" value="D) Because the exclusionary rule requires all evidence gathered during an arrest to be suppressed." onchange="handleRadioChange('cp-block-10')"> D) Because the exclusionary rule requires all evidence gathered during an arrest to be suppressed.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-10', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-10', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Emerging Technologies and the Future of Privacy</h4>
+                        
+                        <div class="visual-wrapper portrait float-right">
+                            <img src="assets/Visual_13.png" alt="Facial recognition tracking people in a crowd" class="visual-img">
+                            <p class="caption-text">The deployment of emerging technologies such as facial recognition, automated license plate readers, and algorithmic monitoring allows authorities to track citizen movement and behavior at a scale that challenges traditional Fourth Amendment boundaries.</p>
+                        </div>
+
+                        <p class="first-p">Beyond smartphones and location data, law enforcement agencies increasingly employ technologies that raise fundamental questions about the relationship between government surveillance and democratic accountability. Facial recognition software can identify individuals in real time from camera footage, potentially enabling governments to track the movements of their citizens at a scale and with a precision never before possible. Algorithmic monitoring systems can analyze patterns of behavior — the websites a person visits, the purchases they make, the routes they travel — to generate predictions about future conduct. Automated license plate readers can create detailed records of where vehicles have been, how long they stayed, and what routes they traveled.</p>
+
+                        <p>None of these technologies requires a physical intrusion into private space. They operate in public, or through information collected by private companies that is then accessed by government agencies. Under a strict reading of traditional Fourth Amendment doctrine, many of them would not constitute "searches" at all — because they do not involve physical trespass, and because they often rely on information that individuals have, in some sense, made available in public spaces or shared with third parties. But this analysis, the Supreme Court suggested in <em>Carpenter</em>, misses something important about what privacy means in the digital age. The question is not simply whether any single piece of surveillance crosses a constitutional line, but whether the aggregation of surveillance data — the combination of location history, browsing patterns, purchasing records, and facial recognition results — creates a comprehensive portrait of a person's life that the Fourth Amendment was designed to protect against.</p>
+
+                        <p>The concept of aggregation is increasingly central to Fourth Amendment thinking. Even if any individual piece of information seems innocuous — a car spotted on a particular street, a cell phone pinging near a particular location — the combination of many such pieces of information over time can reveal intimate details about a person's life: their religious practices, their political associations, their health condition, their romantic relationships. The Framers who wrote the Fourth Amendment understood that government surveillance could be used to intimidate, harass, and control citizens. They wrote the Amendment to prevent that outcome. Whether twenty-first-century legal doctrine can translate that purpose into effective protection against twenty-first-century surveillance technology remains one of the most important and unresolved questions in American constitutional law.</p>
+
+                        <!-- Checkpoint 11 -->
+                        <div class="checkpoint-block" id="cp-block-11" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">Which of the following best describes the "concept of aggregation" as it relates to modern Fourth Amendment thinking?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp11" value="A) The requirement that law enforcement must obtain multiple warrants before using different types of surveillance technology simultaneously." onchange="handleRadioChange('cp-block-11')"> A) The requirement that law enforcement must obtain multiple warrants before using different types of surveillance technology simultaneously.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp11" value="B) The idea that while individual data points might seem innocuous, the collection and combination of diverse surveillance data over time can reveal intimate personal details that warrant constitutional protection." onchange="handleRadioChange('cp-block-11')"> B) The idea that while individual data points might seem innocuous, the collection and combination of diverse surveillance data over time can reveal intimate personal details that warrant constitutional protection.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp11" value="C) The legal doctrine that information shared with third parties, such as private companies, is automatically aggregated into the public domain and loses all privacy protections." onchange="handleRadioChange('cp-block-11')"> C) The legal doctrine that information shared with third parties, such as private companies, is automatically aggregated into the public domain and loses all privacy protections.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp11" value="D) The practice of law enforcement agencies combining their databases with those of private corporations to bypass the need for physical searches of private property." onchange="handleRadioChange('cp-block-11')"> D) The practice of law enforcement agencies combining their databases with those of private corporations to bypass the need for physical searches of private property.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-11', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-11', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>The Living Shield</h4>
+                        
+                        <div class="visual-wrapper portrait float-left">
+                            <img src="assets/Visual_14.png" alt="Microchip resting on original Constitution parchment" class="visual-img">
+                            <p class="caption-text">The ongoing challenge of Fourth Amendment jurisprudence requires judges to functionalize eighteenth-century language, ensuring that massive, unseen technological intrusion does not erode the fundamental protections against unreasonable government power.</p>
+                        </div>
+
+                        <p class="first-p">The enduring challenge of Fourth Amendment jurisprudence is to apply a constitutional text written in the eighteenth century to circumstances that were literally unimaginable at the time of its drafting. This is not a problem unique to the Fourth Amendment — every provision of the Constitution must be interpreted and applied in contexts its authors did not foresee. But the Fourth Amendment's particular sensitivity to technological change is perhaps unmatched, because technology is the primary driver of what surveillance is possible, what privacy can mean, and what "unreasonable" intrusion actually looks like in practice.</p>
+
+                        <p>The Supreme Court's recent decisions — <em>Katz</em>, <em>Riley</em>, <em>Carpenter</em> — reflect an emerging understanding that the Fourth Amendment must be read functionally, not just textually. The question is not whether a particular form of surveillance technically fits the definition of a "search" under doctrine developed in a different era, but whether it represents the kind of government intrusion into private life that the Fourth Amendment was designed to prevent. This functional approach requires courts to think carefully about purpose, scale, and effect: not just what the government did, but what it learned, and what the constitutional implications of allowing such learning to proceed without judicial oversight might be.</p>
+                        
+                        <p>The stakes are high. A Fourth Amendment that is read too narrowly — that permits unlimited digital surveillance simply because information is held by third parties or gathered in public spaces — would leave citizens with no meaningful protection against a government armed with the most powerful surveillance tools in human history. A Fourth Amendment that is read too broadly — that treats every digital transaction as a protected private communication — would seriously impair the ability of law enforcement to investigate genuine threats. Finding the right balance is not easy. But the alternative to finding it — simply letting technology and government power advance without any constitutional constraint — would be to allow the private sphere to disappear entirely. And a society in which every communication is monitored, every movement tracked, and every association recorded is not, in any meaningful sense, a free one.</p>
+
+                        <!-- Checkpoint 12 -->
+                        <div class="checkpoint-block" id="cp-block-12" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div>
+                                    <div class="checkpoint-q">
+                                        <p class="first-p">What does the concept of "aggregation" contribute to modern Fourth Amendment analysis?</p>
+                                        <label class="checklist-item"><input type="radio" name="cp12" value="A) It refers to the government's ability to pool resources from multiple agencies for surveillance operations." onchange="handleRadioChange('cp-block-12')"> A) It refers to the government's ability to pool resources from multiple agencies for surveillance operations.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp12" value="B) It describes how combining individually innocuous data points can reveal intimate details of a person's private life, raising constitutional concerns." onchange="handleRadioChange('cp-block-12')"> B) It describes how combining individually innocuous data points can reveal intimate details of a person's private life, raising constitutional concerns.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp12" value="C) It refers to the process of combining evidence from multiple crime scenes in a single trial." onchange="handleRadioChange('cp-block-12')"> C) It refers to the process of combining evidence from multiple crime scenes in a single trial.</label>
+                                        <label class="checklist-item"><input type="radio" name="cp12" value="D) It describes how courts aggregate decisions from lower federal courts before issuing a ruling." onchange="handleRadioChange('cp-block-12')"> D) It describes how courts aggregate decisions from lower federal courts before issuing a ruling.</label>
+                                    </div>
+                                </div>
+                                <div style="display:flex; flex-direction:column; justify-content:center; gap: 10px; height: 100%;">
+                                    <span class="cp-indicator" style="color:var(--color-gold); font-family:var(--font-ui); font-size:0.9rem; text-align:center;"></span>
+                                    <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-12', -1)" style="display:none;">&larr; Previous</button>
+                                    <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-12', 1)">Next Question &rarr;</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4')">&larr; Previous</button>
+                        <button id="btn-next-sec-5" class="action-btn" onclick="switchTab('sec-6', 'nav-sec-6')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION V -->
+            <section id="sec-6" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Chapter Conclusion</h2>
+                        
+                        <p class="first-p">The Fourth Amendment began its constitutional life as a specific response to a specific grievance: the general warrants and writs of assistance that British officials had used to terrorize colonial households and suppress political dissent. It has grown, over more than two centuries, into something broader and more consequential — the primary constitutional guarantee of the private sphere, the legal framework through which Americans assert their right to live free from arbitrary government observation and intrusion.</p>
+                        
+                        <p>The process of selective incorporation ensured that this guarantee would apply not just against the federal government, but against every government in the American system. The Warren Court's incorporation decisions in the 1960s nationalized the standards of criminal justice, creating a constitutional floor below which no state could fall. The exclusionary rule gave those standards practical force, ensuring that law enforcement had a genuine incentive to respect constitutional requirements rather than simply ignoring them and hoping for the best.</p>
+                        
+                        <p>The essential question this chapter poses — how does the government balance the strategic necessity of collective security with the constitutional sanctity of individual privacy? — does not have a permanent answer. It is a question that each generation must answer for itself, in light of the threats it faces and the technologies available to both governments and citizens. What the Fourth Amendment provides is not an answer but a framework: a set of principles — probable cause, judicial warrants, specificity, reasonableness — that ensure the question is always asked, and that the answer always accounts for the dignity of the individual citizen.</p>
+                        
+                        <p>In the era of digital surveillance, facial recognition, and algorithmic policing, that framework is under greater pressure than at any point since the founding. The Supreme Court has begun to adapt, recognizing in <em>Riley</em> and <em>Carpenter</em> that digital information demands a different constitutional analysis than physical objects. But much remains unsettled. The boundaries of the third-party doctrine, the constitutionality of mass surveillance programs, the legal status of emerging technologies — all of these questions are actively being litigated.</p>
+
+                        <p>What will not change, if the constitutional tradition holds, is the underlying principle: that government power over the private lives of citizens must be constrained, justified, and subject to review. That is what the Fourth Amendment has always demanded. It is also, as the next chapter will explore, what the broader constitutional guarantee of due process requires in every stage of the encounter between the individual and the criminal justice system — from investigation to arrest, from trial to punishment.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_15.png" alt="Supreme Court chamber view" class="visual-img">
+                            <p class="caption-text">The Fourth Amendment, established in response to colonial abuses, has evolved through selective incorporation and technological adaptation into a dynamic framework that continuously negotiates the balance between collective security and the sanctity of personal privacy.</p>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question:</p>
+                                <p class="first-p">Why must the balance between individual privacy and government power under the Fourth Amendment be constantly renegotiated rather than permanently settled?</p>
+                                <textarea id="va_6" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5')">&larr; Previous</button>
+                        <button id="btn-next-sec-6" class="action-btn" onclick="switchTab('sec-7', 'nav-sec-7')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION VI -->
+            <section id="sec-7" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block chapter-assessment">
+                        <h2>Chapter Assessment</h2>
+
+                        <h4>Section I — Vocabulary</h4>
+                        <p class="first-p" style="font-size: 0.95rem; margin-bottom: 2rem; color: var(--color-steel-nib);"><strong>Word Bank:</strong> Selective Incorporation, Exclusionary Rule, Search and Seizure, Probable Cause, Reasonable Expectation of Privacy, Right to Privacy, Warrant, Surveillance</p>
+
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>1. The Supreme Court's gradual application of the Bill of Rights to the states on a case-by-case basis using the Fourteenth Amendment's Due Process Clause is called ______________.</p>
+                            <input type="text" id="pq_1" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>2. A legal principle that prevents evidence obtained through unconstitutional government action from being used in court is known as the ______________.</p>
+                            <input type="text" id="pq_2" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>3. The constitutional standard requiring law enforcement to have a reasonable belief, grounded in specific facts, before making an arrest or conducting a search is called ______________.</p>
+                            <input type="text" id="pq_3" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>4. A legal document issued by a neutral judge that authorizes law enforcement to search a specific place or seize specific items is called a ______________.</p>
+                            <input type="text" id="pq_4" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>5. The legal test, developed in <em>Katz v. United States</em>, for determining whether a government intrusion triggers Fourth Amendment protections is called the ______________ test.</p>
+                            <input type="text" id="pq_5" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>6. The Fourth Amendment regulation of government intrusion into private property or persons — establishing the legal process for examining property and taking evidence — is known as ______________.</p>
+                            <input type="text" id="pq_6" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <p>7. The monitoring of behavior, activities, or information — whether digital or physical — by government entities for intelligence, security, or law enforcement purposes is called ______________.</p>
+                            <input type="text" id="pq_7" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+                        <div style="margin-bottom: 3rem;">
+                            <p>8. A right implied by several amendments to the Constitution, protecting individuals from unwarranted government interference in their personal lives, is known as the ______________.</p>
+                            <input type="text" id="pq_8" class="textarea-dark" style="min-height: 40px; padding: 10px;" placeholder="Type vocabulary word...">
+                        </div>
+
+                        <h4>Section II — Comprehension</h4>
+                        
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">1. What did the Supreme Court hold in Barron v. Baltimore (1833)?</p>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="A"> A) That the Bill of Rights applied equally to federal and state governments.</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="B"> B) That the Bill of Rights limited only the federal government, not the states.</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="C"> C) That the Fourteenth Amendment incorporated the entire Bill of Rights.</label>
+                            <label class="checklist-item"><input type="radio" name="cp13" value="D"> D) That states could not abridge the freedom of speech under any circumstances.</label>
+                        </div>
+                        
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">2. Which constitutional provision serves as the primary vehicle for selective incorporation?</p>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="A"> A) The First Amendment's Free Exercise Clause</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="B"> B) The Fifth Amendment's Takings Clause</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="C"> C) The Fourteenth Amendment's Due Process Clause</label>
+                            <label class="checklist-item"><input type="radio" name="cp14" value="D"> D) The Tenth Amendment's Reserved Powers Clause</label>
+                        </div>
+                        
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">3. In Mapp v. Ohio (1961), the Supreme Court held that:</p>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="A"> A) The death penalty constitutes cruel and unusual punishment under the Eighth Amendment.</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="B"> B) The exclusionary rule applies to evidence gathered in violation of the Fourth Amendment by state law enforcement.</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="C"> C) Police must inform suspects of their rights before questioning.</label>
+                            <label class="checklist-item"><input type="radio" name="cp15" value="D"> D) Citizens have the right to refuse entry to law enforcement without a warrant.</label>
+                        </div>
+                        
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">4. Which of the following best describes the "plain view" exception to the Fourth Amendment's warrant requirement?</p>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="A"> A) Officers may search any area visible from a public street without a warrant.</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="B"> B) Officers may seize evidence they observe while lawfully present in a location, provided its incriminating nature is immediately apparent.</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="C"> C) Officers may photograph a private residence from the air without a warrant.</label>
+                            <label class="checklist-item"><input type="radio" name="cp16" value="D"> D) Officers may enter a home without a warrant if they can see illegal activity through a window.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">5. What was the legal significance of the Supreme Court's decision in Katz v. United States (1967)?</p>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="A"> A) It established that physical trespass is the only test for determining whether a Fourth Amendment search has occurred.</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="B"> B) It created the exclusionary rule for federal courts.</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="C"> C) It established that the Fourth Amendment protects people's reasonable expectations of privacy, not just physical spaces.</label>
+                            <label class="checklist-item"><input type="radio" name="cp17" value="D"> D) It incorporated the Fourth Amendment to the states for the first time.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">6. The Terry v. Ohio (1968) decision authorized police to:</p>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="A"> A) Conduct full searches of individuals based on reasonable suspicion alone.</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="B"> B) Briefly detain and pat down individuals for weapons based on reasonable suspicion of criminal activity.</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="C"> C) Arrest individuals without probable cause in high-crime areas.</label>
+                            <label class="checklist-item"><input type="radio" name="cp18" value="D"> D) Use evidence obtained during illegal stops if the defendant is later found guilty.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 2rem;">
+                            <p class="first-p">7. In Riley v. California (2014), the Supreme Court held that:</p>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="A"> A) Cell phones may be searched during a lawful traffic stop without a warrant.</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="B"> B) Police may access cell phone metadata without a warrant under the third-party doctrine.</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="C"> C) Police must obtain a warrant to search the digital contents of a cell phone, even incident to a lawful arrest.</label>
+                            <label class="checklist-item"><input type="radio" name="cp19" value="D"> D) The Fourth Amendment does not apply to digital data stored in cloud services.</label>
+                        </div>
+
+                        <div class="checkpoint-q" style="display:block; animation:none; margin-bottom: 3rem;">
+                            <p class="first-p">8. The Supreme Court's decision in Carpenter v. United States (2018) was significant because it:</p>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="A"> A) Eliminated the third-party doctrine entirely for all digital information.</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="B"> B) Held that cell phone location records require a warrant because of the unique privacy interests they implicate.</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="C"> C) Extended the exclusionary rule to civil cases for the first time.</label>
+                            <label class="checklist-item"><input type="radio" name="cp20" value="D"> D) Authorized bulk collection of cell phone metadata for national security purposes.</label>
+                        </div>
+
+                        <h4>Section III — Guided Analysis</h4>
+                        <div style="margin-bottom: 2rem;">
+                            <p class="first-p">1. Explain how the doctrine of selective incorporation changed the relationship between individual citizens and their state governments. Use at least two specific Supreme Court cases in your answer.</p>
+                            <textarea id="pq_9" class="textarea-dark" placeholder="Your analysis..."></textarea>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <p class="first-p">2. The Fourth Amendment's warrant requirement has several exceptions, including consent, plain view, exigent circumstances, and <em>Terry</em> stops. Using evidence from the chapter, argue whether these exceptions strengthen or weaken the constitutional protection against unreasonable searches and seizures.</p>
+                            <textarea id="pq_10" class="textarea-dark" placeholder="Your analysis..."></textarea>
+                        </div>
+                        <div style="margin-bottom: 2rem;">
+                            <p class="first-p">3. The chapter describes the essential question as a balance between "strategic necessity" and the "sanctity" of individual privacy. Using examples from both the Patriot Act and <em>Carpenter v. United States</em>, explain how the courts and Congress have approached this balance differently.</p>
+                            <textarea id="pq_11" class="textarea-dark" placeholder="Your analysis..."></textarea>
+                        </div>
+                        <div style="margin-bottom: 3rem;">
+                            <p class="first-p">4. How has the concept of a "reasonable expectation of privacy" been forced to evolve in the digital age? Identify at least two specific technologies or court cases that illustrate this evolution and explain the constitutional challenges they present.</p>
+                            <textarea id="pq_12" class="textarea-dark" placeholder="Your analysis..."></textarea>
+                        </div>
+
+                        <h4>Section IV — Visual Analysis</h4>
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_1.png" alt="Timeline of Selective Incorporation" class="visual-img">
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question 1:</p>
+                                <p class="first-p">What pattern do you notice in the timing of incorporation decisions? What historical circumstances help explain the cluster of incorporation decisions in the 1960s?</p>
+                                <textarea id="va_7" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question 2:</p>
+                                <p class="first-p">Using the timeline, identify one right that was incorporated early and one that came later. Why do you think some rights were incorporated before others?</p>
+                                <textarea id="va_8" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_2.png" alt="Bar Graph — New York City Stop-and-Frisk Statistics" class="visual-img">
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question 3:</p>
+                                <p class="first-p">What does the graph reveal about the relationship between the number of stops and the racial composition of those stopped?</p>
+                                <textarea id="va_9" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                            <div class="question-box">
+                                <p class="first-p" style="font-family: var(--font-ui); font-size: 0.9rem; color: var(--color-gold); font-weight: bold; margin-bottom: 10px;">Analysis Question 4:</p>
+                                <p class="first-p">Based on the graph and the constitutional principles discussed in the chapter, what Fourth Amendment concerns does the stop-and-frisk program raise? What would law enforcement need to demonstrate to justify these stops constitutionally?</p>
+                                <textarea id="va_10" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                            </div>
+                        </div>
+
+                        <h4>Section V — Primary Source (CER)</h4>
+                        <p class="first-p" style="font-style:italic; margin-bottom:1rem; padding: 15px; background: rgba(0,0,0,0.3); border-left: 4px solid var(--color-steel-nib);">
+                            "The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized."<br>
+                            — Fourth Amendment, United States Constitution (1791)
+                        </p>
+                        
+                        <p class="first-p" style="margin-bottom: 1.5rem;"><strong>Writing Prompt:</strong> Using the language of the Fourth Amendment as a primary source, make a claim about whether the amendment's original text is adequate to address the privacy challenges created by modern digital surveillance technology.</p>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="color:var(--color-gold); font-weight:bold; display:block; margin-bottom:0.5rem;">Claim:</label>
+                            <textarea id="pq_13" class="textarea-dark" style="min-height: 80px;" placeholder="State your claim clearly..."></textarea>
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="color:var(--color-gold); font-weight:bold; display:block; margin-bottom:0.5rem;">Evidence:</label>
+                            <textarea id="pq_14" class="textarea-dark" style="min-height: 80px;" placeholder="Quote or paraphrase specific language from the text and connect to chapter examples..."></textarea>
+                        </div>
+                        <div style="margin-bottom: 3rem;">
+                            <label style="color:var(--color-gold); font-weight:bold; display:block; margin-bottom:0.5rem;">Reasoning:</label>
+                            <textarea id="pq_15" class="textarea-dark" placeholder="Explain how your evidence proves your claim..."></textarea>
+                        </div>
+
+                        <h4>Section VI — Modern Reflection</h4>
+                        <p class="first-p">The chapter describes how advanced technologies — including facial recognition software, algorithmic monitoring, and bulk data collection — are forcing courts to renegotiate what privacy means under the Fourth Amendment. In 2013, former NSA contractor Edward Snowden revealed that the United States government had been collecting the phone metadata of nearly all Americans without individual warrants, relying instead on a broad court order under the Patriot Act.</p>
+                        <p>Consider the following questions in a structured paragraph or short essay: The Supreme Court has held that a person's cell phone location records require a warrant because of the intimate portrait they paint of a person's life. Should the same logic apply to other forms of mass surveillance, such as facial recognition cameras in public spaces or bulk collection of internet browsing records? Where should the constitutional line be drawn between the government's legitimate interest in preventing terrorism and protecting national security, and the citizen's right to live free from constant government observation? In your response, apply the constitutional principles discussed in this chapter — probable cause, reasonable expectation of privacy, the warrant requirement, and the purpose of the exclusionary rule — to construct a reasoned argument about where that line should be drawn in the modern era.</p>
+                        <div style="margin-bottom: 2rem;">
+                            <textarea id="pq_16" class="textarea-dark" style="min-height: 250px;" placeholder="Write your reflection here..."></textarea>
+                        </div>
+
+                    </div>
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-6', 'nav-sec-6')">&larr; Previous</button>
+                        <button class="action-btn" style="background-color: var(--color-gold); color: var(--color-navy-deep);" onclick="finishChapter()">Finished</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        /* Background Management */
+        const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+        let bgIndex = 0;
+        function rotateBackground() {
+            if (bgImages.length === 0) return;
+            const bgEl = document.getElementById('bg-slideshow');
+            if (!bgEl) return;
+            bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            rotateBackground();
+            setInterval(rotateBackground, 10000);
+        });
+
+        /* Navigation */
+        function switchTab(id, btnId = null, scrollTarget = null) {
+            document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+            const activeBtnId = btnId || ('nav-' + id);
+            const activeBtn = document.getElementById(activeBtnId);
+            if (activeBtn) { activeBtn.classList.add('active-nav'); }
+            if (scrollTarget) {
+                setTimeout(() => {
+                    const target = document.getElementById(scrollTarget);
+                    if(target) {
+                        const offset = 40;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = target.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            saveProgress();
+        }
+
+        /* Data Collection & Export */
+        function collectAssignmentData(isFinal) {
+            const studentName = document.getElementById('student-name').value || "Unknown_Student";
+            const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+            const now = new Date().toLocaleDateString();
+            
+            const assignmentData = {
+                assignmentTitle: "Interactive Chapter 9 - Selective Incorporation, the Fourth Amendment, and Privacy",
+                studentInfo: { name: studentName, period: studentPeriod, dateCompleted: isFinal ? now : "In Progress" },
+                responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {} }
+            };
+
+            // Gather Visual Analysis Answers
+            for(let i=1; i<=25; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                    assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+                }
+            }
+
+            // Gather Checkpoint Answers (includes comprehension questions named cp13 - cp20)
+            for(let i=1; i<=30; i++) {
+                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                if(inputs.length > 0) {
+                    let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            // Gather Perspective Questions (Includes Guided Analysis, CER, and Reflections)
+            for(let i=1; i<=25; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                    assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+                }
+            }
+            return assignmentData;
+        }
+
+        function triggerDownload(data, filename) {
+            const dataStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadProgress() {
+            const data = collectAssignmentData(false);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Progress_${safeName}.json`);
+        }
+
+        function finishChapter() {
+            const dateField = document.getElementById('completion-date');
+            const now = new Date().toLocaleDateString();
+            if(dateField) dateField.value = now;
+            const data = collectAssignmentData(true);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Export_${safeName}.json`);
+            alert('Upload JSON file to Canvas');
+            switchTab('sec-1', 'nav-sec-1');
+        }
+
+        /* Loading Progress */
+        function loadProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const loadedData = JSON.parse(e.target.result);
+                    
+                    const nameInput = document.getElementById('student-name');
+                    const periodInput = document.getElementById('student-period');
+                    
+                    if (loadedData.studentInfo) {
+                        if (loadedData.studentInfo.name && loadedData.studentInfo.name !== "Unknown_Student") {
+                            nameInput.value = loadedData.studentInfo.name;
+                            nameInput.setAttribute('readonly', 'true');
+                            nameInput.style.opacity = '0.7'; 
+                        }
+                        if (loadedData.studentInfo.period && loadedData.studentInfo.period !== "Unknown_Period") {
+                            periodInput.value = loadedData.studentInfo.period;
+                            periodInput.setAttribute('disabled', 'true');
+                            periodInput.style.opacity = '0.7'; 
+                        }
+                    }
+
+                    if (loadedData.responses) {
+                        if (loadedData.responses.visualAnalysis) {
+                            for(let i=1; i<=25; i++) {
+                                let el = document.getElementById('va_' + i);
+                                if(el) {
+                                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                                    if(loadedData.responses.visualAnalysis[qText]) el.value = loadedData.responses.visualAnalysis[qText];
+                                }
+                            }
+                        }
+                        
+                        if (loadedData.responses.checkpoints) {
+                            for(let i=1; i<=30; i++) {
+                                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                                if(inputs.length > 0) {
+                                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                                    let savedVal = loadedData.responses.checkpoints[qText];
+                                    if (savedVal && savedVal !== "No Answer") {
+                                        let radio = document.querySelector(`input[name="cp${i}"][value="${savedVal}"]`);
+                                        if(radio) radio.checked = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (loadedData.responses.perspectiveQuestions) {
+                            for(let i=1; i<=25; i++) {
+                                let el = document.getElementById('pq_' + i);
+                                if(el) {
+                                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                                    if(loadedData.responses.perspectiveQuestions[qText]) el.value = loadedData.responses.perspectiveQuestions[qText];
+                                }
+                            }
+                        }
+                    }
+                    initCheckpoints();
+                    alert('Progress loaded successfully!');
+                } catch (err) {
+                    console.error(err);
+                    alert('Error loading progress file. Please make sure it is a valid JSON file.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        /* Save & Reset Logic */
+        function saveProgress() { console.log('Progress stored in memory. Click Save Progress to download.'); }
+        
+        function resetProgress() {
+            if(confirm('Are you sure you want to reset all progress?')) {
+                document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+                document.querySelectorAll('.textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+                
+                const nameInput = document.getElementById('student-name');
+                const periodInput = document.getElementById('student-period');
+                nameInput.removeAttribute('readonly'); nameInput.style.opacity = '1';
+                periodInput.removeAttribute('disabled'); periodInput.style.opacity = '1';
+
+                document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+                initCheckpoints();
+                switchTab('sec-1', 'nav-sec-1');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        /* Checkpoint Management */
+        const TOTAL_CHECKPOINTS = 12; 
+        
+        function initCheckpoints() {
+            for(let i=1; i<=TOTAL_CHECKPOINTS; i++) { updateCpUI(`cp-block-${i}`); }
+            checkSectionUnlock();
+        }
+
+        function updateCpUI(blockId) {
+            const block = document.getElementById(blockId);
+            if(!block) return;
+            const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            const indicator = block.querySelector('.cp-indicator');
+            const prevBtn = block.querySelector('.cp-prev-btn');
+            const nextBtn = block.querySelector('.cp-next-btn');
+
+            questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+            if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+            if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+            
+            if(nextBtn) {
+                const currentQ = questions[currentIndex];
+                const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+                if (currentIndex === questions.length - 1) {
+                    if (isAnswered) {
+                        nextBtn.innerText = "Checkpoint Completed ✓";
+                        nextBtn.style.borderColor = "var(--color-navy)"; nextBtn.style.color = "var(--color-cream)"; nextBtn.style.backgroundColor = "var(--color-navy)";
+                        nextBtn.disabled = true; nextBtn.style.cursor = 'default'; nextBtn.style.opacity = '1';
+                    } else {
+                        nextBtn.innerText = "Finish Checkpoint";
+                        nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed';
+                        nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    }
+                } else {
+                    nextBtn.innerText = "Next Question \u2192";
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; nextBtn.style.color = "var(--color-gold)"; nextBtn.style.borderColor = "var(--color-gold)";
+                    if (isAnswered) { nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; }
+                    else { nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; }
+                }
+            }
+            checkSectionUnlock();
+        }
+
+        function navigateCp(blockId, dir) {
+            const block = document.getElementById(blockId);
+            let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+            block.setAttribute('data-current', currentIndex);
+            updateCpUI(blockId);
+        }
+
+        function handleRadioChange(blockId) { saveProgress(); updateCpUI(blockId); }
+        function isAnswered(name) { return document.querySelector(`input[name="${name}"]:checked`) !== null; }
+        
+        function setNavButtonState(btnId, enabled) {
+            const btn = document.getElementById(btnId);
+            if (!btn) return;
+            if (enabled) {
+                btn.removeAttribute('disabled'); btn.style.opacity = '1'; btn.style.cursor = 'pointer';
+                btn.innerHTML = 'Next Section →'; btn.style.borderColor = 'var(--color-gold)';
+            } else {
+                btn.setAttribute('disabled', 'true'); btn.style.opacity = '0.5'; btn.style.cursor = 'not-allowed';
+                btn.innerHTML = '🔒 Answer Checkpoints to Continue'; btn.style.borderColor = 'var(--color-steel-nib)';
+            }
+        }
+
+        function checkSectionUnlock() {
+            setNavButtonState('btn-next-sec-1', true);
+            
+            const sec2Done = isAnswered('cp1') && isAnswered('cp2') && isAnswered('cp3');
+            setNavButtonState('btn-next-sec-2', sec2Done);
+
+            const sec3Done = isAnswered('cp4') && isAnswered('cp5');
+            setNavButtonState('btn-next-sec-3', sec3Done);
+
+            const sec4Done = isAnswered('cp6') && isAnswered('cp7') && isAnswered('cp8') && isAnswered('cp9');
+            setNavButtonState('btn-next-sec-4', sec4Done);
+
+            const sec5Done = isAnswered('cp10') && isAnswered('cp11') && isAnswered('cp12');
+            setNavButtonState('btn-next-sec-5', sec5Done);
+
+            setNavButtonState('btn-next-sec-6', true);
+        }
+
+        window.onload = initCheckpoints;
+    </script>
+</body>
+</html>

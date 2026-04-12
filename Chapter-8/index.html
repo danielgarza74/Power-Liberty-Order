@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 8 - The Bill of Rights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #241B2F;
+            --color-cream: #F6F3EE;
+            --color-navy: #6D5BA6;
+            --color-steel-nib: #9DA7B1;
+            --color-gold: #E0B84C;
+            --color-gold-light: #E0B84C;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body { 
+            font-family: var(--font-body); 
+            background-color: var(--color-navy-deep); 
+            color: var(--color-cream); 
+            line-height: 1.8; 
+            font-size: 1.15rem; 
+        }
+
+        /* Background Effects */
+        #bg-slideshow { 
+            position: fixed; inset: 0; z-index: 0; pointer-events: none; 
+            background-size: cover; background-position: center; 
+            transition: background-image 1.5s ease-in-out; 
+        }
+        body::after { 
+            content: ''; position: fixed; inset: 0; 
+            background: linear-gradient(135deg, rgba(36, 27, 47, 0.85) 0%, rgba(36, 27, 47, 0.65) 50%, rgba(36, 27, 47, 0.95) 100%); 
+            z-index: 1; pointer-events: none; 
+        }
+
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+
+        /* Left Navigation Panel */
+        .side-nav { 
+            position: fixed; top: 0; left: 0; bottom: 0; width: 280px; 
+            background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(15px); 
+            border-right: 1px solid rgba(224,184,76,0.3); 
+            display: flex; flex-direction: column; padding: 2rem 1.5rem; 
+            z-index: 100; overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; 
+        }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title { 
+            font-family: var(--font-heading); color: var(--color-gold); 
+            font-size: 1.3rem; margin-bottom: 2rem; text-transform: uppercase; 
+            letter-spacing: 1px; border-bottom: 1px solid rgba(224,184,76,0.2); 
+            padding-bottom: 0.5rem; 
+        }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn { 
+            background: transparent; border: 1px solid transparent; 
+            color: var(--color-cream); text-align: left; padding: 10px 12px; 
+            font-family: var(--font-ui); cursor: pointer; transition: all 0.3s; 
+            border-radius: 4px; font-size: 0.85rem; font-weight: bold; 
+        }
+        .nav-btn.active-nav { 
+            background: rgba(224,184,76,0.15); border: 1px solid var(--color-gold); 
+            color: var(--color-gold); 
+        }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255,255,255,0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block { 
+            background: rgba(0, 0, 0, 0.2); backdrop-filter: blur(5px); 
+            border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; 
+            padding: 3rem; margin-bottom: 3rem; box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3); display: flow-root; 
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav { display: none; }
+            .main-content { margin-left: 0; }
+            .content-wrapper { padding: 30px 20px; }
+            .content-block { padding: 2rem; }
+        }
+
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        h4 { font-family: var(--font-heading); color: var(--color-cream) !important; font-size: 1.75rem !important; line-height: 1.3; margin-bottom: 1.25rem !important; margin-top: 2rem !important; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; }
+        h5 { font-family: var(--font-heading); color: var(--color-steel-nib) !important; font-size: 1.35rem !important; line-height: 1.3; margin-bottom: 1rem !important; margin-top: 2rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        #sec-7 p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+
+        /* UI Elements */
+        .id-panel { 
+            display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 20px; 
+            margin-bottom: 2rem; background: rgba(0,0,0,0.4); padding: 25px; 
+            border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); 
+        }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select { 
+            width: 100%; background: rgba(0,0,0,0.6); border: 1px solid var(--color-steel-nib); 
+            color: var(--color-cream); padding: 12px; border-radius: 4px; 
+            font-family: var(--font-ui); font-size: 1rem; 
+        }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+        
+        .textarea-dark { 
+            width: 100%; background: rgba(0,0,0,0.4); border: 1px solid var(--color-steel-nib); 
+            color: var(--color-cream); padding: 1.5rem; border-radius: 4px; 
+            min-height: 120px; font-family: var(--font-body); font-size: 1.1rem; resize: vertical; 
+        }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+
+        /* Prominent Default Spotlights (Stacked) */
+        .spotlight-wrapper { 
+            width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); 
+            padding: 25px; border-radius: 8px; border: 2px solid var(--color-gold); clear: both; 
+        }
+        .spotlight-wrapper img { width: 100%; height: auto; border: 2px solid var(--color-gold-light); border-radius: 4px; display: block; }
+        .spotlight-content { display: block; margin-top: 20px; }
+        .spotlight-caption { font-size: 0.95rem; text-align: left; margin-bottom: 15px; font-style: italic; color: #ddd; line-height: 1.5; text-indent: 0 !important; }
+        .spotlight-why { font-size: 1.05rem; color: var(--color-cream); margin-bottom: 20px; line-height: 1.6; text-indent: 0 !important; }
+        .spotlight-why strong { color: var(--color-gold); }
+
+        /* Portrait Spotlights (Side-by-Side) */
+        .spotlight-wrapper.portrait { display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start; }
+        .spotlight-wrapper.portrait img { width: auto; flex: 0 1 40%; min-width: 250px; max-width: 100%; max-height: 500px; object-fit: contain; margin-top: 0; }
+        .spotlight-wrapper.portrait .spotlight-content { flex: 1 1 50%; min-width: 250px; margin-top: 0; display: flex; flex-direction: column; }
+        .spotlight-wrapper.portrait .question-box { flex: 1 1 100%; margin-top: 10px; }
+
+        /* Full Sized Visuals */
+        .visual-wrapper { 
+            width: 100%; margin: 2.5rem 0; background: rgba(0,0,0,0.4); 
+            padding: 20px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); clear: both; 
+        }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0 !important; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+
+        @media (max-width: 768px) {
+            .id-panel { grid-template-columns: 1fr; }
+            .spotlight-wrapper.portrait { flex-direction: column; align-items: stretch; }
+            .spotlight-wrapper.portrait img { max-width: 100%; max-height: none; width: 100%; }
+        }
+
+        /* Compact Checkpoint System */
+        .checkpoint-block { 
+            margin-top: 3rem; margin-bottom: 2rem; padding: 25px; 
+            border: 2px dashed rgba(224,184,76,0.4); border-radius: 8px; 
+            background: rgba(0,0,0,0.2); clear: both; 
+        }
+        .checkpoint-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start; }
+        @media (max-width: 768px) { .checkpoint-grid { grid-template-columns: 1fr; } }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q .checklist-item { 
+            display: flex; align-items: flex-start; gap: 10px; margin-bottom: 8px; 
+            cursor: pointer; padding: 8px 12px; background: rgba(0,0,0,0.2); 
+            border-radius: 4px; border: 1px solid transparent; transition: all 0.2s; 
+            font-size: 0.9rem; line-height: 1.3; 
+        }
+        .checkpoint-q .checklist-item:hover { background: rgba(0,0,0,0.4); border-color: rgba(224,184,76,0.3); }
+        .checkpoint-q .checklist-item input[type="radio"] { margin-top: 2px; width: 16px; height: 16px; accent-color: var(--color-gold); flex-shrink: 0; }
+
+        /* Cloze Specific */
+        .word-bank { 
+            display: flex; flex-wrap: wrap; gap: 12px; padding: 1.5rem; 
+            background: rgba(0,0,0,0.3); border: 1px dashed var(--color-steel-nib); 
+            border-radius: 8px; margin-bottom: 2rem; 
+        }
+        .word-pill { 
+            background: rgba(109, 91, 166, 0.5); border: 1px solid var(--color-navy); 
+            color: var(--color-cream); padding: 8px 18px; border-radius: 25px; 
+            font-size: 1rem; font-weight: bold; 
+        }
+        .cloze-input { 
+            background: rgba(0,0,0,0.5); border: none; border-bottom: 2px solid var(--color-gold); 
+            color: var(--color-gold-light); padding: 4px 8px; font-size: 1.15rem; 
+            text-align: center; width: 180px; margin: 0 5px; font-family: var(--font-body); 
+            border-radius: 2px; transition: all 0.2s; 
+        }
+        .cloze-input:focus { outline: none; border-bottom-color: white; background: rgba(0,0,0,0.8); }
+
+        /* Buttons & Navigation */
+        .action-btn { 
+            padding: 10px 20px; border-radius: 4px; font-family: var(--font-ui); 
+            font-weight: bold; cursor: pointer; text-transform: uppercase; 
+            transition: all 0.3s; background: rgba(0,0,0,0.5); color: var(--color-gold); 
+            border: 1.5px solid var(--color-gold); width: 100%; 
+        }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+        .bottom-nav { 
+            display: flex; justify-content: space-between; padding-top: 2rem; 
+            border-top: 1px solid rgba(224,184,76,0.3); margin-top: 3rem; gap: 20px; clear: both; 
+        }
+        .bottom-nav .action-btn { width: auto; }
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body>
+
+    <div id="bg-slideshow"></div>
+
+    <div class="app-container">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="side-nav">
+            <div class="nav-title">Table of Contents</div>
+            <div class="nav-links">
+                <button id="nav-sec-1" class="nav-btn active-nav" onclick="switchTab('sec-1', this.id)">Start Page</button>
+                <button id="nav-sec-2" class="nav-btn" onclick="switchTab('sec-2', this.id)">I. Freedom of Religion</button>
+                <button id="nav-sec-3" class="nav-btn" onclick="switchTab('sec-3', this.id)">II. Freedom of Expression</button>
+                <button id="nav-sec-4" class="nav-btn" onclick="switchTab('sec-4', this.id)">III. Press, Assembly, and Petition</button>
+                <button id="nav-sec-5" class="nav-btn" onclick="switchTab('sec-5', this.id)">IV. The Strategic Marketplace</button>
+                <button id="nav-sec-6" class="nav-btn" onclick="switchTab('sec-6', this.id)">V. Conclusion</button>
+                <button id="nav-sec-7" class="nav-btn" onclick="switchTab('sec-7', this.id)">VI. Chapter Assessment</button>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="action-btn" onclick="downloadProgress()">Save Progress</button>
+                <label class="action-btn" style="text-align: center; cursor: pointer; display: block; margin-bottom: 0;">
+                    Load Progress
+                    <input type="file" accept=".json" style="display: none;" onchange="loadProgress(event)">
+                </label>
+                <button class="action-btn" onclick="resetProgress()">Reset Progress</button>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- SECTION 1: Start Page -->
+            <section id="sec-1" class="chapter-section active-section">
+                <img src="assets/Header%20Banner%20Chapter%208.png" alt="Chapter 8 Header Banner" class="hero-banner-flush">
+                
+                <div class="content-wrapper">
+                    <div class="id-panel">
+                        <div>
+                            <label for="student-name">Student Name</label>
+                            <input type="text" id="student-name" placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label for="student-period">Class Period</label>
+                            <select id="student-period">
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">Period 1</option>
+                                <option value="2">Period 2</option>
+                                <option value="3">Period 3</option>
+                                <option value="4">Period 4</option>
+                                <option value="6">Period 6</option>
+                                <option value="7">Period 7</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="completion-date">Date</label>
+                            <input type="text" id="completion-date" readonly placeholder="Auto-filled on finish">
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <h3>Core Objectives</h3>
+                        <ul>
+                            <li>Analyze the historical and philosophical origins of the Bill of Rights as a Federalist compromise and evaluate the dual protections of the Establishment and Free Exercise Clauses.</li>
+                            <li>Evaluate the extent of protected versus limited expression and the judicial standards used to balance freedom of speech with public safety.</li>
+                            <li>Identify the roles of a free press, assembly, and petition in maintaining democratic infrastructure and holding government accountable.</li>
+                            <li>Analyze how the First Amendment establishes a structural framework for a "marketplace of ideas" that requires continuous renegotiation between liberty and order.</li>
+                        </ul>
+
+                        <h3>Key Terms</h3>
+                        <ul>
+                            <li>Civil Liberties</li>
+                            <li>Bill of Rights</li>
+                            <li>Establishment Clause</li>
+                            <li>Free Exercise Clause</li>
+                            <li>Symbolic Speech</li>
+                            <li>Prior Restraint</li>
+                            <li>Libel</li>
+                            <li>Clear and Present Danger</li>
+                            <li>Time, Place, and Manner Restrictions</li>
+                        </ul>
+
+                        <h4>Introduction</h4>
+                        <p class="first-p">The American experiment in self-governance is built upon a profound paradox: a government must be strong enough to maintain order, yet restrained enough to preserve the very liberty it was created to protect. When the Framers met in Philadelphia in 1787, their primary focus was on the "architecture of power." They were obsessed with the mechanics of how a central government could be designed to prevent any one person or faction from seizing absolute control. Consequently, the original body of the Constitution defined how laws are made, how they are enforced by a President, and how they are interpreted by a Supreme Court. However, the document was notably silent on the specific, inherent rights of the individual. To many Americans of the founding era, particularly the Anti-Federalists, this silence was not merely an oversight; it was a dangerous invitation to tyranny.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_1.png" alt="Visual 1" class="visual-img">
+                            <p class="caption-text">The Anti-Federalists argued that a strong central government without explicitly defined individual rights would inevitably lead to tyranny, forcing the promise of a Bill of Rights during the ratification process.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> Why did the Anti-Federalists believe that a simple list of government powers in the Constitution was not enough to protect individual liberty?</p>
+                                <textarea id="va_1" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">This silence nearly derailed the ratification process. In states like Massachusetts, Virginia, and New York, critics argued that a government with the power to tax, raise armies, and regulate commerce would eventually crush the people unless its boundaries were explicitly drawn. They remembered all too well the "writs of assistance" used by the British Crown to search homes without warrants and the suppression of colonial newspapers that criticized the King. Alexander Hamilton, writing in <em>Federalist No. 84</em>, argued that a Bill of Rights was unnecessary and even dangerous, claiming that by listing what the government could not do, one might imply it had the power to do anything not listed. However, the political reality was that without a promise to add a Bill of Rights, the Constitution would likely fail to be adopted.</p>
+                        
+                        <p>The resulting Bill of Rights, the first ten amendments to the Constitution, serves as the definitive statement of American civil liberties. These are frequently described as "negative rights." In the language of constitutional law, a negative right does not mean it is "bad" or "unpleasant." Rather, it describes a boundary that the government is forbidden from crossing. It is a "thou shalt not" directed at the state. When the First Amendment says "Congress shall make no law," it is creating a protective bubble around the individual, ensuring that certain realms of human life—what we think, how we worship, and how we express our dissent—are off-limits to political interference.</p>
+
+                        <p>At the heart of these protections stands the First Amendment, often called the "generative core" of American democracy. It protects the fundamental tools of citizenship: the right to think, believe, speak, publish, gather, and complain. The First Amendment does not merely protect the individual for the sake of their own personal happiness. Instead, it serves a structural purpose: it creates a "marketplace of ideas." In this metaphorical market, different views, beliefs, and criticisms compete for public acceptance. The founders believed that in a free society, the remedy for "bad" or "false" speech is not government censorship, but rather "more speech." By protecting even the most unpopular or controversial ideas, the First Amendment ensures that the "consent of the governed" is more than a slogan; it is an active, ongoing process of debate that keeps the government responsive to its people.</p>
+
+                        <div id="cp-block-1" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Why was the addition of the Bill of Rights considered a "Federalist compromise" during the ratification of the Constitution?</p>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A) It was intended to grant the federal government power over state religions.</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B) It was a promise made to Anti-Federalists to ensure the Constitution would be ratified.</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C) It was designed to replace the Articles of Confederation with a stronger executive.</label>
+                                <label class="checklist-item"><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D) It was written to list the powers that the federal government was required to exercise.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-1', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" disabled style="opacity: 0;">Back</button>
+                        <button id="btn-next-sec-1" class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Freedom of Religion -->
+            <section id="sec-2" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Freedom of Religion | Establishment and Free Exercise</h2>
+                        
+                        <p class="first-p">The First Amendment begins with a dual commitment to religious liberty, expressed through two distinct but overlapping clauses: the Establishment Clause and the Free Exercise Clause. These clauses represent the American solution to a problem that had caused centuries of bloodshed in Europe: the entanglement of government power with religious authority. The Framers, many of whom were students of the Enlightenment, recognized that when the state and the church become one, both institutions suffer. Religion loses its spiritual purity and becomes a tool for political control, while the state becomes an instrument of religious persecution. To prevent this, the First Amendment created a "strategic tension" intended to keep the government neutral while allowing the citizen to remain devout.</p>
+
+                        <h4>The Wall of Separation</h4>
+                        <p class="first-p">The Establishment Clause prohibits the government from creating a national church, favoring one religion over another, or preferring religion over non-religion. In the early years of the Republic, this was understood primarily as a ban on a national version of the Church of England. However, over the 19th and 20th centuries, the Supreme Court interpreted the clause more broadly, adopting Thomas Jefferson’s metaphor of a "wall of separation" between church and state. This wall is intended to ensure that the government does not use its power, prestige, or financial resources to promote religious belief.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_2.png" alt="Visual 2" class="visual-img">
+                            <p class="caption-text">The Establishment Clause ensures that the government remains neutral regarding religion, preventing the state from sponsoring or endorsing a national faith, thereby avoiding the sectarian conflicts that plagued Europe.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> How does the "wall of separation" between church and state protect both religious institutions and the government?</p>
+                                <textarea id="va_2" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The most intense debates over the Establishment Clause have occurred in the context of public schools. Because public schools are government-run and students are a "captive audience," the Court has been extremely cautious about any activity that could be seen as government-sponsored faith. A pivotal moment in this history was the 1962 case <em>Engel v. Vitale</em>. The state of New York had authorized a short, voluntary prayer to be recited at the beginning of the school day. While the prayer was nondenominational and students could choose to remain silent or leave the room, the Court ruled it unconstitutional. Justice Hugo Black argued that the government’s "official seal of approval" on a prayer violated the Establishment Clause, even if the prayer was voluntary. This ruling established that the government cannot compose official prayers for any group of Americans to recite as part of a government-sponsored program.</p>
+
+                        <p>This principle was further tested in <em>Abington School District v. Schempp</em> (1963), which concerned a Pennsylvania law requiring that at least ten verses from the Holy Bible be read at the opening of each public school day. Again, the Court ruled that even if students could be excused, the practice was unconstitutional because it lacked a secular legislative purpose. These cases emphasize that in a pluralistic society, the government must remain a neutral platform. If the state were to favor Christianity, it would implicitly alienate Jewish, Muslim, Hindu, or atheist citizens, turning them into outsiders in their own political community.</p>
+
+                        <div id="cp-block-2" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">In <em>Engel v. Vitale</em>, why did the Supreme Court rule that voluntary school prayer was unconstitutional?</p>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-2')"> A) The prayer mentioned a specific Christian denomination.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-2')"> B) The government is forbidden from composing official prayers for public recitation.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-2')"> C) The school district forced every student to participate against their will.</label>
+                                <label class="checklist-item"><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-2')"> D) The Constitution requires all public schools to be strictly atheist.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-2', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>Protecting Personal Conscience | The Free Exercise Clause</h4>
+                        <p class="first-p">While the Establishment Clause prevents the government from sponsoring religion, the Free Exercise Clause prevents the government from stopping you from practicing your faith. This clause protects the "internal" world of belief—which the government cannot reach—but more importantly, it protects the "external" world of religious conduct. The fundamental idea is that a citizen should not have to choose between obeying the law and obeying their God, unless the government has an incredibly powerful reason to intervene.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_3.png" alt="Visual 3" class="visual-img">
+                            <p class="caption-text">The Free Exercise Clause protects religious conduct from government interference unless the state can demonstrate a compelling interest that overrides the individual's religious practice.</p>
+                        </div>
+
+                        <p class="first-p">A landmark example of this protection is found in <em>Wisconsin v. Yoder</em> (1972). Three Amish families refused to send their children to public school after the eighth grade, arguing that high school attendance was contrary to their religious beliefs and would lead to the destruction of their faith-based community. Wisconsin law required all children to attend school until age sixteen. The Supreme Court ruled in favor of the Amish, finding that the state's interest in universal education did not outweigh the parents' fundamental right to guide their children's religious upbringing. The Court noted that the Amish community was long-established and self-sufficient, meaning the children would not become a "burden" to the state without two extra years of schooling. This case demonstrated that for the government to interfere with a religious practice, it must have a "compelling interest" and must use the "least restrictive means" to achieve it.</p>
+
+                        <p>However, the right to "free exercise" is not a blank check to ignore any law one dislikes. The Court has long held that while belief is absolute, conduct can be regulated to protect public safety. In <em>Reynolds v. United States</em> (1878), the Court upheld a federal law banning polygamy, even though George Reynolds argued that his Mormon faith required him to have multiple wives. The Court ruled that allowing religious exemptions for every criminal law would make the "professed doctrines of religious belief superior to the law of the land, and in effect... permit every citizen to become a law unto himself." This established a crucial boundary: religious liberty does not justify actions that violate the social order or the rights of others.</p>
+
+                        <div id="cp-block-3" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">What was the primary reasoning behind the Court's ruling in <em>Wisconsin v. Yoder</em>?</p>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-3')"> A) The state has no right to require education for any child under eighteen.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-3')"> B) The Amish community's way of life outweighed the state's interest in two extra years of schooling.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-3')"> C) The Free Exercise Clause gives all religious groups a total exemption from all state laws.</label>
+                                <label class="checklist-item"><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-3')"> D) The state law in question was found to have a hidden religious purpose.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-3', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Balancing Act | The Lemon Test and Neutrality</h4>
+                        <p class="first-p">To handle the constant stream of cases where religious belief and government action collide, the Supreme Court developed a standardized set of criteria known as the "Lemon Test." This test emerged from <em>Lemon v. Kurtzman</em> (1971), a case involving state laws that provided financial support to private religious schools for teachers' salaries and textbooks in secular subjects. The Court wanted to ensure that taxpayer money was not being used to advance religious missions.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_4.png" alt="Visual 4" class="visual-img">
+                            <p class="caption-text">Courts use established legal tests to determine if a government action violates the Establishment Clause by evaluating the law's purpose, its primary effect, and the level of state involvement with religion.</p>
+                        </div>
+
+                        <p class="first-p">The Lemon Test consists of three parts. First, the government action must have a "secular legislative purpose" (it cannot be done purely for religious reasons). Second, its "primary effect" must neither advance nor inhibit religion. Third, the action must not result in "excessive government entanglement" with religion. In the <em>Lemon</em> case, the Court found that the constant monitoring required to ensure that religious school teachers were only teaching secular subjects would create an "excessive entanglement" between the state and the church. If a law fails any one of these three prongs, it is unconstitutional under the Establishment Clause.</p>
+
+                        <p>The Lemon Test has faced significant criticism over the years, with some justices arguing it is too hostile to religion and others saying it is too confusing to apply. Consequently, the Court has sometimes turned to the "Endorsement Test"—which asks if a reasonable person would think the government is endorsing a particular faith—or the "Coercion Test"—which asks if the government is forcing someone to participate in religious activities. For instance, in cases involving holiday displays on public property, the Court often looks at whether a nativity scene is surrounded by secular symbols like Santa Claus and reindeer. If the overall message is a secular celebration of the holiday season, it is usually allowed; if the message is purely religious, it is often struck down as an unconstitutional endorsement.</p>
+
+                        <div id="cp-block-4" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Which of the following is a component of the "Lemon Test"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-4')"> A) The law must be approved by a majority of religious leaders in the state.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-4')"> B) The government action must not result in "excessive entanglement" with religion.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-4')"> C) The primary effect of the law must be to promote traditional religious values.</label>
+                                <label class="checklist-item"><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-4')"> D) The law must explicitly state which religions it is intended to help.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-4', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Necessity of Religious Neutrality</h4>
+                        <p class="first-p">The First Amendment’s approach to religion is a strategic compromise designed to manage deep-seated human convictions in a way that preserves social peace. By separating the power of the state from the authority of the church, the founders protected both institutions. Religion is shielded from the corrupting influence of politics, where faith might be used as a tool for gain, and the state is shielded from the divisive nature of sectarian conflict. This dual protection ensures that the American "marketplace of ideas" includes a wide array of spiritual and moral perspectives, none of which can use the force of law to silence the others.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_5.png" alt="Visual 5" class="visual-img">
+                            <p class="caption-text">Government neutrality toward religion is a strategic necessity in a pluralistic society, ensuring that the state does not turn citizens into political outsiders based on their spiritual beliefs.</p>
+                        </div>
+
+                        <p class="first-p">The "strategic tension" between the Establishment and Free Exercise clauses is not a flaw in the system, but a necessary feature of a diverse democracy. It requires the government to treat all citizens with equal dignity, regardless of their relationship to faith. When the government maintains this neutrality, it ensures that religious belief remains a matter of private conscience rather than a matter of public policy. This allows the United States to avoid the religious wars of the past and instead build a community where Muslims, Christians, Jews, Hindus, Buddhists, and atheists can all participate as full and equal citizens. This neutrality is the only way to sustain a marketplace where ideas are judged on their own merits rather than on the religious identity of the speaker.</p>
+
+                        <div id="cp-block-5" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Why is government neutrality toward religion considered a "strategic necessity" in a pluralistic society?</p>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-5')"> A) It allows the government to slowly eliminate religious influence from public life.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-5')"> B) It prevents religious conflict and ensures all citizens are treated with equal dignity.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-5')"> C) It ensures that the state can eventually choose the most popular religion to endorse.</label>
+                                <label class="checklist-item"><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-5')"> D) It gives the government the power to define which religious beliefs are "correct."</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-5', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-1', 'nav-sec-1')">Back</button>
+                        <button id="btn-next-sec-2" class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3')">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Freedom of Expression -->
+            <section id="sec-3" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Freedom of Expression | Speech, Dissent, and Public Order</h2>
+                        
+                        <p class="first-p">If the First Amendment is the cornerstone of democracy, then freedom of speech is its "generative core." This freedom transforms the people from mere subjects of a government into active participants in a "marketplace of ideas." In a functional republic, the government derives its just powers from the "consent of the governed," but that consent is meaningless if the people are not free to criticize their leaders, debate policy, and share information. Freedom of expression ensures that the public can hold those in power accountable, exposing corruption and advocating for change without fear of being silenced by the state. This freedom, however, creates a constant friction between the individual’s right to speak and the government’s responsibility to maintain public order and safety.</p>
+
+                        <h4>The Hierarchy of Protection: | Political and Symbolic Speech</h4>
+                        <p class="first-p">Not all speech receives the same level of protection under the Constitution. The Supreme Court has established a hierarchy, with political speech—the debate over government policy and candidates—at the very top. Because political speech is the lifeblood of self-government, the government has almost no power to restrict it, even if the message is offensive, angry, or deeply critical of the country. This protection extends beyond spoken words to "Symbolic Speech," which includes actions that convey a specific message.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_6.png" alt="Visual 6" class="visual-img">
+                            <p class="caption-text">The Supreme Court extended First Amendment protections to symbolic speech, establishing that student expression cannot be censored simply because it is unpopular, provided it does not cause a material disruption.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> Why does the Supreme Court place political and symbolic speech at the very top of the "hierarchy of protection"?</p>
+                                <textarea id="va_6" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">A defining moment for symbolic speech occurred during the Vietnam War in the case of <em>Tinker v. Des Moines</em> (1969). A group of students wore black armbands to school to protest the war and mourn the dead. The school district banned the armbands, claiming they would cause a disruption. The Supreme Court ruled in favor of the students, famously declaring that students do not "shed their constitutional rights to freedom of speech or expression at the schoolhouse gate." The Court held that unless the school could prove the speech would "materially and substantially interfere" with the operation of the school, it could not be suppressed. This established the "Tinker Standard," which protects student expression that is not disruptive.</p>
+
+                        <p>This protection for symbolic speech was pushed to its limit in <em>Texas v. Johnson</em> (1989), when Gregory Lee Johnson burned an American flag in front of the Dallas City Hall to protest Reagan administration policies. He was convicted under a Texas law that prohibited "desecration of a venerated object." The Supreme Court overturned his conviction, ruling that flag burning is a form of "expressive conduct" protected by the First Amendment. Justice William Brennan wrote, "If there is a bedrock principle underlying the First Amendment, it is that the government may not prohibit the expression of an idea simply because society finds the idea itself offensive or disagreeable." This case emphasized that the government cannot silence a message just because the method of delivery is shocking or unpopular.</p>
+
+                        <div id="cp-block-6" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">What was the "Tinker Standard" established by the Supreme Court?</p>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-6')"> A) Schools have absolute authority to ban any speech they find offensive.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-6')"> B) Students have no First Amendment rights while they are on school grounds.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-6')"> C) Student speech can only be suppressed if it "materially and substantially interferes" with school operations.</label>
+                                <label class="checklist-item"><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-6')"> D) Symbolic speech like wearing armbands is not protected by the First Amendment.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-6', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Limits of Speech | From Schenck to Brandenburg</h4>
+                        <p class="first-p">While the First Amendment protects a vast amount of expression, it is not an absolute shield for all behavior. The government has a legitimate interest in preventing speech that causes direct, physical harm or leads to immediate violence. Throughout the 20th century, the Supreme Court struggled to define exactly where the line should be drawn. During World War I, in the case of <em>Schenck v. United States</em> (1919), Charles Schenck was arrested for distributing leaflets encouraging men to resist the military draft. Justice Oliver Wendell Holmes famously argued that the government could limit speech if it posed a "Clear and Present Danger" to the nation. He noted that the First Amendment would not protect a man "falsely shouting fire in a theatre and causing a panic."</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_7.png" alt="Visual 7" class="visual-img">
+                            <p class="caption-text">The government's ability to restrict speech has historically been tied to situations where expression poses an immediate threat of lawless action or physical harm, rather than merely being offensive.</p>
+                        </div>
+
+                        <p class="first-p">However, the "Clear and Present Danger" test was often used by the government to silence political radicals and war protesters, even when their speech posed no real threat of immediate violence. Consequently, the Court eventually moved toward a much stricter standard in <em>Brandenburg v. Ohio</em> (1969). This case involved a leader of the Ku Klux Klan who was arrested for making a speech that suggested "vengeance" against the government. The Court overturned his conviction, establishing the "Imminent Lawless Action" test. Under this modern standard, the government can only punish speech if it is intended to incite immediate illegal acts and is likely to produce such acts. This ensures that even the advocacy of radical or violent ideas is protected, so long as it does not lead to an immediate riot or crime.</p>
+
+                        <p>Other categories of speech that receive little to no protection include "obscenity"—defined as material that appeals to a prurient interest and lacks serious value—and "true threats," where a person expresses a genuine intent to commit an act of unlawful violence against a specific individual. By carving out these narrow exceptions, the Court attempts to protect the "marketplace of ideas" while ensuring that the marketplace does not become a staging ground for physical harm.</p>
+
+                        <div id="cp-block-7" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">How did <em>Brandenburg v. Ohio</em> change the legal standard for restricting speech?</p>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-7')"> A) It introduced the "Clear and Present Danger" standard to silence radical groups.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-7')"> B) It ruled that the government can never restrict speech, even if it leads to violence.</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-7')"> C) It established that speech can only be punished if it is likely to incite "imminent lawless action."</label>
+                                <label class="checklist-item"><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-7')"> D) It allowed the government to arrest anyone who criticizes the military during wartime.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-7', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>Defamation and the Breathing Space for Criticism</h4>
+                        <p class="first-p">One of the most complex areas of First Amendment law involves "defamation"—false statements of fact that damage a person's reputation. When these statements are written, they are called Libel; when they are spoken, they are called Slander. While individuals have a right to protect their reputation, the Supreme Court has ruled that this right must be balanced against the public’s need to criticize its leaders. If a newspaper could be sued for every minor factual error in a story about a politician, journalists would be too afraid to report on government corruption. This is known as the "chilling effect."</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_8.png" alt="Visual 8" class="visual-img">
+                            <p class="caption-text">To ensure that the press can properly scrutinize public officials, the courts require proof of actual malice before allowing politicians to win defamation lawsuits, preserving the breathing space necessary for democratic debate.</p>
+                        </div>
+
+                        <p class="first-p">To prevent this, the Court established a very high bar for public figures in <em>New York Times v. Sullivan</em> (1964). During the Civil Rights Movement, an Alabama official sued the New York Times for an advertisement that contained minor factual inaccuracies about the conduct of local police. The Court ruled that for a public official to win a libel case, they must prove "actual malice." This means they must prove that the publisher knew the information was false or acted with a "reckless disregard" for the truth. This standard recognizes that in a robust democracy, some errors of fact are inevitable. By providing this "breathing space," the First Amendment ensures that the press can perform its watchdog role without the constant threat of bankrupting lawsuits from the powerful.</p>
+
+                        <p>This protection does not apply to private individuals, who only need to prove that a publisher was "negligent" (did not take reasonable care) in checking their facts. However, for those who choose to enter the public arena—politicians, celebrities, and high-ranking officials—the Constitution demands that they tolerate a higher level of criticism. This ensures that the "marketplace of ideas" remains a place where the powerful are held accountable by the people, even if the debate is occasionally messy or inaccurate.</p>
+
+                        <div id="cp-block-8" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">What must a public official prove to win a libel lawsuit?</p>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-8')"> A) That the statement was accidentally incorrect.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-8')"> B) That the publisher acted with "actual malice" or reckless disregard for the truth.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-8')"> C) That the information made them feel embarrassed or unpopular.</label>
+                                <label class="checklist-item"><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-8')"> D) That the newspaper failed to include their official response.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-8', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Strategic Logic of Dissent</h4>
+                        <p class="first-p">The First Amendment’s protection of expression is not just a gift to the individual; it is a strategic necessity for the stability of the state. A government that silences its critics is a government that cuts itself off from vital information. When dissent is suppressed, errors go uncorrected, corruption grows in the dark, and social pressures build until they explode in violence. By protecting "the right to be wrong," the Constitution creates a safety valve for social frustration and a mechanism for peaceful, incremental change.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_9.png" alt="Visual 9" class="visual-img">
+                            <p class="caption-text">Protecting dissent acts as a necessary safety valve for a society, allowing frustration and disagreement to be channeled into debate and reform rather than erupting into violence.</p>
+                        </div>
+
+                        <p class="first-p">The "marketplace of ideas" assumes that through open competition, the most effective and truthful ideas will eventually prevail. While this process is often uncomfortable and leads to significant social friction, it is the only way to ensure that a democracy remains responsive to its people. The First Amendment manages the tension between liberty and order not by eliminating conflict, but by channeling it into the realm of debate rather than the realm of force. In doing so, it ensures that the "consent of the governed" is an ongoing dialogue that allows the nation to adapt to new challenges without sacrificing its core principles.</p>
+
+                        <div id="cp-block-9" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">How does protecting "the right to be wrong" benefit a democratic government?</p>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-9')"> A) It allows the government to identify and arrest people with dangerous ideas.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-9')"> B) It ensures that the majority can always silence the minority through voting.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-9')"> C) It serves as a "safety valve" that allows for peaceful change and the correction of errors.</label>
+                                <label class="checklist-item"><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-9')"> D) It helps the government maintain a single, official version of the truth.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-9', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-2', 'nav-sec-2')">Back</button>
+                        <button id="btn-next-sec-3" class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4')">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Press, Assembly, and Petition -->
+            <section id="sec-4" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Press, Assembly, and Petition | Democratic Infrastructure</h2>
+                        
+                        <p class="first-p">While the rights of speech and religion protect the individual's inner world, the rights of press, assembly, and petition build the "democratic infrastructure" of the nation. These freedoms provide the institutional pathways through which citizens can organize, investigate, and challenge the state. They ensure that political participation is not something that only happens during an election, but is a continuous part of American life. Without these collective rights, individual speech would often be a lonely cry in the wilderness; with them, speech becomes a powerful force for social and political change. These rights enable citizens to act as a collective check on the branches of government.</p>
+
+                        <h4>The Watchdog Role and Prior Restraint</h4>
+                        <p class="first-p">Freedom of the press is often described as the "Fourth Estate," an informal fourth branch of government that monitors the other three. In a complex society, individual citizens rarely have the resources to investigate the inner workings of the Pentagon or the local city council. They rely on journalists to do this work for them. To protect this role, the Supreme Court has established a heavy presumption against "Prior Restraint"—the government’s attempt to block information from being published before it reaches the public.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_10.png" alt="Visual 10" class="visual-img">
+                            <p class="caption-text">By heavily restricting prior restraint, the courts prevent the government from classifying its own mistakes and ensure the press can function as an independent watchdog over state power.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> Why is "prior restraint" considered one of the most severe threats to a free society?</p>
+                                <textarea id="va_10" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">The classic example is the 1971 case <em>New York Times Co. v. United States</em>, also known as the "Pentagon Papers Case." Daniel Ellsberg, a military analyst, leaked a classified 7,000-page study to the press that revealed the government had lied to the public about the progress of the Vietnam War. The Nixon administration sued to stop the New York Times and the Washington Post from publishing the documents, arguing that doing so would cause "irreparable harm" to national security. The Supreme Court ruled against the government, finding that the word "security" should not be used to "abrogate the fundamental law embodied in the First Amendment." Unless the government can prove an immediate and catastrophic threat—such as revealing the location of troops during an active battle—it cannot stop the press from telling the truth.</p>
+
+                        <p>This protection ensures that the government cannot hide its mistakes or its lies behind a veil of "classification." A free press acts as a watchdog, ensuring that the people have the information they need to hold their leaders accountable at the ballot box. Without the prohibition on prior restraint, the government could easily become the sole source of information, effectively ending the marketplace of ideas and replacing it with a state-controlled narrative.</p>
+
+                        <div id="cp-block-10" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Why did the Supreme Court allow the publication of the "Pentagon Papers"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-10')"> A) The documents were not actually classified.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-10')"> B) The government failed to prove that publication would cause an immediate national security catastrophe.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-10')"> C) The President gave the newspapers permission to publish the study.</label>
+                                <label class="checklist-item"><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-10')"> D) The First Amendment gives the press the right to publish anything, including troop locations.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-10', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Power of Gathering | Freedom of Assembly</h4>
+                        <p class="first-p">The right of the people "peaceably to assemble" allows citizens to gather in groups—whether for a political rally, a labor strike, or a religious convention—to express their collective will. Assembly is the primary tool for those who lack traditional political power; it allows them to gain visibility through numbers and solidarity. Throughout American history, the right to assemble has been the engine of social movements. From the suffragists marching for the right to vote in the early 1900s to the massive Civil Rights marches of the 1960s, the ability to occupy public space is essential for demanding justice.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_11.png" alt="Visual 11" class="visual-img">
+                            <p class="caption-text">The right to assemble allows citizens without traditional political power to exert influence through organized solidarity, provided the gatherings adhere to content-neutral safety regulations.</p>
+                        </div>
+
+                        <p class="first-p">However, the right to assemble is subject to "Time, Place, and Manner Restrictions." The government can regulate the logistics of a protest to ensure public safety and the flow of traffic. For example, a city can require a permit for a march that blocks a major highway or ban the use of loud megaphones in residential areas late at night. For these rules to be constitutional, they must be "Content-Neutral"—meaning they apply to everyone regardless of their message. A city cannot allow a "Support our Troops" rally while denying a permit for an anti-war protest in the same location.</p>
+
+                        <p>The tension in assembly cases often involves the "Heckler's Veto." This occurs when the government tries to shut down a peaceful protest because they fear an angry crowd will attack the protesters. The Supreme Court has generally ruled that the police must protect the protesters' right to speak, rather than silencing them to prevent a riot. This ensures that the most controversial groups still have the right to gather, preventing the government from using the threat of "disorder" as an excuse to silence dissent.</p>
+
+                        <div id="cp-block-11" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">What is a requirement for a "Time, Place, and Manner" restriction to be constitutional?</p>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-11')"> A) It must target only groups that the majority of citizens dislike.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-11')"> B) It must be "content-neutral," applying to all groups regardless of their message.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-11')"> C) It must be designed to stop any protest that could potentially cause an argument.</label>
+                                <label class="checklist-item"><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-11')"> D) It must be approved by the Governor of the state before it can be enforced.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-11', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Direct Line | The Right to Petition</h4>
+                        <p class="first-p">The right to "petition the government for a redress of grievances" is the most direct way citizens interact with their government. Often overshadowed by speech and press, the right to petition is the foundation of advocacy and lobbying. It includes everything from signing a letter to a member of Congress to filing a lawsuit in court. This right ensures that the government is legally obligated to at least receive and hear the complaints of its citizens.</p>
+
+                        <div class="spotlight-wrapper portrait">
+                            <img src="assets/Visual_12.png" alt="Visual 12">
+                            <div class="spotlight-content">
+                                <p class="spotlight-caption">Petitioning the government encompasses a wide range of actions, from signing formal documents to filing lawsuits that challenge state policies, creating a direct line of accountability.</p>
+                            </div>
+                        </div>
+
+                        <p class="first-p">In the modern era, the right to petition has evolved into a sophisticated system of lobbying and litigation. Interest groups, such as the NAACP or the NRA, use the right to petition to advocate for specific laws or to challenge government actions in court. For example, the landmark desegregation case <em>Brown v. Board of Education</em> was a form of "petitioning the government" through the judicial branch. This right allows citizens to use the state’s own legal machinery to hold the state accountable.</p>
+
+                        <p>The right to petition ensures that the "consent of the governed" is an ongoing, daily interaction. It allows for the creation of "civil society"—the network of clubs, unions, and non-profits that buffer the individual from the power of the state. By protecting the right to complain and demand change, the First Amendment ensures that the government remains a servant of the people rather than their master.</p>
+
+                        <div id="cp-block-12" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Which of the following is an example of exercising the "right to petition"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-12')"> A) Voting in a secret ballot during a presidential election.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-12')"> B) Filing a lawsuit in court to challenge an unfair government policy.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-12')"> C) Refusing to pay taxes as a form of religious protest.</label>
+                                <label class="checklist-item"><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-12')"> D) Watching a news broadcast about a recent Supreme Court decision.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-12', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Architecture of Accountability</h4>
+                        <p class="first-p">The collective freedoms of press, assembly, and petition form an architecture of accountability that is essential for a healthy republic. These rights ensure that information flows freely from the government to the people, and that the demands of the people flow back to the government. By protecting the right to investigate, the right to gather, and the right to complain, the First Amendment ensures that power is never concentrated in a single, unchallengeable center.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_13.png" alt="Visual 13" class="visual-img">
+                            <p class="caption-text">The combined rights of press, assembly, and petition transform individual free speech into a strategic mechanism for exposing corruption and demanding government responsiveness.</p>
+                        </div>
+
+                        <p class="first-p">This infrastructure turns the "marketplace of ideas" into a "marketplace of action." It provides the tools necessary for citizens to move from having opinions to influencing outcomes. While the exercise of these rights can lead to social friction and political conflict, that friction is the sign of a living democracy. The First Amendment ensures that the government must constantly justify its actions to an informed and organized citizenry, preventing the consolidation of absolute power and maintaining the responsiveness of the state.</p>
+
+                        <div id="cp-block-13" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">How do press, assembly, and petition create an "architecture of accountability"?</p>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-13')"> A) They allow the government to monitor what citizens are saying in private.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-13')"> B) They provide institutional channels for citizens to investigate and challenge government power.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-13')"> C) They ensure that the government only hears from groups that agree with its policies.</label>
+                                <label class="checklist-item"><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-13')"> D) They replace the need for regular elections with constant public protests.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-13', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-3', 'nav-sec-3')">Back</button>
+                        <button id="btn-next-sec-4" class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5')">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 5: The Strategic Marketplace of Ideas -->
+            <section id="sec-5" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Strategic Marketplace of Ideas</h2>
+                        
+                        <p class="first-p">The First Amendment is not merely a list of five separate freedoms; it is a unified structural framework for a functional republic. Each freedom—religion, speech, press, assembly, and petition—works in tandem to ensure that the "consent of the governed" remains a continuous and meaningful process. By protecting the individual's right to think, believe, and speak, the Constitution ensures that the government does not have a monopoly on truth. Instead, truth is discovered through the rigorous competition of the "marketplace of ideas." This marketplace assumes that if all ideas are allowed to compete, the most effective, truthful, and just ones will eventually prevail.</p>
+
+                        <h4>Conflict as a Tool of Governance</h4>
+                        <p class="first-p">A common mistake is to view the First Amendment as a tool for social harmony. In reality, it is a tool for managing conflict. The founders knew that in a large, diverse nation, people would always disagree—often passionately—over religion, politics, and morality. The First Amendment does not try to end these disagreements; instead, it provides a safe arena where they can play out. By protecting the "right to be wrong," the Constitution ensures that the government cannot use its power to settle these debates by force.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_14.png" alt="Visual 14" class="visual-img">
+                            <p class="caption-text">The founders designed a system where truth is discovered not through government mandate, but through the rigorous, often uncomfortable competition of differing viewpoints.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> Why did the founders view social and political conflict as an essential tool of governance rather than a threat to the nation?</p>
+                                <textarea id="va_14" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">This process is inherently messy. The marketplace of ideas includes speech that is offensive, religious practices that are confusing, and protests that are inconvenient. However, the alternative—government-enforced "order"—is far more dangerous. When a government decides which ideas are "safe" and which are "dangerous," it effectively ends the process of self-correction. History is full of examples where the "dangerous" ideas of one generation (such as the idea that the earth revolves around the sun, or that all people should be equal under the law) became the "common sense" of the next. By protecting dissent, the First Amendment allows the nation to evolve.</p>
+
+                        <div id="cp-block-14" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Why did the founders believe that conflict and disagreement were necessary for a healthy democracy?</p>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="A" onchange="handleRadioChange('cp-block-14')"> A) They wanted the country to be in a constant state of civil war.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="B" onchange="handleRadioChange('cp-block-14')"> B) They believed that disagreement leads to the discovery of truth and social evolution.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="C" onchange="handleRadioChange('cp-block-14')"> C) They hoped that if citizens argued with each other, they would forget to criticize the government.</label>
+                                <label class="checklist-item"><input type="radio" name="cp14" value="D" onchange="handleRadioChange('cp-block-14')"> D) They thought that a lack of disagreement was a sign that the government was too weak.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-14', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>Modern Tensions in the Digital Square</h4>
+                        <p class="first-p">The marketplace of ideas is currently facing its greatest challenge since the founding: the digital revolution. For most of American history, the "marketplace" existed in physical town squares, newspapers, and broadcast television. Today, it exists on social media platforms owned by massive private corporations. This creates a new "strategic tension." The First Amendment only limits what the <em>government</em> can do; it does not limit what private companies like Facebook or X (formerly Twitter) can do.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_15.png" alt="Visual 15" class="visual-img">
+                            <p class="caption-text">The digital revolution has shifted the marketplace of ideas into privately owned spaces, raising novel challenges regarding content moderation, fake news, and the lack of First Amendment constraints on corporations.</p>
+                        </div>
+
+                        <p class="first-p">This has led to a fierce debate over "content moderation." If a private company removes a user for spreading misinformation, is it protecting the marketplace from "pollution," or is it effectively acting as a new kind of censor? Furthermore, the speed and scale of the internet allow for the rapid spread of "fake news" and algorithmic "echo chambers" where people only hear ideas they already agree with. These modern challenges force us to ask if the marketplace of ideas can still function when the "market" is controlled by private algorithms rather than public debate.</p>
+
+                        <p>The principles of the First Amendment remain our best guide for navigating these tensions. The solution to "bad speech" in the digital age remains "more speech"—better education, more transparent algorithms, and a more engaged citizenry. While the technology has changed, the underlying need for a free and open exchange of ideas remains the same. The marketplace of ideas must be continuously maintained and defended to ensure it does not become a tool for manipulation.</p>
+
+                        <div id="cp-block-15" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">Why doesn't the First Amendment prevent social media companies from banning users?</p>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="A" onchange="handleRadioChange('cp-block-15')"> A) Social media companies are actually branches of the federal government.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="B" onchange="handleRadioChange('cp-block-15')"> B) The First Amendment only restricts the actions of the government, not private businesses.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="C" onchange="handleRadioChange('cp-block-15')"> C) The Supreme Court ruled that the internet is not a place for free speech.</label>
+                                <label class="checklist-item"><input type="radio" name="cp15" value="D" onchange="handleRadioChange('cp-block-15')"> D) All speech on the internet is considered "obscenity" and is therefore unprotected.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-15', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                        <h4>The Necessity of Friction</h4>
+                        <p class="first-p">Ultimately, the First Amendment safeguards the very diversity of thought that prevents the consolidation of absolute power. It is the "friction" in our system—the constant push and pull between the government and the governed—that keeps the republic alive. By protecting the right to be "unpopular," the Bill of Rights ensures that the majority cannot use the law to crush the minority. This protection is what allows the United States to be a nation of many voices rather than a nation of one.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_16.png" alt="Visual 16" class="visual-img">
+                            <p class="caption-text">The continuous friction between the government's need for order and the people's demand for liberty is a deliberate feature of American governance, forcing each generation to actively negotiate their freedoms.</p>
+                        </div>
+
+                        <p class="first-p">The "strategic tension" between individual liberty and social order is never permanently resolved. Each generation of Americans must decide for themselves where the boundaries lie. But by keeping the marketplace of ideas open, the First Amendment ensures that we always have the tools to make those decisions peacefully and democratically. It is the guarantee that in the American system, power will always be subject to the scrutiny of the people.</p>
+
+                        <div id="cp-block-16" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-q">
+                                <p class="first-p">What is the primary role of the Bill of Rights in protecting the minority from the majority?</p>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="A" onchange="handleRadioChange('cp-block-16')"> A) It gives the minority the power to veto any law passed by the majority.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="B" onchange="handleRadioChange('cp-block-16')"> B) It ensures that the majority cannot use the law to suppress the fundamental rights of the minority.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="C" onchange="handleRadioChange('cp-block-16')"> C) It requires the majority to pay for the private religious schools of the minority.</label>
+                                <label class="checklist-item"><input type="radio" name="cp16" value="D" onchange="handleRadioChange('cp-block-16')"> D) It mandates that only minority groups are allowed to protest in public spaces.</label>
+                            </div>
+                            <div style="margin-top: 15px; text-align: right;">
+                                <button class="action-btn cp-next-btn" style="width: auto;" onclick="navigateCp('cp-block-16', 1)">Finish Checkpoint</button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-4', 'nav-sec-4')">Back</button>
+                        <button id="btn-next-sec-5" class="action-btn" onclick="switchTab('sec-6', 'nav-sec-6')">🔒 Answer Checkpoints to Continue</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 6: Conclusion -->
+            <section id="sec-6" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Conclusion</h2>
+                        
+                        <p class="first-p">The First Amendment stands as the ultimate guardian of American democracy, protecting the essential freedoms that allow a pluralistic society to function. We have seen how the religion clauses manage the delicate balance between faith and the state, ensuring that the government remains neutral while citizens remain free to follow their consciences. We have explored the generative power of free expression, distinguishing between the high protection given to political speech and the narrow limits placed on speech that causes immediate harm. We have also examined the democratic infrastructure of the press, assembly, and petition, which provide the institutional checks necessary to hold power accountable.</p>
+
+                        <div class="spotlight-wrapper portrait">
+                            <img src="assets/Visual_17.png" alt="Visual 17">
+                            <div class="spotlight-content">
+                                <p class="spotlight-caption">While the First Amendment and the Bill of Rights establish the boundaries that protect individual liberty from the state, the next phase of the American story involves the use of those liberties to demand equal treatment under the law.</p>
+                            </div>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Student Analysis Question:</strong> How does the protection of civil liberties established by the First Amendment create the foundation necessary to fight for civil rights?</p>
+                                <textarea id="va_17" class="textarea-dark" placeholder="Enter your analysis here..."></textarea>
+                            </div>
+                        </div>
+
+                        <p class="first-p">Throughout this chapter, we have analyzed the "strategic tension" between individual liberty and social order. This tension is a fundamental feature of our constitutional design. Whether it is a student wearing an armband to protest a war, a newspaper publishing classified documents to expose government lies, or a religious group seeking an exemption from a law, these conflicts force us to define our values. The "marketplace of ideas" is often loud, contentious, and uncomfortable, but it is the only environment where truth can be discovered and justice can be pursued.</p>
+
+                        <p>As we move forward to the next chapter, we will shift our focus from these "negative rights"—what the government cannot do—to the realm of "positive rights" and protections. While the Bill of Rights protects our civil liberties from government overreach, the next phase of our study focuses on Civil Rights: the struggle to ensure that the government treats every individual individual equally and protects them from discrimination. Just as the First Amendment ensures we have the right to speak, civil rights ensure that everyone has an equal place at the table where that speaking occurs. The journey from the protection of liberty to the guarantee of equality is the next great chapter in the American story.</p>
+
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-5', 'nav-sec-5')">Back</button>
+                        <button id="btn-next-sec-6" class="action-btn" onclick="switchTab('sec-7', 'nav-sec-7')">Next Section &rarr;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 7: Chapter Assessment -->
+            <section id="sec-7" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Chapter Assessment</h2>
+
+                        <h4>Section I &ndash; Vocabulary (Cloze)</h4>
+                        <div class="word-bank">
+                            <span class="word-pill">Civil Liberties</span>
+                            <span class="word-pill">Bill of Rights</span>
+                            <span class="word-pill">Establishment Clause</span>
+                            <span class="word-pill">Free Exercise Clause</span>
+                            <span class="word-pill">Symbolic Speech</span>
+                            <span class="word-pill">Prior Restraint</span>
+                            <span class="word-pill">Libel</span>
+                            <span class="word-pill">Clear and Present Danger</span>
+                            <span class="word-pill">Time, Place, and Manner Restrictions</span>
+                        </div>
+                        
+                        <div style="background: rgba(0,0,0,0.2); padding: 25px; border-radius: 8px; margin-bottom: 3rem;">
+                            <p class="first-p">A. The <input type="text" class="cloze-input" data-blank="1"> are the first ten amendments to the U.S. Constitution, which list specific prohibitions on governmental power.</p>
+                            <p>B. Constitutional protections for individuals against government action, such as freedom of speech, are known as <input type="text" class="cloze-input" data-blank="2">.</p>
+                            <p>C. The <input type="text" class="cloze-input" data-blank="3"> prohibits the government from favoring one religion over another or establishing an official state church.</p>
+                            <p>D. When the government censors information before it is published, it is engaging in <input type="text" class="cloze-input" data-blank="4">.</p>
+                            <p>E. <input type="text" class="cloze-input" data-blank="5"> is a form of non-verbal communication, such as wearing an armband, that is protected by the First Amendment.</p>
+                            <p>F. The <input type="text" class="cloze-input" data-blank="6"> protects a citizen's right to practice their religion without government interference.</p>
+                            <p>G. Written defamation that is false and damaging to a person’s reputation is called <input type="text" class="cloze-input" data-blank="7">.</p>
+                            <p>H. The <input type="text" class="cloze-input" data-blank="8"> judicial standard permits limits on speech that poses an immediate threat to public safety.</p>
+                            <p>I. Government rules that regulate the "when, where, and how" of an assembly without silencing the message are called <input type="text" class="cloze-input" data-blank="9">.</p>
+                        </div>
+
+                        <h4>Section III &ndash; Guided Analysis</h4>
+                        <div class="question-box" style="border: none; padding-left: 0; margin-top: 1.5rem;">
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Compare and contrast the Establishment Clause and the Free Exercise Clause. How do they work together to protect religious pluralism in the United States?</p>
+                            <textarea id="pq_1" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 2rem;"></textarea>
+                            
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Explain the concept of the "marketplace of ideas." Why did the founders believe that "more speech" was the best remedy for "bad speech"?</p>
+                            <textarea id="pq_2" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 2rem;"></textarea>
+
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Analyze the strategic tension between individual liberty and social order using the example of "Time, Place, and Manner Restrictions." Why are these restrictions allowed at all?</p>
+                            <textarea id="pq_3" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 2rem;"></textarea>
+
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Why is the standard of "Strict Scrutiny" so high, and what does it reveal about the value the American legal system places on freedom of expression?</p>
+                            <textarea id="pq_4" class="textarea-dark" placeholder="Write your response here..."></textarea>
+                        </div>
+
+                        <h4>Section IV &ndash; Visual Analysis</h4>
+                        <div class="visual-wrapper" style="margin-top: 1.5rem;">
+                            <img src="assets/Assessment_1.png" alt="The Wall of Separation" class="visual-img">
+                            <div class="question-box" style="border: none; padding-left: 0; margin-top: 1.5rem;">
+                                <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">How does this visual represent the concept of religious neutrality as defined in the Establishment Clause?</p>
+                                <textarea id="va_18" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 2rem;"></textarea>
+                                
+                                <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Based on the chapter, what are two specific government actions that would be "blocked" by this wall?</p>
+                                <textarea id="va_19" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 0;"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="visual-wrapper" style="margin-top: 3rem; margin-bottom: 3rem;">
+                            <img src="assets/Assessment_2.png" alt="The Hierarchy of Protected Speech" class="visual-img">
+                            <div class="question-box" style="border: none; padding-left: 0; margin-top: 1.5rem;">
+                                <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Why is political speech placed at the very top of the hierarchy of protection?</p>
+                                <textarea id="va_20" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 2rem;"></textarea>
+                                
+                                <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">According to the chart and the text, what must happen for speech to move from the "protected" category to the "unprotected" category of "incitement"?</p>
+                                <textarea id="va_21" class="textarea-dark" placeholder="Write your response here..." style="margin-bottom: 0;"></textarea>
+                            </div>
+                        </div>
+
+                        <h4>Section V &ndash; Primary Source (CER)</h4>
+                        <div style="background: rgba(0,0,0,0.2); padding: 25px; border-left: 4px solid var(--color-gold); margin-bottom: 2rem;">
+                            <p class="first-p" style="font-style: italic;">"If there is any fixed star in our constitutional constellation, it is that no official, high or petty, can prescribe what shall be orthodox in politics, nationalism, religion, or other matters of opinion or force citizens to confess by word or act their faith therein."</p>
+                            <p style="text-align: right; margin-bottom: 0;">— Justice Robert Jackson, <em>West Virginia State Board of Education v. Barnette (1943)</em></p>
+                        </div>
+                        <p class="first-p"><strong>CER Prompt:</strong> Using the excerpt above and your knowledge from the chapter, write a paragraph answering the following: <strong>How does the First Amendment prevent the government from enforcing a "national orthodoxy" (a single set of beliefs)?</strong></p>
+                        
+                        <div class="question-box" style="border: none; padding-left: 0; margin-top: 1rem;">
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Claim: State your position on how the First Amendment prevents government-enforced beliefs.</p>
+                            <textarea id="pq_5" class="textarea-dark" placeholder="Write your Claim here..." style="margin-bottom: 1.5rem;"></textarea>
+
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Evidence: Reference specific language from the quote or specific First Amendment clauses.</p>
+                            <textarea id="pq_6" class="textarea-dark" placeholder="Write your Evidence here..." style="margin-bottom: 1.5rem;"></textarea>
+
+                            <p class="first-p" style="font-weight: bold; margin-bottom: 0.5rem;">Reasoning: Explain why this protection is essential for maintaining a "marketplace of ideas" in a democracy.</p>
+                            <textarea id="pq_7" class="textarea-dark" placeholder="Write your Reasoning here..." style="margin-bottom: 2rem;"></textarea>
+                        </div>
+
+                        <h4>Section VI &ndash; Modern Reflection</h4>
+                        <p class="first-p">In the digital age, the "marketplace of ideas" has moved largely to social media platforms. Unlike the "town square," these platforms are owned by private companies, not the government. Based on your understanding of the First Amendment, should these private companies be allowed to censor speech on their platforms, or does this undermine the democratic infrastructure described in the chapter? Consider the tension between the rights of a private business and the public's need for a free and open exchange of ideas.</p>
+                        <textarea id="pq_8" class="textarea-dark" placeholder="Write your reflection here..."></textarea>
+
+                    </div>
+
+                    <div class="bottom-nav">
+                        <button class="action-btn" onclick="switchTab('sec-6', 'nav-sec-6')">Back</button>
+                        <button class="action-btn" style="background: var(--color-gold); color: var(--color-navy-deep);" onclick="finishChapter()">Finished</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        /* Background Management */
+        const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png'];
+        let bgIndex = 0;
+        function rotateBackground() {
+            if (bgImages.length === 0) return;
+            const bgEl = document.getElementById('bg-slideshow');
+            if (!bgEl) return;
+            bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            rotateBackground();
+            setInterval(rotateBackground, 10000);
+        });
+
+        /* Navigation */
+        function switchTab(id, btnId = null, scrollTarget = null) {
+            document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+            
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+            const activeBtnId = btnId || ('nav-' + id);
+            const activeBtn = document.getElementById(activeBtnId);
+            if (activeBtn) {
+                activeBtn.classList.add('active-nav');
+            }
+
+            if (scrollTarget) {
+                setTimeout(() => {
+                    const target = document.getElementById(scrollTarget);
+                    if(target) {
+                        const offset = 40;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = target.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        const offsetPosition = elementPosition - offset;
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            saveProgress();
+        }
+
+        /* Data Collection & Export */
+        function collectAssignmentData(isFinal) {
+            const studentName = document.getElementById('student-name').value || "Unknown_Student";
+            const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+            const now = new Date().toLocaleDateString();
+            
+            // GENERATOR: Update assignmentTitle dynamically based on the Chapter
+            const assignmentData = {
+                assignmentTitle: "Interactive Chapter 8: The Bill of Rights",
+                studentInfo: { name: studentName, period: studentPeriod, dateCompleted: isFinal ? now : "In Progress" },
+                responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {}, clozeActivity: {} }
+            };
+
+            // Gather Visual Analysis Answers
+            for(let i=1; i<=25; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                    assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+                }
+            }
+
+            // Gather Checkpoint Answers
+            for(let i=1; i<=30; i++) {
+                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                if(inputs.length > 0) {
+                    let checked = document.querySelector('input[name="cp' + i + '"]:checked');
+                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            // Gather Perspective Questions
+            for(let i=1; i<=10; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                    assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+                }
+            }
+
+            // Gather Cloze Activity Answers
+            document.querySelectorAll('.cloze-input').forEach((input, index) => {
+                assignmentData.responses.clozeActivity[`Blank_${index + 1}`] = input.value.trim();
+            });
+
+            return assignmentData;
+        }
+
+        function triggerDownload(data, filename) {
+            const dataStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadProgress() {
+            const data = collectAssignmentData(false);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Progress_${safeName}.json`);
+        }
+
+        function finishChapter() {
+            const dateField = document.getElementById('completion-date');
+            const now = new Date().toLocaleDateString();
+            if(dateField) dateField.value = now;
+            const data = collectAssignmentData(true);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_Export_${safeName}.json`);
+            alert('Upload JSON file to Canvas');
+            switchTab('sec-1', 'nav-sec-1');
+        }
+
+        /* Loading Progress */
+        function loadProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const loadedData = JSON.parse(e.target.result);
+                    
+                    // Restore ID Panel and Burn In
+                    const nameInput = document.getElementById('student-name');
+                    const periodInput = document.getElementById('student-period');
+                    
+                    if (loadedData.studentInfo) {
+                        if (loadedData.studentInfo.name && loadedData.studentInfo.name !== "Unknown_Student") {
+                            nameInput.value = loadedData.studentInfo.name;
+                            nameInput.setAttribute('readonly', 'true');
+                            nameInput.style.opacity = '0.7'; 
+                        }
+                        if (loadedData.studentInfo.period && loadedData.studentInfo.period !== "Unknown_Period") {
+                            periodInput.value = loadedData.studentInfo.period;
+                            periodInput.setAttribute('disabled', 'true');
+                            periodInput.style.opacity = '0.7'; 
+                        }
+                    }
+
+                    if (loadedData.responses) {
+                        if (loadedData.responses.visualAnalysis) {
+                            for(let i=1; i<=25; i++) {
+                                let el = document.getElementById('va_' + i);
+                                if(el) {
+                                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.replace('Analysis Question:', '').trim() : 'Visual ' + i;
+                                    if(loadedData.responses.visualAnalysis[qText]) el.value = loadedData.responses.visualAnalysis[qText];
+                                }
+                            }
+                        }
+                        
+                        if (loadedData.responses.checkpoints) {
+                            for(let i=1; i<=30; i++) {
+                                let inputs = document.querySelectorAll('input[name="cp' + i + '"]');
+                                if(inputs.length > 0) {
+                                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                                    let savedVal = loadedData.responses.checkpoints[qText];
+                                    if (savedVal && savedVal !== "No Answer") {
+                                        let radio = document.querySelector(`input[name="cp${i}"][value="${savedVal}"]`);
+                                        if(radio) radio.checked = true;
+                                    }
+                                }
+                            }
+                        }
+
+                        if (loadedData.responses.perspectiveQuestions) {
+                            for(let i=1; i<=10; i++) {
+                                let el = document.getElementById('pq_' + i);
+                                if(el) {
+                                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText.trim() : 'Question ' + i;
+                                    if(loadedData.responses.perspectiveQuestions[qText]) el.value = loadedData.responses.perspectiveQuestions[qText];
+                                }
+                            }
+                        }
+
+                        if (loadedData.responses.clozeActivity) {
+                            document.querySelectorAll('.cloze-input').forEach((input, index) => {
+                                let savedVal = loadedData.responses.clozeActivity[`Blank_${index + 1}`];
+                                if (savedVal) input.value = savedVal;
+                            });
+                        }
+                    }
+                    
+                    initCheckpoints();
+                    alert('Progress loaded successfully!');
+                } catch (err) {
+                    console.error(err);
+                    alert('Error loading progress file. Please make sure it is a valid JSON file.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        /* Save & Reset Logic */
+        function saveProgress() { console.log('Progress stored in memory. Click Save Progress to download.'); }
+        
+        function resetProgress() {
+            if(confirm('Are you sure you want to reset all progress?')) {
+                document.querySelectorAll('input[type="radio"]').forEach(el => el.checked = false);
+                document.querySelectorAll('.cloze-input, .textarea-dark, #student-name, #student-period, #completion-date').forEach(el => el.value = '');
+                
+                // Un-burn ID panel fields
+                const nameInput = document.getElementById('student-name');
+                const periodInput = document.getElementById('student-period');
+                nameInput.removeAttribute('readonly');
+                nameInput.style.opacity = '1';
+                periodInput.removeAttribute('disabled');
+                periodInput.style.opacity = '1';
+
+                document.querySelectorAll('.checkpoint-block').forEach(block => block.setAttribute('data-current', '0'));
+                initCheckpoints();
+                switchTab('sec-1', 'nav-sec-1');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        /* Checkpoint Management */
+        const TOTAL_CHECKPOINTS = 16; 
+        
+        function initCheckpoints() {
+            for(let i=1; i<=TOTAL_CHECKPOINTS; i++) { updateCpUI(`cp-block-${i}`); }
+            checkSectionUnlock();
+        }
+
+        function updateCpUI(blockId) {
+            const block = document.getElementById(blockId);
+            if(!block) return;
+            
+            const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            const indicator = block.querySelector('.cp-indicator');
+            const prevBtn = block.querySelector('.cp-prev-btn');
+            const nextBtn = block.querySelector('.cp-next-btn');
+
+            questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+            
+            if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+            if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+            
+            if(nextBtn) {
+                const currentQ = questions[currentIndex];
+                const isAnswered = currentQ.querySelector('input[type="radio"]:checked') !== null;
+
+                if (currentIndex === questions.length - 1) {
+                    if (isAnswered) {
+                        nextBtn.innerText = "Checkpoint Completed ✓";
+                        nextBtn.style.borderColor = "var(--color-navy)"; 
+                        nextBtn.style.color = "var(--color-cream)"; 
+                        nextBtn.style.backgroundColor = "var(--color-navy)";
+                        nextBtn.disabled = true; 
+                        nextBtn.style.cursor = 'default'; 
+                        nextBtn.style.opacity = '1';
+                    } else {
+                        nextBtn.innerText = "Finish Checkpoint";
+                        nextBtn.disabled = true; 
+                        nextBtn.style.opacity = '0.5'; 
+                        nextBtn.style.cursor = 'not-allowed';
+                        nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; 
+                        nextBtn.style.color = "var(--color-gold)"; 
+                        nextBtn.style.borderColor = "var(--color-gold)";
+                    }
+                } else {
+                    nextBtn.innerText = "Next Question \u2192";
+                    nextBtn.style.backgroundColor = "rgba(0,0,0,0.5)"; 
+                    nextBtn.style.color = "var(--color-gold)"; 
+                    nextBtn.style.borderColor = "var(--color-gold)";
+                    
+                    if (isAnswered) { 
+                        nextBtn.disabled = false; nextBtn.style.opacity = '1'; nextBtn.style.cursor = 'pointer'; 
+                    } else { 
+                        nextBtn.disabled = true; nextBtn.style.opacity = '0.5'; nextBtn.style.cursor = 'not-allowed'; 
+                    }
+                }
+            }
+            checkSectionUnlock();
+        }
+
+        function navigateCp(blockId, dir) {
+            const block = document.getElementById(blockId);
+            let currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            
+            currentIndex += dir;
+            if (currentIndex < 0) currentIndex = 0;
+            if (currentIndex >= questions.length) currentIndex = questions.length - 1;
+            
+            block.setAttribute('data-current', currentIndex);
+            updateCpUI(blockId);
+        }
+
+        function handleRadioChange(blockId) { 
+            saveProgress(); 
+            updateCpUI(blockId); 
+        }
+
+        function isAnswered(name) { 
+            return document.querySelector(`input[name="${name}"]:checked`) !== null; 
+        }
+
+        function setNavButtonState(btnId, enabled) {
+            const btn = document.getElementById(btnId);
+            if (!btn) return;
+            
+            if (enabled) {
+                btn.removeAttribute('disabled'); 
+                btn.style.opacity = '1'; 
+                btn.style.cursor = 'pointer';
+                btn.innerHTML = 'Next Section &rarr;'; 
+                btn.style.borderColor = 'var(--color-gold)';
+            } else {
+                btn.setAttribute('disabled', 'true'); 
+                btn.style.opacity = '0.5'; 
+                btn.style.cursor = 'not-allowed';
+                btn.innerHTML = '🔒 Answer Checkpoints to Continue'; 
+                btn.style.borderColor = 'var(--color-steel-nib)';
+            }
+        }
+
+        function checkSectionUnlock() {
+            setNavButtonState('btn-next-sec-1', isAnswered('cp1'));
+            setNavButtonState('btn-next-sec-2', isAnswered('cp2') && isAnswered('cp3') && isAnswered('cp4') && isAnswered('cp5'));
+            setNavButtonState('btn-next-sec-3', isAnswered('cp6') && isAnswered('cp7') && isAnswered('cp8') && isAnswered('cp9'));
+            setNavButtonState('btn-next-sec-4', isAnswered('cp10') && isAnswered('cp11') && isAnswered('cp12') && isAnswered('cp13'));
+            setNavButtonState('btn-next-sec-5', isAnswered('cp14') && isAnswered('cp15') && isAnswered('cp16'));
+            setNavButtonState('btn-next-sec-6', true); 
+        }
+
+        initCheckpoints();
+    </script>
+</body>
+</html>

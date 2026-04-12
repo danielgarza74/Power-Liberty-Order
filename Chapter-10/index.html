@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 10: Due Process and the Rights of the Accused</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --color-navy-deep: #241B2F;
+            --color-cream: #F6F3EE;
+            --color-navy: #6D5BA6;
+            --color-steel-nib: #9DA7B1;
+            --color-gold: #E0B84C;
+            --color-gold-light: #f1d68b;
+            --color-wax-red: #A63A3A;
+            --font-heading: 'Times New Roman', serif;
+            --font-body: 'Arial', sans-serif;
+            --font-ui: 'Verdana', sans-serif;
+        }
+
+        * { box-sizing: border-box; }
+        html, body { overflow-x: hidden; margin: 0; padding: 0; }
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-navy-deep);
+            color: var(--color-cream);
+            line-height: 1.8;
+            font-size: 1.15rem;
+        }
+
+        /* Background Effects */
+        #bg-slideshow {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background-size: cover;
+            background-position: center;
+            transition: background-image 1.5s ease-in-out;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(36, 27, 47, 0.9) 0%, rgba(36, 27, 47, 0.6) 50%, rgba(36, 27, 47, 0.9) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* Layout Architecture */
+        .app-container { display: flex; position: relative; z-index: 2; }
+
+        /* Left Navigation Panel */
+        .side-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 280px;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(15px);
+            border-right: 1px solid rgba(224, 184, 76, 0.3);
+            display: flex;
+            flex-direction: column;
+            padding: 2rem 1.5rem;
+            z-index: 100;
+            overflow-y: auto;
+            scrollbar-width: none;
+        }
+        .side-nav::-webkit-scrollbar { display: none; }
+        .nav-title {
+            font-family: var(--font-heading);
+            color: var(--color-gold);
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(224, 184, 76, 0.2);
+            padding-bottom: 0.5rem;
+        }
+        .nav-links { display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; }
+        .nav-btn {
+            background: transparent;
+            border: 1px solid transparent;
+            color: var(--color-cream);
+            text-align: left;
+            padding: 10px 12px;
+            font-family: var(--font-ui);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .nav-btn.active-nav { background: rgba(224, 184, 76, 0.15); border: 1px solid var(--color-gold); color: var(--color-gold); }
+        .nav-btn:hover:not(.active-nav) { background: rgba(255, 255, 255, 0.05); }
+        .nav-actions { display: flex; flex-direction: column; gap: 10px; margin-top: 2rem; }
+
+        /* Main Content Area */
+        .main-content { flex: 1; margin-left: 280px; min-height: 100vh; display: flex; flex-direction: column; }
+        .hero-banner-flush { width: 100%; height: auto; display: block; border-bottom: 2px solid var(--color-gold); margin-top: 0; }
+        .content-wrapper { max-width: 1000px; margin: 0 auto; padding: 40px; width: 100%; flex-grow: 1; }
+        .content-block {
+            background: rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 3rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+            display: flow-root;
+        }
+
+        @media (max-width: 1024px) {
+            .side-nav { display: none; }
+            .main-content { margin-left: 0; }
+            .content-wrapper { padding: 30px 20px; }
+            .content-block { padding: 2rem; }
+        }
+
+        /* Typography */
+        h2 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 3rem !important; line-height: 1.2; margin-bottom: 2rem !important; margin-top: 0; font-weight: bold; }
+        h3 { font-family: var(--font-heading); color: var(--color-gold) !important; font-size: 2.25rem !important; line-height: 1.3; margin-bottom: 1.5rem !important; margin-top: 2.5rem !important; font-weight: bold; }
+        h4 { font-family: var(--font-heading); color: var(--color-cream) !important; font-size: 1.75rem !important; line-height: 1.3; margin-bottom: 1.25rem !important; margin-top: 2rem !important; font-weight: bold; border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 0.5rem; }
+        h5 { font-family: var(--font-heading); color: var(--color-steel-nib) !important; font-size: 1.35rem !important; line-height: 1.3; margin-bottom: 1rem !important; margin-top: 2rem !important; font-weight: bold; }
+        p { margin-bottom: 1.5rem; font-size: 1.15rem; }
+        p:not(.first-p) { text-indent: 2.5em; }
+        .first-p { text-indent: 0 !important; }
+        ul { list-style-type: square; margin-left: 2em; margin-bottom: 1.5rem; line-height: 1.8; font-size: 1.15rem; }
+        .chapter-assessment p { text-indent: 0 !important; }
+
+        /* UI Elements */
+        .id-panel {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 2rem;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .id-panel label { display: block; font-family: var(--font-ui); font-size: 0.85rem; color: var(--color-steel-nib); margin-bottom: 5px; text-transform: uppercase; }
+        .id-panel input, .id-panel select {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--color-steel-nib);
+            color: var(--color-cream);
+            padding: 12px;
+            border-radius: 4px;
+            font-family: var(--font-ui);
+            font-size: 1rem;
+        }
+        .id-panel input:focus, .id-panel select:focus { outline: none; border-color: var(--color-gold); }
+        .id-panel input[readonly] { opacity: 0.7; cursor: not-allowed; }
+
+        .textarea-dark {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--color-steel-nib);
+            color: var(--color-cream);
+            padding: 1.5rem;
+            border-radius: 4px;
+            min-height: 120px;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            resize: vertical;
+        }
+        .textarea-dark:focus { outline: none; border-color: var(--color-gold); }
+
+        /* Vocabulary Blanks */
+        .vocab-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            padding: 0 5px;
+            font-family: var(--font-ui);
+            font-size: 1.05rem;
+            width: 200px;
+            text-align: center;
+        }
+        .vocab-input:focus { outline: none; border-bottom-width: 2px; }
+
+        /* Full Sized Visuals */
+        .visual-wrapper {
+            width: 100%;
+            margin: 2.5rem 0;
+            background: rgba(0, 0, 0, 0.4);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            clear: both;
+        }
+        .visual-img { width: 100%; height: auto; border-radius: 4px; border: 2px solid var(--color-gold-light); display: block; }
+        
+        /* Portrait Visual Constraints */
+        .visual-wrapper.portrait { width: 35%; clear: none; margin: 0; }
+        .caption-text { font-style: italic; font-size: 0.95rem; color: #ddd; margin-top: 15px; line-height: 1.5; text-indent: 0 !important; }
+        .question-box { border-left: 4px solid var(--color-gold); padding-left: 1.5rem; margin-top: 1.5rem; }
+
+        /* Compact Checkpoint System */
+        .checkpoint-block {
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            padding: 25px;
+            border: 2px dashed rgba(224, 184, 76, 0.4);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            clear: both;
+        }
+        .checkpoint-grid { display: flex; flex-direction: column; gap: 1.5rem; align-items: stretch; }
+        .checkpoint-grid > div:last-child {
+            flex-direction: row !important;
+            justify-content: flex-end !important;
+            align-items: center;
+            height: auto !important;
+            margin-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+        }
+        .checkpoint-grid > div:last-child .cp-indicator { margin-right: auto; text-align: left !important; }
+        .checkpoint-grid > div:last-child .action-btn { width: auto; min-width: 160px; }
+        .checkpoint-q { animation: fadeIn 0.4s ease-out; width: 100%; }
+        .checkpoint-q p.first-p { font-size: 1rem; line-height: 1.4; margin-bottom: 0.75rem; color: var(--color-cream); }
+        .checkpoint-q label { display: block; background: rgba(255,255,255,0.05); padding: 10px 15px; margin-bottom: 8px; border-radius: 4px; cursor: pointer; transition: 0.2s; font-size: 0.95rem; }
+        .checkpoint-q label:hover { background: rgba(255,255,255,0.1); }
+        .checkpoint-q input { margin-right: 10px; accent-color: var(--color-gold); }
+
+        /* Buttons & Navigation */
+        .action-btn {
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-family: var(--font-ui);
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            background: rgba(0, 0, 0, 0.5);
+            color: var(--color-gold);
+            border: 1.5px solid var(--color-gold);
+            width: 100%;
+        }
+        .action-btn:hover:not(:disabled) { background: var(--color-gold); color: var(--color-navy-deep); transform: translateY(-2px); }
+        .action-btn:disabled { transform: none !important; }
+
+        .bottom-nav {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(224, 184, 76, 0.3);
+            margin-top: 3rem;
+            gap: 20px;
+            clear: both;
+        }
+        .bottom-nav .action-btn { width: auto; }
+
+        .chapter-section { display: none; }
+        .chapter-section.active-section { display: block; animation: fadeIn 0.6s ease-out; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-slideshow"></div>
+
+    <div class="app-container">
+        <!-- Navigation Panel -->
+        <nav class="side-nav">
+            <div class="nav-title">Table of Contents</div>
+            <div class="nav-links">
+                <button id="nav-sec-1" class="nav-btn active-nav" onclick="switchTab('sec-1')">Start Page</button>
+                <button id="nav-sec-I" class="nav-btn" onclick="switchTab('sec-I')">I. The Fifth Amendment</button>
+                <button id="nav-sec-II" class="nav-btn" onclick="switchTab('sec-II')">II. The Sixth Amendment</button>
+                <button id="nav-sec-III" class="nav-btn" onclick="switchTab('sec-III')">III. Due Process in the Modern Era</button>
+                <button id="nav-sec-IV" class="nav-btn" onclick="switchTab('sec-IV')">IV. Strategic Challenges to Due Process</button>
+                <button id="nav-sec-V" class="nav-btn" onclick="switchTab('sec-V')">V. Chapter Conclusion</button>
+                <button id="nav-sec-VI" class="nav-btn" onclick="switchTab('sec-VI')">VI. Chapter Assessment</button>
+            </div>
+            <div class="nav-actions">
+                <button class="action-btn" onclick="downloadProgress()">Save Progress</button>
+                <label class="action-btn text-center" style="cursor: pointer;">
+                    Load Progress
+                    <input type="file" style="display: none;" onchange="loadProgress(event)">
+                </label>
+                <button class="action-btn" style="border-color: var(--color-wax-red); color: var(--color-wax-red);" onclick="resetProgress()">Reset All</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Start Page -->
+            <section id="sec-1" class="chapter-section active-section">
+                <img src="assets/Header%20Banner%20Chapter%2010.png" alt="Chapter Banner" class="hero-banner-flush">
+                <div class="content-wrapper">
+                    <div class="id-panel">
+                        <div>
+                            <label>Student Name</label>
+                            <input type="text" id="student-name" placeholder="Enter Full Name">
+                        </div>
+                        <div>
+                            <label>Period</label>
+                            <select id="student-period">
+                                <option value="">Select...</option>
+                                <option value="1">1st Period</option>
+                                <option value="2">2nd Period</option>
+                                <option value="3">3rd Period</option>
+                                <option value="4">4th Period</option>
+                                <option value="5">5th Period</option>
+                                <option value="6">6th Period</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label>Date Completed</label>
+                            <input type="text" id="completion-date" readonly placeholder="--/--/--">
+                        </div>
+                    </div>
+
+                    <div class="content-block">
+                        <h3 class="first-p">Core Objectives</h3>
+                        <ul>
+                            <li><strong>Analyze</strong> the protections provided by the Fifth Amendment, including the right against self-incrimination, the prohibition on double jeopardy, the grand jury requirement, and the Takings Clause, and explain how each limits the investigative power of the state.</li>
+                            <li><strong>Identify</strong> the Sixth Amendment's suite of trial guarantees — including the right to counsel, speedy and public trials, an impartial jury, and the Confrontation Clause — and explain how they collectively ensure adversarial fairness.</li>
+                            <li><strong>Evaluate</strong> the distinction between procedural and substantive due process and explain why the Fourteenth Amendment's nationalization of these standards was a transformative development in American constitutional history.</li>
+                            <li><strong>Explain</strong> how modern challenges — including the detention of enemy combatants and the use of algorithmic risk assessment tools — test the traditional understanding of due process and the rights of the accused.</li>
+                        </ul>
+
+                        <h4>Key Terms</h4>
+                        <p class="first-p">Due Process | Procedural Due Process | Substantive Due Process | Self-Incrimination | Double Jeopardy | Miranda Rights | Right to Counsel | Public Defender | Habeas Corpus | Grand Jury</p>
+
+                        <h4>Introduction</h4>
+                        <p class="first-p">Imagine that the state has decided you are guilty of a crime. It has investigators, prosecutors, forensic laboratories, and virtually unlimited financial resources at its disposal. It can subpoena witnesses, gather documents, and build a case against you over months or years. You are a single individual, facing one of the most powerful institutions in human civilization. What stands between you and a verdict reached not by the weight of evidence but by the sheer coercive force of the government?</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_1.png" alt="Individual vs State" class="visual-img">
+                            <p class="caption-text">Due process rests on the recognition that the government possesses far greater investigative, financial, and institutional resources than any individual defendant. The Fifth and Sixth Amendments were designed not to favor the accused, but to constrain the state — ensuring that before the government deprives any person of life, liberty, or property, it must follow a rigorous, transparent, and fair process designed not to make conviction easy, but to make injustice difficult.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> Why does the American constitutional tradition place procedural constraints on the government rather than simply trusting the government to exercise its power fairly on a case-by-case basis?</p>
+                                <textarea id="pq_1" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>The answer, in the American constitutional system, is procedure. The Fifth and Sixth Amendments to the Constitution do not guarantee that every innocent person will go free or that every guilty person will be convicted. What they guarantee is something more foundational: that before the government can deprive any person of their liberty or their life, it must follow a rigorous, transparent, and fair process — one designed not to make conviction easy, but to make injustice difficult. In a republic governed by law rather than by the will of whoever holds power at a given moment, the legitimacy of a criminal conviction depends as much on how the government obtained it as on whether the defendant actually committed the crime.</p>
+                        <p>This principle — that the state must earn the right to punish — is the animating logic of due process. The phrase itself appears in two places in the Constitution: in the Fifth Amendment, which prohibits the federal government from depriving any person of "life, liberty, or property, without due process of law," and in the Fourteenth Amendment, which applies the same prohibition to the states. Together, these provisions establish the constitutional foundation for everything this chapter examines: the right to remain silent, the prohibition on trying a person twice for the same crime, the right to have an attorney, the right to confront your accusers, the right to be tried by an impartial jury, and the right to challenge the lawfulness of your detention in court.</p>
+                        <p>These protections did not emerge from abstract philosophical reasoning alone. They were hard-won responses to historical abuses — to the use of torture to extract confessions, to the imprisonment of political dissidents without trial, to the convictions of poor defendants who had no lawyer and no realistic chance of challenging the evidence against them. Each provision of the Fifth and Sixth Amendments can be traced to a specific kind of injustice that an unconstrained government had inflicted on its citizens. Understanding why these protections were written into the Constitution — and why the Supreme Court has worked to enforce them vigorously — requires understanding the history of what happens when they are absent.</p>
+                        <p>Today, the procedural safeguards of the Fifth and Sixth Amendments face new and unfamiliar challenges. The war on terrorism has raised questions about whether individuals detained by the military as enemy combatants have any right to challenge their imprisonment in civilian courts. The rise of artificial intelligence has introduced algorithmic systems into bail and sentencing decisions, raising questions about what it means to "confront" the evidence that determines your liberty when that evidence is produced by a computer program. And the persistent reality of a two-tiered justice system — one for those who can afford skilled private counsel and one for those who cannot — challenges the promise that the right to counsel is a genuinely meaningful guarantee for every American, regardless of economic circumstances.</p>
+                        <p>This chapter examines each of these dimensions of due process: the specific protections of the Fifth and Sixth Amendments, the doctrinal distinction between procedural and substantive due process, the nationalization of fair trial standards through the Fourteenth Amendment, and the contemporary challenges that are forcing a renegotiation of what constitutional fairness requires in the twenty-first century.</p>
+
+                        <div id="cp-block-1" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.1 According to the text, what is the primary purpose of the procedural safeguards found in the Fifth and Sixth Amendments?</p>
+                                    <label><input type="radio" name="cp1" value="A" onchange="handleRadioChange('cp-block-1')"> A) To ensure that investigators have the resources needed to build a case</label>
+                                    <label><input type="radio" name="cp1" value="B" onchange="handleRadioChange('cp-block-1')"> B) To make it easier for the government to reach a guilty verdict</label>
+                                    <label><input type="radio" name="cp1" value="C" onchange="handleRadioChange('cp-block-1')"> C) To protect individuals from the sheer coercive force of the state</label>
+                                    <label><input type="radio" name="cp1" value="D" onchange="handleRadioChange('cp-block-1')"> D) To guarantee that no guilty person is ever acquitted of a crime</label>
+                                </div>
+                                <div class="checkpoint-q" data-index="1" style="display:none;">
+                                    <p class="first-p">1.2 How does the text explain the historical origin of the protections found in the Fifth and Sixth Amendments?</p>
+                                    <label><input type="radio" name="cp2" value="A" onchange="handleRadioChange('cp-block-1')"> A) They were developed through abstract philosophical experiments by early lawmakers.</label>
+                                    <label><input type="radio" name="cp2" value="B" onchange="handleRadioChange('cp-block-1')"> B) They were created to speed up the process of trying political dissidents.</label>
+                                    <label><input type="radio" name="cp2" value="C" onchange="handleRadioChange('cp-block-1')"> C) They were intended to give the government more power over poor defendants.</label>
+                                    <label><input type="radio" name="cp2" value="D" onchange="handleRadioChange('cp-block-1')"> D) They were hard-won responses to specific historical abuses of government power.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 2</span>
+                                    <div class="flex gap-2">
+                                        <button class="action-btn cp-prev-btn" onclick="navigateCp('cp-block-1', -1)" style="display:none;">← Back</button>
+                                        <button class="action-btn cp-next-btn" onclick="navigateCp('cp-block-1', 1)" disabled>Next Question →</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <div></div>
+                            <button id="btn-next-sec-1" class="action-btn" onclick="switchTab('sec-I')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section I -->
+            <section id="sec-I" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Fifth Amendment: The Shield of the Accused</h2>
+                        <p class="first-p">The Fifth Amendment is, in several respects, the most architecturally sophisticated of the criminal procedure amendments. It does not simply prohibit a single government action; it constructs an entire framework of protections designed to ensure that the process of investigating and prosecuting crime does not itself become a form of oppression. Its provisions address the moment of interrogation, the decision to bring charges, the structure of the trial, and even the government's power to take private property. Understanding the Fifth Amendment means understanding why each of these moments — from the police station to the courthouse — presents a distinctive opportunity for government overreach, and why the Constitution responds to each with a specific structural constraint.</p>
+                        
+                        <h3>The Right Against Self-Incrimination</h3>
+                        <p class="first-p">Perhaps no provision of the Bill of Rights is more familiar to ordinary Americans than the Fifth Amendment's protection against self-incrimination. The phrase "pleading the Fifth" has entered the common vernacular as a shorthand for refusing to answer a question, but its constitutional significance runs far deeper than popular culture suggests. The right against self-incrimination reflects a fundamental commitment to a particular model of criminal justice — one in which the burden of proof rests entirely and always on the government.</p>
+                        
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_2.png" alt="Interrogation Room" class="visual-img">
+                            <p class="caption-text">The right against self-incrimination addresses the structural vulnerability of a person held in police custody and subjected to interrogation. The Supreme Court's decision in Miranda v. Arizona (1966) recognized that the inherently coercive atmosphere of custodial questioning — isolation, psychological pressure, and the authority of the state — created such a significant risk of Fifth Amendment violations that a prophylactic rule was necessary: suspects must be informed of their right to remain silent and their right to counsel before questioning begins.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> Why did the Supreme Court conclude that a warning read at the beginning of an interrogation was a constitutionally necessary protection, rather than simply requiring that confessions be voluntary in fact?</p>
+                                <textarea id="pq_2" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>In the English common law tradition that the American Founders inherited, the principle against compelled self-incrimination had developed over centuries as a response to the practices of ecclesiastical courts and the infamous Star Chamber, a royal prerogative court that used prolonged interrogation, threats, and physical pressure to extract confessions from religious and political dissenters. The colonists who drafted the Fifth Amendment had witnessed, or read about, what happened when the state had the power to compel a person to testify against themselves: confessions became more reliable evidence than they should be, because people confessed to things they had not done simply to end their suffering. The right against self-incrimination was a structural solution to a structural problem — it removed from the government's investigative toolkit the most powerful and the most dangerous instrument of coercion.</p>
+                        <p>In modern constitutional doctrine, the protection against self-incrimination applies in two principal contexts. The first is the criminal trial itself. A defendant in a criminal case has an absolute right not to take the witness stand, and the prosecution is constitutionally prohibited from suggesting to the jury that the defendant's silence is evidence of guilt. The second context is custodial interrogation — the questioning of a person who is in police custody and therefore not free to leave. It was in this second context that the most consequential Fifth Amendment decision of the twentieth century was handed down.</p>
+                        <p>In <em>Miranda v. Arizona</em> (1966), the Supreme Court consolidated four separate cases in which defendants had made incriminating statements to police during interrogations conducted without any notice of their constitutional rights. The defendants in each case were poor, had limited education, and were subjected to hours of questioning in isolated rooms under psychologically manipulative conditions. Chief Justice Earl Warren's majority opinion documented in detail the interrogation techniques then in common use among American police departments — techniques designed not to discover the truth but to overcome the suspect's resistance and obtain a confession. Warren concluded that the inherently coercive atmosphere of custodial interrogation created such a significant risk of Fifth Amendment violations that a prophylactic rule was necessary: before any custodial interrogation, police must inform the suspect that they have the right to remain silent, that anything they say can be used against them in court, that they have the right to an attorney, and that if they cannot afford an attorney, one will be appointed for them.</p>
+                        <p>These warnings — universally known today as "Miranda rights" or the "Miranda warning" — did not prohibit police from questioning suspects. They required only that any waiver of the right to remain silent be "knowing, voluntary, and intelligent." A suspect who was told of their rights and chose to speak with police was making an informed decision; a suspect who was not told of their rights and was psychologically pressured into confessing was not. The Miranda decision was controversial when it was issued and has remained so, with critics arguing that it impedes effective law enforcement and defenders insisting that it is a minimal safeguard against one of the most ancient and persistent abuses of government power.</p>
+
+                        <div id="cp-block-2" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.3 Why did the Supreme Court establish the Miranda warning requirement in Miranda v. Arizona (1966)?</p>
+                                    <label><input type="radio" name="cp3" value="A" onchange="handleRadioChange('cp-block-2')"> A) To guarantee that all suspects are provided with a public defender before arrest.</label>
+                                    <label><input type="radio" name="cp3" value="B" onchange="handleRadioChange('cp-block-2')"> B) To ensure that any waiver of Fifth Amendment rights during custodial interrogation is knowing, voluntary, and intelligent.</label>
+                                    <label><input type="radio" name="cp3" value="C" onchange="handleRadioChange('cp-block-2')"> C) To prohibit police from questioning suspects who have been formally charged with a crime.</label>
+                                    <label><input type="radio" name="cp3" value="D" onchange="handleRadioChange('cp-block-2')"> D) To extend the right against self-incrimination to civil proceedings for the first time.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Prohibition on Double Jeopardy</h3>
+                        <p class="first-p">The Fifth Amendment's double jeopardy clause states that no person shall "be subject for the same offence to be twice put in jeopardy of life or limb." Like the right against self-incrimination, the prohibition on double jeopardy reflects a structural concern about the relative power of the state and the individual. A government that could try a person repeatedly for the same crime — prosecuting until it finally obtained a conviction — would be a government that could use the trial process itself as a form of punishment, regardless of the ultimate verdict. The mere ordeal of repeated prosecution — the cost, the stress, the disruption to a person's life — would be enough to deter dissent and punish unpopular individuals even without a single conviction.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_3.png" alt="Double Jeopardy Diagram" class="visual-img">
+                            <p class="caption-text">The double jeopardy clause reflects a structural concern about the relative power of the state and the individual. A government permitted to retry a defendant repeatedly for the same crime — prosecuting until it finally obtained a conviction — could use the trial process itself as a form of punishment. The clause's finality is a deliberate constitutional choice: the occasional cost of an unjust acquittal is accepted in exchange for permanent protection against governmental harassment through repeated prosecution.</p>
+                        </div>
+
+                        <p>The double jeopardy clause attaches at the moment jeopardy "begins," which in a jury trial means the moment the jury is sworn in. Once a defendant has been acquitted — found not guilty by a jury — the government cannot appeal that verdict and cannot retry the defendant for the same offense, regardless of how strong the evidence was or how flawed the original trial may have been. This rule is absolute and admits of no exception, even in cases where newly discovered evidence might clearly establish guilt. The finality that the double jeopardy clause provides is, in a sense, a deliberate constitutional choice to accept the occasional cost of an unjust acquittal in exchange for the permanent protection against governmental harassment through repeated prosecution.</p>
+                        <p>The most significant qualification on the double jeopardy principle is the dual sovereignty doctrine. Under this doctrine, because federal and state governments are separate and independent "sovereigns," each with its own distinct body of law, a prosecution by one does not bar a subsequent prosecution by the other for the same underlying conduct. This exception is not without controversy. Critics argue that when the federal and state governments prosecute the same individual for the same act — even if they charge different specific offenses — the cumulative burden on the defendant is precisely the kind of prosecutorial harassment the double jeopardy clause was intended to prevent. The Supreme Court has consistently upheld the dual sovereignty doctrine, however, treating it as a logical consequence of the federal structure of American government rather than as a violation of the clause's underlying purpose.</p>
+
+                        <div id="cp-block-3" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.4 What is the primary constitutional purpose of the Fifth Amendment's double jeopardy clause?</p>
+                                    <label><input type="radio" name="cp4" value="A" onchange="handleRadioChange('cp-block-3')"> A) To prevent defendants from being tried in both state and federal court for the same act.</label>
+                                    <label><input type="radio" name="cp4" value="B" onchange="handleRadioChange('cp-block-3')"> B) To guarantee that the government cannot use the trial process as a tool of repeated harassment against an individual.</label>
+                                    <label><input type="radio" name="cp4" value="C" onchange="handleRadioChange('cp-block-3')"> C) To ensure that evidence gathered in a prior trial may not be used in subsequent proceedings.</label>
+                                    <label><input type="radio" name="cp4" value="D" onchange="handleRadioChange('cp-block-3')"> D) To limit the number of appeals a convicted defendant may file after a guilty verdict.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Grand Juries, the Takings Clause, and the Logic of Internal Restraints</h3>
+                        <p class="first-p">Two additional provisions of the Fifth Amendment complete its framework of protections against government overreach: the grand jury requirement and the Takings Clause. Each represents a different dimension of constitutional restraint — one governing the power to prosecute, the other governing the power to take.</p>
+                        <p>The Fifth Amendment requires that "no person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury." A grand jury is a body of citizens — typically between sixteen and twenty-three individuals — convened not to decide guilt or innocence, but to determine whether there is sufficient evidence to bring a criminal charge in the first place. The grand jury serves as a citizen check on prosecutorial power. Before a prosecutor can subject a person to the ordeal of a criminal trial on a serious charge, they must persuade a group of ordinary citizens — not a judge, not a government official — that there is probable cause to believe the defendant committed the alleged crime.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_4.png" alt="Grand Jury" class="visual-img">
+                            <p class="caption-text">The grand jury requirement reflects a constitutional principle that the decision to formally accuse a citizen of a serious crime should involve a community judgment, not merely a government decision. Before a prosecutor can subject any person to the ordeal of a criminal trial on a serious charge, they must persuade a body of ordinary citizens — not a judge or government official — that probable cause exists. The Takings Clause extends the same underlying logic to the government's power of eminent domain, requiring just compensation so that the costs of public projects are not borne arbitrarily by a few individuals for the benefit of all.</p>
+                        </div>
+
+                        <p>The grand jury process is conducted in secret, without the defendant present, and under rules much less formal than those governing trials. In practice, critics have long argued that grand juries almost invariably indict when prosecutors ask them to — the saying that a skilled prosecutor could "indict a ham sandwich" has circulated in legal circles for decades. Whatever its practical limitations, however, the grand jury reflects an important constitutional principle: that the decision to formally accuse a citizen of a serious crime should involve a community judgment, not just a government decision. It is one of the many ways the Fifth Amendment attempts to impose internal restraints on the exercise of state power.</p>
+                        <p>The Takings Clause rounds out the Fifth Amendment by addressing the government's power of eminent domain — the authority to seize private property for public use. The clause does not prohibit the government from taking property; it requires that when the government does so, it must provide "just compensation" to the owner. The purpose is straightforward: if the costs of a public project — a highway, a military base, a public park — were borne entirely by the individuals whose property happened to be in the way, the burden would fall arbitrarily on a few citizens for the benefit of all. Just compensation spreads that burden across the public as a whole, through the tax revenues that fund the payment. The Takings Clause thus reflects the same underlying principle as the rest of the Fifth Amendment: that the government's power, however legitimate in its purposes, must be exercised within limits that protect the individual from being sacrificed to the state's convenience.</p>
+
+                        <div id="cp-block-4" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.5 What is the primary constitutional function of the grand jury in the Fifth Amendment's framework?</p>
+                                    <label><input type="radio" name="cp5" value="A" onchange="handleRadioChange('cp-block-4')"> A) To determine the guilt or innocence of a defendant in serious criminal cases.</label>
+                                    <label><input type="radio" name="cp5" value="B" onchange="handleRadioChange('cp-block-4')"> B) To serve as a citizen check on prosecutorial power by determining whether probable cause exists to bring a formal charge.</label>
+                                    <label><input type="radio" name="cp5" value="C" onchange="handleRadioChange('cp-block-4')"> C) To review the constitutionality of state criminal statutes before trial.</label>
+                                    <label><input type="radio" name="cp5" value="D" onchange="handleRadioChange('cp-block-4')"> D) To authorize the use of evidence obtained without a warrant in cases involving serious crimes.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-1')">← Previous</button>
+                            <button id="btn-next-sec-I" class="action-btn" onclick="switchTab('sec-II')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section II -->
+            <section id="sec-II" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>The Sixth Amendment: The Right to a Fair Trial</h2>
+                        <p class="first-p">If the Fifth Amendment governs the period between a person's encounter with law enforcement and the formal decision to bring charges, the Sixth Amendment governs what happens once a defendant enters the courtroom. Its provisions are designed to ensure that the trial — the central institution of the American criminal justice system — is a genuine search for truth conducted on fair terms between the accused and the government. Each specific guarantee of the Sixth Amendment addresses a particular way in which an unfair trial can masquerade as a legitimate one.</p>
+                        
+                        <h3>The Right to Counsel and the Transformation of American Justice</h3>
+                        <p class="first-p">Of all the Sixth Amendment's guarantees, the right to counsel may have had the most transformative practical impact on the actual administration of justice in the United States. The amendment states simply that "in all criminal prosecutions, the accused shall enjoy the right...to have the Assistance of Counsel for his defence." For most of American history, courts interpreted this provision narrowly: the government could not actively prevent a defendant from hiring a lawyer, but it had no obligation to provide one. The result was that thousands of defendants — particularly the poor, the uneducated, and members of minority communities — faced criminal prosecution without professional legal assistance, in proceedings conducted according to complex rules they had no training to understand, against experienced government prosecutors who faced them day after day.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_5.png" alt="Gideon v. Wainwright" class="visual-img">
+                            <p class="caption-text">For most of American history, the right to counsel guaranteed only that the government could not prevent a defendant from hiring a lawyer — it imposed no obligation to provide one. Gideon v. Wainwright (1963) held that the right to counsel is a fundamental right essential to a fair trial, and that states must provide lawyers to defendants in felony cases who cannot afford them.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> What does the gap between the formal constitutional guarantee of the right to counsel and the chronic under-resourcing of public defender offices reveal about the difference between rights that exist on paper and rights that are meaningfully enforceable in practice?</p>
+                                <textarea id="pq_3" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>The Supreme Court began to address this problem incrementally. In <em>Powell v. Alabama</em> (1932), the Court held that in capital cases involving special circumstances — the defendants in that case were young Black men facing death sentences in a racially charged atmosphere in Alabama — the failure to appoint counsel was a violation of due process. In <em>Johnson v. Zerbst</em> (1938), the Court extended the right to appointed counsel to all federal criminal proceedings. But the fundamental transformation came in <em>Gideon v. Wainwright</em> (1963), one of the most celebrated decisions in the history of the Supreme Court.</p>
+                        <p>Clarence Earl Gideon was a fifty-one-year-old drifter with a long criminal history who was charged in Florida with breaking and entering a poolroom with intent to commit a misdemeanor — a felony under Florida law. At trial, Gideon asked the judge to appoint a lawyer to represent him because he could not afford one. The judge refused, citing Florida law, which permitted appointed counsel only in capital cases. Gideon represented himself, was convicted, and was sentenced to five years in prison. From his cell, he wrote a handwritten petition to the Supreme Court arguing that his constitutional rights had been violated. Justice Hugo Black, writing for a unanimous Court, agreed. Overruling an earlier precedent, the Court held that the right to counsel was a fundamental right, essential to a fair trial, and that states were required by the Fourteenth Amendment to provide lawyers to defendants in felony cases who could not afford them.</p>
+                        <p>The practical consequences of <em>Gideon</em> were enormous. States across the country were required to establish or dramatically expand public defender offices — agencies employing government-paid lawyers whose sole function is to represent defendants who cannot afford private counsel. The public defender system that <em>Gideon</em> necessitated remains one of the most important and most chronically under-resourced institutions in American criminal justice. Studies have consistently shown that public defenders in many jurisdictions carry caseloads far in excess of what professional standards consider manageable, spending only a few minutes with each client and often meeting them for the first time on the day of their hearing. The promise of <em>Gideon</em> — that the constitutional right to counsel means something real regardless of economic circumstances — has been imperfectly honored, and the gap between the formal guarantee and the practical reality remains one of the deepest fault lines in the American justice system.</p>
+
+                        <div id="cp-block-5" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.6 What was the central holding of the Supreme Court's decision in Gideon v. Wainwright (1963)?</p>
+                                    <label><input type="radio" name="cp6" value="A" onchange="handleRadioChange('cp-block-5')"> A) That defendants in capital cases have the right to appointed counsel under the Fifth Amendment.</label>
+                                    <label><input type="radio" name="cp6" value="B" onchange="handleRadioChange('cp-block-5')"> B) That the Sixth Amendment's right to counsel applies to state felony proceedings and requires states to provide lawyers to defendants who cannot afford them.</label>
+                                    <label><input type="radio" name="cp6" value="C" onchange="handleRadioChange('cp-block-5')"> C) That public defenders must be available in all criminal cases, including misdemeanors and infractions.</label>
+                                    <label><input type="radio" name="cp6" value="D" onchange="handleRadioChange('cp-block-5')"> D) That the right to counsel attaches at the moment of arrest, before any questioning begins.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Speedy Trial, the Public Trial, and the Architecture of Transparency</h3>
+                        <p class="first-p">The Sixth Amendment's guarantees of a speedy trial and a public trial are, in a sense, the temporal and spatial dimensions of the right to a fair proceeding. Together, they address not just the internal conduct of a trial but the conditions under which it takes place — conditions that the Framers understood were just as important as the specific procedural rules governing evidence and witness testimony.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_6.png" alt="Speedy and Public Trial" class="visual-img">
+                            <p class="caption-text">The rights to a speedy trial and a public trial address not the internal rules of evidence but the conditions under which a criminal proceeding takes place. Pre-trial detention inflicts severe consequences — separation from family, loss of income, erosion of the ability to prepare a defense — on a person who has not been convicted of anything. The public trial requirement ensures that the administration of criminal justice is observable by journalists, family members, and citizens, functioning as a form of democratic accountability over one of the government's most consequential powers.</p>
+                        </div>
+
+                        <p>The right to a speedy trial protects against a distinct form of government abuse: the use of pre-trial detention as a form of punishment. A defendant who has been charged with a crime but not yet tried is legally presumed innocent. Yet if the government can delay bringing that defendant to trial for months or years — keeping them in jail, away from their family and their livelihood, unable to plan their defense as memories fade and witnesses disappear — it can inflict severe punishment on a person who has not been convicted of anything. The speedy trial guarantee addresses this by requiring that criminal proceedings move forward with reasonable dispatch. The Supreme Court has held that courts must consider four factors in determining whether a delay has violated the speedy trial right: the length of the delay, the government's reasons for it, whether the defendant asserted the right, and whether the defendant suffered actual prejudice. Congress and the states have supplemented this constitutional standard with statutory speedy trial acts that impose specific time limits on various stages of the criminal process.</p>
+                        <p>The right to a public trial serves a different but related function. A trial conducted in secret — or even one conducted in a courtroom that has been cleared of spectators — removes the proceedings from the scrutiny of the community. This removal creates conditions in which misconduct is easier, the pressure to follow proper procedures is reduced, and the legitimacy of the result is harder to assess. The public trial requirement ensures that the administration of criminal justice is observable. Journalists can attend and report on proceedings. Family members of both defendant and victim can be present. Citizens can watch their courts in action and form judgments about whether justice is being done. This transparency is not merely a matter of fairness to the individual defendant — though it is that — but a form of democratic accountability, ensuring that the exercise of one of the government's most consequential powers takes place in the open.</p>
+
+                        <div id="cp-block-6" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.7 Which of the following best explains why the Sixth Amendment guarantees both a speedy trial and a public trial?</p>
+                                    <label><input type="radio" name="cp7" value="A" onchange="handleRadioChange('cp-block-6')"> A) The speedy trial right ensures efficient use of court resources; the public trial right allows victims to observe the proceedings.</label>
+                                    <label><input type="radio" name="cp7" value="B" onchange="handleRadioChange('cp-block-6')"> B) The speedy trial right prevents pre-trial detention from functioning as punishment; the public trial right ensures democratic accountability over the exercise of judicial power.</label>
+                                    <label><input type="radio" name="cp7" value="C" onchange="handleRadioChange('cp-block-6')"> C) Both rights were incorporated to the states in the same Supreme Court decision.</label>
+                                    <label><input type="radio" name="cp7" value="D" onchange="handleRadioChange('cp-block-6')"> D) Both rights apply only to felony cases involving potential imprisonment of more than one year.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Impartial Jury and the Confrontation Clause</h3>
+                        <p class="first-p">The two most operationally significant Sixth Amendment guarantees — the right to trial by an impartial jury and the right to confront adverse witnesses — address the fundamental question of how the truth is to be determined in a criminal case. Both provisions reflect the adversarial model of justice: the idea that truth is most reliably discovered not through a judge or official conducting an inquisition, but through rigorous, public competition between opposing parties under fair rules.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_7.png" alt="Voir Dire Process" class="visual-img">
+                            <p class="caption-text">The right to an impartial jury is one of the oldest protections in the Anglo-American legal tradition, rooted in the principle that a person accused of a crime should be judged not by a government official with a potential interest in securing a conviction, but by a cross-section of the community. Voir dire — the examination and selection of potential jurors — is the practical mechanism through which this ideal is pursued. The Supreme Court's decision in Batson v. Kentucky (1986) held that the prosecution may not use its peremptory challenges to exclude jurors on the basis of race, recognizing that the constitutional requirement of impartiality demands an active, good-faith effort to construct a jury capable of deciding the case on its merits.</p>
+                        </div>
+
+                        <p>The right to an impartial jury is one of the oldest protections in the Anglo-American legal tradition. The concept of a jury trial as a check on governmental tyranny appears in the Magna Carta of 1215, which required that no free man be imprisoned, banished, or destroyed "except by the lawful judgment of his peers." The American constitutional guarantee reflects this tradition while adapting it to republican governance. The defendant is to be judged not by a government official with a potential interest in securing a conviction, but by a cross-section of the community — people who, ideally, bring to the courtroom the common sense, local knowledge, and independence of judgment that the law trusts to evaluate contested facts.</p>
+                        <p>The practical implementation of the impartial jury right involves a process called voir dire — the examination and selection of potential jurors — during which both the prosecution and the defense have the opportunity to identify and remove jurors whose biases or backgrounds might prevent them from deciding the case fairly. The Supreme Court has held, in a series of important cases beginning with <em>Batson v. Kentucky</em> (1986), that the prosecution may not use its peremptory challenges — the right to dismiss potential jurors without stating a reason — to exclude jurors on the basis of race. The principle has since been extended to gender. The constitutional requirement of impartiality is not satisfied by the mere assembly of any twelve people; it demands an active, good-faith effort to construct a jury capable of deciding the case on its merits.</p>
+                        <p>The Confrontation Clause provides that "in all criminal prosecutions, the accused shall enjoy the right...to be confronted with the witnesses against him." This deceptively simple provision has generated a rich and complex body of constitutional law. At its core, the Confrontation Clause serves two related purposes. First, it requires that the witnesses against the defendant testify in open court, under oath, in the presence of the defendant — conditions that make lying more difficult and more consequential than making a private statement to a police officer. Second, it guarantees the defendant's attorney the right of cross-examination — the opportunity to probe the witness's account, expose inconsistencies and biases, and challenge the reliability of the evidence the witness offers. Cross-examination is, in the adversarial system's logic, the great engine of truth-testing. It is the mechanism by which assertions are subjected to the most rigorous available scrutiny, and its absence leaves the defendant unable to challenge even the most dubious claim made against them.</p>
+
+                        <div id="cp-block-7" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.8 What is the primary purpose of cross-examination within the adversarial model of justice?</p>
+                                    <label><input type="radio" name="cp8" value="A" onchange="handleRadioChange('cp-block-7')"> A) To allow the judge to conduct a private inquisition of the facts</label>
+                                    <label><input type="radio" name="cp8" value="B" onchange="handleRadioChange('cp-block-7')"> B) To ensure that witnesses can provide statements without being challenged</label>
+                                    <label><input type="radio" name="cp8" value="C" onchange="handleRadioChange('cp-block-7')"> C) To serve as a mechanism for testing the truth and reliability of witness assertions</label>
+                                    <label><input type="radio" name="cp8" value="D" onchange="handleRadioChange('cp-block-7')"> D) To give the prosecution a way to dismiss jurors without stating a specific reason</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Adversarial System and Its Constitutional Logic</h3>
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_8.png" alt="Adversarial Architecture" class="visual-img">
+                            <p class="caption-text">The Sixth Amendment's guarantees taken together constitute the architecture of the adversarial trial — a system premised on the idea that truth and justice are most reliably produced when two parties of roughly equal capability contest a case under fair rules before a neutral decision-maker. The system does not guarantee perfect outcomes, but it guarantees something more important: that the government's power to deprive a person of liberty is exercised through a process as likely to discover the truth as any human institution can be, and constrained at every stage by rules designed to prevent abuse.</p>
+                        </div>
+
+                        <p>The guarantees of the Sixth Amendment taken together constitute the architecture of the adversarial trial — a system premised on the idea that truth and justice are most reliably produced when two parties of roughly equal capability contest a case under fair rules before a neutral decision-maker. The right to counsel ensures that the defendant has professional assistance in building and presenting their defense. The right to confront witnesses ensures that the prosecution's evidence is subjected to vigorous challenge. The right to an impartial jury ensures that the ultimate decision is made by people with no stake in the outcome. The rights to a speedy and public trial ensure that the process is conducted without undue delay and in the open light of community scrutiny.</p>
+                        <p>This system does not guarantee perfect outcomes. Innocent people have been convicted, and guilty people have gone free, in proceedings that followed every constitutional rule. What the adversarial system and its constitutional protections guarantee is something different and more modest but ultimately more important: that the government's power to deprive a person of liberty is exercised through a process that is as likely to discover the truth as any human institution can be, and that is at every stage constrained by rules designed to prevent the abuse of that power. In a democratic republic that defines itself by its commitment to law over force, that guarantee is not a technicality. It is the foundation on which the legitimacy of the entire criminal justice system rests.</p>
+
+                        <div id="cp-block-8" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.9 What is the primary constitutional purpose of the Sixth Amendment's Confrontation Clause?</p>
+                                    <label><input type="radio" name="cp9" value="A" onchange="handleRadioChange('cp-block-8')"> A) To require that all prosecution witnesses testify in person before a grand jury before trial.</label>
+                                    <label><input type="radio" name="cp9" value="B" onchange="handleRadioChange('cp-block-8')"> B) To guarantee the defendant the right to cross-examine adverse witnesses and challenge the reliability of evidence offered against them.</label>
+                                    <label><input type="radio" name="cp9" value="C" onchange="handleRadioChange('cp-block-8')"> C) To ensure that defendants can call any witness they choose to testify on their behalf.</label>
+                                    <label><input type="radio" name="cp9" value="D" onchange="handleRadioChange('cp-block-8')"> D) To prohibit the use of written statements as evidence in federal criminal trials.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-I')">← Previous</button>
+                            <button id="btn-next-sec-II" class="action-btn" onclick="switchTab('sec-III')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section III -->
+            <section id="sec-III" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Due Process in the Modern Era: Substantive and Procedural</h2>
+                        <p class="first-p">The Fifth and Sixth Amendments address specific procedural protections — particular rules governing particular stages of the criminal process. But American constitutional law has also developed a broader, more abstract conception of due process that asks not merely whether the government followed the correct procedures, but whether the laws themselves — the substantive rules that define rights and impose obligations — are consistent with fundamental constitutional values. This distinction between procedural and substantive due process is one of the most important and most contested in all of American constitutional law.</p>
+
+                        <h3>The Procedural and the Substantive</h3>
+                        <p class="first-p">Procedural due process is the more straightforward of the two concepts. It asks, essentially, whether the government followed the rules before depriving a person of life, liberty, or property. Was the arrest warrant supported by probable cause? Did the defendant receive notice of the charges? Was the defendant given an opportunity to be heard before a decision affecting their interests was made? These are questions about process — about the mechanism by which the government acts — and they apply not just in criminal cases but in any context where the government takes action that affects a person's fundamental interests. A student facing expulsion from a public university, an employee facing termination from a government job, a family facing the removal of children by a child protective services agency — all of these individuals have procedural due process claims if the government acts without adequate notice and opportunity to respond.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_9.png" alt="Procedural vs Substantive" class="visual-img">
+                            <p class="caption-text">Procedural due process asks whether the government followed fair rules before depriving a person of life, liberty, or property — it applies in any context where a government action affects a person's fundamental interests, from criminal prosecution to public employment to the removal of children by a protective services agency. Substantive due process is more philosophically ambitious: it holds that some rights are so fundamental that the government cannot deprive a person of them regardless of what procedures it follows, asking not whether the government followed the rules but whether the rule itself is constitutionally permissible.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> Why is substantive due process more constitutionally controversial than procedural due process, and what are the risks of a doctrine that allows courts to strike down laws simply because they find them inconsistent with fundamental values?</p>
+                                <textarea id="pq_4" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>Substantive due process is a more philosophically ambitious and more controversial doctrine. It holds that some rights are so fundamental — so deeply embedded in the traditions and values of American society — that the government cannot deprive a person of them regardless of what procedures it follows. In other words, the question is not whether the government followed the rules, but whether the rule itself is constitutional. The doctrine has roots in the Lochner era of the early twentieth century, when the Supreme Court used substantive due process to invalidate economic regulations it found inconsistent with liberty of contract — a period of constitutional history that most modern scholars view as a serious judicial overreach. But the doctrine was revived in the mid-twentieth century in a different context: the protection of personal and family autonomy from government interference.</p>
+                        <p>In <em>Griswold v. Connecticut</em> (1965), the Supreme Court struck down a state law that prohibited the use of contraceptives, even by married couples, as a violation of a constitutionally protected right to privacy. The right to privacy is not mentioned explicitly in the Constitution, but Justice William O. Douglas's majority opinion found it in the "penumbras" and "emanations" of several constitutional provisions, including the First, Third, Fourth, Fifth, and Ninth Amendments. Whatever one thinks of the precise analytical framework Douglas employed, the underlying principle has proven durable: there are zones of personal autonomy — decisions about marriage, family, child-rearing, and intimate association — that are so central to individual dignity that the government may not invade them simply because it has complied with procedural requirements.</p>
+
+                        <div id="cp-block-9" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.10 What distinguishes substantive due process from procedural due process?</p>
+                                    <label><input type="radio" name="cp10" value="A" onchange="handleRadioChange('cp-block-9')"> A) Procedural due process applies only in criminal cases; substantive due process applies only in civil cases.</label>
+                                    <label><input type="radio" name="cp10" value="B" onchange="handleRadioChange('cp-block-9')"> B) Procedural due process asks whether the government followed fair rules; substantive due process asks whether the law itself is constitutionally permissible.</label>
+                                    <label><input type="radio" name="cp10" value="C" onchange="handleRadioChange('cp-block-9')"> C) Substantive due process requires a higher burden of proof than procedural due process in all cases.</label>
+                                    <label><input type="radio" name="cp10" value="D" onchange="handleRadioChange('cp-block-9')"> D) Procedural due process applies only to federal government action; substantive due process applies to both federal and state action.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Nationalization of Fairness and the Fourteenth Amendment</h3>
+                        <p class="first-p">For most of the nineteenth century, the due process protections of the Fifth Amendment applied only to the federal government. State criminal justice systems — which handled the overwhelming majority of criminal prosecutions in the United States — operated outside the reach of federal constitutional standards. The result was what might charitably be called a "patchwork of justice": a system in which the rights of an accused person depended entirely on which state they were in, and in which states with little commitment to procedural fairness could run criminal justice systems characterized by coerced confessions, trials without counsel, and all-white juries in cases involving Black defendants.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_10.png" alt="Incorporation Map" class="visual-img">
+                            <p class="caption-text">For most of the nineteenth century, the due process protections of the Fifth and Sixth Amendments applied only to the federal government, leaving state criminal justice systems — which handled the overwhelming majority of criminal prosecutions — outside the reach of federal constitutional standards. The Fourteenth Amendment established the constitutional basis for nationalizing these standards, and the Supreme Court's selective incorporation decisions over the course of the twentieth century transformed American criminal justice from a patchwork of state practices into a system bound by a common constitutional floor, however imperfect and inadequately funded that floor remains.</p>
+                        </div>
+
+                        <p>The Fourteenth Amendment, ratified in 1868 in the aftermath of the Civil War, declared that no state could "deprive any person of life, liberty, or property, without due process of law." This provision established, at least in principle, a national constitutional standard for the treatment of criminal defendants. The realization of that principle, through the process of selective incorporation described in the previous chapter, took most of the twentieth century. But by the end of the Warren Court era in the late 1960s, virtually all of the core procedural protections of the Fifth and Sixth Amendments had been incorporated and applied to the states: the right against self-incrimination (<em>Malloy v. Hogan</em>, 1964), the right to counsel (<em>Gideon v. Wainwright</em>, 1963), the right to a speedy trial (<em>Klopfer v. North Carolina</em>, 1967), the right to confront adverse witnesses (<em>Pointer v. Texas</em>, 1965), and the right to an impartial jury (<em>Duncan v. Louisiana</em>, 1968).</p>
+                        <p>The nationalization of these standards was not merely a technical legal development. It represented a fundamental transformation in the relationship between American citizens and their state governments — a transformation grounded in the conviction that certain procedural protections are not optional features of a justice system but essential preconditions for any system that can legitimately claim to be a justice system at all. A state that convicts people through coerced confessions, without lawyers, before racially compromised juries, and in secret proceedings has not merely done something inefficient or inconvenient. It has undermined its own authority. The legitimacy of a verdict, in a constitutional republic, depends on the integrity of the process by which it was reached.</p>
+
+                        <div id="cp-block-10" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.11 Why was the incorporation of Fifth and Sixth Amendment protections through the Fourteenth Amendment a transformative development in American criminal justice?</p>
+                                    <label><input type="radio" name="cp11" value="A" onchange="handleRadioChange('cp-block-10')"> A) It allowed federal courts to take over state criminal prosecutions in cases involving serious felonies.</label>
+                                    <label><input type="radio" name="cp11" value="B" onchange="handleRadioChange('cp-block-10')"> B) It eliminated the "patchwork of justice" by establishing a national constitutional floor for the treatment of criminal defendants in all states.</label>
+                                    <label><input type="radio" name="cp11" value="C" onchange="handleRadioChange('cp-block-10')"> C) It required states to adopt the federal Rules of Criminal Procedure in all criminal cases.</label>
+                                    <label><input type="radio" name="cp11" value="D" onchange="handleRadioChange('cp-block-10')"> D) It extended the right to a jury trial to civil cases in state courts for the first time.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-II')">← Previous</button>
+                            <button id="btn-next-sec-III" class="action-btn" onclick="switchTab('sec-IV')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section IV -->
+            <section id="sec-IV" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Strategic Challenges to Due Process</h2>
+                        <p class="first-p">The constitutional framework of due process established by the Fifth and Sixth Amendments and nationalized through the Fourteenth was designed for a world of individual prosecutions, identifiable defendants, and conventional courtrooms. The twenty-first century has produced challenges to that framework that the Framers could not have anticipated — challenges that test not just the specific rules of due process but the underlying theory of what fairness requires when the government exercises power over the liberty of individuals.</p>
+
+                        <h3>Terrorism, Habeas Corpus, and the Limits of Emergency Power</h3>
+                        <p class="first-p">The attacks of September 11, 2001, and the military response they triggered created a category of individuals — designated "enemy combatants" — who the executive branch argued fell outside the ordinary legal framework governing both civilian criminal prosecution and the laws of war. Many of these individuals were detained at the U.S. Naval Station at Guantanamo Bay, Cuba, on the theory that because the facility was located outside the territorial United States, U.S. courts had no jurisdiction to hear challenges to their imprisonment. They received no criminal charges, no access to lawyers for extended periods, and no opportunity to contest the factual basis for their detention before any neutral decision-maker.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_11.png" alt="Guantanamo and Habeas Corpus" class="visual-img">
+                            <p class="caption-text">The writ of habeas corpus — the right of any person held in government custody to go to court and demand a legal justification for their detention — is one of the oldest protections in English and American law. Following the September 11 attacks, the executive branch detained individuals at Guantanamo Bay and argued that the facility's location outside U.S. sovereign territory placed it beyond federal court jurisdiction. The Supreme Court's decision in Boumediene v. Bush (2008) held that the Constitution's habeas corpus guarantee cannot be circumvented by a geographic designation, affirming the judiciary's authority to hold the executive branch within constitutional limits even during armed conflict.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> What does the Guantanamo detention controversy reveal about the relationship between national security emergencies and constitutional rights — and why is the availability of habeas corpus described as the precondition for every other procedural right?</p>
+                                <textarea id="pq_5" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>The legal doctrine at the center of this dispute was the ancient writ of habeas corpus — the right of any person held in government custody to go to court and demand a legal justification for their detention. The Latin phrase means, approximately, "you shall have the body," and the writ is one of the oldest protections in English and American law, appearing in the Magna Carta and explicitly recognized in the U.S. Constitution, which prohibits its suspension except "when in Cases of Rebellion or Invasion the public Safety may require it." The writ of habeas corpus is not technically a provision of the Fifth or Sixth Amendment, but it shares their underlying logic: the government must justify to an independent tribunal the reason it is holding a person. Without habeas corpus, every other procedural right becomes theoretical, because there is no mechanism by which a detained person can reach a court to assert those rights.</p>
+                        <p>In <em>Boumediene v. Bush</em> (2008), the Supreme Court held, by a five-to-four margin, that foreign nationals detained at Guantanamo Bay had a constitutional right to challenge their detention through habeas corpus petitions in federal court. Justice Anthony Kennedy's majority opinion concluded that the government could not circumvent the Constitution's habeas corpus guarantee simply by choosing to hold detainees in a location it designated as outside U.S. sovereign territory. The decision was limited and left many questions unresolved, but its core holding was significant: the Constitution's fundamental procedural protections do not simply disappear when the government invokes national security, and the judiciary has both the authority and the responsibility to ensure that the executive branch operates within constitutional limits even in the context of armed conflict.</p>
+
+                        <div id="cp-block-11" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.12 What was the central constitutional question in Boumediene v. Bush (2008)?</p>
+                                    <label><input type="radio" name="cp12" value="A" onchange="handleRadioChange('cp-block-11')"> A) Whether the president had the authority to declare certain individuals enemy combatants without congressional approval.</label>
+                                    <label><input type="radio" name="cp12" value="B" onchange="handleRadioChange('cp-block-11')"> B) Whether foreign nationals detained at Guantanamo Bay had a constitutional right to challenge their detention through habeas corpus.</label>
+                                    <label><input type="radio" name="cp12" value="C" onchange="handleRadioChange('cp-block-11')"> C) Whether evidence obtained through enhanced interrogation techniques was admissible in military tribunals.</label>
+                                    <label><input type="radio" name="cp12" value="D" onchange="handleRadioChange('cp-block-11')"> D) Whether the Geneva Conventions were enforceable as law in U.S. federal courts.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Algorithmic Justice and the Right to Confront</h3>
+                        <p class="first-p">A different kind of challenge to due process has emerged from the increasing use of data-driven decision-making tools in the criminal justice system. In jurisdictions across the United States, judges, prosecutors, and parole boards now routinely consult "risk assessment" algorithms — computer programs that analyze data about a defendant's age, criminal history, employment, education, and neighborhood to generate a numerical score predicting the likelihood that the individual will reoffend or fail to appear for trial. These scores influence decisions about whether a defendant will be detained before trial, how severe a sentence will be, and whether a prisoner will be released on parole.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_12.png" alt="Algorithmic Justice" class="visual-img">
+                            <p class="caption-text">The increasing use of proprietary algorithmic risk assessment tools in bail, sentencing, and parole decisions raises constitutional questions that go to the heart of the Confrontation Clause and the broader due process guarantee of fundamental fairness. If a defendant's liberty is partially determined by a score generated by an algorithm whose internal methodology is treated as a trade secret, the traditional adversarial mechanism for testing evidence — cross-examination — has no obvious object. The constitutional question is whether a "meaningful challenge" to an algorithm whose source code cannot be examined satisfies the Sixth Amendment's requirement that a defendant be able to confront the evidence used against them.</p>
+                        </div>
+
+                        <p>The use of algorithmic risk assessment raises questions that go to the heart of the Sixth Amendment's Confrontation Clause and the broader due process guarantee of fundamental fairness. If a defendant's liberty is partially determined by a risk score generated by a proprietary algorithm — one whose underlying methodology is treated as a trade secret by the company that developed it — does that defendant have a meaningful opportunity to challenge the evidence against them? How can a defense attorney cross-examine a formula? How can a defendant demonstrate that the algorithm was trained on biased data, produces racially disparate results, or is being applied to circumstances it was not designed to handle, if the algorithm's internal workings are not disclosed?</p>
+                        <p>These questions were brought into sharp focus in <em>State v. Loomis</em> (2016), a Wisconsin Supreme Court case in which a defendant challenged his sentence in part on the grounds that the trial court had relied on a risk assessment score from a proprietary algorithm called COMPAS. The Wisconsin court upheld the sentence, concluding that the score was merely one factor among many and that the defendant had been provided with enough information about how the algorithm worked to mount a meaningful challenge. Critics found this reasoning unpersuasive, arguing that a "meaningful challenge" to an algorithm whose source code cannot be examined is no challenge at all.</p>
+                        <p>The deeper constitutional issue raised by algorithmic decision-making is not simply technical. It is about what due process means when government power is exercised through mechanisms that are opaque, automated, and insulated from the kind of human judgment that traditional procedural safeguards were designed to check. The Confrontation Clause assumes that the evidence against a defendant can be identified, examined, and challenged by a human advocate in a public proceeding. An algorithm that produces a risk score without explaining its reasoning does not fit easily into that framework — and whether the constitutional guarantee of confrontation can be adapted to reach it is a question that courts and legislatures are only beginning to address.</p>
+
+                        <div id="cp-block-12" class="checkpoint-block" data-current="0">
+                            <h3>Checkpoint</h3>
+                            <div class="checkpoint-grid">
+                                <div class="checkpoint-q" data-index="0">
+                                    <p class="first-p">1.13 How does the use of proprietary risk-assessment algorithms in sentencing challenge the Sixth Amendment's Confrontation Clause?</p>
+                                    <label><input type="radio" name="cp13" value="A" onchange="handleRadioChange('cp-block-12')"> A) By requiring judges to base their entire sentencing decision on a computer-generated score.</label>
+                                    <label><input type="radio" name="cp13" value="B" onchange="handleRadioChange('cp-block-12')"> B) By preventing defense attorneys from examining and cross-examining the internal logic and data of the formula.</label>
+                                    <label><input type="radio" name="cp13" value="C" onchange="handleRadioChange('cp-block-12')"> C) By ensuring that only human advocates are allowed to present evidence in a public proceeding.</label>
+                                    <label><input type="radio" name="cp13" value="D" onchange="handleRadioChange('cp-block-12')"> D) By automatically releasing defendants on parole regardless of their criminal history.</label>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="cp-indicator">1 of 1</span>
+                                    <button class="action-btn cp-next-btn" disabled>Finish Checkpoint</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>The Fragility of Fairness in a Constitutional Republic</h3>
+                        <p class="first-p">The challenges posed by the detention of enemy combatants and the use of algorithmic risk assessment tools are, on their surface, very different. One involves the application of due process to individuals in military custody during an armed conflict; the other involves the use of data-driven technology in routine civilian criminal proceedings. But they share a common constitutional theme: the question of what happens to the principles of procedural fairness when the circumstances of their application do not fit the models for which they were designed.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_13.png" alt="Courthouse Steps" class="visual-img">
+                            <p class="caption-text">The challenges of the twenty-first century — from Guantanamo detention to algorithmic risk scores — demonstrate that constitutional principles do not enforce themselves. They require courts willing to hold the government to its obligations, legislatures willing to fund the institutions that make those obligations meaningful, and citizens willing to insist that fairness is not negotiable even when the accused is unpopular, dangerous, or foreign. The underlying constitutional commitment is not that these principles are easy to honor, but that they will not be abandoned simply because honoring them is inconvenient.</p>
+                        </div>
+
+                        <p>The answer that the constitutional tradition suggests is not that fairness becomes optional when circumstances are difficult or unfamiliar. It is that the underlying principles — the burden of proof on the government, the right to be heard, the right to confront evidence, the right to an independent tribunal — must be translated into whatever forms the new circumstances require. This translation is never easy and is rarely accomplished without controversy. The judiciary, the legislature, and the executive branch must all participate in working out what due process means in a world that the Framers did not foresee. The Fifth and Sixth Amendments do not provide automatic answers to questions about enemy combatants or COMPAS scores. What they provide is a framework of principles — and a constitutional commitment that those principles will not be abandoned simply because honoring them is inconvenient.</p>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-III')">← Previous</button>
+                            <button id="btn-next-sec-IV" class="action-btn" onclick="switchTab('sec-V')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section V -->
+            <section id="sec-V" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block">
+                        <h2>Chapter Conclusion</h2>
+                        <p class="first-p">The Fifth and Sixth Amendments together constitute the procedural architecture of American criminal justice — a structure built on the premise that the legitimacy of government power depends not just on its purposes but on the manner in which it is exercised. The right against self-incrimination ensures that the state must build its case on evidence it gathers, not on compulsion of the accused. The prohibition on double jeopardy ensures that prosecution cannot function as an instrument of harassment. The grand jury requirement ensures that the decision to charge a serious crime involves a community judgment, not just a government one. The rights to counsel, a speedy and public trial, an impartial jury, and confrontation of witnesses ensure that when a person's liberty is at stake, the truth is sought through a process that is fair, transparent, and adversarial in the best sense of that word.</p>
+
+                        <div class="visual-wrapper">
+                            <img src="assets/Visual_14.png" alt="Supreme Court Chamber" class="visual-img">
+                            <p class="caption-text">The Fifth and Sixth Amendments together constitute the procedural architecture of American criminal justice — a structure built on the premise that the legitimacy of government power depends not just on its purposes but on the manner in which it is exercised. When a court excludes a coerced confession, reverses a conviction obtained without counsel, or requires the government to justify a detention before an independent judge, it is not protecting a criminal — it is protecting the principle that government power must be exercised within limits, and that even the most powerful institution in American life is not above the law it claims to enforce.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> The chapter argues that procedural integrity is not a technicality but the mechanism by which law maintains its claim to be something other than the will of those who happen to hold power. Do you find this argument persuasive, and what would American criminal justice look like if procedural protections were treated as obstacles to efficient prosecution rather than as constitutional foundations of legitimacy?</p>
+                                <textarea id="pq_6" class="textarea-dark" placeholder="Your response..."></textarea>
+                            </div>
+                        </div>
+
+                        <p>This chapter's essential question — how the Fifth and Sixth Amendments ensure the procedural integrity of the American legal system — points toward a deeper truth about constitutional government. Procedural integrity is not a luxury or a technicality. It is the mechanism by which the law maintains its claim to be something other than the will of those who happen to hold power at a given moment. When a court excludes a coerced confession, or reverses a conviction obtained without counsel, or requires the government to justify a detention before an independent judge, it is not protecting a criminal. It is protecting the principle that government power must be exercised within limits — that even the most powerful institution in American life is not above the law it claims to enforce.</p>
+                        <p>The nationalization of these standards through the Fourteenth Amendment was one of the defining constitutional achievements of the twentieth century. It transformed American criminal justice from a patchwork of widely varying state practices into a system bound by a common constitutional floor — imperfect, contested, and often inadequately funded, but grounded in principles that apply to every defendant in every courtroom in every state.</p>
+                        <p>The challenges of the twenty-first century — from Guantanamo to algorithmic risk scores — remind us that these principles must be continuously applied, interpreted, and defended. They do not enforce themselves. They require courts willing to hold the government to its constitutional obligations, legislatures willing to fund the institutions — public defenders, independent courts — that make those obligations meaningful, and citizens willing to insist that fairness is not negotiable even when the accused is unpopular, dangerous, or foreign. As the next chapter will explore, these same commitments to equality and fairness that animate due process also shape the constitutional guarantee of equal protection — the demand that the law's burdens and benefits be distributed without regard to race, gender, or other characteristics that have historically been used to define who deserves the full protection of American law.</p>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-IV')">← Previous</button>
+                            <button id="btn-next-sec-V" class="action-btn" onclick="switchTab('sec-VI')">Next Section →</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section VI -->
+            <section id="sec-VI" class="chapter-section">
+                <div class="content-wrapper">
+                    <div class="content-block chapter-assessment">
+                        <h2>Chapter Assessment</h2>
+                        
+                        <h3>Section I — Vocabulary</h3>
+                        <div class="content-block !p-8 !bg-black/20">
+                            <p class="first-p mb-6"><strong>Word Bank:</strong> Due Process, Procedural Due Process, Substantive Due Process, Self-Incrimination, Double Jeopardy, Miranda Rights, Right to Counsel, Public Defender, Habeas Corpus, Grand Jury</p>
+                            
+                            <div class="space-y-4">
+                                <p>1. The constitutional principle that the government must follow fair procedures before depriving any person of life, liberty, or property is called <input type="text" id="pq_7" class="vocab-input">.</p>
+                                <p>2. The Fifth Amendment protection that prevents individuals from being compelled to testify against themselves is the right against <input type="text" id="pq_8" class="vocab-input">.</p>
+                                <p>3. The constitutional prohibition against trying a person twice for the same crime after an acquittal or conviction is called <input type="text" id="pq_9" class="vocab-input">.</p>
+                                <p>4. The requirement, established in <em>Miranda v. Arizona</em>, that suspects be informed of their rights to remain silent and to have an attorney before police questioning is known as <input type="text" id="pq_10" class="vocab-input">.</p>
+                                <p>5. The Sixth Amendment guarantee ensuring that defendants have access to professional legal representation is called the <input type="text" id="pq_11" class="vocab-input">.</p>
+                                <p>6. A government-appointed attorney provided to defendants who cannot afford private legal representation is called a <input type="text" id="pq_12" class="vocab-input">.</p>
+                                <p>7. A writ requiring that a person under arrest be brought before a court to determine whether their detention is lawful is called <input type="text" id="pq_13" class="vocab-input">.</p>
+                                <p>8. A body of citizens convened to determine whether sufficient evidence exists to formally charge a person with a serious crime is called a <input type="text" id="pq_14" class="vocab-input">.</p>
+                                <p>9. The principle that asks whether the government followed correct rules and procedures before depriving a person of rights is called <input type="text" id="pq_15" class="vocab-input">.</p>
+                                <p>10. The doctrine holding that certain fundamental rights are protected from government interference regardless of what procedures are followed is called <input type="text" id="pq_16" class="vocab-input">.</p>
+                            </div>
+                        </div>
+
+                        <h3>Section III — Guided Analysis</h3>
+                        <div class="space-y-8">
+                            <div>
+                                <p class="first-p">1. Explain the relationship between the right against self-incrimination and the Miranda warning requirement. Why did the Supreme Court conclude that the warning was necessary to make the Fifth Amendment protection meaningful in the context of police interrogation? Use specific evidence from the chapter in your response.</p>
+                                <textarea id="pq_17" class="textarea-dark"></textarea>
+                            </div>
+                            <div>
+                                <p class="first-p">2. The chapter describes the adversarial system as the constitutional logic underlying the Sixth Amendment. Using the rights to counsel, confrontation, and an impartial jury as examples, explain how each of these guarantees contributes to the adversarial model of justice — and what the system risks losing if any one of them is absent or inadequately honored.</p>
+                                <textarea id="pq_18" class="textarea-dark"></textarea>
+                            </div>
+                            <div>
+                                <p class="first-p">3. The chapter argues that the nationalization of due process standards through the Fourteenth Amendment eliminated the "patchwork of justice." Using at least two specific Supreme Court decisions discussed in the chapter, explain what changed in American criminal justice as a result of incorporation, and why you think those changes were or were not constitutionally necessary.</p>
+                                <textarea id="pq_19" class="textarea-dark"></textarea>
+                            </div>
+                            <div>
+                                <p class="first-p">4. The chapter identifies two modern challenges to traditional due process frameworks: the detention of enemy combatants and the use of algorithmic risk assessment. Compare these two challenges. In what ways do they raise similar constitutional concerns? In what ways are they distinct? Which do you consider a more significant threat to constitutional principles, and why?</p>
+                                <textarea id="pq_20" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <h3>Section IV — Visual Analysis</h3>
+                        <div class="visual-wrapper">
+                            <img src="assets/Assessment_1.png" alt="Path of a Criminal Case Flowchart" class="visual-img">
+                            <p class="caption-text">Flowchart: The Path of a Criminal Case Through Fifth and Sixth Amendment Protections.</p>
+                            <div class="question-box">
+                                <p class="first-p"><strong>Analysis Question:</strong> At which stage of the criminal process do Fifth Amendment protections most directly apply, and at which stage do Sixth Amendment protections become most active? What does this distribution reveal about the different concerns each amendment was designed to address?</p>
+                                <textarea id="va_1" class="textarea-dark"></textarea>
+                                <p class="first-p"><strong>Analysis Question:</strong> If a defendant's right to counsel was denied at the arraignment stage, how might that affect their ability to exercise subsequent rights? Use at least two subsequent stages in your answer.</p>
+                                <textarea id="va_2" class="textarea-dark"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col md:flex-row gap-8 items-start my-12 bg-black/20 p-6 rounded-lg border border-white/10">
+                            <div class="visual-wrapper portrait !m-0 flex-shrink-0" style="width: 35%;">
+                                <img src="assets/Assessment_2.png" alt="Public Defender Caseloads Graph" class="visual-img">
+                                <p class="caption-text">Bar Graph: Public Defender Caseloads vs. Recommended Standards.</p>
+                            </div>
+                            <div class="flex-grow space-y-6">
+                                <div>
+                                    <p class="first-p font-bold text-gold">Analysis Question:</p>
+                                    <p class="first-p text-sm mb-2 italic">What does the gap between actual caseloads and the recommended standard suggest about the practical fulfillment of the Gideon guarantee in the United States? Is a nominal right to counsel a meaningful constitutional protection if the lawyers provided are structurally unable to provide adequate representation?</p>
+                                    <textarea id="va_3" class="textarea-dark !min-h-[150px]"></textarea>
+                                </div>
+                                <div>
+                                    <p class="first-p font-bold text-gold">Analysis Question:</p>
+                                    <p class="first-p text-sm mb-2 italic">Based on the constitutional principles discussed in this chapter, what reforms — legal, legislative, or financial — might be necessary to make the Sixth Amendment's right to counsel a genuinely equal protection for all defendants regardless of economic circumstances?</p>
+                                    <textarea id="va_4" class="textarea-dark !min-h-[150px]"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>Section V — Primary Source (CER)</h3>
+                        <div class="bg-black/20 p-8 rounded-lg border-l-4 border-gold">
+                            <p class="first-p italic mb-6">"Prior to any questioning, the person must be warned that he has a right to remain silent, that any statement he does make may be used as evidence against him, and that he has a right to the presence of an attorney, either retained or appointed. The defendant may waive effectuation of these rights, provided the waiver is made voluntarily, knowingly and intelligently." — Miranda v. Arizona (1966)</p>
+                            
+                            <div class="space-y-6">
+                                <div>
+                                    <label class="block text-gold text-xs uppercase tracking-widest mb-2">Claim</label>
+                                    <textarea id="pq_21" class="textarea-dark" placeholder="Make a claim about whether the Miranda warning requirement adequately protects the Fifth Amendment right..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-gold text-xs uppercase tracking-widest mb-2">Evidence</label>
+                                    <textarea id="pq_22" class="textarea-dark" placeholder="Quote or closely paraphrase at least one specific phrase from the excerpt above..."></textarea>
+                                </div>
+                                <div>
+                                    <label class="block text-gold text-xs uppercase tracking-widest mb-2">Reasoning</label>
+                                    <textarea id="pq_23" class="textarea-dark" placeholder="Explain how the evidence supports your claim..."></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mt-12">Section VI — Modern Reflection</h3>
+                        <p class="first-p">Does the use of a proprietary algorithmic tool in a decision affecting a person's liberty satisfy the requirements of due process under the Fifth and Sixth Amendments? Apply the constitutional principles of procedural due process, the Confrontation Clause, and the <em>Gideon</em> right to meaningful counsel to construct an argument about what the Constitution requires when government uses algorithmic tools to determine a citizen's freedom. In your response, consider both sides: the legitimate interest in using data-driven tools to improve consistency and fairness, and the constitutional concern that a defendant's right to confront and challenge the evidence must be more than a theoretical formality. Where should the constitutional line be drawn?</p>
+                        <textarea id="pq_24" class="textarea-dark" placeholder="Enter your essay response here..."></textarea>
+
+                        <div class="bottom-nav">
+                            <button class="action-btn" onclick="switchTab('sec-V')">← Previous</button>
+                            <button class="action-btn" onclick="finishChapter()" style="background: var(--color-gold); color: var(--color-navy-deep);">Finished ✓</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        /* Background Management */
+        const bgImages = ['assets/bg_1.png', 'assets/bg_2.png', 'assets/bg_3.png', 'assets/bg_4.png', 'assets/bg_5.png', 'assets/bg_6.png'];
+        let bgIndex = 0;
+        function rotateBackground() {
+            if (bgImages.length === 0) return;
+            const bgEl = document.getElementById('bg-slideshow');
+            if (!bgEl) return;
+            bgEl.style.backgroundImage = `url('${bgImages[bgIndex]}')`;
+            bgIndex = (bgIndex + 1) % bgImages.length;
+        }
+
+        /* Navigation */
+        function switchTab(id, btnId = null, scrollTarget = null) {
+            document.querySelectorAll('.chapter-section').forEach(s => s.classList.remove('active-section'));
+            document.getElementById(id).classList.add('active-section');
+            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+            const activeBtnId = btnId || ('nav-' + id);
+            const activeBtn = document.getElementById(activeBtnId);
+            if (activeBtn) { activeBtn.classList.add('active-nav'); }
+            
+            if (scrollTarget) {
+                setTimeout(() => {
+                    const target = document.getElementById(scrollTarget);
+                    if(target) {
+                        const offset = 40;
+                        const bodyRect = document.body.getBoundingClientRect().top;
+                        const elementRect = target.getBoundingClientRect().top;
+                        const elementPosition = elementRect - bodyRect;
+                        window.scrollTo({ top: elementPosition - offset, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+            saveProgress();
+        }
+
+        /* Data Collection & Export */
+        function collectAssignmentData(isFinal) {
+            const studentName = document.getElementById('student-name').value || "Unknown_Student";
+            const studentPeriod = document.getElementById('student-period').value || "Unknown_Period";
+            const now = new Date().toLocaleDateString();
+            const assignmentData = {
+                assignmentTitle: "Interactive Chapter 10 - Due Process and the Rights of the Accused",
+                studentInfo: { name: studentName, period: studentPeriod, dateCompleted: isFinal ? now : "In Progress" },
+                responses: { visualAnalysis: {}, checkpoints: {}, perspectiveQuestions: {} }
+            };
+
+            // Process Checkpoints
+            for(let i=1; i<=30; i++) {
+                let inputs = document.querySelectorAll(`input[name="cp${i}"]`);
+                if(inputs.length > 0) {
+                    let checked = document.querySelector(`input[name="cp${i}"]:checked`);
+                    let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                    assignmentData.responses.checkpoints[qText] = checked ? checked.value : "No Answer";
+                }
+            }
+
+            // Process Visual Analysis
+            for(let i=1; i<=4; i++) {
+                let el = document.getElementById('va_' + i);
+                if(el) {
+                    let qText = el.previousElementSibling ? el.previousElementSibling.innerText : 'VA Question ' + i;
+                    assignmentData.responses.visualAnalysis[qText] = el.value.trim();
+                }
+            }
+
+            // Process Perspective / Guided / Vocabulary Questions
+            for(let i=1; i<=24; i++) {
+                let el = document.getElementById('pq_' + i);
+                if(el) {
+                    let qText = '';
+                    if (i >= 7 && i <= 16) {
+                        qText = 'Vocabulary ' + (i-6);
+                    } else {
+                        qText = el.previousElementSibling ? el.previousElementSibling.innerText : 'PQ Question ' + i;
+                    }
+                    assignmentData.responses.perspectiveQuestions[qText] = el.value.trim();
+                }
+            }
+            return assignmentData;
+        }
+
+        function triggerDownload(data, filename) {
+            const dataStr = JSON.stringify(data, null, 2);
+            const blob = new Blob([dataStr], { type: "application/json" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function downloadProgress() {
+            const data = collectAssignmentData(false);
+            const safeName = data.studentInfo.name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_10_Progress_${safeName}.json`);
+        }
+
+        function finishChapter() {
+            const name = document.getElementById('student-name').value;
+            if(!name) { alert("Please enter your name first!"); return; }
+            document.getElementById('completion-date').value = new Date().toLocaleDateString();
+            const data = collectAssignmentData(true);
+            const safeName = name.replace(/[^a-z0-9]/gi, '').toLowerCase();
+            triggerDownload(data, `Chapter_10_Export_${safeName}.json`);
+            alert('Progress exported! Please upload the JSON file to Canvas.');
+            switchTab('sec-1');
+        }
+
+        function loadProgress(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                try {
+                    const loadedData = JSON.parse(e.target.result);
+                    if (loadedData.studentInfo) {
+                        document.getElementById('student-name').value = loadedData.studentInfo.name;
+                        document.getElementById('student-period').value = loadedData.studentInfo.period;
+                    }
+                    if (loadedData.responses) {
+                        // Load Checkpoints
+                        for(let i=1; i<=30; i++) {
+                            let inputs = document.querySelectorAll(`input[name="cp${i}"]`);
+                            if(inputs.length > 0) {
+                                let qText = inputs[0].closest('.checkpoint-q').querySelector('p.first-p').innerText.trim();
+                                let val = loadedData.responses.checkpoints[qText];
+                                if(val && val !== "No Answer") {
+                                    let radio = document.querySelector(`input[name="cp${i}"][value="${val}"]`);
+                                    if(radio) radio.checked = true;
+                                }
+                            }
+                        }
+                        // Load Textareas and inputs
+                        for(let i=1; i<=24; i++) {
+                            let el = document.getElementById('pq_' + i);
+                            if(el) {
+                                let qText = (i >= 7 && i <= 16) ? 'Vocabulary ' + (i-6) : (el.previousElementSibling ? el.previousElementSibling.innerText : 'PQ Question ' + i);
+                                if(loadedData.responses.perspectiveQuestions[qText]) el.value = loadedData.responses.perspectiveQuestions[qText];
+                            }
+                        }
+                        for(let i=1; i<=4; i++) {
+                            let el = document.getElementById('va_' + i);
+                            if(el) {
+                                let qText = el.previousElementSibling ? el.previousElementSibling.innerText : 'VA Question ' + i;
+                                if(loadedData.responses.visualAnalysis[qText]) el.value = loadedData.responses.visualAnalysis[qText];
+                            }
+                        }
+                    }
+                    initCheckpoints();
+                    alert('Progress loaded successfully!');
+                } catch (err) { alert('Invalid file format.'); }
+            };
+            reader.readAsText(file);
+        }
+
+        function resetProgress() {
+            if(confirm('Are you sure you want to reset all progress? Work cannot be recovered.')) location.reload();
+        }
+
+        /* Checkpoint Management */
+        const TOTAL_CHECKPOINTS = 12;
+        function initCheckpoints() {
+            for(let i=1; i<=TOTAL_CHECKPOINTS; i++) { updateCpUI(`cp-block-${i}`); }
+            checkSectionUnlock();
+        }
+
+        function updateCpUI(blockId) {
+            const block = document.getElementById(blockId);
+            if(!block) return;
+            const currentIndex = parseInt(block.getAttribute('data-current') || '0');
+            const questions = block.querySelectorAll('.checkpoint-q');
+            const indicator = block.querySelector('.cp-indicator');
+            const prevBtn = block.querySelector('.cp-prev-btn');
+            const nextBtn = block.querySelector('.cp-next-btn');
+
+            questions.forEach((q, idx) => { q.style.display = (idx === currentIndex) ? 'block' : 'none'; });
+            if(indicator) indicator.innerText = `${currentIndex + 1} of ${questions.length}`;
+            if(prevBtn) prevBtn.style.display = (currentIndex === 0) ? 'none' : 'inline-block';
+
+            if(nextBtn) {
+                const isAns = questions[currentIndex].querySelector('input[type="radio"]:checked') !== null;
+                if (currentIndex === questions.length - 1) {
+                    if (isAns) {
+                        nextBtn.innerText = "✓ Completed";
+                        nextBtn.disabled = true; nextBtn.style.opacity = '1';
+                    } else {
+                        nextBtn.innerText = "Finish Checkpoint";
+                        nextBtn.disabled = true; nextBtn.style.opacity = '0.5';
+                    }
+                } else {
+                    nextBtn.innerText = "Next Question →";
+                    nextBtn.disabled = !isAns; nextBtn.style.opacity = isAns ? '1' : '0.5';
+                }
+            }
+            checkSectionUnlock();
+        }
+
+        function navigateCp(blockId, dir) {
+            const block = document.getElementById(blockId);
+            let idx = parseInt(block.getAttribute('data-current') || '0') + dir;
+            block.setAttribute('data-current', idx);
+            updateCpUI(blockId);
+        }
+
+        function handleRadioChange(blockId) { updateCpUI(blockId); saveProgress(); }
+
+        function checkSectionUnlock() {
+            const secIDone = isBlockDone('cp-block-1');
+            const secIIDone = isBlockDone('cp-block-2') && isBlockDone('cp-block-3') && isBlockDone('cp-block-4');
+            const secIIIDone = isBlockDone('cp-block-5') && isBlockDone('cp-block-6') && isBlockDone('cp-block-7') && isBlockDone('cp-block-8');
+            const secIVDone = isBlockDone('cp-block-9') && isBlockDone('cp-block-10');
+            const secVDone = isBlockDone('cp-block-11') && isBlockDone('cp-block-12');
+
+            setNavState('btn-next-sec-1', true);
+            setNavState('btn-next-sec-I', secIIDone);
+            setNavState('btn-next-sec-II', secIIIDone);
+            setNavState('btn-next-sec-III', secIVDone);
+            setNavState('btn-next-sec-IV', secVDone);
+        }
+
+        function isBlockDone(id) {
+            const b = document.getElementById(id);
+            if(!b) return true;
+            const qs = b.querySelectorAll('.checkpoint-q');
+            return Array.from(qs).every(q => q.querySelector('input[type="radio"]:checked') !== null);
+        }
+
+        function setNavState(id, enabled) {
+            const b = document.getElementById(id);
+            if(!b) return;
+            if(enabled) {
+                b.disabled = false; b.style.opacity = '1'; b.innerHTML = 'Next Section →';
+            } else {
+                b.disabled = true; b.style.opacity = '0.5'; b.innerHTML = '🔒 Complete Checkpoints';
+            }
+        }
+
+        function saveProgress() { console.log('Work saved to state.'); }
+
+        window.onload = () => {
+            rotateBackground();
+            setInterval(rotateBackground, 10000);
+            initCheckpoints();
+        };
+    </script>
+</body>
+</html>
