@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Too Weak? How Was It Fixed? · Sort &amp; Defend 1</title><style>
+:root{
+  --navy:#10263F; --cream:#F4EFE3; --blue:#2A5276; --gold:#B8913F; --pale:#E6CF8C; --green:#2E6B3E;
+  --goldtext:#7A5A12; --card:#FFFDF8; --line:#D9CFB5; --text:#10263F; --muted:#4F5B68;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --cream:#0B1826; --card:#132A44; --text:#F4EFE3; --muted:#C7CFD8; --line:#34506E; --goldtext:#E6CF8C; --blue:#7FB0DB; --green:#7FD39A; }
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);color:var(--text);font-family:Georgia,'Times New Roman',serif;line-height:1.55;font-size:17px}
+.wrap{max-width:820px;margin:0 auto;padding:0 16px 40px}
+.hero{background:#10263F;color:#F4EFE3;padding:26px 16px 22px;border-bottom:5px solid var(--pale)}
+.hero .in{max-width:820px;margin:0 auto}
+.eyebrow{display:inline-block;background:#2A5276;color:#F4EFE3;font:700 13px Arial,sans-serif;letter-spacing:2px;padding:5px 12px}
+.hero h1{margin:10px 0 4px;font-size:34px;line-height:1.1}
+.hero .sub{font-style:italic;color:#E6CF8C;font-size:16px}
+.langs{display:flex;gap:8px;margin:16px 0 0;flex-wrap:wrap}
+.langs button{font:700 15px Arial,sans-serif;padding:9px 16px;border:2px solid #E6CF8C;background:transparent;color:#F4EFE3;border-radius:8px;cursor:pointer}
+.langs button[aria-pressed="true"]{background:#E6CF8C;color:#10263F}
+.box{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--gold);border-radius:8px;padding:14px 16px;margin:18px 0}
+.bq{font-size:19px}
+.bq b.lbl{display:block;font:700 13px Arial,sans-serif;letter-spacing:1.5px;color:var(--goldtext);margin-bottom:4px}
+.job{margin:8px 0 0;font-style:italic}
+.how h2{margin:0 0 6px;font:700 15px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase}
+.how ol{margin:0;padding-left:22px}
+[dir=rtl] .how ol{padding-left:0;padding-right:22px}
+.names{display:grid;grid-template-columns:1fr 1fr 110px 1fr;gap:10px;margin:18px 0}
+.names label{display:block;font:700 13px Arial,sans-serif;margin-bottom:3px}
+.names input{width:100%;font:16px Arial,sans-serif;padding:9px;border:2px solid var(--line);border-radius:6px;background:var(--card);color:var(--text)}
+.names input.bad{border-color:#B3261E;background:#FDECEA;color:#10263F}
+.names input[readonly]{opacity:.75}
+@media(max-width:620px){.names{grid-template-columns:1fr 1fr}.stances{grid-template-columns:1fr!important}.hero h1{font-size:28px}}
+.meter{margin:14px 0}
+.meter .bar{height:12px;background:var(--line);border-radius:7px;overflow:hidden}
+.meter .fill{height:100%;width:0;background:var(--blue);transition:width .3s}
+.meter p{margin:5px 0 0;font:700 14px Arial,sans-serif}
+.card{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--line);border-radius:10px;padding:16px;margin:20px 0}
+.card.done{border-left-color:var(--blue)}
+.card.isS{border-left-color:var(--gold)}
+.card.isV{border-left-color:var(--green)}
+.cardtop{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+.chip{background:#10263F;color:#E6CF8C;font:700 15px Arial,sans-serif;padding:3px 12px;border-radius:14px}
+.caseno{font:700 13px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;color:var(--muted)}
+.meta{margin:2px 0;font-size:15px}
+.intro{margin:10px 0;font-style:italic}
+blockquote{margin:10px 0;padding:12px 14px;background:#F4EFE3;color:#10263F;border-left:5px solid var(--gold);font-style:italic;font-size:18px;line-height:1.6}
+.orig{display:none;font-size:14px;color:var(--muted);margin:2px 0 6px}
+.cite{font:13px Arial,sans-serif;color:var(--muted);margin:4px 0 10px;direction:ltr;text-align:left}
+.help,.hint{font:15px Arial,sans-serif;margin:6px 0}
+.hint{color:var(--goldtext)}
+.q{font:700 16px Arial,sans-serif;margin:14px 0 6px}
+.stances{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.st{font-family:Arial,sans-serif;text-align:start;padding:10px;border:2px solid var(--line);background:var(--card);color:var(--text);border-radius:8px;cursor:pointer;min-height:76px}
+.st b{display:block;font-size:17px}
+.st small{display:block;font-size:12.5px;margin-top:3px;color:var(--muted)}
+.st[aria-pressed="true"]{color:#fff}
+.st[aria-pressed="true"] small{color:#fff}
+.stN[aria-pressed="true"]{background:#2A5276;border-color:#10263F}
+.stS[aria-pressed="true"]{background:#7A5A12;border-color:#4A3608}
+.stV[aria-pressed="true"]{background:#2E6B3E;border-color:#1B4527}
+textarea,select{width:100%;font:16px Arial,sans-serif;padding:10px;border:2px solid var(--line);border-radius:6px;margin-top:10px;background:var(--card);color:var(--text);unicode-bidi:plaintext}
+textarea{min-height:84px}
+.finish h2{margin:0 0 8px;font:700 22px Georgia,serif}
+.finish label.q{display:block}
+.chk{display:flex;gap:10px;align-items:flex-start;margin:10px 0;font:16px Arial,sans-serif}
+.chk input{width:22px;height:22px;margin-top:2px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin:18px 0 8px}
+.btns button,.btns label.lb{font:700 16px Arial,sans-serif;padding:13px 20px;border-radius:8px;border:2px solid #2A5276;background:var(--card);color:var(--text);cursor:pointer}
+#fin{background:#2A5276;color:#fff;border-color:#10263F}
+#fin:disabled{background:#9AA3AD;border-color:#7C8590;color:#F2F2F2;cursor:not-allowed}
+#todo{font:700 15px Arial,sans-serif;margin:6px 0;color:var(--goldtext)}
+#msg{font:15px Arial,sans-serif;margin:6px 0;min-height:22px}
+#msg.err{color:#B3261E}
+footer{margin-top:34px;padding-top:12px;border-top:1px solid var(--muted);font:11px Arial,sans-serif;letter-spacing:1px;text-transform:uppercase;text-align:center;color:var(--muted);direction:ltr}
+[dir=rtl] .st{text-align:right}
+[dir=rtl] blockquote{border-left:0;border-right:5px solid var(--gold);font-style:normal}
+[dir=rtl] .box{border-left:1px solid var(--line);border-right:6px solid var(--gold)}
+[dir=rtl] .card{border-left:1px solid var(--line);border-right:8px solid var(--line)}
+[dir=rtl] .card.done{border-right-color:var(--blue)} [dir=rtl] .card.isS{border-right-color:var(--gold)} [dir=rtl] .card.isV{border-right-color:var(--green)}
+html[lang=es] .orig,html[lang=ar] .orig{display:block}
+
+.stances.two{grid-template-columns:1fr 1fr}
+.stP[aria-pressed="true"]{background:#7A1F1F;border-color:#4a1010;color:#fff}
+.stF[aria-pressed="true"]{background:#2A5276;border-color:#10263F;color:#fff}
+.stP[aria-pressed="true"] small,.stF[aria-pressed="true"] small{color:#fff}
+.card.isP{border-left-color:#7A1F1F}.card.isF{border-left-color:var(--blue)}
+[dir=rtl] .card.isP{border-right-color:#7A1F1F}[dir=rtl] .card.isF{border-right-color:var(--blue)}
+.ev{margin:6px 0;font:700 21px Georgia,serif}.desc{font-size:17px}
+@media(max-width:620px){.stances.two{grid-template-columns:1fr!important}}
+</style></head><body>
+<div class="hero"><div class="in">
+  <span class="eyebrow">SORT &amp; DEFEND 1</span>
+  <h1>Too Weak? How Was It Fixed?</h1>
+  <div class="sub">Founding Ideas and the Constitutional Convention · Sort the Events</div>
+  <div class="langs" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">English</button>
+    <button type="button" data-lang="es" aria-pressed="false">Español</button>
+    <button type="button" data-lang="ar" aria-pressed="false">العربية</button>
+  </div>
+</div></div>
+<div class="wrap">
+  <div class="box bq"><b class="lbl" data-t="bq_label">BRIDGE QUESTION:</b><span data-t="bq">Why was the first national government too weak, and what compromises fixed it?</span><p class="job" data-t="job">Your job: sort 8 events, defend each choice with a fact, then answer the bridge question.</p></div>
+  <div class="box how"><h2 data-t="how_t">How to play</h2><ol><li data-t="how1">Read the event card. Use Word help if a word is hard.</li><li data-t="how2">Tap ★ A PROBLEM or ◆ A FIX.</li><li data-t="how3">Defend it: write one fact from the card that proves your choice.</li><li data-t="how4">After all 8 cards, write your answer to the bridge question.</li></ol></div>
+  <div class="names">
+    <div><label for="first" data-t="first">First name</label><input id="first" autocomplete="given-name"></div>
+    <div><label for="last" data-t="last">Last name</label><input id="last" autocomplete="family-name"></div>
+    <div><label for="period" data-t="period">Period</label><input id="period" inputmode="numeric"></div>
+    <div><label for="date" data-t="date">Date</label><input id="date" readonly data-tp="date_auto" placeholder="Fills in when you finish"></div>
+  </div>
+  <div class="meter"><div class="bar"><div class="fill" id="fill"></div></div><p id="prog" aria-live="polite"></p></div>
+  
+<section class="card" id="card1" data-i="1">
+  <div class="cardtop"><span class="chip">1781–83</span><span class="caseno"><span data-t="cardl">Event card</span> 1 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c1_t">One state says no to a tax</h3>
+  <p class="desc" data-t="c1_d">Congress asked to collect a small tax on imported goods (the Impost). Twelve states said yes. One state said no, first Rhode Island, then New York. The plan died.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c1_h">Impost = a tax on goods brought in from other countries · veto = say no and block it · dissenting = disagreeing</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note1" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card2" data-i="2">
+  <div class="cardtop"><span class="chip">1784</span><span class="caseno"><span data-t="cardl">Event card</span> 2 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c2_t">Spain closes the Mississippi</h3>
+  <p class="desc" data-t="c2_d">Spain closed the lower Mississippi River to American boats. Farmers in the West needed the river to sell their crops. The weak national government had no strong way to answer.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c2_h">lower Mississippi = the southern part of the river · navigation = travel by boat · lifeline = the one thing you need to live or earn money</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note2" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card3" data-i="3">
+  <div class="cardtop"><span class="chip">1780s</span><span class="caseno"><span data-t="cardl">Event card</span> 3 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c3_t">States tax each other</h3>
+  <p class="desc" data-t="c3_d">New York taxed firewood from Connecticut and cabbages from New Jersey. New Jersey answered by taxing a lighthouse. Congress could not control trade between the states.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c3_h">taxed = charged a fee · lighthouse = a tower with a light that guides ships · trade = buying and selling</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note3" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card4" data-i="4">
+  <div class="cardtop"><span class="chip">1786–87</span><span class="caseno"><span data-t="cardl">Event card</span> 4 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c4_t">Shays’ Rebellion</h3>
+  <p class="desc" data-t="c4_d">Farmers in western Massachusetts, deep in debt, closed the courts with weapons. Congress tried to raise troops but had no money to pay them. A private army paid by rich Bostonians stopped the rebels.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c4_h">rebellion = a fight against the government · debt = money you owe · troops = soldiers · private = not part of the government</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note4" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card5" data-i="5">
+  <div class="cardtop"><span class="chip">1787</span><span class="caseno"><span data-t="cardl">Event card</span> 5 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c5_t">The Great Compromise</h3>
+  <p class="desc" data-t="c5_d">Large and small states were stuck. The deal: a House of Representatives based on population, and a Senate with two senators for every state.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c5_h">compromise = each side gives up something · population = number of people · senator = a member of the Senate</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note5" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card6" data-i="6">
+  <div class="cardtop"><span class="chip">1787</span><span class="caseno"><span data-t="cardl">Event card</span> 6 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c6_t">The Three-Fifths Compromise</h3>
+  <p class="desc" data-t="c6_d">North and South argued about counting enslaved people for seats in the House. The deal counted three-fifths of enslaved people for seats and for taxes. It gave the South more power and kept slavery in the Constitution.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c6_h">enslaved = forced to work without freedom or pay · representation = having seats in government · taxes = money paid to the government</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note6" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card7" data-i="7">
+  <div class="cardtop"><span class="chip">1787</span><span class="caseno"><span data-t="cardl">Event card</span> 7 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c7_t">One President, chosen by electors</h3>
+  <p class="desc" data-t="c7_d">Under the Articles there was no president to carry out the laws. The Convention created one President. State electors, not Congress, would choose that person.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c7_h">executive = the branch that carries out the laws · electors = people chosen to vote for the President · Congress = the lawmakers</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note7" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+<section class="card" id="card8" data-i="8">
+  <div class="cardtop"><span class="chip">1788</span><span class="caseno"><span data-t="cardl">Event card</span> 8 <span data-t="of8">of 8</span></span></div>
+  <h3 class="ev" data-t="c8_t">A Bill of Rights is promised</h3>
+  <p class="desc" data-t="c8_d">Anti-Federalists feared the new government could take away freedoms. To win their votes, Federalists promised to add a Bill of Rights. It was added in 1791.</p>
+  <p class="help"><b data-t="helpl">Word help:</b> <span data-t="c8_h">Anti-Federalists = people who opposed the Constitution · Federalists = people who backed it · Bill of Rights = a list of freedoms the government cannot take away</span></p>
+  <p class="q" data-t="q_sort">Is this a problem or a fix?</p>
+  <div class="stances two" role="group">
+    <button type="button" class="st stP" data-v="P" aria-pressed="false"><b data-t="b_p">★ A PROBLEM</b><small data-t="b_p_s">shows a weakness the Articles could not handle.</small></button>
+    <button type="button" class="st stF" data-v="F" aria-pressed="false"><b data-t="b_f">◆ A FIX</b><small data-t="b_f_s">is a deal or idea that tried to solve a problem.</small></button>
+  </div>
+  <textarea data-id="note8" rows="3" data-tp="ph_def" placeholder="Defend it: “clue words” from the card — I chose this because…"></textarea>
+</section>
+  <section class="card finish">
+    <h2 data-t="p2">Part 2 · Answer the Bridge Question</h2>
+    <div class="box bq" style="margin-top:0"><b class="lbl" data-t="bq_label">BRIDGE QUESTION:</b><span data-t="bq">Why was the first national government too weak, and what compromises fixed it?</span></div>
+    <label class="q" for="claim" data-t="claim_q">Claim: Answer the bridge question in one or two sentences.</label><textarea id="claim" data-id="claim" rows="3" data-tp="ph_claim" placeholder="The first government was too weak because… It was fixed by…"></textarea>
+    <label class="q" for="evidence" data-t="ev_q">Evidence: Use two event cards. Write one fact from each.</label><textarea id="evidence" data-id="evidence" rows="4" data-tp="ph_ev" placeholder="Card ___: … Card ___: …"></textarea>
+    <label class="q" for="reasoning" data-t="rs_q">Reasoning: Explain how your facts prove your claim.</label><textarea id="reasoning" data-id="reasoning" rows="4" data-tp="ph_rs" placeholder="These facts show that…"></textarea>
+    <label class="q" for="counter" data-t="co_q">Counter-Argument: What would someone say who thinks the Articles were fine? Then answer them.</label><textarea id="counter" data-id="counter" rows="4" data-tp="ph_co" placeholder="Someone might say… But…"></textarea>
+    <label class="chk"><input type="checkbox" data-id="chk1"><span data-t="chk1">My claim answers the whole bridge question.</span></label><label class="chk"><input type="checkbox" data-id="chk2"><span data-t="chk2">I used facts from two different cards.</span></label><label class="chk"><input type="checkbox" data-id="chk3"><span data-t="chk3">I explained how my facts prove my claim.</span></label><label class="chk"><input type="checkbox" data-id="chk4"><span data-t="chk4">I answered the Counter-Argument.</span></label>
+  </section>
+  <p id="todo" aria-live="polite"></p><p id="msg" aria-live="polite"></p>
+  <div class="btns"><button type="button" id="save" data-t="save">Save Progress</button>
+    <label class="lb" for="loadf" data-t="load">Load Progress</label><input type="file" id="loadf" accept=".json,application/json" hidden>
+    <button type="button" id="fin" disabled data-t="fin">Finished — Download File to Submit</button></div>
+  <footer>UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</footer>
+</div>
+<script>
+(function(){
+var PACKET='GOV_L1_Sort_and_Defend', STORE='gov_l1_sort_and_defend', COURSE='CP GOVERNMENT';
+var I18N={"en": {"bq_label": "BRIDGE QUESTION:", "bq": "Why was the first national government too weak, and what compromises fixed it?", "job": "Your job: sort 8 events, defend each choice with a fact, then answer the bridge question.", "how_t": "How to play", "how1": "Read the event card. Use Word help if a word is hard.", "how2": "Tap ★ A PROBLEM or ◆ A FIX.", "how3": "Defend it: write one fact from the card that proves your choice.", "how4": "After all 8 cards, write your answer to the bridge question.", "first": "First name", "last": "Last name", "period": "Period", "date": "Date", "date_auto": "Fills in when you finish", "prog": "{n} of 8 cards defended", "cardl": "Event card", "of8": "of 8", "helpl": "Word help:", "q_sort": "Is this a problem or a fix?", "b_p": "★ A PROBLEM", "b_p_s": "shows a weakness the Articles could not handle.", "b_f": "◆ A FIX", "b_f_s": "is a deal or idea that tried to solve a problem.", "ph_def": "Defend it: “clue words” from the card — I chose this because…", "p2": "Part 2 · Answer the Bridge Question", "claim_q": "Claim: Answer the bridge question in one or two sentences.", "ev_q": "Evidence: Use two event cards. Write one fact from each.", "rs_q": "Reasoning: Explain how your facts prove your claim.", "co_q": "Counter-Argument: What would someone say who thinks the Articles were fine? Then answer them.", "ph_claim": "The first government was too weak because… It was fixed by…", "ph_ev": "Card ___: … Card ___: …", "ph_rs": "These facts show that…", "ph_co": "Someone might say… But…", "chk1": "My claim answers the whole bridge question.", "chk2": "I used facts from two different cards.", "chk3": "I explained how my facts prove my claim.", "chk4": "I answered the Counter-Argument.", "save": "Save Progress", "load": "Load Progress", "fin": "Finished — Download File to Submit", "needs": "Still needed: {list}", "all_done": "Everything is done. You can finish.", "t_names": "first name, last name, and period", "t_card": "card {list} (tap a choice and write your defense)", "t_claim": "write your claim", "t_ev": "write your evidence", "t_rs": "write your reasoning", "t_co": "answer the Counter-Argument", "t_chk": "check all four boxes", "m_saved": "Saved. Keep that file. Use Load Progress later. Do not upload it to Canvas until you are finished.", "m_loaded": "Progress loaded. Your answers are back.", "m_loaderr": "That file does not work here. Choose your -PROGRESS.json file for this assignment.", "m_needname": "Type your first name, last name, and period first.", "m_done": "Done! The file {f} was downloaded. Upload that file to Canvas.", "m_notdone": "Not finished yet. Check the line above the buttons.", "c1_t": "One state says no to a tax", "c1_d": "Congress asked to collect a small tax on imported goods (the Impost). Twelve states said yes. One state said no, first Rhode Island, then New York. The plan died.", "c1_h": "Impost = a tax on goods brought in from other countries · veto = say no and block it · dissenting = disagreeing", "c2_t": "Spain closes the Mississippi", "c2_d": "Spain closed the lower Mississippi River to American boats. Farmers in the West needed the river to sell their crops. The weak national government had no strong way to answer.", "c2_h": "lower Mississippi = the southern part of the river · navigation = travel by boat · lifeline = the one thing you need to live or earn money", "c3_t": "States tax each other", "c3_d": "New York taxed firewood from Connecticut and cabbages from New Jersey. New Jersey answered by taxing a lighthouse. Congress could not control trade between the states.", "c3_h": "taxed = charged a fee · lighthouse = a tower with a light that guides ships · trade = buying and selling", "c4_t": "Shays’ Rebellion", "c4_d": "Farmers in western Massachusetts, deep in debt, closed the courts with weapons. Congress tried to raise troops but had no money to pay them. A private army paid by rich Bostonians stopped the rebels.", "c4_h": "rebellion = a fight against the government · debt = money you owe · troops = soldiers · private = not part of the government", "c5_t": "The Great Compromise", "c5_d": "Large and small states were stuck. The deal: a House of Representatives based on population, and a Senate with two senators for every state.", "c5_h": "compromise = each side gives up something · population = number of people · senator = a member of the Senate", "c6_t": "The Three-Fifths Compromise", "c6_d": "North and South argued about counting enslaved people for seats in the House. The deal counted three-fifths of enslaved people for seats and for taxes. It gave the South more power and kept slavery in the Constitution.", "c6_h": "enslaved = forced to work without freedom or pay · representation = having seats in government · taxes = money paid to the government", "c7_t": "One President, chosen by electors", "c7_d": "Under the Articles there was no president to carry out the laws. The Convention created one President. State electors, not Congress, would choose that person.", "c7_h": "executive = the branch that carries out the laws · electors = people chosen to vote for the President · Congress = the lawmakers", "c8_t": "A Bill of Rights is promised", "c8_d": "Anti-Federalists feared the new government could take away freedoms. To win their votes, Federalists promised to add a Bill of Rights. It was added in 1791.", "c8_h": "Anti-Federalists = people who opposed the Constitution · Federalists = people who backed it · Bill of Rights = a list of freedoms the government cannot take away"}, "es": {"bq_label": "PREGUNTA PUENTE:", "bq": "¿Por qué el primer gobierno nacional era demasiado débil y qué compromisos lo arreglaron?", "job": "Tu trabajo: clasifica 8 sucesos, defiende cada elección con un dato y luego responde la pregunta puente.", "how_t": "Cómo jugar", "how1": "Lee la tarjeta del suceso. Usa la ayuda de palabras si una palabra es difícil.", "how2": "Toca ★ UN PROBLEMA o ◆ UNA SOLUCIÓN.", "how3": "Defiéndelo: escribe un dato de la tarjeta que pruebe tu elección.", "how4": "Después de las 8 tarjetas, escribe tu respuesta a la pregunta puente.", "first": "Nombre", "last": "Apellido", "period": "Período (clase)", "date": "Fecha", "date_auto": "Se llena al terminar", "prog": "{n} de 8 tarjetas defendidas", "cardl": "Tarjeta de suceso", "of8": "de 8", "helpl": "Ayuda con palabras:", "q_sort": "¿Es un problema o una solución?", "b_p": "★ UN PROBLEMA", "b_p_s": "muestra una debilidad que los Artículos no podían manejar.", "b_f": "◆ UNA SOLUCIÓN", "b_f_s": "es un acuerdo o idea que intentó resolver un problema.", "ph_def": "Defiéndelo: «palabras clave» de la tarjeta — Elegí esto porque…", "p2": "Parte 2 · Responde la pregunta puente", "claim_q": "Afirmación: Responde la pregunta puente en una o dos frases.", "ev_q": "Evidencia: Usa dos tarjetas. Escribe un dato de cada una.", "rs_q": "Razonamiento: Explica cómo tus datos prueban tu afirmación.", "co_q": "Contraargumento: ¿Qué diría alguien que cree que los Artículos estaban bien? Luego respóndele.", "ph_claim": "El primer gobierno era demasiado débil porque… Se arregló con…", "ph_ev": "Tarjeta ___: … Tarjeta ___: …", "ph_rs": "Estos datos muestran que…", "ph_co": "Alguien podría decir… Pero…", "chk1": "Mi afirmación responde toda la pregunta puente.", "chk2": "Usé datos de dos tarjetas diferentes.", "chk3": "Expliqué cómo mis datos prueban mi afirmación.", "chk4": "Respondí el contraargumento.", "save": "Guardar progreso", "load": "Cargar progreso", "fin": "Terminé — Descargar archivo para entregar", "needs": "Falta: {list}", "all_done": "Todo está listo. Puedes terminar.", "t_names": "nombre, apellido y período", "t_card": "tarjeta {list} (toca una opción y escribe tu defensa)", "t_claim": "escribir tu afirmación", "t_ev": "escribir tu evidencia", "t_rs": "escribir tu razonamiento", "t_co": "responder el contraargumento", "t_chk": "marcar las cuatro casillas", "m_saved": "Guardado. Conserva ese archivo. Usa Cargar progreso más tarde. No lo subas a Canvas hasta que termines.", "m_loaded": "Progreso cargado. Tus respuestas volvieron.", "m_loaderr": "Ese archivo no sirve aquí. Elige tu archivo -PROGRESS.json de esta tarea.", "m_needname": "Primero escribe tu nombre, apellido y período.", "m_done": "¡Listo! Se descargó el archivo {f}. Sube ese archivo a Canvas.", "m_notdone": "Todavía no terminaste. Mira la línea sobre los botones.", "c1_t": "Un estado dice que no a un impuesto", "c1_d": "El Congreso pidió cobrar un impuesto pequeño a los productos importados (el Impost). Doce estados dijeron que sí. Un estado dijo que no, primero Rhode Island y luego Nueva York. El plan murió.", "c1_h": "Impost = impuesto a los productos que llegan de otros países · veto = decir que no y bloquear · dissenting = que no está de acuerdo", "c2_t": "España cierra el Misisipi", "c2_d": "España cerró el bajo río Misisipi a los barcos estadounidenses. Los agricultores del Oeste necesitaban el río para vender sus cosechas. El gobierno nacional débil no tenía una forma fuerte de responder.", "c2_h": "lower Mississippi = la parte sur del río · navigation = viajar en barco · lifeline = lo único que necesitas para vivir o ganar dinero", "c3_t": "Los estados se cobran impuestos entre sí", "c3_d": "Nueva York cobró impuestos a la leña de Connecticut y a los repollos de Nueva Jersey. Nueva Jersey respondió cobrando impuestos a un faro. El Congreso no podía controlar el comercio entre los estados.", "c3_h": "taxed = cobró una tarifa · lighthouse = torre con una luz que guía a los barcos · trade = comprar y vender", "c4_t": "La Rebelión de Shays", "c4_d": "Agricultores del oeste de Massachusetts, llenos de deudas, cerraron los tribunales con armas. El Congreso intentó reunir tropas, pero no tenía dinero para pagarlas. Un ejército privado pagado por ricos de Boston detuvo a los rebeldes.", "c4_h": "rebellion = lucha contra el gobierno · debt = dinero que debes · troops = soldados · private = que no es del gobierno", "c5_t": "El Gran Compromiso", "c5_d": "Los estados grandes y pequeños estaban en un callejón sin salida. El acuerdo: una Cámara de Representantes basada en la población y un Senado con dos senadores por cada estado.", "c5_h": "compromise = cada lado cede algo · population = número de personas · senator = miembro del Senado", "c6_t": "El Compromiso de las Tres Quintas Partes", "c6_d": "El Norte y el Sur discutieron sobre contar a las personas esclavizadas para los escaños de la Cámara. El acuerdo contó tres quintas partes de las personas esclavizadas para los escaños y los impuestos. Dio más poder al Sur y mantuvo la esclavitud en la Constitución.", "c6_h": "enslaved = obligado a trabajar sin libertad ni pago · representation = tener escaños en el gobierno · taxes = dinero que se paga al gobierno", "c7_t": "Un Presidente elegido por electores", "c7_d": "Bajo los Artículos no había un presidente que hiciera cumplir las leyes. La Convención creó un Presidente. Electores de los estados, no el Congreso, elegirían a esa persona.", "c7_h": "executive = la rama que hace cumplir las leyes · electors = personas elegidas para votar por el Presidente · Congress = los legisladores", "c8_t": "Se promete una Declaración de Derechos", "c8_d": "Los antifederalistas temían que el nuevo gobierno pudiera quitar libertades. Para ganar sus votos, los federalistas prometieron añadir una Declaración de Derechos. Se añadió en 1791.", "c8_h": "Anti-Federalists = personas que se oponían a la Constitución · Federalists = personas que la apoyaban · Bill of Rights = lista de libertades que el gobierno no puede quitar"}, "ar": {"bq_label": "سؤال الجسر:", "bq": "لماذا كانت أول حكومة وطنية ضعيفة جدًا، وما التسويات التي أصلحت ذلك؟", "job": "مهمتك: صنّف 8 أحداث، ودافع عن كل اختيار بحقيقة، ثم أجب عن سؤال الجسر.", "how_t": "كيف تلعب", "how1": "اقرأ بطاقة الحدث. استخدم مساعدة الكلمات إذا كانت كلمة صعبة.", "how2": "اضغط ★ مشكلة أو ◆ حل.", "how3": "دافع عن اختيارك: اكتب حقيقة من البطاقة تثبته.", "how4": "بعد البطاقات الثماني، اكتب إجابتك عن سؤال الجسر.", "first": "الاسم الأول", "last": "اسم العائلة", "period": "الحصة", "date": "التاريخ", "date_auto": "يُملأ عند الانتهاء", "prog": "تم الدفاع عن {n} من 8 بطاقات", "cardl": "بطاقة حدث", "of8": "من 8", "helpl": "مساعدة الكلمات:", "q_sort": "هل هذه مشكلة أم حل؟", "b_p": "★ مشكلة", "b_p_s": "يُظهر ضعفًا لم تستطع المواد معالجته.", "b_f": "◆ حل", "b_f_s": "اتفاق أو فكرة حاولت حل مشكلة.", "ph_def": "دافع: «كلمات الدليل» من البطاقة — اخترت هذا لأن…", "p2": "الجزء 2 · أجب عن سؤال الجسر", "claim_q": "الادعاء: أجب عن سؤال الجسر في جملة أو جملتين.", "ev_q": "الدليل: استخدم بطاقتين. اكتب حقيقة من كل واحدة.", "rs_q": "التعليل: اشرح كيف تثبت حقائقك ادعاءك.", "co_q": "الحجة المضادة: ماذا سيقول من يرى أن المواد كانت جيدة؟ ثم أجبه.", "ph_claim": "كانت الحكومة الأولى ضعيفة جدًا لأن… وأُصلحت بـ…", "ph_ev": "البطاقة ___: … البطاقة ___: …", "ph_rs": "تُظهر هذه الحقائق أن…", "ph_co": "قد يقول أحدهم… لكن…", "chk1": "ادعائي يجيب عن سؤال الجسر كله.", "chk2": "استخدمت حقائق من بطاقتين مختلفتين.", "chk3": "شرحت كيف تثبت حقائقي ادعائي.", "chk4": "أجبت عن الحجة المضادة.", "save": "حفظ التقدم", "load": "تحميل التقدم", "fin": "انتهيت — تنزيل الملف للتسليم", "needs": "المطلوب بعد: {list}", "all_done": "كل شيء جاهز. يمكنك الإنهاء.", "t_names": "الاسم الأول واسم العائلة والحصة", "t_card": "البطاقة {list} (اختر واكتب دفاعك)", "t_claim": "كتابة ادعائك", "t_ev": "كتابة دليلك", "t_rs": "كتابة تعليلك", "t_co": "الإجابة عن الحجة المضادة", "t_chk": "تحديد المربعات الأربعة", "m_saved": "تم الحفظ. احتفظ بذلك الملف. استخدم «تحميل التقدم» لاحقًا. لا ترفعه إلى Canvas حتى تنتهي.", "m_loaded": "تم تحميل التقدم. عادت إجاباتك.", "m_loaderr": "هذا الملف لا يعمل هنا. اختر ملف -PROGRESS.json الخاص بهذا الواجب.", "m_needname": "اكتب أولًا اسمك الأول واسم العائلة والحصة.", "m_done": "تم! تم تنزيل الملف {f}. ارفع ذلك الملف إلى Canvas.", "m_notdone": "لم تنتهِ بعد. اقرأ السطر فوق الأزرار.", "c1_t": "ولاية واحدة تقول لا لضريبة", "c1_d": "طلب الكونغرس جمع ضريبة صغيرة على السلع المستوردة (Impost). وافقت اثنتا عشرة ولاية. رفضت ولاية واحدة، أولًا رود آيلاند (Rhode Island) ثم نيويورك (New York). وسقطت الخطة.", "c1_h": "Impost = ضريبة على السلع القادمة من دول أخرى · veto = قول لا وإيقاف الأمر · dissenting = غير موافقة", "c2_t": "إسبانيا تغلق المسيسيبي", "c2_d": "أغلقت إسبانيا (Spain) الجزء الأدنى من نهر المسيسيبي (Mississippi) أمام السفن الأمريكية. احتاج المزارعون في الغرب إلى النهر لبيع محاصيلهم. ولم تكن لدى الحكومة الوطنية الضعيفة وسيلة قوية للرد.", "c2_h": "lower Mississippi = الجزء الجنوبي من النهر · navigation = السفر بالقارب · lifeline = الشيء الوحيد الذي تحتاجه للعيش أو للكسب", "c3_t": "الولايات تفرض ضرائب على بعضها", "c3_d": "فرضت نيويورك (New York) ضريبة على الحطب القادم من كونيتيكت (Connecticut) وعلى الملفوف القادم من نيوجيرسي (New Jersey). ردّت نيوجيرسي بفرض ضريبة على منارة. ولم يستطع الكونغرس التحكم في التجارة بين الولايات.", "c3_h": "taxed = فرض رسمًا · lighthouse = برج بضوء يرشد السفن · trade = البيع والشراء", "c4_t": "تمرد شايز (Shays’ Rebellion)", "c4_d": "أغلق مزارعون في غرب ماساتشوستس (Massachusetts)، وهم غارقون في الديون، المحاكم بالسلاح. حاول الكونغرس جمع جنود لكن لم يكن لديه مال ليدفع لهم. وأوقف المتمردين جيش خاص موّله أثرياء بوسطن (Boston).", "c4_h": "rebellion = قتال ضد الحكومة · debt = مال تدين به · troops = جنود · private = ليس تابعًا للحكومة", "c5_t": "التسوية الكبرى (Great Compromise)", "c5_d": "كانت الولايات الكبيرة والصغيرة في طريق مسدود. الاتفاق: مجلس نواب يعتمد على عدد السكان، ومجلس شيوخ فيه عضوان عن كل ولاية.", "c5_h": "compromise = كل طرف يتنازل عن شيء · population = عدد الناس · senator = عضو في مجلس الشيوخ", "c6_t": "تسوية الثلاثة أخماس (Three-Fifths Compromise)", "c6_d": "اختلف الشمال والجنوب حول احتساب المستعبَدين في مقاعد مجلس النواب. وقضى الاتفاق باحتساب ثلاثة أخماس المستعبَدين للمقاعد وللضرائب. وأعطى ذلك الجنوب سلطة أكبر وأبقى العبودية في الدستور.", "c6_h": "enslaved = مُجبر على العمل بلا حرية ولا أجر · representation = وجود مقاعد في الحكومة · taxes = مال يُدفع للحكومة", "c7_t": "رئيس واحد ينتخبه ناخبون", "c7_d": "في ظل المواد (Articles) لم يكن هناك رئيس لتنفيذ القوانين. أنشأ المؤتمر منصب رئيس واحد. وكان ناخبو الولايات، لا الكونغرس، هم من يختارون هذا الشخص.", "c7_h": "executive = الفرع الذي ينفّذ القوانين · electors = أشخاص يُختارون للتصويت للرئيس · Congress = المشرّعون", "c8_t": "وعد بإضافة وثيقة الحقوق", "c8_d": "خشي معارضو الدستور (Anti-Federalists) أن تسلب الحكومة الجديدة الحريات. ولكسب أصواتهم وعد المؤيدون (Federalists) بإضافة وثيقة حقوق (Bill of Rights). وأُضيفت عام 1791.", "c8_h": "Anti-Federalists = من عارضوا الدستور · Federalists = من أيّدوه · Bill of Rights = قائمة بحريات لا تستطيع الحكومة سلبها"}};
+var N=8, lang='en', orig={}, origP={};
+var sides={};
+function $(s,r){return (r||document).querySelector(s);}
+function $$(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s));}
+function T(k,v){var s=(I18N[lang]&&I18N[lang][k]);if(s==null)s=I18N.en[k];if(s==null)s=k;if(v){for(var x in v)s=s.split('{'+x+'}').join(v[x]);}return s;}
+function sep(){return lang==='ar'?'؛ ':'; ';}
+// save English originals
+$$('[data-t]').forEach(function(e){orig[e.getAttribute('data-t')+'|'+idx(e)]=e.innerHTML;});
+function idx(e){return $$('[data-t="'+e.getAttribute('data-t')+'"]').indexOf(e);}
+$$('[data-tp]').forEach(function(e){origP[e.getAttribute('data-tp')+'|'+e.getAttribute('data-id')]=e.getAttribute('placeholder');});
+function setLang(l){
+  if(!I18N[l])l='en'; lang=l;
+  document.documentElement.lang=l; document.documentElement.dir=(l==='ar'?'rtl':'ltr');
+  $$('[data-t]').forEach(function(e){var k=e.getAttribute('data-t');
+    if(l==='en'){var o=orig[k+'|'+idx(e)]; if(o!=null)e.innerHTML=o;}
+    else if(I18N[l][k]!=null){e.innerHTML=I18N[l][k];}
+  });
+  $$('[data-tp]').forEach(function(e){var k=e.getAttribute('data-tp');
+    e.setAttribute('placeholder', l==='en'?origP[k+'|'+e.getAttribute('data-id')]:(I18N[l][k]||origP[k+'|'+e.getAttribute('data-id')]));});
+  $$('.langs button').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-lang')===l?'true':'false');});
+  try{localStorage.setItem(STORE+'_lang',l);}catch(e){}
+  // quotes keep their own language attr
+  $$('blockquote').forEach(function(q){q.setAttribute('lang',l);});
+  update();
+}
+$$('.langs button').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-lang'));});});
+
+function val(id){var e=$('[data-id="'+id+'"]');return e?e.value:'';}
+function chk(id){var e=$('[data-id="'+id+'"]');return !!(e&&e.checked);}
+function names(){return {first:$('#first').value.trim(),last:$('#last').value.trim(),period:$('#period').value.trim()};}
+function caseDone(i){return !!sides[i] && val('note'+i).trim().length>0;}
+function missing(){
+  var m=[],nm=names();
+  if(!nm.first||!nm.last||!nm.period)m.push(T('t_names'));
+  var bad=[];for(var i=1;i<=N;i++){if(!caseDone(i))bad.push(i);}
+  if(bad.length)m.push(T('t_card',{list:bad.join(', ')}));
+  if(!val('claim').trim())m.push(T('t_claim'));
+  if(!val('evidence').trim())m.push(T('t_ev'));
+  if(!val('reasoning').trim())m.push(T('t_rs'));
+  if(!val('counter').trim())m.push(T('t_co'));
+  if(!chk('chk1')||!chk('chk2')||!chk('chk3')||!chk('chk4'))m.push(T('t_chk'));
+  return m;
+}
+function tally(){var t={problem:0,fix:0};for(var i=1;i<=N;i++){var s=sides[i];if(s==='P')t.problem++;else if(s==='F')t.fix++;}return t;}
+function collect(done){
+  var nm=names(),a={},c={};
+  for(var i=1;i<=N;i++){a['note'+i]=val('note'+i);}
+  a.claim=val('claim');a.evidence=val('evidence');a.reasoning=val('reasoning');a.counter=val('counter');
+  c.chk1=chk('chk1');c.chk2=chk('chk2');c.chk3=chk('chk3');c.chk4=chk('chk4');
+  var sd={};for(var j=1;j<=N;j++){if(sides[j])sd[j]=sides[j];}
+  return {packet:PACKET,course:COURSE,version:1,saved:new Date().toISOString(),completed:!!done,
+    student:{first:nm.first,last:nm.last,period:nm.period,date:done?$('#date').value:''},
+    sides:sd,answers:a,checks:c,tally:tally()};
+}
+function persist(){try{localStorage.setItem(STORE,JSON.stringify(collect(false)));}catch(e){}}
+function update(){
+  var n=0;
+  for(var i=1;i<=N;i++){var d=caseDone(i);if(d)n++;
+    var card=$('#card'+i);card.classList.toggle('done',d);card.classList.toggle('isP',sides[i]==='P');card.classList.toggle('isF',sides[i]==='F');
+    $$('.st',card).forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-v')===sides[i]?'true':'false');});
+  }
+  $('#fill').style.width=(n/N*100)+'%';
+  $('#prog').textContent=T('prog',{n:n});
+  var m=missing();
+  $('#fin').disabled=m.length>0;
+  $('#todo').textContent=m.length?T('needs',{list:m.join(sep())}):T('all_done');
+}
+function msg(k,err,v){var e=$('#msg');e.textContent=T(k,v);e.className=err?'err':'';}
+function fname(){
+  var nm=names();
+  return (nm.last+'_'+nm.first).normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/[^A-Za-z0-9_\-]+/g,'_');
+}
+function download(obj,name){
+  var blob=new Blob([JSON.stringify(obj,null,2)],{type:'application/json'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();
+  setTimeout(function(){URL.revokeObjectURL(a.href);a.remove();},500);
+}
+function needNames(){
+  var nm=names(),ok=true;
+  ['first','last','period'].forEach(function(f){var bad=!nm[f];$('#'+f).classList.toggle('bad',bad);if(bad)ok=false;});
+  return ok;
+}
+function apply(o){
+  var s=o.student||{};$('#first').value=s.first||'';$('#last').value=s.last||'';$('#period').value=s.period||'';
+  sides={};var sd=o.sides||{};for(var k in sd){sides[k]=sd[k];}
+  var a=o.answers||{};
+  $$('textarea[data-id],select[data-id]').forEach(function(e){var k=e.getAttribute('data-id');e.value=(a[k]!=null?a[k]:'');});
+  var c=o.checks||{};$$('input[type=checkbox][data-id]').forEach(function(e){e.checked=!!c[e.getAttribute('data-id')];});
+  update();persist();
+}
+$$('.st').forEach(function(b){b.addEventListener('click',function(){
+  var i=b.closest('.card').getAttribute('data-i');sides[i]=b.getAttribute('data-v');update();persist();});});
+$$('input,textarea,select').forEach(function(e){e.addEventListener('input',function(){e.classList.remove('bad');update();persist();});
+  e.addEventListener('change',function(){update();persist();});});
+$('#save').addEventListener('click',function(){
+  if(!needNames()){msg('m_needname',true);return;}
+  download(collect(false),fname()+'-'+PACKET+'-PROGRESS.json');msg('m_saved',false);
+});
+$('#loadf').addEventListener('change',function(ev){
+  var f=ev.target.files&&ev.target.files[0];if(!f)return;
+  var r=new FileReader();
+  r.onload=function(){try{var o=JSON.parse(r.result);if(!o||o.packet!==PACKET)throw new Error('bad');apply(o);msg('m_loaded',false);}catch(e){msg('m_loaderr',true);}ev.target.value='';};
+  r.onerror=function(){msg('m_loaderr',true);};
+  r.readAsText(f);
+});
+$('#fin').addEventListener('click',function(){
+  if(missing().length){msg('m_notdone',true);return;}
+  var d=new Date();$('#date').value=d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);
+  var name=fname()+'-'+PACKET+'.json';
+  download(collect(true),name);msg('m_done',false,{f:name});persist();
+});
+// restore draft
+try{var raw=localStorage.getItem(STORE);if(raw){var o=JSON.parse(raw);if(o&&o.packet===PACKET)apply(o);}}catch(e){}
+var q=(location.search.match(/[?&]lang=(es|ar|en)/)||[])[1];var sl=null;try{sl=localStorage.getItem(STORE+'_lang');}catch(e){}
+setLang(q||sl||'en');
+})();
+</script></body></html>
