@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 1: Philosophical and Historical Roots | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#2A5276; --unit-dk:#10263F; --unit-lt:#F4EFE3; --unit-mid:#8FA9C2;
+  --amber:#B8913F; --amber-lt:#E6CF8C; --amber-dk:#7A5F22;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F6EEDA; --cream:#F4EFE3; --pale:#E6CF8C;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(16,38,63,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,38,63,.80) 0%,rgba(16,38,63,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 1 · PHILOSOPHICAL AND HISTORICAL ROOTS</span>
+  <a href="#opener">Opener</a><a href="#s1">1.1 The Enlightenment Influence</a><a href="#s2">1.2 From Colonies to Confederation</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Independence%20Hall%20Exterior%20Front.jpg?width=2000" alt="The brick Georgian front of Independence Hall in Philadelphia with its white clock tower under a blue sky." style="object-position:55% 25%"></div>
+  <div class="opener-head">
+    <div class="chapnum">1</div>
+    <div>
+      <div class="unitline">Unit 1 · Foundations of American Democracy</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Philosophical and<br>Historical Roots</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the ideas became a government.</b> Independence Hall in Philadelphia, once the Pennsylvania State House, is where delegates adopted the Declaration of Independence in 1776 and where the Constitution was written in 1787. Between those two dates, Americans tested what they had learned from European philosophers and from their own colonial experience.<span class="credit">Photo: Andrew Rehbein / <a href="https://commons.wikimedia.org/wiki/File:Independence_Hall_Exterior_Front.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 1.1</span><span class="sl-title">The Enlightenment Influence</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 1.2</span><span class="sl-title">From Colonies to Confederation</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Who Governs, and Why?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How did Enlightenment philosophy and colonial experiences shape the American definition of “good government”?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Compare and contrast the political theories of Thomas Hobbes and John Locke.</li>
+          <li>Explain how Montesquieu’s "Spirit of the Laws" influenced the structure of the U.S. government.</li>
+          <li>Identify the concept of the "consent of the governed" in the Declaration of Independence.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Natural Rights</span><span>Social Contract</span><span>Popular Sovereignty</span><span>Separation of Powers</span><span>State of Nature</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 1 Key Concept</p>
+        <p><b>Good government</b> is a balance between order and liberty. A government with too little power cannot protect anyone, and a government with too much power becomes a threat to the people it serves. The American definition of good government grew out of that balance.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine your class is given one month to run a school-wide food drive with no teacher in charge and no rules. Someone has to collect cans, someone has to settle arguments, and someone has to keep an unfair crowd from grabbing all the credit. Would you pick one strong leader who makes every decision, or a set of rules that protects each person and limits the leader? That is the same choice the American founders faced, only with a whole country at stake. By the end of this chapter, you will be able to explain what each of four major thinkers would say, and how colonial experience helped Americans decide for themselves.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1651 to 1781, written by philosophers, revolutionaries, and the authors of the first American government, and use them to answer one question: <a href="#case">who should govern, and why should anyone obey?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.1</code> Students explain the fundamental principles and moral values of American democracy as expressed in the U.S. Constitution and other essential documents of American democracy.</li>
+            <li><code>12.1.1</code> Analyze the influence of ancient Greek, Roman, English, and leading European political thinkers such as John Locke, Charles-Louis Montesquieu, Niccolò Machiavelli, and William Blackstone on the development of American government. <i>(Section 1.1)</i></li>
+            <li><code>12.1.3</code> Explain how the U.S. Constitution reflects a balance between the classical republican concern with promotion of the public good and the classical liberal concern with protecting individual rights; and discuss how the basic premises of liberal constitutionalism and democracy are joined in the Declaration of Independence as “self-evident truths.” <i>(Sections 1.1, 1.2, Case Study)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.4</code> Explain how the Founding Fathers’ realistic view of human nature led directly to the establishment of a constitutional system that limited the power of the governors and the governed as articulated in the Federalist Papers. <i>(Introduced in Section 1.1; developed in later chapters.)</i></li>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Separation of powers and checks and balances are introduced here.)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">Where Good Government Comes From</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/P45%20THE%20STAMP%20ACT%20RIOTS%20AT%20BOSTON%2C%20IN%20AMERICA.jpg?width=1400" alt="A crowd of colonists in a street, with a banner above them, protesting the Stamp Act in Boston." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Political Awakening</span>Colonists gather to read protests against the Stamp Act. Pictured: The Stamp Act riots in Boston. This is an illustration published in 1865, not an image made at the time.<span class="credit">Image: John Cassell (illustration, <i>Cassell’s Illustrated History of England</i>, 1865) / <a href="https://commons.wikimedia.org/wiki/File:P45_THE_STAMP_ACT_RIOTS_AT_BOSTON,_IN_AMERICA.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The American system of government is an intentional construct, rooted in specific hypotheses regarding human nature, political power, and liberty. To understand the United States Constitution, one must recognize that the Founders did not operate in a vacuum. The American Republic resulted from the convergence of two distinct forces: the intellectual movements of the European Enlightenment and the practical, century-and-a-half experience of colonial self-rule. While philosophy provided the theoretical blueprints, colonial history provided the empirical evidence. Together, these forces shaped a definition of "good government" that remains the subject of constitutional debate today.</p>
+        <p>Political philosophy serves as the foundational scaffolding for every law, court ruling, and executive action in the United States. Inquiries into the limits of executive authority or the scope of individual rights are not merely legal questions; they are philosophical inquiries first debated in the intellectual centers of Europe and the assembly halls of colonial America. The authors of the Declaration of Independence and the Constitution held specific beliefs about the nature of humanity, the origin of rights, and the legitimate role of the state. Without an understanding of these underpinnings, the mechanisms of American government—such as the separation of powers or federalism—appear as arbitrary rules rather than deliberate safeguards designed to protect liberty.</p>
+        <p>The Enlightenment challenged the assumption that political authority derived from divine right or ancient tradition. Instead, thinkers proposed that reason and natural law should guide governance. They argued that human beings possessed the capacity to understand the world through logic and that this logic could be applied to create a just society. However, the Enlightenment was not a monolithic movement; its thinkers disagreed on the degree of power a government should possess. Some argued for absolute authority to maintain social order, while others advocated for strictly limited government and the right of the people to overthrow tyrannical rule.</p>
+        <p>Simultaneously, American colonists were engaged in practical political development. Separated from the British Crown by the Atlantic Ocean, the colonies developed autonomous systems of local governance. This experience fostered a culture of self-reliance and an expectation of political participation. When the theoretical ideals of the Enlightenment clashed with the restrictive policies of the British Empire in the mid-eighteenth century, the colonists used these philosophical tools to articulate their grievances. The resulting revolution was an intellectual conflict as much as a military one. This chapter explores how these forces coalesced to create the American political identity.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Enlightenment</span> A period in the 1600s and 1700s when thinkers used reason to question traditional authority and explain how government should work. <span class="sp">Spanish: la Ilustración</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1765</span>Year Parliament passed the Stamp Act, a direct tax that many colonists said violated their right to consent.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 1.1 explains four thinkers; Section 1.2 shows how colonial experience tested their ideas.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>1.1</b></div>
+    <h2>The Enlightenment Influence</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E6CF8C" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F4EFE3" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E6CF8C" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 1.1, you will</p>
+      <ul><li>Explain how Enlightenment ideas challenged divine right and traditional authority</li><li>Compare and contrast the theories of Thomas Hobbes and John Locke</li><li>Explain how Montesquieu’s <i>The Spirit of the Laws</i> shaped the structure of the U.S. government</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-enlightenment">Enlightenment</a></li><li><a href="#t-state-of-nature">State of Nature</a></li><li><a href="#t-social-contract">Social Contract</a></li><li><a href="#t-natural-rights">Natural Rights</a></li><li><a href="#t-separation-of-powers">Separation of Powers</a></li><li><a href="#t-popular-sovereignty">Popular Sovereignty</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this Venn diagram as you read about Hobbes and Locke.
+      <svg viewBox="0 0 260 120" aria-label="Venn diagram organizer: Hobbes, both, Locke"><g fill="#fff" stroke="#2A5276" stroke-width="2"><circle cx="95" cy="60" r="52"/><circle cx="165" cy="60" r="52"/></g><g font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle"><text x="76" y="64" font-weight="700" fill="#10263F">Hobbes</text><text x="130" y="64" font-weight="700" fill="#10263F" font-size="10">Both</text><text x="184" y="64" font-weight="700" fill="#10263F">Locke</text></g></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Age of Reason and the Reimagining of Authority</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Encyclopedie%20frontispice%20full.jpg?width=1400" alt="An engraved frontispiece of the Encyclopédie showing figures grouped beneath rays of light." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Age of Reason</span>Enlightenment thinkers challenged traditional authority with logic and reason. Pictured: Encyclopedie frontispice full.<span class="credit">Image: Benoît-Louis Prévost (engraver, after Charles-Nicolas Cochin) / <a href="https://commons.wikimedia.org/wiki/File:Encyclopedie_frontispice_full.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The intellectual origins of the American system are found in the seventeenth and eighteenth centuries, a period known as the <dfn id="t-enlightenment">Enlightenment</dfn>, or the Age of Reason. This era marked a fundamental shift in Western thought, moving away from medieval reliance on religious dogma and monarchical tradition toward an emphasis on rationalism, empiricism, and individual agency. It was characterized by the belief that the universe was governed by "natural laws" discoverable through human intellect, rather than through divine revelation or ancestral custom.</p>
+        <p>The political implications of this shift were revolutionary. If the natural world operated according to logical laws, Enlightenment thinkers argued, then human society and government should as well. This led to a fundamental questioning of political legitimacy. For centuries, the "Divine Right of Kings" had asserted that monarchs were chosen by God and were therefore unaccountable to their subjects. The Enlightenment dismantled this premise, suggesting instead that political authority was a social construct created by people to serve specific ends. This transition from divine authority to reason-based governance laid the groundwork for the modern democratic state, shifting the focus of politics from the duties of subjects to the rights of citizens.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Divine Right of Kings</span> The belief that monarchs were chosen by God and were therefore unaccountable to their subjects. <span class="sp">Spanish: derecho divino de los reyes</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1215</span>Year of Magna Carta, an early English agreement that limited a king’s power. Enlightenment thinkers built on this long tradition.</div>
+        <div class="connect"><span class="tag">CONNECT TO SCIENCE</span>Isaac Newton’s laws of motion, published in 1687, convinced many thinkers that the universe followed rules people could discover by reasoning.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.1</span>Four Thinkers and Two American Documents</p>
+      <p class="figsub">When each Enlightenment book appeared, and when the founders put the ideas to work.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Timeline showing Hobbes 1651, Locke 1689, Montesquieu 1748, Rousseau 1762, the Declaration of Independence 1776, and the Constitution 1787"><line x1="40" y1="145" x2="820" y2="145" stroke="#2A5276" stroke-width="4" stroke-linecap="round"/><line x1="88.8" y1="139" x2="88.8" y2="151" stroke="#6f7787" stroke-width="1.5"/><text x="88.8" y="167" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1650</text><line x1="332.5" y1="139" x2="332.5" y2="151" stroke="#6f7787" stroke-width="1.5"/><text x="332.5" y="167" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1700</text><line x1="576.2" y1="139" x2="576.2" y2="151" stroke="#6f7787" stroke-width="1.5"/><text x="576.2" y="167" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1750</text><line x1="820.0" y1="139" x2="820.0" y2="151" stroke="#6f7787" stroke-width="1.5"/><text x="820.0" y="167" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1800</text><line x1="93.6" y1="145" x2="93.6" y2="133" stroke="#2A5276" stroke-width="2"/><g><title>1651: Hobbes Leviathan</title><circle cx="93.6" cy="145" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="93.6" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="start" font-weight="800">1651</text><text x="93.6" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="700">Hobbes</text><text x="93.6" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">Leviathan</text><line x1="278.9" y1="145" x2="278.9" y2="155" stroke="#2A5276" stroke-width="2"/><g><title>1689: Locke Two Treatises</title><circle cx="278.9" cy="145" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="278.9" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1689</text><text x="278.9" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Locke</text><text x="278.9" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Two Treatises</text><line x1="566.5" y1="145" x2="566.5" y2="133" stroke="#2A5276" stroke-width="2"/><g><title>1748: Montesquieu Spirit of the Laws</title><circle cx="566.5" cy="145" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="566.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1748</text><text x="566.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Montesquieu</text><text x="566.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Spirit of the Laws</text><line x1="634.8" y1="145" x2="634.8" y2="155" stroke="#2A5276" stroke-width="2"/><g><title>1762: Rousseau The Social Contract</title><circle cx="634.8" cy="145" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="634.8" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1762</text><text x="634.8" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Rousseau</text><text x="634.8" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">The Social Contract</text><line x1="703.0" y1="145" x2="703.0" y2="71" stroke="#B8913F" stroke-width="2"/><g><title>1776: Declaration of Independence</title><circle cx="703.0" cy="145" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="703.0" y="43" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1776</text><text x="703.0" y="59" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Declaration</text><text x="703.0" y="74" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">of Independence</text><line x1="756.6" y1="145" x2="756.6" y2="217" stroke="#B8913F" stroke-width="2"/><g><title>1787: Constitution written</title><circle cx="756.6" cy="145" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="756.6" y="243" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1787</text><text x="756.6" y="259" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Constitution</text><text x="756.6" y="274" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">written</text></svg>
+      <p class="source">Sources: Publication dates of Thomas Hobbes, <i>Leviathan</i> (1651); John Locke, <i>Two Treatises of Government</i> (published 1689, title page dated 1690); Montesquieu, <i>The Spirit of the Laws</i> (1748); Jean-Jacques Rousseau, <i>The Social Contract</i> (1762).</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Event</th></tr></thead><tbody><tr><td>1651</td><td>Hobbes publishes <i>Leviathan</i></td></tr><tr><td>1689</td><td>Locke’s <i>Two Treatises of Government</i> appears (dated 1690)</td></tr><tr><td>1748</td><td>Montesquieu publishes <i>The Spirit of the Laws</i></td></tr><tr><td>1762</td><td>Rousseau publishes <i>The Social Contract</i></td></tr><tr><td>1776</td><td>Declaration of Independence adopted</td></tr><tr><td>1787</td><td>Constitution written in Philadelphia</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many years passed between <i>Leviathan</i> and the Declaration of Independence?</li><li>Which thinker wrote closest in time to the Declaration? What might that suggest about how fresh his ideas were to the founders?</li><li>Locke’s book appeared in 1689. Why might his ideas have had more time to spread in the colonies than Rousseau’s?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Human Nature and the State of Nature</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">At the heart of every political philosophy lies a specific assumption about human nature. Whether a thinker advocates for a strong, centralized authority or a decentralized, participatory democracy depends largely on whether they believe human beings are inherently cooperative or self-interested. To explore these questions, Enlightenment philosophers frequently employed a thought experiment known as the "state of nature"—a hypothetical condition in which no government or laws exist to restrain human behavior. By imagining how people would act in such a state, philosophers sought to determine the primary purpose and necessary power of the state.</p>
+        <p>A pessimistic view of human nature suggests that without the civilizing influence of a strong government, human life would descend into a perpetual state of conflict. In this view, humans are driven by self-interest, greed, and a desire for dominance. Therefore, the primary goal of government is to provide security and order, even if it requires the sacrifice of individual freedoms. Conversely, an optimistic view posits that humans are naturally rational and capable of moral behavior. In a state of nature, these thinkers argued, people would generally respect one another’s rights and cooperate for the common good. From this perspective, government is not a tool for controlling a dangerous population, but a mechanism for protecting the natural rights that individuals already possess.</p>
+        <p>The American Founders navigated these competing visions of humanity with characteristic pragmatism. They shared the Enlightenment's hope for human progress but remained deeply wary of human frailty and the corrupting influence of power. As James Madison famously wrote in Federalist No. 51, "If men were angels, no government would be necessary." This dualistic view— believing in the potential of the people while fearing the ambition of the individual—became the driving force behind the complex system of checks and balances that defines the U.S. Constitution. The design of the American government was intended to harness human ambition rather than simply suppress it, creating a system where "ambition must be made to counteract ambition."</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">State of Nature</span> A hypothetical condition used by philosophers to imagine how people would act with no government or laws. <span class="sp">Spanish: estado de naturaleza</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1788</span>Year Federalist No. 51 appeared in a New York newspaper (February 6). Madison argued that a government should use human ambition, not just suppress it.</div>
+        <div class="connect"><span class="tag">SKILLBUILDER</span><b>Distinguish a claim from evidence.</b> “People are selfish” is a claim. What evidence would you need to test it?</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Thomas Hobbes and Absolute Authority</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hobbes%20by%20John%20Michael%20Wright%20%28colour%29%20%283x4%20cropped%29.jpg?width=1400" alt="Painted portrait of Thomas Hobbes, an older man with white hair and a dark coat with a white collar." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Thomas Hobbes</span>Believed that only absolute power could prevent the chaos of the state of nature. Pictured: Thomas Hobbes by John Michael Wright.<span class="credit">Image: John Michael Wright (painter, c. 1669–70) / <a href="https://commons.wikimedia.org/wiki/File:Thomas_Hobbes_by_John_Michael_Wright_(colour)_(3x4_cropped).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Among the first major Enlightenment figures to tackle the problem of human nature and the state of nature was the English philosopher Thomas Hobbes. Writing in his 1651 masterpiece, Leviathan, Hobbes offered one of the most starkly pessimistic assessments of the human condition ever recorded. Hobbes lived through the chaos and violence of the English Civil War, an experience that profoundly shaped his conviction that only a powerful, centralized authority could prevent society from collapsing into anarchy.</p>
+        <p>For Hobbes, the state of nature was a "war of every man against every man." In this hypothetical world, there are no laws, no property rights, and no justice—only the constant threat of violent death. He famously described life in the state of nature as "solitary, poor, nasty, brutish, and short." Because humans are essentially equal in their ability to kill one another, no one can ever truly be secure. Driven by fear and the instinct for self-preservation, Hobbes argued that rational individuals would eventually realize that anything—even a harsh and absolute ruler—was preferable to the terrors of the state of nature.</p>
+        <p>To escape this chaos, Hobbes proposed a "<dfn id="t-social-contract">social contract</dfn>" in which individuals collectively agree to surrender their rights and power to a single, sovereign authority. In exchange for this total submission, the sovereign provides the one thing the people cannot provide for themselves: peace and security. Crucially, Hobbes argued that once this contract was made, it was irrevocable. The sovereign's power must be absolute and indivisible; to limit or question the ruler's authority would be to invite the very instability and civil war that the contract was designed to prevent.</p>
+        <p>While the American Founders largely rejected Hobbes’s call for absolute monarchy, his influence on American political thought is more significant than is often recognized. Hobbes established the idea that government is a human creation—a social contract—rather than a divine mandate. Furthermore, the Founders shared Hobbes’s concern for order and stability. The failure of the Articles of Confederation (which we will examine in Section 1.2) led many to fear that a government that was too weak would result in the very kind of "mob rule" and interstate conflict that Hobbes had predicted. While they did not want a Leviathan, the Founders were convinced that a government must possess enough energy and authority to maintain the Union and protect the peace.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social Contract</span> An agreement in which individuals consent to give up some freedoms and accept a ruler’s authority in exchange for protection. <span class="sp">Spanish: contrato social</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Sovereign</span> The person or body that holds supreme authority in a state. <span class="sp">Spanish: soberano</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1651</span>Year <i>Leviathan</i> appeared, shortly after the English Civil Wars (1642–1651) and the 1649 execution of King Charles I.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">John Locke and Natural Rights</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Godfrey%20Kneller%20-%20Portrait%20of%20John%20Locke%20%28Hermitage%29.jpg?width=1400" alt="Painted portrait of John Locke, an older man with long gray hair in a dark robe." loading="lazy" style="height:auto"><figcaption><span class="phlabel">John Locke</span>Argued that government exists solely to protect natural rights: life, liberty, and property. Pictured: Godfrey Kneller, Portrait of John Locke.<span class="credit">Image: Godfrey Kneller (painter, 1697) / <a href="https://commons.wikimedia.org/wiki/File:Godfrey_Kneller_-_Portrait_of_John_Locke_(Hermitage).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>If Thomas Hobbes provided the warning of what government must prevent, John Locke provided the vision of what government must protect. Writing a generation after Hobbes, Locke offered a significantly more optimistic view of human nature and a radically different conception of the social contract. In his Two Treatises of Government (1689), Locke argued that the state of nature was not a state of war, but a state of liberty governed by "natural law." This law, discoverable through reason, dictated that because all humans are created equal, no one has the right to harm another in their "life, health, liberty, or possessions."</p>
+        <p>Locke’s most influential contribution to political thought was the theory of <dfn id="t-natural-rights">natural rights</dfn>—the idea that certain rights are inherent to the human person and exist prior to the formation of any government. Unlike Hobbes, who believed individuals surrendered all rights to the sovereign, Locke argued that the social contract was a limited agreement. People create governments for the specific and sole purpose of protecting their natural rights of life, liberty, and property. This is the foundation of "limited government": the state has no legitimate authority beyond what is necessary to secure these rights.</p>
+        <p>Furthermore, Locke asserted that political legitimacy is derived entirely from the "<dfn id="t-consent">consent of the governed</dfn>." A government is only valid as long as it fulfills its part of the bargain. If a ruler becomes a tyrant and systematically violates the natural rights of the people, the social contract is broken. In such cases, Locke argued that the people have a "right of revolution"—a moral obligation to overthrow the unjust government and establish a new one that will respect their liberties. This was not a call for constant rebellion, but a safeguard against the abuse of power.</p>
+        <p>The impact of John Locke on the American Revolution cannot be overstated. His ideas permeate the Declaration of Independence, where Thomas Jefferson famously echoed Locke’s phrasing by asserting that all men are endowed with "unalienable Rights" to "Life, Liberty and the pursuit of Happiness." The American grievances against King George III were framed precisely in Lockean terms: the King had violated the social contract by taxing the colonists without their consent and depriving them of trial by jury. Locke provided the intellectual and moral justification for the American break with Britain, establishing the principle that the primary duty of "good government" is the protection of individual liberty.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Natural Rights</span> Fundamental liberties, life, liberty, and property, that people possess from birth and that exist before any government. <span class="sp">Spanish: derechos naturales</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Consent of the Governed</span> The principle that a government’s authority is legitimate only when the people it governs agree to it. <span class="sp">Spanish: consentimiento de los gobernados</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Jefferson’s change</span>Locke listed life, liberty, and property. Jefferson wrote “Life, Liberty and the pursuit of Happiness” in the Declaration.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.2</span>Hobbes and Locke Side by Side</p>
+      <p class="figsub">Two philosophers start from the same question, what life is like without government, and reach opposite conclusions.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Hobbes</th><th>Locke</th></tr></thead><tbody><tr><td>The state of nature</td><td>A “war of every man against every man”</td><td>Governed by natural law; people have natural rights</td></tr><tr><td>Why people form a government</td><td>To escape constant fear and violent death</td><td>To protect life, liberty, and property</td></tr><tr><td>What people give up</td><td>Their power and rights, to one sovereign</td><td>Only the power to enforce the law themselves</td></tr><tr><td>Power of the ruler</td><td>Absolute and not to be resisted</td><td>Limited, and based on consent</td></tr><tr><td>If a ruler becomes a tyrant</td><td>Resistance is not justified</td><td>People may remove the ruler</td></tr></tbody></table>
+      <p class="source">Sources: Thomas Hobbes, <i>Leviathan</i> (1651), ch. 13–14, 17; John Locke, <i>Second Treatise of Government</i> (1689), ch. 2 and 19. Summary written for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the sharpest disagreement? Explain your choice.</li><li>Which thinker would be more comfortable with a government that can be voted out? Use the table as evidence.</li><li>Add a Counter-Argument a Hobbes supporter might offer against Locke’s idea of the right to remove a ruler.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Montesquieu and the Architecture of Liberty</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Montesquieu%20-%20Versailles%20MV%202976.png?width=1400" alt="Painted portrait of Montesquieu in profile, wearing a gold coat inside an oval frame." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Montesquieu</span>Proposed the separation of powers to prevent tyranny. Pictured: Montesquieu, portrait at Versailles.<span class="credit">Image: After Jacques-Antoine Dassier (portrait, Palace of Versailles) / <a href="https://commons.wikimedia.org/wiki/File:Montesquieu_-_Versailles_MV_2976.png">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>While Locke defined the purpose of government, the French philosopher Charles-Louis de Secondat, Baron de Montesquieu, focused on the structure of government. In his 1748 work, The Spirit of the Laws, Montesquieu addressed the practical problem that had plagued political thinkers for centuries: if power naturally tends to corrupt those who hold it, how can a government be designed to prevent tyranny? Montesquieu’s answer was not to rely on the virtue of leaders, but to rely on the architecture of the institution itself.</p>
+        <p>Montesquieu’s most famous contribution is the principle of the "<dfn id="t-separation-of-powers">separation of powers</dfn>." Observing the British constitutional system, he argued that the functions of government should be divided into three distinct branches: the legislative (making laws), the executive (enforcing laws), and the judicial (interpreting laws). By placing these powers in separate hands, no single individual or group could ever achieve total control. "Constant experience shows us," Montesquieu wrote, "that every man invested with power is apt to abuse it... to prevent this abuse, it is necessary from the very nature of things that power should be a check to power."</p>
+        <p>This concept led directly to the system of "<dfn id="t-checks-and-balances">checks and balances</dfn>," where each branch of government is given the constitutional tools to limit the actions of the other two. For example, the legislature might pass a law, but the executive can veto it. The executive might command the military, but the legislature must provide the funding. The judiciary might interpret the law, but the executive appoints the judges and the legislature confirms them. This intentional friction was designed to slow the process of governance, ensuring that no policy could be enacted without broad consensus and that no branch could overstep its bounds.</p>
+        <p>The American Founders adopted Montesquieu’s institutional blueprints with near-religious devotion. The U.S. Constitution is, in many ways, an experiment in Montesquieu’s theories. By creating a bicameral legislature, an independent presidency, and a supreme court, the Framers built a government intended to be "self-regulating." Montesquieu’s fear of concentrated power became the cornerstone of American constitutionalism, reflecting the belief that the best way to protect liberty is to make it as difficult as possible for the government to act in a unified, tyrannical manner.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Separation of Powers</span> An arrangement that divides government into separate branches, legislative, executive, and judicial, so no group has absolute control. <span class="sp">Spanish: separación de poderes</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Checks and Balances</span> A system in which each branch has tools to limit the other branches. <span class="sp">Spanish: pesos y contrapesos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">31 books</span><i>The Spirit of the Laws</i> has 31 books. Its famous argument that “power should be a check to power” appears in Book 11.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E6CF8C"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#10263F">E</text></svg><div><small>EXAMPLE</small>Three Branches in a Club</div></div>
+      <div class="box-b">
+<p style="margin:0 0 8px"><b>Hypothetical.</b> A school robotics club writes its rules. One group (the officers) <b>proposes budgets</b>. Another (the treasurer) <b>spends the money</b>. A third (an advisor and two seniors) <b>settles disputes</b>. If the treasurer overspends, the officers can refuse the next budget. If the officers vote themselves a trip, the advisor group can rule it unfair.</p><p style="margin:0">No single person decides everything, and each group can slow the others. That is the logic of the separation of powers, applied on a small scale.</p>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.3</span>Checks and Balances Among the Three Branches</p>
+      <p class="figsub">Examples from the text show how each branch holds a tool to limit the others.</p>
+      <svg viewBox="0 0 860 400" role="img" aria-label="Triangle diagram of checks and balances among the legislative, executive, and judicial branches"><rect x="310" y="14" width="240" height="66" rx="10" fill="#2A5276" stroke="#10263F" stroke-width="2"/><text x="430.0" y="43.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">LEGISLATIVE</text><text x="430.0" y="61.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="400">Makes the laws</text><rect x="40" y="300" width="240" height="66" rx="10" fill="#2A5276" stroke="#10263F" stroke-width="2"/><text x="160.0" y="329.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">EXECUTIVE</text><text x="160.0" y="347.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="400">Carries out the laws</text><rect x="580" y="300" width="240" height="66" rx="10" fill="#2A5276" stroke="#10263F" stroke-width="2"/><text x="700.0" y="329.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">JUDICIAL</text><text x="700.0" y="347.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="400">Interprets the laws</text><line x1="330" y1="84" x2="193.3" y2="291.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="190.0,296.0 191.6,284.1 200.3,289.9" fill="#B8913F"/><line x1="218" y1="296" x2="354.7" y2="89.0" stroke="#7A5F22" stroke-width="3" stroke-linecap="round"/><polygon points="358.0,84.0 356.4,95.9 347.7,90.1" fill="#7A5F22"/><text x="178" y="170" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#7A5F22" text-anchor="end" font-weight="700">Executive can veto a law</text><text x="368" y="214" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Legislature funds the military and confirms judges</text><line x1="284" y1="340" x2="570.0" y2="340.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="576.0,340.0 565.2,345.2 565.2,334.8" fill="#B8913F"/><text x="430" y="330" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#7A5F22" text-anchor="middle" font-weight="700">Executive appoints the judges</text><line x1="690" y1="296" x2="555.3" y2="89.0" stroke="#2A5276" stroke-width="3" stroke-linecap="round"/><polygon points="552.0,84.0 562.3,90.2 553.5,95.9" fill="#2A5276"/><text x="700" y="176" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#2A5276" text-anchor="start" font-weight="700">Judiciary interprets the law</text><text x="430" y="390" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Each branch holds a tool to limit the other two. Arrows point toward the branch being checked.</text></svg>
+      <p class="source">Source: Examples of checks and balances as described in this chapter. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which branch is checked by the other two in the examples shown? Explain.</li><li>How does the executive’s veto power limit the legislature?</li><li>Why might the founders have wanted the legislature, not the executive, to control military funding?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Rousseau and Popular Sovereignty</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Maurice%20Quentin%20de%20La%20Tour%20-%20Portrait%20de%20Jean-Jacques%20Rousseau%20%281712-1778%29%2C%20%C3%A9crivain%20et%20philosophe%20-%20P210%20-%20Mus%C3%A9e%20Carnavalet.jpg?width=1400" alt="Pastel portrait of Jean-Jacques Rousseau, a man in a gray coat with powdered white hair." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Rousseau</span>Championed the "general will" and the idea that sovereignty resides with the people. Pictured: Maurice Quentin de La Tour, portrait of Jean-Jacques Rousseau (Musée Carnavalet).<span class="credit">Image: Maurice Quentin de La Tour (artist) / <a href="https://commons.wikimedia.org/wiki/File:Maurice_Quentin_de_La_Tour_-_Portrait_de_Jean-Jacques_Rousseau_(1712-1778),_écrivain_et_philosophe_-_P210_-_Musée_Carnavalet.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The final major Enlightenment influence on American thought was Jean-Jacques Rousseau, whose 1762 work, The Social Contract, explored the relationship between individual freedom and collective authority. Rousseau’s ideas introduced a tension into American political life that persists to this day: the conflict between individual rights and the "general will" of the community.</p>
+        <p>Rousseau argued that while the state of nature was a period of true freedom, the development of private property and social inequality had enslaved humanity to corrupt governments. To regain freedom, Rousseau proposed a social contract in which individuals do not surrender their rights to a monarch (as in Hobbes) or merely to protect their property (as in Locke), but rather to the community as a whole. Through this contract, people form a collective body that acts according to the "general will"—the common interest of all citizens.</p>
+        <p>This is the essence of "<dfn id="t-popular-sovereignty">popular sovereignty</dfn>"—the idea that the people themselves are the ultimate source of political power. In Rousseau’s ideal republic, the laws are not imposed from above, but are expressions of the people's own will. Therefore, in obeying the law, a citizen is only obeying themselves, and thus remains free. However, Rousseau’s concept of the general will carried a significant danger: if the community decides what is best for everyone, what happens to the individual who disagrees? Rousseau suggested that such individuals might be "forced to be free," a concept that critics have argued can lead to the "tyranny of the majority."</p>
+        <p>The American Founders were deeply influenced by Rousseau’s emphasis on popular sovereignty and the idea that the government must be accountable to the people. The opening words of the Constitution, "We the People," are a direct nod to the principle that the government’s legitimacy comes from the collective citizenry. However, the Founders were also wary of Rousseau’s more radical democratic tendencies. They feared that a pure democracy—one governed directly by the fluctuating whims of the majority—would lead to the violation of minority rights and the seizure of property. Consequently, they tempered Rousseau’s popular sovereignty with the republican structures suggested by Montesquieu and the individual rights protections of Locke, creating a "representative republic" rather than a direct democracy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Popular Sovereignty</span> The idea that the people themselves are the ultimate source of political power. <span class="sp">Spanish: soberanía popular</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">General Will</span> In Rousseau’s theory, the common interest of all citizens, which guides the laws of a healthy republic. <span class="sp">Spanish: voluntad general</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>In 1789 French revolutionaries issued the Declaration of the Rights of Man and of the Citizen, which drew on many of the same Enlightenment ideas.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Hobbes or Locke?</div></div>
+      <div class="box-b">
+        <p>Your class has to pick a rule for the food drive. Think about what each philosopher would choose.</p>
+        <div class="opts"><div class="opt"><h5>One strong leader</h5>Hobbes: give one person full authority so there is no confusion and no fighting.</div><div class="opt"><h5>Shared rules with limits</h5>Locke: protect each member’s rights, require consent, and allow the group to replace a leader who abuses power.</div></div>
+        <p class="ask">Which would you choose, and what is one risk of your choice?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion: A Synthesis of Ideas</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Enlightenment provided the American Founders with a rich and diverse "intellectual toolkit." From Thomas Hobbes, they learned the necessity of a strong, stable government capable of maintaining order. From John Locke, they derived the moral imperative to protect natural rights and the principle of consent. From Montesquieu, they obtained the structural blueprints for separating power to prevent tyranny. And from Rousseau, they embraced the revolutionary idea that the people are the ultimate sovereigns of the state.</p>
+        <p>These ideas did not always sit comfortably together. The American definition of "good government" is not a simple adoption of one philosophy, but a complex and often tense synthesis of several. The Founders had to balance the need for order with the desire for liberty, and the will of the majority with the rights of the individual. They understood that no single philosopher had all the answers, but that by drawing on the best of Enlightenment thought, they could construct a government that was both effective and just. As we move into Section 1.2, we will see how these abstract theories were put to the test in the crucible of colonial life and the crisis of the American Revolution.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 thinkers</span>Order (Hobbes), rights and consent (Locke), structure (Montesquieu), and the people’s rule (Rousseau) all show up in the Constitution.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 1’s second section asks how colonial life tested these ideas before 1776.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.4</span>The Founders’ Intellectual Toolkit</p>
+      <p class="figsub">Each thinker supplied one idea that appears in American government.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Chart connecting four Enlightenment thinkers to the idea each contributed to American government"><rect x="10" y="14" width="170" height="58" rx="10" fill="#10263F" stroke="#10263F" stroke-width="2"/><text x="95.0" y="48.0" font-family="Inter, Arial, sans-serif" font-size="18" fill="#F4EFE3" text-anchor="middle" font-weight="800">Hobbes</text><line x1="184" y1="43" x2="230.0" y2="43.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="236.0,43.0 225.2,48.2 225.2,37.8" fill="#B8913F"/><rect x="240" y="14" width="210" height="58" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="345.0" y="48.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">Order</text><line x1="454" y1="43" x2="500.0" y2="43.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="506.0,43.0 495.2,48.2 495.2,37.8" fill="#B8913F"/><rect x="510" y="14" width="340" height="58" rx="10" fill="#F6EEDA" stroke="#B8913F" stroke-width="2"/><text x="680.0" y="48.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="800">A strong, stable government</text><rect x="10" y="90" width="170" height="58" rx="10" fill="#10263F" stroke="#10263F" stroke-width="2"/><text x="95.0" y="124.0" font-family="Inter, Arial, sans-serif" font-size="18" fill="#F4EFE3" text-anchor="middle" font-weight="800">Locke</text><line x1="184" y1="119" x2="230.0" y2="119.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="236.0,119.0 225.2,124.2 225.2,113.8" fill="#B8913F"/><rect x="240" y="90" width="210" height="58" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="345.0" y="124.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">Rights and consent</text><line x1="454" y1="119" x2="500.0" y2="119.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="506.0,119.0 495.2,124.2 495.2,113.8" fill="#B8913F"/><rect x="510" y="90" width="340" height="58" rx="10" fill="#F6EEDA" stroke="#B8913F" stroke-width="2"/><text x="680.0" y="124.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="800">Natural rights; right of revolution</text><rect x="10" y="166" width="170" height="58" rx="10" fill="#10263F" stroke="#10263F" stroke-width="2"/><text x="95.0" y="200.0" font-family="Inter, Arial, sans-serif" font-size="18" fill="#F4EFE3" text-anchor="middle" font-weight="800">Montesquieu</text><line x1="184" y1="195" x2="230.0" y2="195.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="236.0,195.0 225.2,200.2 225.2,189.8" fill="#B8913F"/><rect x="240" y="166" width="210" height="58" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="345.0" y="200.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">Structure</text><line x1="454" y1="195" x2="500.0" y2="195.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="506.0,195.0 495.2,200.2 495.2,189.8" fill="#B8913F"/><rect x="510" y="166" width="340" height="58" rx="10" fill="#F6EEDA" stroke="#B8913F" stroke-width="2"/><text x="680.0" y="200.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="800">Separated powers; checks and balances</text><rect x="10" y="242" width="170" height="58" rx="10" fill="#10263F" stroke="#10263F" stroke-width="2"/><text x="95.0" y="276.0" font-family="Inter, Arial, sans-serif" font-size="18" fill="#F4EFE3" text-anchor="middle" font-weight="800">Rousseau</text><line x1="184" y1="271" x2="230.0" y2="271.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="236.0,271.0 225.2,276.2 225.2,265.8" fill="#B8913F"/><rect x="240" y="242" width="210" height="58" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="345.0" y="276.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">The people rule</text><line x1="454" y1="271" x2="500.0" y2="271.0" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/><polygon points="506.0,271.0 495.2,276.2 495.2,265.8" fill="#B8913F"/><rect x="510" y="242" width="340" height="58" rx="10" fill="#F6EEDA" stroke="#B8913F" stroke-width="2"/><text x="680.0" y="276.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="800">Popular sovereignty: “We the People”</text></svg>
+      <p class="source">Source: Summary of this section’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which idea in the toolkit best explains why the Constitution has three branches?</li><li>Which two ideas might pull in opposite directions? Explain the tension.</li><li>Which tool would the founders have needed most after the war? Support your answer.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Enlightenment Ideas Cross Borders</div></div>
+      <div class="box-b">
+<p style="margin:0">The same Enlightenment ideas that shaped the American Revolution also shaped events in Europe. In August 1789, the French National Assembly adopted the Declaration of the Rights of Man and of the Citizen. Like the American Declaration, it declared that people have natural rights and that political power comes from the nation, not from a king alone. Think about why ideas about government spread so quickly across the Atlantic Ocean.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING THEORIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Write one sentence that begins, “Hobbes and Locke agree that…” and one that begins, “They disagree about…”.</li><li>Which thinker’s idea appears in the phrase “We the People”? Explain your answer.</li><li>Write a Counter-Argument to this claim: “A government with absolute power always protects people best.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 1.1 ASSESSMENT</b>Complete the Section 1.1 Assessment in your <i>Chapter 1 Assignment</i> packet before you move on to Section 1.2.</div></div>  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>1.2</b></div>
+    <h2>From Colonies to Confederation</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E6CF8C" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F4EFE3" stroke-width="5"/><path d="M14 100h132" stroke="#E6CF8C" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 1.2, you will</p>
+      <ul><li>Explain how colonial self-government and salutary neglect shaped American expectations</li><li>Identify the concept of the “consent of the governed” in the Declaration of Independence</li><li>Explain why the Articles of Confederation were designed to be weak and how Shays’ Rebellion exposed their flaws</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-salutary-neglect">Salutary Neglect</a></li><li><a href="#t-consent">Consent of the Governed</a></li><li><a href="#t-articles">Articles of Confederation</a></li><li><a href="#t-shays">Shays’ Rebellion</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this cause-and-effect chain as you read.
+      <svg viewBox="0 0 260 120" aria-label="Cause and effect chain organizer"><rect x="4" y="38" width="56" height="40" rx="8" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="32" y="62" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#10263F">Weak</text><path d="M61 58 h7" stroke="#B8913F" stroke-width="3"/><rect x="69" y="38" width="56" height="40" rx="8" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="97" y="62" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#10263F">Failures</text><path d="M126 58 h7" stroke="#B8913F" stroke-width="3"/><rect x="134" y="38" width="56" height="40" rx="8" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="162" y="62" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#10263F">Shays</text><path d="M191 58 h7" stroke="#B8913F" stroke-width="3"/><rect x="199" y="38" width="56" height="40" rx="8" fill="#fff" stroke="#2A5276" stroke-width="2"/><text x="227" y="62" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#10263F">Reform</text></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Practical Application and the Crucible of Experience</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The transition from Enlightenment theory to American political reality was not an overnight shift but a gradual evolution occurring over 150 years of colonial development. While European philosophers were debating the nature of the social contract in their studies, American colonists were living it in the wilderness of the New World. This practical experience shaped American attitudes toward power in ways that were often more visceral than intellectual. The colonists did not merely believe in limited government because they had read John Locke; they believed in it because they had spent generations governing themselves with minimal interference from a distant monarch.</p>
+        <p>This period of "<dfn id="t-salutary-neglect">salutary neglect</dfn>"—a British policy of loose supervision of the colonies—allowed for the growth of robust local institutions. However, when this neglect ended following the French and Indian War, the resulting clash between British imperial authority and colonial expectations of self-rule became the primary catalyst for revolution. The American suspicion of centralized power, which would later define the Articles of Confederation, was born in this conflict. To the colonists, a "good government" was one that remained local, accountable, and strictly bound by the consent of the people. Any attempt to centralize authority was viewed not as an administrative necessity, but as a direct threat to liberty.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Salutary Neglect</span> A British policy of loose supervision of the colonies, which allowed strong local institutions to grow. <span class="sp">Spanish: negligencia saludable</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3,000 miles</span>Approximate distance between the colonies and London, which made day-to-day rule from Britain impractical.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.5</span>From Self-Rule to Crisis, 1619–1787</p>
+      <p class="figsub">Key events in this section, spaced evenly rather than to scale.</p>
+      <svg viewBox="0 0 860 230" role="img" aria-label="Timeline of 1619 House of Burgesses, 1620 Mayflower Compact, 1763 end of the Seven Years&#x27; War, 1765 Stamp Act, 1776 Declaration, 1781 Articles ratified, 1786 Shays&#x27; Rebellion, 1787 Convention"><line x1="40" y1="115" x2="820" y2="115" stroke="#2A5276" stroke-width="4" stroke-linecap="round"/><line x1="88.8" y1="115" x2="88.8" y2="103" stroke="#2A5276" stroke-width="2"/><g><title>1619: Burgesses Virginia assembly</title><circle cx="88.8" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="88.8" y="75" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="start" font-weight="800">1619</text><text x="88.8" y="91" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="700">Burgesses</text><text x="88.8" y="106" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">Virginia assembly</text><line x1="186.2" y1="115" x2="186.2" y2="125" stroke="#2A5276" stroke-width="2"/><g><title>1620: Mayflower Compact</title><circle cx="186.2" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="186.2" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1620</text><text x="186.2" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Mayflower</text><text x="186.2" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Compact</text><line x1="283.8" y1="115" x2="283.8" y2="103" stroke="#2A5276" stroke-width="2"/><g><title>1763: Seven Years’ War ends</title><circle cx="283.8" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="283.8" y="75" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1763</text><text x="283.8" y="91" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Seven Years’</text><text x="283.8" y="106" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">War ends</text><line x1="381.2" y1="115" x2="381.2" y2="125" stroke="#2A5276" stroke-width="2"/><g><title>1765: Stamp Act passed</title><circle cx="381.2" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="381.2" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1765</text><text x="381.2" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Stamp Act</text><text x="381.2" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">passed</text><line x1="478.8" y1="115" x2="478.8" y2="103" stroke="#B8913F" stroke-width="2"/><g><title>1776: Declaration adopted</title><circle cx="478.8" cy="115" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="478.8" y="75" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1776</text><text x="478.8" y="91" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Declaration</text><text x="478.8" y="106" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">adopted</text><line x1="576.2" y1="115" x2="576.2" y2="125" stroke="#B8913F" stroke-width="2"/><g><title>1781: Articles ratified</title><circle cx="576.2" cy="115" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="576.2" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1781</text><text x="576.2" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Articles</text><text x="576.2" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">ratified</text><line x1="673.8" y1="115" x2="673.8" y2="103" stroke="#2A5276" stroke-width="2"/><g><title>1786: Shays’ Rebellion</title><circle cx="673.8" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="673.8" y="75" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1786</text><text x="673.8" y="91" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Shays’</text><text x="673.8" y="106" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Rebellion</text><line x1="771.2" y1="115" x2="771.2" y2="125" stroke="#2A5276" stroke-width="2"/><g><title>1787: Convention Philadelphia</title><circle cx="771.2" cy="115" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="771.2" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="end" font-weight="800">1787</text><text x="771.2" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="end" font-weight="700">Convention</text><text x="771.2" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="end" font-weight="400">Philadelphia</text></svg>
+      <p class="source">Sources: Dates as given in this chapter; the Convention opened in Philadelphia in May 1787.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Event</th></tr></thead><tbody><tr><td>1619</td><td>Virginia House of Burgesses created</td></tr><tr><td>1620</td><td>Mayflower Compact</td></tr><tr><td>1763</td><td>Seven Years’ War ends</td></tr><tr><td>1765</td><td>Stamp Act passed</td></tr><tr><td>1776</td><td>Declaration of Independence</td></tr><tr><td>1781</td><td>Articles of Confederation ratified</td></tr><tr><td>1786</td><td>Shays’ Rebellion begins</td></tr><tr><td>1787</td><td>Constitutional Convention in Philadelphia</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many years passed between the first colonial assembly and the Declaration of Independence?</li><li>Which events on the timeline show the colonists experiencing self-rule? Which show a conflict with Britain?</li><li>How many years did the Articles of Confederation last before the Convention met?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Colonial Self-Government</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Mayflower%20Compact%201620%20cph.3g07155.jpg?width=1400" alt="A painting of men gathered around a table on a ship, signing the Mayflower Compact." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Roots of Self-Rule</span>The Mayflower Compact acted as an early social contract in the colonies. Pictured: The Mayflower Compact, 1620 (painting).<span class="credit">Image: Jean Leon Gerome Ferris (painter; image from the Library of Congress) / <a href="https://commons.wikimedia.org/wiki/File:The_Mayflower_Compact_1620_cph.3g07155.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Long before the first shots were fired at Lexington and Concord, the American colonies were functioning as quasi-independent political entities. The distance of 3,000 miles from London necessitated a high degree of local autonomy. From the very beginning, the colonists established frameworks for self-rule. The Mayflower Compact of 1620, for instance, was a proto-social contract in which the Pilgrims agreed to form a "civil body politic" and obey "just and equal laws" for the general good of the colony. This document established the precedent that political authority in America derived from the voluntary agreement of the governed, not from a royal decree.</p>
+        <p>By the early eighteenth century, every colony had established a representative assembly. The Virginia House of Burgesses, created in 1619, was the first of these, serving as a model for subsequent colonial legislatures. These assemblies held significant power, including the crucial "<dfn id="t-purse">power of the purse</dfn>"—the authority to levy taxes and determine how that revenue was spent. Because these assemblies were elected by property-owning men within the colony, political participation was remarkably high compared to Europe. This experience fostered a widespread belief that the people’s representatives should be the primary actors in governance, and that any executive power (typically represented by a royally appointed governor) should be strictly checked.</p>
+        <p>Colonial governance also emphasized local control through town meetings and county courts. In New England, town meetings allowed citizens to participate directly in decision-making on issues ranging from local taxes to road repairs. These local institutions were the primary schools of American democracy, where individuals learned the habits of self-government and developed a fierce sense of community sovereignty. By the time the British government began to assert more direct control over the colonies in the 1760s, the Americans were not fighting to gain new rights; they were fighting to preserve a system of self-rule that they had practiced for generations.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Power of the Purse</span> The authority to raise taxes and decide how government money is spent. <span class="sp">Spanish: poder de la bolsa</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1619</span>Year the Virginia House of Burgesses first met, the first elected assembly in English America.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Mayflower Compact was signed in November 1620 aboard the ship by 41 men, before the Pilgrims landed.</div>
+      </div>
+    </div>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:1066/440"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Faneuil%20Hall%20Boston%20Suffolk%20County%20Massachusetts.jpg?width=1800" alt="The brick front of Faneuil Hall in Boston, with a triangular pediment above two rows of tall arched windows." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-4.5%"></div><figcaption><span class="phlabel">Where Bostonians met</span>Faneuil Hall in Boston, built in 1742, was a public meeting hall where colonists gathered to debate British policy in the years before the Revolution. The wreaths seen in the full photograph are modern holiday decorations.<span class="credit">Photo: EgorovaSvetlana / <a href="https://commons.wikimedia.org/wiki/File:Faneuil_Hall_Boston_Suffolk_County_Massachusetts.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span></figcaption></figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Independence and Fear of Central Power</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The American Revolution was triggered by a shift in British policy following the Seven Years' War (1756–1763). Facing a massive national debt, the British Parliament began to impose direct taxes on the colonies—starting with the Sugar Act and the Stamp Act—without the consent of the colonial assemblies. For the colonists, this was more than a financial burden; it was a fundamental violation of the Lockean principle of "taxation without representation." If Parliament could take their property without their consent, the colonists argued, then they were no longer free citizens, but subjects of an absolute and arbitrary power.</p>
+        <p>The decade of protest that followed solidified a profound distrust of centralized authority. Each new British measure—the Townshend Acts, the Tea Act, and the "Intolerable" Acts—was viewed as evidence of a conspiracy to deprive the Americans of their liberties. The revolutionary slogans, such as "Give me liberty or give me death," reflected a political culture that prioritized the prevention of tyranny above all other government functions. This suspicion was not directed solely at King George III, but at the very concept of a powerful, distant central government that was not directly accountable to the local populace.</p>
+        <p>When the colonies finally declared independence in 1776, they did so as thirteen "free and independent states." The Declaration of Independence, written by Thomas Jefferson, was an indictment of centralized overreach and a manifesto for local sovereignty. The Revolutionary War required unity, but it was a unity born of necessity rather than a desire for a national identity. The patriots feared that if they replaced the distant tyranny of London with a powerful central government in America, they would simply be exchanging one master for another. This fear dictated the structure of the first American government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Taxation Without Representation</span> The colonial protest that Parliament could not tax people who had no elected voice in it. <span class="sp">Spanish: impuestos sin representación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1765</span>Year of the Stamp Act, which placed a tax on printed materials in the colonies.</div>
+        <div class="connect"><span class="tag">SKILLBUILDER</span><b>Read a source for its argument.</b> The Declaration lists grievances against the King. Which of them involve taxes or trials?</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Declaration%20of%20Independence%20%281819%29%2C%20by%20John%20Trumbull.jpg?width=1800" alt="John Trumbull's painting of the five-man drafting committee presenting the Declaration of Independence to the Continental Congress." loading="lazy" style=""><figcaption><span class="phlabel">Consent of the Governed</span>The Declaration of Independence formalized the break with tyranny. Pictured: Declaration of Independence (1819), by John Trumbull. The painting was completed in 1819 and shows an event that was staged by the artist; the room and the seating are not an exact record.<span class="credit">Image: John Trumbull (painter) / <a href="https://commons.wikimedia.org/wiki/File:Declaration_of_Independence_(1819),_by_John_Trumbull.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E6CF8C"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#10263F">E</text></svg><div><small>EXAMPLE</small>Tax Without a Voice</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose the student government at another school voted to charge every Shafter High student $5 to attend your football games, and no Shafter student could vote for that student government. Would you accept the charge? Your answer shows why the colonists objected when a Parliament they could not vote for taxed them.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Articles of Confederation: Design and Intent</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Articles%20page1.jpg?width=1400" alt="The first page of the handwritten Articles of Confederation." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A "League of Friendship"</span>The Articles of Confederation created a deliberately weak central government. Pictured: Articles of Confederation, page 1.<span class="credit">Image: The U.S. Government / <a href="https://commons.wikimedia.org/wiki/File:Articles_page1.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The first governing document of the United States, the <dfn id="t-articles">Articles of Confederation</dfn>, was a direct reflection of the revolutionary fear of central power. Drafted in 1777 and finally ratified in 1781, the Articles established a "league of friendship" among the states rather than a unified nation. The very title of the document is telling: a "confederation" is a loose association of sovereign entities that join together for specific, limited purposes, such as defense. Under the Articles, the states retained their "sovereignty, freedom, and independence," and every power not explicitly granted to the central government remained with the states.</p>
+        <p>The structure of the Confederation government was intentionally designed to be weak and inefficient. There was no executive branch to enforce the laws and no national judiciary to resolve disputes between states. All power was vested in a unicameral (one-house) legislature, where each state had exactly one vote, regardless of its population or wealth. This ensured that small states like Rhode Island had the same political weight as large states like Virginia, preventing any single state or coalition from dominating the others.</p>
+        <p>The logic behind this design was deeply rooted in the colonial experience. The Founders believed that liberty was best protected when government was kept close to the people at the state and local levels. They intentionally deprived the central government of the powers that the British Parliament had abused. For example, the Confederation Congress had no power to tax; it could only "request" funds from the states. It also had no power to regulate interstate or foreign commerce. To pass any significant legislation, nine of the thirteen states had to agree, and to amend the Articles themselves required a unanimous vote of all thirteen state legislatures. This intentional gridlock was viewed not as a flaw, but as a safeguard against central tyranny.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Confederation</span> A loose association of independent states that join together for limited purposes such as defense. <span class="sp">Spanish: confederación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Unicameral</span> Having a legislature of a single house, as Congress did under the Articles. <span class="sp">Spanish: unicameral</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1781</span>Year the Articles took effect, after all 13 states ratified them. Congress had drafted them in 1777.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.6</span>What the Articles Gave Congress, and What They Withheld</p>
+      <p class="figsub">Each choice came from the colonial fear of distant, powerful government.</p>
+      <table class="cmp"><thead><tr><th>Feature</th><th>Under the Articles</th><th>Result</th></tr></thead><tbody><tr><td>Executive</td><td>None</td><td>No one to enforce laws</td></tr><tr><td>National courts</td><td>None</td><td>No way to settle disputes between states</td></tr><tr><td>Taxes</td><td>Congress could only request money from the states</td><td>Chronic shortage of funds</td></tr><tr><td>Trade</td><td>No power to regulate commerce</td><td>State trade barriers</td></tr><tr><td>Passing laws</td><td>Nine of thirteen states required</td><td>Gridlock on major issues</td></tr><tr><td>Amending</td><td>All thirteen states required</td><td>Reform nearly impossible</td></tr></tbody></table>
+      <p class="source">Source: Articles of Confederation (1777, ratified 1781); description in this chapter.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Pick two rows and explain how each reflects the colonists’ experience with Britain.</li><li>Which feature do you think caused the most harm? Support your answer.</li><li>Why did the founders think gridlock was a safeguard rather than a flaw?</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.7</span>One State, One Vote: Population in 1790</p>
+      <p class="figsub">Under the Articles, every state had exactly one vote in Congress, whatever its population.</p>
+      <svg viewBox="0 0 860 444" role="img" aria-label="Bar chart of 1790 population of the thirteen original states, from Virginia, about 692 thousand, to Delaware, about 59 thousand"><line x1="140.0" y1="10" x2="140.0" y2="400" stroke="#e6e8ec"/><text x="140.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0K</text><line x1="230.0" y1="10" x2="230.0" y2="400" stroke="#e6e8ec"/><text x="230.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100K</text><line x1="320.0" y1="10" x2="320.0" y2="400" stroke="#e6e8ec"/><text x="320.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">200K</text><line x1="410.0" y1="10" x2="410.0" y2="400" stroke="#e6e8ec"/><text x="410.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">300K</text><line x1="500.0" y1="10" x2="500.0" y2="400" stroke="#e6e8ec"/><text x="500.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">400K</text><line x1="590.0" y1="10" x2="590.0" y2="400" stroke="#e6e8ec"/><text x="590.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">500K</text><line x1="680.0" y1="10" x2="680.0" y2="400" stroke="#e6e8ec"/><text x="680.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">600K</text><line x1="770.0" y1="10" x2="770.0" y2="400" stroke="#e6e8ec"/><text x="770.0" y="418" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">700K</text><text x="130" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Virginia</text><g><title>Virginia: 692K</title><path d="M140 16 h618.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-618.8z" fill="#B8913F"/></g><text x="770.8" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">692K</text><text x="130" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Pennsylvania</text><g><title>Pennsylvania: 434K</title><path d="M140 46 h386.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-386.6z" fill="#2A5276"/></g><text x="538.6" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">434K</text><text x="130" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">North Carolina</text><g><title>North Carolina: 394K</title><path d="M140 76 h350.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-350.6z" fill="#2A5276"/></g><text x="502.6" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">394K</text><text x="130" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Massachusetts</text><g><title>Massachusetts: 379K</title><path d="M140 106 h337.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-337.1z" fill="#2A5276"/></g><text x="489.1" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">379K</text><text x="130" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New York</text><g><title>New York: 340K</title><path d="M140 136 h302.0 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-302.0z" fill="#2A5276"/></g><text x="454.0" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">340K</text><text x="130" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Maryland</text><g><title>Maryland: 320K</title><path d="M140 166 h284.0 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-284.0z" fill="#2A5276"/></g><text x="436.0" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">320K</text><text x="130" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">South Carolina</text><g><title>South Carolina: 249K</title><path d="M140 196 h220.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-220.1z" fill="#2A5276"/></g><text x="372.1" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">249K</text><text x="130" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Connecticut</text><g><title>Connecticut: 238K</title><path d="M140 226 h210.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-210.2z" fill="#2A5276"/></g><text x="362.2" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">238K</text><text x="130" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New Jersey</text><g><title>New Jersey: 184K</title><path d="M140 256 h161.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-161.6z" fill="#2A5276"/></g><text x="313.6" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">184K</text><text x="130" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New Hampshire</text><g><title>New Hampshire: 142K</title><path d="M140 286 h123.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-123.8z" fill="#2A5276"/></g><text x="275.8" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">142K</text><text x="130" y="330.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Georgia</text><g><title>Georgia: 83K</title><path d="M140 316 h70.7 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-70.7z" fill="#2A5276"/></g><text x="222.7" y="330.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">83K</text><text x="130" y="360.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Rhode Island</text><g><title>Rhode Island: 69K</title><path d="M140 346 h58.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-58.1z" fill="#2A5276"/></g><text x="210.1" y="360.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">69K</text><text x="130" y="390.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Delaware</text><g><title>Delaware: 59K</title><path d="M140 376 h49.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-49.1z" fill="#B8913F"/></g><text x="201.1" y="390.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">59K</text><line x1="140" y1="10" x2="140" y2="400" stroke="#6f7787" stroke-width="1.5"/><text x="455.0" y="440" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Population in thousands (K), 1790 Census</text></svg>
+      <p class="source">Source: U.S. Census Bureau, first census (1790), population of the original thirteen states, rounded to the nearest thousand. The Articles were in force 1781–1789, before this census, so the figures show the later size of each state; the Articles themselves are the source of the one-vote rule (Article V).</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>State</th><th>Population, 1790</th></tr></thead><tbody><tr><td>Virginia</td><td>about 692,000</td></tr><tr><td>Pennsylvania</td><td>about 434,000</td></tr><tr><td>North Carolina</td><td>about 394,000</td></tr><tr><td>Massachusetts</td><td>about 379,000</td></tr><tr><td>New York</td><td>about 340,000</td></tr><tr><td>Maryland</td><td>about 320,000</td></tr><tr><td>South Carolina</td><td>about 249,000</td></tr><tr><td>Connecticut</td><td>about 238,000</td></tr><tr><td>New Jersey</td><td>about 184,000</td></tr><tr><td>New Hampshire</td><td>about 142,000</td></tr><tr><td>Georgia</td><td>about 83,000</td></tr><tr><td>Rhode Island</td><td>about 69,000</td></tr><tr><td>Delaware</td><td>about 59,000</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many times larger was Virginia than Delaware?</li><li>Why might small states have favored one vote per state? Why might large states object?</li><li>How does this chart help explain the fear of a state or coalition dominating the others?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Weaknesses and Practical Failures</h3>
+    <div class="pair">
+      <div class="body">
+        <p>While the Articles of Confederation successfully guided the colonies through the Revolutionary War, the system’s weaknesses became apparent almost immediately upon the arrival of peace. Without the common enemy of Great Britain to maintain unity, the "league of friendship" began to unravel. The central government’s inability to tax led to a perpetual financial crisis. The nation was heavily in debt to foreign powers and to the soldiers who had fought for independence, but Congress had no means of generating revenue. When states refused to fulfill the financial requests of Congress, the central government was left powerless to pay its bills or maintain a credible national defense.</p>
+        <p>Economic instability was further exacerbated by the lack of a national currency and the inability of Congress to regulate commerce. States began to impose their own tariffs and trade barriers against one another, leading to a fragmented and inefficient national economy. Some states issued their own paper money, which rapidly depreciated in value, causing inflation and punishing creditors.</p>
+        <p>Boundary disputes and conflicting land claims between states often threatened to escalate into armed conflict, and the central government had no judicial mechanism to arbitrate these disagreements.</p>
+        <p>The lack of an executive branch meant that even when Congress managed to pass a resolution, there was no authority to ensure it was carried out. The United States was essentially thirteen separate countries trying to function as one, but without the necessary legal or political glue to hold them together. Foreign nations, recognizing the weakness of the Confederation, began to take advantage of the situation. The British refused to evacuate their forts in the Northwest Territory as required by the peace treaty, and the Spanish closed the Mississippi River to American trade. The Confederation government was too weak to project power abroad or maintain order at home, leading many to fear that the American experiment was on the brink of collapse.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Inflation</span> A general rise in prices, which can happen when money loses its value. <span class="sp">Spanish: inflación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">13 sovereign states</span>Under the Articles, each state kept its own tariffs and, in some cases, its own paper money.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Fix the Articles?</div></div>
+      <div class="box-b">
+        <p>Congress is broke and cannot pay its soldiers. You are a delegate. What should you propose?</p>
+        <div class="opts"><div class="opt"><h5>Leave power with the states</h5>Keep the Articles as written. Ask each state to send more money voluntarily.</div><div class="opt"><h5>Give Congress the power to tax</h5>Amend the Articles so Congress can raise its own funds, even though some states may object.</div></div>
+        <p class="ask">Which would you vote for, and what is the biggest risk of your choice?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Shays’ Rebellion and the Crisis of Governance</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The crisis of the Confederation period reached its breaking point in 1786 with an uprising in western Massachusetts known as Shays’ Rebellion. The rebellion was sparked by an economic depression that had left many small farmers unable to pay their debts and taxes. When the state courts began to foreclose on farms and imprison debtors, Daniel Shays, a Revolutionary War veteran, led an armed group of farmers to shut down the courts and attempt to seize the federal armory at Springfield.</p>
+        <p>Shays’ Rebellion was more than a localized riot; it was a profound shock to the American political system. For the nation’s leaders, the rebellion was a terrifying demonstration of "mob rule" and the potential for anarchy in a society with a weak government. Because the Confederation government had no national army and no power to tax to raise one, it was unable to respond to the crisis. The rebellion was eventually put down by a privately funded state militia, but the message was clear: the government was unable to protect life, liberty, or property.</p>
+        <p>George Washington, Thomas Jefferson, and James Madison watched the events in Massachusetts with growing alarm. Washington wrote that the nation was "fast verging to anarchy and confusion," while Madison argued that the rebellion proved that a government without the "energy" to enforce its laws was no government at all. Shays’ Rebellion became the primary catalyst for the movement to reform the Articles of Confederation. It shifted the debate from "how much liberty can we afford?" to "how much order is necessary to preserve liberty?" The very people who had fought to overthrow the centralized authority of Britain now realized that they needed a more powerful central government to prevent their own society from tearing itself apart.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Anarchy</span> A condition of disorder in which no authority can keep the peace. <span class="sp">Spanish: anarquía</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1787</span>On January 25, Shays’ men marched on the Springfield arsenal and were scattered by state militia.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The reform movement led to the Constitutional Convention, where delegates met in Philadelphia in May 1787.</div>
+      </div>
+    </div>
+<div class="photo-row">
+<figure class="photo "><div class="crop" style="aspect-ratio:520/380"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Shays%20forces%20flee%20Continental%20troops%2C%20Springfield.jpg?width=1200" alt="An illustration of men with muskets and sticks fleeing across a snowy field." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-5.11%"></div><figcaption><span class="phlabel">Anarchy Threatens Liberty</span>Shays' Rebellion exposed the inability of the Confederation to maintain order. Pictured: Shays forces flee Continental troops, Springfield. This is an early twentieth-century illustration, not an eyewitness image.<span class="credit">Image: C. Kendrick (illustration, c. 1902) / <a href="https://commons.wikimedia.org/wiki/File:Shays_forces_flee_Continental_troops,_Springfield.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:520/380"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Springfield%20Armory%20National%20Historic%20Site%20-%20Springfield%2C%20Massachusetts%20-%20DSC02502.JPG?width=1200" alt="A brick building with a front porch and flagpoles on the grounds of the Springfield Armory National Historic Site." loading="lazy" style="position:absolute;max-width:none;height:auto;width:110.0%;left:-5.0%;top:-0.18%"></div><figcaption><span class="phlabel">The site today</span>Springfield Armory National Historic Site in Massachusetts preserves the grounds in Springfield where the 1787 confrontation took place. The building pictured is part of the site as it appears today.<span class="credit">Photo: Daderot / <a href="https://commons.wikimedia.org/wiki/File:Springfield_Armory_National_Historic_Site_-_Springfield,_Massachusetts_-_DSC02502.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span></figcaption></figure>
+</div>
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING TIMELINES AND CHARTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 1.5. What is the gap between the Declaration of Independence and Shays’ Rebellion?</li><li>Use Figure 1.7. Which states would most likely have backed a change to the one-state-one-vote rule? Explain.</li><li>Use the text. Name one cause and one effect of Shays’ Rebellion.</li></ol>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 1.8</span>The Founders’ Balancing Act</p>
+      <p class="figsub">Where the Articles, British rule, and the 1787 goal fall between too little and too much government.</p>
+      <svg viewBox="0 0 860 230" role="img" aria-label="A scale from Too little government, anarchy, to Too much government, tyranny, with the Articles of Confederation near the anarchy end and the Constitution aimed at the middle"><defs><linearGradient id="lo" x1="0" x2="1"><stop offset="0" stop-color="#E6CF8C"/><stop offset=".5" stop-color="#f5f1e6"/><stop offset="1" stop-color="#8FA9C2"/></linearGradient></defs><rect x="40" y="90" width="780" height="26" rx="13" fill="url(#lo)" stroke="#2A5276" stroke-width="2"/><text x="40" y="72" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="start" font-weight="800">ANARCHY</text><text x="40" y="84" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">too little government</text><text x="820" y="72" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="end" font-weight="800">TYRANNY</text><text x="820" y="84" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="end" font-weight="400">too much government</text><g><title>Articles of Confederation, 1781 to 1787: weak central government</title><circle cx="170" cy="103" r="14" fill="#B8913F" stroke="#fff" stroke-width="3"/></g><text x="170" y="150" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="700">Articles of Confederation</text><text x="170" y="166" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">no tax, army, or executive</text><g><title>British rule in the 1760s and 1770s: distant central power</title><circle cx="700" cy="103" r="14" fill="#2A5276" stroke="#fff" stroke-width="3"/></g><text x="700" y="150" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="700">British rule, 1760s–1770s</text><text x="700" y="166" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">distant, unaccountable power</text><line x1="430" y1="40" x2="430" y2="128" stroke="#10263F" stroke-width="2.5" stroke-dasharray="6 5"/><text x="430" y="32" font-family="Inter, Arial, sans-serif" font-size="13" fill="#10263F" text-anchor="middle" font-weight="700">The 1787 goal: enough power to be effective,</text><text x="430" y="196" font-family="Inter, Arial, sans-serif" font-size="13" fill="#10263F" text-anchor="middle" font-weight="700">enough checks to remain free</text></svg>
+      <p class="source">Source: Interpretation of this chapter’s text. Diagram created for this textbook; positions are illustrative, not measurements.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Why does Figure 1.8 place the Articles near anarchy and British rule near tyranny?</li><li>What does the dashed line represent?</li><li>Describe a present-day issue where people disagree about where the line should fall.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion: The Road to Reform</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The journey from the colonies to the Confederation was a period of intense experimentation and learning. The American colonists took the abstract theories of the Enlightenment and applied them to the messy reality of building a new society. Their successes, such as the development of representative assemblies and the Northwest Ordinance, demonstrated their capacity for self-rule. Their failures, however, exposed a fundamental flaw in their initial design: a government that is too weak to enforce its laws or protect its citizens cannot ultimately secure the very liberties it was created to defend.</p>
+        <p>By 1787, the consensus among political leaders was that the Articles of Confederation were beyond repair. The "league of friendship" had failed to provide economic stability, national security, or domestic order. The crisis of the 1780s had forced a rethink of the American definition of "good government." While the fear of tyranny remained, it was now joined by an equal fear of anarchy. The stage was set for a new constitutional convention in Philadelphia, where the challenge would be to design a government that possessed enough power to be effective, but enough checks and balances to remain free.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1787</span>Year the Northwest Ordinance passed and the Constitutional Convention met.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>In the next chapter you will see how the delegates built a government to fix these problems.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CAUSE AND EFFECT</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Write a chain of three causes and effects that connects the colonial experience to the Articles of Confederation.</li><li>Why did Shays’ Rebellion change leaders’ answer to the question of how much order is needed to preserve liberty?</li><li>Write a Counter-Argument to this claim: “The Articles of Confederation were a complete failure.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 1.2 ASSESSMENT</b>Complete the Section 1.2 Assessment in your <i>Chapter 1 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Who should govern, and why should anyone obey? Read four original documents from 1651 to 1781 and decide how the American answer was built from earlier ideas and hard experience.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Founders’ Sources</h3>
+        <p>The documents below were written by people who lived under very different governments. Thomas Hobbes wrote in the aftermath of the English Civil Wars. John Locke wrote against a background of struggles between English kings and Parliament. Thomas Jefferson and the Continental Congress wrote in 1776 as thirteen colonies were breaking with Britain. The authors of the Articles of Confederation wrote while the war was still being fought.</p>
+        <p>As you read, notice what each document says about three things: what people are like without government, why people form a government, and how much power that government should have. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document or object created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1651 to 1781, from philosophy to law.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · PHILOSOPHY</small><b>Thomas Hobbes, <i>Leviathan</i> (1651)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Hereby it is manifest that during the time men live without a common power to keep them all in awe, they are in that condition which is called war; and such a war as is of every man against every man. … In such condition, there is no place for industry … no arts; no letters; no society; and which is worst of all, continual fear, and danger of violent death; and the life of man, solitary, poor, nasty, brutish, and short.”<cite>Thomas Hobbes, <i>Leviathan</i>, Part 1, ch. 13 (1651). Spelling modernized, as in common editions. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Hobbes say life would be like without a government? What kind of government does he think the solution requires?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · PHILOSOPHY</small><b>John Locke, <i>Second Treatise of Government</i> (1689)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The state of nature has a law of nature to govern it, which obliges every one: and reason, which is that law, teaches all mankind, who will but consult it, that being all equal and independent, no one ought to harm another in his life, health, liberty, or possessions.”<cite>John Locke, <i>Second Treatise of Government</i>, ch. 2, section 6 (1689). Spelling modernized.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> How does Locke’s description of the state of nature differ from Hobbes’s? What does “reason … teaches all mankind” suggest about how people can govern themselves?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · FOUNDING DOCUMENT</small><b>The Declaration of Independence (1776)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable Rights, that among these are Life, Liberty and the pursuit of Happiness.—That to secure these rights, Governments are instituted among Men, deriving their just powers from the consent of the governed, —That whenever any Form of Government becomes destructive of these ends, it is the Right of the People to alter or to abolish it, and to institute new Government.”<cite>Declaration of Independence, July 4, 1776, from the National Archives transcription.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which phrases echo Locke? Where does the Declaration state the “consent of the governed,” and what does it say people may do when a government violates their rights?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · FOUNDING DOCUMENT</small><b>Articles of Confederation (1777, ratified 1781)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article II: “Each state retains its sovereignty, freedom, and independence, and every power, jurisdiction, and right, which is not by this confederation expressly delegated to the United States, in Congress assembled.”<br><br>Article III: “The said states hereby severally enter into a firm league of friendship with each other, for their common defense, the security of their liberties, and their mutual and general welfare …”<br><br>Article V: “In determining questions in the United States, in Congress assembled, each state shall have one vote.”<cite>Articles of Confederation, Articles II, III, and V (drafted 1777; ratified 1781). Text from the Avalon Project at Yale Law School. Ellipsis marks omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which article keeps power with the states? What does “league of friendship” suggest about how close a union the authors intended? What problem might Article V create for large states?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Use Documents A and B to compare how Hobbes and Locke explain why people form governments. Quote one phrase from each.</li>
+        <li>Which document best illustrates the principle of consent of the governed? Explain how you know.</li>
+        <li>Use Documents C and D to explain how the authors of the Articles tried to prevent the kind of power the Declaration criticizes.</li>
+        <li>Which document would a supporter of order point to? Which would a supporter of liberty point to? Explain both choices.</li>
+        <li><b>Making a Claim</b> Which of the four documents offers the best answer to the question “Who should govern, and why should anyone obey?” State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>1</b></div>
+    <h2>Chapter 1 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#E6CF8C" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F4EFE3" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F4EFE3" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How did Enlightenment philosophy and colonial experiences shape the American definition of “good government”?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Enlightenment Foundations</h5>Hobbes (social contract for security), Locke (natural rights and consent), Montesquieu (separation of powers), and Rousseau (popular sovereignty) provided the theoretical basis for American government.</div><div><h5>Colonial Self-Rule</h5>Decades of salutary neglect allowed the colonies to develop institutions of self-government (like House of Burgesses), fostering a culture that rejected taxation without representation.</div><div><h5>The Failure of the Confederation</h5>The Articles of Confederation were designed to be weak to prevent tyranny, but they lacked the power to tax, regulate commerce, or maintain order, as demonstrated by Shays’ Rebellion.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 1 ASSESSMENT AND SIMULATION</b>Complete the Chapter 1 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the Federalist No. 51 source analysis, and the Modern Connection reflection) and the partner Simulation in your <i>Chapter 1 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.1): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>Thomas Hobbes, <i>Leviathan</i> (1651), ch. 13: <a href="https://sourcebooks.web.fordham.edu/mod/hobbes-lev13.asp">Fordham University Modern History Sourcebook</a>; comparison with the 1651 text at <a href="https://en.wikisource.org/wiki/Leviathan_(1651)/Chapter_13">Wikisource</a></li><li>John Locke, <i>Second Treatise of Government</i> (1689), ch. 2, section 6, from Project Gutenberg and Wikisource editions</li><li>The Declaration of Independence: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/declaration-transcript">archives.gov/founding-docs/declaration-transcript</a></li><li>Articles of Confederation, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/artconf.asp">avalon.law.yale.edu/18th_century/artconf.asp</a></li><li>James Madison, Federalist No. 51, The Avalon Project: <a href="https://avalon.law.yale.edu/18th_century/fed51.asp">avalon.law.yale.edu/18th_century/fed51.asp</a></li><li>U.S. Census Bureau, first census (1790), population of the original thirteen states, as presented in the Bureau’s “State Population of the Original 13 Colonies” graphic (2021)</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> Images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Andrew Rehbein (CC BY-SA 4.0, Independence Hall), EgorovaSvetlana (CC BY-SA 4.0, Faneuil Hall), and Daderot (CC0, Springfield Armory). Public-domain artworks and documents: portraits of Thomas Hobbes (John Michael Wright), John Locke (Godfrey Kneller), Montesquieu (after Jacques-Antoine Dassier), and Jean-Jacques Rousseau (Maurice Quentin de La Tour); John Trumbull, <i>Declaration of Independence</i>; Jean Leon Gerome Ferris, <i>The Mayflower Compact</i>; C. Kendrick (Shays’ Rebellion illustration); John Cassell (Stamp Act illustration); and the Articles of Confederation (U.S. Government). Images are shown unaltered except for cropping in the page layout.</p>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

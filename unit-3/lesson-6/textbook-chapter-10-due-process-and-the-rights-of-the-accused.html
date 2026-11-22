@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 10: Due Process and the Rights of the Accused | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#FCF8F6; --white:#ffffff;
+  --unit:#7F3A4B; --unit-dk:#4B2430; --unit-lt:#F8EFEC; --unit-mid:#BC949C;
+  --amber:#3F6C7F; --amber-lt:#A8CAD6; --amber-dk:#2A4B5A;
+  --coral:#2A4B5A; --coral-lt:#E4EEF3; --amber-wash:#E4EEF3; --cream:#F8EFEC; --pale:#A8CAD6;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E6DEDC;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(75,36,48,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#D6BCBF}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#FCF7F6}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#F3E8E6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#A8CAD6;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#F8EFEC}
+.doc{background:#fff;border:1px solid #E0CBCC;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #ECDDDC}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#FCF7F6;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#261218}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#F0E8E5;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#E6DEDC}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#E6DEDC}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(75,36,48,.80) 0%,rgba(75,36,48,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 10 · DUE PROCESS AND THE RIGHTS OF THE ACCUSED</span>
+  <a href="#opener">Opener</a><a href="#s1">10.1 The Fifth Amendment</a><a href="#s2">10.2 The Sixth Amendment</a><a href="#s3">10.3 Due Process</a><a href="#s4">10.4 Modern Challenges</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/East%20courtroom%2C%20Howard%20M.%20Metzenbaum%20U.S.%20Courthouse%2C%20Cleveland%2C%20Ohio%20LCCN2010719477.tif?width=2000" alt="A formal courtroom with wooden benches in the foreground, a railing, a judge's bench and witness stand in the center, and a large painting and chandelier on the walls." style="object-position:50% 45%"></div>
+  <div class="opener-head">
+    <div class="chapnum">10</div>
+    <div>
+      <div class="unitline">Unit 3 · Civil Liberties and Civil Rights</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Due Process and<br>the Rights of the Accused</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the state must prove its case.</b> A federal courtroom in the Howard M. Metzenbaum U.S. Courthouse in Cleveland, Ohio, photographed on April 13, 2009. In a room like this, the Fifth and Sixth Amendments decide how the government may accuse, question, and try a person. <span class="credit">Photo: Carol M. Highsmith, Library of Congress / <a href="https://commons.wikimedia.org/wiki/File:East_courtroom,_Howard_M._Metzenbaum_U.S._Courthouse,_Cleveland,_Ohio_LCCN2010719477.tif">Wikimedia Commons</a>, Public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 10.1</span><span class="sl-title">The Fifth Amendment: The Shield of the Accused</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 10.2</span><span class="sl-title">The Sixth Amendment: The Right to a Fair Trial</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 10.3</span><span class="sl-title">Due Process in the Modern Era</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 10.4</span><span class="sl-title">Strategic Challenges to Due Process</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: What Must the State Do Before It Punishes?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How do the Fifth and Sixth Amendments ensure the procedural integrity of the American legal system?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Analyze the protections provided by the Fifth Amendment, including the right against self-incrimination, the prohibition on double jeopardy, the grand jury requirement, and the Takings Clause, and explain how each limits the investigative power of the state.</li>
+          <li>Identify the Sixth Amendment’s suite of trial guarantees, including the right to counsel, speedy and public trials, an impartial jury, and the Confrontation Clause, and explain how they collectively ensure adversarial fairness.</li>
+          <li>Evaluate the distinction between procedural and substantive due process and explain why the Fourteenth Amendment’s nationalization of these standards was a transformative development in American constitutional history.</li>
+          <li>Explain how modern challenges, including the detention of enemy combatants and the use of algorithmic risk assessment tools, test the traditional understanding of due process and the rights of the accused.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Due Process</span><span>Procedural Due Process</span><span>Substantive Due Process</span><span>Self-Incrimination</span><span>Double Jeopardy</span><span>Miranda Rights</span><span>Right to Counsel</span><span>Public Defender</span><span>Habeas Corpus</span><span>Grand Jury</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 10 Key Concept</p>
+        <p><b>Due process</b> means the government must follow fair, open procedures before it takes a person’s life, liberty, or property. The Fifth and Sixth Amendments do not promise that every guilty person will be convicted or every innocent person freed. They promise that conviction must be earned by a fair process.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine you are accused of a crime you did not commit. The people accusing you have investigators, lawyers, and the power of the state. What would you want to be true before anyone could take your freedom? Most people say they would want a lawyer, a chance to answer the evidence, a fair jury, and a judge who would not simply side with the government. Those wishes are written into the Constitution. This chapter shows where they come from and how courts are applying them to terrorism cases and computer algorithms.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four documents, the Fifth and Sixth Amendments and two Supreme Court opinions from 1963 and 1966, and answer one question: <a href="#case">what must the state do before it punishes a person, and why does the way it proceeds matter as much as the result?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.2</code> Students evaluate and take and defend positions on the scope and limits of rights and obligations as democratic citizens, the relationships among them, and how they are secured.</li>
+            <li><code>12.2.1</code> Discuss the meaning and importance of each of the rights guaranteed under the Bill of Rights and how each is secured (e.g., freedom of religion, speech, press, assembly, petition, privacy). <i>(Sections 10.1–10.4, Case Study)</i></li>
+            <li><code>12.5.1</code> Understand the changing interpretations of the Bill of Rights over time, including interpretations of the basic freedoms (religion, speech, press, petition, and assembly) articulated in the First Amendment and the due process and equal-protection-of-the-law clauses of the Fourteenth Amendment. <i>(Section 10.3)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.5.4</code> Explain the controversies that have resulted over changing interpretations of civil rights, including those in <i>Plessy v. Ferguson</i>, <i>Brown v. Board of Education</i>, <i>Miranda v. Arizona</i>, <i>Regents of the University of California v. Bakke</i>, <i>Adarand Constructors, Inc. v. Pena</i>, and <i>United States v. Virginia (VMI)</i>. <i>(Section 10.1, Case Study Doc D)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The State Must Earn the Right to Punish</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Imagine that the state has decided you are guilty of a crime. It has investigators, prosecutors, forensic laboratories, and virtually unlimited financial resources at its disposal. It can subpoena witnesses, gather documents, and build a case against you over months or years. You are a single individual, facing one of the most powerful institutions in human civilization. What stands between you and a verdict reached not by the weight of evidence but by the sheer coercive force of the government?</p>
+        <p>The answer, in the American constitutional system, is procedure. The Fifth and Sixth Amendments to the Constitution do not guarantee that every innocent person will go free or that every guilty person will be convicted. What they guarantee is something more foundational: that before the government can deprive any person of their liberty or their life, it must follow a rigorous, transparent, and fair process — one designed not to make conviction easy, but to make injustice difficult. In a republic governed by law rather than by the will of whoever holds power at a given moment, the legitimacy of a criminal conviction depends as much on how the government obtained it as on whether the defendant actually committed the crime.</p>
+        <p>This principle — that the state must earn the right to punish — is the animating logic of due process. The phrase itself appears in two places in the Constitution: in the Fifth Amendment, which prohibits the federal government from depriving any person of “life, liberty, or property, without due process of law,” and in the Fourteenth Amendment, which applies the same prohibition to the states. Together, these provisions establish the constitutional foundation for everything this chapter examines: the right to remain silent, the prohibition on trying a person twice for the same crime, the right to have an attorney, the right to confront your accusers, the right to be tried by an impartial jury, and the right to challenge the lawfulness of your detention in court.</p>
+        <p>These protections did not emerge from abstract philosophical reasoning alone. They were hard-won responses to historical abuses — to the use of torture to extract confessions, to the imprisonment of political dissidents without trial, to the convictions of poor defendants who had no lawyer and no realistic chance of challenging the evidence against them. Each provision of the Fifth and Sixth Amendments can be traced to a specific kind of injustice that an unconstrained government had inflicted on its citizens. Understanding why these protections were written into the Constitution — and why the Supreme Court has worked to enforce them vigorously — requires understanding the history of what happens when they are absent.</p>
+        <p>Today, the procedural safeguards of the Fifth and Sixth Amendments face new and unfamiliar challenges. The war on terrorism has raised questions about whether individuals detained by the military as enemy combatants have any right to challenge their imprisonment in civilian courts. The rise of artificial intelligence has introduced algorithmic systems into bail and sentencing decisions, raising questions about what it means to “confront” the evidence that determines your liberty when that evidence is produced by a computer program. And the persistent reality of a two-tiered justice system — one for those who can afford skilled private counsel and one for those who cannot — challenges the promise that the right to counsel is a genuinely meaningful guarantee for every American, regardless of economic circumstances.</p>
+        <p>This chapter examines each of these dimensions of due process: the specific protections of the Fifth and Sixth Amendments, the doctrinal distinction between procedural and substantive due process, the nationalization of fair trial standards through the Fourteenth Amendment, and the contemporary challenges that are forcing a renegotiation of what constitutional fairness requires in the twenty-first century.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Due process</span> The constitutional rule that government must follow fair procedures before it takes a person’s life, liberty, or property. <span class="sp">Spanish: debido proceso</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two clauses</span>The Fifth Amendment limits the federal government and the Fourteenth Amendment limits the states. Each says no one may be deprived of “life, liberty, or property, without due process of law.”</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Chapter 9 explained how the Fourteenth Amendment’s Due Process Clause carries the Bill of Rights to the states. This chapter applies that idea to criminal justice.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The Introduction names three modern tests of due process: enemy combatants, algorithms in bail and sentencing, and unequal access to lawyers (Sections 10.2 and 10.4).</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>10.1</b></div>
+    <h2>The Fifth Amendment: The Shield of the Accused</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#A8CAD6" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F8EFEC" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#A8CAD6" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 10.1, you will</p>
+      <ul><li>Explain how the Fifth Amendment limits what the government may do when it investigates and charges a person</li><li>Describe how Miranda warnings protect the right against self-incrimination</li><li>Explain why the Constitution forbids a second trial after an acquittal and requires a grand jury for serious charges</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-self-incrimination">Self-Incrimination</a></li><li><a href="#t-miranda-rights">Miranda Rights</a></li><li><a href="#t-double-jeopardy">Double Jeopardy</a></li><li><a href="#t-grand-jury">Grand Jury</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each Fifth Amendment protection, what it stops the government from doing, and one example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: protection, what it stops, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Protection</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it stops</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fifth Amendment: The Shield of the Accused</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Fifth Amendment is, in several respects, the most architecturally sophisticated of the criminal procedure amendments. It does not simply prohibit a single government action; it constructs an entire framework of protections designed to ensure that the process of investigating and prosecuting crime does not itself become a form of oppression. Its provisions address the moment of interrogation, the decision to bring charges, the structure of the trial, and even the government’s power to take private property. Understanding the Fifth Amendment means understanding why each of these moments — from the police station to the courthouse — presents a distinctive opportunity for government overreach, and why the Constitution responds to each with a specific structural constraint.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Prosecutor</span> A government lawyer who brings criminal charges against a person and tries to prove the case in court. <span class="sp">Spanish: fiscal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Four moments</span>The text says the Fifth Amendment addresses interrogation, the decision to charge, the structure of the trial, and the taking of property.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Chapter 9 followed the Fourth Amendment through searches and arrests. The Fifth Amendment picks up the story at questioning and charging.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Right Against Self-Incrimination</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Perhaps no provision of the Bill of Rights is more familiar to ordinary Americans than the Fifth Amendment’s protection against <dfn id="t-self-incrimination">self-incrimination</dfn>. The phrase “pleading the Fifth” has entered the common vernacular as a shorthand for refusing to answer a question, but its constitutional significance runs far deeper than popular culture suggests. The right against self-incrimination reflects a fundamental commitment to a particular model of criminal justice — one in which the burden of proof rests entirely and always on the government.</p>
+        <p>In the English common law tradition that the American Founders inherited, the principle against compelled self-incrimination had developed over centuries as a response to the practices of ecclesiastical courts and the infamous Star Chamber, a royal prerogative court that used prolonged interrogation, threats, and physical pressure to extract confessions from religious and political dissenters. The colonists who drafted the Fifth Amendment had witnessed, or read about, what happened when the state had the power to compel a person to testify against themselves: confessions became more reliable evidence than they should be, because people confessed to things they had not done simply to end their suffering. The right against self-incrimination was a structural solution to a structural problem — it removed from the government’s investigative toolkit the most powerful and the most dangerous instrument of coercion.</p>
+        <p>In modern constitutional doctrine, the protection against self-incrimination applies in two principal contexts. The first is the criminal trial itself. A defendant in a criminal case has an absolute right not to take the witness stand, and the prosecution is constitutionally prohibited from suggesting to the jury that the defendant’s silence is evidence of guilt. The second context is custodial interrogation — the questioning of a person who is in police custody and therefore not free to leave. It was in this second context that the most consequential Fifth Amendment decision of the twentieth century was handed down.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Self-incrimination</span> Being forced to give evidence or testimony that could be used to convict oneself. The Fifth Amendment says no one may be “compelled in any criminal case to be a witness against himself.” <span class="sp">Spanish: autoincriminación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Star Chamber</span> A royal court in England that used long questioning, threats, and physical pressure to force confessions. <span class="sp">Spanish: Cámara Estrellada</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two settings</span>The text names two settings where the protection applies: the criminal trial and custodial interrogation.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The text traces the right to English courts that pressed religious and political dissenters to confess. Compare the First Amendment’s protection for dissent in Chapter 8.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.1</span>What Miranda Requires</p>
+      <p class="figsub">From custody to the courtroom, step by step.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart: custody and questioning, warnings given first, waiver or silence, then use in court only after a valid waiver"><g><title>Custody and questioning: Police question a person who is not free to leave</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Custody and questioning</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Police question a person</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">who is not free to leave</text><g><title>Warnings first: Silence, use against you, a lawyer, one appointed</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#3F6C7F" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Warnings first</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Silence, use against you,</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">a lawyer, one appointed</text><g><title>Waiver or silence: The person speaks, or stays silent and asks for a lawyer</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Waiver or silence</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The person speaks, or</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">stays silent and asks for</text><text x="530.7" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">a lawyer</text><g><title>Use in court: Counts only after a valid waiver</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Use in court</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Counts only after a valid</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">waiver</text><path d="M219.0 45.0 L236.3 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#3F6C7F"/><path d="M420.3 45.0 L437.7 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#3F6C7F"/><path d="M621.7 45.0 L639.0 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#3F6C7F"/></svg>
+      <p class="source">Source: Description of <i>Miranda v. Arizona</i> (1966) in this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step must come before any questioning begins?</li><li>The text says the warnings did not prohibit questioning. Which step shows that a person may still choose to talk?</li><li>What does the waiver have to be in order for a statement to be used?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>In Miranda v. Arizona (1966), the Supreme Court consolidated four separate cases in which defendants had made incriminating statements to police during interrogations conducted without any notice of their constitutional rights. The defendants in each case were poor, had limited education, and were subjected to hours of questioning in isolated rooms under psychologically manipulative conditions. Chief Justice Earl Warren’s majority opinion documented in detail the interrogation techniques then in common use among American police departments — techniques designed not to discover the truth but to overcome the suspect’s resistance and obtain a confession. Warren concluded that the inherently coercive atmosphere of custodial interrogation created such a significant risk of Fifth Amendment violations that a prophylactic rule was necessary: before any custodial interrogation, police must inform the suspect that they have the right to remain silent, that anything they say can be used against them in court, that they have the right to an attorney, and that if they cannot afford an attorney, one will be appointed for them.</p>
+        <p>These warnings — universally known today as “<dfn id="t-miranda-rights">Miranda rights</dfn>” or the “Miranda warning” — did not prohibit police from questioning suspects. They required only that any waiver of the right to remain silent be “knowing, voluntary, and intelligent.” A suspect who was told of their rights and chose to speak with police was making an informed decision; a suspect who was not told of their rights and was psychologically pressured into confessing was not. The Miranda decision was controversial when it was issued and has remained so, with critics arguing that it impedes effective law enforcement and defenders insisting that it is a minimal safeguard against one of the most ancient and persistent abuses of government power.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Miranda rights</span> The warnings police must give a suspect in custody before questioning: the right to remain silent, that anything said can be used in court, and the right to an attorney, appointed if the suspect cannot afford one. <span class="sp">Spanish: derechos Miranda</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Custodial interrogation</span> Questioning by police of a person who is in custody and not free to leave. <span class="sp">Spanish: interrogatorio bajo custodia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 13, 1966</span>Date <i>Miranda v. Arizona</i> was decided, 5 to 4. Chief Justice Earl Warren wrote the opinion for the Court.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Four cases</span><i>Miranda</i> combined four cases: <i>Miranda v. Arizona</i>, <i>Vignera v. New York</i>, <i>Westover v. United States</i>, and <i>California v. Stewart</i>.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Some critics say the rule hinders police, and defenders call it a minimal safeguard. The text reports both views. Chapter 9’s debate about security and privacy is the same debate in a new setting.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#A8CAD6"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#4B2430">E</text></svg><div><small>EXAMPLE</small>Two Interrogation Rooms</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> In Room A, an officer says, “You have the right to remain silent. Anything you say can be used against you in court. You have the right to an attorney, and if you cannot afford one, one will be appointed.” The suspect says, “I will talk.” In Room B, no one says anything about rights, and the suspect is questioned for hours alone. The text says the suspect in Room A made an informed decision. In Room B, a statement might be thrown out because the suspect was never told about the rights that make a waiver knowing and intelligent.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE FIRST PROTECTION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.1. Which step shows that <i>Miranda</i> does not forbid police questioning?</li><li>Use the text. Why did Chief Justice Warren call custodial interrogation “inherently coercive,” and what did he conclude was necessary?</li><li>Explain in your own words why the text says the right against self-incrimination places the burden of proof on the government.</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Prohibition on Double Jeopardy</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The Fifth Amendment’s <dfn id="t-double-jeopardy">double jeopardy</dfn> clause states that no person shall “be subject for the same offence to be twice put in jeopardy of life or limb.” Like the right against self-incrimination, the prohibition on double jeopardy reflects a structural concern about the relative power of the state and the individual. A government that could try a person repeatedly for the same crime — prosecuting until it finally obtained a conviction — would be a government that could use the trial process itself as a form of punishment, regardless of the ultimate verdict. The mere ordeal of repeated prosecution — the cost, the stress, the disruption to a person’s life — would be enough to deter dissent and punish unpopular individuals even without a single conviction.</p>
+        <p>The double jeopardy clause attaches at the moment jeopardy “begins,” which in a jury trial means the moment the jury is sworn in. Once a defendant has been acquitted — found not guilty by a jury — the government cannot appeal that verdict and cannot retry the defendant for the same offense, regardless of how strong the evidence was or how flawed the original trial may have been. This rule is absolute and admits of no exception, even in cases where newly discovered evidence might clearly establish guilt. The finality that the double jeopardy clause provides is, in a sense, a deliberate constitutional choice to accept the occasional cost of an unjust acquittal in exchange for the permanent protection against governmental harassment through repeated prosecution.</p>
+        <p>The most significant qualification on the double jeopardy principle is the dual sovereignty doctrine. Under this doctrine, because federal and state governments are separate and independent “sovereigns,” each with its own distinct body of law, a prosecution by one does not bar a subsequent prosecution by the other for the same underlying conduct. This exception is not without controversy. Critics argue that when the federal and state governments prosecute the same individual for the same act — even if they charge different specific offenses — the cumulative burden on the defendant is precisely the kind of prosecutorial harassment the double jeopardy clause was intended to prevent. The Supreme Court has consistently upheld the dual sovereignty doctrine, however, treating it as a logical consequence of the federal structure of American government rather than as a violation of the clause’s underlying purpose.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Double jeopardy</span> Being tried twice for the same offense. The Fifth Amendment forbids it. <span class="sp">Spanish: doble exposición</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Dual sovereignty</span> The doctrine that the federal government and a state are separate sovereigns, so each may prosecute the same conduct. <span class="sp">Spanish: doble soberanía</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">When it starts</span>The text says jeopardy begins in a jury trial when the jury is sworn in.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Dual sovereignty is rooted in federalism, the division of power between national and state governments studied earlier in this book.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#2A4B5A" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Retrial Question</div></div>
+      <div class="box-b">
+        <p>A jury acquits a defendant. Later, new evidence appears that strongly suggests the person was guilty. Three positions:</p>
+        <div class="opts"><div class="opt"><h5>Allow a retrial</h5>Justice requires the truth to come out, even if it takes a second trial.</div><div class="opt"><h5>Never allow a retrial</h5>An acquittal must be final so that the government cannot prosecute until it wins.</div><div class="opt"><h5>Allow a retrial only for the other government</h5>A state may prosecute after the federal government has acted, under dual sovereignty.</div></div>
+        <p class="ask">Which position matches the rule in the text? Use the term “finality” and one argument from critics of dual sovereignty.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Grand Juries, the Takings Clause, and the Logic of Internal Restraints</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Two additional provisions of the Fifth Amendment complete its framework of protections against government overreach: the <dfn id="t-grand-jury">grand jury</dfn> requirement and the Takings Clause. Each represents a different dimension of constitutional restraint — one governing the power to prosecute, the other governing the power to take.</p>
+        <p>The Fifth Amendment requires that “no person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury.” A grand jury is a body of citizens — typically between sixteen and twenty-three individuals — convened not to decide guilt or innocence, but to determine whether there is sufficient evidence to bring a criminal charge in the first place. The grand jury serves as a citizen check on prosecutorial power. Before a prosecutor can subject a person to the ordeal of a criminal trial on a serious charge, they must persuade a group of ordinary citizens — not a judge, not a government official — that there is probable cause to believe the defendant committed the alleged crime.</p>
+        <p>The grand jury process is conducted in secret, without the defendant present, and under rules much less formal than those governing trials. In practice, critics have long argued that grand juries almost invariably indict when prosecutors ask them to — the saying that a skilled prosecutor could “indict a ham sandwich” has circulated in legal circles for decades. Whatever its practical limitations, however, the grand jury reflects an important constitutional principle: that the decision to formally accuse a citizen of a serious crime should involve a community judgment, not just a government decision. It is one of the many ways the Fifth Amendment attempts to impose internal restraints on the exercise of state power.</p>
+        <p>The Takings Clause rounds out the Fifth Amendment by addressing the government’s power of eminent domain — the authority to seize private property for public use. The clause does not prohibit the government from taking property; it requires that when the government does so, it must provide “just compensation” to the owner. The purpose is straightforward: if the costs of a public project — a highway, a military base, a public park — were borne entirely by the individuals whose property happened to be in the way, the burden would fall arbitrarily on a few citizens for the benefit of all. Just compensation spreads that burden across the public as a whole, through the tax revenues that fund the payment. The Takings Clause thus reflects the same underlying principle as the rest of the Fifth Amendment: that the government’s power, however legitimate in its purposes, must be exercised within limits that protect the individual from being sacrificed to the state’s convenience.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Grand jury</span> A body of citizens that decides whether there is enough evidence to bring a serious criminal charge. It does not decide guilt. <span class="sp">Spanish: gran jurado</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Eminent domain</span> The government’s power to take private property for public use. The Fifth Amendment requires “just compensation.” <span class="sp">Spanish: dominio eminente</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Indictment</span> A formal charge from a grand jury that a person committed a serious crime. <span class="sp">Spanish: acusación formal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">16 to 23</span>The text says a grand jury typically has sixteen to twenty-three members.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text says critics claim grand juries almost always indict. Both the saying about indicting a ham sandwich and the principle of community judgment appear in the text.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.2</span>The Fifth Amendment at a Glance</p>
+      <p class="figsub">Each clause limits a different government power.</p>
+      <table class="cmp"><thead><tr><th>Clause</th><th>What it limits</th><th>Key idea from the text</th></tr></thead><tbody><tr><td>Self-incrimination</td><td>Interrogation and testimony</td><td>The burden of proof stays on the government; <i>Miranda</i> warnings protect the right in custody</td></tr><tr><td>Double jeopardy</td><td>Repeated prosecution</td><td>An acquittal is final; the dual sovereignty doctrine is the main qualification</td></tr><tr><td>Grand jury</td><td>The decision to charge</td><td>Ordinary citizens must agree there is probable cause for a serious charge</td></tr><tr><td>Takings Clause</td><td>Seizing property</td><td>Government must pay just compensation for property taken for public use</td></tr></tbody></table>
+      <p class="source">Sources: U.S. Constitution, Amendment V; this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which clause protects a person at the moment of questioning, and which protects a person after a verdict?</li><li>The text calls these “internal restraints.” What do all four clauses have in common?</li><li>Which clause would a homeowner rely on if the state wanted land for a highway?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Canada’s Charter of Rights and Freedoms</div></div>
+      <div class="box-b">
+<p style="margin:0">Canada’s Charter, adopted in 1982, also protects the accused. Section 10(b) gives a person who is arrested or detained the right to hire and instruct a lawyer without delay and to be told of that right. Section 11(c) says an accused person cannot be forced to testify at his or her own trial. Section 11(h) bars a second trial for an offense of which a person has been finally acquitted. Compare these rules with <i>Miranda</i>, the self-incrimination clause, and the double jeopardy clause.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING PROTECTIONS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.2. Choose two clauses and explain how each keeps the government from using the legal process itself as a weapon.</li><li>Write a Counter-Argument to this claim: “The grand jury is only a rubber stamp, so the Fifth Amendment does not really limit prosecutors.”</li><li>Use the text. Why does just compensation spread the cost of a highway or park across the public?</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#3F6C7F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 10.1 ASSESSMENT</b>Complete the Section 10.1 Assessment in your <i>Chapter 10 Assignment</i> packet before you move on to Section 10.2.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>10.2</b></div>
+    <h2>The Sixth Amendment: The Right to a Fair Trial</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#A8CAD6" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F8EFEC" stroke-width="5"/><path d="M14 100h132" stroke="#A8CAD6" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 10.2, you will</p>
+      <ul><li>Explain how Gideon v. Wainwright changed the right to counsel</li><li>Describe how the speedy trial, public trial, impartial jury, and confrontation guarantees each prevent an unfair trial</li><li>Explain why the text calls the Sixth Amendment the architecture of the adversarial trial</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-right-to-counsel">Right to Counsel</a></li><li><a href="#t-public-defender">Public Defender</a></li><li><a href="#t-impartial">Impartial Jury</a></li><li><a href="#t-adversarial">Adversarial System</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each Sixth Amendment guarantee, the danger it answers, and how it works.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: guarantee, danger it answers, how it works"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Guarantee</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Danger it answers</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">How it works</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Sixth Amendment: The Right to a Fair Trial</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">If the Fifth Amendment governs the period between a person’s encounter with law enforcement and the formal decision to bring charges, the Sixth Amendment governs what happens once a defendant enters the courtroom. Its provisions are designed to ensure that the trial — the central institution of the American criminal justice system — is a genuine search for truth conducted on fair terms between the accused and the government. Each specific guarantee of the Sixth Amendment addresses a particular way in which an unfair trial can masquerade as a legitimate one.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Adversarial system</span> A system in which two opposing sides present their cases to a neutral decision-maker. <span class="sp">Spanish: sistema adversarial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Five guarantees</span>The Sixth Amendment, as the chapter explains it, includes a speedy trial, a public trial, an impartial jury, confrontation of witnesses, and counsel.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Section 10.1 covered what happens before charges. The Sixth Amendment governs what happens once the defendant is in the courtroom.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Right to Counsel and the Transformation of American Justice</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Of all the Sixth Amendment’s guarantees, the <dfn id="t-right-to-counsel">right to counsel</dfn> may have had the most transformative practical impact on the actual administration of justice in the United States. The amendment states simply that “in all criminal prosecutions, the accused shall enjoy the right...to have the Assistance of Counsel for his defence.” For most of American history, courts interpreted this provision narrowly: the government could not actively prevent a defendant from hiring a lawyer, but it had no obligation to provide one. The result was that thousands of defendants — particularly the poor, the uneducated, and members of minority communities — faced criminal prosecution without professional legal assistance, in proceedings conducted according to complex rules they had no training to understand, against experienced government prosecutors who faced them day after day.</p>
+        <p>The Supreme Court began to address this problem incrementally. In Powell v. Alabama (1932), the Court held that in capital cases involving special circumstances — the defendants in that case were young Black men facing death sentences in a racially charged atmosphere in Alabama — the failure to appoint counsel was a violation of due process. In Johnson v. Zerbst (1938), the Court extended the right to appointed counsel to all federal criminal proceedings. But the fundamental transformation came in Gideon v. Wainwright (1963), one of the most celebrated decisions in the history of the Supreme Court.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Right to counsel</span> The Sixth Amendment right to “the Assistance of Counsel” in a criminal case, including a lawyer appointed by the government for a defendant who cannot pay. <span class="sp">Spanish: derecho a un abogado</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Appointed counsel</span> A lawyer provided by the government to a defendant who cannot afford one. <span class="sp">Spanish: abogado de oficio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 18, 1963</span>Date <i>Gideon v. Wainwright</i> was decided. Justice Hugo Black wrote the opinion for a unanimous Court.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 9 listed <i>Gideon</i> among the cases that applied a right to the states. This is the case behind that entry.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.3</span>The Road to Gideon, 1791–1963</p>
+      <p class="figsub">How the right to counsel grew from a limit on the government to a duty.</p>
+      <svg viewBox="0 0 860 230" role="img" aria-label="Timeline: Sixth Amendment 1791, Powell v. Alabama 1932, Johnson v. Zerbst 1938, Gideon v. Wainwright 1963"><line x1="40" y1="115" x2="820" y2="115" stroke="#7F3A4B" stroke-width="4" stroke-linecap="round"/><line x1="137.5" y1="115" x2="137.5" y2="99" stroke="#7F3A4B" stroke-width="2"/><g><title>1791: Sixth Amendment ratified</title><circle cx="137.5" cy="115" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="137.5" y="63" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1791</text><text x="137.5" y="79" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Sixth Amendment</text><text x="137.5" y="94" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">ratified</text><line x1="332.5" y1="115" x2="332.5" y2="125" stroke="#7F3A4B" stroke-width="2"/><g><title>1932: Powell v. Alabama</title><circle cx="332.5" cy="115" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="332.5" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1932</text><text x="332.5" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Powell v.</text><text x="332.5" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Alabama</text><line x1="527.5" y1="115" x2="527.5" y2="99" stroke="#7F3A4B" stroke-width="2"/><g><title>1938: Johnson v. Zerbst</title><circle cx="527.5" cy="115" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="527.5" y="63" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1938</text><text x="527.5" y="79" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Johnson v.</text><text x="527.5" y="94" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Zerbst</text><line x1="722.5" y1="115" x2="722.5" y2="125" stroke="#3F6C7F" stroke-width="2"/><g><title>1963: Gideon v. Wainwright</title><circle cx="722.5" cy="115" r="8" fill="#3F6C7F" stroke="#fff" stroke-width="2.5"/></g><text x="722.5" y="151" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#2A4B5A" text-anchor="middle" font-weight="800">1963</text><text x="722.5" y="167" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Gideon v.</text><text x="722.5" y="182" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Wainwright</text></svg>
+      <p class="source">Sources: <i>Powell v. Alabama</i>, 287 U.S. 45 (1932); <i>Johnson v. Zerbst</i>, 304 U.S. 458 (1938); <i>Gideon v. Wainwright</i>, 372 U.S. 335 (1963) via Cornell LII and Justia; U.S. National Archives (Bill of Rights ratified December 15, 1791).</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Event</th><th>What happened</th></tr></thead><tbody><tr><td>1791</td><td>Sixth Amendment ratified</td><td>Promises “the Assistance of Counsel” in all criminal prosecutions</td></tr><tr><td>1932</td><td><i>Powell v. Alabama</i></td><td>Counsel required in capital cases with special circumstances</td></tr><tr><td>1938</td><td><i>Johnson v. Zerbst</i></td><td>Appointed counsel required in all federal criminal proceedings</td></tr><tr><td>1963</td><td><i>Gideon v. Wainwright</i></td><td>Appointed counsel required in state felony cases</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many years passed between the ratification of the Sixth Amendment and <i>Powell</i>?</li><li>What does each step on the timeline add to the right to counsel?</li><li>Why does the 1938 case not help a state defendant like Gideon?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/433"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gideon%20petition%20for%20certiorari.jpg?width=900" alt="The first page of a handwritten petition on a prison form, headed “In the Supreme Court of the United States” and with many lines of pencil-like handwriting." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-0.08%"></div><figcaption><span class="phlabel">Gideon’s petition, c. 1962</span>The first page of Clarence Earl Gideon’s handwritten petition asking the Supreme Court to hear his case. The National Archives describes it as handwritten while Gideon was in jail, with his research drawn entirely from the prison library. The Court heard the case as <i>Gideon v. Wainwright</i> and decided it on March 18, 1963.<span class="credit">Image: Clarence Earl Gideon (U.S. National Archives) / <a href="https://commons.wikimedia.org/wiki/File:Gideon_petition_for_certiorari.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Clarence Earl Gideon was a fifty-one-year-old drifter with a long criminal history who was charged in Florida with breaking and entering a poolroom with intent to commit a misdemeanor — a felony under Florida law. At trial, Gideon asked the judge to appoint a lawyer to represent him because he could not afford one. The judge refused, citing Florida law, which permitted appointed counsel only in capital cases. Gideon represented himself, was convicted, and was sentenced to five years in prison. From his cell, he wrote a handwritten petition to the Supreme Court arguing that his constitutional rights had been violated. Justice Hugo Black, writing for a unanimous Court, agreed. Overruling an earlier precedent, the Court held that the right to counsel was a fundamental right, essential to a fair trial, and that states were required by the Fourteenth Amendment to provide lawyers to defendants in felony cases who could not afford them.</p>
+        <p>The practical consequences of Gideon were enormous. States across the country were required to establish or dramatically expand <dfn id="t-public-defender">public defender</dfn> offices — agencies employing government-paid lawyers whose sole function is to represent defendants who cannot afford private counsel. The public defender system that Gideon necessitated remains one of the most important and most chronically under-resourced institutions in American criminal justice. Studies have consistently shown that public defenders in many jurisdictions carry caseloads far in excess of what professional standards consider manageable, spending only a few minutes with each client and often meeting them for the first time on the day of their hearing. The promise of Gideon — that the constitutional right to counsel means something real regardless of economic circumstances — has been imperfectly honored, and the gap between the formal guarantee and the practical reality remains one of the deepest fault lines in the American justice system.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Public defender</span> A government-paid lawyer whose job is to represent defendants who cannot afford a private attorney. <span class="sp">Spanish: defensor público</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">5 years</span>Gideon’s prison sentence, according to the text, after he represented himself at trial.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text calls the right to counsel a promise “imperfectly honored.” Figure 10.8 in Section 10.4 shows one way to measure that gap.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Speedy Trial, the Public Trial, and the Architecture of Transparency</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The Sixth Amendment’s guarantees of a speedy trial and a public trial are, in a sense, the temporal and spatial dimensions of the right to a fair proceeding. Together, they address not just the internal conduct of a trial but the conditions under which it takes place — conditions that the Framers understood were just as important as the specific procedural rules governing evidence and witness testimony.</p>
+        <p>The right to a speedy trial protects against a distinct form of government abuse: the use of pre-trial detention as a form of punishment. A defendant who has been charged with a crime but not yet tried is legally presumed innocent. Yet if the government can delay bringing that defendant to trial for months or years — keeping them in jail, away from their family and their livelihood, unable to plan their defense as memories fade and witnesses disappear — it can inflict severe punishment on a person who has not been convicted of anything. The speedy trial guarantee addresses this by requiring that criminal proceedings move forward with reasonable dispatch. The Supreme Court has held that courts must consider four factors in determining whether a delay has violated the speedy trial right: the length of the delay, the government’s reasons for it, whether the defendant asserted the right, and whether the defendant suffered actual prejudice. Congress and the states have supplemented this constitutional standard with statutory speedy trial acts that impose specific time limits on various stages of the criminal process.</p>
+        <p>The right to a public trial serves a different but related function. A trial conducted in secret — or even one conducted in a courtroom that has been cleared of spectators — removes the proceedings from the scrutiny of the community. This removal creates conditions in which misconduct is easier, the pressure to follow proper procedures is reduced, and the legitimacy of the result is harder to assess. The public trial requirement ensures that the administration of criminal justice is observable. Journalists can attend and report on proceedings. Family members of both defendant and victim can be present. Citizens can watch their courts in action and form judgments about whether justice is being done. This transparency is not merely a matter of fairness to the individual defendant — though it is that — but a form of democratic accountability, ensuring that the exercise of one of the government’s most consequential powers takes place in the open.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pre-trial detention</span> Holding a person in jail after charges are filed but before trial. <span class="sp">Spanish: detención preventiva</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 factors</span>The text lists four factors for judging a speedy trial claim: the length of the delay, the reason, whether the defendant asserted the right, and actual prejudice.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>A person awaiting trial is presumed innocent, yet jail may cost a job and the ability to prepare a defense. That is the harm the speedy trial right answers.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Impartial Jury and the Confrontation Clause</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/180"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Magna%20Carta%20%28British%20Library%20Cotton%20MS%20Augustus%20II.106%29.jpg?width=900" alt="A large sheet of aged parchment covered edge to edge with small, dense lines of medieval handwriting." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:0.0%"></div><figcaption><span class="phlabel">Magna Carta, 1215</span>One of the four known surviving copies of the 1215 Magna Carta, written in iron gall ink on parchment and held by the British Library as Cotton MS Augustus II.106. The text says its jury principle, that no free man be punished except by the lawful judgment of his peers, is a root of the American jury right.<span class="credit">Image: British Library (photograph of the 1215 charter) / <a href="https://commons.wikimedia.org/wiki/File:Magna_Carta_(British_Library_Cotton_MS_Augustus_II.106).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The two most operationally significant Sixth Amendment guarantees — the right to trial by an <dfn id="t-impartial">impartial jury</dfn> and the right to confront adverse witnesses — address the fundamental question of how the truth is to be determined in a criminal case. Both provisions reflect the adversarial model of justice: the idea that truth is most reliably discovered not through a judge or official conducting an inquisition, but through rigorous, public competition between opposing parties under fair rules.</p>
+        <p>The right to an impartial jury is one of the oldest protections in the Anglo-American legal tradition. The concept of a jury trial as a check on governmental tyranny appears in the Magna Carta of 1215, which required that no free man be imprisoned, banished, or destroyed “except by the lawful judgment of his peers.” The American constitutional guarantee reflects this tradition while adapting it to republican governance. The defendant is to be judged not by a government official with a potential interest in securing a conviction, but by a cross-section of the community — people who, ideally, bring to the courtroom the common sense, local knowledge, and independence of judgment that the law trusts to evaluate contested facts.</p>
+        <p>The practical implementation of the impartial jury right involves a process called <dfn id="t-voir-dire">voir dire</dfn> — the examination and selection of potential jurors — during which both the prosecution and the defense have the opportunity to identify and remove jurors whose biases or backgrounds might prevent them from deciding the case fairly. The Supreme Court has held, in a series of important cases beginning with Batson v. Kentucky (1986), that the prosecution may not use its peremptory challenges — the right to dismiss potential jurors without stating a reason — to exclude jurors on the basis of race. The principle has since been extended to gender. The constitutional requirement of impartiality is not satisfied by the mere assembly of any twelve people; it demands an active, good-faith effort to construct a jury capable of deciding the case on its merits.</p>
+        <p>The <dfn id="t-confrontation">Confrontation Clause</dfn> provides that “in all criminal prosecutions, the accused shall enjoy the right...to be confronted with the witnesses against him.” This deceptively simple provision has generated a rich and complex body of constitutional law. At its core, the Confrontation Clause serves two related purposes. First, it requires that the witnesses against the defendant testify in open court, under oath, in the presence of the defendant — conditions that make lying more difficult and more consequential than making a private statement to a police officer. Second, it guarantees the defendant’s attorney the right of cross-examination — the opportunity to probe the witness’s account, expose inconsistencies and biases, and challenge the reliability of the evidence the witness offers. Cross-examination is, in the adversarial system’s logic, the great engine of truth-testing. It is the mechanism by which assertions are subjected to the most rigorous available scrutiny, and its absence leaves the defendant unable to challenge even the most dubious claim made against them.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Impartial jury</span> A jury of ordinary community members who can decide the case on the evidence and have no stake in the outcome. <span class="sp">Spanish: jurado imparcial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Voir dire</span> The questioning and selection of potential jurors to find those whose bias might keep them from deciding fairly. <span class="sp">Spanish: examen de jurados</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Peremptory challenge</span> A right to dismiss a potential juror without stating a reason. <span class="sp">Spanish: recusación perentoria</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cross-examination</span> Questioning of a witness by the opposing side to test the witness’s account. <span class="sp">Spanish: contrainterrogatorio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1215</span>Year of Magna Carta, which the text cites as an early source of the jury trial.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1986</span>Year of <i>Batson v. Kentucky</i>, which barred race-based peremptory challenges.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Confrontation Clause says the accused may be “confronted with the witnesses against him.” In Section 10.4 you will see why that phrase matters for computer evidence.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Europe’s Right to a Fair Trial</div></div>
+      <div class="box-b">
+<p style="margin:0">Article 6 of the European Convention on Human Rights, which binds the member states of the Council of Europe, promises a fair and public hearing within a reasonable time before an independent and impartial tribunal. It also says a person charged with a crime who lacks the means to pay for legal help is to receive it free when the interests of justice so require. Compare the Convention’s wording with the Sixth Amendment as the text describes it.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Adversarial System and Its Constitutional Logic</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The guarantees of the Sixth Amendment taken together constitute the architecture of the <dfn id="t-adversarial">adversarial</dfn> trial — a system premised on the idea that truth and justice are most reliably produced when two parties of roughly equal capability contest a case under fair rules before a neutral decision-maker. The right to counsel ensures that the defendant has professional assistance in building and presenting their defense. The right to confront witnesses ensures that the prosecution’s evidence is subjected to vigorous challenge. The right to an impartial jury ensures that the ultimate decision is made by people with no stake in the outcome. The rights to a speedy and public trial ensure that the process is conducted without undue delay and in the open light of community scrutiny.</p>
+        <p>This system does not guarantee perfect outcomes. Innocent people have been convicted, and guilty people have gone free, in proceedings that followed every constitutional rule. What the adversarial system and its constitutional protections guarantee is something different and more modest but ultimately more important: that the government’s power to deprive a person of liberty is exercised through a process that is as likely to discover the truth as any human institution can be, and that is at every stage constrained by rules designed to prevent the abuse of that power. In a democratic republic that defines itself by its commitment to law over force, that guarantee is not a technicality. It is the foundation on which the legitimacy of the entire criminal justice system rests.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Equal contest</span>The text says truth is most reliably produced when two parties of roughly equal capability contest a case before a neutral decision-maker.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text says the guarantee is not perfect outcomes but a process “as likely to discover the truth as any human institution can be.” Think of a referee who enforces the same rules on both teams.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.4</span>What Each Sixth Amendment Guarantee Protects</p>
+      <p class="figsub">Each right closes a different path to an unfair trial.</p>
+      <table class="cmp"><thead><tr><th>Guarantee</th><th>Danger it answers</th><th>How the text says it works</th></tr></thead><tbody><tr><td>Counsel</td><td>A defendant who cannot understand the rules</td><td>A professional builds and presents the defense</td></tr><tr><td>Speedy trial</td><td>Jail as punishment before any verdict</td><td>The court weighs delay, reasons, assertion, and prejudice</td></tr><tr><td>Public trial</td><td>Secret proceedings and abuse</td><td>Journalists, family, and citizens can watch</td></tr><tr><td>Impartial jury</td><td>A judge or jury with a stake in conviction</td><td>A cross-section of the community decides; voir dire screens bias</td></tr><tr><td>Confrontation</td><td>Unchallenged testimony</td><td>Witnesses testify in open court and face cross-examination</td></tr></tbody></table>
+      <p class="source">Sources: U.S. Constitution, Amendment VI; this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which guarantee protects a person who is in jail waiting for trial?</li><li>Which two guarantees work together to test the prosecution’s witnesses?</li><li>The text says any one of these, if absent, weakens the whole system. Pick one and explain why.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.5</span>The Path of a Criminal Case</p>
+      <p class="figsub">Where the Fifth and Sixth Amendments do most of their work.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart of a criminal case: questioning under the Fifth Amendment, charging under the Fifth, pretrial and trial under the Sixth, verdict under the Fifth"><g><title>Questioning: Fifth: self-incrimination, Miranda</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Questioning</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fifth: self-incrimination,</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Miranda</text><g><title>Charging: Fifth: grand jury for serious crimes</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Charging</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fifth: grand jury for</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">serious crimes</text><g><title>Pretrial and trial: Sixth: counsel, jury, witnesses, open trial</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#3F6C7F" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Pretrial and trial</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Sixth: counsel, jury,</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">witnesses, open trial</text><g><title>Verdict: Fifth: no retrial after acquittal</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#7F3A4B" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#4B2430" text-anchor="middle" font-weight="700">Verdict</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fifth: no retrial after</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">acquittal</text><path d="M219.0 45.0 L236.3 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#3F6C7F"/><path d="M420.3 45.0 L437.7 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#3F6C7F"/><path d="M621.7 45.0 L639.0 45.0" stroke="#3F6C7F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#3F6C7F"/></svg>
+      <p class="source">Source: Constitutional text and this chapter’s explanations of the Fifth and Sixth Amendments. Diagram created for this textbook; stages are simplified.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>At which stage do Sixth Amendment protections do the most work?</li><li>What does it tell you that the Fifth Amendment appears at both the start and the end of the path?</li><li>If a defendant had no lawyer at the pretrial stage, how could that affect the trial stage?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE GUARANTEES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.3. Explain why <i>Gideon</i> overruled an earlier rule and what it required of states.</li><li>Use the text. Why does the text say transparency in trials is a form of “democratic accountability”?</li><li>Use Figure 10.4. Which guarantee would a defendant rely on if a key witness gave a statement to police but never appeared in court?</li></ol>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; APPLYING THE SIXTH AMENDMENT</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>The text says <i>Batson</i> barred race-based peremptory challenges. Explain what the Court meant by an “active, good-faith effort” to build an impartial jury.</li><li>Use Figure 10.5. Explain how the Fifth and Sixth Amendments divide the work between the investigation and the trial.</li><li>Write a Counter-Argument to this claim: “If a defendant is guilty, rules about lawyers and juries only make justice slower.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#3F6C7F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 10.2 ASSESSMENT</b>Complete the Section 10.2 Assessment in your <i>Chapter 10 Assignment</i> packet before you move on to Section 10.3.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>10.3</b></div>
+    <h2>Due Process in the Modern Era: Substantive and Procedural</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#A8CAD6" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F8EFEC" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#A8CAD6" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 10.3, you will</p>
+      <ul><li>Distinguish procedural due process from substantive due process</li><li>Explain how the Fourteenth Amendment nationalized fair-trial standards</li><li>Identify the cases that applied Fifth and Sixth Amendment rights to the states</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-procedural">Procedural Due Process</a></li><li><a href="#t-substantive">Substantive Due Process</a></li><li><a href="#t-patchwork">Patchwork of Justice</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each due process type, the question it asks, and an example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: type, question it asks, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Type</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Question it asks</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Due Process in the Modern Era: Substantive and Procedural</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Fifth and Sixth Amendments address specific procedural protections — particular rules governing particular stages of the criminal process. But American constitutional law has also developed a broader, more abstract conception of due process that asks not merely whether the government followed the correct procedures, but whether the laws themselves — the substantive rules that define rights and impose obligations — are consistent with fundamental constitutional values. This distinction between procedural and substantive due process is one of the most important and most contested in all of American constitutional law.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Substantive</span> Having to do with the actual content or meaning of a law, not just the steps used to apply it. <span class="sp">Spanish: sustantivo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two questions</span>Procedural due process asks whether the government followed fair rules. Substantive due process asks whether the rule itself is constitutional.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Chapter 9 introduced the Fourteenth Amendment’s Due Process Clause as the doorway for incorporation. This section shows what “due process” itself means.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Procedural and the Substantive</h3>
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-procedural">Procedural due process</dfn> is the more straightforward of the two concepts. It asks, essentially, whether the government followed the rules before depriving a person of life, liberty, or property. Was the arrest warrant supported by probable cause? Did the defendant receive notice of the charges? Was the defendant given an opportunity to be heard before a decision affecting their interests was made? These are questions about process — about the mechanism by which the government acts — and they apply not just in criminal cases but in any context where the government takes action that affects a person’s fundamental interests. A student facing expulsion from a public university, an employee facing termination from a government job, a family facing the removal of children by a child protective services agency — all of these individuals have procedural due process claims if the government acts without adequate notice and opportunity to respond.</p>
+        <p><dfn id="t-substantive">Substantive due process</dfn> is a more philosophically ambitious and more controversial doctrine. It holds that some rights are so fundamental — so deeply embedded in the traditions and values of American society — that the government cannot deprive a person of them regardless of what procedures it follows. In other words, the question is not whether the government followed the rules, but whether the rule itself is constitutional. The doctrine has roots in the Lochner era of the early twentieth century, when the Supreme Court used substantive due process to invalidate economic regulations it found inconsistent with liberty of contract — a period of constitutional history that most modern scholars view as a serious judicial overreach. But the doctrine was revived in the mid-twentieth century in a different context: the protection of personal and family autonomy from government interference. In Griswold v. Connecticut (1965), the Supreme Court struck down a state law that prohibited the use of contraceptives, even by married couples, as a violation of a constitutionally protected right to privacy. The right to privacy is not mentioned explicitly in the Constitution, but Justice William O. Douglas’s majority opinion found it in the “penumbras” and “emanations” of several constitutional provisions, including the First, Third, Fourth, Fifth, and Ninth Amendments. Whatever one thinks of the precise analytical framework Douglas employed, the underlying principle has proven durable: there are zones of personal autonomy — decisions about marriage, family, child-rearing, and intimate association — that are so central to individual dignity that the government may not invade them simply because it has complied with procedural requirements.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Procedural due process</span> The requirement that government use fair procedures, such as notice and a chance to be heard, before it takes a person’s life, liberty, or property. <span class="sp">Spanish: debido proceso procesal</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Substantive due process</span> The doctrine that some rights are so fundamental that government may not take them away no matter what procedures it follows. <span class="sp">Spanish: debido proceso sustantivo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1965</span>Year of <i>Griswold v. Connecticut</i>. The text says Justice William O. Douglas found a right to privacy in the “penumbras” and “emanations” of several amendments.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 9 studied the right to privacy in the Fourth Amendment. <i>Griswold</i> rests on a different foundation and shows how many sources the Court has used for privacy.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.6</span>Two Kinds of Due Process</p>
+      <p class="figsub">Procedure asks how. Substance asks whether.</p>
+      <table class="cmp"><thead><tr><th></th><th>Procedural due process</th><th>Substantive due process</th></tr></thead><tbody><tr><td>Core question</td><td>Did the government follow fair rules?</td><td>Is the rule itself constitutional?</td></tr><tr><td>Examples in the text</td><td>Notice of charges, a chance to be heard, a probable-cause warrant</td><td>Zones of personal autonomy: marriage, family, child-rearing, intimate association</td></tr><tr><td>Where it applies</td><td>Criminal cases and any government action affecting fundamental interests, such as expulsion, firing, or child removal</td><td>Laws that invade fundamental rights even if procedures are followed</td></tr><tr><td>Historical note</td><td>Long-standing in American law</td><td>Used in the Lochner era against economic regulation, revived in <i>Griswold</i> (1965)</td></tr></tbody></table>
+      <p class="source">Sources: This chapter’s text on due process, <i>Griswold v. Connecticut</i>, 381 U.S. 479 (1965). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>A public university expels a student without telling the student the charge. Which kind of due process is at issue?</li><li>A state passes a law banning something the Court considers a fundamental personal choice. Which kind is at issue?</li><li>Why does the text call substantive due process “more controversial”?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#A8CAD6"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#4B2430">E</text></svg><div><small>EXAMPLE</small>The Expulsion Hearing</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A public university tells a student she is being expelled for cheating. She is not told what evidence the school has and is given no chance to respond before the decision. The text lists a student facing expulsion from a public university among those with procedural due process claims when the government acts without adequate notice and opportunity to respond. Her claim concerns the process, not the university’s power to enforce honesty rules.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; PROCESS AND SUBSTANCE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.6. Sort these into procedural or substantive: a worker fired from a government job without a hearing, and a law banning contraceptives for married couples.</li><li>Use the text. Why do most modern scholars view the Lochner era as an example of judicial overreach?</li><li>Explain in your own words why a state can violate due process even when it follows every procedure.</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Nationalization of Fairness and the Fourteenth Amendment</h3>
+    <div class="pair">
+      <div class="body">
+        <p>For most of the nineteenth century, the due process protections of the Fifth Amendment applied only to the federal government. State criminal justice systems — which handled the overwhelming majority of criminal prosecutions in the United States — operated outside the reach of federal constitutional standards. The result was what might charitably be called a “<dfn id="t-patchwork">patchwork of justice</dfn>”: a system in which the rights of an accused person depended entirely on which state they were in, and in which states with little commitment to procedural fairness could run criminal justice systems characterized by coerced confessions, trials without counsel, and all-white juries in cases involving Black defendants.</p>
+        <p>The Fourteenth Amendment, ratified in 1868 in the aftermath of the Civil War, declared that no state could “deprive any person of life, liberty, or property, without due process of law.” This provision established, at least in principle, a national constitutional standard for the treatment of criminal defendants. The realization of that principle, through the process of selective incorporation described in the previous chapter, took most of the twentieth century. But by the end of the Warren Court era in the late 1960s, virtually all of the core procedural protections of the Fifth and Sixth Amendments had been incorporated and applied to the states: the right against self-incrimination (Malloy v. Hogan, 1964), the right to counsel (Gideon v. Wainwright, 1963), the right to a speedy trial (Klopfer v. North Carolina, 1967), the right to confront adverse witnesses (Pointer v. Texas, 1965), and the right to an impartial jury (Duncan v. Louisiana, 1968).</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Patchwork of justice</span> The text’s phrase for a system where an accused person’s rights depend on which state he or she is in. <span class="sp">Spanish: mosaico de justicia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">July 9, 1868</span>Date the Fourteenth Amendment was ratified.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1960s</span>The text says that by the end of the Warren Court era in the late 1960s, virtually all of the core Fifth and Sixth Amendment procedural protections had been incorporated.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Chapter 9 described selective incorporation. These are the specific cases that carried the Fifth and Sixth Amendments to the states.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.7</span>Fifth and Sixth Amendment Rights Reach the States, 1963–1968</p>
+      <p class="figsub">The decisions the text lists as incorporating criminal-procedure rights.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Timeline: Gideon v. Wainwright 1963 counsel, Malloy v. Hogan 1964 self-incrimination, Pointer v. Texas 1965 confrontation, Klopfer v. North Carolina 1967 speedy trial, Duncan v. Louisiana 1968 impartial jury"><line x1="40" y1="125" x2="820" y2="125" stroke="#7F3A4B" stroke-width="4" stroke-linecap="round"/><line x1="118.0" y1="125" x2="118.0" y2="109" stroke="#7F3A4B" stroke-width="2"/><g><title>1963: Gideon v. Wainwright</title><circle cx="118.0" cy="125" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="118.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1963</text><text x="118.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Gideon v.</text><text x="118.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Wainwright</text><line x1="274.0" y1="125" x2="274.0" y2="135" stroke="#7F3A4B" stroke-width="2"/><g><title>1964: Malloy v. Hogan</title><circle cx="274.0" cy="125" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="274.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1964</text><text x="274.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Malloy v.</text><text x="274.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Hogan</text><line x1="430.0" y1="125" x2="430.0" y2="109" stroke="#7F3A4B" stroke-width="2"/><g><title>1965: Pointer v. Texas</title><circle cx="430.0" cy="125" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="430.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1965</text><text x="430.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Pointer v.</text><text x="430.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Texas</text><line x1="586.0" y1="125" x2="586.0" y2="135" stroke="#7F3A4B" stroke-width="2"/><g><title>1967: Klopfer v. N. Carolina</title><circle cx="586.0" cy="125" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="586.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1967</text><text x="586.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Klopfer v.</text><text x="586.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">N. Carolina</text><line x1="742.0" y1="125" x2="742.0" y2="109" stroke="#7F3A4B" stroke-width="2"/><g><title>1968: Duncan v. Louisiana</title><circle cx="742.0" cy="125" r="8" fill="#7F3A4B" stroke="#fff" stroke-width="2.5"/></g><text x="742.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#4B2430" text-anchor="middle" font-weight="800">1968</text><text x="742.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Duncan v.</text><text x="742.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Louisiana</text></svg>
+      <p class="source">Sources: The cases and rights as listed in this chapter’s text, checked against Cornell Law School’s Legal Information Institute and Justia.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Case</th><th>Right applied to the states</th></tr></thead><tbody><tr><td>1963</td><td><i>Gideon v. Wainwright</i></td><td>Right to counsel</td></tr><tr><td>1964</td><td><i>Malloy v. Hogan</i></td><td>Right against self-incrimination</td></tr><tr><td>1965</td><td><i>Pointer v. Texas</i></td><td>Right to confront adverse witnesses</td></tr><tr><td>1967</td><td><i>Klopfer v. North Carolina</i></td><td>Right to a speedy trial</td></tr><tr><td>1968</td><td><i>Duncan v. Louisiana</i></td><td>Right to an impartial jury</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Which case on the timeline applied the right against self-incrimination to the states?</li><li>What do the five cases have in common?</li><li>How does this timeline help explain the text’s phrase “common constitutional floor”?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The nationalization of these standards was not merely a technical legal development. It represented a fundamental transformation in the relationship between American citizens and their state governments — a transformation grounded in the conviction that certain procedural protections are not optional features of a justice system but essential preconditions for any system that can legitimately claim to be a justice system at all. A state that convicts people through coerced confessions, without lawyers, before racially compromised juries, and in secret proceedings has not merely done something inefficient or inconvenient. It has undermined its own authority. The legitimacy of a verdict, in a constitutional republic, depends on the integrity of the process by which it was reached.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Legitimacy</span>The text says a verdict’s legitimacy depends on the integrity of the process by which it was reached.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text argues a state that convicts through coerced confessions, without lawyers, or before racially compromised juries has “undermined its own authority.” Why would citizens have reason to trust a verdict from a fair process?</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#2A4B5A" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The State Courthouse</div></div>
+      <div class="box-b">
+        <p>A state argues that its own courts should decide what a fair trial requires, because local communities know their own needs best. Three views:</p>
+        <div class="opts"><div class="opt"><h5>States set the rules</h5>Each state defines fair procedure under its own constitution.</div><div class="opt"><h5>A national floor</h5>The Constitution sets minimum protections for every courtroom, and states may add more.</div><div class="opt"><h5>Only some rights nationalized</h5>Rights essential to a fair trial apply everywhere; others are left to states.</div></div>
+        <p class="ask">Which view comes closest to the text’s description of selective incorporation? What does the “patchwork of justice” phrase suggest about the first view?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; NATIONALIZING FAIRNESS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.7. Which rights on the timeline belong to the Fifth Amendment and which to the Sixth?</li><li>Use the text. Explain what changed for a defendant in a state court after these decisions.</li><li>Write a Counter-Argument to this claim: “The national government should not tell the states how to run their criminal courts.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#3F6C7F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 10.3 ASSESSMENT</b>Complete the Section 10.3 Assessment in your <i>Chapter 10 Assignment</i> packet before you move on to Section 10.4.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>10.4</b></div>
+    <h2>Strategic Challenges to Due Process</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#A8CAD6" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F8EFEC" stroke-width="5"/><path d="M14 100h132" stroke="#A8CAD6" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 10.4, you will</p>
+      <ul><li>Explain why the writ of habeas corpus is central to due process</li><li>Describe what Boumediene v. Bush held about detainees at Guantanamo Bay</li><li>Evaluate whether an algorithmic risk score can be confronted and challenged</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-habeas-corpus">Habeas Corpus</a></li><li><a href="#t-enemy-combatant">Enemy Combatants</a></li><li><a href="#t-risk-assessment">Risk Assessment</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each modern challenge, the right it tests, and the court’s response.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: challenge, right it tests, court’s response"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Challenge</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Right it tests</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#7F3A4B"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Court’s response</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Strategic Challenges to Due Process</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The constitutional framework of due process established by the Fifth and Sixth Amendments and nationalized through the Fourteenth was designed for a world of individual prosecutions, identifiable defendants, and conventional courtrooms. The twenty-first century has produced challenges to that framework that the Framers could not have anticipated — challenges that test not just the specific rules of due process but the underlying theory of what fairness requires when the government exercises power over the liberty of individuals.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two tests</span>The text names two modern tests of due process: detention of enemy combatants and algorithmic risk assessment.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Sections 10.1 to 10.3 built the framework. Section 10.4 asks what happens when new circumstances do not fit it.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Terrorism, Habeas Corpus, and the Limits of Emergency Power</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The attacks of September 11, 2001, and the military response they triggered created a category of individuals — designated “<dfn id="t-enemy-combatant">enemy combatants</dfn>” — who the executive branch argued fell outside the ordinary legal framework governing both civilian criminal prosecution and the laws of war. Many of these individuals were detained at the U.S. Naval Station at Guantanamo Bay, Cuba, on the theory that because the facility was located outside the territorial United States, U.S. courts had no jurisdiction to hear challenges to their imprisonment. They received no criminal charges, no access to lawyers for extended periods, and no opportunity to contest the factual basis for their detention before any neutral decision-maker.</p>
+        <p>The legal doctrine at the center of this dispute was the ancient writ of <dfn id="t-habeas-corpus">habeas corpus</dfn> — the right of any person held in government custody to go to court and demand a legal justification for their detention. The Latin phrase means, approximately, “you shall have the body,” and the writ is one of the oldest protections in English and American law, appearing in the Magna Carta and explicitly recognized in the U.S. Constitution, which prohibits its suspension except “when in Cases of Rebellion or Invasion the public Safety may require it.” The writ of habeas corpus is not technically a provision of the Fifth or Sixth Amendment, but it shares their underlying logic: the government must justify to an independent tribunal the reason it is holding a person. Without habeas corpus, every other procedural right becomes theoretical, because there is no mechanism by which a detained person can reach a court to assert those rights.</p>
+        <p>In Boumediene v. Bush (2008), the Supreme Court held, by a five-to-four margin, that foreign nationals detained at Guantanamo Bay had a constitutional right to challenge their detention through habeas corpus petitions in federal court. Justice Anthony Kennedy’s majority opinion concluded that the government could not circumvent the Constitution’s habeas corpus guarantee simply by choosing to hold detainees in a location it designated as outside U.S. sovereign territory. The decision was limited and left many questions unresolved, but its core holding was significant: the Constitution’s fundamental procedural protections do not simply disappear when the government invokes national security, and the judiciary has both the authority and the responsibility to ensure that the executive branch operates within constitutional limits even in the context of armed conflict.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Habeas corpus</span> A court order requiring the government to justify holding a person in custody. The Latin means, approximately, “you shall have the body.” <span class="sp">Spanish: hábeas corpus</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Enemy combatant</span> The label the executive branch used for people detained in the war on terrorism who it argued were outside ordinary criminal and war law. <span class="sp">Spanish: combatiente enemigo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 12, 2008</span>Date <i>Boumediene v. Bush</i> was decided, 5 to 4. Justice Anthony Kennedy wrote the opinion.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Suspension clause</span>The Constitution says habeas corpus may be suspended only “when in Cases of Rebellion or Invasion the public Safety may require it.”</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text says that without habeas corpus every other procedural right becomes theoretical. Compare this to the checks on executive power studied in Unit 2.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.8</span>How Much Attorney Time Does a Case Need?</p>
+      <p class="figsub">Average attorney hours per case, by case type, from the 2023 RAND National Public Defense Workload Study.</p>
+      <svg viewBox="0 0 860 306" role="img" aria-label="Bar chart of attorney hours per case: life without parole 286, murder 248, sex crimes 167, other high-severity felony 99, mid-severity felony 57, low-severity felony 35, high-severity misdemeanor 22.3, low-severity misdemeanor 13.8, probation or parole violation 13.5"><line x1="215.0" y1="10" x2="215.0" y2="262" stroke="#e6e8ec"/><text x="215.0" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="400.0" y1="10" x2="400.0" y2="262" stroke="#e6e8ec"/><text x="400.0" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100</text><line x1="585.0" y1="10" x2="585.0" y2="262" stroke="#e6e8ec"/><text x="585.0" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">200</text><line x1="770.0" y1="10" x2="770.0" y2="262" stroke="#e6e8ec"/><text x="770.0" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">300</text><text x="205" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Life without parole</text><g><title>Life without parole: 286</title><path d="M215 16 h525.1 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-525.1z" fill="#3F6C7F"/></g><text x="752.1" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">286</text><text x="205" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Murder</text><g><title>Murder: 248</title><path d="M215 44 h454.8 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-454.8z" fill="#7F3A4B"/></g><text x="681.8" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">248</text><text x="205" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Sex crimes</text><g><title>Sex crimes: 167</title><path d="M215 72 h304.9 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-304.9z" fill="#7F3A4B"/></g><text x="532.0" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">167</text><text x="205" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Other high-severity felony</text><g><title>Other high-severity felony: 99</title><path d="M215 100 h179.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-179.2z" fill="#7F3A4B"/></g><text x="406.1" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">99</text><text x="205" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Mid-severity felony</text><g><title>Mid-severity felony: 57</title><path d="M215 128 h101.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-101.5z" fill="#7F3A4B"/></g><text x="328.4" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">57</text><text x="205" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Low-severity felony</text><g><title>Low-severity felony: 35</title><path d="M215 156 h60.8 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-60.8z" fill="#7F3A4B"/></g><text x="287.8" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">35</text><text x="205" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">High-severity misdemeanor</text><g><title>High-severity misdemeanor: 22.3</title><path d="M215 184 h37.3 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-37.3z" fill="#7F3A4B"/></g><text x="264.3" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">22.3</text><text x="205" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Low-severity misdemeanor</text><g><title>Low-severity misdemeanor: 13.8</title><path d="M215 212 h21.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-21.5z" fill="#7F3A4B"/></g><text x="248.5" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">13.8</text><text x="205" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Probation or parole violation</text><g><title>Probation or parole violation: 13.5</title><path d="M215 240 h21.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-21.0z" fill="#7F3A4B"/></g><text x="248.0" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">13.5</text><line x1="215" y1="10" x2="215" y2="262" stroke="#6f7787" stroke-width="1.5"/><text x="492.5" y="302" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Hours of attorney time per case</text></svg>
+      <p class="source">Source: RAND Corporation, <i>National Public Defense Workload Study</i> (2023), average attorney time per case from an expert panel. RAND notes that the older 1973 national standards fail to differentiate among types of felonies.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Case type</th><th>Attorney hours per case</th></tr></thead><tbody><tr><td>Life without parole</td><td>286</td></tr><tr><td>Murder</td><td>248</td></tr><tr><td>Sex crimes</td><td>167</td></tr><tr><td>Other high-severity felony</td><td>99</td></tr><tr><td>Mid-severity felony</td><td>57</td></tr><tr><td>Low-severity felony</td><td>35</td></tr><tr><td>High-severity misdemeanor</td><td>22.3</td></tr><tr><td>Low-severity misdemeanor</td><td>13.8</td></tr><tr><td>Probation or parole violation</td><td>13.5</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which case type needs the most attorney time, and about how many times more than a low-severity felony?</li><li>The text says public defenders often carry caseloads beyond professional standards. How do the hours in this graph help show why that matters for the <i>Gideon</i> guarantee?</li><li>Is a nominal right to counsel meaningful if the lawyers are structurally unable to do this work? Use one number from the graph.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Algorithmic Justice and the Right to Confront</h3>
+    <div class="pair">
+      <div class="body">
+        <p>A different kind of challenge to due process has emerged from the increasing use of data-driven decision-making tools in the criminal justice system. In jurisdictions across the United States, judges, prosecutors, and parole boards now routinely consult “<dfn id="t-risk-assessment">risk assessment</dfn>” algorithms — computer programs that analyze data about a defendant’s age, criminal history, employment, education, and neighborhood to generate a numerical score predicting the likelihood that the individual will reoffend or fail to appear for trial. These scores influence decisions about whether a defendant will be detained before trial, how severe a sentence will be, and whether a prisoner will be released on parole.</p>
+        <p>The use of algorithmic risk assessment raises questions that go to the heart of the Sixth Amendment’s Confrontation Clause and the broader due process guarantee of fundamental fairness. If a defendant’s liberty is partially determined by a risk score generated by a proprietary algorithm — one whose underlying methodology is treated as a trade secret by the company that developed it — does that defendant have a meaningful opportunity to challenge the evidence against them? How can a defense attorney cross-examine a formula? How can a defendant demonstrate that the algorithm was trained on biased data, produces racially disparate results, or is being applied to circumstances it was not designed to handle, if the algorithm’s internal workings are not disclosed?</p>
+        <p>These questions were brought into sharp focus in State v. Loomis (2016), a Wisconsin Supreme Court case in which a defendant challenged his sentence in part on the grounds that the trial court had relied on a risk assessment score from a proprietary algorithm called COMPAS. The Wisconsin court upheld the sentence, concluding that the score was merely one factor among many and that the defendant had been provided with enough information about how the algorithm worked to mount a meaningful challenge. Critics found this reasoning unpersuasive, arguing that a “meaningful challenge” to an algorithm whose source code cannot be examined is no challenge at all.</p>
+        <p>The deeper constitutional issue raised by algorithmic decision-making is not simply technical. It is about what due process means when government power is exercised through mechanisms that are opaque, automated, and insulated from the kind of human judgment that traditional procedural safeguards were designed to check. The Confrontation Clause assumes that the evidence against a defendant can be identified, examined, and challenged by a human advocate in a public proceeding. An algorithm that produces a risk score without explaining its reasoning does not fit easily into that framework — and whether the constitutional guarantee of confrontation can be adapted to reach it is a question that courts and legislatures are only beginning to address.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Risk assessment algorithm</span> A computer program that uses data about a person to estimate how likely the person is to reoffend or miss a court date. <span class="sp">Spanish: algoritmo de evaluación de riesgo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Proprietary</span> Owned by a company that treats the details of how it works as a secret. <span class="sp">Spanish: propietario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2016</span>Year the Wisconsin Supreme Court decided <i>State v. Loomis</i>, which involved the COMPAS risk score.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Confrontation Clause was written for witnesses. The text asks whether it can reach evidence produced by a formula.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 10.9</span>Three Kinds of Evidence Against a Defendant</p>
+      <p class="figsub">Can the defendant test it?</p>
+      <table class="cmp"><thead><tr><th>Evidence</th><th>How the defense can test it</th><th>Note</th></tr></thead><tbody><tr><td>A witness</td><td>Cross-examination in open court</td><td>The Confrontation Clause was designed for this</td></tr><tr><td>Physical evidence</td><td>Defense experts and a chance to inspect</td><td>Both sides can question it at trial</td></tr><tr><td>An algorithm’s risk score</td><td>Unclear if the method is a trade secret</td><td>The text asks how a lawyer can “cross-examine a formula”</td></tr></tbody></table>
+      <p class="source">Sources: This chapter’s text on the Confrontation Clause and algorithmic risk assessment; <i>State v. Loomis</i>, 881 N.W.2d 749 (Wis. 2016). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row fits the traditional model of confrontation most closely?</li><li>Why does the text say a “meaningful challenge” may be no challenge at all if source code cannot be examined?</li><li>What would a defendant need in order to show an algorithm was trained on biased data?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#2A4B5A" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Score</div></div>
+      <div class="box-b">
+        <p>A judge is deciding whether to release a defendant before trial. The court uses a risk score from a company that will not reveal how it works. Three options:</p>
+        <div class="opts"><div class="opt"><h5>Use the score</h5>Scores are consistent and may reduce guesswork.</div><div class="opt"><h5>Use it with disclosure</h5>The defense may examine how the score was built and argue it is wrong.</div><div class="opt"><h5>Do not use it</h5>Liberty decisions should not rest on a secret formula.</div></div>
+        <p class="ask">Which option best fits the Confrontation Clause as the text describes it? What does each side give up?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fragility of Fairness in a Constitutional Republic</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The challenges posed by the detention of enemy combatants and the use of algorithmic risk assessment tools are, on their surface, very different. One involves the application of due process to individuals in military custody during an armed conflict; the other involves the use of data-driven technology in routine civilian criminal proceedings. But they share a common constitutional theme: the question of what happens to the principles of procedural fairness when the circumstances of their application do not fit the models for which they were designed.</p>
+        <p>The answer that the constitutional tradition suggests is not that fairness becomes optional when circumstances are difficult or unfamiliar. It is that the underlying principles — the burden of proof on the government, the right to be heard, the right to confront evidence, the right to an independent tribunal — must be translated into whatever forms the new circumstances require. This translation is never easy and is rarely accomplished without controversy. The judiciary, the legislature, and the executive branch must all participate in working out what due process means in a world that the Framers did not foresee. The Fifth and Sixth Amendments do not provide automatic answers to questions about enemy combatants or COMPAS scores. What they provide is a framework of principles — and a constitutional commitment that those principles will not be abandoned simply because honoring them is inconvenient.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Translation</span>The text says old principles must be “translated” into whatever forms new circumstances require.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text names three groups who must act: courts, legislatures, and citizens. What can you do as a citizen to keep these principles alive?</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Chapter Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Fifth and Sixth Amendments together constitute the procedural architecture of American criminal justice — a structure built on the premise that the legitimacy of government power depends not just on its purposes but on the manner in which it is exercised. The right against self-incrimination ensures that the state must build its case on evidence it gathers, not on compulsion of the accused. The prohibition on double jeopardy ensures that prosecution cannot function as an instrument of harassment. The grand jury requirement ensures that the decision to charge a serious crime involves a community judgment, not just a government one. The rights to counsel, a speedy and public trial, an impartial jury, and confrontation of witnesses ensure that when a person’s liberty is at stake, the truth is sought through a process that is fair, transparent, and adversarial in the best sense of that word.</p>
+        <p>This chapter’s essential question — how the Fifth and Sixth Amendments ensure the procedural integrity of the American legal system — points toward a deeper truth about constitutional government. Procedural integrity is not a luxury or a technicality. It is the mechanism by which the law maintains its claim to be something other than the will of those who happen to hold power at a given moment. When a court excludes a coerced confession, or reverses a conviction obtained without counsel, or requires the government to justify a detention before an independent judge, it is not protecting a criminal. It is protecting the principle that government power must be exercised within limits — that even the most powerful institution in American life is not above the law it claims to enforce.</p>
+        <p>The nationalization of these standards through the Fourteenth Amendment was one of the defining constitutional achievements of the twentieth century. It transformed American criminal justice from a patchwork of widely varying state practices into a system bound by a common constitutional floor — imperfect, contested, and often inadequately funded, but grounded in principles that apply to every defendant in every courtroom in every state.</p>
+        <p>The challenges of the twenty-first century — from Guantanamo to algorithmic risk scores — remind us that these principles must be continuously applied, interpreted, and defended. They do not enforce themselves. They require courts willing to hold the government to its constitutional obligations, legislatures willing to fund the institutions — public defenders, independent courts — that make those obligations meaningful, and citizens willing to insist that fairness is not negotiable even when the accused is unpopular, dangerous, or foreign. As the next chapter will explore, these same commitments to equality and fairness that animate due process also shape the constitutional guarantee of equal protection — the demand that the law’s burdens and benefits be distributed without regard to race, gender, or other characteristics that have historically been used to define who deserves the full protection of American law.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Next</span>Chapter 11 moves from the rights of the accused to the Equal Protection Clause and the struggle for civil rights.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The final paragraph previews Chapter 11, which asks who receives the full protection of American law.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MODERN CHALLENGES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.8. Choose two case types and explain what the hours suggest about the time a lawyer needs to give a client a real defense.</li><li>Use the text. Compare the enemy-combatant and algorithm challenges: how are they alike, and how are they different?</li><li>Write a Counter-Argument to this claim: “National security justifies setting aside habeas corpus.”</li></ol>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 10.9. Explain why a risk score is harder to cross-examine than a witness.</li><li>Explain what the text means when it says constitutional principles “do not enforce themselves.”</li><li>Write a claim answering the Essential Question, then write a Counter-Argument.</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#3F6C7F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 10.4 ASSESSMENT</b>Complete the Section 10.4 Assessment in your <i>Chapter 10 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>What must the state do before it punishes a person, and why does the way it proceeds matter as much as the result? Read two constitutional texts and two Supreme Court opinions from 1963 and 1966 and decide what each requires.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Rights of the Accused</h3>
+        <p>The four documents below show how the rights of the accused took shape. Document A is the Fifth Amendment and Document B is the Sixth Amendment, both ratified in 1791. Document C comes from <i>Gideon v. Wainwright</i> (1963), in which the Court held that a poor defendant in a state felony case must be given a lawyer. Document D comes from <i>Miranda v. Arizona</i> (1966), which required warnings before custodial questioning.</p>
+        <p>As you read, notice what each document protects, who it limits, and what rule it announces. Answer the Thinking Like a Citizen question after each document, then the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Unanimous opinion:</b> an opinion in which every justice who took part agrees. <span class="sp">Spanish: opinión unánime</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791 to 1966</span>The span from the ratification of the Fifth and Sixth Amendments to the <i>Miranda</i> decision.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FOUNDING DOCUMENT</small><b>The Fifth Amendment (1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“No person shall be held to answer for a capital, or otherwise infamous crime, unless on a presentment or indictment of a Grand Jury, … nor shall any person be subject for the same offence to be twice put in jeopardy of life or limb; nor shall be compelled in any criminal case to be a witness against himself, nor be deprived of life, liberty, or property, without due process of law; nor shall private property be taken for public use, without just compensation.”<cite>U.S. Constitution, Amendment V. Text from the National Archives transcription of the Bill of Rights. The ellipsis (…) replaces an exception for the armed forces and militia.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Find the four protections the text applies to criminal cases: a grand jury, no double jeopardy, no compelled self-incrimination, and due process. Which phrase protects a person from being a witness against himself?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FOUNDING DOCUMENT</small><b>The Sixth Amendment (1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“In all criminal prosecutions, the accused shall enjoy the right to a speedy and public trial, by an impartial jury of the State and district wherein the crime shall have been committed, … and to be informed of the nature and cause of the accusation; to be confronted with the witnesses against him; to have compulsory process for obtaining witnesses in his favor, and to have the Assistance of Counsel for his defence.”<cite>U.S. Constitution, Amendment VI. Text from the National Archives transcription of the Bill of Rights. The ellipsis (…) replaces a clause about how the district is determined.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> List the rights the Sixth Amendment names. Which phrase does Document C interpret, and which phrase does the Confrontation Clause come from?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b>Justice Hugo Black, <i>Gideon v. Wainwright</i> (1963)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“[I]n our adversary system of criminal justice, any person haled into court, who is too poor to hire a lawyer, cannot be assured a fair trial unless counsel is provided for him. This seems to us to be an obvious truth.”<br><br>“The right of one charged with crime to counsel may not be deemed fundamental and essential to fair trials in some countries, but it is in ours.”<cite><i>Gideon v. Wainwright</i>, 372 U.S. 335 (1963), decided March 18, 1963, unanimous. Text from Cornell Law School’s Legal Information Institute. The first bracketed letter is our edit.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What kind of defendant does Black say cannot be assured a fair trial? Why does he describe the right to counsel as fundamental “in ours” but not in every country?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b>Chief Justice Earl Warren, <i>Miranda v. Arizona</i> (1966)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Prior to any questioning, the person must be warned that he has a right to remain silent, that any statement he does make may be used as evidence against him, and that he has a right to the presence of an attorney, either retained or appointed. The defendant may waive effectuation of these rights, provided the waiver is made voluntarily, knowingly and intelligently.”<cite><i>Miranda v. Arizona</i>, 384 U.S. 436 (1966), decided June 13, 1966, 5 to 4. Text from Cornell Law School’s Legal Information Institute.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> List the warnings that must come before questioning. What three words describe a valid waiver?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Use Documents A and B to explain how the Fifth and Sixth Amendments divide the work between investigation and trial.</li>
+        <li>Compare Documents C and D. Each turns a constitutional phrase into a rule that police or courts must follow. Explain what each rule requires and who is bound by it.</li>
+        <li>Document C says a poor defendant “cannot be assured a fair trial” without a lawyer, and Document D requires an attorney “retained or appointed.” Explain how the two documents work together.</li>
+        <li>Which document would a supporter of strong police powers question most? Which would a supporter of defendants’ rights cite most? Explain both choices.</li>
+        <li><b>Making a Claim</b> What must the state do before it punishes a person, and why does the way it proceeds matter as much as the result? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>10</b></div>
+    <h2>Chapter 10 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#A8CAD6" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F8EFEC" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F8EFEC" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How do the Fifth and Sixth Amendments ensure the procedural integrity of the American legal system?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>The Fifth Amendment</h5>The Fifth Amendment limits investigation and charging: no compelled self-incrimination (with <i>Miranda</i> warnings in custody), no second trial after an acquittal, a grand jury for serious crimes, and just compensation when property is taken.</div><div><h5>The Sixth Amendment</h5>The Sixth Amendment shapes the trial: counsel (<i>Gideon</i>), speedy and public trials, an impartial jury, and confrontation of witnesses together make the adversarial system fair.</div><div><h5>Due Process and the States</h5>Procedural due process asks whether the government followed fair rules. Substantive due process asks whether a rule is constitutional. The Fourteenth Amendment and selective incorporation ended the patchwork of justice.</div><div><h5>Modern Challenges</h5><i>Boumediene</i> protected habeas corpus at Guantanamo Bay, and algorithmic risk scores test the Confrontation Clause. Principles do not enforce themselves: courts, legislatures, and citizens must apply them.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#7F3A4B" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#3F6C7F" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 10 ASSESSMENT AND SIMULATION</b>Complete the Chapter 10 Assessment (vocabulary, guided analysis, visual analysis, the Miranda source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 10 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.2, 12.2.1, 12.5.1, 12.5.4): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>The Bill of Rights: A Transcription (Amendments V and VI), U.S. National Archives: <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript">archives.gov/founding-docs</a></li><li><i>Miranda v. Arizona</i>, 384 U.S. 436 (1966) and <i>Gideon v. Wainwright</i>, 372 U.S. 335 (1963): Cornell Law School Legal Information Institute, <a href="https://www.law.cornell.edu/supremecourt/text/372/335">law.cornell.edu/supremecourt/text</a></li><li><i>Powell v. Alabama</i>, 287 U.S. 45 (1932); <i>Johnson v. Zerbst</i>, 304 U.S. 458 (1938); <i>Malloy v. Hogan</i>, 378 U.S. 1 (1964); <i>Pointer v. Texas</i>, 380 U.S. 400 (1965); <i>Griswold v. Connecticut</i>, 381 U.S. 479 (1965); <i>Klopfer v. North Carolina</i>, 386 U.S. 213 (1967); <i>Duncan v. Louisiana</i>, 391 U.S. 145 (1968); <i>Batson v. Kentucky</i>, 476 U.S. 79 (1986); <i>Boumediene v. Bush</i>, 553 U.S. 723 (2008): Justia, <a href="https://supreme.justia.com/cases/federal/us/">supreme.justia.com</a></li><li><i>State v. Loomis</i>, 881 N.W.2d 749 (Wis. 2016); RAND Corporation, <a href="https://www.rand.org/pubs/research_reports/RRA2559-1.html"><i>National Public Defense Workload Study</i></a> (2023)</li><li>Canadian Charter of Rights and Freedoms, sections 10(b), 11(c), 11(h); European Convention on Human Rights, Article 6</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are in the public domain. Photograph: Carol M. Highsmith, Library of Congress (courtroom, Cleveland, Ohio, 2009). Documents: Clarence Earl Gideon’s handwritten petition (U.S. National Archives) and the 1215 Magna Carta, British Library Cotton MS Augustus II.106 (photograph of the document). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 6 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

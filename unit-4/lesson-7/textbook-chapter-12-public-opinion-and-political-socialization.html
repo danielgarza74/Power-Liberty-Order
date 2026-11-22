@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 12: Public Opinion and Political Socialization | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fcfbfd; --white:#ffffff;
+  --unit:#62498F; --unit-dk:#3E2D5C; --unit-lt:#F3EFF8; --unit-mid:#B0A4C7;
+  --amber:#1F8A82; --amber-lt:#8FD0CA; --amber-dk:#14605A;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#E9F3F2; --cream:#F3EFF8; --pale:#8FD0CA;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ebe8f0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(62,45,92,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d9d2e6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf8fc}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f1eef7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ece7f4;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #dcd5e8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #ece7f4}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf8fc;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1eef7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#ebe8f0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#ebe8f0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,45,92,.80) 0%,rgba(62,45,92,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 12 · PUBLIC OPINION AND POLITICAL SOCIALIZATION</span>
+  <a href="#opener">Opener</a><a href="#s1">12.1 Socialization</a><a href="#s2">12.2 Ideology</a><a href="#s3">12.3 Polling</a><a href="#s4">12.4 Strategic Use</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Voters%20head%20into%20Combined%20Polling%20Place%20Grand%20Rapids%20Area%20Library%20to%20vote%20in%20a%20Special%20Election%20in%20Grand%20Rapids%2C%20Minnesota%20on%20Election%20Day%20%2853317086316%29.jpg?width=2000" alt="Two voters walk toward the glass-and-brick entrance of a public library with an American flag beside the door." style="object-position:50% 40%"></div>
+  <div class="opener-head">
+    <div class="chapnum">12</div>
+    <div>
+      <div class="unitline">Unit 4 · American Political Ideologies and Beliefs</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Public Opinion<br>and Political Socialization</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where opinion becomes a vote.</b> Voters walk toward the Grand Rapids Area Library, one of the polling places used in Grand Rapids, Minnesota, on Election Day, November 7, 2023. A vote is one citizen’s opinion made official; polls try to measure all of them at once. <span class="credit">Photo: Lorie Shaull / <a href="https://commons.wikimedia.org/wiki/File:Voters_head_into_Combined_Polling_Place_Grand_Rapids_Area_Library_to_vote_in_a_Special_Election_in_Grand_Rapids,_Minnesota_on_Election_Day_(53317086316).jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 12.1</span><span class="sl-title">The Agents of Political Socialization</span></a><a href="#s2"><span class="sl-tag">SECTION 12.2</span><span class="sl-title">American Political Ideology</span></a><a href="#s3"><span class="sl-tag">SECTION 12.3</span><span class="sl-title">Measuring the Voice of the People</span></a><a href="#s4"><span class="sl-tag">SECTION 12.4</span><span class="sl-title">The Strategic Use of Public Opinion</span></a><a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Should Leaders Follow Public Opinion or Lead It?</span></a><a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How are political values formed, and how does the measurement of public opinion influence the strategic behavior of government institutions?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Identify the family, schools, and media as agents of political socialization and explain how each shapes political identity.</li><li>Contrast liberalism and conservatism as competing readings of shared American values.</li><li>Explain what makes a poll valid and how wording, sampling, and push polls distort results.</li><li>Assess how officials use opinion data and how the Constitution filters it.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Political Socialization</span><span>Political Ideology</span><span>Public Opinion</span><span>Sampling Error</span><span>Random Sampling</span><span>Exit Polls</span><span>Push Polls</span><span>Mass Media</span><span>Political Culture</span><span>Tracking Polls</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 12 Key Concept</p>
+        <p><b>Measurement shapes politics.</b> Public opinion is not just something government hears. It is something people form, something pollsters measure, and something politicians and media use. Each step can improve democratic accountability or distort it.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine a student council that decides a dance theme by asking only the students who sit near the front office. The result would look like “what students want,” but it would measure one corner of the school. Every poll you will see before an election faces the same problem on a national scale. Knowing how opinions form and how they are measured helps you decide which numbers to trust.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1774 to 1858 and answer one question: <a href="#case">should leaders follow public opinion or lead it?</a></p>
+      <div class="standards">
+        <div class="stdbox"><h4>CALIFORNIA CONTENT STANDARDS</h4><ul><li><code>HSS-PoAD.12.6.3</code> Evaluate the roles of polls, campaign advertising, and the controversies over campaign funding. <i>(Section 12.3)</i></li><li><code>HSS-PoAD.12.8.3</code> Explain how public officials use the media to communicate with the citizenry and to shape public opinion. <i>(Section 12.4)</i></li><li><code>HSS-PoAD.12.10</code> Students formulate questions about and defend their analyses of tensions within our constitutional democracy and the importance of maintaining a balance between the following concepts: majority rule and individual rights; liberty and equality; state and national authority in a federal system; civil disobedience and the rule of law; freedom of the press and the right to a fair trial; the relationship of religion and government. <i>(Section 12.2)</i></li></ul></div>
+        <div class="stdbox"><h4>ALSO SUPPORTS</h4><ul><li><code>HSS-PoAD.12.1.4</code> Explain how the Founding Fathers’ realistic view of human nature led directly to the establishment of a constitutional system that limited the power of the governors and the governed as articulated in the Federalist Papers. <i>(Introduction, Section 12.4)</i></li><li><code>HSS-PoAD.12.8.2</code> Describe the roles of broadcast, print, and electronic media, including the Internet, as means of communication in American politics. <i>(Section 12.1)</i></li><li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li></ul></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The People’s Voice and the Framers’ Fear</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">In the summer of 1787, as the delegates to the Constitutional Convention debated the structure of the new government they were creating, one of the deepest disagreements they faced was not about the specific powers of Congress or the shape of the executive branch. It was about a more fundamental question: how much should the new government reflect the immediate will of the people? Alexander Hamilton, deeply skeptical of direct popular control, argued for institutions insulated from the passions of the moment — a Senate with long terms, a president chosen by electors rather than a direct popular vote, a federal judiciary appointed for life. James Madison, more confident in democratic self-government but equally wary of factional passion, designed a system of checks and balances intended to slow down the conversion of popular opinion into law, giving deliberation time to temper impulse. The Framers were not anti-democratic, but they were acutely aware that democracy, left entirely to the momentary preferences of an uninformed or inflamed majority, could become as tyrannical as any monarchy.</p>
+        <p>More than two centuries later, the tension the Framers built into the constitutional structure remains very much alive — and it has been complicated in ways they could not have anticipated by the development of scientific polling, twenty-four-hour cable news, social media platforms with billions of users, and a political environment in which the mood of the public can be measured, analyzed, and broadcast to the entire country in real time. Public opinion has always been the ultimate source of democratic legitimacy in a republic. What has changed is the precision with which it can be measured, the speed with which it can be communicated, and the sophistication with which political actors can both respond to it and attempt to shape it.</p>
+        <p>Understanding public opinion requires asking two distinct but related questions. The first is a question about origins: How do individuals develop their political beliefs, values, and identities? The process through which this happens — political socialization — begins in childhood and continues throughout life, shaped by family, education, peer relationships, religious institutions, and, increasingly, media consumption. The second is a question about measurement and effect: Once individual opinions exist, how are they aggregated into something called "public opinion," how reliably can that aggregation be measured, and how do those measurements affect the behavior of elected officials, political candidates, and media organizations?</p>
+        <p>The answers to these questions are not merely academic. They have direct and consequential implications for how American democracy functions. When public opinion is measured accurately and communicated responsibly, it provides elected officials with genuine information about the preferences of the people they represent, enables democratic accountability, and helps legitimate the exercise of government power. When it is measured poorly, communicated selectively, or deliberately manipulated through techniques like push polling, it can distort the political process, manufacture false consensus, and give the appearance of popular support to policies that most citizens would reject if fully informed. In a self-governing republic, the quality of public opinion — how it is formed, how it is measured, and how it is used — is not a technical detail. It is a question of democratic integrity.</p>
+        <p>This chapter examines the full arc of public opinion in American political life: the socialization processes through which political identities are built, the ideological frameworks through which Americans interpret political events, the scientific standards that make polling valid, and the strategic uses to which opinion data is put by politicians, campaigns, and media organizations. Running through all of it is the Framers' original question, now posed in a new context: in an age of instant polling and algorithmic media, how does a democratic republic balance responsiveness to the people's voice with the stability and deliberation that good governance requires?</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Public opinion</span> The combined distribution of the public’s beliefs about politics and policy, as measured by surveys and other methods. <span class="sp">Spanish: opinión pública</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791</span>James Madison wrote that “public opinion sets bounds to every government, and is the real sovereign in every free one.” You will read his essay in the Case Study.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 12.1 asks where opinions come from. Section 12.3 asks how they are measured. Section 12.4 asks what leaders do with the numbers.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>12.1</b></div>
+    <h2>The Agents of Political Socialization</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#8FD0CA" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 12.1, you will</p>
+      <ul><li>Identify the family, schools, and media as agents of political socialization</li><li>Explain how each agent shapes political identity through a different mechanism</li><li>Evaluate how algorithmic media environments change the information citizens receive</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-political-socialization">Political socialization</a></li><li><a href="#t-mass-media">Mass media</a></li><li><a href="#t-confirmation-bias">Confirmation bias</a></li><li><a href="#t-echo-chamber">Echo chamber</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each agent, write its mechanism and one limit on its influence.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: agent, mechanism, limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Agent</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Mechanism</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Agents of Political Socialization</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Political beliefs do not appear in a person's mind fully formed. They are built over time, through a continuous process of exposure, experience, and reflection — a process that begins before a child can read or vote and continues, in modified forms, throughout a person's entire life. This process is called <dfn id="t-political-socialization">political socialization</dfn>, and understanding it is essential to understanding why Americans hold the political views they do, why those views often cluster in predictable patterns by generation, region, and social group, and why changing political opinion — whether through education, persuasion, or media — is harder and slower than it might appear.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political socialization</span> The lifelong process by which people acquire their political beliefs, values, and orientations. <span class="sp">Spanish: socialización política</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 agents</span>The chapter names three great agents: the family, schools, and the media environment.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 shows how parties and campaigns try to reach citizens once their identities have formed.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.1</span>Agents of Political Socialization</p>
+      <p class="figsub">Rings show how close each agent is to the individual. Mechanisms are summarized from this chapter’s text.</p>
+      <svg viewBox="0 0 860 430" role="img" aria-label="Concentric diagram: the citizen at the center, surrounded by family, then school and peers, then media, social media and religious institutions; arrows run inward to the citizen and outward to public opinion."><circle cx="215" cy="215" r="200" fill="#8FD0CA" stroke="#62498F" stroke-width="2.5"/><circle cx="215" cy="215" r="150" fill="#fff" stroke="#62498F" stroke-width="2.5"/><circle cx="215" cy="215" r="100" fill="#B0A4C7" stroke="#62498F" stroke-width="2.5"/><circle cx="215" cy="215" r="52" fill="#3E2D5C"/><text x="215" y="220" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">CITIZEN</text><text x="215" y="140" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">1</text><text x="215" y="90" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">2</text><text x="215" y="40" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">3</text><circle cx="484" cy="36" r="14" fill="#B0A4C7" stroke="#62498F" stroke-width="2"/><text x="484" y="42" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">1</text><text x="508" y="34" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">Family</text><text x="508" y="50" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">closest ring; values and party identity</text><text x="508" y="64" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: passed on through daily life</text><circle cx="484" cy="90" r="14" fill="#fff" stroke="#62498F" stroke-width="2"/><text x="484" y="96" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">2</text><text x="508" y="88" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">School</text><text x="508" y="104" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">civic knowledge and participation habits</text><text x="508" y="118" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: taught and practiced</text><circle cx="484" cy="144" r="14" fill="#fff" stroke="#62498F" stroke-width="2"/><text x="484" y="150" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">2</text><text x="508" y="142" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">Peers and community</text><text x="508" y="158" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">friends, neighbors, workplaces</text><text x="508" y="172" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: social pressure and example</text><circle cx="484" cy="198" r="14" fill="#8FD0CA" stroke="#62498F" stroke-width="2"/><text x="484" y="204" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">3</text><text x="508" y="196" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">News media</text><text x="508" y="212" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">what the public thinks about</text><text x="508" y="226" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: agenda setting</text><circle cx="484" cy="252" r="14" fill="#8FD0CA" stroke="#62498F" stroke-width="2"/><text x="484" y="258" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">3</text><text x="508" y="250" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">Social media</text><text x="508" y="266" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">what feeds show and reward</text><text x="508" y="280" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: engagement algorithms</text><circle cx="484" cy="306" r="14" fill="#8FD0CA" stroke="#62498F" stroke-width="2"/><text x="484" y="312" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="800">3</text><text x="508" y="304" font-family="Inter, Arial, sans-serif" font-size="14.5" fill="#1c2230" text-anchor="start" font-weight="700">Religious institutions</text><text x="508" y="320" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">moral frameworks and community</text><text x="508" y="334" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#14605A" text-anchor="start" font-weight="600">Mechanism: teaching and belonging</text><rect x="470" y="360" width="370" height="58" rx="10" fill="#3E2D5C"/><text x="655" y="383" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="14" fill="#8FD0CA" text-anchor="middle" font-weight="800">PUBLIC OPINION</text><text x="655" y="402" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#F3EFF8" text-anchor="middle" font-weight="400">Individual orientations, added together across</text><text x="655" y="415" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#F3EFF8" text-anchor="middle" font-weight="400">the population, become measurable public opinion.</text></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of family, schools, and media; peers, community, and religious institutions are named in the chapter’s introduction.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Ring</th><th>Agent</th><th>Mechanism</th></tr></thead><tbody><tr><td>1</td><td>Family</td><td>Value and identity transmission</td></tr><tr><td>2</td><td>School</td><td>Civic knowledge and participation habits</td></tr><tr><td>2</td><td>Peers and community</td><td>Social pressure and example</td></tr><tr><td>3</td><td>News media</td><td>Agenda setting</td></tr><tr><td>3</td><td>Social media</td><td>Engagement algorithms</td></tr><tr><td>3</td><td>Religious institutions</td><td>Teaching and belonging</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which agent sits closest to the citizen? What does that position suggest about its influence?</li><li>Which agents are in the outer ring? Why might they matter more in adulthood than in childhood?</li><li>What does the box labeled “Public Opinion” show about how individual views become a national measure?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Family as the Foundation of Political Identity</h3>
+    <div class="pair">
+      <div class="body">
+        <p>No agent of political socialization is more powerful or more enduring than the family. The reasons are straightforward and connected to the basic facts of human development: children spend more time with their immediate family members than with any other social institution during the years when their identities, values, and fundamental orientations toward the world are being formed. Parents transmit political orientations not only through explicit political discussions — which are less common than one might expect in many households — but through the subtler and more pervasive transmission of values, priorities, and ways of understanding social life. A child raised in a household that emphasizes collective responsibility and distrust of unregulated markets is absorbing a set of political predispositions just as surely as one raised in a household that emphasizes self-reliance and suspicion of government power, even if neither family uses ideological labels.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party identification</span> A lasting attachment to a political party, often formed in childhood. <span class="sp">Spanish: identificación partidista</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">About half</span>The chapter reports that research suggests roughly half of Americans identify with the same party as their parents.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 explains what a party is and how identification connects citizens to government.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>Two Dinner Tables</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> In one home, adults often say “neighbors should look out for each other” and “you can’t trust big institutions to fix everything.” In another, adults often say “work hard and rely on yourself” and “be careful how much power you give any government.” Neither family talks about parties. Both children are absorbing political predispositions that will shape how they later read the news.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The empirical evidence for familial influence on political identity is substantial. Studies of party identification across generations consistently show that children adopt the partisan affiliations of their parents at rates significantly higher than chance — with some research suggesting that roughly half of Americans identify with the same party as their parents. This transmission is stronger for some groups than others: political scientists have found that families with strong, consistent partisan identities are more effective transmitters of those identities than families where parents disagree politically or express little interest in partisan politics. The transmission is also more durable for certain underlying values — like orientations toward authority, risk, and social hierarchy — than for specific policy positions, which tend to evolve more as individuals gain information and experience.</p>
+        <p>It is equally important, however, to recognize the limits of familial socialization. Children are not simply political photocopies of their parents. Adolescence and early adulthood are periods of significant political development in which individuals encounter peer groups, educational institutions, and social environments that challenge and modify the orientations absorbed in childhood. A college student from a conservative family who studies political science in an urban university setting, or a young adult from a liberal household who enters the military or a deeply religious community, may substantially revise the political leanings instilled at home. The family provides a foundation, but it is a foundation that subsequent experience builds upon, reinforces, and sometimes dismantles.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Predisposition</span> A tendency formed early that shapes how a person responds to later political information. <span class="sp">Spanish: predisposición</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Values last</span>The chapter says orientations toward authority, risk, and hierarchy are more durable than positions on specific policies.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Life changes, such as college, military service, or a move, can revise what the family taught.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Schools, Education, and the Civic Foundation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>If the family is the site of informal and often unconscious political learning, the school is the site of formal and intentional civic education. Public schools in the United States have, from the beginning of the common school movement in the nineteenth century, been understood as institutions with a dual educational mission: to teach academic skills and knowledge, and to produce citizens capable of participating meaningfully in democratic self-government. The second mission — what educators call civic education — involves teaching students about the structure of American government, the history of constitutional rights and civil liberties, the processes through which laws are made and contested, and the expectations of citizenship in a democratic republic.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Civic education</span> Teaching about government, rights, lawmaking, and the duties of citizenship. <span class="sp">Spanish: educación cívica</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1899</span>Year Frances Benjamin Johnston photographed a classroom at Business High School in Washington, D.C., shown below.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 returns to the rights that civic education teaches, beginning with the First Amendment.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Washington%2C%20D.C.%20public%20schools%2C%20Business%20High%20School%20-%20classroom%20scene%20LCCN2001697366.jpg?width=1400" alt="A crowded high school classroom of the 1890s, with rows of students at desks, a flag draped above the board, and a teacher at the front." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A school in 1899</span>A classroom at Business High School in Washington, D.C., photographed by Frances Benjamin Johnston in 1899. Public schools have long taught reading and arithmetic alongside habits of citizenship. The Library of Congress holds the cyanotype print.<span class="credit">Photo: Frances Benjamin Johnston (1899) / <a href="https://commons.wikimedia.org/wiki/File:Washington,_D.C._public_schools,_Business_High_School_-_classroom_scene_LCCN2001697366.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The impact of formal civic education on political participation is well documented. Research consistently shows that education level is one of the strongest predictors of political participation: more educated Americans are significantly more likely to vote, to follow political news, to contact their representatives, to donate to campaigns, and to participate in civic organizations. This relationship holds even when controlling for income and other factors, suggesting that education itself — not just the economic advantages that typically accompany it — produces higher rates of political engagement. The mechanisms are not difficult to identify: higher education develops the information-processing and analytical skills that make political participation less cognitively demanding, exposes students to a wider range of political perspectives and information sources, and typically reinforces norms of civic engagement as valuable and expected.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Participation</span> Actions citizens take to influence government, such as voting, contacting officials, or donating. <span class="sp">Spanish: participación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">82.5%</span>Share of adult citizens with an advanced degree who voted in 2024, compared with 52.5% of high school graduates (U.S. Census Bureau).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 looks at turnout and who votes.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.2</span>Who Voted in 2024? Turnout by Education</p>
+      <p class="figsub">Percent of the citizen voting-age population who reported voting in the November 2024 election.</p>
+      <svg viewBox="0 0 860 230" role="img" aria-label="Bar chart of 2024 turnout: 82.5 percent for advanced degree, 77.2 percent for bachelor&#x27;s degree, 65.3 percent for all adult citizens, 52.5 percent for high school graduates"><line x1="220.0" y1="10" x2="220.0" y2="186" stroke="#e6e8ec"/><text x="220.0" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="357.5" y1="10" x2="357.5" y2="186" stroke="#e6e8ec"/><text x="357.5" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25%</text><line x1="495.0" y1="10" x2="495.0" y2="186" stroke="#e6e8ec"/><text x="495.0" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50%</text><line x1="632.5" y1="10" x2="632.5" y2="186" stroke="#e6e8ec"/><text x="632.5" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75%</text><line x1="770.0" y1="10" x2="770.0" y2="186" stroke="#e6e8ec"/><text x="770.0" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100%</text><text x="210" y="37.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Advanced degree</text><g><title>Advanced degree: 82.5%</title><path d="M220 16 h449.8 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-449.8z" fill="#62498F"/></g><text x="681.8" y="37.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">82.5%</text><text x="210" y="81.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Bachelor’s degree</text><g><title>Bachelor’s degree: 77.2%</title><path d="M220 60 h420.6 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-420.6z" fill="#62498F"/></g><text x="652.6" y="81.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">77.2%</text><text x="210" y="125.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">All adult citizens</text><g><title>All adult citizens: 65.3%</title><path d="M220 104 h355.1 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-355.1z" fill="#1F8A82"/></g><text x="587.1" y="125.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">65.3%</text><text x="210" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">High school graduates</text><g><title>High school graduates: 52.5%</title><path d="M220 148 h284.8 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-284.8z" fill="#62498F"/></g><text x="516.8" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52.5%</text><line x1="220" y1="10" x2="220" y2="186" stroke="#6f7787" stroke-width="1.5"/><text x="495.0" y="226" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent who voted</text></svg>
+      <p class="source">Source: U.S. Census Bureau, “2024 Presidential Election Voting and Registration Tables Now Available,” press release, April 30, 2025 (Current Population Survey; self-reported voting). Highlighted bar: all adult citizens.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Group</th><th>Percent who voted</th></tr></thead><tbody><tr><td>Advanced degree</td><td>82.5%</td></tr><tr><td>Bachelor’s degree</td><td>77.2%</td></tr><tr><td>All adult citizens</td><td>65.3%</td></tr><tr><td>High school graduates</td><td>52.5%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What is the gap, in percentage points, between turnout for those with an advanced degree and for high school graduates?</li><li>The chapter says education predicts participation even after income is considered. Which mechanism from the text could explain the gap in this chart?</li><li>Why should you be careful about concluding that schooling alone causes the gap?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>Schools also shape political socialization in less direct ways, through the experience of institutional participation itself. Students who participate in student government, debate teams, or service learning programs are developing habits of civic engagement and exposure to democratic processes that influence their later political behavior. The school environment models, in miniature, the dynamics of democratic governance — majority decision-making, the representation of competing interests, the importance of rules and procedures — in ways that shape students' understanding of how political institutions work and what participation in them looks and feels like.</p>
+        <p>It is also worth noting that the political content of public school civic education is not neutral or uncontested. What history is taught, whose stories are included, which constitutional values are emphasized, and how political controversies are presented all reflect choices that carry political implications. These questions have become increasingly contentious in recent decades, as debates over the content of history curricula, the role of critical thinking versus patriotic consensus in civic education, and the appropriate treatment of topics like race, gender, and sexuality in public school classrooms have become flashpoints in broader cultural and political conflicts. The school as an agent of socialization is not a politically innocent institution.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Extracurricular</span> Activities outside regular classes, such as student government and debate. <span class="sp">Spanish: actividad extracurricular</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Dual mission</span>Teach academic skills and prepare citizens for self-government, according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The “hidden lessons” of voting, majority rule, and rules of procedure appear in every student election.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>What Should Civic Education Emphasize?</div></div>
+      <div class="box-b">
+        <p>You are on a district committee choosing a civics emphasis. The chapter says these choices reflect real disagreements.</p>
+        <div class="opts"><div class="opt"><h5>Shared foundations</h5>Teach the Constitution, founding ideals, and common civic rituals so every student shares a civic vocabulary.</div><div class="opt"><h5>Critical analysis</h5>Teach students to examine primary sources and compare how historians and citizens disagree.</div></div>
+        <p class="ask">Which would you emphasize first, and what would you do to make sure students still see the other side?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE EVIDENCE ON EDUCATION AND VOTING</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.2. Which group voted at the highest rate? The lowest?</li><li>Use the text. Name two ways that schools shape politics besides teaching civics.</li><li>Write a Counter-Argument to this claim: “Schools are politically neutral.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Media, Social Networks, and the Architecture of Political Information</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The third great agent of political socialization — and in the twenty-first century arguably the most dynamic and consequential — is the media environment in which individuals are embedded. For most of the twentieth century, that environment was dominated by a relatively small number of <dfn id="t-mass-media">mass media</dfn> institutions: the three major broadcast television networks, a handful of national newspapers, and local papers and radio stations that covered national politics with varying depth and quality. These institutions were far from perfectly objective, but they shared certain structural features — the requirement to reach a broad, general audience, professional journalistic norms that emphasized the separation of news and opinion, and a common set of factual reference points — that imposed at least a degree of shared informational reality on the American public.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Mass media</span> Print, broadcast, and digital channels that reach large audiences. <span class="sp">Spanish: medios de comunicación masiva</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 networks</span>For most of the twentieth century, three major broadcast networks dominated television news, according to the chapter.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 15 examines the media’s roles as gatekeeper and watchdog in more detail.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Newspaper%20Vending%20Boxes%20in%20New%20York%20City.jpg?width=1400" alt="A row of five newspaper vending boxes on a city sidewalk, in green, black, orange, and yellow, with a parked van behind them." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Choosing what to read</span>Newspaper vending boxes on a sidewalk in New York City, photographed on October 4, 2008. Print once reached a general audience. Today people can choose from thousands of sources, online and off.<span class="credit">Photo: Contributor to Wikimedia Commons (2008) / <a href="https://commons.wikimedia.org/wiki/File:Newspaper_Vending_Boxes_in_New_York_City.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span></figcaption></figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The digital revolution that began in the 1990s and accelerated dramatically in the 2000s and 2010s has fundamentally altered this environment. The decline of traditional media institutions and the rise of the internet, cable news, and social media platforms have fragmented the national media landscape into thousands of distinct informational niches. Americans today have virtually unlimited ability to choose what political information they consume — which means they have the ability to choose media environments that confirm, reinforce, and amplify the political beliefs they already hold, while systematically avoiding perspectives that challenge those beliefs. The psychological tendency to seek confirming information and avoid disconfirming information — <dfn id="t-confirmation-bias">confirmation bias</dfn> — is not new, but the digital media environment enables it on a scale and with an ease that has no historical precedent.</p>
+        <p>Social media platforms have introduced an additional dynamic: algorithmic curation of political content. Platforms like Facebook, Twitter (now X), and YouTube use engagement-optimization algorithms that learn from user behavior and prioritize content that generates strong emotional reactions — outrage, fear, and moral indignation tend to drive more clicks, shares, and comments than measured or nuanced content. The practical effect is that users are systematically exposed to more extreme, emotionally charged political content than they would encounter in a neutral information environment, and the internal logic of the platform rewards political voices that traffic in conflict and polarization over those that emphasize complexity and compromise.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Confirmation bias</span> The tendency to seek information that confirms what you already believe and to avoid information that challenges it. <span class="sp">Spanish: sesgo de confirmación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Algorithm</span> A set of rules a platform uses to decide which content to show a user. <span class="sp">Spanish: algoritmo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">59%</span>Share of U.S. adults who say they get news from social media at least sometimes in 2026 (Pew Research Center).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 15 explains how officials can now speak to the public without passing through a newsroom.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.3</span>Getting News From Social Media, 2020–2026</p>
+      <p class="figsub">Percent of U.S. adults who say they get news from social media “often” or “sometimes.”</p>
+      <svg viewBox="0 0 860 306" role="img" aria-label="Bar chart of the share of US adults who get news from social media often or sometimes: 53 percent in 2020, 48 in 2021, 50 in 2022, 50 in 2023, 54 in 2024, 53 in 2025, 59 in 2026"><line x1="90.0" y1="10" x2="90.0" y2="262" stroke="#e6e8ec"/><text x="90.0" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="284.3" y1="10" x2="284.3" y2="262" stroke="#e6e8ec"/><text x="284.3" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20%</text><line x1="478.6" y1="10" x2="478.6" y2="262" stroke="#e6e8ec"/><text x="478.6" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">40%</text><line x1="672.9" y1="10" x2="672.9" y2="262" stroke="#e6e8ec"/><text x="672.9" y="280" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">60%</text><text x="80" y="33.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2020</text><g><title>2020: 53%</title><path d="M90 16 h510.9 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-510.9z" fill="#62498F"/></g><text x="612.9" y="33.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">53%</text><text x="80" y="69.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2021</text><g><title>2021: 48%</title><path d="M90 52 h462.3 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-462.3z" fill="#62498F"/></g><text x="564.3" y="69.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">48%</text><text x="80" y="105.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2022</text><g><title>2022: 50%</title><path d="M90 88 h481.7 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-481.7z" fill="#62498F"/></g><text x="583.7" y="105.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">50%</text><text x="80" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2023</text><g><title>2023: 50%</title><path d="M90 124 h481.7 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-481.7z" fill="#62498F"/></g><text x="583.7" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">50%</text><text x="80" y="177.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2024</text><g><title>2024: 54%</title><path d="M90 160 h520.6 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-520.6z" fill="#62498F"/></g><text x="622.6" y="177.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">54%</text><text x="80" y="213.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2025</text><g><title>2025: 53%</title><path d="M90 196 h510.9 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-510.9z" fill="#62498F"/></g><text x="612.9" y="213.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">53%</text><text x="80" y="249.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2026</text><g><title>2026: 59%</title><path d="M90 232 h569.1 a4 4 0 0 1 4 4 v16 a4 4 0 0 1 -4 4 h-569.1z" fill="#1F8A82"/></g><text x="671.1" y="249.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">59%</text><line x1="90" y1="10" x2="90" y2="262" stroke="#6f7787" stroke-width="1.5"/><text x="430.0" y="302" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of U.S. adults</text></svg>
+      <p class="source">Source: Pew Research Center, “Social Media and News Fact Sheet” (survey of 5,166 U.S. adults, August 2026). Each bar adds Pew’s “often” and “sometimes” categories for that year. Highlighted bar: most recent year.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Often</th><th>Sometimes</th><th>Often + sometimes</th></tr></thead><tbody><tr><td>2020</td><td>23%</td><td>30%</td><td>53%</td></tr><tr><td>2021</td><td>19%</td><td>29%</td><td>48%</td></tr><tr><td>2022</td><td>17%</td><td>33%</td><td>50%</td></tr><tr><td>2023</td><td>19%</td><td>31%</td><td>50%</td></tr><tr><td>2024</td><td>25%</td><td>29%</td><td>54%</td></tr><tr><td>2025</td><td>21%</td><td>32%</td><td>53%</td></tr><tr><td>2026</td><td>26%</td><td>33%</td><td>59%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>By how many percentage points did the share rise from 2025 to 2026?</li><li>What does the chart suggest about how many adults now meet political information through algorithm-driven feeds?</li><li>The chapter notes that confirmation bias is old. What makes the digital version different?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The concept of the "<dfn id="t-echo-chamber">echo chamber</dfn>" — the media environment in which individuals hear only the amplified echo of their own existing beliefs — has become one of the most discussed phenomena in contemporary political science. Research on the echo chamber effect is more nuanced than popular accounts suggest: studies have found that many Americans do, in fact, encounter cross-cutting political information in their social media feeds, but that they engage with it differently than they engage with confirming information, spending less time with it and being less likely to share or remember it. The net effect of algorithmically curated media environments on political polarization and the quality of democratic deliberation remains an active area of research, but there is strong evidence that the fragmented media landscape contributes to a political environment in which Americans increasingly inhabit separate informational realities — a development with significant implications for democratic governance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Echo chamber</span> A media environment in which people hear mainly the amplified echo of beliefs they already hold. <span class="sp">Spanish: cámara de eco</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Active research</span>The chapter says the net effect of algorithmic media on polarization is still being studied.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter contrasts today’s fragmentation with the “shared informational reality” of the broadcast era.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; EVALUATING THE MEDIA ENVIRONMENT</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.3. In which year was the share lowest? What is the trend since then?</li><li>Use the text. Why do engagement algorithms favor emotional content?</li><li>Write a Counter-Argument to this claim: “Social media always traps people in echo chambers.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 12.1 ASSESSMENT</b>Complete the Section 12.1 Assessment in your <i>Chapter 12 Assignment</i> packet before you move on to Section 12.2.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>12.2</b></div>
+    <h2>American Political Ideology</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#8FD0CA" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F3EFF8" stroke-width="5"/><path d="M14 100h132" stroke="#8FD0CA" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 12.2, you will</p>
+      <ul><li>Define political ideology and explain how it differs from party identification</li><li>Contrast liberalism and conservatism as competing readings of shared values</li><li>Describe libertarianism and populism and why they cut across the spectrum</li><li>Explain how political culture frames American political argument</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-political-ideology">Political ideology</a></li><li><a href="#t-liberalism">Liberalism</a></li><li><a href="#t-libertarianism">Libertarianism</a></li><li><a href="#t-political-culture">Political culture</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each tradition, write how it weighs liberty and government.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tradition, view of liberty, view of government"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tradition</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Liberty means…</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Government is…</text><rect x="2.0" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">American Political Ideology</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Political socialization produces not just party affiliation but <dfn id="t-political-ideology">political ideology</dfn> — the more or less coherent system of beliefs through which individuals interpret political events, evaluate policy proposals, and understand the proper relationship between government and society. American political culture is distinctive in certain respects: it is characterized by unusually strong commitments to individual liberty, constitutional government, and the rule of law — commitments that are widely, though not universally, shared across the ideological spectrum. But within this broad shared culture, Americans disagree sharply and persistently about some of the most important political questions a society faces: how much economic inequality is acceptable, what role the federal government should play in regulating private conduct, how the competing values of liberty and equality should be balanced when they conflict, and what government owes its citizens and what citizens owe each other.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political ideology</span> A fairly coherent set of beliefs used to interpret events and judge policy. <span class="sp">Spanish: ideología política</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 questions</span>The chapter names four lasting disagreements: inequality, regulation, liberty versus equality, and what citizens owe each other.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 shows how parties package ideas into platforms.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Liberalism, Conservatism, and the American Political Spectrum</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The two most influential ideological traditions in contemporary American politics — <dfn id="t-liberalism">liberalism</dfn> and conservatism — are best understood not as fundamentally opposed systems of values but as competing interpretations of the shared values of the American political tradition. Both liberals and conservatives believe in individual liberty, in constitutional government, in the rule of law, and in the importance of democratic accountability. Where they differ is in how they weigh these values against each other when they conflict, and in what kinds of institutions — government programs, market mechanisms, civil society organizations — they believe are most effective in promoting human flourishing and social stability.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Liberalism</span> In the chapter’s modern American sense, the view that real liberty requires a floor of material security and opportunity. <span class="sp">Spanish: liberalismo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Conservatism</span> The view that the main threat to liberty is government power and that traditional institutions should do more of society’s work. <span class="sp">Spanish: conservadurismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Same values</span>Both traditions affirm liberty, constitutional government, the rule of law, and democratic accountability.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter ties modern liberalism to the New Deal and the Great Society and modern conservatism to the Reagan era.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Modern American liberalism, as it developed in the twentieth century under the influence of the New Deal and the Great Society, holds that genuine individual liberty requires more than the mere absence of government coercion. A person who cannot afford adequate food, shelter, healthcare, or education is not truly free in any meaningful sense, regardless of how few laws restrict their formal choices. From this perspective, an active federal government that uses its regulatory and fiscal powers to ensure a basic floor of material security and opportunity is not an enemy of freedom but a precondition of it. Liberals therefore tend to favor government programs that provide social insurance against the hazards of the market economy — unemployment insurance, Social Security, Medicare and Medicaid — and regulations that prevent private actors from using their economic power to harm workers, consumers, or the environment. On social questions, modern liberalism tends to prioritize the expansion of civil rights and equal protection to historically excluded groups and to view government as an instrument through which the legacy of past discrimination can be remedied.</p>
+        <p>Modern American conservatism, as it was articulated by thinkers like Friedrich Hayek and William F. Buckley Jr. and given political expression in the Reagan revolution of the 1980s, holds that the primary threat to liberty comes from government itself — that the expansion of the federal government's regulatory and redistributive power inevitably concentrates authority in ways that undermine individual freedom, distort market signals, and produce inefficiency and dependency. From this perspective, the best guarantee of both prosperity and freedom is a limited government that protects property rights and enforces contracts, but otherwise leaves individuals and voluntary associations to organize their own economic and social lives. Conservatives tend to favor lower taxes and less regulation of the private sector, to be skeptical of federal social programs, and to value traditional institutions — family, religious community, local government — as the appropriate venues for addressing social problems. On many social questions, conservatism tends to emphasize the importance of established cultural and moral norms as foundations of social stability.</p>
+        <p>It is important to recognize that these are tendencies and emphases, not absolute distinctions. American liberalism has historically included both economically progressive and civil libertarian strands; American conservatism has included both free-market economic conservatives and social traditionalists who are willing to use government power to enforce cultural norms. The ideological landscape is further complicated by the persistence of regional, ethnic, and religious traditions that cut across the conventional liberal-conservative axis in various ways.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social insurance</span> Government programs that protect people against hazards such as job loss, old age, and illness. <span class="sp">Spanish: seguro social</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Tendencies</span>The chapter stresses these are emphases, not absolute distinctions.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 16 and Chapter 17 apply these views to economic and social policy.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.4</span>How Americans Describe Their Ideology, 2024</p>
+      <p class="figsub">Percent of U.S. adults who identify as conservative, moderate, or liberal (annual average of Gallup surveys).</p>
+      <svg viewBox="0 0 860 198" role="img" aria-label="Bar chart of 2024 self-described ideology: 37 percent conservative, 34 percent moderate, 25 percent liberal"><line x1="130.0" y1="10" x2="130.0" y2="154" stroke="#e6e8ec"/><text x="130.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="258.0" y1="10" x2="258.0" y2="154" stroke="#e6e8ec"/><text x="258.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">10%</text><line x1="386.0" y1="10" x2="386.0" y2="154" stroke="#e6e8ec"/><text x="386.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20%</text><line x1="514.0" y1="10" x2="514.0" y2="154" stroke="#e6e8ec"/><text x="514.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">30%</text><line x1="642.0" y1="10" x2="642.0" y2="154" stroke="#e6e8ec"/><text x="642.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">40%</text><line x1="770.0" y1="10" x2="770.0" y2="154" stroke="#e6e8ec"/><text x="770.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50%</text><text x="120" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Conservative</text><g><title>Conservative: 37%</title><path d="M130 16 h469.6 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-469.6z" fill="#62498F"/></g><text x="611.6" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">37%</text><text x="120" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Moderate</text><g><title>Moderate: 34%</title><path d="M130 64 h431.2 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-431.2z" fill="#62498F"/></g><text x="573.2" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">34%</text><text x="120" y="135.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Liberal</text><g><title>Liberal: 25%</title><path d="M130 112 h316.0 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-316.0z" fill="#62498F"/></g><text x="458.0" y="135.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">25%</text><line x1="130" y1="10" x2="130" y2="154" stroke="#6f7787" stroke-width="1.5"/><text x="450.0" y="194" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of U.S. adults</text></svg>
+      <p class="source">Source: Gallup, “U.S. Political Parties Historically Polarized Ideologically,” January 16, 2025 (2024 annual averages; the remaining respondents gave no answer or a different answer). Self-labels are not the same as policy positions.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Label</th><th>Percent, 2024</th></tr></thead><tbody><tr><td>Conservative</td><td>37%</td></tr><tr><td>Moderate</td><td>34%</td></tr><tr><td>Liberal</td><td>25%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which label was chosen most often? By how many points did it lead the second most common?</li><li>The three labels total 96%. What might the remaining responses represent?</li><li>The text says ideology is a system of beliefs. Why can a self-label alone be a poor guide to someone’s views on a specific policy?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>Same Value, Different Weight</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A city council debates paying for a new neighborhood library with a small property-tax increase. One resident says, “Public libraries open opportunity to every family, so the city should fund them.” Another says, “Families, churches, and local groups can offer these services, and higher taxes limit how people use their own money.” Both residents value liberty, community, and opportunity. They weigh the same values differently and trust different institutions to deliver them. The chapter says that is how liberals and conservatives usually disagree.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Emerging Ideologies and the Limits of the Spectrum</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The conventional liberal-conservative spectrum, while useful, does not capture the full complexity of contemporary American political ideology. Two emerging or resurgent ideological traditions have become increasingly significant in recent decades: <dfn id="t-libertarianism">libertarianism</dfn> and populism.</p>
+        <p>Libertarianism occupies a distinctive position on the political landscape because it applies the principle of limited government consistently to both economic and personal life. Where economic conservatives often favor deregulation of markets but are willing to use government power to enforce traditional social norms, and where social liberals favor government intervention in the economy but strong protections for personal autonomy, libertarians are skeptical of government power in both domains. They oppose high taxes and economic regulation for the same reason they oppose drug prohibition and surveillance laws: in each case, they argue, the government is substituting its judgment for that of the individual about how to live and what choices to make. Libertarianism has a long pedigree in American political thought, reflecting strands of the classical liberal tradition that go back to John Locke and the Declaration of Independence, but as an organized political force it has struggled to achieve major electoral success, largely because its consistent anti-government positions alienate constituencies on both the left and the right who want government protection in their preferred domain.</p>
+        <p>Populism is harder to define as a coherent ideology because it is more a political style or emotional orientation than a systematic set of policy commitments. American populism — whether in the agrarian radicalism of the late nineteenth century, the labor populism of the early twentieth century, or the more recent populisms of the left and the right — is defined by a fundamental opposition between "the people" and "the elite": between ordinary working Americans and the powerful economic, cultural, and political establishments that are seen as rigging the system against them. Populism of the left has historically focused on economic elites — Wall Street banks, large corporations, the wealthy — and has called for government action to restrain their power and redistribute wealth downward. Populism of the right has increasingly focused on cultural and political elites — university professors, mainstream media organizations, Washington bureaucrats — and has called for resistance to what it characterizes as the imposition of elite cultural values on a resistant working-class majority. Both forms of populism draw their emotional energy from genuine and legitimate grievances about inequality and the responsiveness of political institutions to ordinary people.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Libertarianism</span> Skepticism of government power in both economic and personal life. <span class="sp">Spanish: libertarismo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Populism</span> A political style that pits “the people” against “the elite.” <span class="sp">Spanish: populismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Locke</span>The chapter traces libertarian ideas to John Locke and the Declaration of Independence.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter names agrarian radicalism in the late 1800s and labor populism in the early 1900s as earlier populist movements.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.5</span>Four Traditions Compared</p>
+      <p class="figsub">Summarized from this chapter’s text. These are tendencies, not absolute categories.</p>
+      <table class="cmp"><thead><tr><th>Tradition</th><th>Core claim about liberty</th><th>Role of government</th><th>Examples named in the chapter</th></tr></thead><tbody><tr><td>Liberalism</td><td>Real liberty requires a floor of material security and opportunity</td><td>Active government as a precondition of freedom</td><td>New Deal, Great Society</td></tr><tr><td>Conservatism</td><td>The main threat to liberty is government itself</td><td>Limited government; traditional institutions do more</td><td>Hayek, Buckley, Reagan era</td></tr><tr><td>Libertarianism</td><td>Limit government consistently, in economic and personal life</td><td>Minimal in both domains</td><td>Locke, Declaration of Independence</td></tr><tr><td>Populism</td><td>“The people” versus “the elite” (a style, not a fixed program)</td><td>Varies; left targets economic elites, right targets cultural and political elites</td><td>Agrarian radicalism, labor populism</td></tr></tbody></table>
+      <p class="source">Source: Summary of Chapter 12 text, Section 12.2 (Daniel Garza, M.A.). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which two traditions agree that government power should be limited? What separates them?</li><li>Why does the chapter call populism a “style” rather than a program?</li><li>Which tradition has struggled most to win elections, according to the text, and why?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>What Does “Liberal” Mean Abroad?</div></div>
+      <div class="box-b">
+<p style="margin:0">In the United States, “liberal” usually names the left side of the spectrum. Elsewhere the word can point the other way. The Liberal Party of Australia, founded in 1944 to oppose the Labor Party, says it believes in “individual freedom and free enterprise.” It is not Australia’s party of the left; Labor is. The word comes from the same root, but each country’s politics gives it a different weight. What does that suggest about relying on labels alone? <i>(Sources: Liberal Party of Australia, “Our History” and “Our Beliefs,” liberal.org.au; National Museum of Australia, “Liberal Party forms,” nma.gov.au; Encyclopaedia Britannica, “Liberal Party of Australia.”)</i></p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Political Culture and the American Consensus</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Beneath the ideological disagreements between liberals and conservatives, libertarians and populists, there exists a layer of shared political values — what political scientists call <dfn id="t-political-culture">political culture</dfn> — that distinguishes the American political tradition from those of other democracies. American political culture is characterized by an unusually strong emphasis on individual rights and personal liberty, a deep suspicion of concentrated government power, a commitment to equality of opportunity (if not necessarily of outcome), a strong attachment to constitutional procedures and the rule of law, and a broadly shared belief in the value of private property and market exchange as the foundation of economic life.</p>
+        <p>This shared political culture does not eliminate ideological conflict — as the preceding discussion makes clear, it is possible to agree on the importance of liberty while disagreeing profoundly about whether market freedom or social insurance is more essential to it. But it does provide a common framework within which political argument takes place. American political debates are conducted in a distinctive idiom: appeals to the Constitution, to individual rights, to the founding generation and their intentions, to the dangers of government tyranny and the importance of personal responsibility. This shared language is itself a product of political socialization — of the civic education, cultural transmission, and shared historical memory that form the background of American political identity.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political culture</span> The widely shared political values and habits that frame debate in a society. <span class="sp">Spanish: cultura política</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">5 traits</span>Individual rights, suspicion of concentrated power, equality of opportunity, constitutional procedure, and private property.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 1 and Chapter 2 trace many of these ideas to the founding.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING IDEOLOGIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.4. What share of U.S. adults called themselves moderate in 2024?</li><li>Use Figure 12.5. Which traditions does the chapter connect to the New Deal and to the Reagan era?</li><li>Write a Counter-Argument to this claim: “Liberals and conservatives share no values.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 12.2 ASSESSMENT</b>Complete the Section 12.2 Assessment in your <i>Chapter 12 Assignment</i> packet before you move on to Section 12.3.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>12.3</b></div>
+    <h2>Measuring the Voice of the People</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#8FD0CA" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 12.3, you will</p>
+      <ul><li>Explain how random sampling lets a small sample describe a large population</li><li>Calculate and interpret a margin of error</li><li>Identify how wording, priming, and push polls distort results</li><li>Distinguish exit polls from tracking polls</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-public-opinion">Public opinion</a></li><li><a href="#t-random-sampling">Random sampling</a></li><li><a href="#t-sampling-error">Sampling error</a></li><li><a href="#t-push-poll">Push poll</a></li><li><a href="#t-exit-polls">Exit polls</a></li><li><a href="#t-tracking-polls">Tracking polls</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each type of poll, write who is asked, when, and one limit.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: poll type, when and who, limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Poll type</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">When / who</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Measuring the Voice of the People</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">he translation of individual political opinions into something called "<dfn id="t-public-opinion">public opinion</dfn>" — the aggregate distribution of political beliefs and attitudes across a population — requires scientific methods of measurement. For most of American history, politicians and commentators had to rely on impressionistic assessments of public mood: newspaper editorials, letters from constituents, conversations with community leaders, the results of elections, and the educated intuitions of experienced political observers. All of these methods provided some information, but none provided systematic, reliable, or representative data about what all or most citizens thought about the issues of the day.</p>
+        <p>The development of scientific polling in the twentieth century — associated with figures like George Gallup, Elmo Roper, and Archibald Crossley in the 1930s — transformed the relationship between public opinion and political decision-making. For the first time, it became possible to generate reliable numerical estimates of public preferences on specific policy questions, candidate preferences, and assessments of government performance, based on surveys of carefully selected samples of the population. This development was not merely a technical advance; it changed the political landscape by making public opinion visible and measurable in ways it had never been before.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Poll</span> A survey that asks a sample of people questions to estimate what a whole population thinks. <span class="sp">Spanish: encuesta</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1930s</span>Gallup, Roper, and Crossley brought scientific polling to national politics, according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Before polls, politicians read editorials, letters, and election results (Section 12.1).</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Science of Valid Polling</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The validity of a public opinion poll — the degree to which it accurately reflects the actual distribution of opinion in the population it claims to represent — depends on adherence to a set of scientific requirements that are both demanding in principle and frequently compromised in practice. Understanding what makes a poll valid, and what kinds of errors and biases can corrupt polling data, is essential to evaluating the enormous volume of polling information that flows through the American political system during campaigns, between elections, and on every major policy question.</p>
+        <p>The most fundamental requirement of valid polling is <dfn id="t-random-sampling">random sampling</dfn>. In a true random sample, every member of the population being surveyed has an equal and independent probability of being selected to participate. This requirement is the foundation on which all of polling's statistical properties rest: when a sample is truly random, the mathematics of probability allows researchers to calculate with precision how likely it is that the sample's results differ from the true population values by any given amount. A random sample of one thousand people, drawn correctly, can provide a remarkably accurate picture of the opinions of 330 million Americans — not because one thousand is a large number relative to the population, but because the mathematics of random sampling guarantees that the sample will closely approximate the population's distribution of views.</p>
+        <p>The practical challenge is that pure random sampling is extremely difficult to achieve. Early polling used telephone surveys of randomly dialed numbers, but as mobile phone ownership replaced landline phones and as caller ID enabled people to screen unfamiliar calls, response rates to telephone polls plummeted, introducing the risk that those who agreed to participate were systematically different from those who did not — a problem called nonresponse bias. Modern polling increasingly uses internet-based surveys, which introduce their own challenges: people without internet access, who tend to be older, poorer, and less educated, are systematically excluded from web-based samples.</p>
+        <p>Representative sampling addresses a related but distinct problem: even a randomly selected sample may fail to reflect the demographic composition of the population if, by chance or by systematic bias, certain groups are over- or under-represented. A poll that accurately reflects the views of white college-educated Americans but dramatically under-represents Black, Latino, and working-class respondents will produce results that do not accurately reflect the national distribution of opinion. Reputable polling organizations use statistical weighting techniques to adjust for known demographic discrepancies — increasing the statistical weight of under-represented groups and decreasing the weight of over-represented ones — but these adjustments are imperfect and introduce their own sources of error.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Random sampling</span> Selecting people so that every member of the population has an equal and independent chance of being chosen. <span class="sp">Spanish: muestreo aleatorio</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Nonresponse bias</span> Error that arises when people who answer a poll differ systematically from those who do not. <span class="sp">Spanish: sesgo de no respuesta</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1,000</span>A well-drawn random sample of about 1,000 can describe the opinions of hundreds of millions, according to the chapter.</div>
+        <div class="connect"><span class="tag">MATH HANDBOOK</span>A margin of error at 95% confidence is about 1.96 × √(0.25 ÷ n) for a yes–no question with an even split.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/A%20voter%20leaves%20polling%20place%2C%20Cohasset%20City%20Hall%2C%20Minnesota%20on%20Election%20Day%2C%20Nov.%205%2C%202024.jpg?width=1400" alt="The brick front of a small-town city hall with a green sign reading Cohasset City Hall; a person in a dark coat stands near the entrance on the right." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Where exit polls happen</span>A voter leaves the polling place at Cohasset City Hall, Minnesota, on Election Day, November 5, 2024. Exit pollsters wait outside polling places and ask people who have just voted how they voted.<span class="credit">Photo: Lorie Shaull (2024) / <a href="https://commons.wikimedia.org/wiki/File:A_voter_leaves_polling_place,_Cohasset_City_Hall,_Minnesota_on_Election_Day,_Nov._5,_2024.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.6</span>Margin of Error Shrinks Slowly as Samples Grow</p>
+      <p class="figsub">Approximate 95 percent margin of error (±) for a yes–no question, by sample size, assuming a simple random sample and an even split.</p>
+      <svg viewBox="0 0 860 254" role="img" aria-label="Bar chart of margin of error by sample size: plus or minus 9.8 points for 100 people, 4.9 for 400, 3.1 for 1,000, 2.2 for 2,000, 1.5 for 4,000"><line x1="120.0" y1="10" x2="120.0" y2="210" stroke="#e6e8ec"/><text x="120.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±0.0</text><line x1="250.0" y1="10" x2="250.0" y2="210" stroke="#e6e8ec"/><text x="250.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±2.0</text><line x1="380.0" y1="10" x2="380.0" y2="210" stroke="#e6e8ec"/><text x="380.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±4.0</text><line x1="510.0" y1="10" x2="510.0" y2="210" stroke="#e6e8ec"/><text x="510.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±6.0</text><line x1="640.0" y1="10" x2="640.0" y2="210" stroke="#e6e8ec"/><text x="640.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±8.0</text><line x1="770.0" y1="10" x2="770.0" y2="210" stroke="#e6e8ec"/><text x="770.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">±10.0</text><text x="110" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">n = 100</text><g><title>n = 100: ±9.8</title><path d="M120 16 h633.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-633.0z" fill="#62498F"/></g><text x="765.0" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">±9.8</text><text x="110" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">n = 400</text><g><title>n = 400: ±4.9</title><path d="M120 56 h314.5 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-314.5z" fill="#62498F"/></g><text x="446.5" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">±4.9</text><text x="110" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">n = 1,000</text><g><title>n = 1,000: ±3.1</title><path d="M120 96 h197.4 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-197.4z" fill="#62498F"/></g><text x="329.4" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">±3.1</text><text x="110" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">n = 2,000</text><g><title>n = 2,000: ±2.2</title><path d="M120 136 h138.4 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-138.4z" fill="#62498F"/></g><text x="270.4" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">±2.2</text><text x="110" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">n = 4,000</text><g><title>n = 4,000: ±1.5</title><path d="M120 176 h96.7 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-96.7z" fill="#62498F"/></g><text x="228.7" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">±1.5</text><line x1="120" y1="10" x2="120" y2="210" stroke="#6f7787" stroke-width="1.5"/><text x="445.0" y="250" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Margin of error (percentage points)</text></svg>
+      <p class="source">Source: Calculated for this textbook with the formula 1.96 × √(0.25 ÷ n) × 100, which assumes a simple random sample and ignores design effects and weighting; real polls often report slightly larger margins.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Sample size (n)</th><th>Margin of error (±)</th></tr></thead><tbody><tr><td>100</td><td>9.8</td></tr><tr><td>400</td><td>4.9</td></tr><tr><td>1,000</td><td>3.1</td></tr><tr><td>2,000</td><td>2.2</td></tr><tr><td>4,000</td><td>1.5</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Quadrupling the sample from 100 to 400 changed the margin by how many points?</li><li>Going from 1,000 to 4,000 people also quadruples the sample. By how many points does the margin change, and why does that matter to a pollster’s budget?</li><li>The chapter says one thousand people can describe hundreds of millions. What condition must hold for that to be true?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>A Poll of 400 Students</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A school newspaper randomly selects 400 of the school’s students and finds that 54% favor a later start time. By the formula in Figure 12.6, the margin of error is about ±4.9 points, so the true level of support in the whole school probably falls between about 49% and 59%. The newspaper cannot say that a majority supports the change.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The margin of error — technically the <dfn id="t-sampling-error">sampling error</dfn> — is the quantitative expression of the uncertainty inherent in any sample-based estimate. A poll reporting that 54 percent of respondents support a particular policy, with a margin of error of plus or minus three percentage points, is saying that the true level of support in the population is likely to fall between 51 and 57 percent. This does not mean the result is unreliable; a margin of error of three points is generally considered high-quality polling. But it does mean that when two candidates are separated by fewer points than the margin of error, the poll cannot reliably determine who is actually ahead. Media coverage of polling frequently fails to convey this uncertainty adequately, treating point estimates as if they were precise measurements rather than estimates with inherent variability.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Sampling error</span> The expected difference between a sample’s result and the true population value, reported as the margin of error. <span class="sp">Spanish: error de muestreo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">±3 points</span>The chapter calls a margin of error of three points high-quality polling.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 12.4 shows how headlines can treat narrow leads as certain.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>How Should a Headline Report It?</div></div>
+      <div class="box-b">
+        <p>A poll shows Proposal A at 51% and Proposal B at 49%, with a margin of error of ±3 points. You edit the local news site and must write the headline.</p>
+        <div class="opts"><div class="opt"><h5>“Proposal A leads”</h5>Short and clear, and the point estimate does favor A.</div><div class="opt"><h5>“Proposal A and B in a close contest”</h5>Reflects that the gap is smaller than the margin of error.</div></div>
+        <p class="ask">Which headline would you choose, and what sentence would you add to the story to explain the uncertainty?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING A POLL</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.6. About what margin of error would a random sample of 2,000 people have?</li><li>A poll reports 52% support with a margin of ±4 points. Between what two numbers is true support likely to fall?</li><li>Write a Counter-Argument to this claim: “A poll of 1,000 people cannot describe 330 million Americans.”</li></ol>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.7</span>The 1936 Polling Failure: Roosevelt’s Electoral Votes</p>
+      <p class="figsub">Predicted and actual electoral votes for Franklin D. Roosevelt in the 1936 presidential election (531 electoral votes in all).</p>
+      <svg viewBox="0 0 860 192" role="img" aria-label="Bar chart of Roosevelt&#x27;s 1936 electoral votes: Literary Digest predicted 161, Gallup predicted 481, actual 523"><line x1="250.0" y1="10" x2="250.0" y2="148" stroke="#e6e8ec"/><text x="250.0" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="347.9" y1="10" x2="347.9" y2="148" stroke="#e6e8ec"/><text x="347.9" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100</text><line x1="445.9" y1="10" x2="445.9" y2="148" stroke="#e6e8ec"/><text x="445.9" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">200</text><line x1="543.8" y1="10" x2="543.8" y2="148" stroke="#e6e8ec"/><text x="543.8" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">300</text><line x1="641.7" y1="10" x2="641.7" y2="148" stroke="#e6e8ec"/><text x="641.7" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">400</text><line x1="739.6" y1="10" x2="739.6" y2="148" stroke="#e6e8ec"/><text x="739.6" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">500</text><text x="240" y="38.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Literary Digest (predicted)</text><g><title>Literary Digest (predicted): 161</title><path d="M250 16 h153.7 a4 4 0 0 1 4 4 v26 a4 4 0 0 1 -4 4 h-153.7z" fill="#62498F"/></g><text x="415.7" y="38.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">161</text><text x="240" y="84.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Gallup (predicted)</text><g><title>Gallup (predicted): 481</title><path d="M250 62 h467.0 a4 4 0 0 1 4 4 v26 a4 4 0 0 1 -4 4 h-467.0z" fill="#62498F"/></g><text x="729.0" y="84.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">481</text><text x="240" y="130.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Actual result</text><g><title>Actual result: 523</title><path d="M250 108 h508.2 a4 4 0 0 1 4 4 v26 a4 4 0 0 1 -4 4 h-508.2z" fill="#1F8A82"/></g><text x="770.2" y="130.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">523</text><line x1="250" y1="10" x2="250" y2="148" stroke="#6f7787" stroke-width="1.5"/><text x="510.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Electoral votes for Roosevelt</text></svg>
+      <p class="source">Sources: Literary Digest forecast of 370 electoral votes for Landon (so 161 of 531 for Roosevelt, as implied); Gallup forecast of 481 for Roosevelt; actual 523 (Roosevelt) of 531, from published accounts of the 1936 election. The Digest polled about 10 million people and received about 2.38 million replies, drawn largely from lists of wealthier households.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Forecast</th><th>Roosevelt electoral votes</th></tr></thead><tbody><tr><td>Literary Digest (implied)</td><td>161</td></tr><tr><td>Gallup</td><td>481</td></tr><tr><td>Actual</td><td>523</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How far was the Literary Digest forecast from the actual result?</li><li>The Digest’s sample was much larger than Gallup’s. What does that show about the chapter’s claim that size is not what makes a poll accurate?</li><li>Which problem from the text does a sample drawn from lists of wealthier households illustrate?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Question Wording, Push Polls, and the Manipulation of Data</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Perhaps the most underappreciated source of error and distortion in public opinion research is the effect of question wording. The way a survey question is phrased — the words chosen, the order in which options are presented, the context established by preceding questions — can dramatically influence how respondents answer, producing results that reflect the structure of the question as much as the actual opinions of the respondents.</p>
+        <p>The phenomenon of "priming" — in which exposure to one concept influences how people evaluate a subsequent question — means that the order of questions in a survey is not neutral. A respondent who has just been asked about crime statistics is more likely to support punitive criminal justice policies on the next question than one who has just been asked about rehabilitation programs — even if both respondents have the same underlying values and policy commitments. Similarly, the choice of language within a question can produce dramatically different results. Surveys that ask Americans whether they support "assistance to the poor" consistently produce much higher levels of support than surveys asking about "welfare" — even though these terms often refer to the same government programs. The moral framing of a question shapes the response, and poll results can be engineered to reach a predetermined conclusion simply by choosing language that activates favorable or unfavorable associations in respondents' minds.</p>
+        <p>The most egregious form of question-wording manipulation is the <dfn id="t-push-poll">push poll</dfn> — a technique that uses the format of a survey to deliver negative political messaging to voters rather than to genuinely measure their opinions. A push poll might ask: "Would you be more or less likely to vote for Candidate X if you knew that she had been arrested for tax fraud?" — even if the candidate had never been arrested for anything. The question is not designed to gather information about voter attitudes; it is designed to implant a damaging false impression in the respondent's mind while maintaining the superficial appearance of objective research. Push polls are widely condemned by professional polling organizations and political scientists, but they remain in use because they are difficult to detect and nearly impossible to regulate. Their very design makes them a form of disinformation — one that exploits the credibility associated with scientific polling to spread misinformation under a respectable cover.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Priming</span> Exposure to one idea that changes how people judge the next one. <span class="sp">Spanish: preparación (priming)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Push poll</span> A fake survey that spreads negative messages instead of measuring opinion. <span class="sp">Spanish: encuesta de manipulación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Wording</span>Support for aid is higher when a survey says “assistance to the poor” than when it says “welfare.”</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 covers campaign advertising and the rules that govern it.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.8</span>Wording Changes the Answer: “Welfare” or “Assistance to the Poor”?</p>
+      <p class="figsub">Percent saying the government spends “too little” on each item, General Social Survey, selected years.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Grouped bars: too little for welfare was 24.4 percent in 1984, 24.4 in 1990, 20.8 in 2000, 25.4 in 2008, and 23.2 in 2010; for assistance to the poor it was 63.2, 68.7, 64.3, 70.2, and 67.5"><line x1="70" y1="270.0" x2="840" y2="270.0" stroke="#e6e8ec"/><text x="62" y="274.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="70" y1="208.5" x2="840" y2="208.5" stroke="#e6e8ec"/><text x="62" y="212.5" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="70" y1="147.0" x2="840" y2="147.0" stroke="#e6e8ec"/><text x="62" y="151.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="end" font-weight="400">40%</text><line x1="70" y1="85.5" x2="840" y2="85.5" stroke="#e6e8ec"/><text x="62" y="89.5" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="end" font-weight="400">60%</text><line x1="70" y1="24.0" x2="840" y2="24.0" stroke="#e6e8ec"/><text x="62" y="28.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="end" font-weight="400">80%</text><g><title>1984: 24.4%</title><rect x="94.6" y="195.0" width="46.2" height="75.0" rx="3" fill="#1F8A82"/></g><text x="117.7" y="188.97" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">24.4%</text><g><title>1984: 63.2%</title><rect x="144.8" y="75.7" width="46.2" height="194.3" rx="3" fill="#62498F"/></g><text x="167.9" y="69.66" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">63.2%</text><text x="147.0" y="292" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="600">1984</text><g><title>1990: 24.4%</title><rect x="248.6" y="195.0" width="46.2" height="75.0" rx="3" fill="#1F8A82"/></g><text x="271.7" y="188.97" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">24.4%</text><g><title>1990: 68.7%</title><rect x="298.8" y="58.7" width="46.2" height="211.3" rx="3" fill="#62498F"/></g><text x="321.9" y="52.7475" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">68.7%</text><text x="301.0" y="292" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="600">1990</text><g><title>2000: 20.8%</title><rect x="402.6" y="206.0" width="46.2" height="64.0" rx="3" fill="#1F8A82"/></g><text x="425.7" y="200.04" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">20.8%</text><g><title>2000: 64.3%</title><rect x="452.8" y="72.3" width="46.2" height="197.7" rx="3" fill="#62498F"/></g><text x="475.9" y="66.2775" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">64.3%</text><text x="455.0" y="292" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="600">2000</text><g><title>2008: 25.4%</title><rect x="556.6" y="191.9" width="46.2" height="78.1" rx="3" fill="#1F8A82"/></g><text x="579.7" y="185.895" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">25.4%</text><g><title>2008: 70.2%</title><rect x="606.8" y="54.1" width="46.2" height="215.9" rx="3" fill="#62498F"/></g><text x="629.9" y="48.13499999999999" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">70.2%</text><text x="609.0" y="292" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="600">2008</text><g><title>2010: 23.2%</title><rect x="710.6" y="198.7" width="46.2" height="71.3" rx="3" fill="#1F8A82"/></g><text x="733.7" y="192.66" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">23.2%</text><g><title>2010: 67.5%</title><rect x="760.8" y="62.4" width="46.2" height="207.6" rx="3" fill="#62498F"/></g><text x="783.9" y="56.4375" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">67.5%</text><text x="763.0" y="292" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="600">2010</text><rect x="70" y="306" width="14" height="14" fill="#1F8A82"/><text x="90" y="318" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="400">“Welfare”</text><rect x="320" y="306" width="14" height="14" fill="#62498F"/><text x="340" y="318" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="400">“Assistance to the poor”</text></svg>
+      <p class="source">Source: National Opinion Research Center (NORC), General Social Survey, trends in spending priorities (2011 report, Table 1). Question: “…we’re spending too much money on it, too little money, or about the right amount.”</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>“Welfare”: too little</th><th>“Assistance to the poor”: too little</th></tr></thead><tbody><tr><td>1984</td><td>24.4%</td><td>63.2%</td></tr><tr><td>1990</td><td>24.4%</td><td>68.7%</td></tr><tr><td>2000</td><td>20.8%</td><td>64.3%</td></tr><tr><td>2008</td><td>25.4%</td><td>70.2%</td></tr><tr><td>2010</td><td>23.2%</td><td>67.5%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>In 2010, how many more points said “too little” for assistance to the poor than for welfare?</li><li>The question stem and survey were the same; only two words changed. What does that suggest about question wording?</li><li>How would a pollster who wanted to show high support for aid choose the wording? How would one who wanted to show low support choose it?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Exit Polls and Tracking Polls</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Beyond the standard survey research used to measure public opinion between elections, two specialized forms of polling have become important tools in American electoral politics: exit polls and tracking polls.</p>
+        <p><dfn id="t-exit-polls">Exit polls</dfn> are surveys conducted by polling organizations at actual polling places on Election Day, as voters leave after casting their ballots. Because exit poll respondents have just voted and can report directly what choices they made, exit polls provide uniquely direct and timely information about electoral behavior. Major media organizations use exit poll data to project winners on election night before all votes are counted, and they provide detailed information about how different demographic groups — by age, race, education, income, and other characteristics — voted, enabling the kind of electoral analysis that informs both post-election political analysis and future campaign strategy.</p>
+        <p>Exit polls are generally more accurate than pre-election surveys because they measure actual voting behavior rather than stated intentions, but they are not without limitations. They can be affected by the willingness of different types of voters to participate — studies have found that younger voters and voters for certain candidates are more likely to agree to exit interviews than others — and they cannot capture the behavior of voters who cast ballots by mail, whose numbers have grown dramatically in recent election cycles. In 2020, the large-scale shift toward mail and early voting introduced significant discrepancies between early exit poll results, which over-represented in-person voters who skewed Republican in that election, and final vote tallies.</p>
+        <p><dfn id="t-tracking-polls">Tracking polls</dfn> serve a different purpose: they measure the continuous movement of public opinion over time, typically during an election campaign. A tracking poll might survey a rolling sample of several hundred respondents per day, releasing new results daily that reflect the combined responses of the previous three or four days. This approach smooths out the day-to-day variation that inevitably affects any individual survey while capturing genuine shifts in public sentiment in near real time. Campaigns use tracking polls extensively to monitor the impact of advertising, the fallout from gaffes or controversies, and the effectiveness of their messaging strategies. The daily granularity of tracking poll data makes it possible for a campaign to detect and respond to shifts in voter sentiment before they become irreversible.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Exit poll</span> A survey of voters as they leave polling places on Election Day. <span class="sp">Spanish: encuesta a boca de urna</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Tracking poll</span> A rolling survey that follows opinion over time, usually during a campaign. <span class="sp">Spanish: encuesta de seguimiento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3–4 days</span>A tracking poll may combine the previous three or four days of interviews, according to the chapter.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 14 returns to election night and how outcomes are projected.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.9</span>Four Kinds of Polls Compared</p>
+      <p class="figsub">Summarized from this chapter’s text.</p>
+      <table class="cmp"><thead><tr><th>Type</th><th>When</th><th>Who is asked</th><th>Purpose</th><th>Main limit</th></tr></thead><tbody><tr><td>Standard survey</td><td>Between elections or during campaigns</td><td>Random sample of the public</td><td>Measures views on policy and candidates</td><td>Nonresponse, sample bias, wording</td></tr><tr><td>Exit poll</td><td>Election Day, at polling places</td><td>Voters leaving the polls</td><td>Shows how groups voted; supports projections</td><td>Willing responders; misses mail voters</td></tr><tr><td>Tracking poll</td><td>Daily during a campaign</td><td>Rolling sample of several hundred a day</td><td>Follows change in opinion over time</td><td>Small daily samples; short-term noise</td></tr><tr><td>Push poll</td><td>During a campaign</td><td>Voters, in a survey format</td><td>Not research; spreads negative claims</td><td>Deception; condemned by professional groups</td></tr></tbody></table>
+      <p class="source">Source: Summary of Chapter 12 text, Section 12.3 (Daniel Garza, M.A.). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which of the four is not actually research? How can a reader tell?</li><li>Why can an exit poll be more accurate than a pre-election survey, and what is its main weakness?</li><li>Which kind of poll would a campaign use to see whether an ad changed opinion?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Who Regulates Polls?</div></div>
+      <div class="box-b">
+<p style="margin:0">The WAPOR/ESOMAR <i>Freedom to Publish Opinion Polls</i> report (2023) surveyed 157 countries and found that 46% limit publication of pre-election polls, and 24 countries (15%) do not permit election polling at all. In the United States, polls are generally unregulated, though professional groups condemn push polls. Which approach better protects voters: limits on publication or open publication with disclosure of methods?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; EVALUATING POLL EVIDENCE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.8. Which wording drew higher “too little” responses in every year shown?</li><li>Use Figure 12.9. Which poll type is described as not being genuine research?</li><li>Write a Counter-Argument to this claim: “A bigger sample always makes a poll more accurate.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 12.3 ASSESSMENT</b>Complete the Section 12.3 Assessment in your <i>Chapter 12 Assignment</i> packet before you move on to Section 12.4.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>12.4</b></div>
+    <h2>The Strategic Use of Public Opinion</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#8FD0CA" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F3EFF8" stroke-width="5"/><path d="M14 100h132" stroke="#8FD0CA" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 12.4, you will</p>
+      <ul><li>Contrast the delegate and trustee models of representation</li><li>Explain how agenda setting and gatekeeping give media political power</li><li>Describe the bandwagon effect and why it raises democratic concerns</li><li>Explain how constitutional design filters public opinion</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-delegate">Delegate</a></li><li><a href="#t-trustee">Trustee</a></li><li><a href="#t-agenda-setting">Agenda setting</a></li><li><a href="#t-gatekeeping">Gatekeeping</a></li><li><a href="#t-bandwagon">Bandwagon effect</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each idea, write what it means and one democratic concern.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: idea, meaning, concern"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Idea</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Meaning</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Concern</text><rect x="2.0" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="51.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="73.0" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="94.5" width="82.66666666666667" height="17.5" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Use of Public Opinion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The existence of reliable, timely public opinion data has fundamentally changed how elected officials, political candidates, and government institutions operate. Politicians can now know, with considerable precision, what their constituents think about virtually any policy question, how their job approval ratings are trending on a weekly or even daily basis, which demographic groups support them and which are persuadable, and how changes in their messaging or policy positions might affect their electoral prospects. This knowledge is valuable — it enables greater responsiveness to constituent preferences — but it also creates pressures and incentives that are not always consistent with good governance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Responsiveness</span> The degree to which officials act on what citizens want. <span class="sp">Spanish: capacidad de respuesta</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Weekly</span>Approval ratings can now be tracked weekly or even daily, according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 5 examines the presidency and its relationship to public opinion.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Delegate and the Trustee</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The question of how elected officials should relate to public opinion has been debated by democratic theorists for centuries, and it maps onto a fundamental tension in the theory of representative democracy itself. On one side stands the model of the <dfn id="t-delegate">delegate</dfn>: the representative who understands their role as the faithful transmission of constituent preferences into legislative decisions. On this view, representatives are not elected to exercise independent judgment; they are elected to speak for their constituents, and a representative who consistently votes against the expressed preferences of the majority of their district is failing to perform the essential function of representation. Tracking polls, constituent surveys, and town hall meetings are the tools through which a delegate representative maintains continuous contact with constituent opinion and adjusts their behavior accordingly.</p>
+        <p>On the other side stands the model of the <dfn id="t-trustee">trustee</dfn>, articulated most influentially by the eighteenth-century British statesman Edmund Burke, who told his Bristol constituents in 1774 that a representative owed them his judgment as well as his industry — that Parliament was a deliberative assembly of the nation, not a congress of local interests bound by constituent-instructed mandates. On this view, representatives are chosen not simply to aggregate and transmit whatever opinions their constituents happen to hold at a given moment, but to deliberate, to weigh competing considerations, to take into account information and perspectives their constituents may not have access to, and to exercise the kind of long-term judgment that genuine governance requires. The trustee model implies that a representative who votes against current public opinion on a given issue may be doing exactly what they were elected to do — if their vote reflects careful deliberation and genuine concern for the public good — even if that vote is politically costly.</p>
+        <p>Most real-world legislators operate somewhere between the pure delegate and pure trustee models, balancing responsiveness to constituent preferences with independent judgment in proportions that vary by issue, political circumstance, and personal philosophy. The availability of sophisticated polling data has, on balance, strengthened the delegate tendency in American politics — creating constant pressure on elected officials to track and respond to current opinion — while making the exercise of trustee-style independent judgment more politically costly. A legislator who votes against the wishes of a strong majority of their constituents on a high-visibility issue will almost certainly face political attack ads citing the polling data, and the ready availability of that data makes it harder to claim ignorance or uncertainty about constituent preferences.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Delegate</span> A representative who acts as a faithful transmitter of constituents’ preferences. <span class="sp">Spanish: delegado</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Trustee</span> A representative who uses independent judgment on behalf of constituents. <span class="sp">Spanish: fiduciario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1774</span>Edmund Burke told voters in Bristol that a representative owes them his “judgment” as well as his industry.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>You will read Burke’s own words in Document C of the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.10</span>From Delegate to Trustee</p>
+      <p class="figsub">A continuum of how representatives may relate to constituent opinion.</p>
+      <svg viewBox="0 0 860 300" role="img" aria-label="A line from the delegate model, which follows constituents, to the trustee model, which follows independent judgment, with most legislators between and polling pulling toward the delegate end."><defs><linearGradient id="dt" x1="0" x2="1"><stop offset="0" stop-color="#8FD0CA"/><stop offset="1" stop-color="#B0A4C7"/></linearGradient></defs><rect x="60" y="120" width="740" height="26" rx="13" fill="url(#dt)" stroke="#62498F" stroke-width="2"/><text x="60" y="100" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="18" fill="#14605A" text-anchor="start" font-weight="800">DELEGATE</text><text x="800" y="100" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="18" fill="#3E2D5C" text-anchor="end" font-weight="800">TRUSTEE</text><text x="60" y="168" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="700">Votes as constituents instruct</text><text x="60" y="186" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">Tools: polls, surveys, town halls</text><text x="60" y="203" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="400">Risk: follows a passing mood</text><text x="800" y="168" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="end" font-weight="700">Votes on mature judgment</text><text x="800" y="186" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="end" font-weight="400">Tools: study, debate, long-term view</text><text x="800" y="203" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="end" font-weight="400">Risk: ignores voters; self-interest</text><g><title>Most legislators operate between the two models</title><circle cx="430" cy="133" r="13" fill="#1F8A82" stroke="#fff" stroke-width="3"/></g><text x="430" y="168" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="middle" font-weight="700">Most real legislators</text><text x="430" y="186" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="middle" font-weight="400">mix both in different proportions</text><line x1="600" y1="50" x2="266.0" y2="50.0" stroke="#14605A" stroke-width="3" stroke-linecap="round"/><polygon points="260.0,50.0 270.8,44.8 270.8,55.2" fill="#14605A"/><text x="430" y="38" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#14605A" text-anchor="middle" font-weight="700">Constant polling pulls officials this way (the chapter’s argument)</text><text x="430" y="250" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Burke, 1774: a representative owes constituents “his industry” and “his judgment.”</text></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of delegate and trustee models; Burke’s 1774 Bristol speech.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Model</th><th>Votes according to</th><th>Main risk</th></tr></thead><tbody><tr><td>Delegate</td><td>Constituents’ instructions, measured by polls, surveys, and town halls</td><td>Follows a passing mood</td></tr><tr><td>Trustee</td><td>The representative’s mature judgment</td><td>Ignores voters; self-interest</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which model do polls and tracking data encourage? What does the chapter say that does to trustee-style votes?</li><li>Where on the line would you place a legislator who studies an issue, then checks district opinion before voting? Why?</li><li>What does Burke say a representative sacrifices if he gives up his judgment to opinion?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Delegate or Trustee?</div></div>
+      <div class="box-b">
+        <p>You are a legislator. A bill you believe is wise is opposed by a strong majority of your district, but you have studied information most voters have not seen.</p>
+        <div class="opts"><div class="opt"><h5>Vote as the district wants</h5>Act as a delegate and explain that you represent their views.</div><div class="opt"><h5>Vote your judgment</h5>Act as a trustee, explain your reasoning publicly, and accept the political risk.</div></div>
+        <p class="ask">Which would you choose, and what would you tell your constituents?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Agenda Setting, Gatekeeping, and the Media's Political Power</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The relationship between media and public opinion is bidirectional and complex. The media reports on and reflects public opinion, but it also shapes and creates it — through the choices editors and producers make about which stories to cover, how much prominence to give them, and what frames and interpretive contexts to place around them. The theoretical framework most useful for understanding this shaping function is <dfn id="t-agenda-setting">agenda setting</dfn>: the concept that the media does not tell people what to think, but it powerfully influences what people think about.</p>
+        <p>The agenda-setting effect was first systematically studied by political scientists Maxwell McCombs and Donald Shaw in their analysis of the 1968 presidential election, in which they found a striking correspondence between the issues that local newspapers emphasized most heavily in their coverage and the issues that voters in Chapel Hill, North Carolina, identified as the most important problems facing the country. The causal mechanism is not mysterious: most people have no direct experience with most national political issues and depend entirely on media coverage to know that those issues exist, what the competing arguments about them are, and how urgently they deserve attention. When the media devotes sustained, prominent coverage to an issue — the national debt, immigration, healthcare costs, environmental pollution — that issue rises in public consciousness, and public pressure on political institutions to address it increases correspondingly. When the media ignores an issue, it tends to remain politically invisible regardless of its objective importance.</p>
+        <p>The <dfn id="t-gatekeeping">gatekeeping</dfn> function of media — the editorial process through which journalists and editors decide what is and is not newsworthy — is therefore a form of political power, even when it is exercised without any conscious political intent. The structural features of media economics shape gatekeeping decisions in ways that have political consequences: the preference for dramatic events over gradual trends, for conflict over consensus, for personalities over institutions, for stories that can be told in brief segments over those that require extended explanation. These preferences mean that certain kinds of political information — incremental policy changes, complex bureaucratic decisions, long-term demographic or economic trends — are systematically underreported relative to their actual importance, while dramatic conflicts, scandals, and high-profile personalities receive coverage disproportionate to their significance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Agenda setting</span> The media’s influence on which issues the public thinks about. <span class="sp">Spanish: fijación de la agenda</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Gatekeeping</span> The editorial process of deciding what counts as news. <span class="sp">Spanish: control editorial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">+.967</span>McCombs and Shaw (1972) found a correlation of +.967 between voters’ top issues and the major items in nine news outlets.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 15 returns to agenda setting and the media’s roles.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/NIE%201905%20Printing%20-%20Hoe%20double%20octuple%20press.jpg?width=1400" alt="A 1905 engraved illustration of a large rotary printing press with cylinders, belts, and gears, attended by pressmen." loading="lazy" style="height:auto"><figcaption><span class="phlabel">How news reached the public</span>An illustration of a Hoe double octuple press from a 1905 reference work. Large presses let newspapers print many thousands of copies an hour, and editors decided which stories filled the pages.<span class="credit">Image: Illustrator unknown (1905) / <a href="https://commons.wikimedia.org/wiki/File:NIE_1905_Printing_-_Hoe_double_octuple_press.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>The Front-Page Effect</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A town’s only paper runs a front-page story on potholes every day for two weeks and gives the new school budget one paragraph on page nine. In a survey at the end of the month, residents name potholes as the town’s biggest problem. Nobody told them what to think about the budget. The paper only influenced what they thought about, which is the effect the chapter calls agenda setting.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Bandwagon Effect and the Self-Fulfilling Prophecy of Polling</h3>
+    <div class="pair">
+      <div class="body">
+        <p>One of the most consequential ways in which polling data feeds back into the political process it purports only to measure is through the <dfn id="t-bandwagon">bandwagon effect</dfn> — the tendency for leading candidates to attract additional support, resources, and favorable coverage simply because they are perceived to be leading. When polls consistently show one candidate far ahead of their opponents in a primary race, several self-reinforcing dynamics tend to follow. Major donors, calculating that they want to back a winner, redirect their contributions toward the front-runner. Media organizations, seeking to cover the most important story, devote more coverage to the leading candidate, increasing their name recognition and giving their policy positions greater public visibility. Voters who are somewhat indifferent between candidates, or who want to support a winner rather than "waste" their vote, shift their preferences toward the front-runner. And potential candidates who might have entered the race decide against doing so, concluding that the front-runner's lead is insurmountable.</p>
+        <p>The bandwagon effect transforms polling from a neutral measurement tool into an active political force — one that can shape the very outcomes it claims only to be measuring. This dynamic raises genuine democratic concerns. If early polling results, which may reflect name recognition and media coverage more than genuine policy preferences, can determine who is able to mount a viable campaign, then the ability to generate early favorable polling is itself a form of political power that may advantage established, well-funded candidates over less-known challengers whose ideas might actually resonate more deeply with voters if given sufficient exposure.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bandwagon effect</span> The tendency for a perceived leader to attract more support, money, and coverage. <span class="sp">Spanish: efecto de arrastre</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Early polls</span>They may reflect name recognition and coverage more than policy views, the chapter notes.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 follows how primaries and campaign money interact with polling.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.11</span>How a Poll Lead Can Grow</p>
+      <p class="figsub">A feedback loop described in the chapter’s text.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Six boxes showing a loop: early poll lead, donors, media coverage, voters, bigger lead, fewer rivals"><g><title>1 Early poll: One candidate leads, often on name recognition</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#1F8A82" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">1 Early poll</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">One candidate leads, often</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">on name recognition</text><g><title>2 Donors: Back the apparent winner</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">2 Donors</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Back the apparent winner</text><g><title>3 Media: Give the front-runner more coverage</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">3 Media</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Give the front-runner more</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">coverage</text><g><title>4 Voters: Some prefer to back a winner</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">4 Voters</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Some prefer to back a</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">winner</text><g><title>5 Bigger lead: Next poll shows a larger gap</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#1F8A82" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">5 Bigger lead</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Next poll shows a larger</text><text x="430.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">gap</text><g><title>6 Fewer rivals: Challengers struggle to stay viable</title><rect x="644.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="732.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">6 Fewer rivals</text><text x="732.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Challengers struggle to</text><text x="732.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">stay viable</text><path d="M219.0 45.0 L337.0 45.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#1F8A82"/><path d="M521.0 45.0 L639.0 45.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#1F8A82"/><path d="M732.0 84 V104 H128.0 V124" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#1F8A82"/><path d="M219.0 165.0 L337.0 165.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#1F8A82"/><path d="M521.0 165.0 L639.0 165.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M639.0 159.0 l8 6 l-8 6z" fill="#1F8A82"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of the bandwagon effect.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step turns a measurement into a cause?</li><li>Why might a lesser-known candidate with good ideas be hurt by this loop?</li><li>How could a voter guard against the bandwagon effect?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Equilibrium Between Opinion and Governance</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The relationship between public opinion and government action in a constitutional democracy is neither simple nor stable. Public opinion is not a direct command to government — the constitutional structure of American government, with its multiple veto points, its separation of powers, and its insulation of certain institutions from direct popular control, was deliberately designed to slow the translation of momentary popular preferences into policy. The Senate, whose members serve six-year terms; the federal judiciary, whose members serve for life; the elaborate legislative process that requires bills to navigate multiple committees, both chambers, and the potential presidential veto — all of these features create what the Framers intended as a filter between public passion and public policy.</p>
+        <p>At the same time, democratic legitimacy requires that government be ultimately responsive to the will of the people. Officials who persistently ignore clear and sustained public preferences on major policy questions risk losing not just elections but the broader legitimacy that makes democratic governance possible. The challenge is to distinguish between the momentary passions of the moment — the kind of reactive, emotional public opinion that the Framers most feared — and the considered, sustained preferences of citizens who have had the opportunity to reflect on the consequences of alternative policies. Scientific polling, at its best, can help make this distinction: tracking polls that follow opinion over time can reveal whether a position reflects a durable public commitment or a passing reaction to a specific event. But that distinction requires political actors — elected officials, media organizations, and citizens themselves — to take the complexity of public opinion seriously, rather than simply responding to the most recent headline number.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Veto point</span> A stage in the lawmaking process where a proposal can be stopped. <span class="sp">Spanish: punto de veto</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1913</span>The Seventeenth Amendment changed the Senate from selection by state legislatures to direct election by the people.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 4 examines Congress, including how the Senate differs from the House.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 12.12</span>How the Constitution Filters Opinion</p>
+      <p class="figsub">Terms of office and what they mean for responsiveness.</p>
+      <table class="cmp"><thead><tr><th>Office</th><th>Term</th><th>Effect on responsiveness</th></tr></thead><tbody><tr><td>House of Representatives</td><td>2 years</td><td>Most directly tied to current opinion</td></tr><tr><td>President</td><td>4 years</td><td>Elected nationally; may veto bills</td></tr><tr><td>Senate</td><td>6 years</td><td>Elected by the people since 1913; staggered terms</td></tr><tr><td>Federal judges</td><td>“during good Behaviour” (Article III)</td><td>Insulated from direct popular control</td></tr></tbody></table>
+      <p class="source">Sources: U.S. Constitution, Article I, Section 2; Article I, Section 3 as amended by the Seventeenth Amendment (1913); Article II, Section 1; Article III, Section 1.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which office responds most quickly to changes in public opinion? Why?</li><li>Why did the framers give judges tenure “during good Behaviour”?</li><li>Some summaries say judges “serve for life.” Using the table, restate that more precisely.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; DELEGATES, TRUSTEES, AND FILTERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 12.12. Which term of office is longest for an elected national official? Which is shortest?</li><li>Use Figure 12.11. Name two steps where money or media respond to a poll.</li><li>Write a Counter-Argument to this claim: “Officials should always do exactly what the latest poll says.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Public opinion is the animating force of democratic self-government — the source from which, in theory, all legitimate political power derives. But the relationship between the voice of the people and the actions of government is never simple, never direct, and never free from the risk of distortion, manipulation, and misrepresentation. This chapter has traced the complex path through which that voice is formed, measured, and used: from the family dinner table where children absorb their first political orientations, to the classroom where civic values are formally transmitted, to the media environment — increasingly algorithmic and fragmented — in which adults encounter political information and argument; from the polling methodologies that translate individual opinions into quantified public sentiment, to the strategic calculations through which politicians interpret and respond to what those numbers tell them.</p>
+        <p>This chapter's essential question — how political values are formed, and how the measurement of public opinion influences the strategic behavior of government institutions — does not admit of a single, static answer. The process of political socialization is continuous and responsive to the social and informational environments in which people live, which means that the political culture of a society is always evolving. The science of polling is advancing but never perfect — always vulnerable to the distortions introduced by sampling bias, question wording, and the deliberate manipulation of push polling. And the relationship between public opinion and government behavior is perpetually contested — between the delegate impulse to follow the polls and the trustee impulse to exercise independent judgment, between the agenda-setting power of media institutions and the capacity of democratic citizens to form their own views.</p>
+        <p>What the Framers understood, and what remains as true in the age of Twitter and tracking polls as it was in the age of pamphlets and town meetings, is that democratic self-government requires more than the existence of public opinion. It requires public opinion that is informed, deliberate, and capable of distinguishing between immediate passions and considered judgments about the long-term public good. The cultivation of that kind of political culture — one that values civic education, critical engagement with media, honest measurement of public sentiment, and the considered exercise of representative judgment — is not the work of any single institution. It is the ongoing work of the republic itself. As the next chapter explores, the formal institutions through which public opinion is translated into political power — political parties and elections — are the mechanisms through which this work takes its most consequential forms.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Civic engagement</span> Informed, active participation in public life. <span class="sp">Spanish: participación cívica</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2020</span>Year of the California Digital “I Voted” sticker shown below.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 13 explains how parties and interest groups organize public opinion.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/California%20Digital%20I%20Voted%20Sticker%202020%20%28transparent%20background%29.png?width=1400" alt="A round digital “I Voted” sticker with a stylized California design." loading="lazy" style="height:auto;max-width:260px"><figcaption><span class="phlabel">The citizen’s last word</span>The California Secretary of State’s digital “I Voted” sticker for the 2020 election. A vote is the one measurement of opinion that carries legal force.<span class="credit">Image: California Secretary of State (2020) / <a href="https://commons.wikimedia.org/wiki/File:California_Digital_I_Voted_Sticker_2020_(transparent_background).png">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 12.4 ASSESSMENT</b>Complete the Section 12.4 Assessment in your <i>Chapter 12 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Should leaders follow public opinion or lead it? Read four original documents from 1774 to 1858 and decide how each author answered.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading Sources on Opinion and Leadership</h3>
+        <p>The documents below come from two centuries of argument about the people’s voice. James Madison, writing in 1791, called public opinion the real sovereign in a free government. Alexander Hamilton, writing in 1788, warned against every passing impulse. Edmund Burke, in 1774, told the electors of Bristol that a representative owes them his judgment. Abraham Lincoln, in 1858, argued that whoever shapes public sentiment has power greater than lawmakers or judges.</p><p>As you read, notice what each author trusts and fears about public opinion, and what each asks of leaders. Use the Thinking Like a Citizen question after each document, then answer the Synthesizing questions.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1774 to 1858, from a British election speech to an American debate.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · NEWSPAPER ESSAY</small><b>James Madison, “Public Opinion,” <i>National Gazette</i> (c. December 19, 1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Public opinion sets bounds to every government, and is the real sovereign in every free one.”<cite>James Madison, “Public Opinion,” <i>National Gazette</i>, c. December 19, 1791. Founders Online, National Archives.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What power does Madison give to public opinion? How does the wording “sets bounds” compare with the delegate model in Section 12.4?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FEDERALIST ESSAY</small><b>Alexander Hamilton, <i>Federalist No. 71</i> (1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The republican principle demands that the deliberate sense of the community should govern the conduct of those to whom they intrust the management of their affairs; but it does not require an unqualified complaisance to every sudden breeze of passion, or to every transient impulse which the people may receive from the arts of men, who flatter their prejudices to betray their interests.”<cite>Alexander Hamilton, <i>Federalist No. 71</i>, March 18, 1788. Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which kind of opinion should govern, according to Hamilton? Which kind should not? Connect your answer to Section 12.4’s discussion of term lengths.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · PUBLIC SPEECH</small><b>Edmund Burke, Speech to the Electors of Bristol (November 3, 1774)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Your representative owes you, not his industry only, but his judgment; and he betrays, instead of serving you, if he sacrifices it to your opinion.”<cite>Edmund Burke, Speech to the Electors of Bristol, November 3, 1774. <i>The Founders’ Constitution</i>, University of Chicago Press.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which model, delegate or trustee, does Burke describe? Why does he say a representative who follows opinion “betrays” voters?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · DEBATE</small><b>Abraham Lincoln, First Lincoln–Douglas Debate, Ottawa, Illinois (August 21, 1858)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Public sentiment is everything. With public sentiment, nothing can fail; without it nothing can succeed. Consequently he who moulds public sentiment, goes deeper than he who enacts statutes or pronounces decisions.”<cite>Abraham Lincoln, Ottawa debate, August 21, 1858. National Park Service, Lincoln Home National Historic Site.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> According to Lincoln, who has more power: those who pass laws or those who shape opinion? Connect this to agenda setting in Section 12.4.</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px"><li>Use Documents A and C. Madison says opinion is sovereign and Burke says a representative must not sacrifice judgment to it. Explain how both can be true.</li><li>Use Document B and Figure 12.12. How do the Constitution’s terms of office put Hamilton’s idea into practice?</li><li>Use Document D and Section 12.4. If opinion can be moulded, who bears responsibility for it: leaders, media, or citizens? Defend your answer with evidence.</li></ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>12</b></div>
+    <h2>Chapter 12 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F3EFF8" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How are political values formed, and how does the measurement of public opinion influence the strategic behavior of government institutions?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>12.1 Political Socialization</h5>Political socialization is the lifelong process of acquiring political values. The family transmits identity and values early; schools build civic knowledge and participation habits; and media, now increasingly algorithmic, shape the information people see. Confirmation bias and echo chambers can narrow that information.</div><div><h5>12.2 Political Ideology</h5>Ideology is a coherent set of beliefs about government and society. Liberals and conservatives share core values but weigh liberty and government differently. Libertarianism and populism cut across the spectrum, and a shared political culture frames the debate.</div><div><h5>12.3 Measuring Opinion</h5>Scientific polling depends on random, representative samples. Margin of error expresses uncertainty, and wording, priming, and push polls can distort results. Exit polls and tracking polls serve special purposes and have limits.</div><div><h5>12.4 Strategic Use</h5>Officials choose between the delegate and trustee models. Media set the agenda and act as gatekeepers, and the bandwagon effect lets polls shape outcomes. The Constitution’s terms of office filter momentary opinion without ignoring the people.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 12 ASSESSMENT AND SIMULATION</b>Complete the Chapter 12 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the primary source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 12 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>U.S. Census Bureau, “2024 Presidential Election Voting and Registration Tables Now Available,” press release, April 30, 2025.</li><li>Pew Research Center, “Social Media and News Fact Sheet,” 2026 (survey of 5,166 U.S. adults).</li><li>Gallup, “U.S. Political Parties Historically Polarized Ideologically,” January 16, 2025.</li><li>National Opinion Research Center, General Social Survey, spending-priorities trends (2011 report, Table 1).</li><li>WAPOR/ESOMAR, <i>Freedom to Publish Opinion Polls</i> report, 2023.</li><li>Maxwell McCombs and Donald Shaw, “The Agenda-Setting Function of Mass Media,” <i>Public Opinion Quarterly</i> 36 (1972).</li><li>James Madison, “Public Opinion,” <i>National Gazette</i>, c. December 19, 1791 (Founders Online, National Archives). Alexander Hamilton, <i>Federalist No. 71</i> (Avalon Project, Yale Law School). Edmund Burke, Speech to the Electors of Bristol, 1774 (<i>The Founders’ Constitution</i>). Abraham Lincoln, Ottawa debate, 1858 (National Park Service).</li><li>U.S. Constitution, Articles I–III and the Seventeenth Amendment.</li><li>California Department of Education, <i>History–Social Science Content Standards</i>, Principles of American Democracy (12.1, 12.6, 12.8, 12.10) and RH.11-12.7.</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Lorie Shaull (CC BY 2.0; Grand Rapids polling place and Cohasset voter), and a contributor to Wikimedia Commons (CC BY-SA 3.0; newspaper vending boxes). Public-domain images: Frances Benjamin Johnston, Business High School classroom (1899); a 1905 illustration of the Hoe double octuple press; and the California Secretary of State’s digital “I Voted” sticker (2020). Diagrams, charts, and tables were created for this textbook from the sources listed above.</p>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

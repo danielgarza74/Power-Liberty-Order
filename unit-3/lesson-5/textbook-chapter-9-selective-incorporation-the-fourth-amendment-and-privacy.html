@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 9: Selective Incorporation, the Fourth Amendment, and Privacy | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#FDF9F7; --white:#ffffff;
+  --unit:#8E3446; --unit-dk:#5A1F2B; --unit-lt:#FBF1EE; --unit-mid:#C4929A;
+  --amber:#5F7A8C; --amber-lt:#B5C6D0; --amber-dk:#3C5463;
+  --coral:#3C5463; --coral-lt:#E9F0F4; --amber-wash:#E9F0F4; --cream:#FBF1EE; --pale:#B5C6D0;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E9E0DD;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(90,31,43,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#DCBCBF}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#FDF8F6}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#F7E9E7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#B5C6D0;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#FBF1EE}
+.doc{background:#fff;border:1px solid #E5CBCC;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #F0DEDD}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#FDF8F6;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#2D1016}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#F3EAE7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#E9E0DD}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#E9E0DD}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(90,31,43,.80) 0%,rgba(90,31,43,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 9 · INCORPORATION, THE FOURTH AMENDMENT, AND PRIVACY</span>
+  <a href="#opener">Opener</a><a href="#s1">9.1 Incorporation</a><a href="#s2">9.2 The Fourth Amendment</a><a href="#s3">9.3 Exceptions and Surveillance</a><a href="#s4">9.4 Digital Privacy</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/US%20Supreme%20Court%20at%20night%20on%2011%20November%202014%20photo%20Don%20Ramey%20Logan.jpg?width=2000" alt="The Supreme Court Building at night, lit from below, with its white columns and pediment glowing against a dark sky." style="object-position:50% 55%"></div>
+  <div class="opener-head">
+    <div class="chapnum">9</div>
+    <div>
+      <div class="unitline">Unit 3 · Civil Liberties and Civil Rights</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Selective Incorporation,<br>the Fourth Amendment, and Privacy</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the line between security and privacy is drawn.</b> The Supreme Court Building in Washington, D.C., photographed on November 11, 2014. The Court decides what “unreasonable searches and seizures” means when police, and now computers, look into private life. <span class="credit">Photo: Don Ramey Logan / <a href="https://commons.wikimedia.org/wiki/File:US_Supreme_Court_at_night_on_11_November_2014_photo_Don_Ramey_Logan.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 9.1</span><span class="sl-title">Selective Incorporation and the Fourteenth Amendment</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 9.2</span><span class="sl-title">The Fourth Amendment: Privacy and Policing</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 9.3</span><span class="sl-title">Exceptions to the Warrant Requirement</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 9.4</span><span class="sl-title">The Technological Renegotiation of Privacy</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: How Far May Government Go to Protect Security?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the government balance the “strategic necessity” of collective security with the constitutional “sanctity” of individual privacy?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Analyze the doctrine of selective incorporation and explain how the Fourteenth Amendment’s Due Process Clause has been used by the Supreme Court to apply the Bill of Rights to state governments.</li>
+          <li>Identify the core requirements of a lawful search and seizure under the Fourth Amendment, including probable cause, judicial warrants, and specificity.</li>
+          <li>Evaluate the constitutional tensions between public safety and individual privacy rights as illustrated by surveillance legislation and landmark Supreme Court cases.</li>
+          <li>Explain how advances in digital technology have forced courts to reconsider traditional definitions of “search” and “reasonable expectation of privacy.”</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Selective Incorporation</span><span>Exclusionary Rule</span><span>Search and Seizure</span><span>Probable Cause</span><span>Reasonable Expectation of Privacy</span><span>Right to Privacy</span><span>Warrant</span><span>Surveillance</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 9 Key Concept</p>
+        <p><b>Selective incorporation</b> means the Bill of Rights now limits every level of American government. The Fourth Amendment then asks the same question again and again: when may government look into your private life? Each new technology forces each generation to answer it again.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Think about everything on your phone: photos, messages, maps of where you have been, searches you never told anyone about. If a police officer wanted to read all of it, should the officer need a judge’s permission first? Most people feel the answer should be yes, but the people who wrote the Constitution never saw a phone. This chapter shows how the Supreme Court has used a short sentence written in 1791 to answer questions about wiretaps, cell phones, and computer data.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four documents, the Fourth Amendment, part of the Fourteenth Amendment, and two Supreme Court opinions from 1967 and 2014, and answer one question: <a href="#case">how far may government go to protect security before it destroys the privacy it exists to protect?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.2</code> Students evaluate and take and defend positions on the scope and limits of rights and obligations as democratic citizens, the relationships among them, and how they are secured.</li>
+            <li><code>12.2.1</code> Discuss the meaning and importance of each of the rights guaranteed under the Bill of Rights and how each is secured (e.g., freedom of religion, speech, press, assembly, petition, privacy). <i>(Sections 9.2–9.4, Case Study)</i></li>
+            <li><code>12.5.1</code> Understand the changing interpretations of the Bill of Rights over time, including interpretations of the basic freedoms (religion, speech, press, petition, and assembly) articulated in the First Amendment and the due process and equal-protection-of-the-law clauses of the Fourteenth Amendment. <i>(Sections 9.1, 9.4)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.6</code> Understand that the Bill of Rights limits the powers of the federal government and state governments. <i>(Section 9.1, Case Study Doc B)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">A Short Sentence With a Long Reach</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/214"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/James%20Otis%20arguing%20the%20Writs%20of%20Assistance%20in%20State%20House%20-%20DPLA%20-%202813631e48ad900a0003811a4fb25844.jpg?width=900" alt="A black-and-white photograph of a painting of a crowded colonial chamber in which a man stands and speaks before seated officials." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.5%;left:-0.25%;top:-0.21%"></div><figcaption><span class="phlabel">Writs of assistance, 1761</span>A photograph from the Boston Public Library’s Baldwin Coolidge collection of a painted scene, not a photograph of the event itself. It shows the lawyer James Otis arguing against the British writs of assistance in Boston in 1761. Those general search orders were one of the grievances behind the Fourth Amendment.<span class="credit">Image: Baldwin Coolidge, Boston Public Library (photograph of a painting) / <a href="https://commons.wikimedia.org/wiki/File:James_Otis_arguing_the_Writs_of_Assistance_in_State_House_-_DPLA_-_2813631e48ad900a0003811a4fb25844.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Few documents in American history have generated as much controversy, litigation, and philosophical debate as the Fourth Amendment to the United States Constitution. Written in fewer than sixty words, it declares that “the right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated.” At its core, the Fourth Amendment is a statement about power — specifically, about the limits of government power over the private lives of citizens. It reflects the founders’ hard-won conviction, shaped by their experiences under British colonial rule, that a government left unchecked would inevitably abuse its authority. The general warrants and writs of assistance that British officials had used to ransack colonial homes without any specific justification were still fresh wounds in the American political memory when James Madison drafted the Bill of Rights in 1789.</p>
+        <p>Yet the Fourth Amendment did not spring into full effect across the entire American system of government the moment it was ratified. For much of American history, its protections applied only to the actions of the federal government. State governments — with their own police forces, prosecutors, and courts — operated outside its reach. It was not until the twentieth century, through the slow, deliberate process known as selective incorporation, that the Supreme Court began extending the Bill of Rights to the states, one provision at a time. This process fundamentally transformed the relationship between individual citizens and their state governments, ensuring that the constitutional protections meant to shield Americans from federal overreach would apply with equal force when a local police officer knocked on the door.</p>
+        <p>Today, the Fourth Amendment operates in an environment the Framers could never have imagined. The “papers and effects” that the amendment was written to protect now include text messages, cloud storage, GPS location data, and the entire digital architecture of a person’s life. As the government develops ever more sophisticated tools for surveillance — facial recognition software, algorithmic monitoring systems, bulk data collection programs — courts are forced to ask whether the constitutional principles of 1791 can be adapted to the technological realities of the twenty-first century. This chapter explores that ongoing negotiation: between security and liberty, between the state’s obligation to protect its citizens and the citizen’s right to be left alone.</p>
+        <p>Understanding this balance requires examining three interlocking questions. First, how did the Fourth Amendment come to apply to the states? Second, what does it actually require of law enforcement, and where does it draw the line between permissible policing and unconstitutional intrusion? Third, how have modern challenges — from the Patriot Act to smartphone searches — forced a renegotiation of constitutional principles that were once thought settled? The answers reveal not just the technical law of the Fourth Amendment, but the deeper democratic logic that makes privacy a precondition for freedom.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fourth Amendment</span> The part of the Bill of Rights that protects people from unreasonable searches and seizures by government. <span class="sp">Spanish: Cuarta Enmienda</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">54 words</span>Length of the Fourth Amendment’s full text, the “fewer than sixty words” the chapter describes.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The Introduction names three questions: how the Fourth Amendment reached the states (Section 9.1), what it requires of police (Sections 9.2–9.3), and how technology has changed its meaning (Section 9.4).</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>9.1</b></div>
+    <h2>Selective Incorporation and the Fourteenth Amendment</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#B5C6D0" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 9.1, you will</p>
+      <ul><li>Explain why the Bill of Rights limited only the federal government until the Fourteenth Amendment</li><li>Describe how selective incorporation applies individual rights to the states one case at a time</li><li>Evaluate the argument that some rights are too fundamental to leave to each state</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-selective-incorporation">Selective Incorporation</a></li><li><a href="#t-due-process">Due Process Clause</a></li><li><a href="#t-equal-protection">Equal Protection Clause</a></li><li><a href="#t-exclusionary">Exclusionary Rule</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a case, the right it applied to the states, and the year.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: case, right applied to the states, year"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Case</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Right applied</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Year</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Selective Incorporation and the Fourteenth Amendment</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">When the Bill of Rights was ratified in 1791, its protections were understood to constrain only the federal government. This interpretation was not merely assumed — it was legally established by the Supreme Court in the 1833 case Barron v. Baltimore. John Barron, a wharf owner, sued the city of Baltimore after municipal construction projects diverted streams and deposited silt that made his previously deep-water wharf nearly useless. He argued that the Fifth Amendment’s requirement that the government pay “just compensation” when it takes private property applied to the city. Chief Justice John Marshall, writing for a unanimous Court, disagreed. The Bill of Rights, Marshall explained, had been drafted to address fears about the newly created federal government. It placed no limitations on the power of state governments. As far as the Constitution was concerned, states were free to manage their own affairs — including their relationships with their own citizens — as they saw fit.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federalism</span> A system that divides power between a national government and state governments. <span class="sp">Spanish: federalismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1833</span>Year <i>Barron v. Baltimore</i> was decided. The Court was unanimous, and Chief Justice John Marshall wrote the opinion.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Chapter 8 noted that the First Amendment begins “Congress shall make no law.” <i>Barron</i> read the whole Bill of Rights the same way: as a limit on the national government only.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This ruling left a significant gap in the constitutional protection of American liberty. For decades, state governments could restrict speech, conduct searches without warrants, and deny accused persons the right to counsel, all without triggering any constitutional objection from federal courts. The Bill of Rights, the nation’s most celebrated guarantee of individual freedom, was simply irrelevant to how states exercised power over the people who lived within their borders.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Just compensation</span>The Fifth Amendment says private property may not be taken for public use “without just compensation.” John Barron’s claim rested on that phrase.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Under <i>Barron</i>, a person whose rights were violated by a city or a state had to look to the state’s own constitution and courts, not to the federal Bill of Rights.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fourteenth Amendment and the “Second Founding”</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/330"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Joint%20Resolution%20Proposing%20the%20Fourteenth%20Amendment%20to%20the%20United%20States%20Constitution%20-%20DPLA%20-%20eebcf2527fbb191c52dc36fd7d83db64%20%28page%201%29.jpg?width=900" alt="The first page of a handwritten document on aged paper with a ruled border and many lines of script." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-3.57%"></div><figcaption><span class="phlabel">The Fourteenth Amendment, 1866</span>The first page of the joint resolution in which Congress proposed the Fourteenth Amendment, dated June 13, 1866. The states ratified it on July 9, 1868. Its Due Process Clause became the doorway through which the Bill of Rights reached state governments.<span class="credit">Image: National Archives and Records Administration (document, 1866) / <a href="https://commons.wikimedia.org/wiki/File:Joint_Resolution_Proposing_the_Fourteenth_Amendment_to_the_United_States_Constitution_-_DPLA_-_eebcf2527fbb191c52dc36fd7d83db64_(page_1).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The Civil War changed everything. When the Southern states were defeated and the nation began the process of Reconstruction, Congress recognized that the prewar constitutional structure had tolerated — and in many ways enabled — the subjugation of millions of Americans. The Thirteenth Amendment abolished slavery. The Fourteenth, ratified in 1868, went further. Among its most consequential provisions was the <dfn id="t-due-process">Due Process Clause</dfn>, which declared that no state could “deprive any person of life, liberty, or property, without due process of law.” Alongside this was the <dfn id="t-equal-protection">Equal Protection Clause</dfn>, ensuring that states must apply their laws equally to all persons within their jurisdiction.</p>
+        <p>Historians and legal scholars sometimes call this era the “Second Founding” — a moment when the constitutional order was fundamentally restructured to prioritize national citizenship and limit the autonomy of states to oppress their residents. The Fourteenth Amendment did not immediately produce this transformation in practice, particularly in the South, where Reconstruction-era protections for formerly enslaved people were eroded through violence and legal maneuvering within a generation. But the Amendment’s language established a constitutional foundation that later generations would use to demand that the promises of the Bill of Rights be honored at every level of American government.</p>
+        <p>The mechanism through which this happened was a legal doctrine called incorporation. The theory, as it developed in the twentieth century, held that certain rights listed in the Bill of Rights were so fundamental to liberty and justice that they were necessarily included in the “liberty” protected by the Fourteenth Amendment’s Due Process Clause. If a state denied a person one of these fundamental rights, it was violating the Constitution — and federal courts could intervene.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Due Process Clause</span> The part of the Fourteenth Amendment that bars any state from taking life, liberty, or property without fair legal procedures. <span class="sp">Spanish: cláusula del debido proceso</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Equal Protection Clause</span> The part of the Fourteenth Amendment that requires states to apply their laws equally to all persons. <span class="sp">Spanish: cláusula de igual protección</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">July 9, 1868</span>Date the Fourteenth Amendment was ratified. It followed the Thirteenth Amendment, which abolished slavery.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 11 returns to the Equal Protection Clause and the civil rights movement. This chapter follows the Due Process Clause and the rights of the accused.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Mechanics of Selective Incorporation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The Court did not incorporate the entire Bill of Rights at once. Instead, it adopted what became known as <dfn id="t-selective-incorporation">selective incorporation</dfn> — a case-by-case approach in which the Court examined each right individually and asked whether it was fundamental to a “scheme of ordered liberty” or “deeply rooted in this nation’s history and tradition.” If the answer was yes, the right would be incorporated — meaning it would apply to state governments through the Fourteenth Amendment, just as it applied to the federal government directly through the original Bill of Rights.</p>
+        <p>The process began tentatively in the 1920s. In Gitlow v. New York (1925), the Supreme Court upheld the conviction of a socialist pamphleteer under a New York criminal anarchy law, but the majority assumed — without extended analysis — that freedom of speech and press were among the fundamental liberties protected against state infringement by the Fourteenth Amendment. This was a significant step: for the first time, the Court was treating a Bill of Rights provision as applicable to a state action. The pace quickened in the 1930s and 1940s, as the Court incorporated rights related to freedom of religion, the right to counsel in capital cases, and protections against coerced confessions.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Selective incorporation</span> The doctrine under which the Court applies individual rights in the Bill of Rights to the states one at a time through the Fourteenth Amendment. <span class="sp">Spanish: incorporación selectiva</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 8, 1925</span>Date <i>Gitlow v. New York</i> was decided. The Court upheld Benjamin Gitlow’s conviction but assumed freedom of speech and press bind the states.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 8’s First Amendment cases, such as <i>Engel</i> and <i>Tinker</i>, involved states and school districts. They rest on incorporation.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.1</span>From <i>Barron</i> to <i>McDonald</i>, 1833–2010</p>
+      <p class="figsub">How the Bill of Rights came to limit state governments.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Timeline: Barron v. Baltimore 1833, Fourteenth Amendment 1868, Gitlow 1925, Mapp 1961, Gideon 1963, Miranda 1966, McDonald v. Chicago 2010"><line x1="40" y1="125" x2="820" y2="125" stroke="#8E3446" stroke-width="4" stroke-linecap="round"/><line x1="95.7" y1="125" x2="95.7" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1833: Barron v. Baltimore</title><circle cx="95.7" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="95.7" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="start" font-weight="800">1833</text><text x="95.7" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="700">Barron</text><text x="95.7" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">v. Baltimore</text><line x1="207.1" y1="125" x2="207.1" y2="135" stroke="#5F7A8C" stroke-width="2"/><g><title>1868: Fourteenth Amendment</title><circle cx="207.1" cy="125" r="8" fill="#5F7A8C" stroke="#fff" stroke-width="2.5"/></g><text x="207.1" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3C5463" text-anchor="middle" font-weight="800">1868</text><text x="207.1" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Fourteenth</text><text x="207.1" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Amendment</text><line x1="318.6" y1="125" x2="318.6" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1925: Gitlow v. New York</title><circle cx="318.6" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="318.6" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1925</text><text x="318.6" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Gitlow v.</text><text x="318.6" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">New York</text><line x1="430.0" y1="125" x2="430.0" y2="135" stroke="#5F7A8C" stroke-width="2"/><g><title>1961: Mapp v. Ohio</title><circle cx="430.0" cy="125" r="8" fill="#5F7A8C" stroke="#fff" stroke-width="2.5"/></g><text x="430.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3C5463" text-anchor="middle" font-weight="800">1961</text><text x="430.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Mapp</text><text x="430.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Ohio</text><line x1="541.4" y1="125" x2="541.4" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1963: Gideon v. Wainwright</title><circle cx="541.4" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="541.4" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1963</text><text x="541.4" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Gideon v.</text><text x="541.4" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Wainwright</text><line x1="652.9" y1="125" x2="652.9" y2="135" stroke="#8E3446" stroke-width="2"/><g><title>1966: Miranda v. Arizona</title><circle cx="652.9" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="652.9" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1966</text><text x="652.9" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Miranda</text><text x="652.9" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Arizona</text><line x1="764.3" y1="125" x2="764.3" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>2010: McDonald v. Chicago</title><circle cx="764.3" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="764.3" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="end" font-weight="800">2010</text><text x="764.3" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="end" font-weight="700">McDonald</text><text x="764.3" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="end" font-weight="400">v. Chicago</text></svg>
+      <p class="source">Sources: Supreme Court opinions via Justia and Cornell LII; National Archives. <i>McDonald v. City of Chicago</i> (June 28, 2010, 5 to 4) incorporated the Second Amendment. It appears here to show that incorporation is still happening.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Event</th><th>What happened</th></tr></thead><tbody><tr><td>1833</td><td><i>Barron v. Baltimore</i></td><td>Bill of Rights limits only the federal government</td></tr><tr><td>1868</td><td>Fourteenth Amendment ratified</td><td>Due Process and Equal Protection Clauses bind the states</td></tr><tr><td>1925</td><td><i>Gitlow v. New York</i></td><td>Court treats free speech and press as binding on states</td></tr><tr><td>1961</td><td><i>Mapp v. Ohio</i></td><td>Exclusionary rule applied to state courts</td></tr><tr><td>1963</td><td><i>Gideon v. Wainwright</i></td><td>Right to counsel in felony cases applied to states</td></tr><tr><td>1966</td><td><i>Miranda v. Arizona</i></td><td>Warnings before custodial questioning</td></tr><tr><td>2010</td><td><i>McDonald v. Chicago</i></td><td>Second Amendment applied to states</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many years passed between the ratification of the Fourteenth Amendment and <i>Gitlow</i>?</li><li>Which three cases on the timeline come from the 1960s? What kind of rights do they protect?</li><li>What does the 2010 case suggest about whether incorporation is finished?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The most dramatic era of incorporation came during the 1960s, under Chief Justice Earl Warren. The Warren Court transformed American constitutional law by systematically extending the criminal procedure protections of the Fourth, Fifth, and Sixth Amendments to the states. The <dfn id="t-exclusionary">exclusionary rule</dfn> — the principle that evidence obtained in violation of the Fourth Amendment cannot be used in a criminal trial — was applied to state courts in Mapp v. Ohio (1961). The right to counsel in all felony cases was extended to state defendants in Gideon v. Wainwright (1963). The protection against self-incrimination was applied to state police interrogations in Miranda v. Arizona (1966). Each of these decisions represented a judgment that the right in question was not merely a technical legal rule, but a fundamental protection without which a genuinely fair criminal justice system could not exist. </p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Exclusionary rule</span> The principle that evidence obtained in violation of the Fourth Amendment cannot be used in a criminal trial. <span class="sp">Spanish: regla de exclusión</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 19, 1961</span>Date <i>Mapp v. Ohio</i> was decided, 6 to 3. The Court applied the exclusionary rule to state courts.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 18, 1963</span>Date <i>Gideon v. Wainwright</i> was decided. Justice Hugo Black wrote the opinion.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Court had applied the exclusionary rule in federal courts earlier. <i>Mapp</i> required state courts to follow it too.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.2</span>How a Right Becomes Incorporated</p>
+      <p class="figsub">The steps the Court follows, case by case.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart: a person is charged, the Court asks if the right is fundamental, if yes the right is part of liberty in the Fourteenth Amendment, and it then applies to states"><g><title>A person is charged: A state or city is accused of violating a Bill of Rights protection</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">A person is charged</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">A state or city is accused</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">of violating a Bill of</text><text x="128.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Rights protection</text><g><title>The Court asks: Is this right fundamental to a “scheme of ordered liberty”?</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">The Court asks</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Is this right fundamental</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">to a “scheme of ordered</text><text x="329.3" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">liberty”?</text><g><title>If yes: The right is part of the “liberty” in the Fourteenth Amendment</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">If yes</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The right is part of the</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">“liberty” in the</text><text x="530.7" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fourteenth Amendment</text><g><title>Result: It binds states and cities, not only Washington</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#5F7A8C" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Result</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">It binds states and</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">cities, not only</text><text x="732.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Washington</text><path d="M219.0 45.0 L236.3 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M420.3 45.0 L437.7 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M621.7 45.0 L639.0 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#5F7A8C"/></svg>
+      <p class="source">Source: Description of selective incorporation in this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>What question does the Court ask about each right?</li><li>Why is this called <i>selective</i> incorporation rather than total incorporation?</li><li>Which part of the Fourteenth Amendment carries the right to the states?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>Two Defendants, Two Courtrooms</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose two people are accused of the same crime on the same day. One is tried in a federal court and the other in a state court. Before incorporation, the federal defendant could have evidence thrown out if police searched illegally and could demand a lawyer, but the state defendant might have neither right. After incorporation, the same constitutional rules govern both courtrooms. That is what the text means by “nationalizing” the standards of criminal justice.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE TIMELINE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.1. Which case closed the door on federal limits on the states, and which amendment later opened it?</li><li>Explain in your own words why <i>Barron</i> left a “gap” in the protection of liberty.</li><li>Use the text. Name the three Warren Court decisions in Figure 9.1 and the right each one applied to the states.</li></ol>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The practical effect of selective incorporation was to nationalize the standards of criminal justice. Before incorporation, a defendant in Mississippi had vastly fewer constitutional protections than a defendant in federal court. After incorporation, the same constitutional rules governed both. The states did not lose all authority over criminal procedure, but they could no longer operate in a constitutional vacuum. The federal judiciary became the ultimate arbiter of what due process required, regardless of whether the government in question was located in Washington, D.C., or in a county courthouse in rural Alabama.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Nationalize</span> To make the same rule apply across the whole country. <span class="sp">Spanish: nacionalizar</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>A county sheriff’s deputy and an FBI agent must now follow the same Fourth Amendment rules. That is the practical meaning of this paragraph.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Enduring Logic of Incorporation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The doctrine of selective incorporation rests on a fundamental premise: that the constitutional rights of Americans should not depend on which government — federal or state — happens to be violating them. This premise reflects a particular understanding of citizenship. Before the Civil War, a person’s primary legal identity was as a citizen of their state; national citizenship was secondary. The Fourteenth Amendment reversed this hierarchy. It created a direct bond between the individual citizen and the national government, one that no state could sever.</p>
+        <p>This shift in the constitutional understanding of citizenship has had lasting consequences. It means that a local police department must follow the same constitutional rules as a federal law enforcement agency. It means that a state legislature cannot abridge freedoms that Congress could not touch. And it means that the Supreme Court, as the interpreter of the national Constitution, has authority to review and invalidate the actions of every government in the American system, from the smallest municipality to the most powerful state. Critics of this development have argued that it diminishes the diversity and experimentation that federalism is supposed to enable. Defenders respond that there are some rights — the right not to have your home searched without a warrant, the right not to be compelled to confess to a crime — that are too fundamental to leave to the discretion of any particular state. Selective incorporation reflects the Court’s judgment that the basic dignity of the individual is a national commitment, not a local option.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fundamental right</span> A right so basic to liberty and justice that the Court treats it as protected against every level of government. <span class="sp">Spanish: derecho fundamental</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Critics say incorporation weakens federalism’s “laboratories of experimentation.” Defenders say some rights are too basic to vary by state.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Federalism Question</div></div>
+      <div class="box-b">
+        <p>A state legislature argues that its people should decide for themselves how strict the rules on police searches should be. Three positions:</p>
+        <div class="opts"><div class="opt"><h5>Let each state decide</h5>States can experiment and match rules to local needs.</div><div class="opt"><h5>One national floor</h5>A minimum set of protections applies everywhere, and states may add more.</div><div class="opt"><h5>National rules for some rights only</h5>Only rights that are truly fundamental should apply everywhere.</div></div>
+        <p class="ask">Which position is closest to selective incorporation? Use the text to give one argument from critics and one from defenders.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; APPLYING INCORPORATION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>A state court admits evidence from an illegal police search. Use Figure 9.2 and the text to explain which case governs and why.</li><li>Write a Counter-Argument to this claim: “Selective incorporation takes away the states’ right to govern themselves.”</li><li>Explain how the Fourteenth Amendment changed the relationship between a citizen and the national government, using the text.</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 9.1 ASSESSMENT</b>Complete the Section 9.1 Assessment in your <i>Chapter 9 Assignment</i> packet before you move on to Section 9.2.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>9.2</b></div>
+    <h2>The Fourth Amendment: Privacy and Policing</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#B5C6D0" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#FBF1EE" stroke-width="5"/><path d="M14 100h132" stroke="#B5C6D0" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 9.2, you will</p>
+      <ul><li>Explain what the Fourth Amendment prohibits and what it requires of a warrant</li><li>Distinguish between a hunch, reasonable suspicion, and probable cause</li><li>Apply the Katz two-part test for a reasonable expectation of privacy</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-search-seizure">Search and Seizure</a></li><li><a href="#t-warrant">Warrant</a></li><li><a href="#t-probable-cause">Probable Cause</a></li><li><a href="#t-reasonable-expectation">Reasonable Expectation of Privacy</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each requirement, what it means, and why it protects privacy.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: requirement, meaning, why it matters"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Requirement</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Meaning</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Why it matters</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fourth Amendment: Privacy and Policing</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">With selective incorporation establishing that the Fourth Amendment applies to state and local law enforcement, the next question is what the Amendment actually requires. At its simplest, the Fourth Amendment prohibits “unreasonable” <dfn id="t-search-seizure">searches and seizures</dfn> and generally requires that warrants be supported by probable cause and describe with particularity the place to be searched and the things to be seized. But the meaning of these words — particularly the word “unreasonable” — has been contested in hundreds of Supreme Court decisions spanning more than a century.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Search and seizure</span> A search is a government intrusion into a place where a person has a reasonable expectation of privacy. A seizure is taking a person or property into government control. <span class="sp">Spanish: registro e incautación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Right to privacy</span> The idea, protected in part by the Fourth Amendment, that people may keep their personal lives free from unjustified government intrusion. <span class="sp">Spanish: derecho a la privacidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Four questions</span>The amendment asks what government may search, where, on what proof, and who decides.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Section 9.1 showed that these rules bind a local police officer as well as a federal agent.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Warrant Requirement and Its Logic</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The <dfn id="t-warrant">warrant requirement</dfn> is the Fourth Amendment’s most important structural feature. Before law enforcement can search a person’s home, rifle through their belongings, or intercept their communications, they must ordinarily obtain a warrant from a neutral and detached magistrate — a judge who has no stake in the investigation and whose job is to serve as an independent check on police enthusiasm.</p>
+        <p>To obtain a warrant, officers must demonstrate <dfn id="t-probable-cause">probable cause</dfn>: a reasonable belief, based on specific articulable facts, that evidence of a crime will be found in the place to be searched or that the person to be arrested has committed a crime. This is a meaningful standard, though not an overwhelming one. Probable cause is more than a hunch, but it does not require the certainty of proof beyond a reasonable doubt. The key is that the officer must be able to point to concrete, specific facts — not vague suspicions or stereotypes — that would lead a reasonable person to believe a search was justified.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Warrant</span> A written order from a judge or magistrate that authorizes police to search a place or seize a person or thing. <span class="sp">Spanish: orden judicial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Probable cause</span> A reasonable belief, based on specific facts, that evidence of a crime will be found or that a person committed a crime. <span class="sp">Spanish: causa probable</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Magistrate</span> A judge who reviews warrant requests and has no stake in the investigation. <span class="sp">Spanish: magistrado</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Fourth Amendment requires warrants to be “supported by Oath or affirmation.” An officer must swear that the facts are true before a judge decides.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.3</span>The Path to a Warrant</p>
+      <p class="figsub">How an officer gets permission to search.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart: officer gathers facts, sworn request, neutral magistrate reviews, warrant issued naming the place and things"><g><title>Officer gathers facts: Specific, concrete observations, not hunches</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Officer gathers facts</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Specific, concrete</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">observations, not hunches</text><g><title>Sworn request: The officer swears to the facts before a judge</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Sworn request</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The officer swears to the</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">facts before a judge</text><g><title>Neutral magistrate: The judge decides whether there is probable cause</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#5F7A8C" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Neutral magistrate</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The judge decides whether</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">there is probable cause</text><g><title>Warrant issued: It must name the place and the things to be seized</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Warrant issued</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">It must name the place and</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">the things to be seized</text><path d="M219.0 45.0 L236.3 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M420.3 45.0 L437.7 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M621.7 45.0 L639.0 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#5F7A8C"/></svg>
+      <p class="source">Sources: U.S. Constitution, Amendment IV; this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step puts a check on police power? Explain.</li><li>Why does the Fourth Amendment require the judge to be “neutral and detached”?</li><li>What two things must a valid warrant name?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The warrant must also be specific. The Fourth Amendment, drawing directly on the colonial experience with British general warrants, requires that the warrant describe “the place to be searched, and the persons or things to be seized.” A warrant that simply authorizes police to search “wherever they think appropriate” or to seize “whatever they find” is constitutionally insufficient. The specificity requirement serves a crucial function: it forces law enforcement to identify in advance exactly what they are looking for and where, limiting the scope of any intrusion and protecting areas and items not connected to the alleged crime. </p>
+        <p>The home occupies the most protected position in Fourth Amendment jurisprudence. The Supreme Court has repeatedly described the home as the most private sphere in American life, the one place where citizens have the strongest claim to be free from government observation. An officer who enters a home without a warrant, without consent, and without an applicable exception is committing a constitutional violation, regardless of what they find inside.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Particularity</span>The amendment’s demand that a warrant describe “the place to be searched, and the persons or things to be seized.”</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>British general warrants let officials search anywhere for anything. Section 9.1 and the Introduction explain why the founders wrote the opposite rule.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.4</span>The Ladder of Suspicion</p>
+      <p class="figsub">Each step up requires more proof than the step below it.</p>
+      <svg viewBox="0 0 860 368" role="img" aria-label="Pyramid of proof from a hunch at the bottom to beyond a reasonable doubt at the top"><g><title>Beyond a reasonable doubt: Required to convict at trial</title><rect x="210.0" y="4" width="440.0" height="84" rx="10" fill="#5A1F2B" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="38" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Beyond a reasonable doubt</text><text x="430" y="60" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Required to convict at trial</text><g><title>Probable cause: Required for a warrant or an arrest</title><rect x="146.7" y="94" width="566.7" height="84" rx="10" fill="#8E3446" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="128" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Probable cause</text><text x="430" y="150" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Required for a warrant or an arrest</text><g><title>Reasonable suspicion: Allows a brief stop and a pat-down for weapons (Terry, Section 9.3)</title><rect x="83.3" y="184" width="693.3" height="84" rx="10" fill="#5F7A8C" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="218" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Reasonable suspicion</text><text x="430" y="240" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Allows a brief stop and a pat-down for weapons (Terry, Section 9.3)</text><g><title>A hunch: Not enough for police to stop or search</title><rect x="20.0" y="274" width="820.0" height="84" rx="10" fill="#B5C6D0" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="308" font-family="Inter, Arial, sans-serif" font-size="16" fill="#5A1F2B" text-anchor="middle" font-weight="800">A hunch</text><text x="430" y="330" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#5A1F2B" text-anchor="middle" font-weight="400">Not enough for police to stop or search</text></svg>
+      <p class="source">Sources: Standards as described in this chapter’s text (probable cause and <i>Terry</i> stops). Diagram created for this textbook.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Level (low to high)</th><th>What it allows</th></tr></thead><tbody><tr><td>A hunch</td><td>Nothing</td></tr><tr><td>Reasonable suspicion</td><td>A brief stop and a pat-down for weapons</td></tr><tr><td>Probable cause</td><td>A warrant or an arrest</td></tr><tr><td>Beyond a reasonable doubt</td><td>A criminal conviction</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Use the text. Why does the Court say probable cause is “more than a hunch”?</li><li>Which standard applies to a trial verdict? Why would it be the highest?</li><li>An officer says, “He looked nervous.” Which step of the ladder does that statement reach?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>Why Specificity Matters</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A judge signs a warrant to search the garage at 12 Oak Street for stolen bicycles. Officers may look anywhere in that garage where a bicycle could be. They may not use the warrant to search the neighbor’s house at 14 Oak Street or to read the family’s private mail. A warrant that said only “search wherever you think appropriate” would be exactly the kind of general warrant the amendment forbids.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE WARRANT RULES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.3. At which step does a neutral person decide whether police may search?</li><li>Use Figure 9.4. Place each of these on the ladder: a rumor, a witness who saw the crime, and a jury’s guilty verdict.</li><li>Use the text. Why does the Court describe the home as the most protected place under the Fourth Amendment?</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Reasonable Expectation of Privacy</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/380"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/DOWNTOWN%20CEDAR%20GROVE%20-%20NARA%20-%20551085.jpg?width=900" alt="A street telephone booth beside a taxi sign at dusk, with a lit sign and a parked car beside a brick building." loading="lazy" style="position:absolute;max-width:none;height:auto;width:106.0%;left:-3.0%;top:-11.22%"></div><figcaption><span class="phlabel">A street telephone booth, 1973</span>A public telephone booth in a photograph titled “Downtown Cedar Grove,” taken by Harry Schaefer in June 1973 for the Environmental Protection Agency’s Documerica project. In <i>Katz v. United States</i> (1967) the FBI recorded calls from a public telephone booth. This booth is shown only as an example of the kind of place involved.<span class="credit">Photo: Harry Schaefer (U.S. National Archives) / <a href="https://commons.wikimedia.org/wiki/File:DOWNTOWN_CEDAR_GROVE_-_NARA_-_551085.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Not every government intrusion constitutes a Fourth Amendment “search.” The Court has developed a framework — originating in Katz v. United States (1967) — to determine when the Fourth Amendment is implicated at all. In Katz, FBI agents placed a listening device on the outside of a public telephone booth to record the defendant’s phone calls. The government argued that because the booth was a public place and agents had not physically entered it, there was no search. The Supreme Court disagreed. Justice Potter Stewart’s majority opinion established that “the Fourth Amendment protects people, not places.” What mattered was not the physical location but whether the person had a <dfn id="t-reasonable-expectation">reasonable expectation of privacy</dfn>.</p>
+        <p>Justice John Marshall Harlan’s concurring opinion in Katz elaborated the test into two parts, which courts have applied ever since. First, had the person exhibited a subjective expectation of privacy — did they actually believe their conversation was private? Second, was that expectation one that society was prepared to recognize as reasonable — was it, in other words, an objectively justified expectation? In Katz, the defendant had taken the precaution of closing the telephone booth’s door and lowering his voice. The Court concluded that he had exhibited a reasonable expectation that his conversation was private, even in a public booth. The government’s eavesdropping without a warrant therefore constituted an unconstitutional search.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Reasonable expectation of privacy</span> The Katz test: a person believes something is private, and society is prepared to accept that belief as reasonable. <span class="sp">Spanish: expectativa razonable de privacidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">December 18, 1967</span>Date <i>Katz v. United States</i> was decided, 7 to 1. Justice Potter Stewart wrote the opinion, Justice Hugo Black dissented, and Justice Thurgood Marshall took no part.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Justice Harlan’s concurring opinion, not the majority opinion, stated the two-part test that courts use today.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.5</span>The Katz Two-Part Test</p>
+      <p class="figsub">A search occurs when both parts are met.</p>
+      <table class="cmp"><thead><tr><th>Part</th><th>Question</th><th>Katz example</th></tr></thead><tbody><tr><td>1. Subjective</td><td>Did the person act as if the information was private?</td><td>Katz stepped into the booth and shut the door</td></tr><tr><td>2. Objective</td><td>Is society prepared to accept that expectation as reasonable?</td><td>The Court held that a person in a closed booth may rely on the privacy of the call</td></tr></tbody></table>
+      <p class="source">Sources: <i>Katz v. United States</i>, 389 U.S. 347 (1967), Justice Harlan concurring. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What is the difference between the two parts of the test?</li><li>Why did the government’s argument that the booth was in a public place fail?</li><li>Which part of the test would a person fail if they shouted a secret on a crowded street?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The Katz framework has proven remarkably durable, but its application to new situations has required constant refinement. When law enforcement flies a plane over a backyard to observe marijuana plants, or uses a thermal imaging device to detect heat patterns inside a home, or attaches a GPS tracker to a car, or subpoenas cell phone location records from a wireless carrier, does the Katz test produce clear answers? These are not hypothetical questions. Each scenario has generated significant Supreme Court litigation, and in each case the Court has had to ask whether the intrusion at issue was the kind that the Fourth Amendment was designed to prevent.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Aggregation</span> Combining many small pieces of information to reveal a larger picture of a person’s life. <span class="sp">Spanish: agregación</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 9.4 returns to these questions with cell phones and location data.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Germany’s Basic Law on the Home</div></div>
+      <div class="box-b">
+<p style="margin:0">Many democracies protect the home. Article 13 of Germany’s Basic Law begins, “The home is inviolable,” and says searches may be authorised only by a judge or, when time is of the essence, by other authorities designated by the laws. The American Fourth Amendment uses different words for a similar idea: a judge’s warrant is the rule and a warrantless search needs special justification.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Tip</div></div>
+      <div class="box-b">
+        <p>An officer receives an anonymous phone call saying a neighbor is selling stolen goods from a house. The caller gives no details. The officer wants to search the house. Three options:</p>
+        <div class="opts"><div class="opt"><h5>Search now</h5>The officer enters the home at once.</div><div class="opt"><h5>Seek a warrant after investigating</h5>The officer watches the house and gathers specific facts first.</div><div class="opt"><h5>Ask the neighbor to consent</h5>The officer asks the resident for permission to look around.</div></div>
+        <p class="ask">Which option best respects the warrant requirement? Explain using the terms probable cause and specificity.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; APPLYING KATZ</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>A person uses a public phone booth, closes the door, and makes a call. Apply both parts of the Katz test.</li><li>The text lists four examples of surveillance: an airplane over a backyard, a thermal imager, a GPS tracker, and cell phone location records. Why does the text say the Katz test does not always produce clear answers?</li><li>Write a Counter-Argument to this claim: “If something happens in public, the Fourth Amendment never applies.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 9.2 ASSESSMENT</b>Complete the Section 9.2 Assessment in your <i>Chapter 9 Assignment</i> packet before you move on to Section 9.3.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>9.3</b></div>
+    <h2>Exceptions to the Warrant Requirement</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#B5C6D0" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 9.3, you will</p>
+      <ul><li>Identify the main exceptions to the warrant requirement and the reason for each</li><li>Explain how the exclusionary rule enforces the Fourth Amendment</li><li>Evaluate security and privacy arguments about the Patriot Act, mass surveillance, and stop-and-frisk</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-exigent">Exigent circumstances</a></li><li><a href="#t-terry">Terry stop</a></li><li><a href="#t-surveillance">Surveillance</a></li><li><a href="#t-third-party">Third-party doctrine</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each exception or program, the reason for it, and a concern about it.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: exception or program, reason, concern"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Exception or program</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Reason</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Concern</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Exceptions to the Warrant Requirement</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The warrant requirement is the general rule, but the Supreme Court has recognized a significant number of exceptions in circumstances where the need for immediate action outweighs the practicality of obtaining judicial authorization in advance. Understanding these exceptions is essential to understanding how the Fourth Amendment operates in practice.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Exception</span> A situation in which the Court allows police to act without a warrant because waiting would be impractical or dangerous. <span class="sp">Spanish: excepción</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Four exceptions</span>The text discusses plain view, consent, exigent circumstances, and the Terry stop.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Section 9.2 explained why a warrant is the rule. This section explains when the rule gives way.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The plain view doctrine permits officers to seize evidence they observe while lawfully present in a location. If an officer is inside a home on a valid warrant to search for stolen electronics and notices a bag of illegal drugs sitting on the kitchen counter, the drugs may be seized even though the warrant did not authorize a search for narcotics. The key is that the officer must be lawfully present, and the incriminating nature of the evidence must be immediately apparent.</p>
+        <p>Consent is another significant exception. If a person voluntarily agrees to allow law enforcement to search their home, car, or belongings, no warrant is required. Courts have sometimes struggled to determine whether consent was truly voluntary in situations where officers were imposing and assertive, but the basic principle remains: a person may choose to waive their Fourth Amendment rights, and that waiver eliminates the need for a warrant.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Plain view</span> The rule that officers lawfully present in a place may seize evidence that is immediately apparent as incriminating. <span class="sp">Spanish: vista plena</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Consent</span> Voluntary permission from a person to search; with consent, no warrant is needed. <span class="sp">Spanish: consentimiento</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Consent only works if it is voluntary. A person may say no to a search request, and the Court looks at whether the person truly felt free to refuse.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-exigent">Exigent circumstances</dfn> — genuine emergencies — also justify warrantless action. If officers in hot pursuit of a fleeing suspect follow him into a private dwelling, they need not stop and obtain a warrant at the threshold. Similarly, if officers have strong reason to believe that evidence is being destroyed inside a home at that very moment, they may enter without waiting for judicial authorization. The emergency must be real and immediate, not manufactured by officers as a pretext for avoiding the warrant process.</p>
+        <p>Perhaps the most debated exception is the “stop-and-frisk,” or <dfn id="t-terry">Terry stop</dfn>, authorized by Terry v. Ohio (1968). Chief Justice Warren’s opinion held that police may briefly detain a person and pat down the outer layer of their clothing for weapons based on “reasonable suspicion” — a standard lower than probable cause — that criminal activity is afoot and that the person may be armed and dangerous. The Terry stop was designed as a limited tool: brief, focused, and based on articulable facts. In practice, its application has generated profound controversy, particularly in major American cities where the policy has been used in ways that raise serious questions about equity and constitutional compliance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Exigent circumstances</span> A genuine emergency, such as hot pursuit of a fleeing suspect, that allows police to act without a warrant. <span class="sp">Spanish: circunstancias apremiantes</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Terry stop</span> A brief stop and pat-down for weapons based on reasonable suspicion, from <i>Terry v. Ohio</i> (1968). <span class="sp">Spanish: parada de Terry</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 10, 1968</span>Date <i>Terry v. Ohio</i> was decided, 8 to 1. Chief Justice Earl Warren wrote the opinion and Justice William O. Douglas dissented.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Court said an officer may act when “criminal activity may be afoot and that the persons with whom he is dealing may be armed and presently dangerous.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.6</span>Exceptions to the Warrant Requirement</p>
+      <p class="figsub">Each exception rests on a practical need, and each has a limit.</p>
+      <table class="cmp"><thead><tr><th>Exception</th><th>When it applies</th><th>Limit</th></tr></thead><tbody><tr><td>Plain view</td><td>Officer is lawfully present and sees evidence</td><td>The incriminating nature must be immediately apparent</td></tr><tr><td>Consent</td><td>A person voluntarily agrees to a search</td><td>Consent must be truly voluntary</td></tr><tr><td>Exigent circumstances</td><td>Hot pursuit or evidence being destroyed right now</td><td>The emergency must be real, not created by officers</td></tr><tr><td>Terry stop</td><td>Reasonable suspicion of a crime and of danger</td><td>Brief stop and pat-down of outer clothing only</td></tr><tr><td>Search incident to arrest</td><td>Police arrest someone (Section 9.4)</td><td>Does not allow a search of a cell phone without a warrant (<i>Riley</i>)</td></tr></tbody></table>
+      <p class="source">Sources: This chapter’s text; <i>Terry v. Ohio</i>, 392 U.S. 1 (1968); <i>Riley v. California</i>, 573 U.S. 373 (2014). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What do the four exceptions in the text have in common?</li><li>Which exception depends most on how a person responds to an officer? Explain.</li><li>Why does the text say the emergency must not be “manufactured by officers”?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>Consent in the Doorway</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Two officers knock at 9 p.m. and say, “We’d like to look around your apartment.” The resident says, “Go ahead.” No warrant is needed, because the resident consented. If the officers had said, “Open up, or we’ll get a warrant and tear the place apart,” a court would ask whether the consent was truly voluntary. Notice that the first resident could have said no.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE EXCEPTIONS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.6. An officer follows a suspect running into a house. Which exception applies, and what must be true for it to apply?</li><li>Officers with a warrant for stolen electronics see drugs on a counter. Which exception is this, and why can the officers seize the drugs?</li><li>Use the text. What does “reasonable suspicion” require, and how is it different from probable cause?</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Boundaries of Permissible Intrusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Each of these exceptions to the warrant requirement reflects a balance struck by the Court between the legitimate needs of law enforcement and the constitutional right to be free from arbitrary government intrusion. The Fourth Amendment has never been read to require that every search be preceded by a warrant — the Framers themselves recognized the practical impossibility of that standard in every circumstance. What the Amendment demands, at its core, is that government intrusions into private life be reasonable: grounded in specific facts, authorized by appropriate legal mechanisms, and limited in scope to what the circumstances actually require.</p>
+        <p>The exclusionary rule, established in Mapp v. Ohio, is the primary enforcement mechanism for these requirements. Evidence obtained in violation of the Fourth Amendment — the product of an unconstitutional search or seizure — cannot be introduced at trial. The exclusionary rule is controversial because it can result in the suppression of reliable evidence and the acquittal of demonstrably guilty defendants. Critics argue that it protects the guilty at the expense of public safety. Defenders respond that it is the only mechanism that gives law enforcement a genuine incentive to comply with constitutional requirements. If unconstitutionally obtained evidence could be used freely at trial, the Fourth Amendment would become a pious aspiration rather than an enforceable legal standard.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Weeks and Mapp</span>The exclusionary rule was first applied in federal courts in <i>Weeks v. United States</i> (1914). <i>Mapp v. Ohio</i> (1961) extended it to the states.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Critics say the rule can let a guilty person go free. Defenders say it is the only practical way to make police follow the Fourth Amendment.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Fleeing Suspect</div></div>
+      <div class="box-b">
+        <p>An officer sees a man run from a store alarm and enter his own house. The officer follows him inside without a warrant. Three views:</p>
+        <div class="opts"><div class="opt"><h5>Exigent circumstances applies</h5>The officer was in hot pursuit and could not wait.</div><div class="opt"><h5>A warrant was required</h5>The home gets the strongest protection, and the crime was minor.</div><div class="opt"><h5>It depends on the facts</h5>A judge must decide whether the emergency was real.</div></div>
+        <p class="ask">Which view fits the text’s description of exigent circumstances? What facts would you want to know before deciding?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Surveillance, National Security, and the Patriot Act</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The tension between security and liberty is not a new feature of American constitutional life. Every generation of Americans has faced some version of this dilemma — some crisis, whether foreign or domestic, that has prompted calls to expand government authority at the expense of individual rights. What changes across eras is the technology available to governments and the scale at which <dfn id="t-surveillance">surveillance</dfn> can be conducted. The twenty-first century, with its digital infrastructure and interconnected communications networks, has created surveillance capabilities that would have seemed fantastical to the framers of the Constitution — and that present constitutional challenges of unprecedented complexity.</p>
+        <p>The September 11, 2001 terrorist attacks on the United States triggered the most dramatic expansion of domestic surveillance authority in a generation. Six weeks after the attacks, Congress passed the USA PATRIOT Act — an acronym standing for “Uniting and Strengthening America by Providing Appropriate Tools Required to Intercept and Obstruct Terrorism.” The Act significantly expanded the government’s authority to collect intelligence on individuals within the United States, including American citizens.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Surveillance</span> Close observation of people or their communications, often secretly, by government or other organizations. <span class="sp">Spanish: vigilancia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">October 26, 2001</span>Date the USA PATRIOT Act became law (Public Law 107-56), about six weeks after the September 11 attacks.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Act’s full title is “Uniting and Strengthening America by Providing Appropriate Tools Required to Intercept and Obstruct Terrorism.”</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Among the Act’s most significant provisions were those that broadened the authority to conduct “roving wiretaps” — eavesdropping that follows an individual from phone to phone rather than being attached to a specific device — and those that permitted law enforcement to access business records, including library and internet records, in the course of intelligence investigations. The Act also lowered the standard for obtaining authorization from the Foreign Intelligence Surveillance Court (FISA court), the specialized judicial body that oversees domestic intelligence gathering. Traditional criminal wiretaps required a showing of probable cause that the target was engaged in criminal activity. National security surveillance under FISA required only a showing that the target was connected to a foreign power or terrorist organization — a different and in some respects lower bar.</p>
+        <p>The Patriot Act also authorized “sneak and peek” warrants — court orders permitting law enforcement to search a home or office without immediately notifying the occupant. In ordinary criminal investigations, notice is required because it serves an important Fourth Amendment function: it allows the person whose property has been searched to know what the government has done and to challenge the legality of the search. Delayed notification, critics argued, deprived citizens of this protection. Defenders responded that immediate notification could compromise ongoing terrorism investigations by alerting suspects that they were under surveillance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">FISA court</span> The Foreign Intelligence Surveillance Court, a specialized court that reviews requests for national-security surveillance. <span class="sp">Spanish: tribunal FISA</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Sneak and peek</span> A warrant that lets police search a home or office and delay telling the occupant. <span class="sp">Spanish: registro con notificación retrasada</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Notice matters because it lets a person learn about a search and challenge it in court.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.7</span>Post-September 11 Surveillance Tools</p>
+      <p class="figsub">What each tool allows and what each side said.</p>
+      <table class="cmp"><thead><tr><th>Tool</th><th>What it allows</th><th>Critics said</th><th>Defenders said</th></tr></thead><tbody><tr><td>Roving wiretaps</td><td>Eavesdropping that follows a person from phone to phone</td><td>Targets people, not a specific device</td><td>Terrorists switch phones often</td></tr><tr><td>Business records</td><td>Access to library and internet records in intelligence cases</td><td>Reaches ordinary people’s reading and browsing</td><td>Records help find connections</td></tr><tr><td>Lower FISA standard</td><td>Authorization by showing a link to a foreign power or terrorist group</td><td>A different and lower bar than probable cause of crime</td><td>Intelligence work differs from ordinary crime</td></tr><tr><td>Sneak and peek</td><td>Search with delayed notice</td><td>Deprives people of notice and a chance to challenge</td><td>Immediate notice could alert suspects</td></tr></tbody></table>
+      <p class="source">Sources: This chapter’s text; USA PATRIOT Act, Public Law 107-56 (2001). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which tool most directly affects the Fourth Amendment’s notice function? Explain.</li><li>What is the main argument defenders give for all four tools?</li><li>Which tool would you want a judge to review most carefully? Defend your choice.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Mass Surveillance and Its Constitutional Complications</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The full scope of post-September 11 surveillance programs did not become publicly known until 2013, when former National Security Agency contractor Edward Snowden disclosed classified documents revealing that the NSA had been collecting telephone metadata — records of who called whom, when, and for how long — on virtually all Americans. The program was authorized under a provision of the Patriot Act that permitted the government to collect “business records” relevant to a terrorism investigation. The government’s position was that because the metadata was held by telephone companies — third parties — rather than by individuals themselves, users had no Fourth Amendment interest in it.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2013</span>Year the public learned of the NSA’s telephone metadata program, which collected records of who called whom, when, and for how long.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Metadata is information about a call, not its content. The government argued that makes it less protected.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This argument drew on a legal doctrine called the “<dfn id="t-third-party">third-party doctrine</dfn>,” established in cases from the 1970s holding that when a person voluntarily shares information with a third party — a bank, a telephone company — they assume the risk that the third party will disclose that information to the government. The doctrine reflected the technology of its time: a bank deposit slip or a list of phone numbers dialed might reveal limited information about a person’s activities. In the digital age, however, the same principle applied to the entirety of a person’s digital life — their emails, their browsing history, their location data, the complete record of their movement and communication — would expose an extraordinary portrait of their private existence. Whether the third-party doctrine could or should apply at this scale was a question the courts had not previously had to confront.</p>
+        <p>The Supreme Court addressed a related question in Carpenter v. United States (2018). Timothy Carpenter was convicted of robbery in part based on cell phone location records — data that showed his phone’s location over a period of weeks and placed him near the scenes of multiple crimes. The government obtained the records from his wireless carrier using a court order under a standard lower than probable cause. Carpenter argued that the government needed a warrant to access this information. Chief Justice John Roberts, writing for a five-member majority, agreed. The Court held that cell phone location records are qualitatively different from the information at issue in the older third-party doctrine cases. Because people carry their phones nearly everywhere and generate constant location data without any conscious decision to share it, the third-party doctrine did not eliminate their Fourth Amendment interest in that information. The government needed a warrant.</p>
+        <p>Carpenter was a significant decision, but it was also a deliberately narrow one. Chief Justice Roberts was careful to note that the Court was not overruling the third-party doctrine or resolving questions about email content, foreign intelligence collection, or real-time tracking. The decision left many of the most pressing digital privacy questions for future cases to resolve.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Third-party doctrine</span> The rule from 1970s cases that information voluntarily shared with a business, such as a bank or phone company, has reduced Fourth Amendment protection. <span class="sp">Spanish: doctrina de terceros</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 22, 2018</span>Date <i>Carpenter v. United States</i> was decided, 5 to 4. The government had obtained 127 days of cell-site records and 12,898 location points for Timothy Carpenter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CURRENT LAW</span>Chief Justice Roberts wrote, “Our decision today is a narrow one.” Email content, real-time tracking, and foreign intelligence were left for later cases.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Canada’s Charter, Section 8</div></div>
+      <div class="box-b">
+<p style="margin:0">Section 8 of the Canadian Charter of Rights and Freedoms says, “Everyone has the right to be secure against unreasonable search or seizure.” The wording is close to the Fourth Amendment’s opening, but it applies to everyone in Canada and leaves the details of “unreasonable” to the courts. Both countries ask the same question this chapter asks: how much privacy must remain when government says it needs to look?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Civil Liberties Under Pressure</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Beyond the specific legal questions raised by surveillance legislation, the post-September 11 era generated a broader debate about the relationship between security and liberty in a democratic society. This debate is not merely academic. When government surveillance is pervasive and secret, it can exert what legal scholars call “<dfn id="t-chilling">chilling effects</dfn>” on constitutionally protected activity. A person who believes their phone calls are being monitored, their email read, and their internet activity tracked may self-censor — choosing not to call a controversial organization, not to visit a politically sensitive website, not to express an unpopular opinion — even if they have done nothing wrong. In this way, the erosion of Fourth Amendment privacy can directly undermine the First Amendment freedoms of speech and assembly.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Chilling effect</span> A fear of being watched or punished that leads people to avoid lawful speech, association, or reading. <span class="sp">Spanish: efecto disuasorio</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 8 showed the First Amendment protects speech, assembly, and petition. Surveillance can shrink those freedoms indirectly.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The stop-and-frisk programs implemented by major city police departments in the early 2000s raised similar concerns, but with a more direct and visible impact on affected communities. In New York City, the stop-and-frisk program reached its peak in 2011, when police recorded over 685,000 stops. Critics documented that Black and Latino residents accounted for nearly 87 percent of those stops, despite comprising approximately 52 percent of the city’s population. The vast majority of those stopped were found to be carrying nothing illegal. In Floyd v. City of New York (2013), a federal district court found that the city had engaged in a pattern of unconstitutional stops that amounted to indirect racial profiling in violation of the Fourth and Fourteenth Amendments. The decision did not simply turn on the raw numbers, but on the city’s policy of encouraging officers to make stops based on criteria that correlated with race rather than with specific, articulable facts suggesting criminal activity.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">685,724</span>Stops recorded by the New York City Police Department in 2011, the peak year, according to the New York Civil Liberties Union.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">88%</span>Share of those 2011 stops that ended with neither an arrest nor a summons (605,328 stops).</div>
+        <div class="connect"><span class="tag">CONNECT TO CURRENT LAW</span><i>Floyd v. City of New York</i> (August 12, 2013, Judge Shira Scheindlin) found the city’s stop practices violated the Fourth and Fourteenth Amendments.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.8</span>Stops by the New York City Police, 2003–2013</p>
+      <p class="figsub">Police-recorded stops per year. The 2011 peak is highlighted.</p>
+      <svg viewBox="0 0 860 362" role="img" aria-label="Bar chart of New York City police stops per year: 2003 160,851; 2004 313,523; 2005 398,191; 2006 506,491; 2007 472,096; 2008 540,302; 2009 581,168; 2010 601,285; 2011 685,724; 2012 532,911; 2013 191,851"><line x1="70.0" y1="10" x2="70.0" y2="318" stroke="#e6e8ec"/><text x="70.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="245.0" y1="10" x2="245.0" y2="318" stroke="#e6e8ec"/><text x="245.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">175,000</text><line x1="420.0" y1="10" x2="420.0" y2="318" stroke="#e6e8ec"/><text x="420.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">350,000</text><line x1="595.0" y1="10" x2="595.0" y2="318" stroke="#e6e8ec"/><text x="595.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">525,000</text><line x1="770.0" y1="10" x2="770.0" y2="318" stroke="#e6e8ec"/><text x="770.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">700,000</text><text x="60" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2003</text><g><title>2003: 160,851</title><path d="M70 16 h156.9 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-156.9z" fill="#8E3446"/></g><text x="238.9" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">160,851</text><text x="60" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2004</text><g><title>2004: 313,523</title><path d="M70 44 h309.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-309.5z" fill="#8E3446"/></g><text x="391.5" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">313,523</text><text x="60" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2005</text><g><title>2005: 398,191</title><path d="M70 72 h394.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-394.2z" fill="#8E3446"/></g><text x="476.2" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">398,191</text><text x="60" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2006</text><g><title>2006: 506,491</title><path d="M70 100 h502.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-502.5z" fill="#8E3446"/></g><text x="584.5" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">506,491</text><text x="60" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2007</text><g><title>2007: 472,096</title><path d="M70 128 h468.1 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-468.1z" fill="#8E3446"/></g><text x="550.1" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">472,096</text><text x="60" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2008</text><g><title>2008: 540,302</title><path d="M70 156 h536.3 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-536.3z" fill="#8E3446"/></g><text x="618.3" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">540,302</text><text x="60" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2009</text><g><title>2009: 581,168</title><path d="M70 184 h577.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-577.2z" fill="#8E3446"/></g><text x="659.2" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">581,168</text><text x="60" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2010</text><g><title>2010: 601,285</title><path d="M70 212 h597.3 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-597.3z" fill="#8E3446"/></g><text x="679.3" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">601,285</text><text x="60" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2011</text><g><title>2011: 685,724</title><path d="M70 240 h681.7 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-681.7z" fill="#5F7A8C"/></g><text x="763.7" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">685,724</text><text x="60" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2012</text><g><title>2012: 532,911</title><path d="M70 268 h528.9 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-528.9z" fill="#8E3446"/></g><text x="610.9" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">532,911</text><text x="60" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2013</text><g><title>2013: 191,851</title><path d="M70 296 h187.9 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-187.9z" fill="#8E3446"/></g><text x="269.9" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">191,851</text><line x1="70" y1="10" x2="70" y2="318" stroke="#6f7787" stroke-width="1.5"/><text x="420.0" y="358" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Stops recorded per year</text></svg>
+      <p class="source">Source: New York Civil Liberties Union, Stop-and-Frisk Data, from NYPD reports. The court ruling in <i>Floyd v. City of New York</i> came on August 12, 2013.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Stops</th></tr></thead><tbody><tr><td>2003</td><td>160,851</td></tr><tr><td>2004</td><td>313,523</td></tr><tr><td>2005</td><td>398,191</td></tr><tr><td>2006</td><td>506,491</td></tr><tr><td>2007</td><td>472,096</td></tr><tr><td>2008</td><td>540,302</td></tr><tr><td>2009</td><td>581,168</td></tr><tr><td>2010</td><td>601,285</td></tr><tr><td>2011</td><td>685,724</td></tr><tr><td>2012</td><td>532,911</td></tr><tr><td>2013</td><td>191,851</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>In which year did stops peak, and how many were recorded?</li><li>Describe the trend from 2011 to 2013. What event during that period might help explain it?</li><li>The text says most people stopped carried nothing illegal. Why does that matter for the Fourth Amendment’s demand for specific facts?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The deeper constitutional question raised by stop-and-frisk, the Patriot Act, and mass surveillance programs is the same one that has animated Fourth Amendment jurisprudence since the founding era: at what point does the government’s pursuit of security become an infringement on the liberty it is supposed to protect? The Fourth Amendment does not answer that question directly — it speaks only of “reasonableness” and “probable cause” — but it establishes the framework within which the answer must be found. And it insists that the answer cannot simply be that security always wins.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Notice the sentence “the answer cannot simply be that security always wins.” It states the chapter’s Essential Question in a single line.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; SECURITY AND PRIVACY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.7. Choose one tool and write one argument a critic would make and one a defender would make.</li><li>Explain how pervasive surveillance can threaten First Amendment freedoms, using the term <i>chilling effect</i>.</li><li>Write a Counter-Argument to this claim: “If you have nothing to hide, you have nothing to fear from surveillance.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 9.3 ASSESSMENT</b>Complete the Section 9.3 Assessment in your <i>Chapter 9 Assignment</i> packet before you move on to Section 9.4.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>9.4</b></div>
+    <h2>The Technological Renegotiation of Privacy</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#B5C6D0" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#FBF1EE" stroke-width="5"/><path d="M14 100h132" stroke="#B5C6D0" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 9.4, you will</p>
+      <ul><li>Explain why Riley and Carpenter treat digital information differently from physical objects</li><li>Describe how aggregation can turn harmless data into a detailed portrait of a person</li><li>Evaluate how the Fourth Amendment should apply to new surveillance technologies</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-search-incident">Search incident to arrest</a></li><li><a href="#t-privacies">“Privacies of life”</a></li><li><a href="#t-aggregation">Aggregation</a></li><li><a href="#t-functional">Functional reading</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a technology, what it can reveal, and the privacy concern.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: technology, what it can reveal, concern"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Technology</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it can reveal</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Concern</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Technological Renegotiation of Privacy</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The fourth and perhaps most complex chapter in the ongoing story of the Fourth Amendment is being written right now, in courtrooms and legislative chambers across the country, as American law attempts to keep pace with technological change. The Framers of the Constitution understood privacy in physical terms: the security of the home, the integrity of personal papers, the freedom to move about without government observation. The twenty-first century has made privacy both more essential and more fragile, creating new forms of intimate information that existing legal categories struggle to capture.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791 to now</span>The Fourth Amendment’s words have not changed since 1791. The technology they must be applied to has.</div>
+        <div class="connect"><span class="tag">LOOK BACK</span>Section 9.2 introduced the Katz test. Section 9.3 saw it strain under mass surveillance. This section shows how the Court is adapting it.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Digital Data and the “Privacies of Life”</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/400"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Smartphone%20lock%20screen%20enter%20PIN.jpg?width=700" alt="A smartphone screen showing a keypad and the prompt to enter a PIN." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-6.16%"></div><figcaption><span class="phlabel">A locked phone</span>A smartphone lock screen asking for a PIN. In <i>Riley v. California</i> (2014) the Supreme Court held that police generally need a warrant before searching the digital contents of a phone seized from a person who has been arrested.<span class="credit">Photo: Mykhal (Wikimedia Commons) / <a href="https://commons.wikimedia.org/wiki/File:Smartphone_lock_screen_enter_PIN.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span></figcaption></figure>
+        <p>In Riley v. California (2014), the Supreme Court unanimously held that police cannot search the digital contents of an arrested person’s cell phone without a warrant. The case arose from two separate incidents in which officers, after making lawful arrests, searched the defendants’ smartphones without obtaining warrants. The government argued that the searches were permissible under the “<dfn id="t-search-incident">search incident to arrest</dfn>” exception — the well-established rule that police may search the person of an arrested individual and the area within their immediate control to protect officer safety and prevent the destruction of evidence.</p>
+        <p>Chief Justice Roberts rejected this argument in an opinion that displayed an unusually clear understanding of digital technology. The search incident to arrest exception, he explained, was designed to address physical threats — a concealed weapon, a destructible document. A modern smartphone poses neither of these dangers. But a smartphone does contain extraordinary amounts of information: photographs, messages, emails, financial records, medical data, location histories, browsing activity. Roberts noted that a cell phone could contain more information about a person’s private life than a search of an entire home — information that, if exposed without constitutional protection, would reveal the “<dfn id="t-privacies">privacies of life</dfn>” in their entirety. The government’s argument that officers should be allowed to scroll through an arrestee’s phone simply because they were in physical possession of it was, in Roberts’s words, “like saying a ride on horseback is materially indistinguishable from a flight to the moon.” Riley was significant not only for its result but for its reasoning. The Court acknowledged directly that digital technology requires Fourth Amendment doctrine to evolve. The categories and precedents developed for a world of physical objects and paper documents do not automatically translate to a world of cloud storage and metadata. Courts must think carefully about the nature of digital information — its quantity, its sensitivity, its permanence — rather than simply mapping old doctrine onto new facts. </p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Search incident to arrest</span> The rule that police may search an arrested person and the area within reach to protect safety and prevent destruction of evidence. <span class="sp">Spanish: registro incidental al arresto</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 25, 2014</span>Date <i>Riley v. California</i> was decided. The Court was unanimous, and Chief Justice Roberts wrote the opinion.</div>
+        <div class="connect"><span class="tag">CONNECT TO CURRENT LAW</span>Roberts wrote that the answer to what police must do before searching a seized phone is “simple—get a warrant.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.9</span>Three Cases, One Direction</p>
+      <p class="figsub">How the Court applied the Fourth Amendment to new technology.</p>
+      <table class="cmp"><thead><tr><th>Case</th><th>Vote</th><th>Question</th><th>Result</th></tr></thead><tbody><tr><td><i>Katz v. United States</i> (1967)</td><td>7 to 1</td><td>Recording a call from a public phone booth</td><td>A search; a warrant was needed</td></tr><tr><td><i>Riley v. California</i> (2014)</td><td>9 to 0</td><td>Searching a phone found on an arrested person</td><td>A warrant is generally required</td></tr><tr><td><i>Carpenter v. United States</i> (2018)</td><td>5 to 4</td><td>Getting 127 days of cell-site location records</td><td>A warrant is generally required (a narrow ruling)</td></tr></tbody></table>
+      <p class="source">Sources: Supreme Court opinions via Cornell LII and Justia: <i>Katz</i>, 389 U.S. 347; <i>Riley</i>, 573 U.S. 373; <i>Carpenter</i>, 585 U.S. 296. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What do all three cases have in common about how the Court treats private information?</li><li>Which case had the narrowest vote? What did the Court say about the size of its decision?</li><li>Use the text. Why did Roberts say comparing a phone to a wallet is like saying “a ride on horseback is materially indistinguishable from a flight to the moon”?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>The Cloud Photos</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A person is arrested for a traffic offense. In a wallet an officer can find a few cards and some cash. On the same person’s phone the officer could find years of photos, medical appointments, messages to family, and a map of everywhere the person has been. <i>Riley</i> turns on that difference: the quantity and sensitivity of what a phone holds make it unlike a wallet or a cigarette pack.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING RILEY AND CARPENTER</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.9. Which two cases required a warrant for digital information? What facts about the information mattered in each?</li><li>Use the text. Why does the search-incident-to-arrest exception not fit a phone?</li><li>Explain what the text means when it says courts must think about digital information’s “quantity,” “sensitivity,” and “permanence.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Emerging Technologies and the Future of Privacy</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/300"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Automated%20License%20Plate%20Reader%20%28ALPR%29%20on%20Interstate%2010%20near%20Vail%2C%20Arizona%2C%20March%202025.jpg?width=1600" alt="A highway with a guardrail beside which a small white box with a solar panel stands on a post in desert scrub." loading="lazy" style="position:absolute;max-width:none;height:auto;width:400%;left:-180%;top:-65.2%"></div><figcaption><span class="phlabel">An automated license plate reader</span>An automated license plate reader mounted beside Interstate 10 near Vail, Arizona, photographed March 30, 2025. Readers like this can record where vehicles have been. The Court has not yet decided how the Fourth Amendment applies to them.<span class="credit">Photo: Dugan Meyer (Wikimedia Commons) / <a href="https://commons.wikimedia.org/wiki/File:Automated_License_Plate_Reader_(ALPR)_on_Interstate_10_near_Vail,_Arizona,_March_2025.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></figcaption></figure>
+        <p>Beyond smartphones and location data, law enforcement agencies increasingly employ technologies that raise fundamental questions about the relationship between government surveillance and democratic accountability. Facial recognition software can identify individuals in real time from camera footage, potentially enabling governments to track the movements of their citizens at a scale and with a precision never before possible. Algorithmic monitoring systems can analyze patterns of behavior — the websites a person visits, the purchases they make, the routes they travel — to generate predictions about future conduct. Automated license plate readers can create detailed records of where vehicles have been, how long they stayed, and what routes they traveled.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Three technologies</span>Facial recognition, algorithmic monitoring, and automated license plate readers are named in the text.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>None of these requires entering a home. They work in public or through records held by businesses.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>None of these technologies requires a physical intrusion into private space. They operate in public, or through information collected by private companies that is then accessed by government agencies. Under a strict reading of traditional Fourth Amendment doctrine, many of them would not constitute “searches” at all — because they do not involve physical trespass, and because they often rely on information that individuals have, in some sense, made available in public spaces or shared with third parties. But this analysis, the Supreme Court suggested in Carpenter, misses something important about what privacy means in the digital age. The question is not simply whether any single piece of surveillance crosses a constitutional line, but whether the <dfn id="t-aggregation">aggregation</dfn> of surveillance data — the combination of location history, browsing patterns, purchasing records, and facial recognition results — creates a comprehensive portrait of a person’s life that the Fourth Amendment was designed to protect against. The concept of aggregation is increasingly central to Fourth Amendment thinking. Even if any individual piece of information seems innocuous — a car spotted on a particular street, a cell phone pinging near a particular location — the combination of many such pieces of information over time can reveal intimate details about a person’s life: their religious practices, their political associations, their health condition, their romantic relationships. The Framers who wrote the Fourth Amendment understood that government surveillance could be used to intimidate, harass, and control citizens. They wrote the Amendment to prevent that outcome. Whether twenty-first-century legal doctrine can translate that purpose into effective protection against twenty-first-century surveillance technology remains one of the most important and unresolved questions in American constitutional law. </p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Aggregation</span> Combining many small pieces of information to reveal a larger picture of a person’s life. <span class="sp">Spanish: agregación</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CURRENT LAW</span>In <i>Carpenter</i>, the Court quoted Justice Sotomayor: location data can reveal a person’s “familial, political, professional, religious, and sexual associations.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 9.10</span>How Small Facts Add Up</p>
+      <p class="figsub">Aggregation turns separate data points into a portrait.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart: one data point, add more over time, add identification, a portrait of a life revealed"><g><title>One data point: A car spotted on a street or a phone pinging near a place</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">One data point</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">A car spotted on a street</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">or a phone pinging near a</text><text x="128.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">place</text><g><title>Add more over time: Location history, browsing, and purchases</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Add more over time</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Location history,</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">browsing, and purchases</text><g><title>Add identification: Facial recognition and license plate records</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Add identification</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Facial recognition and</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">license plate records</text><g><title>A portrait of a life: Religion, politics, health, and relationships can be revealed</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#5F7A8C" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">A portrait of a life</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Religion, politics,</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">health, and relationships</text><text x="732.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">can be revealed</text><path d="M219.0 45.0 L236.3 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M420.3 45.0 L437.7 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M621.7 45.0 L639.0 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#5F7A8C"/></svg>
+      <p class="source">Source: Description of aggregation in this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step of the diagram creates the greatest privacy concern? Explain.</li><li>The text says no single piece of data may seem to cross a line. Why does the whole portrait matter more?</li><li>How might aggregation affect the First Amendment freedoms from Chapter 8?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Locked Phone</div></div>
+      <div class="box-b">
+        <p>Police arrest a person for a minor offense and take the person’s phone. They want to scroll through it for evidence. Three views:</p>
+        <div class="opts"><div class="opt"><h5>Search at once</h5>Officers should be able to check the phone to protect themselves and prevent deletion.</div><div class="opt"><h5>Get a warrant first</h5>The phone holds too much private information to search without a judge’s approval.</div><div class="opt"><h5>Preserve the phone only</h5>Officers may secure the phone so data cannot be erased and then ask a judge.</div></div>
+        <p class="ask">Which view matches <i>Riley</i>? What problem does each of the other views leave unsolved?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Living Shield</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The enduring challenge of Fourth Amendment jurisprudence is to apply a constitutional text written in the eighteenth century to circumstances that were literally unimaginable at the time of its drafting. This is not a problem unique to the Fourth Amendment — every provision of the Constitution must be interpreted and applied in contexts its authors did not foresee. But the Fourth Amendment’s particular sensitivity to technological change is perhaps unmatched, because technology is the primary driver of what surveillance is possible, what privacy can mean, and what “unreasonable” intrusion actually looks like in practice.</p>
+        <p>The Supreme Court’s recent decisions — Katz, Riley, Carpenter — reflect an emerging understanding that the Fourth Amendment must be read <dfn id="t-functional">functionally</dfn>, not just textually. The question is not whether a particular form of surveillance technically fits the definition of a “search” under doctrine developed in a different era, but whether it represents the kind of government intrusion into private life that the Fourth Amendment was designed to prevent. This functional approach requires courts to think carefully about purpose, scale, and effect: not just what the government did, but what it learned, and what the constitutional implications of allowing such learning to proceed without judicial oversight might be.</p>
+        <p>The stakes are high. A Fourth Amendment that is read too narrowly — that permits unlimited digital surveillance simply because information is held by third parties or gathered in public spaces — would leave citizens with no meaningful protection against a government armed with the most powerful surveillance tools in human history. A Fourth Amendment that is read too broadly — that treats every digital transaction as a protected private communication — would seriously impair the ability of law enforcement to investigate genuine threats. Finding the right balance is not easy. But the alternative to finding it — simply letting technology and government power advance without any constitutional constraint — would be to allow the private sphere to disappear entirely. And a society in which every communication is monitored, every movement tracked, and every association recorded is not, in any meaningful sense, a free one.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text names three decisions, <i>Katz</i>, <i>Riley</i>, and <i>Carpenter</i>, as evidence the Court reads the amendment by its purpose, not only its wording.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two risks</span>Read too narrowly, the amendment permits unlimited digital surveillance. Read too broadly, it could impair legitimate investigations.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Chapter Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Fourth Amendment began its constitutional life as a specific response to a specific grievance: the general warrants and writs of assistance that British officials had used to terrorize colonial households and suppress political dissent. It has grown, over more than two centuries, into something broader and more consequential — the primary constitutional guarantee of the private sphere, the legal framework through which Americans assert their right to live free from arbitrary government observation and intrusion.</p>
+        <p>The process of selective incorporation ensured that this guarantee would apply not just against the federal government, but against every government in the American system. The Warren Court’s incorporation decisions in the 1960s nationalized the standards of criminal justice, creating a constitutional floor below which no state could fall. The exclusionary rule gave those standards practical force, ensuring that law enforcement had a genuine incentive to respect constitutional requirements rather than simply ignoring them and hoping for the best.</p>
+        <p>The essential question this chapter poses — how does the government balance the strategic necessity of collective security with the constitutional sanctity of individual privacy? — does not have a permanent answer. It is a question that each generation must answer for itself, in light of the threats it faces and the technologies available to both governments and citizens. What the Fourth Amendment provides is not an answer but a framework: a set of principles — probable cause, judicial warrants, specificity, reasonableness — that ensure the question is always asked, and that the answer always accounts for the dignity of the individual citizen.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Next</span>Chapter 10 moves from searching and seizing to the rights of the accused: due process, counsel, trial, and punishment.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The final paragraph previews Chapter 10, which follows the individual through the criminal justice system.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>In the era of digital surveillance, facial recognition, and algorithmic policing, that framework is under greater pressure than at any point since the founding. The Supreme Court has begun to adapt, recognizing in Riley and Carpenter that digital information demands a different constitutional analysis than physical objects. But much remains unsettled. The boundaries of the third-party doctrine, the constitutionality of mass surveillance programs, the legal status of emerging technologies — all of these questions are actively being litigated.</p>
+        <p>What will not change, if the constitutional tradition holds, is the underlying principle: that government power over the private lives of citizens must be constrained, justified, and subject to review. That is what the Fourth Amendment has always demanded. It is also, as the next chapter will explore, what the broader constitutional guarantee of due process requires in every stage of the encounter between the individual and the criminal justice system — from investigation to arrest, from trial to punishment.</p>
+      </div>
+      <div class="side">
+        
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 9.10. Explain why combined data can be more revealing than any single record.</li><li>Explain what the text means by a “functional” reading of the Fourth Amendment.</li><li>Write a Counter-Argument to this claim: “Because the Fourth Amendment was written in 1791, it cannot apply to digital information.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 9.4 ASSESSMENT</b>Complete the Section 9.4 Assessment in your <i>Chapter 9 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>How far may government go to protect security before it destroys the privacy it exists to protect? Read two constitutional texts and two Supreme Court opinions from 1967 and 2014 and decide where each draws the line.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Fourth Amendment Sources</h3>
+        <p>The four documents below show how the Fourth Amendment’s reach has grown. Document A is the text of the Fourth Amendment, ratified in 1791. Document B is Section 1 of the Fourteenth Amendment, ratified in 1868, which carries constitutional limits to the states. Document C comes from <i>Katz v. United States</i> (1967), in which the Court held that the amendment protects people, not just places. Document D comes from <i>Riley v. California</i> (2014), which applied the amendment to the contents of a cell phone.</p>
+        <p>As you read, notice what each document protects, who it limits, and what test or rule it uses. Answer the Thinking Like a Citizen question after each document, then the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Concurring opinion:</b> a separate opinion by a justice who agrees with the result but gives different or additional reasons. <span class="sp">Spanish: opinión concurrente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791 to 2014</span>The span from the Fourth Amendment’s ratification to the Court’s ruling on cell phones.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FOUNDING DOCUMENT</small><b>The Fourth Amendment (1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The right of the people to be secure in their persons, houses, papers, and effects, against unreasonable searches and seizures, shall not be violated, and no Warrants shall issue, but upon probable cause, supported by Oath or affirmation, and particularly describing the place to be searched, and the persons or things to be seized.”<cite>U.S. Constitution, Amendment IV. Text from the National Archives transcription of the Bill of Rights.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What four things does the amendment say a warrant requires? Which word shows that the amendment is about privacy as well as property?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · CONSTITUTIONAL TEXT</small><b>The Fourteenth Amendment, Section 1 (1868)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“All persons born or naturalized in the United States, and subject to the jurisdiction thereof, are citizens of the United States and of the State wherein they reside. No State shall make or enforce any law which shall abridge the privileges or immunities of citizens of the United States; nor shall any State deprive any person of life, liberty, or property, without due process of law; nor deny to any person within its jurisdiction the equal protection of the laws.”<cite>U.S. Constitution, Amendment XIV, Section 1. Text from the National Archives.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which phrase begins “No State shall”? Explain how this phrase made it possible for the Court to apply the Fourth Amendment to local police.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b>Justice Potter Stewart and Justice John Marshall Harlan, <i>Katz v. United States</i> (1967)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“For the Fourth Amendment protects people, not places. What a person knowingly exposes to the public, even in his own home or office, is not a subject of Fourth Amendment protection. … But what he seeks to preserve as private, even in an area accessible to the public, may be constitutionally protected.”<br><br>Justice Harlan, concurring: “there is a twofold requirement, first that a person have exhibited an actual (subjective) expectation of privacy and, second, that the expectation be one that society is prepared to recognize as ‘reasonable.’”<cite><i>Katz v. United States</i>, 389 U.S. 347 (1967), decided December 18, 1967, 7 to 1. Text from Cornell Law School’s Legal Information Institute. The ellipsis (…) is our edit.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does it mean that the amendment protects “people, not places”? State the two parts of Harlan’s test in your own words.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b>Chief Justice John Roberts, <i>Riley v. California</i> (2014)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Modern cell phones, as a category, implicate privacy concerns far beyond those implicated by the search of a cigarette pack, a wallet, or a purse.”<br><br>“The fact that technology now allows an individual to carry such information in his hand does not make the information any less worthy of the protection for which the Founders fought. Our answer to the question of what police must do before searching a cell phone seized incident to an arrest is accordingly simple—get a warrant.”<cite><i>Riley v. California</i>, 573 U.S. 373 (2014), decided June 25, 2014, unanimous in the judgment. Text from Cornell Law School’s Legal Information Institute.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Roberts compare a phone to, and why does he say the comparison fails? What rule does he announce?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Use Documents A and B to explain how a limit written for the federal government came to apply to state and local police.</li>
+        <li>Compare Documents C and D. Each applies the same amendment to a new situation. Explain what the Court protected in each and how the reasoning is similar.</li>
+        <li>Document A mentions “papers” and “effects.” Use Document D to explain how a phone is like and unlike the items the Framers had in mind.</li>
+        <li>Which document would a supporter of security cite most often? Which would a supporter of privacy cite? Explain both choices.</li>
+        <li><b>Making a Claim</b> How far may government go to protect security before it destroys the privacy it exists to protect? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>9</b></div>
+    <h2>Chapter 9 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#FBF1EE" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the government balance the “strategic necessity” of collective security with the constitutional “sanctity” of individual privacy?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Selective Incorporation</h5><i>Barron</i> kept the Bill of Rights from limiting the states. The Fourteenth Amendment changed that, and the Court has applied rights to the states one at a time. The Warren Court’s 1960s decisions nationalized the standards of criminal justice.</div><div><h5>The Fourth Amendment</h5>The amendment bars unreasonable searches and seizures and requires warrants based on probable cause that describe the place and things. <i>Katz</i> added a two-part test for a reasonable expectation of privacy.</div><div><h5>Exceptions and Surveillance</h5>Plain view, consent, exigent circumstances, and Terry stops allow warrantless action, and the exclusionary rule enforces the limits. Post-September 11 surveillance and stop-and-frisk raised questions about how far security can go.</div><div><h5>Technology and Privacy</h5><i>Riley</i> and <i>Carpenter</i> treat digital data as unlike physical objects, and aggregation shows how small facts reveal a life. The Court is reading the amendment by its purpose, and each generation must decide again where the line lies.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 9 ASSESSMENT AND SIMULATION</b>Complete the Chapter 9 Assessment (vocabulary, comprehension, guided analysis, visual analysis, the Riley source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 9 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.1.6, 12.2, 12.2.1, 12.5.1): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>The Bill of Rights: A Transcription, and the Fourteenth Amendment, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript">archives.gov/founding-docs</a></li><li><i>Katz v. United States</i>, 389 U.S. 347 (1967); <i>Terry v. Ohio</i>, 392 U.S. 1 (1968); <i>Riley v. California</i>, 573 U.S. 373 (2014); <i>Carpenter v. United States</i>, 585 U.S. 296 (2018): Cornell Law School Legal Information Institute, <a href="https://www.law.cornell.edu/supremecourt/text/13-132">law.cornell.edu/supremecourt/text</a></li><li><i>Barron v. Baltimore</i>, 32 U.S. 243 (1833); <i>Gitlow v. New York</i>, 268 U.S. 652 (1925); <i>Mapp v. Ohio</i>, 367 U.S. 643 (1961); <i>Gideon v. Wainwright</i>, 372 U.S. 335 (1963); <i>McDonald v. City of Chicago</i>, 561 U.S. 742 (2010): Justia, <a href="https://supreme.justia.com/cases/federal/us/">supreme.justia.com</a></li><li>New York Civil Liberties Union, Stop-and-Frisk Data (NYPD reports, 2003–2013): <a href="https://www.nyclu.org/data/stop-and-frisk-data">nyclu.org/data/stop-and-frisk-data</a>; <i>Floyd v. City of New York</i>, 959 F. Supp. 2d 540 (S.D.N.Y. 2013)</li><li>USA PATRIOT Act, Public Law 107-56 (2001); Canadian Charter of Rights and Freedoms, section 8; Basic Law for the Federal Republic of Germany (English translation), Article 13</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Don Ramey Logan (CC BY 4.0, Supreme Court Building); Dugan Meyer (CC BY 4.0, license plate reader); Mykhal (CC0, phone lock screen); Harry Schaefer, U.S. National Archives (public domain, telephone booth). Public-domain documents and prints: the joint resolution proposing the Fourteenth Amendment (National Archives and Records Administration) and a photograph of a painting of James Otis (Baldwin Coolidge, Boston Public Library). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 8: The Bill of Rights and the First Amendment | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#FDF9F7; --white:#ffffff;
+  --unit:#8E3446; --unit-dk:#5A1F2B; --unit-lt:#FBF1EE; --unit-mid:#C4929A;
+  --amber:#5F7A8C; --amber-lt:#B5C6D0; --amber-dk:#3C5463;
+  --coral:#3C5463; --coral-lt:#E9F0F4; --amber-wash:#E9F0F4; --cream:#FBF1EE; --pale:#B5C6D0;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E9E0DD;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(90,31,43,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#DCBCBF}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#FDF8F6}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#F7E9E7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#B5C6D0;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#FBF1EE}
+.doc{background:#fff;border:1px solid #E5CBCC;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #F0DEDD}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#FDF8F6;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#2D1016}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#F3EAE7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#E9E0DD}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#E9E0DD}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(90,31,43,.80) 0%,rgba(90,31,43,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 8 · THE BILL OF RIGHTS AND THE FIRST AMENDMENT</span>
+  <a href="#opener">Opener</a><a href="#s1">8.1 Religion</a><a href="#s2">8.2 Expression</a><a href="#s3">8.3 Press and Assembly</a><a href="#s4">8.4 Marketplace</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supreme%20Court%20Of%20The%20United%20States%20%28193413861%29.jpeg?width=2000" alt="The front of the Supreme Court Building, a white marble temple front with columns and a wide set of steps." style="object-position:50% 38%"></div>
+  <div class="opener-head">
+    <div class="chapnum">8</div>
+    <div>
+      <div class="unitline">Unit 3 · Civil Liberties and Civil Rights</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Bill of Rights<br>and the First Amendment</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the limits on government are enforced.</b> The west front of the Supreme Court Building in Washington, D.C. The Court decides what the First Amendment means when a law or a government action collides with speech, religion, press, assembly, or petition. <span class="credit">Photo: Jesse Collins / <a href="https://commons.wikimedia.org/wiki/File:Supreme_Court_Of_The_United_States_(193413861).jpeg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 8.1</span><span class="sl-title">Freedom of Religion: Establishment and Free Exercise</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 8.2</span><span class="sl-title">Freedom of Expression: Speech, Dissent, and Public Order</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 8.3</span><span class="sl-title">Press, Assembly, and Petition: Democratic Infrastructure</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 8.4</span><span class="sl-title">The Strategic Marketplace of Ideas</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: How Far May Government Go to Protect Order?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How do the five freedoms of the First Amendment protect the “marketplace of ideas” and manage the strategic tension between individual liberty and social order?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Analyze the historical and philosophical origins of the Bill of Rights as a Federalist compromise and evaluate the dual protections of the Establishment and Free Exercise Clauses.</li>
+          <li>Evaluate the extent of protected versus limited expression and the judicial standards used to balance freedom of speech with public safety.</li>
+          <li>Identify the roles of a free press, assembly, and petition in maintaining democratic infrastructure and holding government accountable.</li>
+          <li>Analyze how the First Amendment establishes a structural framework for a “marketplace of ideas” that requires continuous renegotiation between liberty and order.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Civil Liberties</span><span>Bill of Rights</span><span>Establishment Clause</span><span>Free Exercise Clause</span><span>Symbolic Speech</span><span>Prior Restraint</span><span>Libel</span><span>Clear and Present Danger</span><span>Time, Place, and Manner Restrictions</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 8 Key Concept</p>
+        <p><b>Civil liberties</b> are limits on what government may do. The First Amendment does not end disagreement in a free country. It gives disagreement a peaceful place to happen, and every generation has to decide again where the line between liberty and order belongs.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine you post a video criticizing a decision your school made, and an adult with authority wants it silenced because it embarrasses the school. Is that protecting order, or protecting power from criticism? Now imagine the same video makes a threat against a classmate. Most people feel the difference at once, and the Supreme Court has spent more than a century trying to say exactly where it lies. This chapter shows how the Court draws that line for religion, speech, press, assembly, and petition.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four documents, the First Amendment and three Supreme Court opinions from 1919 to 1969, and answer one question: <a href="#case">how far may government go to protect order before it destroys the liberty it exists to protect?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.2</code> Students evaluate and take and defend positions on the scope and limits of rights and obligations as democratic citizens, the relationships among them, and how they are secured.</li>
+            <li><code>12.2.1</code> Discuss the meaning and importance of each of the rights guaranteed under the Bill of Rights and how each is secured (e.g., freedom of religion, speech, press, assembly, petition, privacy). <i>(Sections 8.1–8.4, Case Study)</i></li>
+            <li><code>12.5.1</code> Understand the changing interpretations of the Bill of Rights over time, including interpretations of the basic freedoms (religion, speech, press, petition, and assembly) articulated in the First Amendment and the due process and equal-protection-of-the-law clauses of the Fourteenth Amendment. <i>(Sections 8.1–8.3)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.6</code> Understand that the Bill of Rights limits the powers of the federal government and state governments. <i>(Introduction, Section 8.4; developed in Chapter 9.)</i></li>
+            <li><code>12.3.3</code> Discuss the historical role of religion and religious diversity. <i>(Section 8.1)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">A Government Strong Enough to Order, Restrained Enough to Be Free</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:270/287"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Bill%20of%20Rights%20-%20DPLA%20-%20a65f6d0b6210c18d17c596908ebcf270%20%28page%201%29.jpg?width=900" alt="The first page of the handwritten Bill of Rights on aged parchment, with the heading Congress of the United States at the top." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-0.02%"></div><figcaption><span class="phlabel">The Bill of Rights, 1789</span>The first page of the handwritten copy of the amendments that became the Bill of Rights, dated September 25, 1789. Congress sent twelve proposed amendments to the states, and ten were ratified by December 15, 1791.<span class="credit">Image: National Archives and Records Administration (document, 1789) / <a href="https://commons.wikimedia.org/wiki/File:Bill_of_Rights_-_DPLA_-_a65f6d0b6210c18d17c596908ebcf270_(page_1).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The American experiment in self-governance is built upon a profound paradox: a government must be strong enough to maintain order, yet restrained enough to preserve the very liberty it was created to protect. When the Framers met in Philadelphia in 1787, their primary focus was on the "architecture of power." They were obsessed with the mechanics of how a central government could be designed to prevent any one person or faction from seizing absolute control. Consequently, the original body of the Constitution defined how laws are made, how they are enforced by a President, and how they are interpreted by a Supreme Court. However, the document was notably silent on the specific, inherent rights of the individual. To many Americans of the founding era, particularly the Anti-Federalists, this silence was not merely an oversight; it was a dangerous invitation to tyranny.</p>
+        <p>This silence nearly derailed the ratification process. In states like Massachusetts, Virginia, and New York, critics argued that a government with the power to tax, raise armies, and regulate commerce would eventually crush the people unless its boundaries were explicitly drawn. They remembered all too well the "writs of assistance" used by the British Crown to search homes without warrants and the suppression of colonial newspapers that criticized the King. Alexander Hamilton, writing in Federalist No. 84, argued that a <dfn id="t-bill-of-rights">Bill of Rights</dfn> was unnecessary and even dangerous, claiming that by listing what the government could not do, one might imply it had the power to do anything not listed. However, the political reality was that without a promise to add a Bill of Rights, the Constitution would likely fail to be adopted.</p>
+        <p>The resulting Bill of Rights, the first ten amendments to the Constitution, serves as the definitive statement of American <dfn id="t-civil-liberties">civil liberties</dfn>. These are frequently described as "negative rights." In the language of constitutional law, a negative right does not mean it is "bad" or "unpleasant." Rather, it describes a boundary that the government is forbidden from crossing. It is a "thou shalt not" directed at the state. When the First Amendment says "Congress shall make no law," it is creating a protective bubble around the individual, ensuring that certain realms of human life—what we think, how we worship, and how we express our dissent—are off-limits to political interference.</p>
+        <p>At the heart of these protections stands the First Amendment, often called the "generative core" of American democracy. It protects the fundamental tools of citizenship: the right to think, believe, speak, publish, gather, and complain. The First Amendment does not merely protect the individual for the sake of their own personal happiness. Instead, it serves a structural purpose: it creates a "marketplace of ideas." In this metaphorical market, different views, beliefs, and criticisms compete for public acceptance. The founders believed that in a free society, the remedy for "bad" or "false" speech is not government censorship, but rather "more speech." By protecting even the most unpopular or controversial ideas, the First Amendment ensures that the "consent of the governed" is more than a slogan; it is an active, ongoing process of debate that keeps the government responsive to its people.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Civil liberties</span> Constitutional protections for individuals against government action, such as freedom of speech. <span class="sp">Spanish: libertades civiles</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bill of Rights</span> The first ten amendments to the Constitution, which list specific limits on government power. <span class="sp">Spanish: Declaración de Derechos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791</span>Year the Bill of Rights was ratified. Ten of the twelve amendments Congress proposed in 1789 were approved by the states.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 8.1 begins with religion, the first freedom named in the First Amendment. Chapter 9 shows how the Bill of Rights came to limit state governments too.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>8.1</b></div>
+    <h2>Freedom of Religion: Establishment and Free Exercise</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#B5C6D0" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 8.1, you will</p>
+      <ul><li>Explain how the Establishment and Free Exercise Clauses protect religious liberty in different ways</li><li>Evaluate how the Supreme Court has applied each clause in school and conscience cases</li><li>Apply the Lemon Test and explain why the Court has sometimes turned to other tests</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-establishment">Establishment Clause</a></li><li><a href="#t-free-exercise">Free Exercise Clause</a></li><li><a href="#t-compelling">Compelling interest</a></li><li><a href="#t-lemon">Lemon Test</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each clause, what it protects, and one case.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: clause, what it protects, case"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Clause</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Protects</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Case</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Freedom of Religion: Establishment and Free Exercise</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The First Amendment begins with a dual commitment to religious liberty, expressed through two distinct but overlapping clauses: the <dfn id="t-establishment">Establishment Clause</dfn> and the <dfn id="t-free-exercise">Free Exercise Clause</dfn>. These clauses represent the American solution to a problem that had caused centuries of bloodshed in Europe: the entanglement of government power with religious authority. The Framers, many of whom were students of the Enlightenment, recognized that when the state and the church become one, both institutions suffer. Religion loses its spiritual purity and becomes a tool for political control, while the state becomes an instrument of religious persecution. To prevent this, the First Amendment created a "strategic tension" intended to keep the government neutral while allowing the citizen to remain devout.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Establishment Clause</span> The part of the First Amendment that bars government from creating a national church or favoring one religion over another. <span class="sp">Spanish: Cláusula de Establecimiento</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Free Exercise Clause</span> The part of the First Amendment that bars government from stopping you from practicing your faith. <span class="sp">Spanish: Cláusula de Libre Ejercicio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">16 words</span>Length of the First Amendment’s entire religion text: “Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof.”</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The First Amendment names “Congress,” yet the cases in this section involve states and school districts. Chapter 9 explains how the Fourteenth Amendment carried these limits to state governments.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Wall of Separation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The Establishment Clause prohibits the government from creating a national church, favoring one religion over another, or preferring religion over non-religion. In the early years of the Republic, this was understood primarily as a ban on a national version of the Church of England. However, over the 19th and 20th centuries, the Supreme Court interpreted the clause more broadly, adopting Thomas Jefferson’s metaphor of a "wall of separation" between church and state. This wall is intended to ensure that the government does not use its power, prestige, or financial resources to promote religious belief.</p>
+        <p>The most intense debates over the Establishment Clause have occurred in the context of public schools. Because public schools are government-run and students are a "captive audience," the Court has been extremely cautious about any activity that could be seen as government-sponsored faith. A pivotal moment in this history was the 1962 case Engel v. Vitale. The state of New York had authorized a short, voluntary prayer to be recited at the beginning of the school day. While the prayer was nondenominational and students could choose to remain silent or leave the room, the Court ruled it unconstitutional. Justice Hugo Black argued that the government’s "official seal of approval" on a prayer violated the Establishment Clause, even if the prayer was voluntary. This ruling established that the government cannot compose official prayers for any group of Americans to recite as part of a government-sponsored program.</p>
+        <p>This principle was further tested in Abington School District v. Schempp (1963), which concerned a Pennsylvania law requiring that at least ten verses from the Holy Bible be read at the opening of each public school day. Again, the Court ruled that even if students could be excused, the practice was unconstitutional because it lacked a secular legislative purpose. These cases emphasize that in a pluralistic society, the government must remain a neutral platform. If the state were to favor Christianity, it would implicitly alienate Jewish, Muslim, Hindu, or atheist citizens, turning them into outsiders in their own political community.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Wall of separation</span> Thomas Jefferson’s metaphor, adopted by the Court, for keeping government and religious authority apart. <span class="sp">Spanish: muro de separación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">6 to 1</span>Vote in <i>Engel v. Vitale</i> (June 25, 1962). Two justices took no part.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">10 verses</span>Minimum number of Bible verses Pennsylvania law required to be read each school day in <i>Abington v. Schempp</i> (June 17, 1963).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Public school students are called a “captive audience” because attendance is required. That is why the Court watches school cases closely.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.1</span>Six Religion Cases, 1879–2022</p>
+      <p class="figsub">Cases discussed in this section, plus the 2022 decision that changed how the Establishment Clause is read.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Timeline of six religion cases: Reynolds 1879, Engel 1962, Abington 1963, Lemon 1971, Yoder 1972, Kennedy v. Bremerton 2022"><line x1="40" y1="125" x2="820" y2="125" stroke="#8E3446" stroke-width="4" stroke-linecap="round"/><line x1="105.0" y1="125" x2="105.0" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1879: Reynolds v. U.S.</title><circle cx="105.0" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="105.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1879</text><text x="105.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Reynolds</text><text x="105.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. U.S.</text><line x1="235.0" y1="125" x2="235.0" y2="135" stroke="#8E3446" stroke-width="2"/><g><title>1962: Engel v. Vitale</title><circle cx="235.0" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="235.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1962</text><text x="235.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Engel</text><text x="235.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Vitale</text><line x1="365.0" y1="125" x2="365.0" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1963: Abington v. Schempp</title><circle cx="365.0" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="365.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1963</text><text x="365.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Abington</text><text x="365.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Schempp</text><line x1="495.0" y1="125" x2="495.0" y2="135" stroke="#5F7A8C" stroke-width="2"/><g><title>1971: Lemon v. Kurtzman</title><circle cx="495.0" cy="125" r="8" fill="#5F7A8C" stroke="#fff" stroke-width="2.5"/></g><text x="495.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3C5463" text-anchor="middle" font-weight="800">1971</text><text x="495.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Lemon</text><text x="495.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Kurtzman</text><line x1="625.0" y1="125" x2="625.0" y2="109" stroke="#8E3446" stroke-width="2"/><g><title>1972: Wisconsin v. Yoder</title><circle cx="625.0" cy="125" r="8" fill="#8E3446" stroke="#fff" stroke-width="2.5"/></g><text x="625.0" y="73" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">1972</text><text x="625.0" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Wisconsin</text><text x="625.0" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">v. Yoder</text><line x1="755.0" y1="125" x2="755.0" y2="135" stroke="#5F7A8C" stroke-width="2"/><g><title>2022: Kennedy v. Bremerton</title><circle cx="755.0" cy="125" r="8" fill="#5F7A8C" stroke="#fff" stroke-width="2.5"/></g><text x="755.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3C5463" text-anchor="middle" font-weight="800">2022</text><text x="755.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Kennedy v.</text><text x="755.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Bremerton</text></svg>
+      <p class="source">Sources: Supreme Court opinions via Justia and Cornell LII. <i>Reynolds</i> was argued in the Court’s 1878 term and decided on January 6, 1879, so it is often dated either year. <i>Kennedy v. Bremerton School District</i> was decided June 27, 2022, 6 to 3.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Case</th><th>Clause</th></tr></thead><tbody><tr><td>1879</td><td>Reynolds v. United States</td><td>Free Exercise</td></tr><tr><td>1962</td><td>Engel v. Vitale</td><td>Establishment</td></tr><tr><td>1963</td><td>Abington School District v. Schempp</td><td>Establishment</td></tr><tr><td>1971</td><td>Lemon v. Kurtzman</td><td>Establishment</td></tr><tr><td>1972</td><td>Wisconsin v. Yoder</td><td>Free Exercise</td></tr><tr><td>2022</td><td>Kennedy v. Bremerton School District</td><td>Establishment</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many years passed between <i>Reynolds</i> and <i>Engel</i>?</li><li>Which cases on the timeline limit government support for religion? Which protect religious practice?</li><li>The 2022 case changed the status of the Lemon Test. What does that show about how the Court’s interpretation of the Bill of Rights can change over time?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>A Prayer Over the Loudspeaker</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose a public school district wrote a short, general prayer and had a teacher read it at the start of each day. Students could stay silent or step out. Under <i>Engel</i>, the problem is not whether anyone is forced. The problem is that the government wrote and sponsored the prayer. A student club that chooses to pray together on its own is a different situation, because the students, not the government, started it.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE RELIGION CASES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 8.1. Which two cases involved prayer or Bible reading in public schools? What did the Court decide in each?</li><li>Explain why <i>Engel</i> and <i>Abington</i> reached the same result even though students could be excused.</li><li>Use the text. Explain why the Court called students a “captive audience.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Protecting Personal Conscience: The Free Exercise Clause</h3>
+    <div class="pair">
+      <div class="body">
+        <p>While the Establishment Clause prevents the government from sponsoring religion, the Free Exercise Clause prevents the government from stopping you from practicing your faith. This clause protects the "internal" world of belief—which the government cannot reach—but more importantly, it protects the "external" world of religious conduct. The fundamental idea is that a citizen should not have to choose between obeying the law and obeying their God, unless the government has an incredibly powerful reason to intervene.</p>
+        <p>A landmark example of this protection is found in Wisconsin v. Yoder (1972). Three Amish families refused to send their children to public school after the eighth grade, arguing that high school attendance was contrary to their religious beliefs and would lead to the destruction of their faith-based community. Wisconsin law required all children to attend school until age sixteen. The Supreme Court ruled in favor of the Amish, finding that the state's interest in universal education did not outweigh the parents' fundamental right to guide their children's religious upbringing. The Court noted that the Amish community was long-established and self-sufficient, meaning the children would not become a "burden" to the state without two extra years of schooling. This case demonstrated that for the government to interfere with a religious practice, it must have a "<dfn id="t-compelling">compelling interest</dfn>" and must use the "least restrictive means" to achieve it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Compelling interest</span> A reason of the highest importance that government must show before it can limit a protected freedom. <span class="sp">Spanish: interés apremiante</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">May 15, 1972</span>Date <i>Wisconsin v. Yoder</i> was decided, 6 to 1. The children involved were 14 and 15 years old and had finished eighth grade.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Court said only interests “of the highest order” can outweigh a legitimate free exercise claim. The text’s phrases “compelling interest” and “least restrictive means” summarize that idea.</div>
+      </div>
+    </div>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:1066/400"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Amish%20Country%20Byway%20-%20One-Room%20Schoolhouse%20-%20NARA%20-%207716961.jpg?width=1600" alt="A small white one-room schoolhouse with a bell cupola and a porch, beside a mowed lawn and a tree, under a blue sky." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-42.14%"></div><figcaption><span class="phlabel">A one-room country school</span>The Bunker Hill one-room schoolhouse, now at the Amish and Mennonite Heritage Center near Berlin, Ohio, photographed in 2005. In <i>Wisconsin v. Yoder</i> (1972) the Court held that Amish parents in Wisconsin could not be required to send their children to high school until age sixteen. This building is in Ohio and is shown only as an example of a rural one-room school.<span class="credit">Photo: S. Clyde (National Archives) / <a href="https://commons.wikimedia.org/wiki/File:Amish_Country_Byway_-_One-Room_Schoolhouse_-_NARA_-_7716961.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>However, the right to "free exercise" is not a blank check to ignore any law one dislikes. The Court has long held that while belief is absolute, conduct can be regulated to protect public safety. In Reynolds v. United States (1878), the Court upheld a federal law banning polygamy, even though George Reynolds argued that his Mormon faith required him to have multiple wives. The Court ruled that allowing religious exemptions for every criminal law would make the "professed doctrines of religious belief superior to the law of the land, and in effect... permit every citizen to become a law unto himself." This established a crucial boundary: religious liberty does not justify actions that violate the social order or the rights of others.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Belief and conduct</span> The Court treats belief as absolute but allows government to regulate conduct to protect public safety. <span class="sp">Spanish: creencia y conducta</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Jan. 6, 1879</span>Date <i>Reynolds v. United States</i> was decided. Chief Justice Waite wrote the opinion.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 10 shows the same balance in criminal law, where rights of the accused meet the state’s duty to protect public safety.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.2</span>Two Clauses, Two Kinds of Protection</p>
+      <p class="figsub">How the Establishment and Free Exercise Clauses differ.</p>
+      <table class="cmp"><thead><tr><th></th><th>Establishment Clause</th><th>Free Exercise Clause</th></tr></thead><tbody><tr><td>Main idea</td><td>Government may not create a national church, favor one religion, or prefer religion over non-religion</td><td>Government may not stop you from practicing your faith</td></tr><tr><td>Cases in this section</td><td><i>Engel</i> (1962), <i>Abington</i> (1963), <i>Lemon</i> (1971)</td><td><i>Yoder</i> (1972), <i>Reynolds</i> (1879)</td></tr><tr><td>Test or standard</td><td>Lemon Test (purpose, effect, entanglement); Endorsement Test; Coercion Test</td><td>Compelling interest and least restrictive means (<i>Yoder</i>)</td></tr><tr><td>Limit</td><td>Holiday displays with secular symbols are usually allowed</td><td>Belief is absolute, but conduct can be regulated for public safety</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which clause limits what government may <i>do</i>? Which limits what government may <i>stop</i>?</li><li>Which clause did the Amish families rely on in <i>Yoder</i>? Explain.</li><li>How could a single school policy raise a problem under both clauses at the same time?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Balancing Act: The Lemon Test and Neutrality</h3>
+    <div class="pair">
+      <div class="body">
+        <p>To handle the constant stream of cases where religious belief and government action collide, the Supreme Court developed a standardized set of criteria known as the "<dfn id="t-lemon">Lemon Test</dfn>." This test emerged from Lemon v. Kurtzman (1971), a case involving state laws that provided financial support to private religious schools for teachers' salaries and textbooks in secular subjects. The Court wanted to ensure that taxpayer money was not being used to advance religious missions.</p>
+        <p>The Lemon Test consists of three parts. First, the government action must have a "secular legislative purpose" (it cannot be done purely for religious reasons). Second, its "primary effect" must neither advance nor inhibit religion. Third, the action must not result in "excessive government entanglement" with religion. In the Lemon case, the Court found that the constant monitoring required to ensure that religious school teachers were only teaching secular subjects would create an "excessive entanglement" between the state and the church. If a law fails any one of these three prongs, it is unconstitutional under the Establishment Clause.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Lemon Test</span> A three-part test from <i>Lemon v. Kurtzman</i> (1971): secular purpose, primary effect that neither advances nor inhibits religion, and no excessive entanglement. <span class="sp">Spanish: prueba de Lemon</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 28, 1971</span>Date <i>Lemon v. Kurtzman</i> was decided. The cases involved Pennsylvania and Rhode Island laws that aided nonpublic schools.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Entanglement means ongoing government monitoring of a religious institution. The Court said checking that teachers stayed secular would create exactly that.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.3</span>The Lemon Test</p>
+      <p class="figsub">A law must pass all three parts. Failing any one makes it unconstitutional.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow chart of the Lemon Test: secular purpose, primary effect, no excessive entanglement, and the result"><g><title>Prong 1: Purpose: Does the law have a secular legislative purpose?</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Prong 1: Purpose</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Does the law have a</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">secular legislative</text><text x="128.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">purpose?</text><g><title>Prong 2: Effect: Does its primary effect neither advance nor inhibit religion?</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Prong 2: Effect</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Does its primary effect</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">neither advance nor</text><text x="329.3" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">inhibit religion?</text><g><title>Prong 3: Entanglement: Does it avoid excessive government entanglement with religion?</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#8E3446" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Prong 3: Entanglement</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Does it avoid excessive</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">government entanglement</text><text x="530.7" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">with religion?</text><g><title>Result: Fail any one prong and the law is unconstitutional</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#5F7A8C" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#5A1F2B" text-anchor="middle" font-weight="700">Result</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fail any one prong and the</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">law is unconstitutional</text><path d="M219.0 45.0 L236.3 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M420.3 45.0 L437.7 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#5F7A8C"/><path d="M621.7 45.0 L639.0 45.0" stroke="#5F7A8C" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#5F7A8C"/></svg>
+      <p class="source">Source: <i>Lemon v. Kurtzman</i>, 403 U.S. 602 (1971); this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which prong did the Court rely on to strike down the aid to religious schools in <i>Lemon</i>?</li><li>Why does the test say a law must pass <i>all</i> three prongs instead of just one?</li><li>The text says critics found the test both too hostile to religion and too confusing. Which prong might each critic point to?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The Lemon Test has faced significant criticism over the years, with some justices arguing it is too hostile to religion and others saying it is too confusing to apply. Consequently, the Court has sometimes turned to the "Endorsement Test"—which asks if a reasonable person would think the government is endorsing a particular faith—or the "Coercion Test"—which asks if the government is forcing someone to participate in religious activities. For instance, in cases involving holiday displays on public property, the Court often looks at whether a nativity scene is surrounded by secular symbols like Santa Claus and reindeer. If the overall message is a secular celebration of the holiday season, it is usually allowed; if the message is purely religious, it is often struck down as an unconstitutional endorsement.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Endorsement Test</span> A test that asks whether a reasonable person would think government is endorsing a particular faith. <span class="sp">Spanish: prueba de respaldo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">6 to 3</span>Vote in <i>Kennedy v. Bremerton School District</i> (June 27, 2022), where the majority said the Court had “long ago abandoned Lemon and its endorsement test offshoot.”</div>
+        <div class="connect"><span class="tag">CONNECT TO CURRENT LAW</span>Because the Court has said it no longer applies <i>Lemon</i>, it now looks to historical practices and understandings in Establishment Clause cases. Your teacher may ask how that changes the three prongs above.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Holiday Display at City Hall</div></div>
+      <div class="box-b">
+        <p>Your city council must decide how to handle a holiday display on the lawn of City Hall. Three proposals are on the table.</p>
+        <div class="opts"><div class="opt"><h5>Nativity scene alone</h5>The display is purely religious.</div><div class="opt"><h5>Nativity scene with Santa, reindeer, and other seasonal symbols</h5>The overall message is a celebration of the holiday season.</div><div class="opt"><h5>No display at all</h5>The council avoids the question.</div></div>
+        <p class="ask">According to this section, which display is a court most likely to allow and which is it most likely to strike down? What would the Endorsement Test ask?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Necessity of Religious Neutrality</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The First Amendment’s approach to religion is a strategic compromise designed to manage deep-seated human convictions in a way that preserves social peace. By separating the power of the state from the authority of the church, the founders protected both institutions. Religion is shielded from the corrupting influence of politics, where faith might be used as a tool for gain, and the state is shielded from the divisive nature of sectarian conflict. This dual protection ensures that the American "marketplace of ideas" includes a wide array of spiritual and moral perspectives, none of which can use the force of law to silence the others.</p>
+        <p>The "strategic tension" between the Establishment and Free Exercise clauses is not a flaw in the system, but a necessary feature of a diverse democracy. It requires the government to treat all citizens with equal dignity, regardless of their relationship to faith. When the government maintains this neutrality, it ensures that religious belief remains a matter of private conscience rather than a matter of public policy. This allows the United States to avoid the religious wars of the past and instead build a community where Muslims, Christians, Jews, Hindus, Buddhists, and atheists can all participate as full and equal citizens. This neutrality is the only way to sustain a marketplace where ideas are judged on their own merits rather than on the religious identity of the speaker.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pluralism</span> A society in which people of many beliefs and backgrounds live together as equals. <span class="sp">Spanish: pluralismo</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Religious neutrality does not mean government dislikes religion. It means government does not use its power to help or hurt any faith.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>France and the 1905 Law</div></div>
+      <div class="box-b">
+<p style="margin:0">Other democracies manage religion differently. France’s law of December 9, 1905 separated churches and the state, and it says the Republic neither recognizes nor funds any religion. England, by contrast, still has an established church, the Church of England. The American approach combines two ideas: no establishment and strong protection for free exercise.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; APPLYING THE LEMON TEST</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 8.3. A state pays part of the salaries of teachers in private religious schools who teach secular subjects. Apply the three prongs and explain which one the Court found failed in <i>Lemon</i>.</li><li>A town puts a nativity scene alone on the courthouse lawn. Use the text to explain how a court would be likely to treat it, and why.</li><li>Write a Counter-Argument to this claim: “Religious neutrality means government is hostile to religion.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 8.1 ASSESSMENT</b>Complete the Section 8.1 Assessment in your <i>Chapter 8 Assignment</i> packet before you move on to Section 8.2.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>8.2</b></div>
+    <h2>Freedom of Expression: Speech, Dissent, and Public Order</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#B5C6D0" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#FBF1EE" stroke-width="5"/><path d="M14 100h132" stroke="#B5C6D0" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 8.2, you will</p>
+      <ul><li>Explain why political speech receives the highest protection and how symbolic speech fits</li><li>Compare the Clear and Present Danger and Imminent Lawless Action tests</li><li>Explain how the actual malice standard protects criticism of public officials</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-symbolic">Symbolic Speech</a></li><li><a href="#t-cpd">Clear and Present Danger</a></li><li><a href="#t-libel">Libel</a></li><li><a href="#t-malice">Actual malice</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a case, the rule it created, and who won.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: case, rule, winner"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Case</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Rule</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Winner</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Freedom of Expression: Speech, Dissent, and Public Order</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">If the First Amendment is the cornerstone of democracy, then freedom of speech is its "generative core." This freedom transforms the people from mere subjects of a government into active participants in a "marketplace of ideas." In a functional republic, the government derives its just powers from the "consent of the governed," but that consent is meaningless if the people are not free to criticize their leaders, debate policy, and share information. Freedom of expression ensures that the public can hold those in power accountable, exposing corruption and advocating for change without fear of being silenced by the state. This freedom, however, creates a constant friction between the individual’s right to speak and the government’s responsibility to maintain public order and safety.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Strict scrutiny</span> The Court’s most demanding test: government must show a compelling interest and use the least restrictive means. <span class="sp">Spanish: escrutinio estricto</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">“Consent of the governed”</span>The phrase in the Declaration of Independence that this section links to free speech.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 11 returns to strict scrutiny and explains how courts use it to protect equal rights.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Hierarchy of Protection: Political and Symbolic Speech</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Not all speech receives the same level of protection under the Constitution. The Supreme Court has established a hierarchy, with political speech—the debate over government policy and candidates—at the very top. Because political speech is the lifeblood of self-government, the government has almost no power to restrict it, even if the message is offensive, angry, or deeply critical of the country. This protection extends beyond spoken words to "<dfn id="t-symbolic">Symbolic Speech</dfn>," which includes actions that convey a specific message.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Symbolic speech</span> Actions that convey a specific message and receive First Amendment protection. <span class="sp">Spanish: expresión simbólica</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Political speech</span>Sits at the top of the Court’s hierarchy because it is “the lifeblood of self-government.”</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>A defining moment for symbolic speech occurred during the Vietnam War in the case of Tinker v. Des Moines (1969). A group of students wore black armbands to school to protest the war and mourn the dead. The school district banned the armbands, claiming they would cause a disruption. The Supreme Court ruled in favor of the students, famously declaring that students do not "shed their constitutional rights to freedom of speech or expression at the schoolhouse gate." The Court held that unless the school could prove the speech would "materially and substantially interfere" with the operation of the school, it could not be suppressed. This established the "Tinker Standard," which protects student expression that is not disruptive.</p>
+        <p>This protection for symbolic speech was pushed to its limit in Texas v. Johnson (1989), when Gregory Lee Johnson burned an American flag in front of the Dallas City Hall to protest Reagan administration policies. He was convicted under a Texas law that prohibited "desecration of a venerated object." The Supreme Court overturned his conviction, ruling that flag burning is a form of "expressive conduct" protected by the First Amendment. Justice William Brennan wrote, "If there is a bedrock principle underlying the First Amendment, it is that the government may not prohibit the expression of an idea simply because society finds the idea itself offensive or disagreeable." This case emphasized that the government cannot silence a message just because the method of delivery is shocking or unpopular.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Expressive conduct</span> Non-verbal actions meant to send a message, such as wearing an armband or burning a flag. <span class="sp">Spanish: conducta expresiva</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">7 to 2</span>Vote in <i>Tinker v. Des Moines</i> (Feb. 24, 1969). Justices Black and Harlan dissented.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">5 to 4</span>Vote in <i>Texas v. Johnson</i> (June 21, 1989). Justice Brennan wrote for the majority.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The flag was burned in Dallas during a 1984 protest that coincided with the Republican National Convention.</div>
+      </div>
+    </div>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:1066/400"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Dallas%20City%20Hall%2C%20Dallas%2C%20Texas%20LCCN2015630778.tif?width=1600" alt="A large angled concrete building with rows of slanting windows, seen from a street corner under a partly cloudy sky." loading="lazy" style="position:absolute;max-width:none;height:auto;width:111.5%;left:-11.32%;top:-42.74%"></div><figcaption><span class="phlabel">Where a flag was burned</span>Dallas City Hall, designed by I. M. Pei, photographed in 2014 by Carol M. Highsmith. In 1984, during a protest that coincided with the Republican National Convention, Gregory Lee Johnson burned an American flag in front of this building. The Supreme Court decided <i>Texas v. Johnson</i> in 1989.<span class="credit">Photo: Carol M. Highsmith (Library of Congress) / <a href="https://commons.wikimedia.org/wiki/File:Dallas_City_Hall,_Dallas,_Texas_LCCN2015630778.tif">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.4</span>The Hierarchy of Protection</p>
+      <p class="figsub">Different kinds of expression receive different levels of protection.</p>
+      <svg viewBox="0 0 860 368" role="img" aria-label="Pyramid of speech protection from political speech at the top to speech with little or no protection at the bottom"><g><title>Political speech: Highest protection: debate over government policy and candidates</title><rect x="210.0" y="4" width="440.0" height="84" rx="10" fill="#5A1F2B" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="38" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Political speech</text><text x="430" y="60" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Highest protection: debate over government policy and candidates</text><g><title>Symbolic speech: Actions that convey a message, such as armbands (Tinker) and flag burning (Johnson)</title><rect x="146.7" y="94" width="566.7" height="84" rx="10" fill="#8E3446" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="128" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Symbolic speech</text><text x="430" y="150" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Actions that convey a message, such as armbands (Tinker) and flag burning (Johnson)</text><g><title>Speech with conditions: Defamation (actual malice for public officials) and content-neutral time, place, and manner rules</title><rect x="83.3" y="184" width="693.3" height="84" rx="10" fill="#5F7A8C" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="218" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Speech with conditions</text><text x="430" y="240" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">Defamation (actual malice for public officials) and content-neutral time, place, and manner rules</text><g><title>Little or no protection: Incitement to imminent lawless action, true threats, and obscenity</title><rect x="20.0" y="274" width="820.0" height="84" rx="10" fill="#B5C6D0" stroke="#5A1F2B" stroke-width="1.5"/></g><text x="430" y="308" font-family="Inter, Arial, sans-serif" font-size="16" fill="#5A1F2B" text-anchor="middle" font-weight="800">Little or no protection</text><text x="430" y="330" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#5A1F2B" text-anchor="middle" font-weight="400">Incitement to imminent lawless action, true threats, and obscenity</text></svg>
+      <p class="source">Source: Categories as described in this chapter’s text. Diagram created for this textbook.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Level</th><th>Kind of speech</th></tr></thead><tbody><tr><td>1 (highest)</td><td>Political speech</td></tr><tr><td>2</td><td>Symbolic speech</td></tr><tr><td>3</td><td>Speech with conditions: defamation, time, place, and manner rules</td></tr><tr><td>4 (lowest)</td><td>Incitement to imminent lawless action, true threats, obscenity</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Why does the text place political speech at the very top?</li><li>Which two cases in this section are examples of the second level? What did the Court decide in each?</li><li>The third level is “speech with conditions.” Name one condition from the text that must be met before government may limit speech there.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Limits of Speech: From Schenck to Brandenburg</h3>
+    <div class="pair">
+      <div class="body">
+        <p>While the First Amendment protects a vast amount of expression, it is not an absolute shield for all behavior. The government has a legitimate interest in preventing speech that causes direct, physical harm or leads to immediate violence. Throughout the 20th century, the Supreme Court struggled to define exactly where the line should be drawn. During World War I, in the case of Schenck v. United States (1919), Charles Schenck was arrested for distributing leaflets encouraging men to resist the military draft. Justice Oliver Wendell Holmes famously argued that the government could limit speech if it posed a "<dfn id="t-cpd">Clear and Present Danger</dfn>" to the nation. He noted that the First Amendment would not protect a man "falsely shouting fire in a theatre and causing a panic."</p>
+        <p>However, the "Clear and Present Danger" test was often used by the government to silence political radicals and war protesters, even when their speech posed no real threat of immediate violence. Consequently, the Court eventually moved toward a much stricter standard in Brandenburg v. Ohio (1969). This case involved a leader of the Ku Klux Klan who was arrested for making a speech that suggested "vengeance" against the government. The Court overturned his conviction, establishing the "Imminent Lawless Action" test. Under this modern standard, the government can only punish speech if it is intended to incite immediate illegal acts and is likely to produce such acts. This ensures that even the advocacy of radical or violent ideas is protected, so long as it does not lead to an immediate riot or crime.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Clear and Present Danger</span> A test from <i>Schenck</i> (1919) that allowed limits on speech posing a direct threat to the nation. <span class="sp">Spanish: peligro claro e inminente</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Imminent lawless action</span> The modern test from <i>Brandenburg</i> (1969): speech may be punished only if it is intended to cause immediate illegal acts and is likely to do so. <span class="sp">Spanish: acción ilegal inminente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 3, 1919</span>Date of <i>Schenck v. United States</i>, a unanimous decision that upheld convictions under the Espionage Act.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 9, 1969</span>Date of <i>Brandenburg v. Ohio</i>, a per curiam (unsigned) opinion with no dissent.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Other categories of speech that receive little to no protection include "obscenity"—defined as material that appeals to a prurient interest and lacks serious value—and "true threats," where a person expresses a genuine intent to commit an act of unlawful violence against a specific individual. By carving out these narrow exceptions, the Court attempts to protect the "marketplace of ideas" while ensuring that the marketplace does not become a staging ground for physical harm.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">True threat</span> A statement showing a genuine intent to commit unlawful violence against a specific person. <span class="sp">Spanish: amenaza verdadera</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 8.3 shows how the same balance between liberty and order applies to protests and permits.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.5</span>Four Standards for Limiting Speech</p>
+      <p class="figsub">Each test sets a different bar government must clear before it limits expression.</p>
+      <table class="cmp"><thead><tr><th>Standard</th><th>Case</th><th>What must be shown</th><th>Effect</th></tr></thead><tbody><tr><td>Clear and Present Danger</td><td><i>Schenck</i> (1919)</td><td>Words create “a clear and present danger” of harms Congress may prevent</td><td>Used against war protesters and political radicals</td></tr><tr><td>Imminent Lawless Action</td><td><i>Brandenburg</i> (1969)</td><td>Speech intended to incite immediate illegal acts and likely to produce them</td><td>Protects advocacy short of an immediate riot or crime</td></tr><tr><td>Tinker Standard</td><td><i>Tinker</i> (1969)</td><td>Speech would “materially and substantially interfere” with the operation of the school</td><td>Student expression that is not disruptive</td></tr><tr><td>Actual Malice</td><td><i>New York Times v. Sullivan</i> (1964)</td><td>A public official must prove the publisher knew it was false or acted with reckless disregard for the truth</td><td>Press criticism of public officials; private individuals need only prove negligence</td></tr></tbody></table>
+      <p class="source">Sources: <i>Schenck v. United States</i>, 249 U.S. 47 (1919); <i>Brandenburg v. Ohio</i>, 395 U.S. 444 (1969); <i>Tinker v. Des Moines</i>, 393 U.S. 503 (1969); <i>New York Times Co. v. Sullivan</i>, 376 U.S. 254 (1964); this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which standard protects the most speech? Use the table to explain.</li><li>Which standard applies only inside schools?</li><li>Both <i>Schenck</i> and <i>Brandenburg</i> involved speech that urged illegal acts. What did the Court add in 1969 that was missing in 1919?</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.6</span>How United Was the Court?</p>
+      <p class="figsub">Number of justices in the majority in six speech cases (nine justices in all).</p>
+      <svg viewBox="0 0 860 294" role="img" aria-label="Bar chart of justices in the majority: Schenck 9, Barnette 6, Sullivan 9, Tinker 7, Brandenburg 9, Texas v. Johnson 5"><line x1="240.0" y1="10" x2="240.0" y2="250" stroke="#e6e8ec"/><text x="240.0" y="268" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0 of 9</text><line x1="416.7" y1="10" x2="416.7" y2="250" stroke="#e6e8ec"/><text x="416.7" y="268" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">3 of 9</text><line x1="534.4" y1="10" x2="534.4" y2="250" stroke="#e6e8ec"/><text x="534.4" y="268" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">5 of 9</text><line x1="652.2" y1="10" x2="652.2" y2="250" stroke="#e6e8ec"/><text x="652.2" y="268" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">7 of 9</text><line x1="770.0" y1="10" x2="770.0" y2="250" stroke="#e6e8ec"/><text x="770.0" y="268" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">9 of 9</text><text x="230" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Schenck v. U.S. (1919)</text><g><title>Schenck v. U.S. (1919): 9 of 9</title><path d="M240 16 h526.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-526.0z" fill="#8E3446"/></g><text x="778.0" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9 of 9</text><text x="230" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Barnette (1943)</text><g><title>Barnette (1943): 6 of 9</title><path d="M240 56 h349.3 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-349.3z" fill="#8E3446"/></g><text x="601.3" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">6 of 9</text><text x="230" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">N.Y. Times v. Sullivan (1964)</text><g><title>N.Y. Times v. Sullivan (1964): 9 of 9</title><path d="M240 96 h526.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-526.0z" fill="#8E3446"/></g><text x="778.0" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9 of 9</text><text x="230" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Tinker (1969)</text><g><title>Tinker (1969): 7 of 9</title><path d="M240 136 h408.2 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-408.2z" fill="#8E3446"/></g><text x="660.2" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">7 of 9</text><text x="230" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Brandenburg (1969)</text><g><title>Brandenburg (1969): 9 of 9</title><path d="M240 176 h526.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-526.0z" fill="#8E3446"/></g><text x="778.0" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9 of 9</text><text x="230" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Texas v. Johnson (1989)</text><g><title>Texas v. Johnson (1989): 5 of 9</title><path d="M240 216 h290.4 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-290.4z" fill="#5F7A8C"/></g><text x="542.4" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">5 of 9</text><line x1="240" y1="10" x2="240" y2="250" stroke="#6f7787" stroke-width="1.5"/><text x="505.0" y="290" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Justices in the majority (of 9)</text></svg>
+      <p class="source">Sources: Supreme Court opinions via Justia and Cornell LII. <i>Schenck</i> was unanimous. <i>Brandenburg</i> was a per curiam opinion with no dissent. In <i>Sullivan</i> no justice dissented, though three wrote separately. <i>Barnette</i> was 6 to 3, <i>Tinker</i> 7 to 2, and <i>Johnson</i> 5 to 4. <i>West Virginia v. Barnette</i> (1943) appears in this chapter’s Case Study. Highlighted bar: the narrowest majority.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Case</th><th>Year</th><th>Majority</th></tr></thead><tbody><tr><td>Schenck v. United States</td><td>1919</td><td>9 of 9</td></tr><tr><td>West Virginia v. Barnette</td><td>1943</td><td>6 of 9</td></tr><tr><td>New York Times Co. v. Sullivan</td><td>1964</td><td>9 of 9</td></tr><tr><td>Tinker v. Des Moines</td><td>1969</td><td>7 of 9</td></tr><tr><td>Brandenburg v. Ohio</td><td>1969</td><td>9 of 9</td></tr><tr><td>Texas v. Johnson</td><td>1989</td><td>5 of 9</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which case had the narrowest majority? What does the text say about why flag burning was so controversial?</li><li>How many of the six decisions were unanimous?</li><li><i>Schenck</i> (1919) and <i>Brandenburg</i> (1969) were both unanimous but protected speech very differently. What does that show about how interpretations of the First Amendment change over time?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Defamation and the Breathing Space for Criticism</h3>
+    <div class="pair">
+      <div class="body">
+        <p>One of the most complex areas of First Amendment law involves "defamation"—false statements of fact that damage a person's reputation. When these statements are written, they are called <dfn id="t-libel">Libel</dfn>; when they are spoken, they are called Slander. While individuals have a right to protect their reputation, the Supreme Court has ruled that this right must be balanced against the public’s need to criticize its leaders. If a newspaper could be sued for every minor factual error in a story about a politician, journalists would be too afraid to report on government corruption. This is known as the "chilling effect."</p>
+        <p>To prevent this, the Court established a very high bar for public figures in New York Times v. Sullivan (1964). During the Civil Rights Movement, an Alabama official sued the New York Times for an advertisement that contained minor factual inaccuracies about the conduct of local police. The Court ruled that for a public official to win a libel case, they must prove "<dfn id="t-malice">actual malice</dfn>." This means they must prove that the publisher knew the information was false or acted with a "reckless disregard" for the truth. This standard recognizes that in a robust democracy, some errors of fact are inevitable. By providing this "breathing space," the First Amendment ensures that the press can perform its watchdog role without the constant threat of bankrupting lawsuits from the powerful.</p>
+        <p>This protection does not apply to private individuals, who only need to prove that a publisher was "negligent" (did not take reasonable care) in checking their facts. However, for those who choose to enter the public arena—politicians, celebrities, and high-ranking officials—the Constitution demands that they tolerate a higher level of criticism. This ensures that the "marketplace of ideas" remains a place where the powerful are held accountable by the people, even if the debate is occasionally messy or inaccurate.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Libel</span> A false written statement of fact that damages a person’s reputation. (Spoken defamation is slander.) <span class="sp">Spanish: libelo (difamación escrita)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Actual malice</span> Knowing that a statement is false, or acting with reckless disregard for whether it is true. <span class="sp">Spanish: malicia real</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Chilling effect</span> The fear of lawsuits or punishment that leads people to stay silent. <span class="sp">Spanish: efecto disuasorio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 9, 1964</span>Date of <i>New York Times Co. v. Sullivan</i>. L. B. Sullivan was an elected Montgomery, Alabama, official who supervised the police department.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>A Letter to the Editor</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A local newspaper prints that a county supervisor took a trip paid for by a contractor. The trip was actually paid for by a charity, but the reporter honestly believed the first source. Under <i>Sullivan</i>, the supervisor, as a public official, cannot win a libel suit unless he proves the paper knew the claim was false or recklessly ignored the truth. A private citizen in the same situation would only have to show the paper was careless.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Logic of Dissent</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The First Amendment’s protection of expression is not just a gift to the individual; it is a strategic necessity for the stability of the state. A government that silences its critics is a government that cuts itself off from vital information. When dissent is suppressed, errors go uncorrected, corruption grows in the dark, and social pressures build until they explode in violence. By protecting "the right to be wrong," the Constitution creates a safety valve for social frustration and a mechanism for peaceful, incremental change.</p>
+        <p>The "marketplace of ideas" assumes that through open competition, the most effective and truthful ideas will eventually prevail. While this process is often uncomfortable and leads to significant social friction, it is the only way to ensure that a democracy remains responsive to its people. The First Amendment manages the tension between liberty and order not by eliminating conflict, but by channeling it into the realm of debate rather than the realm of force. In doing so, it ensures that the "consent of the governed" is an ongoing dialogue that allows the nation to adapt to new challenges without sacrificing its core principles.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Dissent</span> Open disagreement with government policy or with the majority. <span class="sp">Spanish: disenso</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text calls protected dissent a “safety valve.” Chapter 11 shows how movements used speech and protest to change the law.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Armband Decision</div></div>
+      <div class="box-b">
+        <p>You are the principal of a public high school. Students plan to wear black armbands to protest a war. Some teachers say the armbands will distract classes.</p>
+        <div class="opts"><div class="opt"><h5>Ban the armbands</h5>You act to prevent possible disruption.</div><div class="opt"><h5>Allow the armbands</h5>You allow the protest unless it actually disrupts class.</div></div>
+        <p class="ask">According to <i>Tinker</i>, what must a school prove before it may suppress this speech? Which option is consistent with that standard?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Germany’s Approach to Hate Speech</div></div>
+      <div class="box-b">
+<p style="margin:0">Germany protects free expression in Article 5 of its Basic Law, but its Criminal Code (Section 130, “incitement to hatred”) punishes inciting hatred against groups and publicly denying or downplaying Nazi-era genocide when that could disturb public peace. Under <i>Brandenburg</i>, American law protects even offensive advocacy unless it is directed to inciting imminent lawless action. The two democracies weigh liberty and order differently.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE SPEECH STANDARDS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 8.4. Place the four levels in order and give one example from the text for each.</li><li>Use Figure 8.5. Which standard would a court use to decide whether a school may ban student armbands? Explain.</li><li>Use Figure 8.6. Which case had the narrowest majority, and why might that matter?</li></ol>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Explain why <i>Texas v. Johnson</i> protects flag burning even though many Americans find it offensive. Use the Brennan quotation.</li><li>Explain how the actual malice standard prevents a “chilling effect.”</li><li>Write a Counter-Argument to this claim: “Government should be able to silence speech that most people find offensive.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 8.2 ASSESSMENT</b>Complete the Section 8.2 Assessment in your <i>Chapter 8 Assignment</i> packet before you move on to Section 8.3.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>8.3</b></div>
+    <h2>Press, Assembly, and Petition: Democratic Infrastructure</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#B5C6D0" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#FBF1EE" stroke-width="5"/><path d="M14 100h132" stroke="#B5C6D0" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 8.3, you will</p>
+      <ul><li>Explain the watchdog role of the press and why prior restraint is presumed unconstitutional</li><li>Explain how time, place, and manner restrictions balance assembly with public safety</li><li>Explain how petition and assembly give citizens a continuous voice between elections</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-prior-restraint">Prior Restraint</a></li><li><a href="#t-tpm">Time, Place, and Manner Restrictions</a></li><li><a href="#t-heckler">Heckler’s Veto</a></li><li><a href="#t-petition">Right to petition</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each freedom, the tool it gives citizens, and its limit.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: freedom, tool, limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Freedom</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Press, Assembly, and Petition: Democratic Infrastructure</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">While the rights of speech and religion protect the individual's inner world, the rights of press, assembly, and petition build the "democratic infrastructure" of the nation. These freedoms provide the institutional pathways through which citizens can organize, investigate, and challenge the state. They ensure that political participation is not something that only happens during an election, but is a continuous part of American life. Without these collective rights, individual speech would often be a lonely cry in the wilderness; with them, speech becomes a powerful force for social and political change. These rights enable citizens to act as a collective check on the branches of government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Democratic infrastructure</span> The press, assembly, and petition rights that give citizens ways to organize, investigate, and challenge the state. <span class="sp">Spanish: infraestructura democrática</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Between elections</span>Citizen participation that does not wait for an election day: reporting, rallies, letters, and lawsuits.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Watchdog Role and Prior Restraint</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Freedom of the press is often described as the "Fourth Estate," an informal fourth branch of government that monitors the other three. In a complex society, individual citizens rarely have the resources to investigate the inner workings of the Pentagon or the local city council. They rely on journalists to do this work for them. To protect this role, the Supreme Court has established a heavy presumption against "<dfn id="t-prior-restraint">Prior Restraint</dfn>"—the government’s attempt to block information from being published before it reaches the public.</p>
+        <p>The classic example is the 1971 case New York Times Co. v. United States, also known as the "Pentagon Papers Case." Daniel Ellsberg, a military analyst, leaked a classified 7,000-page study to the press that revealed the government had lied to the public about the progress of the Vietnam War. The Nixon administration sued to stop the New York Times and the Washington Post from publishing the documents, arguing that doing so would cause "irreparable harm" to national security. The Supreme Court ruled against the government, finding that the word "security" should not be used to "abrogate the fundamental law embodied in the First Amendment." Unless the government can prove an immediate and catastrophic threat—such as revealing the location of troops during an active battle—it cannot stop the press from telling the truth.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Prior restraint</span> The government’s attempt to block information from being published before it reaches the public. <span class="sp">Spanish: censura previa</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fourth Estate</span> An informal name for the press as a “fourth branch” that watches the other three. <span class="sp">Spanish: cuarto poder</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 30, 1971</span>Date <i>New York Times Co. v. United States</i> was decided, 6 to 3, four days after oral argument on June 26.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Court’s short unsigned opinion said any prior restraint “comes to this Court bearing a heavy presumption against its constitutional validity.”</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This protection ensures that the government cannot hide its mistakes or its lies behind a veil of "classification." A free press acts as a watchdog, ensuring that the people have the information they need to hold their leaders accountable at the ballot box. Without the prohibition on prior restraint, the government could easily become the sole source of information, effectively ending the marketplace of ideas and replacing it with a state-controlled narrative.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The sentence the text quotes about the word “security” comes from Justice Hugo Black’s separate opinion in the case.</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Prior restraint</span>Government must meet a “heavy burden” to justify stopping publication before it happens.</div>
+      </div>
+    </div>
+<div class="photo-row">
+<figure class="photo "><div class="crop" style="aspect-ratio:520/320"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Pentagon%20US%20Department%20of%20Defense%20building.jpg?width=1200" alt="An aerial view of the five-sided Pentagon with parking lots, the Potomac River, and the Washington Monument in the distance." loading="lazy" style="position:absolute;max-width:none;height:auto;width:128.5%;left:-3.97%;top:-31.73%"></div><figcaption><span class="phlabel">The classified study</span>The Pentagon, headquarters of the Department of Defense, near Washington, D.C., in an aerial photograph released in 1998. The classified Vietnam War study at the center of <i>New York Times Co. v. United States</i> was a Defense Department history.<span class="credit">Photo: Master Sgt. Ken Hammond, U.S. Air Force (DoD photo) / <a href="https://commons.wikimedia.org/wiki/File:The_Pentagon_US_Department_of_Defense_building.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:520/320"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John%20Peter%20Zenger%20trial.jpg?width=1200" alt="An engraving of a crowded colonial courtroom with a lawyer standing and speaking to the jury." loading="lazy" style="position:absolute;max-width:none;height:auto;width:114.0%;left:-7.0%;top:-0.06%"></div><figcaption><span class="phlabel">A press freedom case, 1735</span>An engraving of Andrew Hamilton defending the printer John Peter Zenger in a New York courtroom in 1735. A jury found Zenger not guilty of libel for printing criticism of the colonial governor. The engraving was made between 1877 and 1896.<span class="credit">Image: Unknown engraver (c. 1877–1896) / <a href="https://commons.wikimedia.org/wiki/File:John_Peter_Zenger_trial.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+</div>
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Power of Gathering: Freedom of Assembly</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The right of the people "peaceably to assemble" allows citizens to gather in groups—whether for a political rally, a labor strike, or a religious convention—to express their collective will. Assembly is the primary tool for those who lack traditional political power; it allows them to gain visibility through numbers and solidarity. Throughout American history, the right to assemble has been the engine of social movements. From the suffragists marching for the right to vote in the early 1900s to the massive Civil Rights marches of the 1960s, the ability to occupy public space is essential for demanding justice.</p>
+        <p>However, the right to assemble is subject to "<dfn id="t-tpm">Time, Place, and Manner Restrictions</dfn>." The government can regulate the logistics of a protest to ensure public safety and the flow of traffic. For example, a city can require a permit for a march that blocks a major highway or ban the use of loud megaphones in residential areas late at night. For these rules to be constitutional, they must be "Content-Neutral"—meaning they apply to everyone regardless of their message. A city cannot allow a "Support our Troops" rally while denying a permit for an anti-war protest in the same location.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Time, place, and manner restrictions</span> Rules about when, where, and how a gathering happens. They must be content-neutral. <span class="sp">Spanish: restricciones de tiempo, lugar y modo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Content-neutral</span> Applying to everyone regardless of the message. <span class="sp">Spanish: neutral en cuanto al contenido</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1900s to 1960s</span>The text points to suffragist marches in the early 1900s and Civil Rights marches of the 1960s as examples of assembly.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.7</span>Is the Restriction Constitutional?</p>
+      <p class="figsub">The text’s examples of rules a city may and may not enforce.</p>
+      <table class="cmp"><thead><tr><th>Rule</th><th>Allowed?</th><th>Why</th></tr></thead><tbody><tr><td>City requires a permit for a march that blocks a major highway</td><td>Yes</td><td>Logistics and traffic safety, not the message</td></tr><tr><td>City bans loud megaphones in residential areas late at night</td><td>Yes</td><td>Applies to every speaker at that time and place</td></tr><tr><td>City allows a “Support our Troops” rally but denies an anti-war protest in the same location</td><td>No</td><td>It treats the groups differently because of their message</td></tr></tbody></table>
+      <p class="source">Source: Examples from this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What single test separates the allowed rules from the one that is not allowed?</li><li>How could the city rewrite the third rule so it is content-neutral?</li><li>Why does the text say these rules protect both public safety and free speech?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>Two Rallies, One Corner</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A town allows a homecoming parade on Main Street from 4 to 6 p.m. A student group asks for a permit for a peaceful rally on the same corner at the same time. The town may require the group to take a different time to keep traffic moving, but it cannot deny the permit because it disagrees with what the students plan to say.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The tension in assembly cases often involves the "<dfn id="t-heckler">Heckler's Veto</dfn>." This occurs when the government tries to shut down a peaceful protest because they fear an angry crowd will attack the protesters. The Supreme Court has generally ruled that the police must protect the protesters' right to speak, rather than silencing them to prevent a riot. This ensures that the most controversial groups still have the right to gather, preventing the government from using the threat of "disorder" as an excuse to silence dissent.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Heckler’s veto</span> When government shuts down a peaceful protest because it fears an angry crowd will attack the protesters. <span class="sp">Spanish: veto del opositor hostil</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Police are expected to protect speakers from hostile crowds, not silence the speakers.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Direct Line: The Right to Petition</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The right to "petition the government for a redress of grievances" is the most direct way citizens interact with their government. Often overshadowed by speech and press, the right to petition is the foundation of advocacy and lobbying. It includes everything from signing a letter to a member of Congress to filing a lawsuit in court. This right ensures that the government is legally obligated to at least receive and hear the complaints of its citizens.</p>
+        <p>In the modern era, the <dfn id="t-petition">right to petition</dfn> has evolved into a sophisticated system of lobbying and litigation. Interest groups, such as the NAACP or the NRA, use the right to petition to advocate for specific laws or to challenge government actions in court. For example, the landmark desegregation case Brown v. Board of Education was a form of "petitioning the government" through the judicial branch. This right allows citizens to use the state’s own legal machinery to hold the state accountable.</p>
+        <p>The right to petition ensures that the "consent of the governed" is an ongoing, daily interaction. It allows for the creation of "civil society"—the network of clubs, unions, and non-profits that buffer the individual from the power of the state. By protecting the right to complain and demand change, the First Amendment ensures that the government remains a servant of the people rather than their master.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Petition</span> A formal request to government for action or relief, such as a letter to Congress or a lawsuit. <span class="sp">Spanish: petición</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Civil society</span> The network of clubs, unions, and non-profits that stands between individuals and the power of the state. <span class="sp">Spanish: sociedad civil</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The text calls <i>Brown v. Board of Education</i> a form of “petitioning the government” through the courts. Chapter 11 tells that story.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Architecture of Accountability</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The collective freedoms of press, assembly, and petition form an architecture of accountability that is essential for a healthy republic. These rights ensure that information flows freely from the government to the people, and that the demands of the people flow back to the government. By protecting the right to investigate, the right to gather, and the right to complain, the First Amendment ensures that power is never concentrated in a single, unchallengeable center.</p>
+        <p>This infrastructure turns the "marketplace of ideas" into a "marketplace of action." It provides the tools necessary for citizens to move from having opinions to influencing outcomes. While the exercise of these rights can lead to social friction and political conflict, that friction is the sign of a living democracy. The First Amendment ensures that the government must constantly justify its actions to an informed and organized citizenry, preventing the consolidation of absolute power and maintaining the responsiveness of the state.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 tools</span>Press carries information to the people. Assembly and petition carry the people’s demands back to government.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.8</span>The Architecture of Accountability</p>
+      <p class="figsub">How information and demands travel between the people and the government.</p>
+      <svg viewBox="0 0 860 300" role="img" aria-label="Diagram: the press carries information from the government to the people; assembly and petition carry demands from the people to the government"><rect x="10" y="20" width="150" height="260" rx="12" fill="#8E3446"/><text x="85" y="150" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="800">The People</text><rect x="700" y="20" width="150" height="260" rx="12" fill="#5A1F2B"/><text x="775" y="150" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="800">Government</text><line x1="684" y1="84" x2="182.0" y2="84.0" stroke="#5F7A8C" stroke-width="4" stroke-linecap="round"/><polygon points="176.0,84.0 186.8,78.8 186.8,89.2" fill="#5F7A8C"/><text x="430" y="54" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">The press: investigates and informs</text><text x="430" y="108" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Reveals what government is doing</text><line x1="176" y1="172" x2="678.0" y2="172.0" stroke="#5F7A8C" stroke-width="4" stroke-linecap="round"/><polygon points="684.0,172.0 673.2,177.2 673.2,166.8" fill="#5F7A8C"/><text x="430" y="142" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">Assembly: gathers and shows numbers</text><text x="430" y="196" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Makes demands visible</text><line x1="176" y1="260" x2="678.0" y2="260.0" stroke="#5F7A8C" stroke-width="4" stroke-linecap="round"/><polygon points="684.0,260.0 673.2,265.2 673.2,254.8" fill="#5F7A8C"/><text x="430" y="230" font-family="Inter, Arial, sans-serif" font-size="15" fill="#5A1F2B" text-anchor="middle" font-weight="800">Petition: asks for redress</text><text x="430" y="284" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Letters, lobbying, lawsuits</text></svg>
+      <p class="source">Source: Relationships as described in this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which freedom carries information toward the people? Which two carry demands toward the government?</li><li>Explain why the text says these rights turn the marketplace of ideas into a “marketplace of action.”</li><li>Which arrow would disappear first if the government could censor before publication? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Speakers’ Corner, London</div></div>
+      <div class="box-b">
+<p style="margin:0">In London’s Hyde Park, a corner has been a place for open public speaking for more than a century. The Royal Parks says the right to meet and speak there was established by the Parks Regulation Act of 1872. Many democracies set aside places or rules for assembly, and each must decide how much to regulate time, place, and manner.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Permit Request</div></div>
+      <div class="box-b">
+        <p>A group asks to hold a rally in front of the county building on a Saturday morning. Residents have complained that the group’s views are offensive.</p>
+        <div class="opts"><div class="opt"><h5>Deny the permit</h5>Because the group’s message is unpopular.</div><div class="opt"><h5>Grant the permit with conditions</h5>Set a route, a time limit, and a volume limit that apply to every group.</div></div>
+        <p class="ask">Which option follows the content-neutral rule in Figure 8.7? What should police do if an angry crowd gathers?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE ACCOUNTABILITY CHART</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 8.8. Describe the path a leaked report might take from the press to the people to the government.</li><li>Use the text. Explain how the Pentagon Papers case shows the danger of prior restraint.</li><li>Use Figure 8.7. Explain why a city may require a permit for a march but may not choose which marches to allow based on their message.</li></ol>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Explain how the right to petition includes both a letter to a legislator and a lawsuit.</li><li>Explain what a “heckler’s veto” is and why police are expected to protect the speaker.</li><li>Write a Counter-Argument to this claim: “Government should be able to stop publication whenever it says national security is at stake.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 8.3 ASSESSMENT</b>Complete the Section 8.3 Assessment in your <i>Chapter 8 Assignment</i> packet before you move on to Section 8.4.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>8.4</b></div>
+    <h2>The Strategic Marketplace of Ideas</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#B5C6D0" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 8.4, you will</p>
+      <ul><li>Explain why the First Amendment is described as a tool for managing conflict</li><li>Analyze how digital platforms create new tensions in the marketplace of ideas</li><li>Explain why the tension between liberty and order is never permanently resolved</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-marketplace">Marketplace of ideas</a></li><li><a href="#t-wrong">Right to be wrong</a></li><li><a href="#t-moderation">Content moderation</a></li><li><a href="#t-echo">Echo chambers</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a tension, one side of it, and the other side.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tension, liberty side, order side"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tension</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Liberty side</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#8E3446"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Order side</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#8E3446" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Marketplace of Ideas</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The First Amendment is not merely a list of five separate freedoms; it is a unified structural framework for a functional republic. Each freedom—religion, speech, press, assembly, and petition—works in tandem to ensure that the "consent of the governed" remains a continuous and meaningful process. By protecting the individual's right to think, believe, and speak, the Constitution ensures that the government does not have a monopoly on truth. Instead, truth is discovered through the rigorous competition of the "<dfn id="t-marketplace">marketplace of ideas</dfn>." This marketplace assumes that if all ideas are allowed to compete, the most effective, truthful, and just ones will eventually prevail.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Marketplace of ideas</span> The idea that truth emerges when all ideas are free to compete. <span class="sp">Spanish: mercado de ideas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">5 freedoms</span>Religion, speech, press, assembly, and petition work together as one structure.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conflict as a Tool of Governance</h3>
+    <div class="pair">
+      <div class="body">
+        <p>A common mistake is to view the First Amendment as a tool for social harmony. In reality, it is a tool for managing conflict. The founders knew that in a large, diverse nation, people would always disagree—often passionately—over religion, politics, and morality. The First Amendment does not try to end these disagreements; instead, it provides a safe arena where they can play out. By protecting the "<dfn id="t-wrong">right to be wrong</dfn>," the Constitution ensures that the government cannot use its power to settle these debates by force.</p>
+        <p>This process is inherently messy. The marketplace of ideas includes speech that is offensive, religious practices that are confusing, and protests that are inconvenient. However, the alternative —government-enforced "order"—is far more dangerous. When a government decides which ideas are "safe" and which are "dangerous," it effectively ends the process of self-correction. History is full of examples where the "dangerous" ideas of one generation (such as the idea that the earth revolves around the sun, or that all people should be equal under the law) became the "common sense" of the next. By protecting dissent, the First Amendment allows the nation to evolve.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Right to be wrong</span> The text’s phrase for the protection of ideas that may turn out to be mistaken or unpopular. <span class="sp">Spanish: derecho a equivocarse</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The text notes that ideas once called dangerous, such as equality under the law, later became common sense.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Modern Tensions in the Digital Square</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The marketplace of ideas is currently facing its greatest challenge since the founding: the digital revolution. For most of American history, the "marketplace" existed in physical town squares, newspapers, and broadcast television. Today, it exists on social media platforms owned by massive private corporations. This creates a new "strategic tension." The First Amendment only limits what the government can do; it does not limit what private companies like Facebook or X (formerly Twitter) can do.</p>
+        <p>This has led to a fierce debate over "<dfn id="t-moderation">content moderation</dfn>." If a private company removes a user for spreading misinformation, is it protecting the marketplace from "pollution," or is it effectively acting as a new kind of censor? Furthermore, the speed and scale of the internet allow for the rapid spread of "fake news" and algorithmic "<dfn id="t-echo">echo chambers</dfn>" where people only hear ideas they already agree with. These modern challenges force us to ask if the marketplace of ideas can still function when the "market" is controlled by private algorithms rather than public debate.</p>
+        <p>The principles of the First Amendment remain our best guide for navigating these tensions. The solution to "bad speech" in the digital age remains "more speech"—better education, more transparent algorithms, and a more engaged citizenry. While the technology has changed, the underlying need for a free and open exchange of ideas remains the same. The marketplace of ideas must be continuously maintained and defended to ensure it does not become a tool for manipulation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Content moderation</span> A private platform’s decisions to remove, limit, or label posts under its own rules. <span class="sp">Spanish: moderación de contenido</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Echo chamber</span> An online setting where people mostly hear ideas they already agree with. <span class="sp">Spanish: cámara de eco</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 9 asks a similar question about privacy: what happens to a constitutional protection when technology changes?</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 8.9</span>Who the First Amendment Limits</p>
+      <p class="figsub">The First Amendment restricts government, not private companies.</p>
+      <table class="cmp"><thead><tr><th>Actor</th><th>Limited by the First Amendment?</th><th>Example</th></tr></thead><tbody><tr><td>Congress and federal officials</td><td>Yes</td><td>“Congress shall make no law…”</td></tr><tr><td>State and local governments, including public school officials</td><td>Yes, through the Fourteenth Amendment (Chapter 9)</td><td><i>Texas v. Johnson</i> (state law); <i>Tinker</i> (public school)</td></tr><tr><td>Private companies, including social media platforms</td><td>No</td><td>The text says they may remove users under their own rules</td></tr><tr><td>Private individuals</td><td>No</td><td>But laws on libel and true threats still apply</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text and Chapter 9. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>According to the table, can a private platform violate the First Amendment by removing a post? Explain.</li><li>Why does the text say this still creates a “strategic tension”?</li><li>The text says the best answer to “bad speech” is “more speech.” Give one example of “more speech” from the text.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#B5C6D0"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#5A1F2B">E</text></svg><div><small>EXAMPLE</small>The Photo App</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A privately owned photo app removes a user’s post because it breaks the app’s rules. The user says the app violated the First Amendment. The First Amendment limits government, so the claim fails. A different question is whether private platforms with millions of users should be free to decide what the public can say. The chapter says that debate is not settled.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#3C5463" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>The Moderator’s Dilemma</div></div>
+      <div class="box-b">
+        <p>You manage content rules for a large platform. A widely shared post contains a claim that is false. Three options:</p>
+        <div class="opts"><div class="opt"><h5>Remove the post</h5>Protects the marketplace from “pollution,” but critics may call it censorship.</div><div class="opt"><h5>Label the post and link to facts</h5>Adds “more speech” without removing anything.</div><div class="opt"><h5>Leave it alone</h5>Lets users decide, but the false claim may spread.</div></div>
+        <p class="ask">Which option best fits the text’s view that the answer to “bad speech” is “more speech”? What is the strongest Counter-Argument?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Necessity of Friction</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Ultimately, the First Amendment safeguards the very diversity of thought that prevents the consolidation of absolute power. It is the "friction" in our system—the constant push and pull between the government and the governed—that keeps the republic alive. By protecting the right to be "unpopular," the Bill of Rights ensures that the majority cannot use the law to crush the minority. This protection is what allows the United States to be a nation of many voices rather than a nation of one.</p>
+        <p>The "strategic tension" between individual liberty and social order is never permanently resolved. Each generation of Americans must decide for themselves where the boundaries lie. But by keeping the marketplace of ideas open, the First Amendment ensures that we always have the tools to make those decisions peacefully and democratically. It is the guarantee that in the American system, power will always be subject to the scrutiny of the people.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>“Each generation of Americans must decide for themselves where the boundaries lie.” That is why the Court has changed its tests over time, as Figures 8.1 and 8.5 show.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The First Amendment stands as the ultimate guardian of American democracy, protecting the essential freedoms that allow a pluralistic society to function. We have seen how the religion clauses manage the delicate balance between faith and the state, ensuring that the government remains neutral while citizens remain free to follow their consciences. We have explored the generative power of free expression, distinguishing between the high protection given to political speech and the narrow limits placed on speech that causes immediate harm. We have also examined the democratic infrastructure of the press, assembly, and petition, which provide the institutional checks necessary to hold power accountable.</p>
+        <p>Throughout this chapter, we have analyzed the "strategic tension" between individual liberty and social order. This tension is a fundamental feature of our constitutional design. Whether it is a student wearing an armband to protest a war, a newspaper publishing classified documents to expose government lies, or a religious group seeking an exemption from a law, these conflicts force us to define our values. The "marketplace of ideas" is often loud, contentious, and uncomfortable, but it is the only environment where truth can be discovered and justice can be pursued.</p>
+        <p>As we move forward to the next chapter, we will shift our focus from these "negative rights"— what the government cannot do—to the realm of "positive rights" and protections. While the Bill of Rights protects our civil liberties from government overreach, the next phase of our study focuses on Civil Rights: the struggle to ensure that the government treats every individual equally and protects them from discrimination. Just as the First Amendment ensures we have the right to speak, civil rights ensure that everyone has an equal place at the table where that speaking occurs. The journey from the protection of liberty to the guarantee of equality is the next great chapter in the American story.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Next</span>Chapter 9 explains how the Bill of Rights came to limit state governments and examines the Fourth Amendment and privacy. Chapter 11 turns to civil rights and equal protection.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The final paragraph above previews civil rights. That topic returns in Chapter 11 after Chapters 9 and 10 cover incorporation, searches, and due process.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 8.9. Explain why a private platform’s content rules are not a First Amendment case but may still raise concerns about democratic infrastructure.</li><li>Explain what the text means by “the right to be wrong” and why it says this right makes the nation stronger.</li><li>Write a Counter-Argument to this claim: “The marketplace of ideas works only if the government removes false and offensive speech.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 8.4 ASSESSMENT</b>Complete the Section 8.4 Assessment in your <i>Chapter 8 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>How far may government go to protect order before it destroys the liberty it exists to protect? Read the First Amendment and three Supreme Court opinions from 1919 to 1969 and decide where each draws the line.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the First Amendment Sources</h3>
+        <p>The four documents below show how the Court’s answer changed. Document A is the text of the First Amendment, ratified in 1791. Document B comes from <i>Schenck v. United States</i> (1919), decided during World War I. Document C comes from <i>Brandenburg v. Ohio</i> (1969), which replaced the earlier test. Document D comes from <i>West Virginia State Board of Education v. Barnette</i> (1943), decided during World War II, in which the Court held that public schools could not force students to salute the flag.</p>
+        <p>As you read, notice what each document protects, what it allows government to limit, and what test it uses. Answer the Thinking Like a Citizen question after each document, then the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Majority opinion:</b> the written explanation of the Court’s decision, signed by the justices who form the majority. <span class="sp">Spanish: opinión mayoritaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791 to 1969</span>The span from the First Amendment’s ratification to the Court’s modern speech test.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FOUNDING DOCUMENT</small><b>The First Amendment (1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise thereof; or abridging the freedom of speech, or of the press; or the right of the people peaceably to assemble, and to petition the Government for a redress of grievances.”<cite>U.S. Constitution, Amendment I. Text from the National Archives transcription of the Bill of Rights.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which freedoms does the amendment name? Which word shows that the limit is placed on government rather than on individuals?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · SUPREME COURT OPINION</small><b>Justice Oliver Wendell Holmes, <i>Schenck v. United States</i> (1919)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The most stringent protection of free speech would not protect a man in falsely shouting fire in a theatre and causing a panic.”<br><br>“The question in every case is whether the words used are used in such circumstances and are of such a nature as to create a clear and present danger that they will bring about the substantive evils that Congress has a right to prevent.”<cite><i>Schenck v. United States</i>, 249 U.S. 47 (1919), unanimous. Text from Cornell Law School’s Legal Information Institute. Original spelling kept.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What test does Holmes state? According to the chapter, how was it later used against war protesters?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b><i>Brandenburg v. Ohio</i> (1969), per curiam</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“[T]he constitutional guarantees of free speech and free press do not permit a State to forbid or proscribe advocacy of the use of force or of law violation except where such advocacy is directed to inciting or producing imminent lawless action and is likely to incite or produce such action.”<cite><i>Brandenburg v. Ohio</i>, 395 U.S. 444 (1969). Text from Cornell Law School’s Legal Information Institute. The bracketed [T] is our edit.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What two things must be true before a state may punish advocacy of force or lawbreaking? How is this stricter than Document B?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b>Justice Robert H. Jackson, <i>West Virginia State Board of Education v. Barnette</i> (1943)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“If there is any fixed star in our constitutional constellation, it is that no official, high or petty, can prescribe what shall be orthodox in politics, nationalism, religion, or other matters of opinion or force citizens to confess by word or act their faith therein.”<cite><i>West Virginia State Board of Education v. Barnette</i>, 319 U.S. 624 (1943), decided 6 to 3. Text from Cornell Law School’s Legal Information Institute.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What kind of government power does Jackson say is forbidden? Which freedoms from Document A does this protect?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Use Document A and Section 8.1 to explain how the First Amendment restricts government rather than individuals.</li>
+        <li>Compare Documents B and C. Both involve speech that urged action. Explain how the Court’s test changed and why the change protects more speech.</li>
+        <li>Document D concerns a school’s power to require a salute. Which freedoms does it protect, and how does it connect to <i>Tinker v. Des Moines</i> in Section 8.2?</li>
+        <li>Which document would a supporter of order cite most often? Which would a supporter of liberty cite? Explain both choices.</li>
+        <li><b>Making a Claim</b> How far may government go to protect order before it destroys the liberty it exists to protect? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>8</b></div>
+    <h2>Chapter 8 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#B5C6D0" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#FBF1EE" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#FBF1EE" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How do the five freedoms of the First Amendment protect the “marketplace of ideas” and manage the strategic tension between individual liberty and social order?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Freedom of Religion</h5>The Establishment Clause keeps government neutral and the Free Exercise Clause protects the conscience of the believer. Courts balance them with tests such as the Lemon Test, and belief is absolute while conduct can be regulated.</div><div><h5>Freedom of Expression</h5>Political speech has the highest protection. Symbolic speech is protected, but speech that incites imminent lawless action, true threats, and obscenity receive little or none, and libel of public officials requires actual malice.</div><div><h5>Press, Assembly, and Petition</h5>These rights build democratic infrastructure. The press is a watchdog protected against prior restraint, assembly is subject to content-neutral time, place, and manner rules, and petition gives citizens a direct line to government.</div><div><h5>The Strategic Marketplace of Ideas</h5>The First Amendment manages conflict by moving it into debate. Digital platforms raise new tensions, because the First Amendment limits government but not private companies, and each generation must decide where the line between liberty and order lies.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#8E3446" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#5F7A8C" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 8 ASSESSMENT AND SIMULATION</b>Complete the Chapter 8 Assessment (vocabulary, comprehension, guided analysis, visual analysis, the Barnette source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 8 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.1.6, 12.2, 12.2.1, 12.3.3, 12.5.1): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>The Bill of Rights: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript">archives.gov/founding-docs/bill-of-rights-transcript</a></li><li><i>Schenck v. United States</i>, 249 U.S. 47 (1919); <i>Brandenburg v. Ohio</i>, 395 U.S. 444 (1969); <i>West Virginia State Board of Education v. Barnette</i>, 319 U.S. 624 (1943); <i>Tinker v. Des Moines</i>, 393 U.S. 503 (1969); <i>New York Times Co. v. United States</i>, 403 U.S. 713 (1971): Cornell Law School Legal Information Institute, <a href="https://www.law.cornell.edu/supremecourt/text/395/444">law.cornell.edu/supremecourt/text</a></li><li><i>Engel v. Vitale</i>, 370 U.S. 421 (1962); <i>Abington School District v. Schempp</i>, 374 U.S. 203 (1963); <i>Lemon v. Kurtzman</i>, 403 U.S. 602 (1971); <i>Wisconsin v. Yoder</i>, 406 U.S. 205 (1972); <i>Reynolds v. United States</i>, 98 U.S. 145 (1879); <i>New York Times Co. v. Sullivan</i>, 376 U.S. 254 (1964); <i>Texas v. Johnson</i>, 491 U.S. 397 (1989): Justia, <a href="https://supreme.justia.com/cases/federal/us/">supreme.justia.com</a></li><li><i>Kennedy v. Bremerton School District</i>, 597 U.S. 507 (2022), Cornell Law School Legal Information Institute: <a href="https://www.law.cornell.edu/supremecourt/text/21-418">law.cornell.edu/supremecourt/text/21-418</a></li><li>The Royal Parks, Speakers’ Corner: <a href="https://www.royalparks.org.uk/visit/parks/hyde-park/speakers-corner">royalparks.org.uk</a>; German Criminal Code (English translation), Section 130</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Jesse Collins (CC BY 3.0, Supreme Court Building); S. Clyde, National Archives (public domain, schoolhouse); Carol M. Highsmith, Library of Congress (public domain, Dallas City Hall); U.S. Department of Defense (public domain, the Pentagon). Public-domain documents and prints: the handwritten Bill of Rights (National Archives and Records Administration) and an engraving of the trial of John Peter Zenger. All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 3 · CIVIL LIBERTIES AND CIVIL RIGHTS | LESSON 5 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

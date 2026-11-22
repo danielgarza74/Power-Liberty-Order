@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 6: The Judiciary | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#357A6E; --unit-dk:#24443F; --unit-lt:#EFF4F2; --unit-mid:#A8C6BE;
+  --amber:#9C5B33; --amber-lt:#DDB08A; --amber-dk:#6B3A1B;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F7EDE3; --cream:#EFF4F2; --pale:#DDB08A;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(36,68,63,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,68,63,.80) 0%,rgba(36,68,63,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 6 · THE JUDICIARY</span>
+  <a href="#opener">Opener</a><a href="#s1">6.1 Judicial Review</a><a href="#s2">6.2 Court System</a><a href="#s3">6.3 Philosophy</a><a href="#s4">6.4 Independence</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supreme%20Court%20Following%20Facade%20Restoration%20%2810542206014%29.jpg?width=2000" alt="The west front of the Supreme Court building, seen from below against a blue sky: a carved pediment above a row of tall marble columns." style="object-position:50% 5%"></div>
+  <div class="opener-head">
+    <div class="chapnum">6</div>
+    <div>
+      <div class="unitline">Unit 2 · Interactions Among Branches of Government</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Judiciary</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>The least dangerous branch?</b> The west front of the Supreme Court building in Washington, D.C., photographed in 2013 during a restoration of the façade. The Court has no army and no treasury, yet it decides what the Constitution means. <span class="credit">Photo: USCapitol (Architect of the Capitol) / <a href="https://commons.wikimedia.org/wiki/File:Supreme_Court_Following_Facade_Restoration_(10542206014).jpg">Wikimedia Commons</a>, Public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 6.1</span><span class="sl-title">The Power of Judicial Review: Defining Authority</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 6.2</span><span class="sl-title">The Federal Court System: Hierarchy and Jurisdiction</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 6.3</span><span class="sl-title">Constitutional Interpretation and Judicial Philosophy</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 6.4</span><span class="sl-title">Judicial Independence and Institutional Constraints</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Who Decides What the Constitution Means?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the Supreme Court act as the final arbiter of the Constitution?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Analyze the historical origins and strategic establishment of judicial review in Marbury v. Madison.</li><li>Differentiate between the jurisdiction and functions of the dual court system, including the specific roles of district and appellate courts.</li><li>Evaluate the competing judicial philosophies of activism and restraint in the context of constitutional interpretation.</li><li>Assess the structural mechanisms that preserve judicial independence and the checks available to the legislative and executive branches.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Judicial Review</span><span>Precedent</span><span>Stare Decisis</span><span>Writ of Certiorari</span><span>Judicial Activism</span><span>Judicial Restraint</span><span>Amicus Curiae</span><span>Original Jurisdiction</span><span>Appellate Jurisdiction</span><span>Federal Question Cases</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 6 Key Concept</p>
+        <p><b>Judgment without force.</b> The courts have no army and no budget, so their power rests on reasons and on public belief that the reasons are fair. The Constitution protects judges from political pressure and also gives the other branches ways to check them. A court that is both independent and accountable can referee the system without ruling it.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Picture a referee at a Shafter High football game. The referee does not run plays, sell tickets, or coach a team. The referee only explains what the rules mean. Players on both sides must accept the call, even when they hate it, because the game falls apart if they do not. The referee cannot be fired by the team that just lost the call, but the league can still remove a referee who cheats. That is the judiciary in miniature: a branch that speaks only through judgment, protected so it can say unpopular things, and checked so it cannot run the game.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1788 to 1861 and answer one question: <a href="#case">who decides what the Constitution means?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.4</code> Students analyze the unique roles and responsibilities of the three branches of government as established by the U.S. Constitution.</li>
+            <li><code>12.4.5</code> Discuss Article III of the Constitution as it relates to judicial power, including the length of terms of judges and the jurisdiction of the Supreme Court. <i>(Sections 6.1–6.4, Case Study)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Sections 6.1, 6.4)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The Least Dangerous Branch</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The structural design of the federal government purposefully deprives the judiciary of both financial and military power. By possessing neither the "purse" nor the "sword," the courts must rely entirely on the perceived legitimacy of their legal judgments to influence national policy.</p>
+        <p>In the intricate architecture of the American government, the judiciary occupies a position that is both paradoxical and essential. Writing in The Federalist Papers (No. 78), Alexander Hamilton famously described the judiciary as the "least dangerous" branch of the proposed government. He reasoned that unlike the President, the courts commanded no armies and controlled no weapons; they held no "sword." Unlike the Congress, the courts controlled no treasury and levied no taxes; they held no "purse." The judiciary, Hamilton argued, possessed neither force nor will, but merely judgment. Yet, despite these structural limitations, the Supreme Court has evolved into the final arbiter of the Constitution, possessing the immense power to strike down laws passed by Congress, invalidate actions taken by the President, and reorder the fundamental rights of American society. This transformation from a "least dangerous" branch to a co-equal partner in governance is one of the most significant developments in the history of the republic.</p>
+        <p>The essential function of the judiciary is to serve as the specific interpreter of the law. In a dictatorship or an absolute monarchy, the law is simply the will of the ruler, changeable at a moment's notice to suit the needs of power. In a constitutional democracy, however, the law is a public contract—a set of binding rules that restricts both the government and the people. When disagreements arise regarding this contract—whether between two citizens, between a citizen and the government, or between different branches of government—there must be a neutral referee to resolve the conflict. Without such a referee, the system would devolve into a contest of raw power, where the strong simply dominate the weak. The Founders established the judiciary to serve as this stabilizing force, ensuring that the passions of the majority do not trample the fundamental rights of the minority or violate the terms of the constitutional contract.</p>
+        <p>This role requires the courts to navigate a permanent, structural tension between democratic will and constitutional boundaries. The legislative and executive branches are designed to be responsive to voters; they are political by nature, driven by elections, public opinion, polls, and the immediate demands of their constituents. The judiciary, conversely, is designed to be insulated from these pressures. Federal judges are appointed rather than elected, and they serve for life. This insulation allows them to make decisions that are legally correct but politically toxic. Whether ruling that a popular law violates free speech, or that a specific executive action exceeds presidential authority, the courts act as a brake on the immediate desires of the majority in favor of long-term constitutional principles. They are the guardians of the rules of the game, even when the spectators—and the players—are shouting for a different outcome.</p>
+        <p>However, the authority of the court is not automatic, nor is it unlimited. Because the Court lacks the power of enforcement—it cannot send the police to arrest a defiant governor, nor can it cut the funding of a defiant agency—it relies entirely on legitimacy. Legitimacy is the public’s belief that the court’s decisions are grounded in law rather than politics. If the public begins to view the Supreme Court as merely a "super-legislature" of unelected politicians in robes, the court’s power evaporates. Throughout American history, the judiciary has had to carefully balance its duty to interpret the Constitution with the need to maintain its standing in the eyes of the nation. From the early struggles of the Marshall Court to define its own power, to the modern battles over social issues, the story of the judiciary is the story of the struggle to maintain the rule of law in a dynamic, divided, and often turbulent democracy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Legitimacy</span> The public’s belief that a court’s decisions are based on law rather than politics. <span class="sp">Spanish: legitimidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No sword, no purse</span>Hamilton’s description in Federalist No. 78 of a branch that controls neither the army nor the money.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article III, Section 1 vests “the judicial Power of the United States” in “one supreme Court” and in lower courts that Congress creates.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>6.1</b></div>
+    <h2>The Power of Judicial Review: Defining Authority</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 6.1, you will</p>
+      <ul><li>Explain why judicial review is not written in the Constitution and how the Court claimed it in Marbury v. Madison</li><li>Describe the dilemma Chief Justice Marshall faced and the three questions he asked</li><li>Explain how McCulloch v. Maryland and the Supremacy Clause extended judicial review to the states</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-judicial-review">Judicial Review</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each case, the law it struck down, and the principle it set.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: case, what was struck down, principle set"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Case</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What was struck down</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Principle set</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Power of Judicial Review: Defining Authority</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The text of Article III of the Constitution is remarkably brief compared to the detailed powers granted to the legislative and executive branches. This brevity created a constitutional ambiguity regarding who possessed the final authority to interpret the legality of federal laws.</p>
+        <p>The United States Constitution is remarkably brief regarding the judicial branch. While Article I outlines the powers of Congress in exhaustive detail, and Article II clearly defines the role of the President as Commander-in-Chief, Article III is comparatively vague. It creates "one supreme Court" and gives Congress the authority to create lower courts, but it says very little about what the Court actually does. Crucially, the text of the Constitution does not explicitly grant the Supreme Court the power to strike down laws passed by Congress. This silence created a massive constitutional void in the early years of the republic. If Congress passed a law that violated the Constitution, and the President signed it, was that law valid? If the answer was yes, then the Constitution was not the supreme law of the land; it was merely a suggestion. If the answer was no, who had the specific authority to declare the law void?</p>
+        <p>The answer to this question was not written in the Philadelphia Convention of 1787. Instead, it was forged in the bitter political fires of the election of 1800. The power of <dfn id="t-judicial-review">Judicial Review</dfn>—the authority of the federal courts to declare laws or executive actions unconstitutional—was not a gift from the Founders, but a strategic victory seized by the Court itself under the leadership of Chief Justice John Marshall. To understand this power, one must understand the political crisis that birthed it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial review</span> The power of courts to declare laws or executive actions unconstitutional. <span class="sp">Spanish: revisión judicial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Article III</span> The part of the Constitution that creates the Supreme Court and the federal judicial power. <span class="sp">Spanish: Artículo III</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1803</span>Year of Marbury v. Madison, the case in which the Supreme Court first struck down a federal law.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article VI says the Constitution is “the supreme Law of the Land.” Judicial review is the claim that courts must enforce that rule.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Revolution of 1800 and the Midnight Appointments</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The peaceful transfer of power in 1800 was complicated by a lame-duck administration attempting to pack the judicial branch with partisan loyalists. This last-minute strategy aimed to preserve political influence within the unelected courts after losing control of the elected branches.</p>
+        <p>The election of 1800 was one of the most contentious in American history. It pitted the incumbent President, John Adams, and his Federalist Party against Thomas Jefferson and the Democratic- Republicans. The two sides viewed each other not just as political opponents, but as existential threats to the nation. The Federalists believed Jefferson was a dangerous radical who would bring the chaos of the French Revolution to American shores. When the votes were counted, Adams lost. For the first time in modern history, power was to be transferred peacefully from one political faction to another.</p>
+        <p>However, the transition was anything but smooth. In the "lame duck" period between the election in November and Jefferson’s inauguration in March, the Federalist Congress passed the Judiciary Act of 1801. This law created dozens of new federal judgeships and justice of the peace positions. Adams, determined to preserve Federalist influence in the only branch of government left open to them, rushed to fill these seats with loyal party members. These appointees became known as the "Midnight Judges" because Adams was said to be signing their commissions late into the night of his final day in office.</p>
+        <p>The Senate confirmed the appointments, and Adams signed the commissions. The final step was for the Secretary of State to affix the Great Seal of the United States and physically deliver the papers to the new judges. In the chaotic final hours of the administration, the Secretary of State— John Marshall, who had just been appointed Chief Justice of the Supreme Court but was serving out his term in the cabinet—failed to deliver all of them. When Thomas Jefferson took the oath of office the next day, he found several undelivered commissions sitting on a desk in the State Department. Jefferson, furious at Adams’s attempt to "pack" the courts, ordered his new Secretary of State, James Madison, not to deliver them. One of those undelivered commissions belonged to William Marbury, a Maryland businessman who had been appointed as a Justice of the Peace for the District of Columbia. Marbury, wanting the job he had been promised, sued.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Lame duck</span> An official or administration serving after losing an election, until the winner takes office. <span class="sp">Spanish: pato cojo (funcionario saliente)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Commission</span> The official document that appoints a person to an office. <span class="sp">Spanish: nombramiento oficial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 4, 1801</span>Day Thomas Jefferson was inaugurated. John Adams’s term had ended the day before.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 3 described the first peaceful transfer of power between parties. The fight over the courts began in the weeks before it.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.1</span>The Road to Marbury v. Madison, 1800–1803</p>
+      <p class="figsub">Three years of political conflict produced the Court’s most important decision.</p>
+      <table class="cmp"><thead><tr><th>Date</th><th>Event</th></tr></thead><tbody><tr><td>November–December 1800</td><td>Jefferson and the Democratic-Republicans defeat President John Adams and the Federalists.</td></tr><tr><td>February 13, 1801</td><td>The Federalist Congress passes the Judiciary Act of 1801, creating new federal judgeships.</td></tr><tr><td>February 27, 1801</td><td>Congress also creates justice of the peace positions for the District of Columbia.</td></tr><tr><td>March 3–4, 1801</td><td>Adams signs commissions in his last hours in office. Jefferson is inaugurated on March 4 and orders Madison not to deliver those left undelivered.</td></tr><tr><td>December 1801</td><td>William Marbury and others ask the Supreme Court to order Madison to deliver their commissions.</td></tr><tr><td>February 24, 1803</td><td>The Court decides Marbury v. Madison.</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Federal Judicial Center and Supreme Court case record for Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803), Legal Information Institute, Cornell Law School. Timeline compiled for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which event in the timeline created the “midnight” appointments the chapter describes?</li><li>Why did Marbury sue in the Supreme Court instead of waiting for a new commission?</li><li>About how long did it take from the election of 1800 to the decision in Marbury v. Madison?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Marshall Dilemma</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John%20Marshall%20by%20Henry%20Inman%2C%201832.jpg?width=1400" alt="A painted portrait of an older man in a dark coat and white neckcloth, seated and looking toward the viewer, with gray hair." loading="lazy" style="height:auto"><figcaption><span class="phlabel">John Marshall</span>Henry Inman painted this portrait of John Marshall, the fourth Chief Justice of the United States, in 1832. Marshall led the Court from 1801 to 1835.<span class="credit">Portrait: Henry Inman (painting, 1832) / <a href="https://commons.wikimedia.org/wiki/File:John_Marshall_by_Henry_Inman,_1832.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">Political conflicts often force the judiciary into situations where any legal ruling risks damaging the institution's authority. Navigating a dispute between a defiant executive branch and a wronged citizen requires strategic legal maneuvering to avoid exposing the court's lack of enforcement power.</p>
+        <p>Marbury took his case directly to the Supreme Court. He asked the Court to issue a writ of mandamus—a legal order commanding a government official to perform a mandatory duty. In this case, Marbury wanted the Court to order James Madison to hand over the commission. This lawsuit, Marbury v. Madison (1803), placed Chief Justice John Marshall in a catastrophic political dilemma.</p>
+        <p>Marshall knew that the new Jefferson administration was hostile to the Court. If Marshall ruled in favor of Marbury and ordered Madison to deliver the commission, Jefferson would almost certainly tell Madison to ignore the order. The Supreme Court had no army to enforce its ruling. If the President simply ignored the Chief Justice, the Court would be revealed as powerless and irrelevant, destroying its authority for generations. However, if Marshall ruled against Marbury, he would appear to be caving to political pressure, afraid to stand up to the President. This would also make the Court look weak and subservient.</p>
+        <p>Marshall was trapped between a rock and a hard place. A ruling for Marbury would provoke a constitutional crisis the Court would lose; a ruling against Marbury would surrender the independence of the judiciary. Marshall needed a third option, a way to escape the trap while asserting the power of his branch.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Writ of mandamus</span> A court order commanding a government official to perform a duty. <span class="sp">Spanish: mandamus (orden judicial a un funcionario)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No army</span>The Court could not enforce an order against the President’s own Secretary of State. If Madison refused, the Court would look powerless.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 78: the judiciary “must ultimately depend upon the aid of the executive arm even for the efficacy of its judgments.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Grand Strategic Ruling</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marbury%20vs%20Madison%20page1.jpg?width=1400" alt="The first page of an old legal document written by hand in dark ink." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Marbury v. Madison</span>An 1803 Supreme Court document in the case of Marbury v. Madison, preserved in the Court’s records.<span class="credit">Document: U.S. Supreme Court (document, 1803) / <a href="https://commons.wikimedia.org/wiki/File:Marbury_vs_Madison_page1.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">Judicial review is established not by direct confrontation, but by strategically limiting the court's own jurisdiction. By declaring a legislative act unconstitutional because it improperly expands judicial power, a court can assert its supremacy over constitutional interpretation while avoiding a direct political standoff.</p>
+        <p>Marshall’s opinion in Marbury v. Madison is considered the single most important decision in American constitutional law because of how he navigated this trap. Marshall broke the decision into three parts. First, he asked: Did Marbury have a right to the commission? Marshall answered yes. Once the President signed it and the Seal was affixed, the appointment was complete. Second, he asked: Did the laws of the country afford Marbury a remedy? Again, Marshall answered yes. To have a right without a remedy is a logical absurdity in law.</p>
+        <p>It was the third question where Marshall executed his legal maneuver. He asked: Was the Supreme Court the proper place for Marbury to seek this remedy? Marbury had come to the Supreme Court because a section of the Judiciary Act of 1789 explicitly gave the Court the power to issue writs of mandamus in cases like this. Marshall, however, looked at Article III of the Constitution. Article III defined the "original jurisdiction" of the Supreme Court—the types of cases it could hear first, without an appeal. The Constitution’s list was very short and specific, involving ambassadors and states. It did not mention writs of mandamus or administrative disputes.</p>
+        <p>Marshall concluded that when Congress passed the Judiciary Act of 1789, it had attempted to expand the Supreme Court’s original jurisdiction beyond what the Constitution allowed. Marshall argued that Congress could not simply change the Constitution by passing a regular law. If the Constitution is the supreme law, then any legislative act that conflicts with it must be void. Therefore, the section of the Judiciary Act that gave Marbury the right to sue in the Supreme Court was unconstitutional. Marshall dismissed the case. Marbury never got his job, and Jefferson technically "won" the battle. But by striking down a federal law, Marshall established the power of Judicial Review. He famously wrote, "It is emphatically the province and duty of the judicial department to say what the law is."</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Original jurisdiction</span> The authority of a court to hear a case for the first time. Article III lists the cases the Supreme Court may hear first. <span class="sp">Spanish: jurisdicción original</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1789</span>Year of the Judiciary Act that Marshall held went beyond what Article III allows.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Marshall in Marbury v. Madison: “It is emphatically the province and duty of the judicial department to say what the law is.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.2</span>Marshall’s Three Questions</p>
+      <p class="figsub">How the Court escaped the trap in Marbury v. Madison.</p>
+      <table class="cmp"><thead><tr><th>Marshall’s question</th><th>His answer</th><th>Why it mattered</th></tr></thead><tbody><tr><td>1. Does Marbury have a right to the commission?</td><td>Yes. The appointment was complete once the President signed it and the Seal was affixed.</td><td>Marshall criticized the Jefferson administration without ordering it to act.</td></tr><tr><td>2. Do the laws give Marbury a remedy?</td><td>Yes. A right without a remedy is a logical absurdity.</td><td>Marbury’s claim was legally correct.</td></tr><tr><td>3. Can the Supreme Court give that remedy?</td><td>No. The part of the Judiciary Act of 1789 that gave the Court this power expanded its original jurisdiction beyond Article III, so that part of the law was void.</td><td>Marshall gave up a small power and claimed a much larger one: the power to strike down laws.</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803), Legal Information Institute, Cornell Law School. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which of the three answers helped Marbury? Which helped Jefferson?</li><li>Why does the chapter say the Court “gave up a small power” to gain a larger one?</li><li>How did the third answer avoid a direct fight between the Court and the President?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Expanding Authority: The Supremacy Clause</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Supremacy Clause ensures that state governments cannot utilize their legislative powers to undermine or destroy federal operations. Asserting federal supremacy prevents states from effectively vetoing national laws through taxation or local regulation.</p>
+        <p>Having established the power to strike down federal laws, the Court soon faced challenges regarding the relationship between the federal government and the states. The principle of judicial review needed to extend beyond Congress to include state legislatures if the "Supremacy Clause" of Article VI was to have any meaning. The test of this power came in the case of McCulloch v. Maryland (1819).</p>
+        <p>The state of Maryland, hostile to the newly created Second Bank of the United States, passed a law imposing a heavy tax on any bank not chartered by the state legislature. The clear intent was to tax the federal bank out of existence. James McCulloch, the cashier of the Baltimore branch of the Bank of the United States, refused to pay the tax. The case reached the Supreme Court, presenting two questions: Could Congress create a bank? And could a state tax a federal entity?</p>
+        <p>Marshall again wrote the opinion. He first upheld the power of Congress to create the bank under the "Necessary and Proper Clause," engaging in a broad interpretation of implied powers. More importantly for the judiciary, he struck down the Maryland tax law. Marshall declared that "the power to tax involves the power to destroy." He reasoned that if a state could tax a federal agency, it could effectively veto federal laws. This violated the Supremacy Clause, which states that the Constitution and federal laws are supreme over state laws. By striking down the Maryland law, the Court asserted its authority to referee disputes between the national government and the states, firmly establishing the federal judiciary as the ultimate overseer of the entire constitutional system.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Supremacy Clause</span> The part of Article VI that makes the Constitution and federal laws supreme over state laws. <span class="sp">Spanish: cláusula de supremacía</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Necessary and Proper Clause</span> The clause that lets Congress make laws needed to carry out its listed powers. <span class="sp">Spanish: cláusula de lo necesario y apropiado</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 6, 1819</span>Date the Court decided McCulloch v. Maryland, striking down Maryland’s tax on the national bank.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article VI: the Constitution and federal laws “shall be the supreme Law of the Land; and the Judges in every State shall be bound thereby.”</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/United%20States%20Bank%20Philadelphia%201875.png?width=1400" alt="An old engraving of a large marble building with columns and steps on a city street, with small figures in front." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Bank of the United States</span>The Bank of the United States in Philadelphia, the building from the 1800s that stood at the center of the dispute in McCulloch v. Maryland. This print appeared in a book in 1875.<span class="credit">Image: S. G. Goodrich (print, 1875) / <a href="https://commons.wikimedia.org/wiki/File:United_States_Bank_Philadelphia_1875.png">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.3</span>Judicial Review Reaches the States</p>
+      <p class="figsub">Two Marshall Court decisions compared.</p>
+      <table class="cmp"><thead><tr><th></th><th>Marbury v. Madison (1803)</th><th>McCulloch v. Maryland (1819)</th></tr></thead><tbody><tr><td>Who lost</td><td>Congress, whose Judiciary Act of 1789 gave the Court too much power</td><td>Maryland, whose tax on the national bank threatened a federal agency</td></tr><tr><td>Level of government checked</td><td>The national legislature</td><td>A state government</td></tr><tr><td>Principle</td><td>The Constitution is higher law, so courts must void laws that conflict with it</td><td>The Supremacy Clause makes federal law supreme over state law</td></tr><tr><td>Famous line</td><td>“It is emphatically the province and duty of the judicial department to say what the law is.”</td><td>“The power to tax involves the power to destroy.”</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Marbury v. Madison (1803) and McCulloch v. Maryland, 17 U.S. (4 Wheat.) 316 (1819), Legal Information Institute, Cornell Law School. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Who is checked in each case, Congress or a state?</li><li>How are the principles different? How are they alike?</li><li>Why would the chapter call the Court the “referee” between the national government and the states after McCulloch?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Logic of Constitutional Guardianship</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">In a constitutional republic, the principle of majority rule is restricted by fundamental legal boundaries. The judiciary acts as a mechanism to elevate the enduring principles of the constitutional framework above the immediate, temporary desires of electoral majorities.</p>
+        <p>The establishment of judicial review transformed the nature of American politics. It meant that the "will of the majority" had limits. In a pure democracy, 51 percent of the voters can do whatever they wish to the other 49 percent. In a constitutional republic equipped with judicial review, the majority can only act within the boundaries of the higher law. The genius of Marshall’s logic was to tether the Court’s power to the people’s own document. He argued that when the Court strikes down a law, it is not elevating its own will above the Congress; rather, it is elevating the "permanent will" of the people (the Constitution) above the "temporary whims" of their representatives.</p>
+        <p>This power creates a unique feature of American governance: the legalization of political conflict. Major debates over slavery, economic regulation, civil rights, and personal privacy eventually find their way to the Supreme Court. While this puts immense pressure on the nine justices, it also serves as a stabilizing mechanism. It forces political combatants to frame their arguments in terms of rights, precedents, and text, rather than merely force and numbers. Judicial review ensures that the Constitution remains a living, enforceable reality rather than a dusty historical artifact. It creates a government where, in theory, the law is king, rather than the king being the law.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Constitutional republic</span> A government in which majority rule operates inside limits set by a written constitution. <span class="sp">Spanish: república constitucional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">51 and 49</span>In a pure democracy, the chapter says 51 percent could do anything to the other 49. Judicial review limits that.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Judicial review protects the “higher law” of the Constitution against “temporary whims” of electoral majorities, as the chapter puts it.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>The Referee and the Rulebook</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A student council passes a rule that contradicts the school’s founding charter. A student sues, and a neutral judge rules that the council’s rule is void because the charter is the higher law. The judge did not make a new rule. The judge only said which rule wins. That is the logic of judicial review.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Defy the Court?</div></div>
+      <div class="box-b">
+        <p>You are the President, and the Supreme Court has just ruled against a policy you strongly believe in. The Court cannot enforce its ruling without your cooperation.</p>
+        <div class="opts"><div class="opt"><h5>Obey the ruling</h5>You accept the Court’s authority and keep faith with the rule of law, but you lose the policy.</div><div class="opt"><h5>Ignore the ruling</h5>You keep the policy for now, but you weaken the Court and invite other officials to ignore the law.</div></div>
+        <p class="ask">Which would you choose, and what does the chapter say about a Court that depends on legitimacy?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Who Reviews the Law?</div></div>
+      <div class="box-b">
+<p style="margin:0">Not every democracy lets judges strike down laws. In the United Kingdom, Parliament is supreme, and courts generally cannot overturn an Act of Parliament. In Germany and many other countries, a special constitutional court reviews laws. In the United States, ordinary federal courts all share the power, with the Supreme Court having the last word. What are the strengths and risks of giving judges, who are not elected, the power to void a law that elected lawmakers passed?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MAKING JUDICIAL REVIEW</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 6.2. Explain in your own words how Marshall used the third question to establish judicial review without ordering Jefferson’s administration to act.</li><li>Use Figure 6.3. Explain how McCulloch v. Maryland extended judicial review from Congress to the states.</li><li>Write a Counter-Argument to this claim: “Judicial review gives unelected judges too much power.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 6.1 ASSESSMENT</b>Complete the Section 6.1 Assessment in your <i>Chapter 6 Assignment</i> packet before you move on to Section 6.2.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>6.2</b></div>
+    <h2>The Federal Court System: Hierarchy and Jurisdiction</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 6.2, you will</p>
+      <ul><li>Describe the three levels of the federal court system and what each level does</li><li>Distinguish original jurisdiction from appellate jurisdiction</li><li>Explain how a case becomes a federal case and why only a tiny share of petitions reach the Supreme Court</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-original-jurisdiction">Original Jurisdiction</a></li><li><a href="#t-appellate-jurisdiction">Appellate Jurisdiction</a></li><li><a href="#t-writ-of-certiorari">Writ of Certiorari</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each court level, what it does, and one limit on it.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: court level, what it does, a limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Court level</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it does</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">A limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Federal Court System: Hierarchy and Jurisdiction</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American legal framework operates as a dual system, dividing authority between massive state-level legal infrastructures and a specialized, narrower federal hierarchy. This separation ensures that localized disputes are handled locally, while national and constitutional issues are escalated to federal authorities.</p>
+        <p>The American judiciary is not a monolith; it is a complex, multi-layered system designed to reflect the federal structure of the nation. At its core, the United States operates under a Dual Court System. This means there are two distinct, parallel judicial systems in operation at all times: the federal court system and the court systems of the fifty individual states. While they often interact, they serve different purposes and derive their power from different sources. The state courts, created by state constitutions and laws, handle the vast majority of legal disputes—over 90 percent —ranging from traffic violations and divorce proceedings to most criminal cases and contract disputes. The federal courts, established by Article III of the Constitution and acts of Congress, are reserved for cases involving national laws, interstate conflicts, and constitutional questions.</p>
+        <p>The federal system itself is organized as a three-tiered hierarchy. This structure is not accidental; it is designed to filter cases efficiently, ensuring that minor disputes are resolved locally while major questions of national law rise to the top. The hierarchy consists of the U.S. District Courts at the bottom, the U.S. Courts of Appeals in the middle, and the U.S. Supreme Court at the apex. Understanding the function of each tier requires understanding the concept of Jurisdiction—the legal authority of a court to hear and decide a case.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Dual court system</span> The American system of separate federal courts and state courts, each with its own jurisdiction. <span class="sp">Spanish: sistema judicial dual</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 levels</span>District courts, courts of appeals, and the Supreme Court make up the federal system.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article III lets Congress “ordain and establish” lower federal courts. Congress, not the Constitution, created the district courts and the courts of appeals.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.4</span>The Three Tiers of the Federal Courts</p>
+      <p class="figsub">Many cases begin at the bottom. Very few reach the top.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Three-tier pyramid of the federal courts: 94 district courts at the base, 13 courts of appeals in the middle, and 1 Supreme Court of 9 justices at the top."><polygon points="385,14 475,14 560,104 300,104" fill="#24443F"/><polygon points="290,114 570,114 700,204 160,204" fill="#357A6E"/><polygon points="150,214 710,214 830,314 30,314" fill="#EFF4F2" stroke="#357A6E" stroke-width="3"/><text x="430" y="72" font-family="Inter, Arial, sans-serif" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">SUPREME COURT</text><text x="430" y="92" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">1 court · 9 justices</text><text x="430" y="155" font-family="Inter, Arial, sans-serif" font-size="17" fill="#fff" text-anchor="middle" font-weight="700">COURTS OF APPEALS</text><text x="430" y="178" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="400">13 courts · panels of judges review legal errors</text><text x="430" y="262" font-family="Inter, Arial, sans-serif" font-size="17" fill="#24443F" text-anchor="middle" font-weight="700">U.S. DISTRICT COURTS</text><text x="430" y="285" font-family="Inter, Arial, sans-serif" font-size="13" fill="#24443F" text-anchor="middle" font-weight="400">94 courts · trials with judges, juries, and witnesses</text></svg>
+      <p class="source">Sources: United States Courts, Federal Judiciary (uscourts.gov), Court Role and Structure; Chapter text. Diagram created for this textbook. The 13 courts of appeals are 12 regional circuits plus the Federal Circuit.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which level has the most courts? Which has the fewest?</li><li>Why would the courts of appeals not need juries or witnesses?</li><li>Why might a nation want one final court at the top of the system?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Foundation: U.S. District Courts</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Federal%20courthouse%20in%20South%20Bend.jpg?width=1400" alt="A modern-looking stone federal courthouse with tall narrow windows, a flag on the front lawn, and a few trees." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A district court building</span>This federal courthouse in South Bend, Indiana, built in 1933, is one place where a U.S. District Court holds trials. Photographed in 2012.<span class="credit">Photo: Nyttend / <a href="https://commons.wikimedia.org/wiki/File:Federal_courthouse_in_South_Bend.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">Fact-finding is the foundational step of the legal process. At the trial court level, evidence is evaluated, witnesses are heard, and juries determine the factual reality of a dispute before constitutional or federal law is applied to the verdict.</p>
+        <p>The first level of the federal judiciary is the U.S. District Court. These are the trial courts of the federal system. There are 94 district courts spread across the United States and its territories, with at least one in every state. Larger states like California, Texas, and New York have multiple districts (e.g., the Southern District of New York or the Central District of California) to handle the heavy caseload.</p>
+        <p>District courts possess <dfn id="t-original-jurisdiction">Original Jurisdiction</dfn> for most federal cases. This means they are the first courts to hear a case. This is the only level of the federal system where trials occur. In a district court, witnesses testify, evidence is presented, and a jury is impaneled to determine the facts of the case. A single judge presides over the proceedings to ensure that the law is followed and the rules of evidence are respected.</p>
+        <p>The primary function of the district court is fact-finding. Did the defendant rob the bank? Did the company pollute the river in violation of federal law? Did the employer discriminate against the employee based on race? The judge or jury answers these factual questions and applies the relevant law to reach a verdict. Most federal cases end here. The losing party may accept the decision, or they may choose to appeal to the next level.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Trial court</span> A court that hears evidence and decides the facts of a case for the first time. <span class="sp">Spanish: tribunal de primera instancia</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Jury</span> A group of citizens who decide the facts in a trial. <span class="sp">Spanish: jurado</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">94</span>Federal district courts across the country, according to the federal judiciary.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Sixth and Seventh Amendments protect the right to a jury trial in many federal criminal and civil cases.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Filter: U.S. Courts of Appeals</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Appellate review serves as a procedural filter, focusing strictly on the misapplication of law rather than the re-evaluation of evidence. By analyzing written records and legal briefs, appellate courts correct procedural errors and establish uniform legal interpretations for their geographic circuits.</p>
+        <p>Sitting directly above the district courts are the U.S. Courts of Appeals, often referred to as Circuit Courts. The nation is divided geographically into twelve regional circuits, plus a specialized Court of Appeals for the Federal Circuit which handles specific nationwide issues like patents and international trade. For example, the Ninth Circuit covers a vast area of the American West, including California, Oregon, Washington, and Arizona.</p>
+        <p>These courts possess <dfn id="t-appellate-jurisdiction">Appellate Jurisdiction</dfn>. This means they have the authority to review decisions made by lower courts. Crucially, appellate courts do not hold new trials. There are no witness stands, no juries, and no dramatic introduction of new evidence. Instead, a panel of three judges reviews the written record of the trial court to determine if a legal error occurred. Lawyers for both sides submit legal briefs—written arguments explaining why the lower court was right or wrong—and may present oral arguments before the judges.</p>
+        <p>The focus of the appellate court is strictly on questions of law, not questions of fact. The court does not ask "Is the defendant guilty?" but rather "Did the district judge allow illegal evidence to be used?" or "Did the judge misinterpret the federal statute?" If the appellate court finds a significant legal error, it can reverse the lower court’s decision or send the case back for a new trial. This level serves as a vital filter, correcting mistakes and ensuring that federal law is applied consistently within each region. A decision by a Circuit Court is binding on all district courts within that circuit.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Appeal</span> A request that a higher court review a lower court’s decision for legal error. <span class="sp">Spanish: apelación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Precedent</span> A past decision that guides later decisions in similar cases. <span class="sp">Spanish: precedente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No new trial</span>Appeals courts review the record of the trial. They do not call witnesses or hear new evidence.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>A circuit court’s decision sets a precedent for every district court in that circuit.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.5</span>Original and Appellate Jurisdiction</p>
+      <p class="figsub">Two different jobs for two kinds of courts.</p>
+      <table class="cmp"><thead><tr><th></th><th>Original jurisdiction</th><th>Appellate jurisdiction</th></tr></thead><tbody><tr><td>What the court does</td><td>Hears a case for the first time and decides the facts</td><td>Reviews a lower court’s decision for mistakes of law</td></tr><tr><td>Who takes part</td><td>Judge, jury, witnesses, lawyers</td><td>Judges and lawyers. No jury and no witnesses.</td></tr><tr><td>Main federal courts</td><td>U.S. district courts</td><td>U.S. courts of appeals and, mostly, the Supreme Court</td></tr><tr><td>Possible result</td><td>A verdict, a judgment, or a sentence</td><td>Affirm the decision, reverse it, or send it back for a new proceeding</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; United States Courts, Federal Judiciary (uscourts.gov), Court Role and Structure. Table created for this textbook. The Supreme Court also has a small original jurisdiction under Article III.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which kind of jurisdiction involves witnesses and juries?</li><li>Why does an appeals court reviewing for “mistakes of law” need no new witnesses?</li><li>Using Figure 6.4, which level of court begins most federal cases?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Apex: The Supreme Court</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Dimly%20Lit%20Old%20Supreme%20Court%20Chamber%20I.jpg?width=1400" alt="Wooden desks with turquoise tops and glowing lamps inside the dim Old Supreme Court Chamber." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Old Supreme Court Chamber</span>Desks and lamps in the Old Supreme Court Chamber in the U.S. Capitol, where the Court heard cases from 1810 to 1860. Photographed in 2018.<span class="credit">Photo: Michael Savidge / <a href="https://commons.wikimedia.org/wiki/File:The_Dimly_Lit_Old_Supreme_Court_Chamber_I.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></figcaption></figure>
+        <p class="lead">The apex of the federal judiciary operates with nearly complete discretionary control over its docket. By utilizing internal voting mechanisms, the highest court selectively targets cases that resolve regional legal inconsistencies or address matters of profound national significance.</p>
+        <p>At the top of the pyramid stands the United States Supreme Court. It is the final court of appeals and the ultimate authority on the interpretation of the Constitution and federal law. While the Supreme Court has Original Jurisdiction in a very small number of cases—specifically those involving ambassadors, public ministers, or disputes where a state is a party (e.g., New Jersey v. New York)—its primary workload consists of cases heard under its appellate jurisdiction.</p>
+        <p>The Supreme Court is unique because it has almost total control over its own agenda. Unlike district courts, which must hear cases filed within their jurisdiction, the Supreme Court chooses which cases it wants to decide. This process begins with a petition for a <dfn id="t-writ-of-certiorari">Writ of Certiorari</dfn>, a formal request asking the Court to order up the records from a lower court for review. The Court receives between 7,000 and 8,000 such petitions every year but accepts fewer than 80 for full argument and decision.</p>
+        <p>The selection process is governed by an unwritten rule known as the "Rule of Four." At least four of the nine justices must vote to grant certiorari for a case to be heard. The justices do not simply look for cases where they think the lower court was wrong. They look for cases with national significance or cases that resolve a "circuit split." A circuit split occurs when different Courts of Appeals have interpreted the same law in different ways. For instance, if the Fifth Circuit rules that a certain police tactic is constitutional, but the Ninth Circuit rules that the exact same tactic is unconstitutional, the Supreme Court must step in to establish a uniform rule for the entire nation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Writ of certiorari</span> An order from the Supreme Court agreeing to review a lower court’s decision. Four of the nine justices must vote to hear a case (the Rule of Four). <span class="sp">Spanish: auto de certiorari</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">About 1 to 2 percent</span>Share of petitions the Court agrees to hear (Figure 6.6).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Court mostly chooses cases that raise important or unsettled questions about the Constitution or federal law.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.6</span>The Supreme Court’s Funnel, October Term 2023</p>
+      <p class="figsub">Out of thousands of petitions, only a few dozen cases receive a full hearing.</p>
+      <svg viewBox="0 0 860 150" role="img" aria-label="Bar chart of the Supreme Court&#x27;s October Term 2023 caseload: 4,223 cases filed and 69 argued, about 1.6 percent."><line x1="150.0" y1="10" x2="150.0" y2="106" stroke="#e6e8ec"/><text x="150.0" y="124" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="287.8" y1="10" x2="287.8" y2="106" stroke="#e6e8ec"/><text x="287.8" y="124" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">1,000</text><line x1="425.6" y1="10" x2="425.6" y2="106" stroke="#e6e8ec"/><text x="425.6" y="124" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">2,000</text><line x1="563.3" y1="10" x2="563.3" y2="106" stroke="#e6e8ec"/><text x="563.3" y="124" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">3,000</text><line x1="701.1" y1="10" x2="701.1" y2="106" stroke="#e6e8ec"/><text x="701.1" y="124" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">4,000</text><text x="140" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Cases filed</text><g><title>Cases filed: 4,223</title><path d="M150 16 h577.8 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-577.8z" fill="#357A6E"/></g><text x="739.8" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">4,223</text><text x="140" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Cases argued</text><g><title>Cases argued: 69</title><path d="M150 64 h5.5 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-5.5z" fill="#9C5B33"/></g><text x="167.5" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">69</text><line x1="150" y1="10" x2="150" y2="106" stroke="#6f7787" stroke-width="1.5"/><text x="460.0" y="146" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Cases</text></svg>
+      <p class="source">Source: Chief Justice John G. Roberts, Jr., 2024 Year-End Report on the Federal Judiciary, Supreme Court of the United States. Percentage calculated for this textbook: 69 divided by 4,223 is about 1.6 percent. Earlier Court publications give larger totals for petitions, so the exact share varies by year.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Measure</th><th>Number</th></tr></thead><tbody><tr><td>Cases filed</td><td>4,223</td></tr><tr><td>Cases argued</td><td>69</td></tr><tr><td>Share argued</td><td>About 1.6%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About what percent of filed cases did the Court argue? Show your calculation.</li><li>Why does the writ of certiorari make the Supreme Court a “filter” rather than a court that hears every appeal?</li><li>What happens to a case if the Court declines to hear it? (Hint: think about the courts of appeals.)</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Pathways to Federal Court: Diversity and Federal Questions</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Petition%20for%20a%20Writ%20of%20Certiorari%20from%20Clarence%20Gideon%20to%20the%20Supreme%20Court%20of%20the%20United%20States%2C%2006-05-1962%20%28page%203%20of%205%29%20%284127742041%29.jpg?width=1400" alt="A page of a handwritten petition on lined paper, written in pencil in neat cursive." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A request to be heard</span>A page from a handwritten petition for a writ of certiorari that Clarence Gideon, a prisoner in Florida, sent to the Supreme Court. It is preserved in the Court’s records from 1962.<span class="credit">Document: U.S. National Archives and Records Administration / <a href="https://commons.wikimedia.org/wiki/File:Petition_for_a_Writ_of_Certiorari_from_Clarence_Gideon_to_the_Supreme_Court_of_the_United_States,_06-05-1962_(page_3_of_5)_(4127742041).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">Federal jurisdiction is strictly limited to cases involving constitutional interpretations, federal statutes, or disputes designed to prevent regional bias. Providing a neutral federal forum for interstate disputes facilitates economic fairness and prevents local courts from unfairly favoring their own residents.</p>
+        <p>Not every legal dispute can enter the federal system. The Constitution limits federal judicial power to specific types of cases. The two most common pathways are <dfn id="t-federal-question-cases">Federal Question Cases</dfn> and Diversity of Citizenship cases.</p>
+        <p>A Federal Question exists when a case involves the U.S. Constitution, a federal law, or a treaty. For example, if a student is suspended from a public school for wearing a political armband, they can sue in federal court arguing that their First Amendment rights were violated. This is a federal question because it turns on the interpretation of the Constitution. However, if a student is suspended for fighting, which violates school policy but usually not the Constitution, that matter stays in state court.</p>
+        <p>Diversity of Citizenship jurisdiction allows federal courts to hear civil cases where the parties are citizens of different states and the amount in controversy exceeds $75,000. This provision was included by the Founders to prevent bias. If a citizen of New York sues a citizen of Georgia in a Georgia state court, there is a fear that the local judge and jury might favor their own resident. By allowing the case to be moved to federal court, the system provides a neutral forum for resolving interstate disputes, facilitating commerce and fairness across state lines.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Diversity jurisdiction</span> Federal power to hear cases between citizens of different states when the amount in dispute is large enough. <span class="sp">Spanish: jurisdicción por diversidad</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federal question</span> A case that involves the U.S. Constitution, federal laws, or treaties. <span class="sp">Spanish: cuestión federal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Diversity</span>The Framers wanted a neutral federal court so that an out-of-state party would not have to rely on a local court.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article III extends the judicial power to cases “arising under this Constitution, the Laws of the United States, and Treaties.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Standardization of Justice</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">A hierarchical judicial structure ensures the standardization of justice across a massive geographic republic. As final interpretations of law cascade downward from the highest appellate authority, they bind all local and state jurisdictions, preventing the fracturing of constitutional rights based on geography.</p>
+        <p>The hierarchical structure of the federal judiciary serves a critical function in a large, diverse republic: the standardization of justice. Without a Supreme Court with appellate authority over the state and lower federal courts, the meaning of the Constitution could vary wildly from place to place. Freedom of speech could mean one thing in Texas and something entirely different in Massachusetts. A federal environmental regulation could be enforced strictly in Oregon but ignored in Louisiana.</p>
+        <p>By filtering cases up through the pyramid, the system ensures that while local communities handle local problems, the fundamental rights of citizenship and the meaning of national laws remain consistent. The Supreme Court is not a court of error correction for every litigant who feels wronged; it is a court of constitutional clarification. Its rulings ripple down the hierarchy, binding every lower court and every state court, weaving a single legal fabric for the nation. This structure balances the need for local judicial administration with the necessity of a unified national law.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">50 + 1</span>Fifty state court systems and one federal system share the work of American justice.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Because the Supreme Court has the last word on federal law, an American in any state is protected by the same federal Constitution.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>A Case Takes the Stairs</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A student is convicted in a federal district court of a crime. A jury hears witnesses and decides the facts (original jurisdiction). The student appeals, arguing the judge gave the jury a wrong instruction about the law. A three-judge panel reviews the record and rules (appellate jurisdiction). The student then asks the Supreme Court to hear the case. If four justices agree, the Court issues a writ of certiorari. If not, the court of appeals ruling stands.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Take It to the Top?</div></div>
+      <div class="box-b">
+        <p>You have lost an appeal in a court of appeals, and you believe the court misread the Constitution. The Supreme Court takes only about 1 to 2 percent of petitions.</p>
+        <div class="opts"><div class="opt"><h5>File a petition</h5>You ask the Court for a writ of certiorari, knowing the odds are against you.</div><div class="opt"><h5>Accept the ruling</h5>You accept the court of appeals decision, which stays in force in your circuit.</div></div>
+        <p class="ask">Which would you choose? What kinds of cases would be more likely to persuade four justices to hear them?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>One System or Two?</div></div>
+      <div class="box-b">
+<p style="margin:0">The United States has a dual court system: one federal and fifty state systems. Many countries, such as France and Japan, have a single national court system. Others, such as Germany, divide courts by subject. What are the advantages of having each state keep its own courts? What risk comes from having fifty different court systems interpret the law?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE COURT SYSTEM</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 6.4. Explain the job of each of the three levels in your own words.</li><li>Use Figure 6.6. Explain what the chart shows about how the Supreme Court controls its own docket.</li><li>Write a Counter-Argument to this claim: “The Supreme Court should hear every appeal so that every defendant gets a final hearing.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 6.2 ASSESSMENT</b>Complete the Section 6.2 Assessment in your <i>Chapter 6 Assignment</i> packet before you move on to Section 6.3.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>6.3</b></div>
+    <h2>Constitutional Interpretation and Judicial Philosophy</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 6.3, you will</p>
+      <ul><li>Explain how precedent and stare decisis create stability in the law</li><li>Compare originalism with the Living Constitution approach</li><li>Compare judicial activism with judicial restraint and explain the Dialogue of Law</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-precedent">Precedent</a></li><li><a href="#t-stare-decisis">Stare Decisis</a></li><li><a href="#t-judicial-activism">Judicial Activism</a></li><li><a href="#t-judicial-restraint">Judicial Restraint</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each philosophy, its main idea, and a strength and a weakness.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: philosophy, main idea, strength and weakness"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Philosophy</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Main idea</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Strength / weakness</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Constitutional Interpretation and Judicial Philosophy</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The application of concise, centuries-old constitutional text to modern technological and social realities requires deep judicial interpretation. This ongoing necessity forces the legal system to constantly reconcile historical language with unprecedented modern conditions.</p>
+        <p>The Constitution of the United States is a remarkably concise document. It contains fewer than 5,000 words, yet it governs a nation of over 330 million people in a world that the Founders could barely imagine. It prohibits "unreasonable searches and seizures," but it does not define what "unreasonable" means in the age of thermal imaging, GPS tracking, and digital data mining. It guarantees "due process of law," but it does not list every procedural step that phrase requires. Because the text is often broad and the world is constantly changing, the judiciary must interpret the document. This necessity has given rise to deep ideological debates regarding how judges should read the Constitution. These debates are not merely academic; they determine who has the right to marry, how elections are conducted, and the limits of government power in times of crisis.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Constitutional interpretation</span> The process judges use to decide what the words of the Constitution mean in a particular case. <span class="sp">Spanish: interpretación constitucional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Unamended</span>The original, unamended Constitution is about 4,500 words. Its brevity leaves wide room for interpretation.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Marshall in McCulloch: the Constitution must be one “intended to endure for ages to come.” That idea shapes the debate in this section.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Anchor of Stability: Precedent and Stare Decisis</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The adherence to established legal precedent provides society with necessary predictability and fairness. However, the stability of the law must occasionally yield when historical precedents are recognized as fundamentally flawed, unworkable, or rooted in deep societal injustice.</p>
+        <p>The bedrock of the American legal system is the principle of <dfn id="t-stare-decisis">Stare Decisis</dfn>, a Latin phrase meaning "to stand by things decided." This principle dictates that courts should follow Precedent —authoritative rules established in prior cases—when ruling on similar issues. Precedent provides the legal system with stability, predictability, and fairness. A citizen needs to know that the law today is the same as it was yesterday. If a court ruled last year that a certain type of business contract was valid, a business owner needs the confidence to sign that contract today without fear that a new judge will suddenly declare it illegal. Without stare decisis, the law would be fluid and chaotic, changing with the whims of every new judicial appointment.</p>
+        <p>However, <dfn id="t-precedent">precedent</dfn> is not absolute. If it were, the Supreme Court would be permanently bound by its own past mistakes. The most famous example of overturning precedent is the transition from Plessy v. Ferguson (1896) to Brown v. Board of Education (1954). In Plessy, the Court interpreted the Equal Protection Clause of the 14th Amendment to allow "separate but equal" racial segregation. For fifty-eight years, this was the law of the land. In 1954, however, the Court looked at the same Constitution and the same segregated society but reached a fundamentally different conclusion: that "separate educational facilities are inherently unequal."</p>
+        <p>This shift illustrates the delicate balance judges must maintain. They must respect the accumulated wisdom of the past (precedent) while remaining open to the reality that historical rulings may have been based on flawed reasoning or deep societal injustice. Overturning precedent is rare and usually requires a "special justification"—a realization that the old rule has become unworkable or that facts have changed so drastically that the old law no longer makes sense.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Stare decisis</span> Latin for “to stand by things decided.” The practice of following past decisions. <span class="sp">Spanish: stare decisis (mantener lo decidido)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Predictable</span>Precedent lets people know what the law is before they act.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 78 argued judges need “strict rules and precedents” to avoid arbitrary discretion.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Competing Philosophies: Originalism vs. Living Constitution</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The philosophical debate over constitutional interpretation centers on whether the document is a fixed contract or an evolving framework. Strict adherence to original historical understanding competes with the view that underlying principles must be adapted to prevent the legal system from becoming obsolete.</p>
+        <p>When a case has no clear precedent, or when the precedent is challenged, justices must interpret the Constitution’s text directly. Two primary schools of thought dominate this process: Originalism and the Living Constitution.</p>
+        <p>Originalism (often associated with Textualism) holds that the Constitution should be interpreted based on the original understanding of the text at the time it was adopted. An originalist asks: "What did the public understand 'freedom of speech' to mean in 1791?" or "What did 'equal protection' mean to the ratifiers of the 14th Amendment in 1868?" Proponents of this view, such as the late Justice Antonin Scalia, argue that the Constitution is a contract with a fixed meaning. If the meaning changes over time, then judges are essentially rewriting the contract without the people's consent. They argue that if society wants to change the Supreme Law, they should use the Amendment process (Article V), not rely on unelected judges to update it.</p>
+        <p>The Living Constitution approach takes a different view. Proponents argue that the Framers wrote the Constitution in broad, flexible language specifically so it could evolve to meet the needs of a changing society. They argue that relying solely on 18th-century understandings would lead to absurd results in a modern world. For example, the Founders could not have conceived of wiretapping, the internet, or modern semi-automatic weaponry. A "living constitutionalist" judge looks at the underlying principles of the text—such as "liberty" or "dignity"—and applies them to modern contexts. This philosophy suggests that the Constitution must grow with the nation, or it will become brittle and break.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Originalism</span> The view that the Constitution’s meaning is fixed at the time it was adopted. <span class="sp">Spanish: originalismo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Living Constitution</span> The view that the Constitution’s meaning can adapt to changing circumstances. <span class="sp">Spanish: Constitución viviente</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Both approaches claim loyalty to the Constitution. They disagree about what loyalty requires.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.7</span>Two Ways to Read the Constitution</p>
+      <p class="figsub">Both claim to be faithful to the document.</p>
+      <table class="cmp"><thead><tr><th></th><th>Originalism</th><th>Living Constitution</th></tr></thead><tbody><tr><td>Core idea</td><td>The words mean what they meant when adopted</td><td>The principles stay fixed, but their application changes with society</td></tr><tr><td>Judges look to</td><td>Text, history, and the original understanding</td><td>Text, precedent, purposes, and changing conditions</td></tr><tr><td>Strength</td><td>Limits judges by tying them to a fixed standard</td><td>Lets old words address new problems, such as modern technology</td></tr><tr><td>Criticism</td><td>Hard to apply to questions the Framers never imagined</td><td>Gives judges room to read in their own views</td></tr></tbody></table>
+      <p class="source">Source: Chapter text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which approach would a judge choose if worried most about judges imposing personal views?</li><li>Which approach would a judge choose if worried most about outdated rules?</li><li>Why do both groups say they are being faithful to the Constitution?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Scope of Power: Activism vs. Restraint</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Judicial philosophy dictates the appropriate balance of power between unelected judges and democratic legislatures. A willingness to strike down legislative acts prioritizes minority protections, while deference to lawmakers prioritizes the democratic process, regardless of the policy outcome.</p>
+        <p>The debate over how to read the Constitution often bleeds into a debate over how much power the Court should exert. This is framed as the conflict between <dfn id="t-judicial-activism">Judicial Activism</dfn> and Judicial Restraint. While these terms are frequently used as political insults in the media, they represent distinct legal philosophies regarding the role of the unelected branch in a democracy.</p>
+        <p>Judicial Activism is the philosophy that the courts should play a bold, active role in policy-making and in correcting injustices that the other branches have failed to address. An activist judge is more willing to strike down laws and overturn precedents to protect minority rights or expand personal liberties. The Warren Court (1953-1969) is the archetype of this philosophy. Under Chief Justice Earl Warren, the Court aggressively expanded civil rights, banning segregation (Brown), requiring attorneys for the poor (Gideon v. Wainwright), and mandating police warnings (Miranda v. Arizona). Activists argue that because the political process often ignores the rights of the powerless (who may not have the money or votes to influence Congress), the courts have a moral and constitutional obligation to intervene.</p>
+        <p><dfn id="t-judicial-restraint">Judicial Restraint</dfn>, in contrast, holds that judges should be highly reluctant to overturn the acts of democratically elected legislatures. A judge practicing restraint assumes that laws passed by Congress or state legislatures are constitutional unless they clearly and undeniably violate the text of the Constitution. They believe that policy decisions—such as how to manage healthcare, abortion, or environmental protection—should be left to the elected branches because those branches can be voted out of office. Advocates of restraint argue that when unelected judges strike down laws based on vague interpretations, they are undermining democracy and acting as a "super-legislature."</p>
+        <p>It is critical to understand that "activism" is not a synonym for "liberal," and "restraint" is not a synonym for "conservative." A conservative court striking down a strict gun control law passed by a city council is exercising activism (overturning the democratic will of that city). A liberal court upholding a strict death penalty law because the Constitution does not explicitly ban it is exercising restraint (deferring to the legislature). The core tension is not about the outcome of the case (who wins), but about the process—should the Court lead the nation toward justice, or should it stand back and let the democratic process work, even if that process produces results the judges personally dislike?</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial activism</span> A willingness to overturn laws or precedents and to use judicial power to shape policy. <span class="sp">Spanish: activismo judicial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial restraint</span> A preference for deferring to elected branches and past decisions. <span class="sp">Spanish: moderación judicial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Not a party label</span>Both liberals and conservatives have accused judges of activism when they disagreed with a ruling.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The terms describe a judge’s approach to power, not the political result of a case.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.8</span>Activism and Restraint Compared</p>
+      <p class="figsub">Two views of how much power judges should use.</p>
+      <table class="cmp"><thead><tr><th></th><th>Judicial activism</th><th>Judicial restraint</th></tr></thead><tbody><tr><td>Attitude toward laws</td><td>More willing to strike down laws or policies</td><td>More willing to defer to elected lawmakers</td></tr><tr><td>Attitude toward precedent</td><td>More willing to overturn it</td><td>More likely to follow it</td></tr><tr><td>Supporters say</td><td>Courts must protect rights when majorities will not</td><td>Unelected judges should not make policy</td></tr><tr><td>Critics say</td><td>Judges are making law</td><td>Courts may fail to protect minorities</td></tr></tbody></table>
+      <p class="source">Source: Chapter text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which approach is more likely to overturn precedent?</li><li>How could a judge be both an originalist and an activist? (Hint: the terms describe different things.)</li><li>Which criticism seems stronger to you? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Dialogue of Law</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supreme%20Court%20of%20the%20United%20States%20North%20Frieze.jpg?width=1400" alt="A long carved marble frieze showing a row of robed figures in relief." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Great Lawgivers</span>The north frieze on the Supreme Court building, “Great Lawgivers of History,” was sculpted by Adolph Weinman. Photographed in 2023.<span class="credit">Photo: Supreme Court of the United States / <a href="https://commons.wikimedia.org/wiki/File:Supreme_Court_of_the_United_States_North_Frieze.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Constitutional law is shaped not in isolation, but through active dialogue with external societal forces. By analyzing extensive written input from experts, interest groups, and government agencies, the judiciary evaluates the real-world, practical consequences of their abstract legal interpretations.</p>
+        <p>The interaction between these philosophies ensures that constitutional law is never static. It is a dialogue between the past and the present. When the Court hears a case on digital privacy, it is listening to the voices of James Madison (who wrote the Fourth Amendment) and modern tech companies simultaneously.</p>
+        <p>Furthermore, the Court does not make these decisions in a vacuum. It accepts Amicus Curiae briefs ("friend of the court" briefs) from interest groups, states, and experts. In a major case regarding affirmative action, the Court might receive briefs from the U.S. Military, major corporations, and civil rights groups, all explaining how a ruling would affect the real world. This input helps the justices understand the practical consequences of their abstract legal theories.</p>
+        <p>Ultimately, the legitimacy of the Court depends on its ability to justify its decisions. Whether a justice uses Originalism or the Living Constitution, they must write a written opinion explaining their logic. This requirement of reason distinguishes the judiciary from the other branches. A President can issue an order because "I decided so." A Congress can pass a law because "we have the votes." A Court, however, must say, "We rule this way because the law requires it," and they must show their work. This intellectual rigor is what allows the Constitution to survive as the unifying force of the nation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Dialogue of law</span> The continuing exchange among courts, legislatures, the executive, and the public over what the law should be. <span class="sp">Spanish: diálogo jurídico</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1896 to 1954</span>Years between Plessy v. Ferguson and Brown v. Board of Education, which overruled it.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 11 returns to Brown v. Board of Education and the Fourteenth Amendment.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.9</span>A Precedent Overruled</p>
+      <p class="figsub">The Court can change its mind, but only slowly.</p>
+      <table class="cmp"><thead><tr><th>Year</th><th>Decision</th><th>Idea</th></tr></thead><tbody><tr><td>1896</td><td>Plessy v. Ferguson</td><td>The Court upheld “separate but equal” railroad cars, accepting segregation by law.</td></tr><tr><td>1954</td><td>Brown v. Board of Education</td><td>The Court held that separate public schools are inherently unequal. This overruled Plessy in public education.</td></tr><tr><td>Gap</td><td>58 years</td><td>The Court’s reading changed through new arguments, new justices, and changed public views.</td></tr></tbody></table>
+      <p class="source">Sources: Plessy v. Ferguson, 163 U.S. 537 (1896); Brown v. Board of Education, 347 U.S. 483 (1954), Legal Information Institute, Cornell Law School. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>How many years passed between the two decisions?</li><li>What does this example suggest about stare decisis: a rule that never changes, or a rule that changes only for strong reasons?</li><li>Which of the two philosophies in Figure 6.7 might a judge use to justify overruling a precedent? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>Same Rule, New Facts</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A school rule says “no devices in class.” Years later, students use tablets for assignments. One judge says the rule means what the writers meant when they wrote it. Another says the rule’s purpose, protecting learning, should guide how it applies to tablets. Both are trying to follow the rule. They disagree about method. That is the heart of the debate between originalism and a Living Constitution.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Overrule or Follow?</div></div>
+      <div class="box-b">
+        <p>You are a justice. An old precedent seems wrong to you, but thousands of people have relied on it for decades.</p>
+        <div class="opts"><div class="opt"><h5>Follow the precedent</h5>You honor stare decisis and stability, even if you would have decided differently.</div><div class="opt"><h5>Overrule it</h5>You correct what you believe is a mistake, but you may unsettle expectations and invite criticism.</div></div>
+        <p class="ask">Which would you choose? What does your choice show about the balance between stability and justice?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Courts and Constitutions Elsewhere</div></div>
+      <div class="box-b">
+<p style="margin:0">Not every country follows precedent in the same way. In the United States and the United Kingdom, which use a common-law tradition, earlier decisions carry great weight. Many civil-law countries, such as France, give less formal weight to earlier judicial decisions and focus more on written codes. How might that difference change the way judges in each system explain their decisions?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING JUDICIAL PHILOSOPHIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 6.7. Explain in your own words the difference between originalism and a Living Constitution.</li><li>Use Figure 6.9. Explain how the Plessy to Brown example shows that precedent can change.</li><li>Write a Counter-Argument to this claim: “Judges should always follow precedent.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 6.3 ASSESSMENT</b>Complete the Section 6.3 Assessment in your <i>Chapter 6 Assignment</i> packet before you move on to Section 6.4.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>6.4</b></div>
+    <h2>Judicial Independence and Institutional Constraints</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 6.4, you will</p>
+      <ul><li>Explain how life tenure and salary protection support judicial independence</li><li>Explain how appointment and Senate confirmation give elected branches a check on the courts</li><li>Explain the ultimate checks of impeachment and enforcement, and why the chapter says friction is necessary</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each check on the courts, who uses it, and an example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: check, who uses it, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Check</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who uses it</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Judicial Independence and Institutional Constraints</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The legitimacy of a justice system relies on structural independence from political coercion. While insulated from immediate electoral pressures and financial threats, the judiciary remains physically and procedurally tethered to the other branches through a complex web of constitutional checks.</p>
+        <p>The legitimacy of the judicial branch rests entirely on the concept of independence. If a judge rules in favor of the government because they fear being fired by the President, or if they rule in favor of a wealthy corporation because they need campaign donations to keep their job, the concept of "justice" becomes a sham. In such a system, the courts would merely be an extension of political power, not a check on it. To prevent this, the Framers of the Constitution built structural protections into Article III to insulate federal judges from the rough-and-tumble world of politics. However, they also feared the tyranny of an unaccountable judiciary—a group of elites who could never be removed. Therefore, while the courts are independent, they are not supreme; they are subject to a complex system of checks and balances designed to keep them within their constitutional bounds.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial independence</span> The principle that judges can decide cases without fear of punishment or pressure from the other branches. <span class="sp">Spanish: independencia judicial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two goals</span>Independence so judges can rule fairly. Accountability so judges cannot rule without limits.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 78: “The complete independence of the courts of justice is peculiarly essential in a limited Constitution.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Shield of Tenure</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Permanent judicial appointments shield legal officers from the threat of political retaliation. This structural insulation empowers the courts to uphold unpopular constitutional rights and make legally correct but politically toxic decisions without fear of losing their livelihoods.</p>
+        <p>The primary mechanism for ensuring judicial independence is life tenure. Article III states that federal judges shall hold their offices "during good Behaviour." This means that once a federal judge is appointed and confirmed, they serve for life. They cannot be fired by the President who appointed them, nor can they be removed simply because Congress dislikes their decisions. They serve until they resign, retire, or die. This is a radical departure from the other branches. Presidents must face the voters every four years; members of the House every two years. Judges never face the voters.</p>
+        <p>This insulation allows judges to make necessary but unpopular rulings. A perfect example of this dynamic occurred in Texas v. Johnson (1989). In this case, the Supreme Court ruled that burning the American flag was a form of "symbolic speech" protected by the First Amendment. The decision was incredibly unpopular with the American public and politicians of both parties. If the justices had been elected officials worrying about their next campaign, it is almost certain they would have upheld the ban on flag burning to avoid angering voters. But because they possessed life tenure, they were free to uphold the Constitution's protection of free expression, even when it was painful and controversial to do so.</p>
+        <p>Furthermore, the Constitution prohibits Congress from reducing a judge's salary during their service. This prevents the legislative branch from using the "power of the purse" as a weapon to punish the courts. If Congress could cut the pay of the Supreme Court justices every time the Court struck down a law, the judiciary would quickly become subservient to the legislature. These protections—life tenure and salary security—are designed to create a class of public servants who owe allegiance only to the Constitution and the law, not to a political party, a patron, or a mob.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Life tenure</span> Service “during good Behaviour,” which in practice means for life unless a judge is impeached and removed. <span class="sp">Spanish: cargo vitalicio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">“Good Behaviour”</span>Article III says federal judges hold their offices during good behavior and that their pay cannot be reduced.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article III, Section 1: judges “shall hold their Offices during good Behaviour” and receive compensation “which shall not be diminished during their Continuance in Office.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Political Check of Appointment</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The process of staffing the judiciary serves as a delayed democratic check on an unelected branch. Through the nomination and confirmation powers, victorious political parties gradually infuse long-term ideological shifts into the courts, ensuring the judiciary loosely tracks with generational political trends.</p>
+        <p>While judges are independent once they are seated on the bench, the process of getting them there is deeply political. The power to appoint federal judges is shared between the President and the Senate. The President nominates candidates, usually selecting individuals who share their ideological views. A conservative President will nominate judges who believe in judicial restraint or originalism; a liberal President will nominate judges who believe in a living constitution. This allows a President to leave a legacy that lasts decades beyond their own term.</p>
+        <p>The Senate must provide "Advice and Consent" for these nominations. Historically, this process was often routine, focusing on the nominee's qualifications and character. However, in recent decades, it has become a high-stakes partisan battleground. The rejection of Robert Bork in 1987 marked a turning point. Bork, a conservative scholar nominated by Ronald Reagan, was rejected by the Senate not because he was unqualified, but because Democrats fundamentally disagreed with his judicial philosophy regarding civil rights and privacy. Similarly, in 2016, the Republican-controlled Senate refused to even hold hearings for Merrick Garland, a nominee of President Barack Obama, arguing that the vacancy should be filled by the next President.</p>
+        <p>These battles highlight how the appointment process serves as a democratic check on the judiciary. By winning elections, political parties earn the right to nominate and confirm judges, thereby indirectly infusing the popular will into the courts. The composition of the Court shifts slowly, but it does shift, reflecting the long-term political trends of the nation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Advice and consent</span> The Senate’s role in approving presidential nominees to the federal courts and other offices. <span class="sp">Spanish: consejo y consentimiento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">98–0 to 42–58</span>Senate votes ranged from 98–0 for Antonin Scalia (1986) to a 42–58 rejection of Robert Bork (1987).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 2: the President nominates judges of the Supreme Court “by and with the Advice and Consent of the Senate.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.10</span>Senate Votes on Selected Supreme Court Nominees</p>
+      <p class="figsub">Number of senators voting to confirm. A majority of those voting is enough.</p>
+      <svg viewBox="0 0 860 418" role="img" aria-label="Bar chart of yes votes for selected Supreme Court nominees: Scalia 98, Ginsburg 96, Breyer 87, Roberts 78, Sotomayor 68, Kagan 63, Alito 58, Gorsuch 54, Jackson 53, Thomas 52, Barrett 52, Kavanaugh 50, and Bork 42 in a rejected nomination."><line x1="190.0" y1="10" x2="190.0" y2="374" stroke="#e6e8ec"/><text x="190.0" y="392" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="335.0" y1="10" x2="335.0" y2="374" stroke="#e6e8ec"/><text x="335.0" y="392" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25</text><line x1="480.0" y1="10" x2="480.0" y2="374" stroke="#e6e8ec"/><text x="480.0" y="392" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50</text><line x1="625.0" y1="10" x2="625.0" y2="374" stroke="#e6e8ec"/><text x="625.0" y="392" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75</text><line x1="770.0" y1="10" x2="770.0" y2="374" stroke="#e6e8ec"/><text x="770.0" y="392" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100</text><text x="180" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Scalia, 1986</text><g><title>Scalia, 1986: 98</title><path d="M190 16 h564.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-564.4z" fill="#357A6E"/></g><text x="766.4" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">98</text><text x="180" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Ginsburg, 1993</text><g><title>Ginsburg, 1993: 96</title><path d="M190 44 h552.8 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-552.8z" fill="#357A6E"/></g><text x="754.8" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">96</text><text x="180" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Breyer, 1994</text><g><title>Breyer, 1994: 87</title><path d="M190 72 h500.6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-500.6z" fill="#357A6E"/></g><text x="702.6" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">87</text><text x="180" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Roberts, 2005</text><g><title>Roberts, 2005: 78</title><path d="M190 100 h448.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-448.4z" fill="#357A6E"/></g><text x="650.4" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">78</text><text x="180" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Sotomayor, 2009</text><g><title>Sotomayor, 2009: 68</title><path d="M190 128 h390.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-390.4z" fill="#357A6E"/></g><text x="592.4" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">68</text><text x="180" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Kagan, 2010</text><g><title>Kagan, 2010: 63</title><path d="M190 156 h361.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-361.4z" fill="#357A6E"/></g><text x="563.4" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">63</text><text x="180" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Alito, 2006</text><g><title>Alito, 2006: 58</title><path d="M190 184 h332.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-332.4z" fill="#357A6E"/></g><text x="534.4" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">58</text><text x="180" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Gorsuch, 2017</text><g><title>Gorsuch, 2017: 54</title><path d="M190 212 h309.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-309.2z" fill="#357A6E"/></g><text x="511.2" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">54</text><text x="180" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Jackson, 2022</text><g><title>Jackson, 2022: 53</title><path d="M190 240 h303.4 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-303.4z" fill="#357A6E"/></g><text x="505.4" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">53</text><text x="180" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Thomas, 1991</text><g><title>Thomas, 1991: 52</title><path d="M190 268 h297.6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-297.6z" fill="#357A6E"/></g><text x="499.6" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52</text><text x="180" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Barrett, 2020</text><g><title>Barrett, 2020: 52</title><path d="M190 296 h297.6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-297.6z" fill="#357A6E"/></g><text x="499.6" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52</text><text x="180" y="337.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Kavanaugh, 2018</text><g><title>Kavanaugh, 2018: 50</title><path d="M190 324 h286.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-286.0z" fill="#357A6E"/></g><text x="488.0" y="337.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">50</text><text x="180" y="365.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Bork, 1987 (rejected)</text><g><title>Bork, 1987 (rejected): 42</title><path d="M190 352 h239.6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-239.6z" fill="#9C5B33"/></g><text x="441.6" y="365.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">42</text><line x1="190" y1="10" x2="190" y2="374" stroke="#6f7787" stroke-width="1.5"/><text x="480.0" y="414" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Senators voting yes</text></svg>
+      <p class="source">Source: U.S. Senate, Supreme Court Nominations (1789 to Present), senate.gov. Roberts’s vote is for chief justice in 2005. Highlighted bar: the only nominee in this list whom the Senate rejected.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Nominee</th><th>Year</th><th>Yes</th><th>No</th></tr></thead><tbody><tr><td>Scalia</td><td>1986</td><td>98</td><td>0</td></tr><tr><td>Bork</td><td>1987</td><td>42</td><td>58</td></tr><tr><td>Thomas</td><td>1991</td><td>52</td><td>48</td></tr><tr><td>Ginsburg</td><td>1993</td><td>96</td><td>3</td></tr><tr><td>Breyer</td><td>1994</td><td>87</td><td>9</td></tr><tr><td>Roberts</td><td>2005</td><td>78</td><td>22</td></tr><tr><td>Alito</td><td>2006</td><td>58</td><td>42</td></tr><tr><td>Sotomayor</td><td>2009</td><td>68</td><td>31</td></tr><tr><td>Kagan</td><td>2010</td><td>63</td><td>37</td></tr><tr><td>Gorsuch</td><td>2017</td><td>54</td><td>45</td></tr><tr><td>Kavanaugh</td><td>2018</td><td>50</td><td>48</td></tr><tr><td>Barrett</td><td>2020</td><td>52</td><td>48</td></tr><tr><td>Jackson</td><td>2022</td><td>53</td><td>47</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which nominee received the most yes votes? Which was rejected?</li><li>What does the change from the 1980s and 1990s to recent votes suggest about confirmation politics?</li><li>Why might a President choose a nominee based on how senators are likely to vote?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Ultimate Checks: Impeachment and Enforcement</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The ultimate limitation of judicial power is its reliance on external enforcement. Without the active cooperation of the executive branch to carry out its rulings, a court's decrees possess no physical authority, highlighting the fragile nature of judicial supremacy.</p>
+        <p>Despite their life tenure, judges are not kings. The other branches possess significant tools to check the judiciary if it overreaches or engages in misconduct.</p>
+        <p>Impeachment: Like the President, federal judges can be impeached by the House of Representatives and removed by the Senate for "Treason, Bribery, or other high Crimes and Misdemeanors." While rare, this mechanism ensures that independence does not equal immunity from the law. Throughout history, several federal judges have been removed for corruption or perjury.</p>
+        <p>Constitutional Amendments: If the Supreme Court interprets the Constitution in a way that the nation finds unacceptable, the people can amend the Constitution to override the Court. For example, in Chisholm v. Georgia (1793), the Court ruled that citizens of one state could sue another state in federal court. This decision caused an uproar among advocates of state sovereignty. In response, Congress and the states rapidly ratified the 11th Amendment, which explicitly blocked such lawsuits, effectively overruling the Supreme Court. Similarly, when the Court struck down the federal income tax in the 1890s, the 16th Amendment was passed to legalize it. This is the ultimate trump card of the democratic process.</p>
+        <p>The Power of Enforcement: Perhaps the most practical check on the Court is its lack of enforcement power. The Court can issue a ruling, but it relies on the Executive branch to enforce it. In the 1830s, the Supreme Court ruled in Worcester v. Georgia that the state of Georgia could not seize Cherokee lands. President Andrew Jackson, who supported Indian Removal, famously (and perhaps apocryphally) challenged the ruling by saying, "John Marshall has made his decision; now let him enforce it." The executive branch ignored the Court, and the Cherokee were forcibly removed on the Trail of Tears. Conversely, in 1957, when the Governor of Arkansas refused to obey federal court orders to integrate Central High School in Little Rock, President Eisenhower sent the 101st Airborne Division to enforce the Court's will. The Court depends on the respect and cooperation of the other branches. If it acts too radically or without legal basis, it risks being ignored, which would destroy its authority.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Impeachment</span> The House’s formal accusation of an official. The Senate holds the trial, and two-thirds must vote to convict. <span class="sp">Spanish: juicio político</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">8 of 15</span>Federal judges have been impeached 15 times, and 8 were convicted and removed, according to the Federal Judicial Center.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>In Worcester v. Georgia (1832), the Court ruled for the Cherokee Nation. Georgia ignored the ruling, and the President did not enforce it.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.11</span>How the Other Branches Can Check the Courts</p>
+      <p class="figsub">The courts have judgment, but the other branches hold tools of their own.</p>
+      <table class="cmp"><thead><tr><th>Check</th><th>Who uses it</th><th>What it does</th><th>Example</th></tr></thead><tbody><tr><td>Appointment and confirmation</td><td>President and Senate</td><td>Shape the Court’s membership over time</td><td>Senate rejects Bork, 42–58 (1987)</td></tr><tr><td>Impeachment and removal</td><td>House and Senate</td><td>Remove a judge for “high Crimes and Misdemeanors”</td><td>8 of 15 federally impeached judges removed</td></tr><tr><td>Constitutional amendment</td><td>Congress and the states</td><td>Overturn a ruling by changing the Constitution</td><td>Eleventh Amendment (1795); Sixteenth Amendment (1913)</td></tr><tr><td>Changing the law</td><td>Congress</td><td>Pass a new law or change court structure and funding</td><td>Judiciary Act of 1801 and its repeal in 1802</td></tr><tr><td>Enforcement</td><td>President and the states</td><td>Carry out, or fail to carry out, a ruling</td><td>Worcester v. Georgia (1832)</td></tr><tr><td>Public opinion</td><td>The people</td><td>Shapes whether rulings are accepted</td><td>Long resistance to Brown v. Board of Education</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; U.S. Constitution, Articles II, III, and V; Federal Judicial Center, Impeachments of Federal Judges (fjc.gov); Eleventh and Sixteenth Amendments. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which of these checks changes who sits on the courts? Which changes the law that courts must apply?</li><li>Why does the chapter say a court “depends on the aid of the executive arm”?</li><li>Which check do you think is most important in practice? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 6.12</span>When the People Overruled the Court</p>
+      <p class="figsub">Amendments can reverse a Supreme Court decision on the Constitution.</p>
+      <table class="cmp"><thead><tr><th>Court decision</th><th>The people respond</th><th>How</th></tr></thead><tbody><tr><td>Chisholm v. Georgia (1793): a citizen of one state could sue another state in federal court</td><td>Eleventh Amendment (1795)</td><td>Congress and the states amended the Constitution to bar most such suits</td></tr><tr><td>Pollock v. Farmers’ Loan & Trust Co. (1895): a federal income tax was unconstitutional</td><td>Sixteenth Amendment (1913)</td><td>Congress and the states amended the Constitution to allow an income tax</td></tr></tbody></table>
+      <p class="source">Sources: Chisholm v. Georgia, 2 U.S. 419 (1793); Pollock v. Farmers’ Loan & Trust Co., 157 U.S. 429 (1895); U.S. Constitution, Amendments XI and XVI. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What do the two examples have in common?</li><li>Why is amending the Constitution a harder check than passing a law?</li><li>Does the ability to amend the Constitution make the Court more or less powerful? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Necessity of Friction</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Institutional friction between government branches is an intentional design feature meant to prevent centralized tyranny. The structural necessity of compromise and overlapping authority forces the branches to moderate their actions, ensuring no single entity achieves unchecked dominance.</p>
+        <p>The relationship between the judiciary and the other branches is defined by friction. This is not a flaw in the system; it is a feature. The design of the Constitution ensures that no single branch can dominate the others. The President appoints judges, but the Senate must confirm them. The Court can strike down laws, but Congress can rewrite them or amend the Constitution. The Court can issue rulings, but the Executive must enforce them.</p>
+        <p>This "strategic logic" forces compromise and moderation. It prevents the judiciary from becoming a "judicial aristocracy" while preventing the political branches from becoming a "legislative tyranny." The survival of this system depends on a shared commitment to the rule of law. When a President obeys a court order they disagree with (as Richard Nixon did when the Court ordered him to turn over the Watergate tapes), they are reinforcing the stability of the republic. The checks and balances ensure that while the Supreme Court is the final arbiter of the Constitution, it is never the only voice in the conversation.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Friction</span>The chapter argues that tension among the branches protects liberty rather than failing.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 51: “Ambition must be made to counteract ambition.” The judiciary is part of that design.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The judiciary shapes the boundaries of society through judgment and legal reasoning rather than brute force or financial power. By establishing the definitive interpretation of the law, the courts serve as the final stabilizing mechanism within a dynamic and frequently turbulent democratic system.</p>
+        <p>The Supreme Court acts as the final arbiter of the Constitution not by force, but by judgment. From the strategic brilliance of John Marshall in Marbury v. Madison, the Court carved out the power of judicial review, positioning itself as the guardian of the constitutional text against the temporary passions of legislative majorities. Through the dual court system, the judiciary filters thousands of disputes to ensure that federal law is applied uniformly, whether in a district court in Kansas or the Supreme Court in Washington, D.C.</p>
+        <p>The debates over judicial philosophy—activism versus restraint, originalism versus the living constitution—are not merely academic exercises. They determine the scope of our rights and the limits of our government. By balancing the stability of stare decisis with the need to correct historical injustices, the Court navigates the changing currents of American society. Yet, this power is not unchecked. The appointment process, the threat of impeachment, and the amendment process ensure that the judiciary remains tethered to the democratic will. As we look toward the interaction of the branches, we see that while Congress makes the law and the President enforces it, it is the Judiciary that defines it. In the next chapter, we will explore how these defined rights apply to the individual through the lens of Civil Liberties.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 7 turns to the bureaucracy, the large part of government that carries out laws and court rulings every day.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>The Referee Who Can’t Be Fired</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A referee is chosen by the league office and approved by team owners. After the choice, no team can fire the referee for a call it dislikes. But the league can remove a referee who takes bribes, and the rules can be rewritten after a season. That is how Article III balances independence and accountability.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Limit the Court?</div></div>
+      <div class="box-b">
+        <p>You are a member of Congress. The Court has just struck down a law you strongly support. A colleague proposes cutting the Court’s budget to send a message.</p>
+        <div class="opts"><div class="opt"><h5>Cut its budget</h5>You show disapproval, but you attack the independence that protects every citizen’s rights.</div><div class="opt"><h5>Use a lawful check</h5>You propose a new law or a constitutional amendment, or you wait for new appointments, which is slower but respects the Court’s independence.</div></div>
+        <p class="ask">Which would you choose? How does your choice affect public trust in the courts?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Judges Around the World</div></div>
+      <div class="box-b">
+<p style="margin:0">Many democracies protect judges differently. Some countries set a fixed term of years or a mandatory retirement age for constitutional judges, instead of life tenure. What are the benefits of a fixed term, and what does life tenure protect that a fixed term might not?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CHECKING THE COURTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 6.10. Explain how the Senate’s confirmation power checks the Court without removing a sitting justice.</li><li>Use Figure 6.12. Explain how an amendment can overrule a Supreme Court decision.</li><li>Write a Counter-Argument to this claim: “Federal judges should serve fixed terms instead of life tenure.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 6.4 ASSESSMENT</b>Complete the Section 6.4 Assessment in your <i>Chapter 6 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Who decides what the Constitution means, and what limits the judges? Read four original documents from 1788 to 1861 and decide where each source draws the line.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Sources on Judicial Power</h3>
+        <p>The documents below follow the argument over the courts from the Founding to the eve of the Civil War. A <i>Federalist</i> essay from 1788 explains why courts should be independent and what they can and cannot do. Articles III and VI give the courts their place and make the Constitution supreme. Chief Justice Marshall’s 1803 opinion claims the power to say what the law is. Abraham Lincoln’s 1861 inaugural address warns what could happen if the Court’s decisions on great public questions were treated as final.</p>
+        <p>As you read, notice what each source trusts, what it fears, and who it says has the final word. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1788 to 1861, from a newspaper essay to an inaugural address.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FEDERALIST ESSAY</small><b>Alexander Hamilton, <i>Federalist No. 78</i> (1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The complete independence of the courts of justice is peculiarly essential in a limited Constitution. . . . A constitution is, in fact, and must be regarded by the judges, as a fundamental law. . . . [The judiciary] may truly be said to have neither FORCE nor WILL, but merely judgment; and must ultimately depend upon the aid of the executive arm even for the efficacy of its judgments.”<cite><i>Federalist No. 78</i>, The Judiciary Department, signed “Publius.” Text from the Avalon Project, Yale Law School. Ellipses mark omitted words; the bracketed words are added for clarity.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Why does Hamilton say the courts must be independent? What does he mean by “neither FORCE nor WILL, but merely judgment”?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FOUNDING DOCUMENT</small><b>The Constitution of the United States, Articles III and VI (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article III, Section 1: “The judicial Power of the United States, shall be vested in one supreme Court, and in such inferior Courts as the Congress may from time to time ordain and establish. The Judges, both of the supreme and inferior Courts, shall hold their Offices during good Behaviour, and shall, at stated Times, receive for their Services, a Compensation, which shall not be diminished during their Continuance in Office.”<br><br>Article VI: “This Constitution, and the Laws of the United States which shall be made in Pursuance thereof; and all Treaties made, or which shall be made, under the Authority of the United States, shall be the supreme Law of the Land; and the Judges in every State shall be bound thereby, any Thing in the Constitution or Laws of any State to the Contrary notwithstanding.”<cite>U.S. Constitution, Article III, Section 1 (National Archives transcription) and Article VI (standard text). Spelling and capitalization are original.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which words protect the judges from pressure? Which words make the Constitution the highest law? How do the two clauses work together?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b>Chief Justice John Marshall, <i>Marbury v. Madison</i> (1803)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“It is emphatically the province and duty of the judicial department to say what the law is. Those who apply the rule to particular cases, must of necessity expound and interpret that rule.”<cite><i>Marbury v. Madison</i>, 5 U.S. (1 Cranch) 137 (1803), opinion of the Court by Chief Justice Marshall. Text from the Cornell Legal Information Institute.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What job does Marshall say belongs to the judicial department? Why does he say judges must interpret the law when they apply it?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · INAUGURAL ADDRESS</small><b>Abraham Lincoln, First Inaugural Address (March 4, 1861)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“. . . the candid citizen must confess that if the policy of the Government upon vital questions affecting the whole people is to be irrevocably fixed by decisions of the Supreme Court, the instant they are made in ordinary litigation between parties in personal actions the people will have ceased to be their own rulers, having to that extent practically resigned their Government into the hands of that eminent tribunal.”<cite>Abraham Lincoln, First Inaugural Address, March 4, 1861. Text from the Avalon Project, Yale Law School. Lincoln was speaking about the Supreme Court’s decision in <i>Dred Scott v. Sandford</i> (1857). The ellipsis marks the omitted opening words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Lincoln accept about the Court’s decisions, and what does he fear? How does his view limit the Court’s authority compared with Marshall’s?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Documents A and B. Which words in Article III protect the independence that Hamilton wants?</li>
+        <li>Use Document C and Section 6.1. How does Marshall use Article VI’s idea of a “supreme Law” to justify judicial review?</li>
+        <li>Use Document D and Section 6.4. How does Lincoln’s warning connect to the checks the other branches and the people have on the courts?</li>
+        <li>Which document would a supporter of strong judicial power cite most often? Which would a supporter of limits on judicial power cite most often? Explain both choices.</li>
+        <li><b>Making a Claim</b> Who decides what the Constitution means, and what limits the judges? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>6</b></div>
+    <h2>Chapter 6 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#DDB08A" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#EFF4F2" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#EFF4F2" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the Supreme Court act as the final arbiter of the Constitution?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Judicial Review</h5>The Constitution does not mention judicial review. In Marbury v. Madison (1803), Marshall claimed the power by holding that a law that conflicts with the Constitution is void. McCulloch v. Maryland (1819) extended the idea to the states through the Supremacy Clause.</div><div><h5>The Court System</h5>The federal system has district courts, courts of appeals, and the Supreme Court. District courts have original jurisdiction, appeals courts review legal error, and the Supreme Court chooses a small number of cases by writ of certiorari.</div><div><h5>Interpretation</h5>Precedent and stare decisis give the law stability. Originalism and the Living Constitution disagree about how to read old words. Activism and restraint describe how much power judges use, and the dialogue of law lets the courts and the people respond to each other.</div><div><h5>Independence and Limits</h5>Life tenure and protected pay shield judges, while appointment, confirmation, impeachment, amendment, and enforcement let the other branches check them. The chapter argues that friction among the branches protects liberty.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 6 ASSESSMENT AND SIMULATION</b>Complete the Chapter 6 Assessment (vocabulary, multiple choice, guided analysis, visual analysis, the Federalist No. 78 source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 6 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.4, 12.4.5, 12.1.5): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>Alexander Hamilton, Federalist No. 78, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/fed78.asp">avalon.law.yale.edu/18th_century/fed78.asp</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li><i>Marbury v. Madison</i>, 5 U.S. (1 Cranch) 137 (1803), Legal Information Institute, Cornell Law School: <a href="https://www.law.cornell.edu/supremecourt/text/5/137">law.cornell.edu</a></li><li>Abraham Lincoln, First Inaugural Address, March 4, 1861, The Avalon Project: <a href="https://avalon.law.yale.edu/19th_century/lincoln1.asp">avalon.law.yale.edu/19th_century/lincoln1.asp</a></li><li>Chief Justice John G. Roberts, Jr., 2024 Year-End Report on the Federal Judiciary, Supreme Court of the United States: <a href="https://www.supremecourt.gov">supremecourt.gov</a></li><li>U.S. Senate, Supreme Court Nominations (1789 to Present): <a href="https://www.senate.gov/legislative/nominations/SupremeCourtNominations1789present.htm">senate.gov</a></li><li>Federal Judicial Center, Impeachments of Federal Judges: <a href="https://www.fjc.gov/history/judges/impeachments-federal-judges">fjc.gov</a></li><li>United States Courts, Federal Judiciary, Court Role and Structure: <a href="https://www.uscourts.gov">uscourts.gov</a></li><li><i>McCulloch v. Maryland</i> (1819); <i>Plessy v. Ferguson</i> (1896); <i>Brown v. Board of Education</i> (1954); <i>Chisholm v. Georgia</i> (1793); <i>Pollock v. Farmers’ Loan &amp; Trust Co.</i> (1895); <i>Worcester v. Georgia</i> (1832); Amendments XI and XVI</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Public-domain works: the Supreme Court building (USCapitol); the portrait of John Marshall by Henry Inman (1832); the 1803 Supreme Court document in Marbury v. Madison; the 1875 print of the Bank of the United States (S. G. Goodrich); the federal courthouse in South Bend (Nyttend); the petition of Clarence Gideon (National Archives); the north frieze of the Supreme Court building (Supreme Court of the United States). CC BY 4.0: the Old Supreme Court Chamber (Michael Savidge). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 2: The Articles of Confederation and the Constitutional Convention | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#2A5276; --unit-dk:#10263F; --unit-lt:#F4EFE3; --unit-mid:#8FA9C2;
+  --amber:#B8913F; --amber-lt:#E6CF8C; --amber-dk:#7A5F22;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F6EEDA; --cream:#F4EFE3; --pale:#E6CF8C;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(16,38,63,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,38,63,.80) 0%,rgba(16,38,63,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 2 · ARTICLES OF CONFEDERATION AND THE CONVENTION</span>
+  <a href="#opener">Opener</a><a href="#s1">2.1 Failure of the Confederation</a><a href="#s2">2.2 The Convention</a><a href="#s3">2.3 Ratification</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Assembly%20Room%20in%20Independence%20Hall%20%284e4d7280-1dd8-b71b-0ba3-d7bec43b2b9c%29.jpg?width=2000" alt="The Assembly Room of Independence Hall, with rows of wooden chairs and green-covered tables facing a raised platform." style="object-position:50% 55%"></div>
+  <div class="opener-head">
+    <div class="chapnum">2</div>
+    <div>
+      <div class="unitline">Unit 1 · Foundations of American Democracy</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Articles of Confederation<br>and the Constitutional Convention</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the first government was replaced.</b> The Assembly Room of Independence Hall in Philadelphia, where delegates met behind closed doors from May to September 1787 to design a new government. The furniture shown is a modern arrangement of the room. <span class="credit">Photo: National Park Service / <a href="https://commons.wikimedia.org/wiki/File:Assembly_Room_in_Independence_Hall_(4e4d7280-1dd8-b71b-0ba3-d7bec43b2b9c).jpg">Wikimedia Commons</a>, public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 2.1</span><span class="sl-title">The Failure of the Confederation</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 2.2</span><span class="sl-title">The Philadelphia Convention and the Compromises</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 2.3</span><span class="sl-title">The Ratification Debate</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Was a Stronger Government Worth the Risk?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">Why was the first national government ineffective, and what compromises were required to resolve the crises of the 1780s?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Explain why the Articles of Confederation left the national government too weak to govern.</li>
+          <li>Describe the compromises that shaped the Constitution at the Philadelphia Convention.</li>
+          <li>Compare the Federalist and Anti-Federalist arguments about ratification.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Critical Period</span><span>Impost</span><span>Shays’ Rebellion</span><span>Great Compromise</span><span>Three-Fifths Compromise</span><span>Electoral College</span><span>Federalists</span><span>Anti-Federalists</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 2 Key Concept</p>
+        <p><b>Compromise</b> is how a divided country builds a government. The delegates in Philadelphia did not agree on how to balance large and small states, North and South, or power and liberty. They traded and bargained until a plan could pass, and some of those bargains carried a heavy moral cost.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine a club at Shafter High with fifty members, where every decision needs a vote of nearly everyone and the club has no power to collect dues. The club would fall into debt and nothing would get done. A rule that gives the officers real authority would fix that, but members would worry about officers who abuse it. That is the same problem the founders faced after 1783. Their solution, a government with real but limited powers, still shapes the rules you live under today.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1786 to 1788 and answer one question: <a href="#case">was a stronger national government worth the risk to liberty?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.1</code> Students explain the fundamental principles and moral values of American democracy as expressed in the U.S. Constitution and other essential documents of American democracy.</li>
+            <li><code>12.1.3</code> Explain how the U.S. Constitution reflects a balance between the classical republican concern with promotion of the public good and the classical liberal concern with protecting individual rights; and discuss how the basic premises of liberal constitutionalism and democracy are joined in the Declaration of Independence as “self-evident truths.” <i>(Sections 2.2, 2.3, Case Study)</i></li>
+            <li><code>12.1.4</code> Explain how the Founding Fathers’ realistic view of human nature led directly to the establishment of a constitutional system that limited the power of the governors and the governed as articulated in the Federalist Papers. <i>(Sections 2.2, 2.3)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Sections 2.1, 2.3; developed in later chapters.)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">A Victory That Left a Weak Government</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Treaty%20of%20Paris%20by%20Benjamin%20West%201783.jpg?width=1400" alt="An unfinished painting of the American peace commissioners standing in a group; the right side of the canvas is blank." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The peace, unfinished</span>Benjamin West began this painting of the American negotiators of the 1783 Treaty of Paris but never finished it, because the British commissioners refused to pose. The empty space on the right is real.<span class="credit">Image: Benjamin West (painter, c. 1783–84) / <a href="https://commons.wikimedia.org/wiki/File:Treaty_of_Paris_by_Benjamin_West_1783.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The conclusion of the Revolutionary War in 1783 brought with it a profound and dangerous paradox for the newly independent American states. While the Treaty of Paris formally recognized the sovereignty of the United States, placing it on the map of nations, the reality of the American union was far more precarious than the maps suggested. The thirteen states, having successfully severed their political ties with Great Britain, found themselves bound together by a political structure that was intentionally designed to be weak. The Revolution had been fought against the perceived tyranny of a distant, centralized authority—the British Crown and Parliament—and the architects of American independence were determined not to replicate that concentrated power on American soil. Consequently, the first national constitution, the Articles of Confederation, prioritized the liberty and autonomy of the individual states over the effectiveness and cohesion of the national union.</p>
+        <p>Historians often refer to the years between the end of the Revolution in 1783 and the ratification of the Constitution in 1788 as the "<dfn id="t-critical-period">Critical Period</dfn>." This label is apt, for during this half-decade, the survival of the American experiment was in serious doubt. The nation did not transition smoothly from war to peace; rather, it plunged into a severe economic depression, faced diplomatic humiliation from European powers, and suffered from internal social unrest that bordered on anarchy. The central government, operating from a rotating series of capital cities and often lacking a quorum to conduct business, watched helplessly as the fabric of the union began to fray.</p>
+        <p>The fundamental problem was structural. The Articles of Confederation established a "firm league of friendship" rather than a unified nation-state. In this arrangement, the central government possessed the authority to declare war, negotiate treaties, and manage relations with Native American tribes, yet it lacked the coercive power necessary to enforce its decrees. It could not regulate commerce, leading to trade wars between the states; it could not levy taxes, leaving it dependent on voluntary state contributions that rarely arrived; and it lacked an executive branch to provide leadership in times of crisis. By the mid-1780s, these deficiencies had precipitated a crisis of legitimacy.</p>
+        <p>This chapter examines the collapse of that first government and the extraordinary political rescue mission that followed. The transition from the Articles of Confederation to the United States Constitution was not merely a legal revision; it was a fundamental reimagining of the nature of democratic power. The delegates who gathered in Philadelphia in 1787 were tasked with a challenge that had bedeviled political philosophers for centuries: how to create a government strong enough to maintain order and protect the nation, yet restricted enough to preserve individual liberty. They had to reconcile the competing interests of large and small states, slaveholders and abolitionists, and agricultural and commercial sectors.</p>
+        <p>To understand the durability of the American constitutional system, one must first understand the specific failures that necessitated its creation. The Constitution was not born out of abstract theory, but out of the hard lessons of the 1780s—the "Critical Period." It was a pragmatic response to the inability of the Confederation Congress to govern, the terror inspired by armed uprisings such as Shays’ Rebellion, and the recognition that a collection of thirteen sovereign republics could not survive in a hostile world without a stronger federal roof. The story of this chapter is the story of how Americans decided to surrender a portion of their state sovereignty to secure the "blessings of liberty" for the nation as a whole.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Critical Period</span> The years from 1783 to 1788, when the first national government struggled and the survival of the United States was in doubt. <span class="sp">Spanish: período crítico</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1783</span>Year the Treaty of Paris ended the Revolutionary War and recognized American independence.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 2.1 shows how the Articles failed. Section 2.2 shows how the Convention fixed them. Section 2.3 shows how Americans argued over the result.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>2.1</b></div>
+    <h2>The Failure of the Confederation</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E6CF8C" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F4EFE3" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E6CF8C" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 2.1, you will</p>
+      <ul><li>Explain how the structure of the Articles of Confederation left Congress unable to govern</li><li>Identify the financial, commercial, and diplomatic failures of the Confederation</li><li>Explain how Shays’ Rebellion pushed leaders toward constitutional reform</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-unicameral">Unicameral</a></li><li><a href="#t-impost">Impost</a></li><li><a href="#t-requisitions">Requisitions</a></li><li><a href="#t-shays">Shays’ Rebellion</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a problem, its cause, and its effect.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: problem, cause, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Problem</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Cause</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Failure of the "Firm League of Friendship"</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Articles of Confederation were drafted in 1777 and finally ratified in 1781, a delay caused by Maryland's insistence that states with vast western land claims, like Virginia, cede those lands to the national government. This delay itself was symbolic of the deep mistrust that existed between the states. The government that emerged was a direct reflection of the colonial experience under British rule. Having endured what they viewed as the abuses of a powerful, unitary executive (King George III) and a distant legislature (Parliament) that taxed them without representation, the founders swung the political pendulum to the opposite extreme. They created a central government that was strictly limited, lacking the capacity to infringe upon the rights of the states or the liberties of the people.</p>
+        <p>Under the Articles, the United States was less a single nation and more a confederation of thirteen independent republics, united only for the purposes of common defense and foreign affairs. Article II of the document explicitly stated: "Each state retains its sovereignty, freedom, and independence, and every Power, Jurisdiction, and right, which is not by this confederation expressly delegated to the United States, in Congress assembled." This clause established the legal reality of the 1780s: power flowed from the states up to the national government, not from the people to the national government. The states were the masters; the Congress was the servant. While this structure succeeded in managing the war effort and negotiating the peace with Britain, its structural deficiencies became glaringly apparent once the unifying threat of the British army was removed.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Confederation</span> A loose union of independent states that cooperate for limited purposes such as defense. <span class="sp">Spanish: confederación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1777 → 1781</span>The Articles were drafted in 1777 but took effect only in 1781, after states with western land claims agreed to give them up.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II kept power with the states. Chapter 3 returns to this question under the name <i>federalism</i>, the division of power between national and state governments.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.1</span>The Critical Period, 1781–1788</p>
+      <p class="figsub">From the Articles taking effect to the ratification that put the Constitution into operation.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Timeline: 1781 Articles take effect, 1783 Treaty of Paris, 1784 Spain closes the Mississippi, 1786 Shays&#x27; Rebellion, 1787 Convention opens, 1788 ninth state ratifies"><line x1="40" y1="125" x2="820" y2="125" stroke="#2A5276" stroke-width="4" stroke-linecap="round"/><line x1="105.0" y1="125" x2="105.0" y2="113" stroke="#2A5276" stroke-width="2"/><g><title>1781: Articles take effect</title><circle cx="105.0" cy="125" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="105.0" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1781</text><text x="105.0" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Articles</text><text x="105.0" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">take effect</text><line x1="235.0" y1="125" x2="235.0" y2="135" stroke="#B8913F" stroke-width="2"/><g><title>1783: Treaty of Paris</title><circle cx="235.0" cy="125" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="235.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1783</text><text x="235.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Treaty</text><text x="235.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">of Paris</text><line x1="365.0" y1="125" x2="365.0" y2="113" stroke="#2A5276" stroke-width="2"/><g><title>1784: Spain closes Mississippi</title><circle cx="365.0" cy="125" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="365.0" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1784</text><text x="365.0" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Spain closes</text><text x="365.0" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Mississippi</text><line x1="495.0" y1="125" x2="495.0" y2="135" stroke="#2A5276" stroke-width="2"/><g><title>1786: Shays’ Rebellion</title><circle cx="495.0" cy="125" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="495.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1786</text><text x="495.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Shays’</text><text x="495.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Rebellion</text><line x1="625.0" y1="125" x2="625.0" y2="113" stroke="#2A5276" stroke-width="2"/><g><title>1787: Convention opens</title><circle cx="625.0" cy="125" r="8" fill="#2A5276" stroke="#fff" stroke-width="2.5"/></g><text x="625.0" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="800">1787</text><text x="625.0" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Convention</text><text x="625.0" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">opens</text><line x1="755.0" y1="125" x2="755.0" y2="135" stroke="#B8913F" stroke-width="2"/><g><title>1788: Ninth state ratifies</title><circle cx="755.0" cy="125" r="8" fill="#B8913F" stroke="#fff" stroke-width="2.5"/></g><text x="755.0" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#7A5F22" text-anchor="middle" font-weight="800">1788</text><text x="755.0" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Ninth state</text><text x="755.0" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">ratifies</text></svg>
+      <p class="source">Sources: Dates as given in this chapter. The ninth state, New Hampshire, ratified the Constitution on June 21, 1788 (U.S. Senate, Constitution of the United States of America: Analysis and Interpretation).</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Event</th></tr></thead><tbody><tr><td>1781</td><td>Articles of Confederation take effect</td></tr><tr><td>1783</td><td>Treaty of Paris ends the war</td></tr><tr><td>1784</td><td>Spain closes the lower Mississippi River to Americans</td></tr><tr><td>1786</td><td>Shays’ Rebellion begins in western Massachusetts</td></tr><tr><td>1787</td><td>Constitutional Convention opens in Philadelphia</td></tr><tr><td>1788</td><td>New Hampshire becomes the ninth state to ratify</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many years passed between the Articles taking effect and the ninth state ratifying the Constitution?</li><li>Which events on the timeline involve foreign powers? Which involve unrest inside the United States?</li><li>Why might the two years between Shays’ Rebellion and ratification have felt urgent to leaders?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Structural Impotence of Congress</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The central institution of the Articles of Confederation was a <dfn id="t-unicameral">unicameral</dfn> (one-house) Congress in which each state, regardless of its population or geographic size, possessed a single vote. Delegations could consist of two to seven members, but they had to vote as a unit. This equality of representation ensured that the sovereignty of small states like Rhode Island and Delaware was legally equivalent to that of large states like Virginia and Pennsylvania. While this satisfied the smaller states, it created a system where a minority of the population could block the will of the majority.</p>
+        <p>The legislative process under the Articles was exceptionally difficult, designed to prevent the national government from acting impulsively. Passing any significant legislation—such as declaring war, borrowing money, or ratifying treaties—required the approval of nine of the thirteen states. In practice, achieving this supermajority was a herculean task. Travel was difficult, and states were frequently delinquent in sending delegates. It was not uncommon for Congress to convene with only five or six states represented, rendering it powerless to conduct business.</p>
+        <p>Furthermore, the Articles created a rigid constitutional straitjacket by requiring unanimous consent from all thirteen state legislatures for any amendment to the document. This requirement for unanimity rendered the Articles virtually unchangeable. As the decade progressed and the need for fiscal reform became obvious, specific amendments to grant Congress the power to tax were proposed. In 1781 and again in 1783, twelve states agreed to grant Congress a limited power to collect import duties (the "<dfn id="t-impost">Impost</dfn>"). In both cases, a single dissenting state—first Rhode Island, then New York—vetoed the measure. This single-state veto power meant that the national interest was constantly held hostage to the whims or local interests of the most recalcitrant member of the union.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Unicameral</span> Having a legislature of one house. Congress under the Articles was unicameral. <span class="sp">Spanish: unicameral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Impost</span> A tax on imported goods, also called a tariff. <span class="sp">Spanish: impuesto a la importación (arancel)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2 to 7</span>Number of delegates each state could send to Congress. Each delegation cast one vote.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.2</span>How Many States Had to Agree?</p>
+      <p class="figsub">Out of thirteen states, the number needed for three kinds of decisions.</p>
+      <svg viewBox="0 0 860 186" role="img" aria-label="Bar chart: nine of thirteen states to pass major laws, nine to ratify the Constitution, thirteen to amend the Articles"><line x1="330.0" y1="10" x2="330.0" y2="142" stroke="#e6e8ec"/><text x="330.0" y="160" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0 of 13</text><line x1="431.5" y1="10" x2="431.5" y2="142" stroke="#e6e8ec"/><text x="431.5" y="160" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">3 of 13</text><line x1="533.1" y1="10" x2="533.1" y2="142" stroke="#e6e8ec"/><text x="533.1" y="160" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">6 of 13</text><line x1="634.6" y1="10" x2="634.6" y2="142" stroke="#e6e8ec"/><text x="634.6" y="160" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">9 of 13</text><line x1="770.0" y1="10" x2="770.0" y2="142" stroke="#e6e8ec"/><text x="770.0" y="160" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">13 of 13</text><text x="320" y="37.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Pass major laws, borrow money, or make treaties</text><g><title>Pass major laws, borrow money, or make treaties: 9 of 13</title><path d="M330 16 h300.6 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-300.6z" fill="#2A5276"/></g><text x="642.6" y="37.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9 of 13</text><text x="320" y="81.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Ratify the Constitution (Article VII)</text><g><title>Ratify the Constitution (Article VII): 9 of 13</title><path d="M330 60 h300.6 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-300.6z" fill="#2A5276"/></g><text x="642.6" y="81.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9 of 13</text><text x="320" y="125.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Amend the Articles of Confederation</text><g><title>Amend the Articles of Confederation: 13 of 13</title><path d="M330 104 h436.0 a4 4 0 0 1 4 4 v24 a4 4 0 0 1 -4 4 h-436.0z" fill="#B8913F"/></g><text x="778.0" y="125.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">13 of 13</text><line x1="330" y1="10" x2="330" y2="142" stroke="#6f7787" stroke-width="1.5"/><text x="550.0" y="182" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Number of states required (of 13)</text></svg>
+      <p class="source">Sources: Articles of Confederation, Articles IX and XIII; U.S. Constitution, Article VII. Highlighted bar: the amendment rule that made reform nearly impossible.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Decision</th><th>States required</th></tr></thead><tbody><tr><td>Pass major laws, borrow money, or make treaties</td><td>9 of 13</td></tr><tr><td>Ratify the Constitution (Article VII)</td><td>9 of 13</td></tr><tr><td>Amend the Articles of Confederation</td><td>13 of 13</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What percentage of states was needed to amend the Articles? (Divide, then multiply by 100.)</li><li>Why does the rule for amending the Articles explain why the impost failed twice?</li><li>The Constitution needed only nine states to take effect. What does that tell you about how its authors saw the Articles?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>Beyond the difficulties of passing laws, the Confederation Congress lacked the structural branches necessary for effective governance. There was no independent executive branch to lead the nation or enforce the will of Congress. The "President of the United States in Congress Assembled" was merely a presiding officer chosen by the delegates, with no independent authority. Executive duties were handled by shifting committees, leading to administrative inefficiency and a lack of coherent leadership. Similarly, there was no national judiciary to interpret laws or adjudicate disputes between states. When conflicts arose over state borders or interstate commerce, there was no neutral arbiter to resolve them, leaving states to engage in protracted legal and political feuds that undermined the spirit of the union.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Executive</span> The branch of government that carries out and enforces the laws. <span class="sp">Spanish: poder ejecutivo</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 5 explains the presidency the Convention created. Chapter 6 explains the national courts the Articles never had.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Crisis of Finance and the "Impost" Failures</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The most critical failure of the Articles of Confederation, and the one that most directly threatened the existence of the United States, was the lack of fiscal power. The national government had incurred massive debts to finance the Revolutionary War. By 1783, the Congress owed millions to foreign allies like France and the Netherlands, as well as to domestic creditors who had purchased war bonds. Additionally, the soldiers of the Continental Army were owed back pay for their years of service.</p>
+        <p>However, the Articles did not grant Congress the power to levy direct taxes on the people or on the states. Instead, the national government was forced to rely on a system of "<dfn id="t-requisitions">requisitions</dfn>." Congress would calculate the budget needed for the year and request specific amounts of money from the states based on the value of their surveyed land. This system proved to be a disastrous failure. The states, struggling with their own war debts and post-war economic downturns, frequently ignored these requests or paid only a fraction of what was asked. Between 1781 and 1786, the states paid only about $2.4 million of the $10 million requested by Congress.</p>
+        <p>Lacking the power of enforcement, Congress could do nothing but plead for funds. Robert Morris, the Superintendent of Finance, attempted to stabilize the nation's credit by proposing a 5 percent tariff on imports, known as the Impost of 1781. He argued that a reliable source of revenue was essential to maintain the nation's sovereignty. When Rhode Island vetoed the measure, Morris resigned in frustration, warning that the "edifice of American liberty" was about to collapse.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Requisition</span> A formal request from Congress asking the states for money. States were not required to pay. <span class="sp">Spanish: requisición (solicitud de fondos)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">$2.4 million</span>Amount the states paid of the $10 million Congress requested between 1781 and 1786, according to the text.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>In 1783 unpaid Continental Army officers stirred a crisis at Newburgh, New York, described below.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E6CF8C"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#10263F">E</text></svg><div><small>EXAMPLE</small>A Club With No Dues</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose the Shafter High robotics club could only <i>ask</i> its members for $10 each, and could not require it. If most members ignored the request, the club could not buy parts or pay for a bus. Congress under the Articles was in the same position. It could calculate what each state owed, but it could only ask. The states could say no.</p>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The consequences of this insolvency were severe. The national government could not pay the interest on the national debt, leading to a loss of creditworthiness in international markets. The inability to pay the Continental Army had already led to the Newburgh Conspiracy in 1783, a terrifying moment where officers stationed in New York threatened to march on Congress and possibly stage a military coup. Only a dramatic personal intervention by George Washington prevented a disaster. Yet, even after the peace, the financial situation deteriorated. Without the power of the purse, the Confederation Congress was a government in name only, unable to fulfill its basic obligations or sustain a functioning bureaucracy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Insolvency</span> The condition of being unable to pay one’s debts. <span class="sp">Spanish: insolvencia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1783</span>Year of the Newburgh Conspiracy, when Army officers threatened Congress over unpaid wages.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Commercial Chaos and Trade Wars</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The economic weakness of the Confederation was compounded by its inability to regulate interstate and foreign commerce. Under the Articles, each state retained the authority to manage its own trade policies, leading to a fragmented national market that European powers were quick to exploit.</p>
+        <p>Following the war, Great Britain flooded the American market with cheap manufactured goods, undercutting American artisans and draining hard currency (gold and silver) from the country. When American merchants tried to sell their goods in the British Caribbean, they were met with closed ports and high tariffs. A unified nation might have retaliated with its own tariffs to force Britain to negotiate, but the Confederation Congress lacked the power to coordinate such a policy. When Massachusetts tried to ban British goods, neighboring states like Connecticut opened their ports to British ships, happy to take the business.</p>
+        <p>This lack of coordination turned inward, leading to commercial warfare between the states. States with major ports, such as New York and Massachusetts, imposed taxes on goods flowing through them to neighboring states. New York taxed firewood coming from Connecticut and cabbages coming from New Jersey. New Jersey retaliated by taxing the lighthouse on Sandy Hook, which guided ships into New York Harbor. These trade barriers stifled economic growth, prevented the development of a national economy, and fostered deep animosity. The states were acting less like a union and more like rival European principalities, prioritizing local gain over national prosperity.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Tariff</span> A tax on goods brought into a country or a state. <span class="sp">Spanish: arancel</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Trade wars</span>New York taxed firewood from Connecticut and cabbages from New Jersey. New Jersey answered by taxing the Sandy Hook lighthouse.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 3 explains how the Constitution divides power between the national government and the states, including power over trade.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.3</span>States Against States: Examples of Trade Conflict</p>
+      <p class="figsub">Each state set its own trade rules, and the results worked against each other.</p>
+      <table class="cmp"><thead><tr><th>State</th><th>What it did</th></tr></thead><tbody><tr><td>New York</td><td>Taxed firewood from Connecticut and cabbages from New Jersey</td></tr><tr><td>New Jersey</td><td>Taxed the lighthouse at Sandy Hook, which guided ships into New York Harbor</td></tr><tr><td>Massachusetts</td><td>Tried to ban British goods</td></tr><tr><td>Connecticut</td><td>Opened its ports to British ships, which undercut Massachusetts</td></tr></tbody></table>
+      <p class="source">Source: Examples as described in this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which example shows states competing against a neighbor? Which shows a state’s policy being undone by a neighbor?</li><li>How would a single national trade policy have changed the Massachusetts and Connecticut example?</li><li>How does this table support the claim that the states acted “like rival European principalities”?</li></ol>
+      </div>
+    </figure>
+<div class="photo-row">
+<figure class="photo "><div class="crop" style="aspect-ratio:520/380"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Sandy%20Hook%20Lighthouse%20October%202020%20001.jpg?width=1200" alt="A white octagonal lighthouse tower with a black lantern room, standing among low shrubs under a blue sky." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-4.74%"></div><figcaption><span class="phlabel">The lighthouse in the trade war</span>Sandy Hook Lighthouse, completed in 1764 and built by the colony of New York, is the oldest operating lighthouse in the United States. It stands on the New Jersey side of the entrance to New York Harbor, which is why New Jersey could tax it.<span class="credit">Photo: King of Hearts / <a href="https://commons.wikimedia.org/wiki/File:Sandy_Hook_Lighthouse_October_2020_001.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span></figcaption></figure>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:520/380"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/French%20castle%20at%20Fort%20Niagara%202.JPG?width=1200" alt="A stone building with a steep roof, a flagpole and a wall around it, at Fort Niagara." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-1.32%"></div><figcaption><span class="phlabel">A fort the British kept</span>The French Castle at Fort Niagara, built in 1726 and 1727. Britain kept Fort Niagara and other posts south of the Great Lakes after the 1783 treaty, and did not leave until 1796.<span class="credit">Photo: Ad Meskens / <a href="https://commons.wikimedia.org/wiki/File:French_castle_at_Fort_Niagara_2.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span></figcaption></figure>
+</div>
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Diplomatic Humiliation and the Spanish Closure</h3>
+    <div class="pair">
+      <div class="body">
+        <p>In the realm of foreign policy, the weakness of the central government left the United States vulnerable to manipulation and aggression. Although Congress had the theoretical power to negotiate treaties, it could not compel the states to observe them, making the United States an unreliable diplomatic partner.</p>
+        <p>Great Britain, noting the impotence of the American government, refused to vacate a string of military forts along the Great Lakes (in the Northwest Territory), in direct violation of the Treaty of Paris. The British continued to occupy American soil, control the lucrative fur trade, and maintain alliances with Native American tribes hostile to American settlement. When John Adams, the American minister to London, complained, the British pointed out that American states were refusing to pay pre-war debts owed to British merchants and were not restoring property confiscated from Loyalists—both violations of the treaty that Congress was powerless to rectify.</p>
+        <p>To the south and west, the situation was equally dire. Spain, which controlled Florida and the Louisiana Territory, viewed the expanding American republic as a threat. In 1784, Spain closed the lower Mississippi River to American navigation. For farmers in the trans-Appalachian West (modern-day Kentucky and Tennessee), the Mississippi was the only viable commercial lifeline; moving crops over the mountains to the East Coast was prohibitively expensive. The closure threatened to strangle the western economy.</p>
+        <p>The resulting diplomatic negotiations, led by Secretary of Foreign Affairs John Jay, further highlighted the regional fractures in the union. Jay negotiated a potential treaty with the Spanish minister Don Diego de Gardoqui, in which the U.S. would agree to forgo navigation of the Mississippi for twenty-five years in exchange for commercial privileges that would benefit Northern merchants. The proposed "Jay-Gardoqui Treaty" caused an uproar in the South and West, where it was seen as a betrayal of their interests to enrich the Northeast. The treaty was never ratified, but the bitterness it engendered made many Southerners suspicious of granting the central government power over commerce, fearing it would be used to sacrifice their regional interests.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Treaty of Paris</span> The 1783 agreement that ended the Revolutionary War and recognized American independence. <span class="sp">Spanish: Tratado de París</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Northwest Territory</span> The region north of the Ohio River, where the British kept military forts after the Treaty of Paris. <span class="sp">Spanish: Territorio del Noroeste</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1784</span>Year Spain closed the lower Mississippi River to American navigation.</div>
+        <div class="connect"><span class="tag">CONNECT TO GEOGRAPHY</span>Western farmers shipped crops by river. Crossing the Appalachian Mountains by road was too expensive.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Yield on the Mississippi?</div></div>
+      <div class="box-b">
+        <p>You are a delegate from Kentucky. Congress is considering a treaty that gives up use of the Mississippi for twenty-five years in return for trade benefits for Northern merchants.</p>
+        <div class="opts"><div class="opt"><h5>Accept the deal</h5>Northern trade grows and the Confederation gains a treaty with Spain.</div><div class="opt"><h5>Reject the deal</h5>Western farmers keep their claim to the river, but the treaty benefits are lost.</div></div>
+        <p class="ask">Which would you choose, and whose interests would your choice hurt?</p>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/C.%201783%20United%20States.jpg?width=1400" alt="A colored map of the United States in 1783, with the original states along the Atlantic coast and territory extending west to the Mississippi River." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The country in 1783</span>A map of the United States as it stood after the 1783 Treaty of Paris, with the Mississippi River as its western edge. The map was drawn by Alexander Keith Johnston in the late 1800s, a century after these events, so it shows how later mapmakers pictured the country in 1783.<span class="credit">Image: Alexander Keith Johnston (cartographer, between 1888 and 1897) / <a href="https://commons.wikimedia.org/wiki/File:C._1783_United_States.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE CONFEDERATION’S WEAKNESSES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 2.2. Which rule made it hardest to change the Articles? Explain.</li><li>Use Figure 2.3. Name one trade policy from the table and explain why a national government could have handled it better.</li><li>Use the text. Explain why requisitions failed to fund the government.</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Shays’ Rebellion: The Catalyst for Change</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The simmering tensions caused by economic depression, governmental paralysis, and the scarcity of hard currency erupted into violence in the autumn and winter of 1786. The epicenter of the crisis was western Massachusetts, where the disconnect between the coastal elite and the rural interior was most acute.</p>
+        <p>Following the war, the Massachusetts state legislature, dominated by Boston merchants, aggressively sought to pay off the state's war debt. They imposed heavy taxes that had to be paid in hard currency (specie). However, gold and silver were virtually nonexistent in the rural west, where the economy relied on barter. Farmers, many of them veterans of the Revolutionary War, found themselves unable to pay. The consequences were brutal: courts issued foreclosure orders, seizing farms and livestock, and many debtors were thrown into squalid prisons.</p>
+        <p>The farmers petitioned the legislature for relief, asking for "stay laws" to delay foreclosures and the issuance of paper money to increase the money supply. When the legislature adjourned without acting, the farmers turned to the tactics of 1776. Under the leadership of Daniel Shays, a former captain in the Continental Army who had fought at Bunker Hill and Saratoga, armed insurgents began to forcibly close the courts in Northampton, Worcester, and other towns. Their goal was simple: if the courts were closed, no judgments could be issued, and their farms would be safe.</p>
+        <p><dfn id="t-shays">Shays’ Rebellion</dfn> was not merely a local riot; it was an organized challenge to the authority of the state government. The rebels, who called themselves "Regulators," viewed themselves as the true heirs of the American Revolution, resisting a tyrannical government in Boston just as they had resisted London.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Shays’ Rebellion</span> An armed uprising of Massachusetts farmers in 1786–1787 against debt collection and high taxes. <span class="sp">Spanish: Rebelión de Shays</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Specie</span> Gold and silver coins, as opposed to paper money. <span class="sp">Spanish: moneda metálica</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1786–1787</span>Autumn 1786 to winter 1787: the period of the Massachusetts uprising.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.4</span>How Shays’ Rebellion Unfolded</p>
+      <p class="figsub">From farm debts to a call for a new government.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Flow chart of Shays&#x27; Rebellion: debts and taxes, foreclosures, petitions ignored, courts closed, Congress cannot help, private militia, call for reform"><g><title>Debts and taxes: Massachusetts demands taxes in gold and silver</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Debts and taxes</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Massachusetts demands</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">taxes in gold and silver</text><g><title>Foreclosures: Courts seize farms and livestock</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Foreclosures</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Courts seize farms and</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">livestock</text><g><title>Petitions ignored: The legislature adjourns without relief</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Petitions ignored</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The legislature adjourns</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">without relief</text><g><title>Courts closed: Armed farmers shut down the courts</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Courts closed</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Armed farmers shut down</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">the courts</text><g><title>Congress cannot help: No money and no power to raise troops</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#B8913F" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Congress cannot help</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">No money and no power to</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">raise troops</text><g><title>Private militia: Paid by Boston merchants; Lincoln disperses the rebels, Jan. 1787</title><rect x="241.3" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="329.3" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Private militia</text><text x="329.3" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Paid by Boston merchants;</text><text x="329.3" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Lincoln disperses the</text><text x="329.3" y="198" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">rebels, Jan. 1787</text><g><title>Call for reform: Leaders agree the Articles must be replaced</title><rect x="442.7" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#2A5276" stroke-width="2.5"/></g><text x="530.7" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#10263F" text-anchor="middle" font-weight="700">Call for reform</text><text x="530.7" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Leaders agree the Articles</text><text x="530.7" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">must be replaced</text><path d="M219.0 45.0 L236.3 45.0" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#B8913F"/><path d="M420.3 45.0 L437.7 45.0" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#B8913F"/><path d="M621.7 45.0 L639.0 45.0" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#B8913F"/><path d="M732.0 84 V104 H128.0 V124" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#B8913F"/><path d="M219.0 165.0 L236.3 165.0" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M236.3 159.0 l8 6 l-8 6z" fill="#B8913F"/><path d="M420.3 165.0 L437.7 165.0" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M437.7 159.0 l8 6 l-8 6z" fill="#B8913F"/></svg>
+      <p class="source">Source: Sequence as described in this chapter’s text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>At which step does the national government’s weakness appear? Explain.</li><li>Why did the farmers think of themselves as heirs of the Revolution?</li><li>Which step might the rebels have changed if the legislature had passed stay laws?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The response—or lack thereof—from the Confederation Congress exposed the fatal weakness of the national government. When the Governor of Massachusetts appealed to Congress for assistance, Congress attempted to raise troops but failed; it had no money to pay them and no authority to draft them. The national government was reduced to a helpless bystander while a state collapsed into civil war. Ultimately, the rebellion was crushed not by the national army, but by a private militia funded by wealthy Boston merchants and commanded by General Benjamin Lincoln. In January 1787, Lincoln's forces dispersed the rebels at the Springfield Armory, and Shays fled to Vermont.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Militia</span> A military force of citizens called up for emergencies rather than a standing army. <span class="sp">Spanish: milicia</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Both sides compared themselves to the patriots of 1776. The farmers resisted Boston the way patriots had resisted London.</div>
+      </div>
+    </div>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:1066/420"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Mt.%20Vernon%20mansion%2C%20west%2C%20or%20original%20front%2C%20by%20N.%20G.%20Johnson%203.jpg?width=1800" alt="A sepia photograph of the long, white Mount Vernon mansion with a lawn in front and trees at the sides." loading="lazy" style="position:absolute;max-width:none;height:auto;width:240%;left:-18%;top:-104%"></div><figcaption><span class="phlabel">Washington in retirement</span>Mount Vernon, George Washington’s Virginia home, in a stereograph photograph published around 1880. The card holds two nearly identical views; only the left view is shown here. Washington was living at Mount Vernon in retirement when he wrote about the rebellion to James Madison.<span class="credit">Image: N. G. Johnson (photographer, c. 1880) / <a href="https://commons.wikimedia.org/wiki/File:Mt._Vernon_mansion,_west,_or_original_front,_by_N._G._Johnson_3.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>Although the rebellion was militarily defeated, its political impact was seismic. For the nation's elite, Shays’ Rebellion was a confirmation of their worst fears: that the "excess of democracy" was leading to anarchy. It appeared that the people, lacking virtue and self-control, were turning liberty into license. George Washington, living in retirement at Mount Vernon, was horrified. He wrote to James Madison, "We are fast verging to anarchy and confusion!" The rebellion demonstrated that the state governments were unable to maintain order and that the national government was too weak to help.</p>
+        <p>The specter of Shays’ Rebellion provided the final, irresistible impulse for constitutional reform. It convinced many who had previously been skeptical of centralized power—including influential figures in the South—that a stronger national government was necessary to insure domestic tranquility and protect property rights against the "mob." When the call went out for a convention in Philadelphia to revise the Articles, the memory of Daniel Shays’ farmers marching on the courts ensured that the delegates would not be content with mere tinkering. They arrived in May 1787 prepared to engage in a radical reconstruction of the American government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Anarchy</span> A condition of disorder in which no authority can keep the peace. <span class="sp">Spanish: anarquía</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Nov. 5, 1786</span>Date of Washington’s letter to Madison, written from Mount Vernon.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>The Case Study at the end of this chapter lets you read that letter in Washington’s own words.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CAUSE AND EFFECT</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Name two causes of Shays’ Rebellion from the text.</li><li>Explain how the rebellion changed the views of leaders who had been skeptical of a strong national government.</li><li>Write a Counter-Argument to this claim: “The Articles of Confederation failed because the founders were careless.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 2.1 ASSESSMENT</b>Complete the Section 2.1 Assessment in your <i>Chapter 2 Assignment</i> packet before you move on to Section 2.2.</div></div>  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>2.2</b></div>
+    <h2>The Philadelphia Convention and the Compromises</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E6CF8C" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F4EFE3" stroke-width="5"/><path d="M14 100h132" stroke="#E6CF8C" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 2.2, you will</p>
+      <ul><li>Describe how the delegates organized the Convention and why they met in secret</li><li>Compare the Virginia Plan and the New Jersey Plan and explain how the Great Compromise resolved them</li><li>Explain the Three-Fifths Compromise, the slave trade clause, and the creation of the Electoral College</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-virginia-plan">Virginia Plan</a></li><li><a href="#t-new-jersey-plan">New Jersey Plan</a></li><li><a href="#t-great-compromise">Great Compromise</a></li><li><a href="#t-three-fifths">Three-Fifths Compromise</a></li><li><a href="#t-electoral-college">Electoral College</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each compromise and who gave something up.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: compromise, who agreed, who gave up"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Compromise</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who agreed</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who gave up</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Philadelphia Convention: Designing a New Architecture</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">In May 1787, delegates from twelve states began to trickle into Philadelphia, gathering at the Pennsylvania State House—the same red brick building where the Declaration of Independence had been signed eleven years earlier. Rhode Island, fearful of centralized power and fiercely protective of its own inflationary currency policies, refused to send a delegation. The fifty-five men who eventually assembled constituted a remarkable collection of political talent and experience. They were lawyers, merchants, planters, and physicians; many were veterans of the Continental Army and the Confederation Congress. They shared a deep disillusionment with the paralysis of the 1780s and a common conviction that the survival of the republic required a stronger national framework.</p>
+        <p>Upon achieving a quorum, the delegates unanimously elected George Washington as the presiding officer. Washington’s presence was crucial; his immense prestige reassured a skeptical public that the convention—which some feared might lead to a restoration of monarchy—had legitimate republican aims. Crucially, the delegates voted to conduct their meetings in strict secrecy. Sentries were posted at the doors, and the windows were nailed shut despite the sweltering summer heat to prevent eavesdropping. This decision was strategic: it allowed the delegates to speak freely, explore radical alternatives, and change their minds without the pressure of public scrutiny or political posturing. While their official mandate from the Confederation Congress was limited to "revising" the Articles of Confederation, the delegates quickly concluded that the existing framework was unsalvageable. They embarked instead on a "bloodless coup," aiming to design a completely new architecture of government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Quorum</span> The minimum number of members who must be present for a body to conduct business. <span class="sp">Spanish: quórum</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">55 delegates</span>Number of men who eventually took part in the Convention. Rhode Island sent none.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The delegates met in the Pennsylvania State House, today called Independence Hall, where the Declaration of Independence had been adopted.</div>
+      </div>
+    </div>
+
+<figure class="photo "><div class="crop" style="aspect-ratio:1066/420"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Scene%20at%20the%20Signing%20of%20the%20Constitution%20of%20the%20United%20States.jpg?width=1800" alt="A painting of delegates in an assembly room, with a man standing on a raised platform beneath a flag and others gathered in groups." loading="lazy" style="position:absolute;max-width:none;height:auto;width:100.0%;left:0.0%;top:-31.77%"></div><figcaption><span class="phlabel">The signing, as painted in 1940</span>Howard Chandler Christy painted this scene of the signing of the Constitution in 1940, more than 150 years after the event. It shows how a twentieth-century artist imagined the moment, not an image made in 1787.<span class="credit">Image: Howard Chandler Christy (painter, 1940) / <a href="https://commons.wikimedia.org/wiki/File:Scene_at_the_Signing_of_the_Constitution_of_the_United_States.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Conflict of Plans: Virginia vs. New Jersey</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The early weeks of the Convention were dominated by the introduction of the <dfn id="t-virginia-plan">Virginia Plan</dfn>, a comprehensive proposal drafted by James Madison and presented by Edmund Randolph. Madison, who had spent months studying the history of failed confederacies, arrived in Philadelphia with a clear vision: the national government must derive its power directly from the people, not from the states. The Virginia Plan proposed a radical departure from the confederate model. It called for a strong, consolidated national government with the power to veto state laws and use military force against states that failed to fulfill their duties.</p>
+        <p>Structurally, the Virginia Plan proposed a bicameral (two-house) legislature. Representation in both houses would be based on population or tax contributions. This design favored large, populous states like Virginia, Pennsylvania, and Massachusetts, giving them dominance over national policy. The plan envisioned a national government that was truly supreme, with a national executive and judiciary chosen by the legislature.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Virginia Plan</span> The proposal for a strong national government with a two-house legislature based on population. <span class="sp">Spanish: Plan de Virginia</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bicameral</span> Having a legislature of two houses. <span class="sp">Spanish: bicameral</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Madison</span>Author of the Virginia Plan, which Edmund Randolph presented to the Convention.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The small states, alarmed by the prospect of being marginalized in a population-based system, countered with the <dfn id="t-new-jersey-plan">New Jersey Plan</dfn>, introduced by William Paterson. This plan sought to preserve the essential structure of the Articles of Confederation while correcting its most glaring weaknesses. It proposed a unicameral legislature with equal representation for every state—one state, one vote. The New Jersey Plan acknowledged the need for federal supremacy in specific areas, granting Congress the power to tax and regulate commerce, but it refused to yield the fundamental sovereignty of the states.</p>
+        <p>The convention deadlocked over this issue, bringing the proceedings to a near halt. The debate was not merely about arithmetic; it was a philosophical conflict over the nature of the new union. Was the United States a union of people, in which the majority should rule, or was it a union of sovereign states, in which each political unit retained equal status regardless of size? Tempers flared, and delegates from small states threatened to withdraw, which would have doomed the enterprise.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">New Jersey Plan</span> The proposal, introduced by William Paterson, for a one-house Congress with one vote per state. <span class="sp">Spanish: Plan de Nueva Jersey</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The deadlock was about more than numbers. It asked whether the nation was a union of people or a union of states.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.5</span>Three Plans for the Legislature</p>
+      <p class="figsub">How each proposal answered the question of who should be represented in Congress.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Virginia Plan</th><th>New Jersey Plan</th><th>Great Compromise</th></tr></thead><tbody><tr><td>Proposed by</td><td>James Madison (presented by Edmund Randolph)</td><td>William Paterson</td><td>Roger Sherman and Oliver Ellsworth</td></tr><tr><td>Legislature</td><td>Two houses</td><td>One house</td><td>Two houses</td></tr><tr><td>Representation</td><td>By population or tax contributions in both houses</td><td>One state, one vote</td><td>House by population; Senate two per state</td></tr><tr><td>Source of power</td><td>The people, through a strong national government</td><td>The states, as under the Articles</td><td>The people (House) and the states (Senate)</td></tr><tr><td>Who favored it</td><td>Large states</td><td>Small states</td><td>Both sides accepted it</td></tr></tbody></table>
+      <p class="source">Sources: Descriptions in this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the biggest disagreement between the Virginia and New Jersey plans?</li><li>Which parts of the Great Compromise come from the Virginia Plan? Which come from the New Jersey Plan?</li><li>Why might each side have called the final result a fair deal?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Great Compromise</h3>
+    <div class="pair">
+      <div class="body">
+        <p>As the summer heat intensified, so did the danger of dissolution. The impasse was finally broken by the Connecticut Compromise, often called the <dfn id="t-great-compromise">Great Compromise</dfn>, proposed by Roger Sherman and Oliver Ellsworth. This solution bridged the divide by blending the competing principles of the Virginia and New Jersey plans, creating a unique federal structure.</p>
+        <p>The compromise established a bicameral legislature with a distinct character for each chamber. In the lower house, the House of Representatives, representation would be apportioned based on population, satisfying the large states and the democratic principle that power should stem from the people. Members of the House would be elected directly by the voters and would serve short, two-year terms to ensure responsiveness to the public will. In the upper house, the Senate, each state would receive two senators regardless of size, chosen by their respective state legislatures (a method that remained in place until the 17th Amendment in 1913). This satisfied the small states and retained the federal principle of state equality.</p>
+        <p>The Great Compromise was the pivot upon which the entire Constitution turned. It necessitated a complex division of powers between the two houses. Because the large states would contribute more to the national treasury, the Convention agreed that all bills for raising revenue must originate in the House of Representatives. The Senate, envisioned as a more deliberative and stable body removed from the immediate passions of the electorate, was given the power to ratify treaties and confirm presidential appointments. This structural duality created a legislature that was both national and federal, balancing the will of the democratic majority with the protection of state interests.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Great Compromise</span> The agreement to create a House based on population and a Senate with two members per state. It is also called the Connecticut Compromise. <span class="sp">Spanish: Gran Compromiso</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1913</span>Year the 17th Amendment ended the election of senators by state legislatures.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 4 explains how the House and Senate work today.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E6CF8C"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#10263F">E</text></svg><div><small>EXAMPLE</small>Student Council Compromise</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A school council has one representative per student club. The seniors have 400 students and the freshmen have 100. Seniors want one vote per student, and freshmen want one vote per class. A compromise might create two bodies: one with seats by class size and one with equal seats for each class, and require both to approve any rule. Each side gets part of what it wanted, which is the logic of the Great Compromise.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Large State or Small State?</div></div>
+      <div class="box-b">
+        <p>You are a delegate at the Convention. Your state’s population is a small share of the country’s.</p>
+        <div class="opts"><div class="opt"><h5>Support equal votes</h5>Each state gets the same voice in Congress, so large states cannot dominate.</div><div class="opt"><h5>Support votes by population</h5>Each person’s voice counts equally, though your state’s voice would shrink.</div></div>
+        <p class="ask">Which would you choose, and what would be the risk if the other side refused to compromise?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Three-Fifths Compromise: Slavery and Representation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>While the conflict between large and small states was structural, the divide between Northern and Southern states was rooted in the economic reality of slavery. This division led to the most controversial and morally fraught agreement of the Convention: the <dfn id="t-three-fifths">Three-Fifths Compromise</dfn>. As the delegates determined that representation in the House would be based on population, a critical question arose: Should enslaved people be counted?</p>
+        <p>Southern delegates, led by South Carolina and Georgia, argued that enslaved individuals should count as full persons for the purpose of representation. This would significantly inflate the South’s political power in Congress, even though these states legally defined enslaved people as property and denied them all rights of citizenship. Conversely, Northern delegates argued that if enslaved people were considered property by Southern laws, they should not count for representation at all —or, if they were to count, they should count only for the purpose of taxation, which would increase the financial burden on the South.</p>
+        <p>The resulting compromise determined that for both representation and direct taxation, "three-fifths of all other persons" (a euphemism for the enslaved population, as the word "slave" does not appear in the Constitution) would be added to the whole number of free persons. This mathematical formula had profound political consequences. It granted the slaveholding South disproportionate power in the House of Representatives and, by extension, in the Electoral College. This artificial inflation of Southern political influence would shape national policy for decades, allowing the South to protect the institution of slavery from federal interference.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Three-Fifths Compromise</span> The agreement that three-fifths of the enslaved population would be added to the free population when counting people for representation and direct taxes. <span class="sp">Spanish: Compromiso de las tres quintas partes</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Art. I, §2</span>The clause counts “three fifths of all other Persons.” The word “slave” does not appear in the original Constitution.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Constitution’s clause did not give enslaved people a vote. It increased the number of seats that slaveholding states held in the House.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.6</span>How the Three-Fifths Rule Changed Representation</p>
+      <p class="figsub">A hypothetical state shows how the rule changed the count used to assign seats.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Hypothetical state: 100,000 free persons and 50,000 enslaved persons. Counted in full the total is 150,000; under the Three-Fifths rule it is 130,000."><line x1="250.0" y1="30" x2="250.0" y2="200" stroke="#e6e8ec"/><text x="250.0" y="218" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="387.5" y1="30" x2="387.5" y2="200" stroke="#e6e8ec"/><text x="387.5" y="218" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">40,000</text><line x1="525.0" y1="30" x2="525.0" y2="200" stroke="#e6e8ec"/><text x="525.0" y="218" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">80,000</text><line x1="662.5" y1="30" x2="662.5" y2="200" stroke="#e6e8ec"/><text x="662.5" y="218" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">120,000</text><line x1="800.0" y1="30" x2="800.0" y2="200" stroke="#e6e8ec"/><text x="800.0" y="218" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">160,000</text><text x="240" y="76" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="end" font-weight="600">Everyone counted in full</text><g><title>Everyone counted in full: 150,000</title><rect x="250.0" y="44" width="343.8" height="42" fill="#10263F"/><rect x="593.8" y="44" width="171.9" height="42" rx="0" fill="#8FA9C2"/></g><text x="773.6" y="71" font-family="Inter, Arial, sans-serif" font-size="14" fill="#10263F" text-anchor="start" font-weight="700">150,000</text><text x="240" y="156" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="end" font-weight="600">Under the Three-Fifths rule</text><g><title>Under the Three-Fifths rule: 130,000</title><rect x="250.0" y="124" width="343.8" height="42" fill="#10263F"/><rect x="593.8" y="124" width="103.1" height="42" rx="0" fill="#B8913F"/></g><text x="704.9" y="151" font-family="Inter, Arial, sans-serif" font-size="14" fill="#10263F" text-anchor="start" font-weight="700">130,000</text><rect x="250" y="8" width="12" height="12" fill="#10263F"/><text x="268" y="19" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">100,000 free persons (counted fully)</text><rect x="520" y="8" width="12" height="12" fill="#B8913F"/><text x="538" y="19" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">Enslaved persons added to the count (50,000 people)</text></svg>
+      <p class="source">Source: Hypothetical example created for this textbook, using the rule in U.S. Constitution, Article I, Section 2. The numbers are not real data.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>How many people were counted for the state under the rule? How many would have been counted if every enslaved person counted in full?</li><li>Who gained political power from the rule, and who gained nothing from it?</li><li>Use the figure to explain why Northern delegates objected to counting enslaved people in full.</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/%27The%20slave%20ship%20Brooks%27%20RMG%20E0406.tiff?width=1400" alt="A printed diagram of a ship’s hull showing rows of human figures packed tightly side by side in the lower decks." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Where the trade was carried out</span>A print of the plan of the British slave ship <i>Brookes</i>, based on a design first published in 1788, showing how enslaved Africans were packed for the Atlantic crossing. The print pictured is a later version, not the 1788 original.<span class="credit">Image: Unknown artist (print, Royal Museums Greenwich) / <a href="https://commons.wikimedia.org/wiki/File:'The_slave_ship_Brooks'_RMG_E0406.tiff">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Furthermore, the delegates agreed to the Slave Trade Compromise. Southern delegates, particularly from the Deep South, threatened to walk out if the new government was given the power to ban the Atlantic slave trade immediately. To prevent the union from fracturing, the Convention agreed to a clause forbidding Congress from banning the "importation of such persons" for twenty years, until 1808. These concessions were the "price of the union"—a pragmatic bargain that preserved the nation at the cost of entrenching the institution of slavery within the constitutional order.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Importation</span> The act of bringing people or goods into a country from outside. <span class="sp">Spanish: importación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Art. I, §9</span>Congress could not prohibit the importation of such persons before 1808, but could tax each at up to ten dollars.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 11 follows the long struggle over slavery and equal rights through the Fourteenth Amendment.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Designing the Executive: The Electoral College</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Having resolved the legislative structure, the delegates turned to the executive branch. The fear of monarchy was deep-seated in the American consciousness, yet the failure of the Articles demonstrated the need for an independent executive to enforce laws and handle foreign affairs. The challenge was to create an office with sufficient "energy" to lead but checked by enough constraints to prevent tyranny.</p>
+        <p>The delegates rejected the idea of a plural executive (a committee) in favor of a single President, believing that unity was necessary for decision-making and accountability. However, they struggled with the method of election. Direct popular vote was viewed with suspicion by many delegates, such as George Mason, who doubted the public’s ability to judge the character of candidates from distant states. Conversely, election by Congress—the method used in most states for choosing governors—was rejected because it would make the President a creature of the legislature, violating the principle of separation of powers.</p>
+        <p>The solution was the <dfn id="t-electoral-college">Electoral College</dfn>, a complex mechanism that mediated the selection of the President through state-appointed electors. Each state was allocated a number of electors equal to its total representation in Congress (Senators plus Representatives). This system reinforced the Great Compromise by giving a slight advantage to smaller states (due to the two Senate votes) and, via the Three-Fifths clause, boosting the influence of Southern states. The Electoral College was designed to ensure that the President would be an independent figure, selected by a temporary body of distinguished citizens rather than by the permanent legislature or the potentially volatile mob. It reflected the founders' view of republicanism: a system based on popular consent but filtered through structures designed to ensure stability and deliberation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Electoral College</span> The system by which electors chosen in each state choose the President. <span class="sp">Spanish: Colegio Electoral</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Senators + Representatives</span>The number of electors each state received.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 14 explains how the Electoral College works in modern elections.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.7</span>Three Ways to Choose a President</p>
+      <p class="figsub">The delegates rejected two methods and settled on a third.</p>
+      <svg viewBox="0 0 860 260" role="img" aria-label="Three ways to choose a President: direct popular vote and election by Congress were rejected; the Electoral College was chosen. Electors equal Representatives plus two Senators."><rect x="20" y="24" width="340" height="100" rx="12" fill="#fff" stroke="#8FA9C2" stroke-width="2.5"/><rect x="264" y="13" width="86" height="22" rx="11" fill="#b04630"/><text x="307" y="28.5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="800">REJECTED</text><text x="190.0" y="60" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="700">Direct popular vote</text><text x="190.0" y="82" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="middle" font-weight="400">Fear: voters could not judge</text><text x="190.0" y="99" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="middle" font-weight="400">candidates from distant states</text><rect x="20" y="146" width="340" height="100" rx="12" fill="#fff" stroke="#8FA9C2" stroke-width="2.5"/><rect x="264" y="135" width="86" height="22" rx="11" fill="#b04630"/><text x="307" y="150.5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#fff" text-anchor="middle" font-weight="800">REJECTED</text><text x="190.0" y="182" font-family="Inter, Arial, sans-serif" font-size="15" fill="#10263F" text-anchor="middle" font-weight="700">Election by Congress</text><text x="190.0" y="204" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="middle" font-weight="400">Fear: the President would become</text><text x="190.0" y="221" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="middle" font-weight="400">a creature of the legislature</text><path d="M364 74 H400 V135 H432" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M364 196 H400 V145 H432" stroke="#B8913F" stroke-width="3" fill="none"/><path d="M432 129 l12 6 l-12 6z M432 139 l12 6 l-12 6z" fill="#B8913F"/><rect x="446" y="70" width="394" height="130" rx="14" fill="#10263F"/><text x="643" y="102" font-family="Inter, Arial, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="800">Electoral College</text><text x="643" y="130" font-family="Inter, Arial, sans-serif" font-size="13" fill="#E6CF8C" text-anchor="middle" font-weight="600">Each state’s electors = its Representatives</text><text x="643" y="148" font-family="Inter, Arial, sans-serif" font-size="13" fill="#E6CF8C" text-anchor="middle" font-weight="600">+ its 2 Senators</text><text x="643" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#F4EFE3" text-anchor="middle" font-weight="400">Electors are chosen by the states, then vote for President</text><text x="643" y="190" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#F4EFE3" text-anchor="middle" font-weight="400">Example (hypothetical): 5 + 2 = 7 electors</text></svg>
+      <p class="source">Source: Description in this chapter’s text and U.S. Constitution, Article II, Section 1. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Why did the delegates reject election by Congress?</li><li>Why did some delegates distrust a direct popular vote?</li><li>How does the number of electors reflect the Great Compromise and the Three-Fifths Compromise?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Moving From League to Federation</div></div>
+      <div class="box-b">
+<p style="margin:0">The United States was not the only country to replace a loose union with a stronger federal one. In 1848, Switzerland replaced its loose alliance of cantons with a federal constitution that created a national government. Canada formed a federation in 1867, and Germany’s 1949 Basic Law divided power between a national government and its states. In each case, people had to balance local self-rule against the need for a government that could act for the whole country.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; EXPLAINING A COMPROMISE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 2.5. Which compromise gave each side something it wanted? Explain.</li><li>Use Figure 2.6. Explain how the Three-Fifths Compromise increased the political power of slaveholding states without giving rights to enslaved people.</li><li>Write a Counter-Argument to this claim: “A compromise that protects slavery cannot be defended as necessary.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 2.2 ASSESSMENT</b>Complete the Section 2.2 Assessment in your <i>Chapter 2 Assignment</i> packet before you move on to Section 2.3.</div></div>  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>2.3</b></div>
+    <h2>The Ratification Debate</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E6CF8C" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F4EFE3" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E6CF8C" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 2.3, you will</p>
+      <ul><li>Explain how Article VII changed the way the Constitution would be approved</li><li>Compare the Federalist and Anti-Federalist arguments about power, size, and rights</li><li>Explain how the promise of a Bill of Rights helped win ratification</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-federalists">Federalists</a></li><li><a href="#t-anti-federalists">Anti-Federalists</a></li><li><a href="#t-federalist-papers">The Federalist Papers</a></li><li><a href="#t-bill-of-rights">Bill of Rights</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each side’s main argument and its strongest evidence.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: side, argument, evidence"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Side</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Argument</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2A5276"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Evidence</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2A5276" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Ratification Debate: Federalists vs. Anti-Federalists</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/United%20States%20Constitution%20broadside%20printed%20by%20John%20Carter%20Rhode%20Island%20Providence%201.jpg?width=1400" alt="A tall printed broadside of the Constitution with a decorative border and text in narrow columns." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A printed Constitution</span>A broadside, or one-sheet printing, of the Constitution made by John Carter of Providence, Rhode Island, in 1787. Printed copies like this let citizens read the text during the ratification debate.<span class="credit">Image: John Carter (printer, 1787) / <a href="https://commons.wikimedia.org/wiki/File:United_States_Constitution_broadside_printed_by_John_Carter_Rhode_Island_Providence_1.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">On September 17, 1787, thirty-nine delegates signed the finished Constitution. However, the document was not yet law. Article VII specified that it would go into effect only after being ratified by conventions in nine of the thirteen states. This provision bypassed the state legislatures, which were likely to oppose a reduction in their own power, and appealed directly to "the people" assembled in special conventions. The transmission of the proposed Constitution to the states initiated a furious public debate that defined the ideological contours of American politics.</p>
+        <p>This was not merely a vote on a legal document; it was a referendum on the future of liberty and the meaning of the Revolution. The proponents of the Constitution took the name "<dfn id="t-federalists">Federalists</dfn>," a savvy branding choice that implied they supported a federal union of states, though their opponents argued they actually favored a consolidated national empire. Those who opposed ratification were labeled "<dfn id="t-anti-federalists">Anti-Federalists</dfn>," a term that defined them by what they were against rather than what they stood for. The debate was waged in newspapers, pamphlets, town taverns, and state conventions.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Ratification</span> Formal approval of a constitution or treaty so that it takes effect. <span class="sp">Spanish: ratificación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">9 of 13</span>Number of state conventions Article VII required for the Constitution to take effect.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article VII asked for approval from conventions of the people, not from state legislatures.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Federalist Argument: Structure as Security</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Federalist%20%281st%20ed%2C%201788%2C%20vol%20I%2C%20title%20page%29.jpg?width=1400" alt="The title page of the first edition of The Federalist, printed in widely spaced capital letters." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Federalist, 1788</span>The title page of the first collected edition of <i>The Federalist</i>, printed in New York in 1788.<span class="credit">Image: J. and A. McLean (publishers, 1788) / <a href="https://commons.wikimedia.org/wiki/File:The_Federalist_(1st_ed,_1788,_vol_I,_title_page).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The Federalists, led by figures such as Alexander Hamilton, James Madison, and John Jay, possessed the advantages of better organization, clearer goals, and control of the press in major cities. Their most enduring contribution to the debate was a series of eighty-five essays known as The <dfn id="t-federalist-papers">Federalist Papers</dfn>. Written under the pseudonym "Publius," these essays provided a sophisticated defense of the Constitution’s mechanics and political philosophy.</p>
+        <p>The core of the Federalist argument was that the Articles of Confederation led inevitably to disunion and foreign intervention. They argued that a stronger central government was not an enemy to liberty but its essential protector. Without a government capable of raising armies and regulating trade, the states would fall prey to European empires or devolve into petty civil wars.</p>
+        <p>James Madison’s Federalist No. 10 is perhaps the most famous of these essays. In it, Madison addressed the traditional assumption—derived from Montesquieu—that republics could only function in small, homogeneous territories. He argued that in a small republic, it was easy for a majority faction to unite and oppress the minority. Conversely, Madison contended that an "extended republic"—a large nation like the United States—was actually safer for liberty. In a large republic, the sheer variety of economic, religious, and geographic interests (factions) would make it difficult for any single group to form a majority and impose its will on the others. The size of the nation would act as a check on tyranny.</p>
+        <p>In Federalist No. 51, Madison defended the system of separation of powers and checks and balances. He famously asserted that "ambition must be made to counteract ambition." The Federalists argued that the Constitution did not need a specific Bill of Rights because the government’s powers were strictly enumerated. They feared that listing specific rights might imply that those were the only rights the people possessed, potentially endangering unlisted liberties.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">The Federalist Papers</span> Eighty-five essays by Hamilton, Madison, and Jay, written as “Publius,” defending the Constitution. <span class="sp">Spanish: Los papeles federalistas</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Faction</span> A group of citizens united by a shared interest that is opposed to the rights of others or the good of the whole. <span class="sp">Spanish: facción</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No. 10 and No. 51</span>Madison’s two best-known essays: one on the dangers of faction, one on checks and balances.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 3 returns to checks and balances and separation of powers.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.8</span>Two Sides of the Ratification Debate</p>
+      <p class="figsub">Federalists and Anti-Federalists agreed that liberty mattered. They disagreed about what protected it.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Federalists</th><th>Anti-Federalists</th></tr></thead><tbody><tr><td>Leaders</td><td>Hamilton, Madison, Jay</td><td>Patrick Henry, George Mason, Richard Henry Lee</td></tr><tr><td>What protects liberty?</td><td>A strong, well-organized government with checks and balances</td><td>Small, local government close to the people</td></tr><tr><td>Size of the republic</td><td>A large republic makes it harder for one faction to dominate</td><td>Liberty survives only in small communities</td></tr><tr><td>Bill of Rights</td><td>Unnecessary; listing rights might limit them</td><td>Essential; the government has no explicit limits without one</td></tr><tr><td>Main written works</td><td><i>The Federalist Papers</i></td><td>Essays such as Brutus No. 1</td></tr></tbody></table>
+      <p class="source">Sources: Descriptions in this chapter’s text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the sharpest disagreement? Explain.</li><li>Which side was more worried about a distant government? Use the table as evidence.</li><li>Write a Counter-Argument a Federalist might offer to the Anti-Federalist demand for a Bill of Rights.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Anti-Federalist Critique: The Fear of Consolidation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The Anti-Federalists were a diverse coalition including small farmers, shopkeepers, and prominent revolutionary leaders like Patrick Henry, George Mason, and Richard Henry Lee. Their opposition was rooted in a deep suspicion of centralized power, drawing on the classical republican belief that liberty could only be preserved in small, local communities where the government was close to the people and easily monitored.</p>
+        <p>In essays such as Brutus No. 1, Anti-Federalists dissected the text of the Constitution to highlight its potential for tyranny. They zeroed in on the "Necessary and Proper Clause" (Article I, Section 8) and the "Supremacy Clause" (Article VI). They argued that these provisions gave the federal government open-ended power to expand its jurisdiction, eventually swallowing up the state governments entirely. To the Anti-Federalists, a distant Congress in a federal capital would never understand the needs of local constituents and would essentially become an aristocracy of the wealthy elite. They predicted that the federal power to tax would bleed the people dry and that the federal judiciary would render state courts irrelevant.</p>
+        <p>The Anti-Federalists also attacked the lack of a <dfn id="t-bill-of-rights">Bill of Rights</dfn> with ferocity. They pointed out that the Constitution contained no explicit protections for freedom of speech, the press, religion, or trial by jury in civil cases. They asked a compelling question: If the federal government was supreme, what was to stop it from infringing on these fundamental liberties? For a generation that had just fought a war against valid violations of rights, this omission was a glaring and dangerous defect.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bill of Rights</span> The first ten amendments to the Constitution, which protect individual liberties. <span class="sp">Spanish: Declaración de Derechos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1791</span>Year the Bill of Rights was ratified.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 8 examines the Bill of Rights and the First Amendment in detail.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Compromise for Ratification</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The ratification process was arduous. While small states like Delaware and New Jersey quickly ratified the Constitution (pleased by the equality in the Senate), the outcome in pivotal states like Massachusetts, Virginia, and New York was uncertain. In Massachusetts, the debate was fierce, with Anti-Federalists holding a potential majority. The Federalists secured victory only by a strategic maneuver: they promised that the first Congress would consider amendments to protect individual liberties.</p>
+        <p>This promise—the "Massachusetts Compromise"—became the template for other hesitating states. It bridged the gap between the two sides. The Federalists got their framework of government, and the Anti-Federalists got an assurance that a Bill of Rights would be added. In June 1788, New Hampshire became the ninth state to ratify, technically putting the Constitution into effect. However, the new government could not succeed without Virginia and New York, the centers of population and commerce.</p>
+        <p>In Virginia, Patrick Henry debated James Madison in a dramatic clash of oratory versus logic. Madison eventually prevailed by a narrow margin, again promising a Bill of Rights. In New York, Alexander Hamilton led a month-long struggle at the Poughkeepsie convention against a heavily Anti-Federalist majority, finally securing ratification by a slender three-vote margin. By the time North Carolina and Rhode Island eventually joined (Rhode Island not until 1790), the new government was already functioning. The ratification of the Constitution was a victory for the Federalist vision of a strengthened national union, but the Anti-Federalist legacy was cemented in the Bill of Rights—the first ten amendments—which were ratified in 1791.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Amendment</span> A formal change or addition to the Constitution. <span class="sp">Spanish: enmienda</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">June 21, 1788</span>Date New Hampshire became the ninth state to ratify.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Rhode Island, which had refused to send delegates to Philadelphia, did not ratify until May 29, 1790.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 2.9</span>How Close Was Ratification? Percent Voting Yes at State Conventions</p>
+      <p class="figsub">Percentage of delegates who voted to ratify, in order of ratification. The three pivotal states named in the text are highlighted.</p>
+      <svg viewBox="0 0 860 362" role="img" aria-label="Bar chart of the percent voting yes at eleven state ratifying conventions, from 100 percent in Delaware, New Jersey and Georgia to 52.6 percent in New York"><line x1="230.0" y1="10" x2="230.0" y2="318" stroke="#e6e8ec"/><text x="230.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0.0%</text><line x1="365.0" y1="10" x2="365.0" y2="318" stroke="#e6e8ec"/><text x="365.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25.0%</text><line x1="500.0" y1="10" x2="500.0" y2="318" stroke="#e6e8ec"/><text x="500.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50.0%</text><line x1="635.0" y1="10" x2="635.0" y2="318" stroke="#e6e8ec"/><text x="635.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75.0%</text><line x1="770.0" y1="10" x2="770.0" y2="318" stroke="#e6e8ec"/><text x="770.0" y="336" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100.0%</text><text x="220" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Delaware (Dec. 7)</text><g><title>Delaware (Dec. 7): 100.0%</title><path d="M230 16 h536.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-536.0z" fill="#2A5276"/></g><text x="778.0" y="29.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">100.0%</text><text x="220" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Pennsylvania (Dec. 12)</text><g><title>Pennsylvania (Dec. 12): 66.7%</title><path d="M230 44 h356.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-356.2z" fill="#2A5276"/></g><text x="598.2" y="57.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">66.7%</text><text x="220" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New Jersey (Dec. 18)</text><g><title>New Jersey (Dec. 18): 100.0%</title><path d="M230 72 h536.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-536.0z" fill="#2A5276"/></g><text x="778.0" y="85.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">100.0%</text><text x="220" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Georgia (Jan. 2)</text><g><title>Georgia (Jan. 2): 100.0%</title><path d="M230 100 h536.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-536.0z" fill="#2A5276"/></g><text x="778.0" y="113.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">100.0%</text><text x="220" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Connecticut (Jan. 9)</text><g><title>Connecticut (Jan. 9): 76.2%</title><path d="M230 128 h407.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-407.5z" fill="#2A5276"/></g><text x="649.5" y="141.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">76.2%</text><text x="220" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Massachusetts (Feb. 6)</text><g><title>Massachusetts (Feb. 6): 52.7%</title><path d="M230 156 h280.6 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-280.6z" fill="#B8913F"/></g><text x="522.6" y="169.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52.7%</text><text x="220" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Maryland (Apr. 28)</text><g><title>Maryland (Apr. 28): 85.1%</title><path d="M230 184 h455.5 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-455.5z" fill="#2A5276"/></g><text x="697.5" y="197.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">85.1%</text><text x="220" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">South Carolina (May 23)</text><g><title>South Carolina (May 23): 67.1%</title><path d="M230 212 h358.3 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-358.3z" fill="#2A5276"/></g><text x="600.3" y="225.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">67.1%</text><text x="220" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New Hampshire (June 21)</text><g><title>New Hampshire (June 21): 54.8%</title><path d="M230 240 h291.9 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-291.9z" fill="#2A5276"/></g><text x="533.9" y="253.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">54.8%</text><text x="220" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Virginia (June 25)</text><g><title>Virginia (June 25): 53.0%</title><path d="M230 268 h282.2 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-282.2z" fill="#B8913F"/></g><text x="524.2" y="281.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">53.0%</text><text x="220" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New York (July 26)</text><g><title>New York (July 26): 52.6%</title><path d="M230 296 h280.0 a4 4 0 0 1 4 4 v8 a4 4 0 0 1 -4 4 h-280.0z" fill="#B8913F"/></g><text x="522.0" y="309.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52.6%</text><line x1="230" y1="10" x2="230" y2="318" stroke="#6f7787" stroke-width="1.5"/><text x="500.0" y="358" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of delegates voting yes</text></svg>
+      <p class="source">Sources: Convention vote totals as compiled in U.S. Senate, <i>Constitution of the United States of America: Analysis and Interpretation</i>, and state ratification records; percentages calculated for this textbook. Not shown: North Carolina (ratified November 21, 1789; published totals differ by source) and Rhode Island (May 29, 1790, 34 to 32). Delaware, New Jersey and Georgia voted unanimously.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>State</th><th>Date ratified</th><th>Yes</th><th>No</th><th>% yes</th></tr></thead><tbody><tr><td>Delaware</td><td>Dec. 7, 1787</td><td>30</td><td>0</td><td>100.0%</td></tr><tr><td>Pennsylvania</td><td>Dec. 12, 1787</td><td>46</td><td>23</td><td>66.7%</td></tr><tr><td>New Jersey</td><td>Dec. 18, 1787</td><td>38</td><td>0</td><td>100.0%</td></tr><tr><td>Georgia</td><td>Jan. 2, 1788</td><td>26</td><td>0</td><td>100.0%</td></tr><tr><td>Connecticut</td><td>Jan. 9, 1788</td><td>128</td><td>40</td><td>76.2%</td></tr><tr><td>Massachusetts</td><td>Feb. 6, 1788</td><td>187</td><td>168</td><td>52.7%</td></tr><tr><td>Maryland</td><td>Apr. 28, 1788</td><td>63</td><td>11</td><td>85.1%</td></tr><tr><td>South Carolina</td><td>May 23, 1788</td><td>149</td><td>73</td><td>67.1%</td></tr><tr><td>New Hampshire</td><td>June 21, 1788</td><td>57</td><td>47</td><td>54.8%</td></tr><tr><td>Virginia</td><td>June 25, 1788</td><td>89</td><td>79</td><td>53.0%</td></tr><tr><td>New York</td><td>July 26, 1788</td><td>30</td><td>27</td><td>52.6%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which three states in the chart had the closest votes? What did the text say about those states?</li><li>Which states ratified without a single dissenting vote? What did the small states gain from the Constitution?</li><li>Which state’s vote made the Constitution take effect? Why did leaders still worry about Virginia and New York?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The journey from the Articles of Confederation to the ratification of the Constitution represented a profound maturation in American political thought. The crisis of the 1780s demonstrated that the revolutionary zeal for liberty, while essential, was insufficient to build a durable nation. The failure of the "firm league of friendship" proved that a government without the power to tax, enforce laws, or regulate the economy was a government in name only, susceptible to internal anarchy and external domination.</p>
+        <p>The solution crafted in Philadelphia was not a victory of one ideology over another, but a complex web of compromises. The Great Compromise reconciled the interests of large and small states, creating a legislative structure that remains unique in the world. The Three-Fifths Compromise managed the volatile issue of slavery, preserving the union at a steep moral cost that would eventually be paid in the blood of the Civil War. The Electoral College and the system of checks and balances reflected a pragmatic desire to filter the popular will through institutions designed to promote stability.</p>
+        <p>As the nation transitioned to this new constitutional order, the essential question remained: Could a government designed on paper withstand the pressures of reality? The Federalists had successfully argued that a large republic was the best defense against tyranny, but the Anti-Federalists had rightly insisted that such a powerful government required explicit barriers to protect individual rights. This dialogue between power and liberty did not end with ratification; it merely moved into the halls of the new Congress. As the first generation of American leaders prepared to implement the Constitution, they faced the challenge of turning these theoretical compromises into a functioning government, a task that would test the flexibility of the new system immediately. The era of creation was over; the era of application—and the definition of federalism—was about to begin.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1788 → 1791</span>From ratification of the Constitution to ratification of the Bill of Rights, three years.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 3 shows how the structure the Convention built works in practice.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; CLAIMS AND COUNTER-ARGUMENTS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 2.8. Write one claim a Federalist would make about the size of the republic and one an Anti-Federalist would make.</li><li>Use Figure 2.9. Which state’s vote was closest? What does that suggest about the promise of amendments?</li><li>Write a Counter-Argument to this claim: “The Constitution succeeded because everyone agreed with it.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 2.3 ASSESSMENT</b>Complete the Section 2.3 Assessment in your <i>Chapter 2 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Was a stronger national government worth the risk to liberty? Read four original documents from 1786 to 1788 and decide how the founders and their critics answered.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Ratification Sources</h3>
+        <p>The documents below come from the two years that decided whether the Articles would be replaced. George Washington wrote his letter weeks after Shays’ Rebellion began. James Madison wrote Federalist No. 10 for New York newspapers in 1787. An Anti-Federalist who signed himself “Brutus” answered the Constitution in the same newspapers. The last document is the Constitution itself, which holds the compromises you studied in Section 2.2.</p>
+        <p>As you read, notice what each source fears, what it trusts, and what it asks the reader to do. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1786 to 1788, from a private letter to the Constitution itself.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · PRIVATE LETTER</small><b>George Washington to James Madison (November 5, 1786)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Without some alteration in our political creed, the superstructure we have been seven years raising at the expence of much blood and treasure, must fall. We are fast verging to anarchy & confusion!”<cite>George Washington to James Madison, Mount Vernon, November 5, 1786. Founders Online, National Archives. Original spelling kept.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Washington think will happen if nothing changes? Which weakness of the Articles from Section 2.1 might he have in mind?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FEDERALIST ESSAY</small><b>James Madison, <i>Federalist No. 10</i> (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Extend the sphere, and you take in a greater variety of parties and interests; you make it less probable that a majority of the whole will have a common motive to invade the rights of other citizens; or if such a common motive exists, it will be more difficult for all who feel it to discover their own strength, and to act in unison with each other.”<cite>James Madison, <i>Federalist No. 10</i>, November 22, 1787. Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> According to Madison, why is a large republic safer for liberty than a small one? Use a phrase from the text.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · ANTI-FEDERALIST ESSAY</small><b>“Brutus,” <i>Essay No. 1</i> (October 18, 1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“In a republic, the manners, sentiments, and interests of the people should be similar. If this be not the case, there will be a constant clashing of opinions; and the representatives of one part will be continually striving, against those of the other. This will retard the operations of government, and prevent such conclusions as will promote the public good. If we apply this remark to the condition of the United States, we shall be convinced that it forbids that we should be one government. The United States includes a variety of climates. The productions of the different parts of the union are very variant, and their interests, of consequence, diverse. Their manners and habits differ as much as their climates and productions; and their sentiments are by no means coincident.”<cite>“Brutus,” Essay No. 1, <i>New York Journal</i>, October 18, 1787. Text from The Founders’ Constitution, University of Chicago Press.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> How does Brutus use the same fact, the variety of interests in the United States, to argue the opposite of Madison’s conclusion?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · FOUNDING DOCUMENT</small><b>The Constitution of the United States (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article I, Section 2: “Representatives and direct Taxes shall be apportioned among the several States which may be included within this Union, according to their respective Numbers, which shall be determined by adding to the whole Number of free Persons, including those bound to Service for a Term of Years, and excluding Indians not taxed, three fifths of all other Persons.”<br><br>Article I, Section 9: “The Migration or Importation of such Persons as any of the States now existing shall think proper to admit, shall not be prohibited by the Congress prior to the Year one thousand eight hundred and eight, but a Tax or duty may be imposed on such Importation, not exceeding ten dollars for each Person.”<br><br>Article VII: “The Ratification of the Conventions of nine States, shall be sufficient for the Establishment of this Constitution between the States so ratifying the Same.”<cite>U.S. Constitution, Articles I and VII. Text from the National Archives transcription. Capitalization and spelling are original.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which clause reflects a compromise over slavery? What does “nine States” show about how the framers thought the Articles’ rules had failed?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Use Document A and Section 2.1 to explain what Washington meant by “anarchy &amp; confusion.” Name one event that supports his fear.</li>
+        <li>Compare Documents B and C. Both discuss the variety of interests in the United States. Explain how each reaches a different conclusion.</li>
+        <li>Document D contains compromises. Explain which group gained and which group gave something up in each of the three excerpts.</li>
+        <li>Which document would a supporter of order cite most often? Which would a supporter of liberty cite? Explain both choices.</li>
+        <li><b>Making a Claim</b> Was a stronger national government worth the risk to liberty? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>2</b></div>
+    <h2>Chapter 2 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#E6CF8C" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F4EFE3" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F4EFE3" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>Why was the first national government ineffective, and what compromises were required to resolve the crises of the 1780s?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>The Failure of the Confederation</h5>The Articles gave Congress no power to tax, regulate trade, or enforce its laws. Debt, trade wars, foreign pressure, and Shays’ Rebellion convinced leaders that the Articles had to be replaced.</div><div><h5>The Philadelphia Convention</h5>Delegates met in secret and settled the legislature through the Great Compromise, slavery’s place in representation through the Three-Fifths Compromise and the slave trade clause, and the presidency through the Electoral College.</div><div><h5>The Ratification Debate</h5>Federalists argued that a large republic with checks and balances would protect liberty. Anti-Federalists feared consolidated power and demanded a Bill of Rights. The promise of amendments helped win ratification.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2A5276" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B8913F" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 2 ASSESSMENT AND SIMULATION</b>Complete the Chapter 2 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the Article II source analysis, and the Modern Connection reflection) and the partner Simulation in your <i>Chapter 2 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.1): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>George Washington to James Madison, November 5, 1786, Founders Online, National Archives: <a href="https://founders.archives.gov/documents/Washington/04-04-02-0299">founders.archives.gov/documents/Washington/04-04-02-0299</a></li><li>James Madison, Federalist No. 10, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/fed10.asp">avalon.law.yale.edu/18th_century/fed10.asp</a></li><li>“Brutus,” Essay No. 1 (October 18, 1787), The Founders’ Constitution, University of Chicago Press: <a href="https://press-pubs.uchicago.edu/founders/documents/v1ch4s14.html">press-pubs.uchicago.edu/founders/documents/v1ch4s14.html</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li>Articles of Confederation, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/artconf.asp">avalon.law.yale.edu/18th_century/artconf.asp</a></li><li>U.S. Senate, <i>The Constitution of the United States of America: Analysis and Interpretation</i>, ratification dates and convention votes</li><li>National Park Service, Sandy Hook Lighthouse and Fort Niagara histories, for photo captions</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: National Park Service (public domain, Assembly Room), King of Hearts (CC BY-SA 4.0, Sandy Hook Lighthouse), and Ad Meskens (CC BY-SA 3.0, Fort Niagara). Public-domain artworks, prints, maps, and documents: Benjamin West, <i>Treaty of Paris</i>; Howard Chandler Christy, <i>Scene at the Signing of the Constitution</i> (1940); N. G. Johnson, Mount Vernon stereograph; Alexander Keith Johnston, map of the United States in 1783; the Royal Museums Greenwich print of the <i>Brookes</i>; John Carter’s Providence broadside of the Constitution; the title page of <i>The Federalist</i> (J. and A. McLean); and the Art View Card Co. postcard of Congress Hall. All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 1 · FOUNDATIONS OF AMERICAN DEMOCRACY | LESSON 1 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

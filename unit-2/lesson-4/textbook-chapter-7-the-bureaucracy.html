@@ -1,0 +1,1236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 7: The Bureaucracy | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#357A6E; --unit-dk:#24443F; --unit-lt:#EFF4F2; --unit-mid:#A8C6BE;
+  --amber:#9C5B33; --amber-lt:#DDB08A; --amber-dk:#6B3A1B;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F7EDE3; --cream:#EFF4F2; --pale:#DDB08A;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(36,68,63,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(36,68,63,.80) 0%,rgba(36,68,63,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 7 · THE BUREAUCRACY</span>
+  <a href="#opener">Opener</a><a href="#s1">7.1 Structure</a><a href="#s2">7.2 Rulemaking</a><a href="#s3">7.3 Networks</a><a href="#s4">7.4 Accountability</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Aerial%20view%20of%20Federal%20Triangle%20-%20facing%20west.jpg?width=2000" alt="An aerial view, facing west, of the large stone government office buildings of the Federal Triangle in Washington, D.C., with the Washington Monument and the National Mall at the upper left." style="object-position:50% 50%"></div>
+  <div class="opener-head">
+    <div class="chapnum">7</div>
+    <div>
+      <div class="unitline">Unit 2 · Interactions Among Branches of Government</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Bureaucracy</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where laws become daily life.</b> An aerial view, facing west, of the Federal Triangle in Washington, D.C., photographed on September 20, 2006. Many federal agencies work in buildings here. The chapter asks how the people in offices like these carry out laws without being elected. <span class="credit">Photo: Carol M. Highsmith / <a href="https://commons.wikimedia.org/wiki/File:Aerial_view_of_Federal_Triangle_-_facing_west.jpg">Wikimedia Commons</a>, Public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 7.1</span><span class="sl-title">The Mechanics of Government: Administrative Structure</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 7.2</span><span class="sl-title">Implementation and Rulemaking: Policy in Practice</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 7.3</span><span class="sl-title">Policy Networks and the “Iron Triangle”</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 7.4</span><span class="sl-title">Bureaucratic Accountability: Democratic Control</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Who Keeps the Bureaucracy Accountable?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the federal bureaucracy implement public policy and affect daily life?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Analyze the structural evolution of the federal bureaucracy from the 19th-century patronage system to the modern merit system.</li><li>Explain how discretionary authority and the rulemaking process empower bureaucratic agencies to transform legislative intent into enforceable regulations.</li><li>Evaluate the impact of policy networks, specifically iron triangles and issue networks, on the durability of federal programs and the legislative process.</li><li>Assess the constitutional mechanisms utilized by the President, Congress, and the Judiciary to maintain democratic accountability over unelected administrators.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Merit System</span><span>Iron Triangle</span><span>Discretionary Authority</span><span>Red Tape</span><span>Rulemaking</span><span>Compliance Monitoring</span><span>Administrative Adjudication</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 7 Key Concept</p>
+        <p><b>Expertise needs accountability.</b> Modern government is too complex for elected officials to run alone, so Congress and the President hand much of the daily work to trained, unelected staff. That arrangement works only if the elected branches and the courts can still steer, check, and correct it.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine the Shafter High handbook says, “Keep the campus safe.” That sentence does not tell anyone what to do at 7:45 a.m. Someone in the front office has to decide where the gates open, how visitors sign in, and what happens when a rule is broken. Those staff members are not elected, yet their choices affect every student. If they write rules nobody can follow, or only listen to one group, the principal and the school board need ways to step in. The federal bureaucracy is that front office for the whole country.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1829 to 1961 and answer one question: <a href="#case">who keeps the bureaucracy accountable to the people?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.4</code> Students analyze the unique roles and responsibilities of the three branches of government as established by the U.S. Constitution.</li>
+            <li><code>12.4.4</code> Discuss Article II of the Constitution as it relates to the executive branch, including eligibility for office and length of term, election to and removal from office, the oath of office, and the enumerated executive powers. <i>(Sections 7.1, 7.4, Case Study)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Sections 7.3, 7.4)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The Hidden Fourth Branch</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">When Americans think of their government, they often visualize the iconic symbols of democracy: the white dome of the Capitol building, the portico of the White House, or the nine justices of the Supreme Court posing for their official photograph. They imagine the high drama of debates on the Senate floor or the President signing a historic bill into law before a cheering crowd. However, these visible moments are only the beginning of governance. Once the cameras are turned off and the ink is dry, a law does not magically enforce itself. The Clean Air Act did not immediately purify the sky, nor did the Social Security Act instantly mail checks to the elderly. The bridge between a written law and its actual result in the real world is built by the federal bureaucracy.</p>
+        <p>Often described as the "Fourth Branch" of government, the bureaucracy consists of the millions of unelected employees, departments, and agencies charged with the constitutional duty to "faithfully execute" the laws. While the Constitution grants legislative power to Congress and executive power to the President, it says remarkably little about how the day-to-day business of government should be conducted. It does not mention the Environmental Protection Agency, the Federal Aviation Administration, or the Department of Education. Yet, without these institutions, the laws passed by Congress would be nothing more than paper suggestions. The bureaucracy is the engine of the modern state, translating the abstract promises of democracy into the concrete reality of daily life.</p>
+        <p>For many citizens, the term "bureaucracy" carries a negative connotation. It summons images of endless lines at the Department of Motor Vehicles, confusing tax forms, and faceless clerks mindlessly following rigid procedures. This frustration is often captured by the term <dfn id="t-red-tape">red tape</dfn>, which refers to the complex rules and procedures that must be followed to get something done. While complaints about inefficiency are a legitimate part of political discourse, they often obscure the essential function of these agencies. The bureaucracy is the air traffic controller guiding planes safely to the runway; it is the food inspector ensuring the safety of the meat supply; it is the scientist tracking infectious diseases; and it is the ranger preserving national forests. It is the mechanism through which modern society functions.</p>
+        <p>The power of the bureaucracy lies in its expertise and its permanence. Presidents come and go, and control of Congress shifts with election cycles, but the bureaucracy remains. This permanence creates a unique tension in the American political system. The United States was founded on the principle of consent of the governed, yet the vast majority of the people who make the daily decisions about how laws are enforced are never elected by the people. When the Federal Reserve adjusts interest rates or the Food and Drug Administration approves a new vaccine, they are exercising immense power without direct voter approval.</p>
+        <p>This reality forces citizens to grapple with difficult questions about the nature of democratic governance. How much power should unelected experts have? How can a free society ensure that these powerful agencies serve the public interest rather than their own? Throughout American history, the bureaucracy has grown from a small group of departments in the late 1700s to a vast, complex network today. This growth has been driven by the increasing demands of the public. As the nation industrialized, fought global wars, and sought to regulate a complex economy, the government needed more specialized hands to do the work. Understanding how this system functions—how it is structured, how it creates rules, and how it is held accountable—is essential to understanding how power actually operates in the United States. It is in the halls of these agencies that the broad strokes of public policy are painted into the fine details of American life.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bureaucracy</span> The many departments and agencies, staffed by unelected employees, that carry out the government’s laws. <span class="sp">Spanish: burocracia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">“Fourth Branch”</span>The chapter’s nickname for the bureaucracy, which is not a branch named in the Constitution.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 3 says the President “shall take Care that the Laws be faithfully executed.” The bureaucracy does most of that work.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>7.1</b></div>
+    <h2>The Mechanics of Government: Administrative Structure</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 7.1, you will</p>
+      <ul><li>Explain how the patronage system gave way to the merit system after the Garfield assassination</li><li>Describe the four kinds of federal agencies and how each is organized</li><li>Explain why the Cabinet, independent agencies, and regulatory commissions face different levels of political control</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-merit-system">Merit System</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each type of agency, an example, and how much control the President has.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: agency type, example, President’s control"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Agency type</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">President’s control</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Mechanics of Government: Administrative Structure</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal bureaucracy is often discussed as if it were a single, monolithic entity—a giant "Washington" that acts with one mind. In reality, the executive branch is a sprawling, fragmented collection of organizations, each designed to solve specific problems and structured to reflect different balances of independence and political control. The way the bureaucracy looks today is not the result of a single architectural blueprint drafted by the Founding Fathers. Instead, it is the accumulation of over two centuries of political battles, emergency responses, and reforms. To understand why the government functions the way it does, one must first examine the people who staff it and the specific types of agencies that house them.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Executive branch</span> The branch headed by the President that carries out the laws. <span class="sp">Spanish: poder ejecutivo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Not one blueprint</span>The chapter says the bureaucracy grew from two centuries of political battles, emergencies, and reforms.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 2 lets the President ask for the written opinion of “the principal Officer in each of the executive Departments.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">From Patronage to Professionalism</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pendleton%20Act%20%281883%291of%202.jpg?width=1400" alt="The first page of an old government document in formal handwriting, with a long title at the top and numbered paragraphs below." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Pendleton Act</span>The first page of the Pendleton Civil Service Reform Act, signed on January 16, 1883. It created the merit system for part of the federal workforce.<span class="credit">Document: U.S. National Archives and Records Administration / <a href="https://commons.wikimedia.org/wiki/File:Pendleton_Act_(1883)1of_2.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">The merit system transformed the federal workforce from a reward for political loyalty into a professionalized service. By requiring competitive examinations and protecting employees from political firing, the civil service gained the stability and neutrality required to manage a complex modern state.</p>
+        <p>For much of the nineteenth century, the federal workforce was governed by the political maxim "to the victor belong the spoils." This philosophy, known as the patronage system or the spoils system, allowed newly elected presidents to fire existing government workers en masse and replace them with their own political supporters, campaign donors, and friends. President Andrew Jackson was a fierce defender of this practice in the 1830s. He argued that the duties of public office were simple enough that any intelligent person could perform them, and that "rotation in office" was a democratic necessity to prevent the development of an arrogant, permanent elite. While this system helped build strong political parties by rewarding loyalty with jobs, it created a government staffed by amateurs who often lacked the skills to manage a growing nation.</p>
+        <p>The inefficiencies and inherent corruption of the spoils system eventually turned deadly. In 1881, a mentally unstable lawyer named Charles Guiteau stalked President James A. Garfield for weeks. Guiteau believed he was largely responsible for Garfield’s election victory and felt entitled to a consulship in Paris as a reward. When the administration repeatedly rejected his applications, Guiteau shot the President at a train station in Washington, D.C., shouting that he was a "Stalwart" of the Republican party. Garfield lingered for months before dying, and his assassination shocked the nation into action. The tragedy highlighted the dangers of a system where government employment was treated as personal property rather than a public trust.</p>
+        <p>In response to public outrage, Congress passed the Pendleton Civil Service Act of 1883. This landmark legislation began the dismantling of the old spoils system and replaced it with the <dfn id="t-merit-system">merit system</dfn>. Under the merit system, government jobs are no longer handed out as political favors. Instead, hiring and promotion are based on proven competence, usually demonstrated through competitive examinations, educational credentials, and experience. The goal was to create a professional, neutral civil service—a corps of experts who could serve the nation effectively regardless of which political party controlled the White House.</p>
+        <p>Today, the vast majority of federal bureaucrats are protected from political firing. This protection allows a scientist at the Environmental Protection Agency to report inconvenient data on climate change, or an economist at the Labor Department to release accurate unemployment numbers, without fear of retribution from a politician who might want different results. However, this insulation also creates a persistent challenge for presidents. While they can appoint the heads of agencies, they often find it difficult to force the permanent bureaucracy—the millions of career employees who stay for decades—to change direction quickly. This tension between the temporary, elected leadership and the permanent, unelected workforce is a defining feature of modern governance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Patronage system</span> A system in which winning candidates give government jobs to supporters. It is also called the spoils system. <span class="sp">Spanish: sistema de clientelismo (botín político)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Merit system</span> A system in which government jobs are given by competence, usually through tests and qualifications. <span class="sp">Spanish: sistema de méritos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1883</span>Year Congress passed the Pendleton Act. It first covered about 10 percent of federal jobs, and the President could expand that coverage.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Jackson’s 1829 message to Congress argued for rotation in office. You will read it in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.1</span>From Spoils to Merit</p>
+      <p class="figsub">Three events that changed how the government hires.</p>
+      <table class="cmp"><thead><tr><th>Date</th><th>Event</th></tr></thead><tbody><tr><td>December 8, 1829</td><td>President Andrew Jackson asks Congress to limit appointments to four years, arguing government duties are “plain and simple.”</td></tr><tr><td>July 2, 1881</td><td>Charles Guiteau shoots President James A. Garfield at a Washington train station.</td></tr><tr><td>September 19, 1881</td><td>Garfield dies of his wounds.</td></tr><tr><td>January 16, 1883</td><td>President Chester A. Arthur signs the Pendleton Civil Service Reform Act, which creates competitive exams for some jobs and a Civil Service Commission to enforce them.</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Andrew Jackson, First Annual Message, December 8, 1829, The American Presidency Project, UC Santa Barbara; Pendleton Civil Service Reform Act (1883), National Archives. Garfield dates from the chapter and standard references. Timeline compiled for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which event did the chapter say shocked the nation into action?</li><li>What did the Pendleton Act change about how people got federal jobs?</li><li>About how many years passed between Jackson’s message and the Pendleton Act?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Cabinet and Executive Departments</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Cabinet Secretaries operate under a structural tension between their loyalty to the President's policy goals and their duty to lead thousands of permanent career experts. This often results in a "dual loyalty" where secretaries must balance political pressure with bureaucratic reality.</p>
+        <p>The most visible component of the federal bureaucracy consists of the fifteen Executive Departments. These are the major administrative units of the federal government, each responsible for a broad area of public policy. They employ more than 60 percent of all federal workers. The original departments created in 1789—State, Treasury, and War (now Defense)—reflected the limited role of the early federal government. As the nation’s needs grew, Congress added new departments. The Department of the Interior was created to manage the westward expansion; the Department of Labor was established to address the rights of workers in the industrial age; and the Department of Homeland Security was formed in 2002 to centralize national safety efforts following the September 11 terrorist attacks.</p>
+        <p>Each of these departments is headed by a Secretary (except for the Justice Department, which is led by the Attorney General). These Secretaries are appointed by the President and must be confirmed by the Senate. Together, they form the President's Cabinet. Theoretically, the Cabinet serves as the President's primary advisory council. In practice, however, Cabinet Secretaries often face a "dual loyalty" dilemma. They are appointed to advocate for the President's policy agenda, but they must also manage the massive, entrenched bureaucracy within their own department.</p>
+        <p>A Secretary of Defense, for instance, must represent the President's foreign policy goals to the military, but must also represent the military's needs and culture to the President. If a Secretary becomes too focused on defending their department's budget and interests, they may be accused of "going native"—siding with the bureaucracy over the President. Conversely, if they ignore the advice of their career experts to please the White House, they risk policy failure. This structural reality means that presidents often rely less on their Cabinet for advice and more on their immediate White House staff, who have no loyalty other than to the President.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Executive department</span> One of the fifteen major units of the federal government. Most are headed by a Secretary. <span class="sp">Spanish: departamento ejecutivo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cabinet</span> The Secretaries of the executive departments, who serve as the President’s advisers. <span class="sp">Spanish: gabinete</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">15</span>Executive departments, which employ more than 60 percent of federal workers according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Senate must confirm Cabinet Secretaries. That is the “advice and consent” role in Article II, Section 2.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.2</span>How the Executive Departments Grew</p>
+      <p class="figsub">New problems led Congress to create new departments.</p>
+      <table class="cmp"><thead><tr><th>Department</th><th>Created</th><th>Why Congress created it (from the chapter)</th></tr></thead><tbody><tr><td>State, Treasury, and War (now Defense)</td><td>1789</td><td>The limited duties of the early national government</td></tr><tr><td>Interior</td><td>1849</td><td>To manage westward expansion</td></tr><tr><td>Labor</td><td>1913</td><td>To address the rights of workers in the industrial age</td></tr><tr><td>Homeland Security</td><td>2002</td><td>To centralize national safety efforts after the September 11 attacks</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; U.S. Government Manual and standard references for founding dates (State, July 27, 1789; Treasury, September 2, 1789; Interior, March 3, 1849; Labor, March 4, 1913; Homeland Security, November 25, 2002). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which departments are the oldest? What did they handle?</li><li>What problem led to each of the newer departments?</li><li>What pattern do you see between national problems and new departments?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Independent Agencies and Corporations</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Federal agencies are structured based on their specific missions. While departments cover broad policy areas, independent agencies allow for scientific or technical focus, and government corporations provide essential public services that might not be profitable in a private market.</p>
+        <p>Not all government business can be conducted effectively within the rigid hierarchy of a massive Cabinet department. Congress has created Independent Executive Agencies to handle specific tasks that require a degree of focus or insulation from the daily political management of a Cabinet Secretary. These agencies, such as the National Aeronautics and Space Administration (NASA), the Central Intelligence Agency (CIA), or the Environmental Protection Agency (EPA), still report to the President. Their administrators are appointed by the President and can be fired by him. However, by standing outside the fifteen main departments, they avoid getting lost in the bureaucracy of a larger organization. NASA, for example, was kept separate from the military (Department of Defense) to ensure that the American space program would have a civilian, scientific focus rather than a purely martial one.</p>
+        <p>Even further removed from standard government operations are Government Corporations. These are businesses established by Congress to provide a market-oriented public service. Unlike private companies, they do not pay dividends to shareholders; instead, their goal is to sustain themselves through the fees they charge, though they often rely on government subsidies to stay afloat.</p>
+        <p>The United States Postal Service (USPS) is the most prominent example. In a purely free market, a private delivery company might refuse to deliver mail to a remote farmhouse in rural North Dakota because the cost of gasoline and time would exceed the price of the stamp. However, the USPS is mandated by law to provide "universal service"—to deliver mail to every address in the country at a uniform price. Because this mission is essential for national communication but not necessarily profitable, the government operates the service itself. Amtrak, the national passenger rail service, functions similarly. These corporations exist in a hybrid state, expected to act like efficient businesses but tethered to government funding and congressional mandates that dictate where they must operate and how much they can charge.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Independent executive agency</span> A federal agency outside the fifteen departments whose head the President can still appoint and fire. <span class="sp">Spanish: agencia ejecutiva independiente</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Government corporation</span> A business created by Congress to provide a public service, such as the Postal Service or Amtrak. <span class="sp">Spanish: corporación gubernamental</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Universal service</span>The Postal Service must deliver to every address at a uniform price, even where it loses money.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 8 gives Congress the power “To establish Post Offices and post Roads.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Regulatory Commissions</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/US%20Federal%20Reserve%20Eccles%20Building%201937.jpg?width=1400" alt="A white marble government building with a long flat front, tall columns, and rows of windows, photographed on a clear day." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Federal Reserve Board building</span>The Federal Reserve Board’s building in Washington, D.C. (now called the Marriner S. Eccles Building), photographed on October 20, 1937.<span class="credit">Photo: Federal Reserve Board / <a href="https://commons.wikimedia.org/wiki/File:US_Federal_Reserve_Eccles_Building_1937.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Independent Regulatory Commissions are insulated from short-term political pressure through fixed, staggered terms for their leadership. This independence allows experts to make sensitive economic decisions, such as adjusting interest rates, without the influence of election-year politics.</p>
+        <p>Perhaps the most powerful entities within the modern bureaucracy are the Independent Regulatory Commissions. Agencies such as the Federal Reserve Board (the Fed), the Federal Communications Commission (FCC), and the Securities and Exchange Commission (SEC) are responsible for regulating specific sectors of the economy. These commissions are unique because they are structurally designed to be independent of presidential control.</p>
+        <p>While Commissioners are appointed by the President and confirmed by the Senate, they serve fixed, staggered terms that do not align with presidential elections. For example, members of the Federal Reserve Board serve 14-year terms. Furthermore, unlike Cabinet Secretaries, these commissioners cannot be fired by the President simply for disagreeing with his policies; they can only be removed for specific causes like corruption or neglect of duty. This independence is intentional. Congress recognized that decisions about interest rates, media licensing, or stock market rules are technically complex and politically sensitive. If a President could manipulate interest rates to boost the economy right before an election, it might help their campaign but wreck the nation's long-term financial stability.</p>
+        <p>By insulating these commissions, the system attempts to prioritize long-term economic health and neutral enforcement over short-term political gain. These agencies possess a unique combination of powers: they write rules (legislative), enforce them (executive), and punish violators (judicial). This concentration of power in independent bodies makes them formidable centers of authority, often leading to debates about whether they are too removed from democratic accountability.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Independent regulatory commission</span> An agency that regulates part of the economy and whose leaders serve fixed, staggered terms and cannot be fired at will. <span class="sp">Spanish: comisión reguladora independiente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">14 years</span>Term of a member of the Federal Reserve Board, according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Because commissions write rules, enforce them, and judge violations, they combine powers the Constitution separates among three branches.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.3</span>Four Kinds of Federal Agencies</p>
+      <p class="figsub">Each type balances independence and control differently.</p>
+      <table class="cmp"><thead><tr><th>Type</th><th>Examples (from the chapter)</th><th>Who leads it and how the President controls it</th></tr></thead><tbody><tr><td>Executive departments</td><td>State, Defense, Interior, Labor, Homeland Security</td><td>A Secretary appointed by the President and confirmed by the Senate; closely tied to the President</td></tr><tr><td>Independent executive agencies</td><td>NASA, CIA, EPA</td><td>An administrator the President appoints and can fire; kept separate for focus</td></tr><tr><td>Government corporations</td><td>U.S. Postal Service, Amtrak</td><td>Run like businesses; guided by laws that set their mission and prices</td></tr><tr><td>Independent regulatory commissions</td><td>Federal Reserve Board, FCC, SEC</td><td>Commissioners with fixed, staggered terms who can be removed only for cause such as corruption or neglect of duty</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; USA.gov, Federal Agencies and Departments. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which type of agency is closest to the President’s control? Which is farthest?</li><li>Why did Congress give the Federal Reserve Board 14-year terms?</li><li>Why was NASA kept separate from the Department of Defense?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Architecture of Expertise</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The architecture of the federal bureaucracy is built on specialized expertise and institutional permanence. While this structure ensures professional administration, the proliferation of agencies can lead to fragmentation, where different offices may overlap or conflict in their duties.</p>
+        <p>The structure of the federal bureaucracy is not accidental; it is a reflection of American political values and historical lessons. The shift to the merit system prioritized competence over loyalty, ensuring that the engineers who build bridges and the doctors who approve medicines are qualified for the job. The creation of independent agencies and commissions acknowledged that some decisions—like monetary policy or intelligence gathering—require insulation from the heat of partisan politics.</p>
+        <p>However, this complexity comes with a cost. The sheer number of agencies, each with its own culture, rules, and congressional committees overseeing it, can lead to fragmentation. Agencies may unknowingly duplicate work or, worse, work at cross-purposes. Yet, this architecture serves as the foundation for modern governance, allowing the state to handle the immense responsibilities of a superpower while attempting to maintain a professional distance from the whims of electoral politics. As we will see in the next section, these structures are merely the vehicle; the actual power of the bureaucracy lies in how it interprets and enforces the law.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fragmentation</span> A situation in which many agencies overlap or work at cross-purposes. <span class="sp">Spanish: fragmentación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Trade-off</span>Specialization brings expertise. Specialization also brings overlap and confusion.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 7.2 shows how these agencies use discretion to turn broad laws into specific rules.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>The School Front Office</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A new principal fires the office staff and hires friends to replace them. The friends do not know the attendance software, so grades and records are wrong. Parents complain, and the school board orders the principal to hire by test and experience in the future. That is the story of the spoils system and the merit system in miniature.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Hire Loyalists or Experts?</div></div>
+      <div class="box-b">
+        <p>You are a newly elected President. Your team wants to replace career staff at an agency with people who share your views. The career staff have years of expertise, but you worry they will resist your plan.</p>
+        <div class="opts"><div class="opt"><h5>Replace career staff</h5>You gain loyalty, but you lose expertise and risk breaking the merit system.</div><div class="opt"><h5>Work through the experts</h5>You keep expertise and stability, but change comes slowly.</div></div>
+        <p class="ask">Which would you choose? How does the Pendleton Act shape your options?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Civil Service Around the World</div></div>
+      <div class="box-b">
+<p style="margin:0">Many democracies also use competitive exams to hire government workers. In some countries, a small group of senior officials moves from one department to another over a lifetime career. In the United States, thousands of top jobs change with each President, while career staff stay. What are the benefits and risks of keeping top jobs political while keeping lower jobs permanent?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MAKING THE BUREAUCRACY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 7.1. Explain how Garfield’s assassination led to the Pendleton Act.</li><li>Use Figure 7.3. Explain how the independence of a regulatory commission differs from that of an executive department.</li><li>Write a Counter-Argument to this claim: “The President should be able to fire any federal employee.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 7.1 ASSESSMENT</b>Complete the Section 7.1 Assessment in your <i>Chapter 7 Assignment</i> packet before you move on to Section 7.2.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>7.2</b></div>
+    <h2>Implementation and Rulemaking: Policy in Practice</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 7.2, you will</p>
+      <ul><li>Explain how discretionary authority lets agencies fill gaps in broad laws</li><li>Describe the steps of rulemaking under the Administrative Procedure Act</li><li>Distinguish compliance monitoring from administrative adjudication</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-discretionary-authority">Discretionary Authority</a></li><li><a href="#t-rulemaking">Rulemaking</a></li><li><a href="#t-compliance-monitoring">Compliance Monitoring</a></li><li><a href="#t-administrative-adjudication">Administrative Adjudication</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each agency power, what it does, and an example from the text.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: agency power, what it does, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Agency power</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it does</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Implementation and Rulemaking: Policy in Practice</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">When Congress passes a law, it is rarely a detailed instruction manual. Legislation is often the product of difficult compromise, written in broad, vague language to ensure enough votes for passage. A law might instruct the government to "ensure safe working conditions" or "protect endangered species," but it rarely specifies the exact chemical limits for factory air or the precise radius of a habitat protection zone. This gap between the intent of the law and the reality of its enforcement is filled by the bureaucracy through the process of implementation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Implementation</span> The process of putting a law into practice. <span class="sp">Spanish: implementación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Gap</span>Laws state the goal. Agencies decide the details.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 1 gives “All legislative Powers herein granted” to Congress. Agencies use powers that Congress passes to them.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Power of Discretionary Authority</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Discretionary authority allows expert bureaucrats to fill the gaps left by broad or vague legislation. Because Congress cannot be expert in every field, it delegates the power to define technical standards and enforcement details to specialized agencies.</p>
+        <p>The most significant power held by the modern bureaucracy is <dfn id="t-discretionary-authority">discretionary authority</dfn>. This is the power given to appointed bureaucrats to decide how a law is implemented and to decide what Congress meant when it passed a bill. Because members of Congress cannot be experts on every subject—from nuclear safety to pharmaceutical chemistry—they delegate the details to the experts within the agencies.</p>
+        <p>For example, when Congress passed the Controlled Substances Act, it created schedules for classifying drugs but left much of the decision-making on which drugs fit into which schedule to the Drug Enforcement Administration (DEA) and the Department of Health and Human Services. This means that unelected officials have the power to decide whether a new synthetic substance is legal or illegal. Similarly, the Department of Transportation determines exactly what safety features a car must have to be sold in the United States. This transfer of power is necessary for a modern government to function; if Congress had to vote on every safety latch or chemical formula, the government would grind to a halt. However, it also means that significant policy decisions are made by people whose names never appear on a ballot.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Discretionary authority</span> The power given to appointed bureaucrats to decide how a law is carried out and what Congress meant. <span class="sp">Spanish: autoridad discrecional</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Delegate</span> To hand a task or power to someone else. <span class="sp">Spanish: delegar</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Why delegate</span>Members of Congress cannot be experts on every subject, from nuclear safety to drug chemistry.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 8 gives Congress the power “To make all Laws which shall be necessary and proper.” Congress uses that power to delegate details.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.4</span>Broad Laws, Detailed Rules</p>
+      <p class="figsub">Congress sets the goal. Agencies fill in the details.</p>
+      <table class="cmp"><thead><tr><th>Law Congress passed</th><th>Gap left to agencies</th><th>Who fills the gap</th></tr></thead><tbody><tr><td>“Ensure safe working conditions”</td><td>Exact chemical limits for factory air</td><td>Agencies such as the Occupational Safety and Health Administration</td></tr><tr><td>Controlled Substances Act</td><td>Which drugs belong in which schedule</td><td>The Drug Enforcement Administration and the Department of Health and Human Services</td></tr><tr><td>Laws on vehicle safety</td><td>What safety features a car must have</td><td>The Department of Transportation</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Occupational Safety and Health Administration (osha.gov). Table created for this textbook. The OSHA example follows the chapter’s “ensure safe working conditions” illustration.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What did Congress decide in each example? What did it leave out?</li><li>Why would it be hard for Congress to vote on every safety latch or chemical formula?</li><li>What is the risk of letting unelected officials decide these details?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Rulemaking Process</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Cover%20of%20the%20Federal%20Register.jpg?width=1400" alt="The cover of a government publication with a title in large letters at the top, a date line, and small print below." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Federal Register</span>The cover of the Federal Register, the daily publication in which agencies announce proposed and final rules.<span class="credit">Document: U.S. Government / <a href="https://commons.wikimedia.org/wiki/File:Cover_of_the_Federal_Register.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+        <p class="lead">Rulemaking is the process by which agencies create enforceable regulations. By requiring notice and public comment, the Administrative Procedure Act ensures that businesses, interest groups, and citizens have a formal role in shaping the rules that affect them.</p>
+        <p>The primary tool agencies use to exercise their discretion is <dfn id="t-rulemaking">rulemaking</dfn>. This is the formal process by which bureaucratic agencies create regulations that have the force of law. These regulations are not mere suggestions; a violation of an Environmental Protection Agency (EPA) rule regarding toxic waste carries the same legal weight as violating a statute passed by Congress. In this sense, agencies function as "sub-legislatures," filling in the gaps of the law.</p>
+        <p>The process of rulemaking is governed by strict procedures to ensure transparency, most notably under the Administrative Procedure Act of 1946. When an agency like the EPA wants to create a new regulation—for instance, setting a new limit on carbon emissions from power plants—it cannot simply issue a decree. First, it must propose the rule and publish it in the Federal Register. Then, it must offer a period for public comment, during which citizens, businesses, and interest groups can submit arguments and evidence supporting or opposing the rule. This period is often a battleground where industry lobbyists and environmental advocates clash, armed with scientific studies and economic forecasts. The agency must review this feedback and often revises the rule before publishing the final version. This process is designed to prevent arbitrary decisions, but it can be incredibly slow. It allows stakeholders to participate in the process, ensuring that the experts hear from the people who will be affected by the regulations. However, once the rule is finalized, it becomes the standard by which the law is enforced.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Rulemaking</span> The formal process by which agencies create regulations that have the force of law. <span class="sp">Spanish: elaboración de reglas</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federal Register</span> The daily publication in which federal agencies announce proposed and final rules. <span class="sp">Spanish: Registro Federal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1946</span>Year of the Administrative Procedure Act, which sets the steps for rulemaking.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Administrative Procedure Act requires “general notice of proposed rule making” in the Federal Register and a chance for public comment.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.5</span>How a Rule Is Made</p>
+      <p class="figsub">Steps of notice-and-comment rulemaking under the Administrative Procedure Act.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Six-step flow of rulemaking: Congress passes a broad law, the agency proposes a rule in the Federal Register, the public comments, the agency reviews the feedback, the final rule is published with the force of law, and courts may review it."><g><title>Congress passes law: Broad goal set, details left out</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Congress passes law</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Broad goal set, details</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">left out</text><g><title>Agency proposes a rule: Published in the Federal Register</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Agency proposes a rule</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Published in the Federal</text><text x="430.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Register</text><g><title>Public comment: Citizens, businesses, and groups respond</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Public comment</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Citizens, businesses, and</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">groups respond</text><g><title>Agency reviews: Reads comments; often revises</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Agency reviews</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Reads comments; often</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">revises</text><g><title>Final rule published: Has the force of law</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Final rule published</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Has the force of law</text><g><title>Courts may review: If someone challenges it</title><rect x="644.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#357A6E" stroke-width="2.5"/></g><text x="732.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#24443F" text-anchor="middle" font-weight="700">Courts may review</text><text x="732.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">If someone challenges it</text><path d="M219.0 45.0 L337.0 45.0" stroke="#9C5B33" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#9C5B33"/><path d="M521.0 45.0 L639.0 45.0" stroke="#9C5B33" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#9C5B33"/><path d="M732.0 84 V104 H128.0 V124" stroke="#9C5B33" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#9C5B33"/><path d="M219.0 165.0 L337.0 165.0" stroke="#9C5B33" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#9C5B33"/><path d="M521.0 165.0 L639.0 165.0" stroke="#9C5B33" stroke-width="3" fill="none"/><path d="M639.0 159.0 l8 6 l-8 6z" fill="#9C5B33"/></svg>
+      <p class="source">Sources: Chapter text; Administrative Procedure Act, 5 U.S.C. § 553, Legal Information Institute, Cornell Law School. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Where in the process can citizens take part?</li><li>Why does the chapter say this process can be slow?</li><li>Which step lets someone challenge a rule an agency wrote? Use Section 7.4 to help.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.6</span>Pages in the Federal Register, Selected Years</p>
+      <p class="figsub">The yearly page count grew sharply after the 1960s.</p>
+      <svg viewBox="0 0 860 354" role="img" aria-label="Bar chart of Federal Register pages: 1936 2,355; 1946 14,736; 1956 10,528; 1966 16,850; 1976 57,072; 1980 87,012; 1990 53,618; 2000 83,093; 2010 82,589; 2016 97,069."><line x1="80.0" y1="10" x2="80.0" y2="310" stroke="#e6e8ec"/><text x="80.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="252.5" y1="10" x2="252.5" y2="310" stroke="#e6e8ec"/><text x="252.5" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25,000</text><line x1="425.0" y1="10" x2="425.0" y2="310" stroke="#e6e8ec"/><text x="425.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50,000</text><line x1="597.5" y1="10" x2="597.5" y2="310" stroke="#e6e8ec"/><text x="597.5" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75,000</text><line x1="770.0" y1="10" x2="770.0" y2="310" stroke="#e6e8ec"/><text x="770.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100,000</text><text x="70" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1936</text><g><title>1936: 2,355</title><path d="M80 16 h12.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-12.2z" fill="#357A6E"/></g><text x="104.2" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">2,355</text><text x="70" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1946</text><g><title>1946: 14,736</title><path d="M80 46 h97.7 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-97.7z" fill="#357A6E"/></g><text x="189.7" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">14,736</text><text x="70" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1956</text><g><title>1956: 10,528</title><path d="M80 76 h68.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-68.6z" fill="#357A6E"/></g><text x="160.6" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">10,528</text><text x="70" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1966</text><g><title>1966: 16,850</title><path d="M80 106 h112.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-112.3z" fill="#357A6E"/></g><text x="204.3" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">16,850</text><text x="70" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1976</text><g><title>1976: 57,072</title><path d="M80 136 h389.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-389.8z" fill="#357A6E"/></g><text x="481.8" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">57,072</text><text x="70" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1980</text><g><title>1980: 87,012</title><path d="M80 166 h596.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-596.4z" fill="#357A6E"/></g><text x="688.4" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">87,012</text><text x="70" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1990</text><g><title>1990: 53,618</title><path d="M80 196 h366.0 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-366.0z" fill="#357A6E"/></g><text x="458.0" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">53,618</text><text x="70" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2000</text><g><title>2000: 83,093</title><path d="M80 226 h569.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-569.3z" fill="#357A6E"/></g><text x="661.3" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">83,093</text><text x="70" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2010</text><g><title>2010: 82,589</title><path d="M80 256 h565.9 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-565.9z" fill="#357A6E"/></g><text x="657.9" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">82,589</text><text x="70" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2016</text><g><title>2016: 97,069</title><path d="M80 286 h665.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-665.8z" fill="#9C5B33"/></g><text x="757.8" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">97,069</text><line x1="80" y1="10" x2="80" y2="310" stroke="#6f7787" stroke-width="1.5"/><text x="425.0" y="350" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Pages</text></svg>
+      <p class="source">Source: Brookings Institution, Vital Statistics on Congress, Table 6-5, Pages in the Federal Register, 1936–2016 (from the Federal Register). The 2000 total is the printed page number; a numbering error that year caused a 201-page jump. Highlighted bar: the largest total shown.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Pages</th></tr></thead><tbody><tr><td>1936</td><td>2,355</td></tr><tr><td>1946</td><td>14,736</td></tr><tr><td>1956</td><td>10,528</td></tr><tr><td>1966</td><td>16,850</td></tr><tr><td>1976</td><td>57,072</td></tr><tr><td>1980</td><td>87,012</td></tr><tr><td>1990</td><td>53,618</td></tr><tr><td>2000</td><td>83,093</td></tr><tr><td>2010</td><td>82,589</td></tr><tr><td>2016</td><td>97,069</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many times larger was the 2016 total than the 1966 total? Show your calculation.</li><li>Why might more pages mean more rules by agencies?</li><li>The Federal Register publishes rules, not just laws. Who writes the rules that appear in it?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Compliance and Monitoring</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/1909%20Federal%20Food%20and%20Drug%20Inspectors%20%28FDA%20112%29%20%288223460577%29.jpg?width=1400" alt="Several men in dark suits and hats standing together outdoors, photographed in black and white, in front of a building." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Early federal inspectors</span>Federal food and drug inspectors in 1909, in a photograph from the U.S. Food and Drug Administration.<span class="credit">Photo: U.S. Food and Drug Administration / <a href="https://commons.wikimedia.org/wiki/File:1909_Federal_Food_and_Drug_Inspectors_(FDA_112)_(8223460577).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Compliance monitoring is the "beat cop" function of the bureaucracy. Agencies must actively verify that the rules they have written are being followed by individuals and corporations to ensure public safety and economic stability.</p>
+        <p>Writing the rules is only half the battle; ensuring they are followed is the other. This is the function of <dfn id="t-compliance-monitoring">compliance monitoring</dfn>. Agencies must actively verify that businesses and individuals are adhering to the regulations they have set. This takes many forms, from on-site inspections of meatpacking plants by the Department of Agriculture to the auditing of tax returns by the Internal Revenue Service (IRS).</p>
+        <p>Compliance monitoring is the "beat cop" function of the bureaucracy. Without it, regulations would be meaningless. For example, the Federal Aviation Administration (FAA) does not just set safety standards for airlines; it employs inspectors to examine maintenance logs and test pilots. This oversight is crucial for public safety, but it is often where the tension between government and the private sector is highest. Businesses often complain that excessive monitoring creates administrative burdens that stifle innovation and profit. Yet, history—such as the 2008 financial crisis—has shown that when compliance monitoring creates blind spots or is relaxed, the consequences for the economy and public safety can be catastrophic.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Compliance monitoring</span> Activities agencies undertake to make sure people and businesses follow the rules. <span class="sp">Spanish: vigilancia del cumplimiento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">“Beat cop”</span>The chapter’s name for the job of checking that rules are being followed.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter says that relaxed monitoring before the 2008 financial crisis left blind spots with serious results.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Adjudication: The Agency as Court</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Administrative adjudication allows agencies to resolve disputes over their own regulations without immediately involving the federal court system. These hearings provide a faster, expert-led resolution for technical legal disagreements between the government and private parties.</p>
+        <p>Beyond making and enforcing rules, agencies also have the power to resolve disputes, a process known as <dfn id="t-administrative-adjudication">administrative adjudication</dfn>. This is a quasi-judicial process in which a bureaucratic agency settles arguments between two parties, much like a court. If a factory owner believes the EPA has unfairly fined them for pollution, they do not immediately go to a federal courtroom. Instead, they often go before an Administrative Law Judge (ALJ) within the agency itself.</p>
+        <p>These proceedings look very much like trials. Evidence is presented, witnesses are called, and a decision is rendered. The National Labor Relations Board (NLRB), for example, frequently adjudicates disputes between labor unions and employers regarding unfair labor practices. This system allows for faster resolution of technical disputes by judges who are experts in that specific field of law. However, critics argue that this system can be unfair, as the agency acts as both the prosecutor (bringing the charges) and the judge (deciding the case). While decisions can usually be appealed to the federal court system, the initial power of adjudication firmly places the bureaucracy in a role that blends executive, legislative, and judicial functions.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Administrative adjudication</span> A quasi-judicial process in which an agency settles disputes, much like a court. <span class="sp">Spanish: adjudicación administrativa</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Administrative Law Judge (ALJ)</span> A judge who works within an agency and hears disputes about its rules. <span class="sp">Spanish: juez de derecho administrativo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Prosecutor and judge</span>Critics note the agency can both bring charges and decide the case.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Fifth Amendment says no person shall be deprived of “life, liberty, or property, without due process of law.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.7</span>Four Powers of the Bureaucracy</p>
+      <p class="figsub">Agencies blend the powers that the Constitution divides.</p>
+      <table class="cmp"><thead><tr><th>Power</th><th>What it does</th><th>Example from the chapter</th><th>Resembles</th></tr></thead><tbody><tr><td>Discretionary authority</td><td>Fills in the details of a broad law</td><td>The DEA and Health and Human Services deciding which drugs fit which schedule</td><td>Legislative power</td></tr><tr><td>Rulemaking</td><td>Writes regulations with the force of law</td><td>An EPA rule on toxic waste or carbon emissions</td><td>Legislative power</td></tr><tr><td>Compliance monitoring</td><td>Checks that rules are followed</td><td>FAA inspectors, USDA meat inspectors, IRS audits</td><td>Executive power</td></tr><tr><td>Administrative adjudication</td><td>Settles disputes about the rules</td><td>An Administrative Law Judge in an EPA fine case; the NLRB</td><td>Judicial power</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Administrative Procedure Act, 5 U.S.C. §§ 553–557. Table created for this textbook. The “Resembles” column is a classroom comparison and is not a legal classification.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which powers look like the work of Congress? Which look like the work of courts?</li><li>Why do critics say that combining these powers in one agency is a risk?</li><li>How does compliance monitoring connect rulemaking to the real world?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Power of the Unelected</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The power of the unelected rests on their specialized knowledge. This creates a tension in a democracy, as many of the most impactful daily rules are written by officials who are not directly accountable to the voters.</p>
+        <p>The implementation of policy through discretionary authority, rulemaking, and administrative adjudication highlights the immense power of the bureaucracy. It transforms the "Fourth Branch" from a simple clerkship into a dynamic political force. While this system allows for the expertise needed to run a complex modern society, it constantly challenges the democratic ideal. The regulations that determine the purity of our water, the safety of our workplace, and the stability of our banks are largely written by people we did not elect. This reality makes the mechanisms of accountability—how we watch the watchers—one of the most critical aspects of American constitutional government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Accountability</span> The idea that officials must answer to the people or to elected leaders for what they do. <span class="sp">Spanish: rendición de cuentas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Watching the watchers</span>The chapter calls the tools that keep agencies accountable one of the most critical parts of American government.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 7.4 describes the tools the President, Congress, and the courts use for that job.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>Rules for the Parking Lot</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> The student council passes “Park safely.” The front office writes the details: assigned spaces, a speed limit, and a fine for breaking them. Students can comment on the draft, and a hearing officer settles disputes. The council did not write each rule, but the office could only act because the council gave it the power.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Write the Rule Fast or Slow?</div></div>
+      <div class="box-b">
+        <p>You lead an agency, and a dangerous chemical is spreading. You could issue the rule immediately, or take months for public comment.</p>
+        <div class="opts"><div class="opt"><h5>Move fast</h5>You protect people sooner, but you skip voices that could improve the rule and may face a challenge in court.</div><div class="opt"><h5>Follow full comment</h5>The rule is stronger and fairer, but the danger continues while you wait.</div></div>
+        <p class="ask">Which would you choose? What does the chapter say about the cost of a slow process?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Who Writes the Details?</div></div>
+      <div class="box-b">
+<p style="margin:0">In many democracies, a law passed by the legislature leaves the details to ministries or agencies. Some countries require legislatures to approve major rules before they take effect. What might change if Congress had to approve every important agency rule?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; FROM LAW TO RULE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 7.5. Describe the steps from a broad law to a final rule.</li><li>Use Figure 7.7. Explain how an agency’s powers blend legislative, executive, and judicial functions.</li><li>Write a Counter-Argument to this claim: “Agencies should not be allowed to write rules with the force of law.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 7.2 ASSESSMENT</b>Complete the Section 7.2 Assessment in your <i>Chapter 7 Assignment</i> packet before you move on to Section 7.3.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>7.3</b></div>
+    <h2>Policy Networks and the “Iron Triangle”</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 7.3, you will</p>
+      <ul><li>Describe the three points of an iron triangle and what each point gives the others</li><li>Explain why iron triangles make programs durable and hard to reform</li><li>Compare iron triangles with issue networks, and explain agency capture and the revolving door</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-iron-triangle">Iron Triangle</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each point of the triangle, what it needs, and what it gives.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: point of the triangle, what it needs, what it gives"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Point of the triangle</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it needs</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it gives</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Policy Networks and the “Iron Triangle”</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Bureaucratic agencies do not exist in a vacuum, sealed off from the rest of the political world behind concrete walls. They are active, hungry players in a high-stakes game of influence, funding, and policy survival. To protect their budgets, expand their powers, and ensure their programs survive, agencies cultivate deep relationships with the very people they are supposed to regulate and the politicians who control their bank accounts. These relationships often solidify into powerful, exclusive alliances that can dominate the policymaking process. To understand why some government programs seem impossible to cut or why certain industries seem to get favorable treatment, one must look at the geometry of political power known as the iron triangle.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Policy network</span> The set of agencies, lawmakers, and outside groups that shape a policy area. <span class="sp">Spanish: red de políticas públicas</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Interest group</span> An organized group that tries to influence government policy. <span class="sp">Spanish: grupo de interés</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Geometry of power</span>The chapter’s picture of how agencies, committees, and groups form alliances.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 10 warned about the dangers of factions. Iron triangles are one way organized interests gain lasting influence.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Anatomy of an Alliance</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The iron triangle is a mutually beneficial relationship that stabilizes policy and funding. By exchanging political support, budget authority, and favorable regulations, these three groups create a closed system that is difficult for outside reformers to penetrate.</p>
+        <p>An <dfn id="t-iron-triangle">iron triangle</dfn> is a stable, mutually beneficial relationship between three distinct entities: a bureaucratic agency, a congressional committee, and an interest group. Imagine these three groups as the corners of a fortress. Inside the fortress, policy is made efficiently and quietly; outside the fortress, the general public and the President are often kept in the dark.</p>
+        <p>The strength of the triangle comes from the exchange of resources. Each point of the triangle possesses something the other two need. The bureaucratic agency needs funding and political protection. The congressional committee members need electoral support and success stories to tell their constituents. The interest group needs favorable regulations and government contracts.</p>
+        <p>Consider the classic example of the "military-industrial complex," a term popularized by President Dwight D. Eisenhower. In this triangle, the three points are the Department of Defense (the agency), the Armed Services Committees in the House and Senate (the congressional committees), and defense contractors like Lockheed Martin or Boeing (the interest groups).</p>
+        <p>The defense contractors provide millions of dollars in campaign contributions to the members of the Armed Services Committees. They also build factories in the members' home districts, creating jobs that help the politicians get reelected. In return, the committee members vote to approve massive budgets for new fighter jets or submarines, ensuring the contractors get paid. The Department of Defense gets the new equipment and expanded budget authority it wants. To complete the cycle, the Department of Defense gives the contractors favorable treatment and low-regulation contracts, often hiring retired generals to work as consultants for the very companies they used to oversee.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Iron triangle</span> A stable, mutually beneficial alliance among a bureaucratic agency, a congressional committee, and an interest group. <span class="sp">Spanish: triángulo de hierro</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Military-industrial complex</span> The chapter’s classic iron triangle: the Defense Department, the Armed Services Committees, and defense contractors. <span class="sp">Spanish: complejo militar-industrial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 points</span>An agency, a congressional committee, and an interest group.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>President Eisenhower popularized the term “military-industrial complex” in his 1961 farewell address. You will read it in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.8</span>The Iron Triangle</p>
+      <p class="figsub">Each point gives something that another point needs.</p>
+      <svg viewBox="0 0 860 380" role="img" aria-label="Iron triangle diagram. Top corner: congressional committee. Bottom left: bureaucratic agency. Bottom right: interest group. Arrows show the committee giving budgets and protection to the agency, the agency giving favorable rules and contracts to the interest group, and the interest group giving campaign money and votes to the committee."><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#9C5B33"/></marker></defs><line x1="360" y1="108" x2="190" y2="262" stroke="#9C5B33" stroke-width="3" marker-end="url(#ah)"/><line x1="300" y1="318" x2="560" y2="318" stroke="#9C5B33" stroke-width="3" marker-end="url(#ah)"/><line x1="670" y1="262" x2="500" y2="108" stroke="#9C5B33" stroke-width="3" marker-end="url(#ah)"/><text x="190" y="170" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6B3A1B" text-anchor="middle" font-weight="700">Budget and protection</text><text x="430" y="350" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6B3A1B" text-anchor="middle" font-weight="700">Favorable rules and contracts</text><text x="690" y="170" font-family="Inter, Arial, sans-serif" font-size="13" fill="#6B3A1B" text-anchor="middle" font-weight="700">Campaign money and votes</text><rect x="290" y="20" width="280" height="86" rx="12" fill="#24443F" stroke="#24443F" stroke-width="2"/><text x="430.0" y="50" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">CONGRESSIONAL COMMITTEE</text><text x="430.0" y="72" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">needs votes and success stories</text><rect x="40" y="262" width="250" height="86" rx="12" fill="#357A6E" stroke="#24443F" stroke-width="2"/><text x="165.0" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="700">BUREAUCRATIC AGENCY</text><text x="165.0" y="314" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#fff" text-anchor="middle" font-weight="400">needs funding and protection</text><rect x="570" y="262" width="250" height="86" rx="12" fill="#EFF4F2" stroke="#24443F" stroke-width="2"/><text x="695.0" y="292" font-family="Inter, Arial, sans-serif" font-size="16" fill="#24443F" text-anchor="middle" font-weight="700">INTEREST GROUP</text><text x="695.0" y="314" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#24443F" text-anchor="middle" font-weight="400">needs favorable rules and contracts</text></svg>
+      <p class="source">Source: Chapter text. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>What does each corner of the triangle need? What does it give?</li><li>Why does the chapter compare the triangle to a fortress?</li><li>Who is left outside the triangle?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Logic of Mutual Benefit</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Bosses%20of%20the%20Senate%20by%20Joseph%20Keppler.jpg?width=1400" alt="A color cartoon of a large Senate chamber in which huge moneybags labeled for business trusts tower over the senators below." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Bosses of the Senate</span>Joseph Keppler drew “The Bosses of the Senate” for the magazine Puck, published on January 23, 1889. It shows giant business trusts looming over the Senate, a picture of the worry that powerful interests can dominate lawmakers.<span class="credit">Image: Joseph Keppler (cartoon, 1889) / <a href="https://commons.wikimedia.org/wiki/File:The_Bosses_of_the_Senate_by_Joseph_Keppler.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The durability of iron triangles stems from the logic of mutual benefit. Each participant receives exactly what they need for survival—reelection for politicians, budget growth for agencies, and profitable contracts for interest groups.</p>
+        <p>The reason iron triangles are so durable is that everyone inside the loop wins. There is no incentive for any of the three participants to break the alliance. If a budget hawk in Congress tries to cancel a weapon system that the Pentagon says is unnecessary, the interest group will mobilize workers in the committee chairman's district to protest the "loss of jobs." The committee chairman will then pressure the Pentagon to keep the program.</p>
+        <p>This dynamic explains the resilience of agricultural subsidies. The Department of Agriculture, the House Agriculture Committee, and powerful interest groups like the American Farm Bureau Federation work in lockstep. The Farm Bureau delivers rural votes and money to the committee members. The committee funds price support programs. The Department of Agriculture implements these programs, ensuring that subsidies flow smoothly to the farmers. If a President tries to cut these subsidies to save money, the triangle mobilizes to block the cut in Congress, arguing it is an attack on the "American family farmer."</p>
+        <p>This system creates a form of "client politics," where the government agency serves the specific needs of the interest group (the client) rather than the general welfare of the public. While this is highly efficient for the groups involved, it can be detrimental to democracy. It shuts out opposing voices and makes it incredibly difficult to reform wasteful or outdated programs.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Client politics</span> A situation in which an agency serves the narrow needs of one interest group instead of the public as a whole. <span class="sp">Spanish: política de clientelismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Everyone inside wins</span>The chapter says no member of the triangle has a reason to break the alliance.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Constitution’s First Amendment protects the right “to petition the Government for a redress of grievances.” Interest groups use that right.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.9</span>Two Classic Triangles</p>
+      <p class="figsub">The same pattern appears in different policy areas.</p>
+      <table class="cmp"><thead><tr><th></th><th>Military-industrial complex</th><th>Agricultural subsidies</th></tr></thead><tbody><tr><td>The agency</td><td>Department of Defense</td><td>Department of Agriculture</td></tr><tr><td>The committee</td><td>House and Senate Armed Services Committees</td><td>House Agriculture Committee</td></tr><tr><td>The interest group</td><td>Defense contractors such as Lockheed Martin or Boeing</td><td>American Farm Bureau Federation</td></tr><tr><td>What flows around the triangle</td><td>Campaign money and local jobs flow to the committees. Large budgets flow to contractors.</td><td>Rural votes and money flow to the committee. Price supports flow to farmers.</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Dwight D. Eisenhower, Farewell Radio and Television Address to the American People, January 17, 1961. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What are the three points in each triangle?</li><li>How does each triangle protect its program from budget cuts?</li><li>Which group is not represented in either triangle?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">From Triangles to Webs: Issue Networks</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">While iron triangles are closed and stable, modern issue networks are fluid and contentious. These networks involve a wide range of actors who debate policy, often leading to more diverse viewpoints but also more political gridlock.</p>
+        <p>While iron triangles are known for their rigidity and durability, the modern political landscape has become too complex for simple three-way alliances to dominate every issue. The explosion of interest groups in the 1970s and the rise of 24-hour media have given rise to a more fluid system known as "issue networks."</p>
+        <p>Unlike the tight, closed nature of an iron triangle, an issue network is a loose, complex, and often contentious cloud of actors who debate a specific policy area. An issue network includes not just the agency, committee, and industry lobbyists, but also university scholars, think tanks, media pundits, environmental activists, and White House staffers.</p>
+        <p>Take the debate over healthcare reform. There is no single "healthcare triangle." Instead, there is a massive issue network involving insurance companies, doctor associations (like the AMA), patient advocacy groups, hospital unions, academic researchers, and partisan think tanks. Unlike the cooperative nature of an iron triangle, issue networks are often battlegrounds. The players disagree on the facts and the solutions. Environmental policy is another prime example. The EPA does not just work with industrial polluters; it is constantly pressured by the Sierra Club, climate scientists, legal foundations, and state governors. These networks are easier to join than iron triangles, allowing for a broader range of voices, but they also make policymaking messier and more prone to gridlock.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Issue network</span> A loose, often contentious group of many actors who debate one policy area. <span class="sp">Spanish: red de asuntos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1970s</span>Decade when the explosion of interest groups helped create issue networks, along with 24-hour media.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Issue networks show the First Amendment freedoms of speech, press, and assembly at work.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.10</span>Triangles and Networks Compared</p>
+      <p class="figsub">Two ways that groups shape policy.</p>
+      <table class="cmp"><thead><tr><th></th><th>Iron triangle</th><th>Issue network</th></tr></thead><tbody><tr><td>Who is in it</td><td>An agency, a committee, and an interest group</td><td>Agencies, committees, industry, scholars, think tanks, activists, media, and White House staff</td></tr><tr><td>How open</td><td>Closed and exclusive</td><td>Easier to join</td></tr><tr><td>Relationship</td><td>Cooperative and stable</td><td>Contentious and fluid</td></tr><tr><td>Result</td><td>Programs that are hard to cut</td><td>More voices, but messier policy and more gridlock</td></tr><tr><td>Chapter example</td><td>Defense contractors; farm subsidies</td><td>Health care reform; environmental policy</td></tr></tbody></table>
+      <p class="source">Source: Chapter text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which is more open to new voices? Which is more stable?</li><li>Why might an issue network produce more gridlock?</li><li>Which would be harder for a President to change? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Danger of Agency Capture</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Agency capture occurs when a regulatory body begins to prioritize the interests of the industry it is supposed to oversee. This is often facilitated by the "revolving door," where officials move between government roles and high-paying private sector positions.</p>
+        <p>The existence of these policy networks—whether rigid triangles or messy webs—leads to a phenomenon that political scientists call "agency capture." This occurs when a regulatory agency, created to act in the public interest, effectively advances the commercial or political concerns of the special interest groups it is charged with regulating.</p>
+        <p>Imagine a watchdog who is fed, housed, and walked by the burglar. Eventually, the watchdog stops barking. This happens in the bureaucracy when the "revolving door" spins too freely. The "revolving door" refers to the practice of government officials leaving public service to take high-paying jobs as lobbyists or consultants for the very industries they used to regulate. A regulator at the Securities and Exchange Commission (SEC) who hopes to get a lucrative job at a Wall Street bank next year may be hesitant to enforce strict regulations on that bank today.</p>
+        <p>Agency capture distorts the purpose of the bureaucracy. The Department of the Interior is tasked with protecting public lands, but if it is "captured" by mining and timber interests, it may prioritize extraction over conservation. The Federal Aviation Administration (FAA) is supposed to ensure passenger safety, but critics argued that prior to the Boeing 737 MAX crashes, the agency had allowed the manufacturer to essentially self-certify its own safety features to save money. When agencies are captured, the iron triangle is working perfectly for its members, but the "Fourth Branch" fails in its constitutional duty to serve the American people as a whole.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Agency capture</span> A situation in which a regulatory agency advances the interests of the industry it is supposed to regulate. <span class="sp">Spanish: captura regulatoria</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Revolving door</span> The practice of officials leaving government for high-paying jobs in the industries they used to regulate, and sometimes returning. <span class="sp">Spanish: puertas giratorias</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">737 MAX</span>The chapter says critics argued the FAA let Boeing self-certify some safety features before the crashes.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 3 requires the President to “take Care that the Laws be faithfully executed,” which is hard when an agency serves a client.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>The Watchdog and the Burglar</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A restaurant inspector hopes to be hired by a big restaurant chain next year. When the inspector visits that chain, each small violation looks easier to overlook. Nobody paid the inspector to ignore the rules, but the future job changes the inspector’s choices. That is the problem the revolving door creates.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Close the Revolving Door?</div></div>
+      <div class="box-b">
+        <p>You are a member of Congress. You propose a law that bars regulators from working for the industry they oversee for five years after leaving government.</p>
+        <div class="opts"><div class="opt"><h5>Support the ban</h5>You reduce the temptation to favor industry, but you may make it harder to hire experienced regulators.</div><div class="opt"><h5>Oppose the ban</h5>You keep jobs attractive for experts, but you may increase the risk of capture.</div></div>
+        <p class="ask">Which would you choose? What trade-off does the chapter describe?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Lobbying and Influence</div></div>
+      <div class="box-b">
+<p style="margin:0">Democracies differ in how openly interest groups can influence government. Some countries require lobbyists to register and report their meetings. What rules would help the public see who is trying to influence an agency without stopping citizens from petitioning the government?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; TRIANGLES, NETWORKS, AND CAPTURE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 7.8. Explain how an iron triangle makes a program hard to cut.</li><li>Use Figure 7.10. Explain one difference between an iron triangle and an issue network.</li><li>Write a Counter-Argument to this claim: “Interest groups should have no role in writing agency rules.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 7.3 ASSESSMENT</b>Complete the Section 7.3 Assessment in your <i>Chapter 7 Assignment</i> packet before you move on to Section 7.4.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>7.4</b></div>
+    <h2>Bureaucratic Accountability: Democratic Control</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#DDB08A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EFF4F2" stroke-width="5"/><path d="M14 100h132" stroke="#DDB08A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 7.4, you will</p>
+      <ul><li>Explain how the President uses appointment, executive orders, and the Office of Management and Budget to steer agencies</li><li>Explain how Congress uses the power of the purse, oversight hearings, and new laws to check agencies</li><li>Explain how courts use judicial review and due process to limit agencies</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each check on the bureaucracy, who uses it, and an example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: check, who uses it, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Check</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who uses it</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#357A6E"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#357A6E" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Bureaucratic Accountability: Democratic Control</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The framers of the Constitution did not anticipate a massive federal bureaucracy, but they did understand the danger of unchecked power. As the "Fourth Branch" grew in size and influence, the other three branches—the Legislative, Executive, and Judicial—had to adapt their constitutional powers to ensure that unelected bureaucrats remained accountable to the people. This struggle for control is constant. If the bureaucracy becomes too independent, it threatens democracy; if it becomes too controlled by politics, it loses its competence and neutrality.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Democratic control</span> Elected leaders and the people keep authority over the officials who carry out the laws. <span class="sp">Spanish: control democrático</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two dangers</span>Too independent and the bureaucracy threatens democracy. Too political and it loses competence and neutrality.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 51 argued that the government must first control the governed, “and in the next place oblige it to control itself.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Presidential Checks: The Power of Appointment and Orders</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The President exercises control over the bureaucracy through the power of appointment and the issuance of executive orders. Additionally, the Office of Management and Budget serves as a central clearinghouse to ensure agency spending aligns with the President's policy agenda.</p>
+        <p>The President is the Chief Executive, meaning the bureaucracy nominally works for them. The most direct tool the President has to control the bureaucracy is the power of appointment. By nominating the heads of Cabinet departments and independent agencies, the President puts people in charge who share their ideology and policy goals. If a President wants to focus on deregulation, they will appoint an agency head who is skeptical of red tape. If they want to focus on strict environmental protection, they will appoint an aggressive regulator.</p>
+        <p>However, appointments have limits. The President can only appoint the top layer of officials; the thousands of career civil servants below them are protected by the merit system. To direct these career employees, Presidents use Executive Orders to issue binding instructions to agencies. A President might sign an order directing the Department of Homeland Security to change how it prioritizes deportations, effectively changing the law's impact without Congress passing a new bill.</p>
+        <p>Additionally, the Office of Management and Budget (OMB) is the President’s primary arm for controlling the bureaucracy. The OMB reviews the budget requests of every agency before they go to Congress, allowing the President to cut funding for agencies that are not following his agenda and boost funding for those that are.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Power of appointment</span> The President’s authority to nominate top officials, with Senate approval for many of them. <span class="sp">Spanish: poder de nombramiento</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Office of Management and Budget (OMB)</span> The President’s main arm for reviewing agency budgets and controlling agencies. <span class="sp">Spanish: Oficina de Administración y Presupuesto</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Top layer only</span>The President appoints agency heads, but thousands of career employees below them are protected by the merit system.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 2 gives the President the power to nominate officers “by and with the Advice and Consent of the Senate.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Congressional Checks: Purse Strings and Oversight</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Congress holds the ultimate authority over the bureaucracy through its control of the federal budget. By threatening to "defund" agencies or summoning leaders to testify at public oversight hearings, legislators can force administrative accountability.</p>
+        <p>Congress created the bureaucracy, and it retains the ultimate authority to shape it. The most potent weapon in Congress's arsenal is the "power of the purse." No agency can spend a dime unless Congress appropriates the money. If the FBI or the EPA engages in behavior that angers Congress, legislators can simply slash the agency's budget, crippling its ability to function. This threat forces agency heads to listen carefully to the concerns of congressional committees.</p>
+        <p>Beyond money, Congress utilizes "oversight hearings" to hold bureaucrats accountable. When a scandal occurs—such as a failure to care for veterans or a data breach at a government agency— Congress summons the agency leaders to testify. These hearings are often televised and can be grueling interrogations where agency heads must explain their failures under oath. This public shaming can force resignations and policy changes. Furthermore, the Government Accountability Office (GAO) acts as Congress's watchdog, auditing agency spending and investigating inefficiencies to ensure tax dollars are not wasted.</p>
+        <p>Congress can also rewrite the legislation that authorizes an agency. If Congress feels that an agency has abused its discretionary authority, it can pass new, more detailed laws that strip away that discretion, forcing the agency to follow strict procedures.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Power of the purse</span> Congress’s control over taxing and spending, which gives it a hold on every agency’s budget. <span class="sp">Spanish: poder de la bolsa</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Oversight hearing</span> A congressional hearing at which agency leaders must answer questions about their work. <span class="sp">Spanish: audiencia de supervisión</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Government Accountability Office (GAO)</span> Congress’s watchdog agency, which audits agency spending. <span class="sp">Spanish: Oficina de Responsabilidad Gubernamental</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No money without a law</span>The chapter says no agency can spend a dime unless Congress appropriates the money.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 9: “No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Judicial Checks: The Courts and Due Process</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal courts ensure that bureaucratic actions do not exceed the authority granted by Congress. Through judicial review, courts can strike down regulations that are found to be arbitrary or that violate the constitutional rights of citizens.</p>
+        <p>The federal courts serve as the final check on bureaucratic power. When an agency issues a rule or penalizes a company, that action can be challenged in court. The judiciary reviews these actions to ensure they are constitutional and that the agency has not exceeded the authority granted to it by Congress.</p>
+        <p>Citizens and businesses often sue agencies on the grounds that a regulation is arbitrary, capricious, or outside the scope of the law. For example, if the OSHA (Occupational Safety and Health Administration) issues a safety rule that is technically impossible for businesses to follow, a court can strike it down. The courts also ensure that the administrative adjudication process follows due process—meaning that agencies cannot simply seize property or fine individuals without a fair hearing. This judicial review ensures that the drive for bureaucratic efficiency does not trample on individual rights.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial review</span> The power of courts to decide whether an agency’s action is lawful or constitutional. <span class="sp">Spanish: revisión judicial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Due process</span> Fair procedures that the government must follow before taking a person’s property or freedom. <span class="sp">Spanish: debido proceso</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">“Arbitrary, capricious”</span>The Administrative Procedure Act lets courts set aside agency actions that are arbitrary, capricious, or an abuse of discretion.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Fifth Amendment: no person shall “be deprived of life, liberty, or property, without due process of law.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.11</span>Three Branches, Three Sets of Checks</p>
+      <p class="figsub">Each constitutional branch has its own ways to steer the Fourth Branch.</p>
+      <table class="cmp"><thead><tr><th>Branch</th><th>Tool</th><th>How it works</th><th>Example from the chapter</th></tr></thead><tbody><tr><td>President</td><td>Appointment</td><td>Puts leaders in charge who share the President’s goals</td><td>A deregulation-minded or an aggressive environmental regulator</td></tr><tr><td>President</td><td>Executive orders</td><td>Gives binding instructions to agencies</td><td>An order directing Homeland Security to change enforcement priorities</td></tr><tr><td>President</td><td>Office of Management and Budget</td><td>Reviews agency budget requests before they go to Congress</td><td>Cutting funds for agencies that resist the President’s agenda</td></tr><tr><td>Congress</td><td>Power of the purse</td><td>Appropriates the money agencies may spend</td><td>Slashing the budget of an agency that angers Congress</td></tr><tr><td>Congress</td><td>Oversight hearings and the GAO</td><td>Summons agency leaders to testify; audits spending</td><td>Hearings after a failure to care for veterans</td></tr><tr><td>Congress</td><td>Rewriting the law</td><td>Passes more detailed laws that limit discretion</td><td>Replacing broad authority with strict procedures</td></tr><tr><td>Courts</td><td>Judicial review</td><td>Strikes down rules that exceed the agency’s authority or violate rights</td><td>A court sets aside an impossible OSHA safety rule</td></tr><tr><td>Courts</td><td>Due process</td><td>Requires a fair hearing before penalties</td><td>An agency cannot seize property without a fair hearing</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; U.S. Constitution, Articles I and II; Fifth Amendment; Administrative Procedure Act, 5 U.S.C. § 706. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which branch controls the money? Which branch can reverse a rule?</li><li>Which check can the President use that Congress cannot?</li><li>Which check would be slowest to take effect? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 7.12</span>How Courts Review Agencies</p>
+      <p class="figsub">Federal law tells judges what to look for.</p>
+      <table class="cmp"><thead><tr><th>What a court may do</th><th>Words from the Administrative Procedure Act, 5 U.S.C. § 706</th><th>What it means</th></tr></thead><tbody><tr><td>Order an agency to act</td><td>“compel agency action unlawfully withheld or unreasonably delayed”</td><td>An agency cannot sit on a duty forever</td></tr><tr><td>Set aside a bad decision</td><td>“arbitrary, capricious, an abuse of discretion, or otherwise not in accordance with law”</td><td>An agency must have good reasons and follow the law</td></tr><tr><td>Protect rights</td><td>“contrary to constitutional right, power, privilege, or immunity”</td><td>An agency cannot violate the Constitution</td></tr></tbody></table>
+      <p class="source">Source: Administrative Procedure Act, 5 U.S.C. § 706, Legal Information Institute, Cornell Law School (quoted phrases). “What it means” column written for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which phrase would a court use to strike down a rule that has no good reason behind it?</li><li>Why would Congress want courts to review agencies?</li><li>How does judicial review connect to the due process idea in the Fifth Amendment?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Balancing Efficiency and Liberty</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American system seeks to balance the efficiency of a professional bureaucracy with the liberty protected by democratic accountability. While the bureaucracy provides the expertise to run the state, the constitutional branches maintain control over its direction.</p>
+        <p>The "Fourth Branch" presents a perpetual dilemma for American democracy. We need the expertise and capacity of the bureaucracy to inspect our food, manage our economy, and protect our environment. We want a government that is efficient and effective. Yet, we also fear a government that is too powerful, intrusive, and unresponsive to the public will. The complex system of checks and balances—involving presidential appointments, congressional budgets, and judicial review—is the mechanism by which the American system attempts to thread this needle. It ensures that while the bureaucracy may be the engine of government, the steering wheel remains in the hands of the constitutional branches accountable to the people.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Efficiency</span> Getting work done quickly and at low cost. <span class="sp">Spanish: eficiencia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">The steering wheel</span>The chapter says the bureaucracy is the engine, but the constitutional branches keep the steering wheel.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The tension between efficiency and liberty is one reason the Framers separated powers.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal bureaucracy is the complex, often unseen machinery that powers the American government. It is the place where the lofty promises of the Constitution and the statutes of Congress collide with the messy reality of the world. While the transition from the spoils system to the merit system professionalized the government, it created a new set of challenges regarding the power of unelected experts. Through discretionary authority and rulemaking, these agencies define the rules of daily life, from the air we breathe to the interest rates on our student loans.</p>
+        <p>Yet, this power is not unchecked. The intricate web of iron triangles shows how agencies are tethered to political interests, while the oversight powers of the President, Congress, and the Courts ensure that the bureaucracy remains a servant of the law rather than a master of the people. As we move forward to study the Judicial Branch in the next chapter, we will see how the courts serve as the ultimate arbiter in the disputes between these agencies and the citizens they regulate, further illustrating the complex checks and balances that define the American experiment.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Unit 3 turns to individual rights, including the First Amendment and due process, which also limit what the government and its agencies may do.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#DDB08A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#24443F">E</text></svg><div><small>EXAMPLE</small>The Front Office Under Review</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A school office adopts a rule that no club can meet without paying a fee. Students object, and the principal looks at the rule (a presidential check). The school board cuts the office’s budget until it changes the rule (a congressional check). A parent sues, and a court rules that the fee is unfair and breaks the student handbook (a judicial check). Three different checks reach the same office.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Which Check Would You Use?</div></div>
+      <div class="box-b">
+        <p>You are a member of Congress, and an agency has written a rule you believe is unfair. You can cut its budget, hold hearings, or rewrite the law.</p>
+        <div class="opts"><div class="opt"><h5>Cut the budget</h5>You send a strong message, but you may also stop work on useful programs.</div><div class="opt"><h5>Hold hearings or rewrite the law</h5>You target the specific problem, but it takes time and requires votes.</div></div>
+        <p class="ask">Which would you choose? What does the chapter say about the power of the purse?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Watching the Watchers</div></div>
+      <div class="box-b">
+<p style="margin:0">Many democracies have an independent office that audits government spending or investigates complaints against officials. The United States has the Government Accountability Office and agency inspectors general. Why might citizens trust an independent auditor more than a minister or administrator who audits his own agency?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; KEEPING AGENCIES ACCOUNTABLE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 7.11. Explain one check each from the President, Congress, and the courts.</li><li>Use Figure 7.12. Explain how the Administrative Procedure Act gives courts a standard for reviewing agencies.</li><li>Write a Counter-Argument to this claim: “Unelected officials should never have the power to write rules.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 7.4 ASSESSMENT</b>Complete the Section 7.4 Assessment in your <i>Chapter 7 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Who keeps the bureaucracy accountable to the people? Read four original documents from 1829 to 1961 and decide where each source draws the line.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Sources on Bureaucratic Power</h3>
+        <p>The documents below follow the argument over government administration across a century and a half. President Jackson’s 1829 message defends rotating officials out of their jobs. The Constitution supplies two clauses that matter for administration, one on money and one on faithful execution. The Administrative Procedure Act of 1946 sets rules for how agencies make rules and how courts review them. President Eisenhower’s 1961 farewell address warns about influence inside the machinery of government.</p>
+        <p>As you read, notice what each source trusts, what it fears, and who it says should have control. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1829 to 1961, from a presidential message to a federal law.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · PRESIDENTIAL MESSAGE</small><b>Andrew Jackson, <i>First Annual Message to Congress</i> (1829)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The duties of all public officers are, or at least admit of being made, so plain and simple that men of intelligence may readily qualify themselves for their performance; and I can not but believe that more is lost by the long continuance of men in office than is generally to be gained by their experience.”<cite>Andrew Jackson, First Annual Message, December 8, 1829. Text from The American Presidency Project, University of California, Santa Barbara. Spelling is original.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Jackson believe about the skill needed for public jobs? What does he think is lost when people stay in office a long time?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FOUNDING DOCUMENT</small><b>The Constitution of the United States, Articles I and II (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article I, Section 9: “No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law.”<br><br>Article II, Section 3: “. . . he shall take Care that the Laws be faithfully executed . . .”<cite>U.S. Constitution, Article I, Section 9, and Article II, Section 3. Text from the National Archives transcription. Spelling and capitalization are original. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which clause gives Congress control over agency spending? Which gives the President a duty to see that laws are carried out? How do the two clauses work together?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · FEDERAL LAW</small><b>Administrative Procedure Act, 5 U.S.C. §§ 553 and 706 (1946, as codified)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">§ 553(c): “After notice required by this section, the agency shall give interested persons an opportunity to participate in the rule making through submission of written data, views, or arguments . . .”<br><br>§ 706: “The reviewing court shall— . . . (2) hold unlawful and set aside agency action, findings, and conclusions found to be— (A) arbitrary, capricious, an abuse of discretion, or otherwise not in accordance with law . . .”<cite>Administrative Procedure Act, 5 U.S.C. § 553(c) and § 706(2)(A). Text from the Legal Information Institute, Cornell Law School. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> How does Section 553 let citizens take part in rulemaking? What power does Section 706 give a court over an agency?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · FAREWELL ADDRESS</small><b>Dwight D. Eisenhower, <i>Farewell Address</i> (1961)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“In the councils of government, we must guard against the acquisition of unwarranted influence, whether sought or unsought, by the military-industrial complex. The potential for the disastrous rise of misplaced power exists and will persist.”<cite>Dwight D. Eisenhower, Farewell Radio and Television Address to the American People, January 17, 1961. Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Eisenhower fear? How does his warning connect to the iron triangle in Section 7.3?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Document A with Section 7.1. How did the later merit system respond to the argument Jackson made?</li>
+        <li>Use Document B and Section 7.4. How do the two clauses give Congress and the President tools to control agencies?</li>
+        <li>Use Document C and Section 7.2. How does the Administrative Procedure Act protect both the public’s voice and the public’s rights?</li>
+        <li>Use Document D and Section 7.3. How could an iron triangle produce the kind of “unwarranted influence” Eisenhower describes?</li>
+        <li><b>Making a Claim</b> Who keeps the bureaucracy accountable to the people? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>7</b></div>
+    <h2>Chapter 7 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#DDB08A" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#EFF4F2" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#EFF4F2" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the federal bureaucracy implement public policy and affect daily life?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Structure and the Merit System</h5>The spoils system gave way to the merit system after Garfield’s assassination and the Pendleton Act (1883). Today the bureaucracy includes executive departments, independent agencies, government corporations, and independent regulatory commissions.</div><div><h5>Discretion and Rules</h5>Congress writes broad laws and agencies fill in the details through discretionary authority. Rulemaking under the Administrative Procedure Act gives the public a voice. Agencies also monitor compliance and settle disputes through administrative adjudication.</div><div><h5>Policy Networks</h5>Iron triangles join an agency, a committee, and an interest group in alliances that make programs durable. Issue networks are looser and more contentious. Agency capture and the revolving door show how an agency can serve a client instead of the public.</div><div><h5>Democratic Accountability</h5>The President appoints and gives orders, Congress controls the money and holds hearings, and courts review agency actions for fairness and legality. The system tries to balance the efficiency of expert administration with the liberty protected by democratic control.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#357A6E" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#9C5B33" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 7 ASSESSMENT AND SIMULATION</b>Complete the Chapter 7 Assessment (vocabulary, multiple choice, guided analysis, visual analysis, the Federalist No. 72 source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 7 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.4, 12.4.4, 12.1.5): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>Andrew Jackson, First Annual Message, December 8, 1829, The American Presidency Project, UC Santa Barbara: <a href="https://www.presidency.ucsb.edu/documents/first-annual-message-3">presidency.ucsb.edu</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li>Administrative Procedure Act, 5 U.S.C. §§ 553 and 706, Legal Information Institute, Cornell Law School: <a href="https://www.law.cornell.edu/uscode/text/5/553">§ 553</a>, <a href="https://www.law.cornell.edu/uscode/text/5/706">§ 706</a></li><li>Dwight D. Eisenhower, Farewell Address, January 17, 1961, The Avalon Project: <a href="https://avalon.law.yale.edu/20th_century/eisenhower001.asp">avalon.law.yale.edu/20th_century/eisenhower001.asp</a></li><li>Brookings Institution, <i>Vital Statistics on Congress</i>, Table 6-5, Pages in the Federal Register, 1936–2016: <a href="https://www.brookings.edu/wp-content/uploads/2017/01/vitalstats_ch6_tbl5.pdf">brookings.edu</a></li><li>Pendleton Civil Service Reform Act (1883); federal executive departments and founding dates (State, Treasury, Interior, Labor, Homeland Security)</li><li>Alexander Hamilton, Federalist No. 72 (source analysis excerpt in the Chapter 7 Assignment)</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are in the public domain. Aerial view of the Federal Triangle (Carol M. Highsmith); the first page of the Pendleton Act (National Archives); the Federal Reserve Board building, 1937 (Federal Reserve Board); the cover of the Federal Register (U.S. Government); federal food and drug inspectors, 1909 (U.S. Food and Drug Administration); “The Bosses of the Senate” by Joseph Keppler (1889). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 4 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

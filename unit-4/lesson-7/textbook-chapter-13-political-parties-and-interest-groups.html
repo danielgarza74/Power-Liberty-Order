@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 13: Political Parties and Interest Groups | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fcfbfd; --white:#ffffff;
+  --unit:#62498F; --unit-dk:#3E2D5C; --unit-lt:#F3EFF8; --unit-mid:#B0A4C7;
+  --amber:#1F8A82; --amber-lt:#8FD0CA; --amber-dk:#14605A;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#E9F3F2; --cream:#F3EFF8; --pale:#8FD0CA;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ebe8f0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(62,45,92,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d9d2e6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf8fc}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f1eef7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ece7f4;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #dcd5e8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #ece7f4}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf8fc;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1eef7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#ebe8f0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#ebe8f0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(62,45,92,.80) 0%,rgba(62,45,92,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 13 · POLITICAL PARTIES AND INTEREST GROUPS</span>
+  <a href="#opener">Opener</a><a href="#s1">13.1 Parties</a><a href="#s2">13.2 Interest Groups</a><a href="#s3">13.3 Strategies</a><a href="#s4">13.4 Triangles and Free Riders</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2018-03-25%20%E2%80%93%20United%20States%20Capitol%20West%20Front%2C%20viewed%20from%20the%20Newseum%20terrace%20%E2%80%93%20Washington%2C%20D.C.%2C%20United%20States.jpg?width=2000" alt="The domed United States Capitol and its long west front seen from across a park, with cars on a road in the foreground." style="object-position:50% 40%"></div>
+  <div class="opener-head">
+    <div class="chapnum">13</div>
+    <div>
+      <div class="unitline">Unit 4 · American Political Ideologies and Beliefs</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Political Parties<br>and Interest Groups</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where organized interests meet governing power.</b> The United States Capitol, west front, photographed on March 25, 2018. Inside, the party in government and organized interest groups meet. <span class="credit">Photo: Beethoven / <a href="https://commons.wikimedia.org/wiki/File:2018-03-25_–_United_States_Capitol_West_Front,_viewed_from_the_Newseum_terrace_–_Washington,_D.C.,_United_States.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 13.1</span><span class="sl-title">Political Parties: The Strategic Team</span></a><a href="#s2"><span class="sl-tag">SECTION 13.2</span><span class="sl-title">Interest Groups and the Theories of Influence</span></a><a href="#s3"><span class="sl-tag">SECTION 13.3</span><span class="sl-title">Strategies of Influence</span></a><a href="#s4"><span class="sl-tag">SECTION 13.4</span><span class="sl-title">Iron Triangles and Free Riders</span></a><a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Are Organized Factions a Danger to the Republic or a Safeguard of It?</span></a><a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How do political parties and interest groups serve as “linkage institutions” that connect citizens to the strategic operations of government?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Explain the three arenas of a political party and how each links citizens to government.</li><li>Evaluate why winner-take-all elections sustain two major parties, and distinguish realignment from dealignment.</li><li>Compare pluralism, elitism, and hyperpluralism as explanations of interest group influence.</li><li>Describe lobbying, litigation, amicus briefs, and electioneering, and the rules for campaign money after Citizens United.</li><li>Analyze the iron triangle, the revolving door, and the free-rider problem.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Linkage Institution</span><span>Political Party</span><span>Interest Group</span><span>Pluralism</span><span>Elitism</span><span>Hyperpluralism</span><span>Lobbying</span><span>Political Action Committee (PAC)</span><span>Super PAC</span><span>Party Realignment</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 13 Key Concept</p>
+        <p><b>Organized factions link citizens to government.</b> Parties compete to win control of government. Interest groups compete to influence it. Both are what Madison called factions, and the chapter asks whether they serve citizens or only themselves.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine a school that has no clubs, no teams, and no student government, only 2,000 students each speaking alone to the principal. Nothing would get organized, and the loudest individual would win. In a nation of millions, parties and interest groups do the organizing. Understanding how they work helps you judge who is actually being heard.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1787 to 2010 and answer one question: <a href="#case">are organized factions a danger to the republic or a safeguard of it?</a></p>
+      <div class="standards">
+        <div class="stdbox"><h4>CALIFORNIA CONTENT STANDARDS</h4><ul><li><code>HSS-PoAD.12.6.1</code> Analyze the origin, development, and role of political parties, noting those occasional periods in which there was only one major party or were more than two major parties. <i>(Section 13.1)</i></li><li><code>HSS-PoAD.12.6.3</code> Evaluate the roles of polls, campaign advertising, and the controversies over campaign funding. <i>(Section 13.3)</i></li><li><code>HSS-PoAD.12.6.4</code> Describe the means that citizens use to participate in the political process (e.g., voting, campaigning, lobbying, filing a legal challenge, demonstrating, petitioning, picketing, running for political office). <i>(Section 13.3)</i></li></ul></div>
+        <div class="stdbox"><h4>ALSO SUPPORTS</h4><ul><li><code>HSS-PoAD.12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Introduction, Section 13.2)</i></li><li><code>HSS-PoAD.12.10</code> Students formulate questions about and defend their analyses of tensions within our constitutional democracy and the importance of maintaining a balance between the following concepts: majority rule and individual rights; liberty and equality; state and national authority in a federal system; civil disobedience and the rule of law; freedom of the press and the right to a fair trial; the relationship of religion and government. <i>(Case Study)</i></li><li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li></ul></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">Madison’s Problem of Faction</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Federalist%20%281st%20ed%2C%201788%2C%20vol%20I%2C%20title%20page%29.jpg?width=1400" alt="The printed title page of a bound book, with the word Federalist at the top and the words a collection of essays, New York, and the printer’s names below." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Madison’s argument in print</span>The title page of volume I of the first collected edition of The Federalist, printed in New York in 1788. It includes Madison’s Federalist No. 10, the essay on faction.<span class="credit">Image: Unknown printer (1788) / <a href="https://commons.wikimedia.org/wiki/File:The_Federalist_(1st_ed,_1788,_vol_I,_title_page).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">When James Madison sat down in the autumn of 1787 to write the tenth essay of what would become The Federalist Papers, he was grappling with what he considered the most serious threat to republican government: the problem of faction. A faction, Madison wrote, is any group of citizens — whether a majority or a minority of the whole — who are united by some common passion or interest that is adverse to the rights of other citizens or to the permanent interests of the community. Factions, he argued, are the natural product of human liberty. As long as people are free to pursue their interests, form opinions, and associate with one another, they will inevitably organize themselves into groups that compete for political advantage. The problem was not how to eliminate factions — that would require eliminating liberty itself — but how to manage them, to prevent any single faction from dominating the others and using the machinery of government to oppress the rest.</p>
+        <p>Madison's solution was the extended republic: a large, diverse nation in which so many factions competed with one another that no single one could achieve permanent dominance. The multiplication of competing interests would be, paradoxically, the republic's greatest protection — each faction checking every other, producing a kind of competitive equilibrium that preserved liberty without requiring any faction to be suppressed. It was an elegant theory, and it anticipated, with remarkable accuracy, several features of the American political system as it actually developed. What Madison did not fully anticipate — what no one in 1787 anticipated — was the specific institutional form through which the management of factions would primarily take place: the political party.</p>
+        <p>The Constitution does not mention political parties. The Framers, almost universally, regarded parties as dangerous "factions" of exactly the kind Madison had warned against — organized groups whose loyalty to their own partisan interests would override their commitment to the public good. George Washington's Farewell Address devoted considerable attention to warning the new nation against the "baneful effects of the spirit of party." Yet within a decade of the Constitution's ratification, parties had emerged — first the Federalists and the Democratic-Republicans, organized around the competing visions of Alexander Hamilton and Thomas Jefferson — and they have never disappeared. The reason is straightforward: political parties solve a problem that a republic of any size inevitably faces. In a democracy of millions, the challenge of organizing political competition, recruiting and selecting candidates, developing coherent policy platforms, and turning election results into governing coalitions is simply too complex to be managed by uncoordinated individual action. Political parties are the institutions that make democratic self-government work at scale.</p>
+        <p>Alongside political parties, interest groups — organizations of citizens united by shared policy goals who engage the political process in pursuit of those goals — have become equally indispensable features of the American political landscape. Like parties, interest groups are the institutional descendants of the factions Madison both described and feared. Unlike parties, they do not seek to control the government themselves; they seek to influence those who do. Together, parties and interest groups serve as what political scientists call <dfn id="t-linkage-institution">linkage institutions</dfn>: the organizational bridges through which the diverse preferences of millions of individual citizens are aggregated, articulated, and translated into specific demands on government. Without these linkage institutions, the distance between ordinary citizens and the decisions made in Washington would be not merely vast but unbridgeable.</p>
+        <p>This chapter examines both types of linkage institution in depth: the structure and functions of political parties, the forces that sustain the two-party system and the historical dynamics of party realignment, the competing theories of how interest groups fit into democratic governance, the specific strategies through which groups attempt to influence policy, and the transformative effect of recent campaign finance decisions on the relationship between money and political power. Running through all of it is Madison's original question, now posed in a more complex institutional context: how does a republic manage the inevitable competition of organized interests in a way that produces good governance rather than faction-driven paralysis?</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Linkage institution</span> An organization that connects citizens’ concerns to the government’s agenda, such as parties, interest groups, elections, and the media. <span class="sp">Spanish: institución de enlace</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1787</span>Madison’s Federalist No. 10 appeared in the same year as the Constitution. You will read part of it in the Case Study.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 13.1 covers parties. Section 13.2 covers interest groups. Section 13.3 covers their strategies. Section 13.4 covers how they can capture policy.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>13.1</b></div>
+    <h2>Political Parties: The Strategic Team</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#8FD0CA" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 13.1, you will</p>
+      <ul><li>Define a political party and explain its three arenas</li><li>Explain how winner-take-all elections lead to two major parties (Duverger’s Law)</li><li>Distinguish party realignment from dealignment</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-political-party">Political party</a></li><li><a href="#t-duvergers-law">Duverger’s Law</a></li><li><a href="#t-realignment">Party realignment</a></li><li><a href="#t-dealignment">Dealignment</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each arena of a party, write who is in it and what it does.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: arena, who is in it, what it does"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Arena</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who is in it</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it does</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Political Parties: The Strategic Team</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">A <dfn id="t-political-party">political party</dfn>, at its most basic level, is an organization that seeks to win control of government by winning elections. This definition distinguishes parties from interest groups, which seek to influence government without necessarily seeking to run it, and from social movements, which seek to change public attitudes and political culture without necessarily competing in elections. But the definition understates the complexity of what parties actually are and do. A political party in the American system is not a single unified organization; it is better understood as a coalition of three distinct but overlapping arenas — the party in the electorate, the party as an organization, and the party in government — each with its own interests, incentives, and relationships to the others.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political party</span> An organization that seeks to win control of government by winning elections. <span class="sp">Spanish: partido político</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 arenas</span>A party is better understood as a coalition of three overlapping arenas than as one organization.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 follows how parties choose nominees and run campaigns.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Three Arenas of Party Life</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The first arena — the party in the electorate — consists of the millions of ordinary citizens who identify with a political party, typically vote for its candidates, and think of themselves, to varying degrees, as members of a political community defined by the party label. Party identification in the American system is less formal than in many other democracies: American voters register with a party in many states and may participate in primary elections, but they face no requirement to pay dues, attend meetings, or vote consistently for their party's candidates. Party identification is best understood as a psychological attachment — a standing decision about which party's candidates are generally more likely to represent one's interests and values — that guides electoral behavior without mechanically determining it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party identification</span> A standing psychological attachment to a party that guides, without fixing, a person’s vote. <span class="sp">Spanish: identificación partidista</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">No dues</span>Most American voters need not pay dues or attend meetings to belong to a party’s electorate.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 12 explained how family and other agents of socialization form party identification.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.1</span>The Three Arenas of a Party</p>
+      <p class="figsub">Each arena has its own members, resources, and role. The party label links them.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Three overlapping circles labeled the party in the electorate, the party as an organization, and the party in government, with the party label at the center"><circle cx="250" cy="150" r="118" fill="#8FD0CA" fill-opacity=".75" stroke="#62498F" stroke-width="2.5"/><circle cx="430" cy="150" r="118" fill="#B0A4C7" fill-opacity=".75" stroke="#62498F" stroke-width="2.5"/><circle cx="610" cy="150" r="118" fill="#fff" fill-opacity=".75" stroke="#62498F" stroke-width="2.5"/><text x="215" y="92" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">IN THE</text><text x="215" y="108" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">ELECTORATE</text><text x="430" y="76" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">AS AN</text><text x="430" y="92" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">ORGANIZATION</text><text x="645" y="92" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">IN</text><text x="645" y="108" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="13" fill="#3E2D5C" text-anchor="middle" font-weight="800">GOVERNMENT</text><circle cx="430" cy="170" r="34" fill="#3E2D5C"/><text x="430" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">PARTY</text><text x="430" y="182" font-family="Inter, Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="800">LABEL</text><text x="215" y="150" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">Voters who</text><text x="215" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">identify with</text><text x="215" y="182" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">the party</text><text x="430" y="235" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">Committees, staff,</text><text x="430" y="251" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">conventions</text><text x="645" y="150" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">Officeholders</text><text x="645" y="166" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">elected under</text><text x="645" y="182" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="400">the party label</text><text x="215" y="305" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#14605A" text-anchor="middle" font-weight="700">Attachment and votes</text><text x="430" y="305" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#14605A" text-anchor="middle" font-weight="700">Recruit, fund, organize</text><text x="645" y="305" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#14605A" text-anchor="middle" font-weight="700">Turn promises into policy</text></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of the party in the electorate, the party as an organization, and the party in government.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Arena</th><th>Who is in it</th><th>Main role</th></tr></thead><tbody><tr><td>In the electorate</td><td>Citizens who identify with the party</td><td>Attachment and votes</td></tr><tr><td>As an organization</td><td>Committees, staff, consultants</td><td>Recruit, fund, organize</td></tr><tr><td>In government</td><td>Officeholders elected under the label</td><td>Turn promises into policy</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which arena includes ordinary citizens who are not party employees or officeholders?</li><li>The party label sits where the circles overlap. What does that suggest the label does for each arena?</li><li>Why might the arena on the right and the arena on the left sometimes disagree?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The strength and durability of party identification as a predictor of voting behavior has been one of the most consistent findings of American political science for more than half a century. Research going back to the work of the Michigan school of political scientists in the 1950s and 1960s established that most Americans hold a party identification that remains relatively stable across their adult lifetimes, that this identification is the single strongest predictor of their vote choice in most elections, and that it shapes not only voting behavior but the way individuals process political information — interpreting ambiguous evidence in ways that favor their party and discount evidence that reflects poorly on it. Party identification is, in a real sense, one of the most powerful cognitive tools ordinary citizens use to navigate a political environment that is far too complex for any individual to monitor comprehensively.</p>
+        <p>The second arena — the party as an organization — consists of the formal institutional structure that keeps the party functioning between elections: national party committees like the Democratic National Committee and the Republican National Committee, state party committees, local party organizations, and the professional staff and consultants who manage the ongoing work of voter registration, candidate recruitment, platform development, and organizational maintenance. The organizational party is the part of the party that most resembles a conventional institution — it has budgets, staff, bylaws, and procedures — and it is responsible for the long-term health of the party as a competitive entity in American politics.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party platform</span> A party’s statement of its goals and policies, developed through the national platform process. <span class="sp">Spanish: plataforma del partido</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1950s–60s</span>Michigan school researchers found party identification to be the strongest single predictor of vote choice.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 explained confirmation bias, which helps explain why partisans discount unfavorable evidence.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.2</span>How Americans Identify With Parties, 2025</p>
+      <p class="figsub">Percent of U.S. adults who identify as independent, Democrat, or Republican.</p>
+      <svg viewBox="0 0 860 198" role="img" aria-label="Bar chart of 2025 party identification: 45 percent independent, 27 percent Democrat, 27 percent Republican"><line x1="130.0" y1="10" x2="130.0" y2="154" stroke="#e6e8ec"/><text x="130.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="290.0" y1="10" x2="290.0" y2="154" stroke="#e6e8ec"/><text x="290.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">15%</text><line x1="450.0" y1="10" x2="450.0" y2="154" stroke="#e6e8ec"/><text x="450.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">30%</text><line x1="610.0" y1="10" x2="610.0" y2="154" stroke="#e6e8ec"/><text x="610.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">45%</text><line x1="770.0" y1="10" x2="770.0" y2="154" stroke="#e6e8ec"/><text x="770.0" y="172" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">60%</text><text x="120" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Independent</text><g><title>Independent: 45%</title><path d="M130 16 h476.0 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-476.0z" fill="#1F8A82"/></g><text x="618.0" y="39.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">45%</text><text x="120" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Democrat</text><g><title>Democrat: 27%</title><path d="M130 64 h284.0 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-284.0z" fill="#62498F"/></g><text x="426.0" y="87.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">27%</text><text x="120" y="135.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Republican</text><g><title>Republican: 27%</title><path d="M130 112 h284.0 a4 4 0 0 1 4 4 v28 a4 4 0 0 1 -4 4 h-284.0z" fill="#62498F"/></g><text x="426.0" y="135.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">27%</text><line x1="130" y1="10" x2="130" y2="154" stroke="#6f7787" stroke-width="1.5"/><text x="450.0" y="194" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of U.S. adults</text></svg>
+      <p class="source">Source: Gallup, news release of January 12, 2026, reporting 2025 surveys of more than 13,000 U.S. adults. Highlighted bar: largest group, a record high for independents in Gallup’s trend.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Independent</th></tr></thead><tbody><tr><td>2014</td><td>43%</td></tr><tr><td>2023</td><td>43%</td></tr><tr><td>2024</td><td>43%</td></tr><tr><td>2025</td><td>45%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What share of adults identified with neither major party in 2025?</li><li>How does this chart illustrate the chapter’s term “dealignment”?</li><li>Why is a self-description as an independent not the same as having no political views?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The national party committees play particularly important roles in presidential election years, when they organize the national conventions at which presidential nominees are formally selected, manage the party's national platform process, and coordinate national fundraising and voter mobilization efforts. Between presidential elections, they serve as institutional memories, maintaining relationships with donors and activists, recruiting candidates for offices at all levels, and developing the messaging and research capacities that candidates will draw upon in the next cycle. The organizational capacity of the two major parties has grown substantially in recent decades, in part as a response to the rise of outside groups — including Super PACs — whose independent spending has sometimes threatened to overshadow the parties themselves as the primary vehicles for political messaging and mobilization.</p>
+        <p>The third arena — the party in government — consists of the elected officials who hold office under the party's label and act as its representatives in the actual exercise of governing power. This arena encompasses members of Congress who organize themselves into partisan caucuses and leadership structures, governors and state legislators who implement or contest the national party's agenda at the state level, and the president, who serves simultaneously as the nation's chief executive and as the de facto leader of their party. The party in government is responsible for translating the party's electoral success into actual policy — for converting campaign promises into legislation, executive action, and judicial appointments that reflect the party's values and advance its agenda.</p>
+        <p>The relationship between the three arenas of the party is not always harmonious. Activists in the party as an organization often hold more intense ideological views than the median voter in the party in the electorate, creating tension over the selection of candidates who can appeal broadly to swing voters versus those who energize the base. Elected officials in the party in government must balance loyalty to the party's platform against the practical demands of representing diverse constituencies, building legislative coalitions, and managing the compromises that governing inevitably requires. These internal tensions are not bugs in the party system; they are features of how parties manage the diversity of interests and perspectives that any large political coalition must accommodate.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party in government</span> The elected officials who hold office under a party’s label and act as its representatives. <span class="sp">Spanish: partido en el gobierno</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Tension</span>Activists often hold more intense views than the median voter, the chapter notes.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 4 and Chapter 5 show how parties organize Congress and the presidency.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE EVIDENCE ON PARTIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.2. Which group was largest in 2025? By how many points did it lead each major party?</li><li>Use the text. Name one task of the party as an organization between elections.</li><li>Write a Counter-Argument to this claim: “The party in the electorate is the only arena that matters.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Two-Party System and Its Structural Logic</h3>
+    <div class="pair">
+      <div class="body">
+        <p>One of the most distinctive features of American party politics — one that sets the United States apart from most other advanced democracies — is the virtually unbroken dominance of exactly two major parties throughout the nation's history. Since the emergence of the Republican Party in the 1850s as the successor to the Whigs, every presidential election has been won by either a Democrat or a Republican. Third parties and independent candidates have occasionally played important roles — the Progressive Party of 1912, Ross Perot's independent candidacy in 1992, Ralph Nader's Green Party campaign in 2000 — but none has broken the two-party duopoly at the national level since the Republicans did so in 1860.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Duopoly</span> Control of a market or system by two dominant participants. <span class="sp">Spanish: duopolio</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1860</span>The year the chapter says the Republican Party last broke the Democratic–Republican duopoly at the national level.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter names third-party efforts in 1912, 1992, and 2000.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/NastRepublicanElephant.jpg?width=1400" alt="A black-and-white engraving of a large elephant lumbering through a crowd of other animals, with a caption beneath it." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The elephant takes shape</span>Thomas Nast’s cartoon “The Third-Term Panic,” published in Harper’s Weekly on November 7, 1874. Nast’s cartoons helped make the elephant a symbol of the Republican vote.<span class="credit">Image: Thomas Nast (1874) / <a href="https://commons.wikimedia.org/wiki/File:NastRepublicanElephant.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The persistence of the two-party system is not accidental; it is the product of structural features of American electoral law that systematically disadvantage third parties and incentivize consolidation into two large coalitions. The most important of these structural features is the single-member district, winner-take-all system — the method by which virtually all major American elections are conducted. In a single-member district election, one seat is up for grabs, one candidate wins it, and all other candidates receive nothing, regardless of how many votes they received. This is in stark contrast to the proportional representation systems used in most European democracies, where legislative seats are allocated to parties in proportion to their share of the popular vote — a system that allows smaller parties to win representation and build organizational capacity even without winning a majority in any single district.</p>
+        <p>The mathematical consequences of winner-take-all elections for third parties were analyzed with particular clarity by the French political scientist Maurice Duverger, whose observation — now known as <dfn id="t-duvergers-law">Duverger's Law</dfn> — holds that winner-take-all electoral systems systematically produce two-party competition, while proportional representation systems tend to produce multiparty competition. The reason is straightforward: in a winner-take-all system, a vote for a third-party candidate who cannot win is, in a practical sense, a wasted vote. Rational voters who prefer a third-party candidate but care even more about preventing the major-party candidate they like least from winning will "strategically defect" to whichever major-party candidate they prefer, rather than voting for their first choice and risk contributing to their worst outcome. This strategic defection deprives third parties of votes they might otherwise receive and reinforces the dominance of the two major parties in a self-reinforcing cycle.</p>
+        <p>The winner-take-all system is reinforced by several additional structural barriers. State ballot access laws, which vary widely but are often complex and demanding, require third-party and independent candidates to collect large numbers of petition signatures and meet other requirements that major-party candidates face automatically. Campaign finance rules have historically provided public funding to major parties while imposing additional hurdles on qualifying minor parties. Major media organizations tend to focus their coverage on candidates with realistic chances of winning — which means candidates of the two major parties — further limiting the public visibility of third-party alternatives. And the major parties themselves, when faced with a serious third-party challenge, have proven adept at co-opting popular third-party themes and candidates, absorbing the energy of outsider movements and neutralizing their challenge.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Duverger’s Law</span> The observation that winner-take-all elections tend to produce two parties, while proportional representation tends to produce many. <span class="sp">Spanish: ley de Duverger</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Proportional representation</span> A system that gives parties legislative seats in proportion to their share of the vote. <span class="sp">Spanish: representación proporcional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Wasted vote</span>In a winner-take-all contest, a vote for a candidate who cannot win leaves its supporters unrepresented.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 returns to how electoral rules shape campaigns.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.3</span>Same Votes, Different Seats (Hypothetical)</p>
+      <p class="figsub">A hypothetical legislature of 10 seats. Statewide, the four parties win 41%, 34%, 15%, and 10% of the votes.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Two rows of seat blocks. Under winner-take-all, Party A gets 6 seats, Party B 4, Parties C and D none. Under proportional representation, A gets 4, B 3, C 2, D 1."><text x="20" y="30" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="start" font-weight="700">Winner-take-all in 10 single-member districts (A wins 6, B wins 4)</text><g><title>Party A: 6</title><rect x="20" y="42" width="477" height="56" rx="6" fill="#62498F" stroke="#62498F" stroke-width="1.5"/></g><text x="258.5" y="76" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="800">6</text><g><title>Party B: 4</title><rect x="500" y="42" width="317" height="56" rx="6" fill="#8FD0CA" stroke="#62498F" stroke-width="1.5"/></g><text x="658.5" y="76" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">4</text><text x="20" y="120" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="start" font-weight="400">Party A: 6  ·  Party B: 4  ·  Party C: 0  ·  Party D: 0</text><text x="20" y="150" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="start" font-weight="700">Proportional representation, 10 seats (largest-remainder method)</text><g><title>Party A: 4</title><rect x="20" y="162" width="317" height="56" rx="6" fill="#62498F" stroke="#62498F" stroke-width="1.5"/></g><text x="178.5" y="196" font-family="Inter, Arial, sans-serif" font-size="20" fill="#fff" text-anchor="middle" font-weight="800">4</text><g><title>Party B: 3</title><rect x="340" y="162" width="237" height="56" rx="6" fill="#8FD0CA" stroke="#62498F" stroke-width="1.5"/></g><text x="458.5" y="196" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">3</text><g><title>Party C: 2</title><rect x="580" y="162" width="157" height="56" rx="6" fill="#B0A4C7" stroke="#62498F" stroke-width="1.5"/></g><text x="658.5" y="196" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">2</text><g><title>Party D: 1</title><rect x="740" y="162" width="77" height="56" rx="6" fill="#F3EFF8" stroke="#62498F" stroke-width="1.5"/></g><text x="778.5" y="196" font-family="Inter, Arial, sans-serif" font-size="20" fill="#3E2D5C" text-anchor="middle" font-weight="800">1</text><text x="20" y="240" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="start" font-weight="400">Party A: 4  ·  Party B: 3  ·  Party C: 2  ·  Party D: 1</text></svg>
+      <p class="source">Source: Hypothetical example created for this textbook. In the winner-take-all row we assume A carries 6 districts and B carries 4, with C and D finishing behind in every district; the proportional row applies the largest-remainder method to the vote shares.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Party</th><th>Vote share</th><th>Seats: winner-take-all</th><th>Seats: proportional</th></tr></thead><tbody><tr><td>A</td><td>41%</td><td>6</td><td>4</td></tr><tr><td>B</td><td>34%</td><td>4</td><td>3</td></tr><tr><td>C</td><td>15%</td><td>0</td><td>2</td></tr><tr><td>D</td><td>10%</td><td>0</td><td>1</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>How many seats do Parties C and D win under each system?</li><li>How does the top row illustrate the chapter’s “wasted vote” idea?</li><li>Which system would you expect to encourage new parties to form, and why?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>The Strategic Vote</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Mia prefers Candidate Rivera, a third-party candidate, but polls show only Candidates Lee and Park can win. Mia dislikes Park the most. If she votes for Rivera, her vote may help Park win, so she votes for Lee. Mia’s choice is the “strategic defection” the chapter describes. Multiplied across millions of voters, it keeps third parties small.</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Germany: Two Votes and a Threshold</div></div>
+      <div class="box-b">
+<p style="margin:0">Germany’s Bundestag has 630 seats. Each voter casts two votes, one for a local representative and one for a party list, and a party generally needs 5% of the party-list vote to win seats. After the 2025 federal election, seven parties or groups held seats, including the Greens (85) and Die Linke (64); the BSW party won 4.98% and no seats. How do proportional rules and a threshold change the choices a voter faces compared with a winner-take-all district? <i>(Source: Die Bundeswahlleiterin [Federal Returning Officer], “Results Germany,” 2025 Bundestag election, bundeswahlleiterin.de.)</i></p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Should New Parties Have an Easier Path to the Ballot?</div></div>
+      <div class="box-b">
+        <p>The chapter says ballot access laws require third-party and independent candidates to collect many signatures that major-party candidates do not need. Reasonable people disagree about what to do.</p>
+        <div class="opts"><div class="opt"><h5>Keep strict requirements</h5>Require proof of real public support so ballots stay manageable and voters are not confused by many names.</div><div class="opt"><h5>Lower the requirements</h5>Make it easier for new parties to appear so that voters have more choices and major parties face more competition.</div></div>
+        <p class="ask">Which would you choose, and what would you do to address the strongest concern about your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; WHY TWO PARTIES?</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.3. Under which system do the three smaller parties together win more seats?</li><li>Use the text. Name two barriers besides winner-take-all that the chapter says disadvantage third parties.</li><li>Write a Counter-Argument to this claim: “Proportional representation is clearly better than winner-take-all.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Realignment, Dealignment, and the Shifting Coalitions of American Politics</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Political parties are not static entities. The specific coalitions of voters, regions, and interests that make up each major party have changed dramatically over the course of American history, sometimes gradually and sometimes through the kind of rapid, fundamental reshuffling that political scientists call party realignment. Understanding the historical pattern of realignment — when it has occurred, why, and what it has produced — is essential to understanding both the current state of American party politics and the forces that are continuing to reshape it.</p>
+        <p>A <dfn id="t-realignment">party realignment</dfn> occurs when the existing pattern of partisan allegiance among voters breaks down and is replaced by a new pattern — when groups that previously identified with one party shift their loyalties to the other, when regions that were reliably partisan become competitive or switch sides, and when the ideological content of the parties themselves shifts to reflect new coalitional compositions. Realignments are typically associated with what political scientists call "critical elections" — electoral contests in which the stakes are unusually high, turnout is unusually intense, and the results reflect not just a temporary preference for one party's candidates but a durable shift in the underlying structure of partisan competition.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party realignment</span> A durable shift in the pattern of partisan allegiance, usually after a critical election. <span class="sp">Spanish: realineamiento partidista</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Critical election</span> An unusually high-stakes election that reflects a durable shift in the structure of partisan competition. <span class="sp">Spanish: elección crítica</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 elections</span>The chapter cites 1828, 1860, 1896, and 1932 as the most frequent examples.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 11 covers the Civil Rights Act of 1964 and the Voting Rights Act of 1965.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.4</span>Realignments in the Chapter’s Account</p>
+      <p class="figsub">Elections and events the chapter links to major shifts in party coalitions.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Timeline of five realignment points: 1828, 1860, 1896, 1932, and the Civil Rights and Voting Rights Acts of 1964 and 1965"><line x1="40" y1="145" x2="820" y2="145" stroke="#62498F" stroke-width="4" stroke-linecap="round"/><line x1="118.0" y1="145" x2="118.0" y2="133" stroke="#62498F" stroke-width="2"/><g><title>1828: Cited realignment </title><circle cx="118.0" cy="145" r="8" fill="#62498F" stroke="#fff" stroke-width="2.5"/></g><text x="118.0" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3E2D5C" text-anchor="middle" font-weight="800">1828</text><text x="118.0" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Cited realignment</text><text x="118.0" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="274.0" y1="145" x2="274.0" y2="155" stroke="#62498F" stroke-width="2"/><g><title>1860: Republicans win Duopoly broken</title><circle cx="274.0" cy="145" r="8" fill="#62498F" stroke="#fff" stroke-width="2.5"/></g><text x="274.0" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3E2D5C" text-anchor="middle" font-weight="800">1860</text><text x="274.0" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Republicans win</text><text x="274.0" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Duopoly broken</text><line x1="430.0" y1="145" x2="430.0" y2="133" stroke="#62498F" stroke-width="2"/><g><title>1896: Cited realignment </title><circle cx="430.0" cy="145" r="8" fill="#62498F" stroke="#fff" stroke-width="2.5"/></g><text x="430.0" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#3E2D5C" text-anchor="middle" font-weight="800">1896</text><text x="430.0" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Cited realignment</text><text x="430.0" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="586.0" y1="145" x2="586.0" y2="155" stroke="#1F8A82" stroke-width="2"/><g><title>1932: New Deal FDR, Democrats</title><circle cx="586.0" cy="145" r="8" fill="#1F8A82" stroke="#fff" stroke-width="2.5"/></g><text x="586.0" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#14605A" text-anchor="middle" font-weight="800">1932</text><text x="586.0" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">New Deal</text><text x="586.0" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">FDR, Democrats</text><line x1="742.0" y1="145" x2="742.0" y2="133" stroke="#1F8A82" stroke-width="2"/><g><title>1964–65: Civil rights laws </title><circle cx="742.0" cy="145" r="8" fill="#1F8A82" stroke="#fff" stroke-width="2.5"/></g><text x="742.0" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#14605A" text-anchor="middle" font-weight="800">1964–65</text><text x="742.0" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Civil rights laws</text><text x="742.0" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text></svg>
+      <p class="source">Source: Chapter text. Timeline created for this textbook. Highlighted: the two shifts the chapter discusses in detail.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Date</th><th>What the chapter says</th></tr></thead><tbody><tr><td>1828, 1896</td><td>Cited as realigning elections</td></tr><tr><td>1860</td><td>Republican Party breaks the two-party duopoly</td></tr><tr><td>1932</td><td>FDR’s New Deal coalition gives Democrats majority status for a generation</td></tr><tr><td>1964–65</td><td>Civil Rights and Voting Rights Acts begin a long shift of white Southern voters to Republicans</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Which date does the chapter say produced “perhaps the most consequential realignment of the twentieth century”?</li><li>What kind of event does the chapter say usually accompanies realignment?</li><li>How does dealignment differ from the changes shown on this timeline?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Depression%2C%20Breadlines-long%20line%20of%20people%20waiting%20to%20be%20fed%2C%20New%20York%20City%20-%20NARA%20-%20196499.tif?width=1400" alt="A long line of men stretching down a city sidewalk beside a building, with a sign near the front of the line." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Hard times and new coalitions</span>A bread line in New York City, circa 1932. The chapter says the Great Depression and the election of 1932 produced one of the most consequential realignments of the twentieth century. The National Archives holds the photograph.<span class="credit">Photo: Unknown photographer (c. 1932), National Archives / <a href="https://commons.wikimedia.org/wiki/File:Depression,_Breadlines-long_line_of_people_waiting_to_be_fed,_New_York_City_-_NARA_-_196499.tif">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>The most frequently cited examples of party realignment in American history are the elections of 1828, 1860, 1896, and 1932. The election of 1932, which brought Franklin Roosevelt and the Democrats to power in the depths of the Great Depression, produced perhaps the most consequential realignment of the twentieth century. The "New Deal coalition" that Roosevelt assembled — bringing together industrial workers, urban ethnic communities, Southern whites, Black voters in Northern cities, farmers, and progressive intellectuals — gave the Democratic Party majority status for a generation and reshaped the ideological content of both parties. Democrats became the party of active federal government, economic regulation, and social insurance; Republicans became the party of limited government, lower taxes, and business interests. This realignment was not immediate or complete — it took years for the new coalitional patterns to stabilize — but it defined the basic structure of American party competition for the next forty years.</p>
+        <p>The period since the 1960s has witnessed a different kind of partisan change: a gradual but profound realignment of regional and racial bases. The Civil Rights Act of 1964 and the Voting Rights Act of 1965 — which the Democratic Party under Lyndon Johnson championed and which most Southern Democratic members of Congress opposed — triggered a long-term departure of white Southern voters from the Democratic Party and into the Republican coalition. At the same time, the incorporation of Black voters into the active Democratic electorate and the increasing alignment of the party with civil rights causes transformed the ideological meaning of Democratic identity. Over the following decades, what had been the "Solid South" for Democrats became the Solid South for Republicans, and the regional and ideological profiles of the two parties essentially reversed from what they had been in the New Deal era.</p>
+        <p>Alongside realignment, recent decades have also witnessed growing party <dfn id="t-dealignment">dealignment</dfn> — a trend in which voters who were previously loyal identifiers with one of the major parties shift toward independent status rather than realigning with the other party. The share of Americans who identify as independent rather than as Democrats or Republicans has grown substantially since the 1950s, and self-described independents now constitute the largest single group in many polls of party identification. This trend reflects, in part, dissatisfaction with both major parties — a sense that neither adequately represents the interests or values of broad segments of the public. It also reflects the increasing polarization of the two parties, which has made it more difficult for voters with moderate or mixed ideological preferences to find a comfortable partisan home.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Dealignment</span> A trend in which voters leave the major parties for independent status instead of joining the other party. <span class="sp">Spanish: desalineamiento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Solid South</span>The chapter says the Solid South for Democrats became the Solid South for Republicans over the following decades.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Figure 13.2 shows independents as the largest group in 2025.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; REALIGNMENT OR DEALIGNMENT?</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.4. Which event began the post-1960s shift of white Southern voters, according to the chapter?</li><li>Use the text. Name two groups in the New Deal coalition.</li><li>Write a Counter-Argument to this claim: “Rising independents show that parties no longer matter.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 13.1 ASSESSMENT</b>Complete the Section 13.1 Assessment in your <i>Chapter 13 Assignment</i> packet before you move on to Section 13.2.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>13.2</b></div>
+    <h2>Interest Groups and the Theories of Influence</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#8FD0CA" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F3EFF8" stroke-width="5"/><path d="M14 100h132" stroke="#8FD0CA" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 13.2, you will</p>
+      <ul><li>Define an interest group and contrast it with a party</li><li>Compare pluralism, elitism, and hyperpluralism</li><li>Identify factors that make an interest group effective</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-interest-group">Interest group</a></li><li><a href="#t-pluralism">Pluralism</a></li><li><a href="#t-elitism">Elitism</a></li><li><a href="#t-hyperpluralism">Hyperpluralism</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each theory, write its claim and its main concern.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: theory, claim, concern"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Theory</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Claim</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Concern</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Interest Groups: The "Factions" of Democracy</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">If political parties are the primary institutions through which Americans organize political competition and govern, <dfn id="t-interest-group">interest groups</dfn> are the primary institutions through which organized segments of society attempt to influence what government does with the power it has won. Interest groups are not a peripheral feature of American democracy; they are one of its most fundamental and most contested components. From the earliest days of the republic — when merchants, farmers, and creditors organized to influence the policies of the new Congress — to the present day — when thousands of organizations maintain lobbying presences in Washington and state capitals across the country — organized groups have been the primary intermediaries between the raw desires of particular segments of society and the specific outputs of the policy process.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Interest group</span> An organization of people with shared policy goals who try to influence government without running it. <span class="sp">Spanish: grupo de interés</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Not parties</span>Interest groups seek to influence those who govern; parties seek to win control of government.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter notes merchants, farmers, and creditors organized to influence the first Congress.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Pluralist, Elitist, and Hyperpluralist Frameworks</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Political scientists and democratic theorists have debated for decades what the existence of thousands of organized interest groups means for the health of American democracy. Three broad theoretical frameworks — pluralism, elitism, and hyperpluralism — offer competing answers to this question, and understanding each is essential to evaluating the actual role interest groups play in American governance.</p>
+        <p><dfn id="t-pluralism">Pluralism</dfn>, the most optimistic of the three frameworks, holds that the competition among many organized groups is not a threat to democratic governance but a reflection and expression of it. In a large, diverse society, people inevitably have different interests and different priorities. The freedom to organize, advocate, and compete for government attention is the freedom of self-governance in practice. When many groups compete in the political marketplace — business organizations against labor unions, environmental groups against energy companies, consumer advocacy organizations against industry trade associations — the result is a dynamic equilibrium in which no single group dominates and the policies that emerge reflect something like the balance of organized social forces. Pluralism does not require that every group be equally powerful; it requires only that the competition be genuine and that countervailing forces emerge to check any group that grows too dominant. The theoretical lineage of pluralism runs through Madison's Federalist No. 10 directly: the proliferation of factions, far from being a threat to liberty, is its most reliable guarantor.</p>
+        <p>The empirical record of American interest group politics has provided both support and challenge for the pluralist framework. Support comes from the many cases in which apparently powerful interests have been checked by countervailing coalitions: tobacco companies faced with health advocacy organizations, financial industry lobbying efforts countered by consumer protection advocates, agricultural interests contested by environmental groups. Challenge comes from the persistent evidence that interest groups are not equally resourced or equally influential — that organizations representing concentrated, well-funded economic interests consistently outperform organizations representing diffuse or poorly funded ones, and that the policy outcomes of the interest group process are systematically skewed toward those who can afford the most sophisticated lobbying operations.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pluralism</span> The theory that many competing groups produce a rough democratic equilibrium. <span class="sp">Spanish: pluralismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Madison</span>The chapter says pluralism’s lineage runs directly through Federalist No. 10.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 introduced political culture and the shared values that frame these debates.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This challenge is the foundation of the <dfn id="t-elitism">elitist</dfn> critique of pluralism. Elite theory, drawing on the work of sociologists like C. Wright Mills, holds that while the pluralist description of group competition is accurate at the surface level — there are indeed many groups, and they do compete — the competition is deeply unequal in ways that systematically advantage upper-class and corporate interests. The resources required to mount an effective lobbying campaign — the professional staff, the Washington offices, the legal and technical expertise, the campaign contributions, the social connections to senior government officials — are not equally available to all groups. Corporations, trade associations, and wealthy individuals can access these resources far more readily than can organizations representing workers, consumers, or the poor. The result, elite theorists argue, is that while the appearance of pluralist competition is maintained, the reality is a system in which the preferences of a small economic elite reliably shape government policy in ways that ordinary citizens' preferences do not.</p>
+        <p>The hyperpluralist critique approaches the problem from a different angle. Rather than arguing that too few groups have real influence, <dfn id="t-hyperpluralism">hyperpluralism</dfn> argues that too many groups have enough influence to create gridlock. When every significant policy decision is contested by multiple organized groups, each of which has enough political clout to extract concessions or block changes it dislikes, government loses the capacity to make coherent policy choices. Politicians who seek to please all organized constituencies end up making commitments that are mutually contradictory, enacting policies that are riddled with exceptions and carve-outs demanded by particular groups, and ultimately failing to address serious national problems because no reform can survive the gauntlet of organized opposition it faces. Hyperpluralism produces not domination by a single interest but paralysis through the multiplication of competing demands — a form of democratic dysfunction in which the very responsiveness of government to organized groups becomes an obstacle to effective governance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Elitism</span> The theory that an upper-class elite holds real power despite the appearance of group competition. <span class="sp">Spanish: elitismo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Hyperpluralism</span> The theory that so many strong groups exist that government is gridlocked. <span class="sp">Spanish: hiperpluralismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">C. Wright Mills</span>The chapter links elite theory to the sociologist C. Wright Mills.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 13.4 returns to these frameworks through the iron triangle.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.5</span>Three Theories of Interest Group Influence</p>
+      <p class="figsub">What each framework claims about how organized groups affect democracy.</p>
+      <table class="cmp"><thead><tr><th>Theory</th><th>Core claim</th><th>Evidence the chapter cites</th><th>Main weakness</th></tr></thead><tbody><tr><td>Pluralism</td><td>Many groups compete and balance one another</td><td>Groups checked by countervailing coalitions (tobacco, finance, agriculture)</td><td>Groups are not equally resourced</td></tr><tr><td>Elitism</td><td>Competition is real but deeply unequal; a small economic elite shapes policy</td><td>Concentrated, well-funded interests outperform diffuse ones</td><td>Overstates elite unity if groups do sometimes lose</td></tr><tr><td>Hyperpluralism</td><td>Too many strong groups produce gridlock</td><td>Policies full of exceptions and carve-outs</td><td>Assumes groups are strong enough to block change</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of pluralism, elitism, and hyperpluralism. The “Main weakness” column states the objection that the chapter’s other frameworks raise.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which theory is the most optimistic about democracy? Why?</li><li>Which two theories reach opposite conclusions about whether groups have too little or too much power?</li><li>Choose one theory and name one piece of evidence that would challenge it.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>The Park Fight</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A town proposes turning a vacant lot into either a park, a parking garage, or a shop. A neighborhood association, a business group, and a youth sports league each organize. If the three groups bargain and each wins something, a pluralist would see healthy competition. If the business group hires the best lawyers and the others cannot, an elitist would see unequal competition. If each group blocks the others and the lot stays empty for years, a hyperpluralist would see gridlock.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; APPLYING THE THEORIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.5. Which theory best describes The Park Fight if all three groups win a compromise?</li><li>Use the text. What kind of group does the chapter say elite theorists believe wins most often?</li><li>Write a Counter-Argument to this claim: “Interest groups are always bad for democracy.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">What Makes an Interest Group Effective?</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Not all interest groups are equally effective at influencing the political process, and understanding the factors that distinguish more influential groups from less influential ones is essential to assessing the practical operation of interest group politics. Political scientists have identified several key determinants of interest group effectiveness: size, financial resources, organizational cohesion, and — perhaps most importantly — the intensity of commitment among the group's members.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Selective benefit</span> A private inducement available only to group members. <span class="sp">Spanish: beneficio selectivo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 factors</span>Size, financial resources, organizational cohesion, and intensity of commitment.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 covers how campaigns raise and spend money.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Bosses%20of%20the%20Senate%20by%20Joseph%20Keppler.jpg?width=1400" alt="A color political cartoon of enormous money bags in suits and top hats seated above rows of small senators at their desks, labeled with the names of trusts." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A cartoonist’s view of influence</span>Joseph Keppler’s cartoon “The Bosses of the Senate,” published in the magazine Puck on January 23, 1889. It portrays business trusts looming over the Senate chamber. It shows how critics once pictured concentrated money and power.<span class="credit">Image: Joseph Keppler (1889) / <a href="https://commons.wikimedia.org/wiki/File:The_Bosses_of_the_Senate_by_Joseph_Keppler.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p>Size matters in interest group politics because democratic governments are ultimately accountable to voters, and an interest group that can credibly claim to represent a large number of voters has a form of political leverage that no amount of money can fully replicate. The American Association of Retired Persons, with its tens of millions of members, wields political influence that far exceeds what its budget alone would suggest, because every elected official knows that those members vote in high numbers and care deeply about the issues AARP advocates on. A large membership base also enables groups to generate the kind of constituent pressure — phone calls, letters, organized meetings with representatives — that reminds legislators that interest group politics is ultimately connected to electoral politics.</p>
+        <p>Financial resources determine the organizational capacity of an interest group to pursue its goals — the ability to hire experienced lobbyists, to commission research and polling, to run advertising campaigns, to monitor the legislative process continuously, and to make campaign contributions to supportive candidates. The relationship between financial resources and political influence is one of the most documented and most debated phenomena in American politics. Studies of lobbying spending consistently find that better-funded groups achieve better legislative outcomes on average, though the relationship is not simple: money buys access and information, but it does not buy votes in a vacuum, and even very well-funded groups regularly lose political battles when the political environment is sufficiently unfavorable.</p>
+        <p>Perhaps the most underappreciated determinant of interest group effectiveness is the intensity of commitment among its members — the degree to which members of the group care so deeply about the policy issues at stake that they are willing to take political action, including voting, donating, protesting, and contacting their representatives, based primarily or exclusively on those issues. An interest group whose members are intensely committed to its goals can often outperform much larger and better-funded groups whose members are only moderately engaged. The National Rifle Association's political effectiveness, for example, has historically been based less on the size of its budget than on the extraordinary intensity of its members' commitment to gun rights — the willingness of millions of gun owners to make the NRA's endorsed positions a decisive factor in their voting and donating behavior, creating political consequences for any elected official who crosses the organization on its core issues.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Intensity</span> How strongly members care about an issue and act on it. <span class="sp">Spanish: intensidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Access</span>The chapter says money buys access and information, but not votes in a vacuum.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 4 covers Congress.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.6</span>What Makes an Interest Group Effective?</p>
+      <p class="figsub">Four determinants named in the chapter, with the chapter’s evidence and a limit for each.</p>
+      <table class="cmp"><thead><tr><th>Factor</th><th>What it supplies</th><th>The chapter’s evidence</th><th>Limit</th></tr></thead><tbody><tr><td>Size</td><td>Votes and constituent pressure</td><td>A very large membership gives leverage no budget can fully replicate</td><td>Size alone does not mean members are engaged</td></tr><tr><td>Financial resources</td><td>Lobbyists, research, ads, monitoring, contributions</td><td>Better-funded groups win more on average</td><td>Even well-funded groups lose when the environment is unfavorable</td></tr><tr><td>Organizational cohesion</td><td>Keeps members behind one message</td><td>Named in the chapter as a determinant</td><td>The chapter does not discuss it in detail</td></tr><tr><td>Intensity</td><td>Members vote, donate, protest, and contact officials on one issue</td><td>A smaller, intensely committed group can outperform larger ones</td><td>Hard to measure; may fade when the issue changes</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of size, financial resources, organizational cohesion, and intensity; the “Limit” column paraphrases qualifications in the text.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which factor does the chapter call “perhaps the most underappreciated”?</li><li>Why might a small group with intense members beat a large group with moderately interested members?</li><li>Which factor would you expect a new, small group to build first? Defend your choice.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; EVALUATING EFFECTIVENESS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.6. Which factor is paired with the example of the National Rifle Association?</li><li>Use the text. What does the chapter say AARP’s influence rests on beyond its budget?</li><li>Write a Counter-Argument to this claim: “The group with the most money always wins.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 13.2 ASSESSMENT</b>Complete the Section 13.2 Assessment in your <i>Chapter 13 Assignment</i> packet before you move on to Section 13.3.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>13.3</b></div>
+    <h2>Strategies of Influence</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#8FD0CA" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 13.3, you will</p>
+      <ul><li>Explain lobbying as an information game and define the revolving door</li><li>Describe litigation and amicus curiae briefs</li><li>Explain how PACs, Citizens United, and Super PACs changed campaign money</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-lobbying">Lobbying</a></li><li><a href="#t-amicus">Amicus curiae brief</a></li><li><a href="#t-pac">Political action committee</a></li><li><a href="#t-super-pac">Super PAC</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each strategy, write the tool, the best setting, and a limit.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: strategy, tool, limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Strategy</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Strategies of Influence: Lobbying and Litigation</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The effectiveness of an interest group ultimately depends on its ability to translate its organizational resources — members, money, expertise, and intensity — into actual influence over specific government decisions. Interest groups pursue this goal through a diverse toolkit of strategies, each suited to different stages of the policy process and different types of political objectives. The most important of these strategies are lobbying, litigation, and electioneering, and understanding how each works — and what its limitations are — is essential to understanding how the interest group system actually operates.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Strategy</span> A plan for turning resources into influence over specific government decisions. <span class="sp">Spanish: estrategia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 strategies</span>Lobbying, litigation, and electioneering, according to the chapter.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Figure 13.7 compares the three.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Lobbying: The Information Game</h3>
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-lobbying">Lobbying</dfn> — the direct communication by organized groups with government officials for the purpose of influencing their decisions — is the most visible and most studied form of interest group activity. The term itself derives from the lobbies of legislative chambers, where early advocates would wait to buttonhole legislators before and after floor sessions. Today, professional lobbying in Washington and state capitals is a multi-billion-dollar industry employing thousands of specialists whose knowledge of legislative procedure, regulatory process, and political relationships is the primary product they sell.</p>
+        <p>The core function of lobbying, despite its sometimes unsavory reputation in popular discourse, is fundamentally informational. Legislators and their staffs face an impossible informational challenge: they are asked to make informed decisions on hundreds of complex policy questions — ranging from agricultural subsidies to telecommunications regulation to pharmaceutical approval processes — while possessing only general expertise in any of them. Professional lobbyists, many of whom are deeply specialized in particular policy domains, fill this informational gap. They provide technical analysis of proposed legislation, explain the likely consequences of regulatory changes for the industries or groups they represent, offer draft legislative language that advances their clients' interests, and help legislators understand the political implications of various policy choices for the constituencies that care most intensely about those choices.</p>
+        <p>The close relationship between professional lobbying and the government agencies and offices that lobbyists seek to influence has produced what critics call the "revolving door" — the pattern in which government officials leave their positions to become lobbyists for the industries they previously regulated, and in which lobbyists move into government positions that give them authority over the policy areas in which they previously worked as advocates. The revolving door creates a concern about captured regulation: the possibility that regulatory agencies and legislative offices become so closely aligned with the organized interests that lobby them most intensely that they effectively serve those interests rather than the broader public. The concern is not that individual officials are corrupt — most are not — but that the structural relationships created by the revolving door skew the informational environment in which policy decisions are made, systematically privileging the perspectives of organized interests over those of the unorganized public.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Lobbying</span> Direct communication by organized groups with government officials to influence their decisions. <span class="sp">Spanish: cabildeo (lobby)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Revolving door</span> The movement of people between government jobs and jobs lobbying the same government. <span class="sp">Spanish: puerta giratoria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Information</span>The chapter says the core function of lobbying is informational: technical analysis, draft language, and political implications.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The First Amendment protects petitioning the government for redress of grievances; Chapter 8 covers it.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Litigation: The Courtroom as a Strategic Arena</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Supreme%20Court%20Of%20The%20United%20States%20%28193413861%29.jpeg?width=1400" alt="The front of the United States Supreme Court building, with its row of white marble columns and a broad flight of steps under a blue sky." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A different arena</span>The front of the United States Supreme Court building, photographed on January 4, 2017. When legislatures and agencies are closed to them, interest groups can bring their case here.<span class="credit">Photo: Jesse Collins (2017) / <a href="https://commons.wikimedia.org/wiki/File:Supreme_Court_Of_The_United_States_(193413861).jpeg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a></span></figcaption></figure>
+        <p>When the legislative and executive branches of government produce outcomes that interest groups cannot accept — or when groups lack the organizational strength to compete effectively in the legislative arena — the courts offer an alternative venue for pursuing policy change. Litigation, the strategic use of legal proceedings to advance policy goals, has been one of the most important and most productive strategies in the interest group toolkit, particularly for groups representing minorities, the poor, or other constituencies that face structural disadvantages in majoritarian legislative politics.</p>
+        <p>The most celebrated example of litigation as a policy strategy is the NAACP Legal Defense Fund's campaign against racial segregation, which culminated in the Supreme Court's decision in Brown v. Board of Education in 1954. Unable to persuade Southern-dominated legislatures to voluntarily dismantle the Jim Crow system, and working in a Congress where Southern senators had the power to filibuster any civil rights legislation, Thurgood Marshall and the NAACP pursued a carefully constructed legal strategy that used the courts as the primary vehicle for constitutional change. This approach — deliberately building precedent through a sequence of carefully selected cases, working toward a decisive confrontation on the fundamental constitutional question — became a model for subsequent interest group litigation strategies across the ideological spectrum.</p>
+        <p>Interest groups that cannot serve as direct parties to litigation — because they do not have standing to sue in a particular case — can still participate in judicial proceedings through the filing of <dfn id="t-amicus">amicus curiae briefs</dfn>, or "friend of the court" briefs. An amicus brief is a legal document filed by a third party who is not directly involved in the case but who has relevant expertise or a significant interest in its outcome, offering arguments, evidence, or perspectives that the court might not otherwise consider. In major Supreme Court cases on significant constitutional or statutory questions, it is now standard for dozens of amicus briefs to be filed — by business associations, labor unions, advocacy organizations, academic institutions, and state governments — reflecting the broad recognition that judicial decisions are a form of policymaking with consequences that extend far beyond the immediate parties to the case.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Amicus curiae brief</span> A “friend of the court” document filed by someone who is not a party to the case but has expertise or an interest in the outcome. <span class="sp">Spanish: escrito de amicus curiae</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">May 17, 1954</span>Date of Brown v. Board of Education, the culmination of the NAACP Legal Defense Fund’s litigation campaign.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 6 covers the judiciary; Chapter 11 returns to Brown.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.7</span>Three Strategies Compared</p>
+      <p class="figsub">Tools, settings, and limits for each strategy named in the chapter.</p>
+      <table class="cmp"><thead><tr><th>Strategy</th><th>Main tools</th><th>Works best when</th><th>Limits</th></tr></thead><tbody><tr><td>Lobbying</td><td>Technical analysis, draft language, political information</td><td>Legislators and agencies face complex policy and want expertise</td><td>Revolving door; concern that perspectives of organized groups outweigh the unorganized public</td></tr><tr><td>Litigation</td><td>Test cases; amicus curiae briefs</td><td>Legislatures and agencies are closed to the group; for groups at a disadvantage in majoritarian politics</td><td>Needs standing; works through a sequence of carefully chosen cases</td></tr><tr><td>Electioneering</td><td>Endorsements, voter drives, ads, money</td><td>Helping elect friends and defeat opponents</td><td>Legal limits on contributions; independent spending must not be coordinated with campaigns</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of lobbying, litigation, and electioneering.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which strategy does the chapter describe as especially useful to groups at a disadvantage in legislatures?</li><li>Why might a group choose an amicus brief instead of suing?</li><li>Which strategy relies most on money? Which relies most on knowledge?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>The Friend of the Court</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A state law about school safety reaches the Supreme Court. A national teachers’ association is not a party to the case, but its members know how the law works in classrooms. It files an amicus brief explaining those effects. Another group files a brief supporting the opposite side. The justices read both. Each group has joined the debate without being a party to the case.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Electioneering, PACs, and the Transformation of Campaign Finance</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The third major strategy through which interest groups seek to influence government is electioneering — direct participation in the electoral process to help elect candidates who share the group's policy goals and to defeat those who oppose them. Electioneering can take many forms: endorsing candidates, organizing voter registration and mobilization drives, running advertising campaigns that highlight a candidate's position on the group's key issues, and most visibly, providing financial support to campaigns and political organizations. The legal framework governing this financial participation has been transformed over the past several decades by a series of Supreme Court decisions that have fundamentally changed the relationship between organized money and American electoral politics.</p>
+        <p>The federal campaign finance system that existed through most of the second half of the twentieth century was built on the premise that large contributions to political candidates or parties created at least the appearance of corruption — of purchased political access — and that the government had a legitimate interest in limiting such contributions to preserve the integrity of democratic governance. The Federal Election Campaign Act of 1971 and its subsequent amendments established contribution limits, disclosure requirements, and a system of public financing for presidential campaigns. These rules permitted the formation of <dfn id="t-pac">Political Action Committees</dfn> — organizations through which interest groups could collect voluntary contributions from their members and distribute those funds to supported candidates, subject to strict limits on the amount any single PAC could contribute to any single candidate.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political action committee (PAC)</span> A group that raises voluntary contributions and gives them to candidates, within strict limits. <span class="sp">Spanish: comité de acción política</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1971</span>Year of the Federal Election Campaign Act, which set limits and disclosure rules.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 follows campaign spending through a presidential election.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The PAC system created a legal and regulated channel for interest group financial participation in elections that persisted for decades, but it was transformed by a sequence of judicial decisions that interpreted campaign finance restrictions as unconstitutional limits on protected First Amendment speech. The critical turning point came with the Supreme Court's decision in Citizens United v. Federal Election Commission (2010), a case that arose from a conservative nonprofit organization's desire to air a documentary film critical of Hillary Clinton during the 2008 presidential primary season. The Court, in a five-to-four decision written by Justice Anthony Kennedy, held that the First Amendment prohibits the government from restricting independent political expenditures by corporations, associations, or labor unions. The key word was "independent": the Court did not hold that corporations could contribute directly to candidates — that restriction remained in place — but it held that they could spend unlimited amounts on political advertising and communications as long as they did not coordinate those expenditures directly with a candidate's campaign.</p>
+        <p>The practical consequence of Citizens United was the rapid development of a new form of political organization — the <dfn id="t-super-pac">Super PAC</dfn>, or independent expenditure-only committee — that could raise unlimited sums from corporations, unions, and wealthy individuals and spend those funds on political advertising, voter outreach, and other election-related activities, subject only to the requirement of non-coordination with official campaigns. Super PACs transformed the financial landscape of American elections within a single cycle. In the 2012 election, the first full presidential election cycle after Citizens United, Super PACs spent over a billion dollars — dramatically exceeding their official campaign counterparts in total outside spending in many races. By the 2020 election cycle, outside spending by Super PACs and other independent groups had become a standard, pervasive feature of major electoral contests at every level of government.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Super PAC</span> An independent expenditure-only committee that may raise unlimited funds but may not coordinate with campaigns. <span class="sp">Spanish: súper PAC</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Jan. 21, 2010</span>Citizens United v. FEC was decided 5–4, with Justice Kennedy writing for the Court.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 covers First Amendment speech protections.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.8</span>What Federal Law Allows: Contribution Limits, 2025–26</p>
+      <p class="figsub">Dollar limits on contributions for the 2025–2026 election cycle. Super PACs, which may not give to candidates, have no limit on money they raise.</p>
+      <svg viewBox="0 0 860 214" role="img" aria-label="Bar chart of federal contribution limits for 2025-26: individual to candidate 3,500 dollars per election, PAC to candidate 5,000 per election, individual to a PAC 5,000 per year, individual to a national party 44,300 per year"><line x1="330.0" y1="10" x2="330.0" y2="170" stroke="#e6e8ec"/><text x="330.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$0</text><line x1="418.0" y1="10" x2="418.0" y2="170" stroke="#e6e8ec"/><text x="418.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$10,000</text><line x1="506.0" y1="10" x2="506.0" y2="170" stroke="#e6e8ec"/><text x="506.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$20,000</text><line x1="594.0" y1="10" x2="594.0" y2="170" stroke="#e6e8ec"/><text x="594.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$30,000</text><line x1="682.0" y1="10" x2="682.0" y2="170" stroke="#e6e8ec"/><text x="682.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$40,000</text><line x1="770.0" y1="10" x2="770.0" y2="170" stroke="#e6e8ec"/><text x="770.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$50,000</text><text x="320" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Individual to a candidate, per election</text><g><title>Individual to a candidate, per election: $3,500</title><path d="M330 16 h26.8 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-26.8z" fill="#62498F"/></g><text x="368.8" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$3,500</text><text x="320" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">PAC to a candidate, per election</text><g><title>PAC to a candidate, per election: $5,000</title><path d="M330 56 h40.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-40.0z" fill="#62498F"/></g><text x="382.0" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$5,000</text><text x="320" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Individual to a PAC, per year</text><g><title>Individual to a PAC, per year: $5,000</title><path d="M330 96 h40.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-40.0z" fill="#62498F"/></g><text x="382.0" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$5,000</text><text x="320" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Individual to a national party, per year</text><g><title>Individual to a national party, per year: $44,300</title><path d="M330 136 h385.8 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-385.8z" fill="#1F8A82"/></g><text x="727.8" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$44,300</text><line x1="330" y1="10" x2="330" y2="170" stroke="#6f7787" stroke-width="1.5"/><text x="550.0" y="210" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Dollars</text></svg>
+      <p class="source">Source: Federal Election Commission, contribution limits for 2025–2026 (fec.gov). Super PACs “may accept unlimited contributions” from individuals, corporations, and unions but may not coordinate with candidates. The limits apply to contributions, not to independent spending.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Contribution</th><th>Limit</th></tr></thead><tbody><tr><td>Individual to a candidate</td><td>$3,500 per election</td></tr><tr><td>PAC to a candidate</td><td>$5,000 per election</td></tr><tr><td>Individual to a PAC</td><td>$5,000 per year</td></tr><tr><td>Individual to a national party committee</td><td>$44,300 per year</td></tr><tr><td>Individual or organization to a Super PAC</td><td>No limit</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How much more may an individual give a national party committee in a year than a candidate in one election?</li><li>The chart has no bar for Super PACs. Why not, according to the source note?</li><li>Which argument about limits does this chart help each side make: that limits reduce the appearance of purchased access, or that limits restrict speech?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The implications of the Citizens United decision and the Super PAC era it produced are deeply contested. Supporters of the decision argue that spending money on political communication is a form of protected political speech, that restrictions on such spending inevitably favor incumbents and established interests by limiting challengers' ability to communicate their messages, and that the disclosure requirements that remain in place provide voters with the information they need to evaluate politically motivated spending. Critics argue that the practical effect of unlimited outside spending is to amplify the political voice of wealthy individuals and corporations to a degree that overwhelms the voices of ordinary citizens, that nominal non-coordination requirements are easily evaded in practice, and that the scale of Super PAC spending creates the kind of appearance of purchased political access that the pre-Citizens United campaign finance system was designed to prevent.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Independent expenditure</span> Spending to support or oppose a candidate that is not coordinated with the candidate’s campaign. <span class="sp">Spanish: gasto independiente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">$3.5 billion</span>In an October 10, 2024 release, RepresentUs and OpenSecrets reported that super PACs and hybrid PACs had raised about $3.5 billion and spent about $2.2 billion in that election season (RepresentUs and OpenSecrets, “Unpacking Super PACs”).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 shows how campaigns use this money.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.9</span>Two Channels for Campaign Money</p>
+      <p class="figsub">Contributions that go to candidates and parties are limited; independent spending after Citizens United is not.</p>
+      <table class="cmp"><thead><tr><th>Channel</th><th>Who gives</th><th>Limit on giving</th><th>What it does</th></tr></thead><tbody><tr><td>Contribution to a candidate</td><td>Individuals; PACs</td><td>Yes: $3,500 (individual) or $5,000 (PAC) per election</td><td>Candidate’s campaign</td></tr><tr><td>PAC</td><td>Voluntary contributions from members</td><td>Individual gifts to a PAC limited to $5,000 per year</td><td>Gives to candidates, within limits</td></tr><tr><td>Party committee</td><td>Individuals; PACs</td><td>Individual to national party $44,300 per year</td><td>Recruits, organizes, runs conventions</td></tr><tr><td>Super PAC</td><td>Individuals, corporations, unions</td><td>No limit on money raised</td><td>Independent ads and outreach; no coordination with campaigns</td></tr></tbody></table>
+      <p class="source">Sources: Federal Election Commission contribution limits for 2025–2026; chapter text on Citizens United v. FEC (2010). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which channel has no limit on money raised?</li><li>What does the chapter say the Court held about corporations giving directly to candidates?</li><li>What does the chapter say supporters of the decision rely on to help voters evaluate independent spending?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Should Independent Spending Be Limited?</div></div>
+      <div class="box-b">
+        <p>The chapter says supporters of Citizens United see spending as protected speech, while critics see wealthy interests drowning out ordinary voices. Both claims are part of a real debate.</p>
+        <div class="opts"><div class="opt"><h5>Protect independent spending</h5>Treat political spending as protected speech, and rely on disclosure so voters can judge the sources.</div><div class="opt"><h5>Limit independent spending</h5>Allow limits on how much any one source can spend, to protect equal political voice.</div></div>
+        <p class="ask">Which would you choose, and how would you answer the strongest argument against your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; STRATEGIES AND CAMPAIGN MONEY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.7. Which strategy would a small group with little money probably choose first?</li><li>Use Figure 13.9. Which channel may a corporation give unlimited sums to?</li><li>Write a Counter-Argument to this claim: “Citizens United let corporations give money directly to candidates.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 13.3 ASSESSMENT</b>Complete the Section 13.3 Assessment in your <i>Chapter 13 Assignment</i> packet before you move on to Section 13.4.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>13.4</b></div>
+    <h2>Iron Triangles and Free Riders</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#8FD0CA" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F3EFF8" stroke-width="5"/><path d="M14 100h132" stroke="#8FD0CA" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 13.4, you will</p>
+      <ul><li>Describe the iron triangle and the concept of issue networks</li><li>Explain the free-rider problem and selective benefits</li><li>Evaluate how the system of factions fits Madison’s design</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-iron-triangle">Iron triangle</a></li><li><a href="#t-issue-network">Issue network</a></li><li><a href="#t-free-rider">Free-rider problem</a></li><li><a href="#t-selective-benefit">Selective benefits</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each actor in the iron triangle, write what it gives and what it gets.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: actor, gives, gets"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Actor</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Gives</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#62498F"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Gets</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#62498F" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Iron Triangle, Issue Networks, and the Logic of Collective Action</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The strategies of lobbying, litigation, and electioneering do not operate in isolation; they are deployed within a broader ecosystem of relationships among interest groups, government agencies, and congressional committees that shapes how policy is actually made in the American system. Two theoretical frameworks — the iron triangle and the broader concept of issue networks — capture different dimensions of this ecosystem and offer complementary insights into how organized interests actually exercise influence in practice.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Ecosystem</span> A set of actors whose relationships shape each other’s behavior. <span class="sp">Spanish: ecosistema</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2 frameworks</span>The iron triangle and issue networks capture different dimensions of how interests exercise influence.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 7 describes executive agencies in the bureaucracy.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Iron Triangle and Captured Policy</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The concept of the <dfn id="t-iron-triangle">iron triangle</dfn> describes a mutually reinforcing relationship among three institutional actors: a congressional committee or subcommittee with jurisdiction over a particular policy domain, the executive branch agencies that implement policy in that domain, and the interest groups that represent the private sector constituencies most affected by those policies. The triangular relationship is "iron" because each actor in the triangle has resources and interests that align with those of the others, creating a stable, self-reinforcing system that tends to produce policy favorable to the interests represented within the triangle and resistant to outside interference.</p>
+        <p>The congressional committee provides legislative authorization, appropriations, and oversight for the policy domain; in exchange, it receives campaign contributions from the interest groups and the political support of constituencies that benefit from favorable policy. The executive agency implements policy in ways that reflect the preferences of the interest groups it most closely interacts with; in exchange, it receives congressional support for its budget and organizational autonomy. The interest groups provide both the financial resources and the specialized expertise that sustain the other two vertices of the triangle; in exchange, they receive favorable regulatory treatment, government contracts, or policy outcomes that advance their members' interests. The system works well for its participants and tends to be highly stable — but it does so by effectively removing certain policy domains from democratic contestation, insulating them from the broader accountability processes that the constitutional system is supposed to provide.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Iron triangle</span> A stable, mutually reinforcing relationship among a congressional committee, an executive agency, and an interest group. <span class="sp">Spanish: triángulo de hierro</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 vertices</span>Each side of the triangle trades something the others need.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 4 covers committees; Chapter 7 covers agencies.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.10</span>The Iron Triangle</p>
+      <p class="figsub">Each side of the triangle is an exchange. The general public sits outside, connected only by a dotted line.</p>
+      <svg viewBox="0 0 860 420" role="img" aria-label="Iron triangle: congressional committees, executive agencies, and interest groups exchange resources with one another, while the general public sits outside with a dotted connection"><line x1="210" y1="70" x2="650" y2="70" stroke="#1F8A82" stroke-width="4"/><line x1="210" y1="70" x2="430" y2="300" stroke="#1F8A82" stroke-width="4"/><line x1="650" y1="70" x2="430" y2="300" stroke="#1F8A82" stroke-width="4"/><rect x="95.0" y="44" width="230" height="52" rx="12" fill="#fff" stroke="#62498F" stroke-width="2.5"/><text x="210" y="67" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="700">Congressional</text><text x="210" y="84" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">committees</text><rect x="535.0" y="44" width="230" height="52" rx="12" fill="#fff" stroke="#62498F" stroke-width="2.5"/><text x="650" y="67" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="700">Executive</text><text x="650" y="84" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">agencies</text><rect x="315.0" y="274" width="230" height="52" rx="12" fill="#fff" stroke="#62498F" stroke-width="2.5"/><text x="430" y="297" font-family="Inter, Arial, sans-serif" font-size="14" fill="#3E2D5C" text-anchor="middle" font-weight="700">Interest</text><text x="430" y="314" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">groups</text><text x="430" y="118" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="middle" font-weight="700">Authorization, appropriations, oversight</text><text x="430" y="133" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="middle" font-weight="700">⇄  Implementation, expertise</text><text x="262" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="end" font-weight="700">Campaign money and</text><text x="262" y="210" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="end" font-weight="700">constituent pressure</text><text x="262" y="226" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="end" font-weight="700">⇄ Favorable legislation</text><text x="598" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="start" font-weight="700">Favorable implementation</text><text x="598" y="210" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="start" font-weight="700">⇄ Information and</text><text x="598" y="226" font-family="Inter, Arial, sans-serif" font-size="12" fill="#14605A" text-anchor="start" font-weight="700">political support</text><rect x="330" y="364" width="200" height="46" rx="10" fill="#3E2D5C"/><text x="430" y="384" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="800">GENERAL PUBLIC</text><text x="430" y="400" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#8FD0CA" text-anchor="middle" font-weight="400">Often outside the triangle</text><line x1="430" y1="362" x2="430" y2="330" stroke="#6f7787" stroke-width="3" stroke-dasharray="5 6"/><line x1="430" y1="330" x2="430" y2="214" stroke="#6f7787" stroke-width="3" stroke-dasharray="5 6" opacity="0"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s description of the iron triangle.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Between</th><th>Trades</th></tr></thead><tbody><tr><td>Committees and agencies</td><td>Authorization, appropriations, oversight for implementation and expertise</td></tr><tr><td>Committees and interest groups</td><td>Campaign money and constituent pressure for favorable legislation</td></tr><tr><td>Agencies and interest groups</td><td>Favorable implementation for information and political support</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>What does the interest group give the congressional committee, and what does it get in return?</li><li>Why does the chapter call the triangle “iron”?</li><li>Why is the general public shown outside the triangle?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The iron triangle framework has been criticized for overstating the stability and insularity of interest group-government relationships in many policy areas. In reality, policy domains that once appeared to be firmly controlled by stable triangular relationships have been disrupted by shifts in public opinion, the emergence of new organized interests, changes in political leadership, or external shocks that force previously settled questions back onto the active policy agenda. The concept of <dfn id="t-issue-network">issue networks</dfn> — developed by political scientist Hugh Heclo in the 1970s as a deliberate challenge to the iron triangle model — suggests that in most policy domains, the pattern of influence is better characterized as a fluid, porous, and constantly changing network of actors with varying degrees of commitment and expertise, rather than a stable triad of mutually reinforcing insiders.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Issue network</span> A fluid, porous set of actors with varying commitment and expertise around a policy area. <span class="sp">Spanish: red de asuntos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1970s</span>Hugh Heclo developed the issue network idea as a challenge to the iron triangle model.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter says shifts in opinion, new interests, and outside shocks can disrupt a triangle.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; TRIANGLES AND NETWORKS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 13.10. Which two actors exchange favorable implementation for information and political support?</li><li>Use the text. What kind of event can disrupt a policy area once controlled by a triangle?</li><li>Write a Counter-Argument to this claim: “Every policy area is controlled by an iron triangle.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Free-Rider Problem and the Logic of Collective Action</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Interest groups face a fundamental organizational challenge that political scientist Mancur Olson identified and analyzed in his landmark 1965 work, "The Logic of Collective Action." The challenge is this: many of the goods that interest groups seek from government — clean air, financial regulation, consumer protection standards, lower taxes — are what economists call public goods, meaning that once they are obtained, they are available to everyone in the relevant group regardless of whether those individuals contributed to securing them. A worker who benefits from a union's successful negotiation of higher wages and safer working conditions receives those benefits whether or not they paid union dues. A citizen who breathes cleaner air because an environmental organization successfully lobbied for stricter pollution standards receives that benefit whether or not they donated to the organization. This creates the <dfn id="t-free-rider">free-rider problem</dfn>: the rational individual calculus suggests that one should allow others to bear the costs of political organizing and simply collect the resulting benefits without contributing.</p>
+        <p>If everyone reasons this way — and Olson's mathematical analysis demonstrated that under many conditions, rational individuals would choose to free-ride rather than contribute — collective action becomes impossible even when there is a broad shared interest in a particular outcome. This insight helps explain one of the most persistent puzzles of interest group politics: why are some interests that are widely shared — consumers' interest in lower prices, workers' interest in safe workplaces, citizens' collective interest in clean water — often represented less effectively by organized groups than narrower interests that affect smaller numbers of people more intensely?</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Free-rider problem</span> The incentive to let others bear the cost of organizing while still enjoying the collective benefits. <span class="sp">Spanish: problema del polizón</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Public good</span> A good available to everyone in a group whether or not they paid for it. <span class="sp">Spanish: bien público</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1965</span>Year Mancur Olson published The Logic of Collective Action.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Section 13.2 named size as a source of strength; the free-rider problem shows why size is hard to organize.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The organizational response to the free-rider problem has been the development of <dfn id="t-selective-benefit">selective benefits</dfn> — inducements available only to dues-paying members that give individuals a private reason to join the organization beyond their interest in the collective goods the organization pursues. The American Association of Retired Persons offers its members discounts on insurance, travel, and retail purchases, as well as a subscription to a magazine and access to various services — benefits that are simply unavailable to non-members regardless of how much they benefit from AARP's advocacy on Social Security and Medicare. The American Bar Association offers its members professional networking opportunities, continuing legal education programs, and access to professional resources that non-member lawyers cannot obtain. By bundling selective private benefits with collective political advocacy, these organizations give rational individuals a reason to join and pay dues that is entirely independent of the public goods the organization seeks.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Selective benefits</span> Inducements available only to dues-paying members. <span class="sp">Spanish: beneficios selectivos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two examples</span>The chapter names AARP and the American Bar Association.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 19 returns to how citizens organize for causes.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 13.11</span>Why Large Groups Struggle, and One Fix</p>
+      <p class="figsub">The free-rider problem and the selective-benefits response.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Five boxes showing a chain: collective good, everyone benefits, individual reasoning, few contribute, then selective benefits as a response"><g><title>Collective good: Cleaner air, safer jobs, lower prices</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">Collective good</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Cleaner air, safer jobs,</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">lower prices</text><g><title>Everyone benefits: Members and non-members alike</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">Everyone benefits</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Members and non-members</text><text x="430.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">alike</text><g><title>Individual reasoning: “I can free-ride”</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#62498F" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">Individual reasoning</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">“I can free-ride”</text><g><title>Few contribute: The group is hard to organize</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#1F8A82" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">Few contribute</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">The group is hard to</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">organize</text><g><title>Selective benefits: Discounts, magazines, training</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#1F8A82" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#3E2D5C" text-anchor="middle" font-weight="700">Selective benefits</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Discounts, magazines,</text><text x="430.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">training</text><path d="M219.0 45.0 L337.0 45.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#1F8A82"/><path d="M521.0 45.0 L639.0 45.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#1F8A82"/><path d="M732.0 84 V104 H128.0 V124" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#1F8A82"/><path d="M219.0 165.0 L337.0 165.0" stroke="#1F8A82" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#1F8A82"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of Mancur Olson’s The Logic of Collective Action (1965). Examples of selective benefits are those the chapter names.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Organization</th><th>Selective benefits named in the chapter</th></tr></thead><tbody><tr><td>AARP (American Association of Retired Persons)</td><td>Discounts on insurance, travel, and retail; a magazine; services</td></tr><tr><td>American Bar Association</td><td>Networking, continuing legal education, professional resources</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step explains why people choose not to contribute?</li><li>How do selective benefits change a person’s reasons for joining?</li><li>Why might a narrow group be easier to organize than a broad one, according to the chapter?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#8FD0CA"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#3E2D5C">E</text></svg><div><small>EXAMPLE</small>The Group Project</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Five students share a grade on a project, and everyone earns the same score. Each thinks, “If the other four work hard, I can relax and still get an A.” If all five reason this way, the project fails. A teacher who gives each student a private reward for finishing a part (selective benefits) changes the incentive. The chapter says interest groups face the same logic on a national scale.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Competitive Equilibrium of Factions</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The system of political parties and interest groups, for all its imperfections, performs the fundamental function Madison identified in Federalist No. 10: it organizes the competition of factions in ways that prevent any single faction from permanently dominating the others. Political parties aggregate diverse interests into governing coalitions, provide accountability through elections, and organize the exercise of governing power in ways that at least nominally respond to the preferences of electoral majorities. Interest groups give organized segments of society ongoing channels of influence that extend beyond the quadrennial drama of presidential elections, ensuring that the policy process is continuously responsive to the mobilized preferences of affected constituencies.</p>
+        <p>Neither parties nor interest groups are perfect instruments of democratic governance, and the flaws of each have been extensively documented: the structural barriers that maintain the two-party duopoly at the expense of political diversity, the elite bias of the interest group system, the corrosive effects of unlimited campaign spending on the integrity of democratic representation. But the alternatives — a partyless democracy of uncoordinated individuals, or a factionless republic in which organized advocacy is prohibited — would create problems far worse than those the existing system produces. Parties and interest groups, whatever their limitations, are the institutional mechanisms through which a large, diverse, pluralistic democracy manages the conflict of interests that is the inevitable product of human freedom in political society.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Competitive equilibrium</span> A balance among competing forces in which no single one permanently dominates. <span class="sp">Spanish: equilibrio competitivo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Madison’s test</span>Does the system keep any single faction from permanently dominating the others?</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Case Study asks you to weigh Washington’s warning against Madison’s defense of faction.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Political parties and interest groups are, in Madison's terms, factions — organized groups pursuing particular interests in the political arena. Madison both feared them and, ultimately, relied upon them as the mechanism through which the extended republic would manage conflict and preserve liberty. Two and a quarter centuries of American political experience have borne out the essential insight of his analysis: the competition of organized interests is not the antithesis of democratic governance but one of its essential expressions. A democracy in which citizens could not organize, advocate, and compete for political influence would be a democracy in which the powerful exercised their advantages with no organized opposition and no institutional counterweight.</p>
+        <p>This chapter's essential question — how parties and interest groups serve as linkage institutions connecting citizens to the strategic operations of government — points toward a distinction that is easy to state but important to grasp. Parties connect citizens to government through the mechanism of elections: they organize the choice between competing governing coalitions, give voters a way to hold government accountable for its performance, and translate electoral outcomes into the coherent exercise of governing power. Interest groups connect citizens to government through the mechanism of ongoing organized advocacy: they ensure that the policy process between elections is not dominated entirely by the preferences of incumbents and insiders, but is continuously contested by the organized expressions of affected constituencies.</p>
+        <p>Together, these two types of linkage institution create the competitive landscape that Madison's constitutional design anticipated and required. The two-party system, for all its structural limitations, provides the basic architecture of democratic accountability — regular opportunities for the public to pass judgment on those who hold power and to choose between alternative governing visions. The interest group system, for all its elite biases and tendencies toward gridlock, ensures that no policy domain is permanently insulated from organized challenge and that the diversity of American society finds ongoing expression in the policy process.</p>
+        <p>The transformation of campaign finance law through decisions like Citizens United represents the most significant recent challenge to the balance these institutions are supposed to maintain. When the ability of organized money to influence electoral outcomes is effectively unlimited, the linkage function of both parties and interest groups is distorted — pulled away from the preferences of ordinary citizens and toward the preferences of the small number of wealthy individuals and organizations capable of sustaining major independent expenditures. Whether the American political system can develop new norms, regulations, or institutional arrangements capable of restoring a more democratic balance within the linkage institution framework remains one of the most consequential open questions in American political life. As the next chapter explores, the mechanism through which these competing interests are ultimately resolved — the electoral process itself — is where the full significance of these institutional dynamics becomes most visible.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Accountability</span> The ability of citizens to judge and remove those who hold power. <span class="sp">Spanish: rendición de cuentas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Open question</span>The chapter calls restoring balance within campaign finance one of the most consequential open questions in American politics.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 14 turns to the electoral process itself.</div>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 13.4 ASSESSMENT</b>Complete the Section 13.4 Assessment in your <i>Chapter 13 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Are organized factions a danger to the republic or a safeguard of it? Read four original documents from 1787 to 2010 and decide how each author answered.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading Sources on Faction and Organized Power</h3>
+        <p>Americans have argued about organized groups since the founding. James Madison, in 1787, defined faction and argued that its causes cannot be removed, only controlled. George Washington, in 1796, warned the nation against the spirit of party. In 1954 the Supreme Court decided <i>Brown v. Board of Education</i>, the culmination of a litigation campaign by an organized group (Section 13.3). In 2010 the Court decided <i>Citizens United v. FEC</i>, and the justices disagreed sharply about what organized money means for democracy.</p><p>As you read, notice what each author trusts and fears about organized groups. Use the Thinking Like a Citizen question after each document, then answer the Synthesizing questions.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1787 to 2010, from a Federalist essay to a Supreme Court opinion.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FEDERALIST ESSAY</small><b>James Madison, <i>Federalist No. 10</i> (November 1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“By a faction, I understand a number of citizens, whether amounting to a majority or a minority of the whole, who are united and actuated by some common impulse of passion, or of interest, adverse to the rights of other citizens, or to the permanent and aggregate interests of the community.” … “Liberty is to faction what air is to fire, an aliment without which it instantly expires.” … “The inference to which we are brought is, that the CAUSES of faction cannot be removed, and that relief is only to be sought in the means of controlling its EFFECTS.”<cite>James Madison, <i>Federalist No. 10</i>, 1787. Text from the Avalon Project, Yale Law School. Ellipses mark omitted passages.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Why does Madison say faction cannot be removed? What does he propose instead? Connect your answer to the extended republic in the Introduction.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FAREWELL ADDRESS</small><b>George Washington, Farewell Address (September 19, 1796)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Let me now take a more comprehensive view, and warn you in the most solemn manner against the baneful effects of the spirit of party generally. This spirit, unfortunately, is inseparable from our nature, having its root in the strongest passions of the human mind.” … “The alternate domination of one faction over another, sharpened by the spirit of revenge, natural to party dissension, … is itself a frightful despotism.”<cite>George Washington, Farewell Address, September 19, 1796. Text from the Avalon Project, Yale Law School. Ellipses mark omitted passages.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What danger does Washington see in party? Why do parties exist in spite of his warning, according to Section 13.1?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b><i>Brown v. Board of Education</i>, 347 U.S. 483 (May 17, 1954)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“We conclude that, in the field of public education, the doctrine of ‘separate but equal’ has no place. Separate educational facilities are inherently unequal.”<cite><i>Brown v. Board of Education of Topeka</i>, 347 U.S. 483 (1954), opinion of the Court. Justia U.S. Supreme Court Center.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> According to Section 13.3, which organized group led the litigation that ended in this decision? What does this case suggest about whether organized groups can protect minorities?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINIONS</small><b><i>Citizens United v. Federal Election Commission</i>, 558 U.S. 310 (January 21, 2010)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote"><b>Majority (Justice Kennedy):</b> “If the First Amendment has any force, it prohibits Congress from fining or jailing citizens, or associations of citizens, for simply engaging in political speech.”<br><br><b>Justice Stevens, concurring in part and dissenting in part:</b> “While American democracy is imperfect, few outside the majority of this Court would have thought its flaws included a dearth of corporate money in politics.”<cite><i>Citizens United v. Federal Election Commission</i>, 558 U.S. 310 (2010). Justia U.S. Supreme Court Center. The Court ruled 5–4.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> State each side’s view of independent political spending in your own words. Which concern from Section 13.3 does each opinion emphasize?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px"><li>Use Documents A and B. Madison thinks faction cannot be removed without destroying liberty; Washington fears party. Explain the disagreement and what each would do about it.</li><li>Use Document C and Section 13.3. How can an organized group serve as a safeguard for people who cannot win in a legislature? What risk does the same tool carry?</li><li>Use Documents A and D and Figure 13.9. Do unlimited independent expenditures strengthen or weaken the “competitive equilibrium” Madison described? Defend your answer with evidence.</li></ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>13</b></div>
+    <h2>Chapter 13 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#8FD0CA" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F3EFF8" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F3EFF8" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How do political parties and interest groups serve as “linkage institutions” that connect citizens to the strategic operations of government?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>13.1 Political Parties</h5>A party seeks to win control of government through elections. It exists in three arenas: the electorate, the organization, and government. Winner-take-all districts favor two parties (Duverger’s Law), and realignments and dealignment reshape coalitions over time.</div><div><h5>13.2 Interest Groups</h5>Interest groups seek to influence those who govern. Pluralism sees healthy competition, elitism sees unequal power, and hyperpluralism sees gridlock. Size, money, cohesion, and intensity shape effectiveness.</div><div><h5>13.3 Strategies</h5>Groups lobby, litigate, file amicus briefs, and engage in elections. PACs give within limits, while Super PACs, which arose after Citizens United (2010), may raise unlimited sums but may not coordinate with campaigns.</div><div><h5>13.4 Triangles and Free Riders</h5>Iron triangles join committees, agencies, and groups in mutually beneficial exchanges, while issue networks are looser. The free-rider problem makes large groups hard to organize, and selective benefits are one response. Madison’s test is whether competition keeps any faction from permanently dominating.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#62498F" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#1F8A82" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 13 ASSESSMENT AND SIMULATION</b>Complete the Chapter 13 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the primary source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 13 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>Gallup, “U.S. Political Party Preferences,” news release, January 12, 2026 (2025 surveys of more than 13,000 U.S. adults).</li><li>Federal Election Commission, “Contribution limits for 2025–2026,” fec.gov.</li><li>Die Bundeswahlleiterin (Federal Returning Officer), “Results Germany,” 2025 Bundestag election (seats and BSW share), bundeswahlleiterin.de.</li><li>RepresentUs and OpenSecrets, “Unpacking Super PACs,” October 10, 2024 (super PAC and hybrid PAC totals), as reported by Independent Voter News.</li><li>James Madison, <i>Federalist No. 10</i> (1787), and George Washington, Farewell Address (1796). Avalon Project, Yale Law School.</li><li><i>Brown v. Board of Education of Topeka</i>, 347 U.S. 483 (1954), and <i>Citizens United v. Federal Election Commission</i>, 558 U.S. 310 (2010). Justia U.S. Supreme Court Center.</li><li>Mancur Olson, <i>The Logic of Collective Action</i> (1965); Hugh Heclo on issue networks; Maurice Duverger on electoral systems, as described in the chapter text.</li><li>California Department of Education, <i>History–Social Science Content Standards</i>, Principles of American Democracy (12.1, 12.6, 12.10) and RH.11-12.7.</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Beethoven (CC BY-SA 4.0; U.S. Capitol) and Jesse Collins (CC BY 3.0; Supreme Court building). Public-domain images: the 1788 title page of <i>The Federalist</i>; Thomas Nast, “The Third-Term Panic,” <i>Harper’s Weekly</i> (1874); a National Archives photograph of a bread line (c. 1932); and Joseph Keppler, “The Bosses of the Senate,” <i>Puck</i> (1889). Diagrams, charts, and tables were created for this textbook from the sources listed above.</p>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 7 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

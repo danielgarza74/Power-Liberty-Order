@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 5: The Presidency | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#2F6B57; --unit-dk:#1F3D33; --unit-lt:#F1F4EE; --unit-mid:#9DBBAE;
+  --amber:#B58B3A; --amber-lt:#E0C888; --amber-dk:#6E5217;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F7F0DC; --cream:#F1F4EE; --pale:#E0C888;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(31,61,51,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,61,51,.80) 0%,rgba(31,61,51,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 5 · THE PRESIDENCY</span>
+  <a href="#opener">Opener</a><a href="#s1">5.1 Many Hats</a><a href="#s2">5.2 Executive Tools</a><a href="#s3">5.3 Legitimacy</a><a href="#s4">5.4 Checks</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/White%20House%20Washington.JPG?width=2000" alt="The north front of the White House, a white mansion with a triangular pediment above a columned portico, with trees at the left and right edges." style="object-position:50% 35%"></div>
+  <div class="opener-head">
+    <div class="chapnum">5</div>
+    <div>
+      <div class="unitline">Unit 2 · Interactions Among Branches of Government</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Presidency</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>One building, one office.</b> The north front of the White House in Washington, D.C., photographed in July 2008. The chapter asks how one person who works there can lead a nation while the Constitution limits that person’s power. <span class="credit">Photo: Cezary Piwowarczyk / <a href="https://commons.wikimedia.org/wiki/File:White_House_Washington.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 5.1</span><span class="sl-title">The Many Hats of the President</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 5.2</span><span class="sl-title">Executive Authority: Orders, Vetoes, and Unilateral Action</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 5.3</span><span class="sl-title">Electoral Legitimacy and the Modern Presidency</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 5.4</span><span class="sl-title">Institutional Constraints: Checks and Balances</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Can the President Act When Congress Will Not?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">In a system designed to limit power, how does the president actually lead?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Analyze the multifaceted roles of the president, distinguishing between constitutional duties (like Commander-in-Chief) and political expectations (like Party Leader).</li><li>Evaluate the strategic use of unilateral executive tools, including executive orders, vetoes, and signing statements, in the context of the separation of powers.</li><li>Examine the structure and historical evolution of the Electoral College and its profound impact on presidential legitimacy and campaign strategy.</li><li>Identify the specific institutional checks available to Congress and the Courts—from the "power of the purse" to impeachment—that constrain executive overreach.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Executive Order</span><span>Cabinet</span><span>Veto</span><span>Executive Privilege</span><span>Electoral College</span><span>Signing Statement</span><span>Bully Pulpit</span><span>Commander-in-Chief</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 5 Key Concept</p>
+        <p><b>Energy with accountability</b> is the idea behind Article II. The Framers wanted a president with enough power to act quickly, and they surrounded that power with checks. A president who can only command does not get far in this system. A president must also persuade Congress, the courts, and the public.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine that the principal of Shafter High could cancel a school rule by signing an order. Students might like a rule that disappeared. A different principal could then bring the rule back with another signature. The student council could vote to cut the principal’s budget, and a district office could overrule the order. That is the presidency in miniature: real power, real limits, and a constant negotiation about where one ends and the other begins.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1788 to 1952 and answer one question: <a href="#case">can the President act when Congress will not?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.4</code> Students analyze the unique roles and responsibilities of the three branches of government as established by the U.S. Constitution.</li>
+            <li><code>12.4.4</code> Discuss Article II of the Constitution as it relates to the executive branch, including eligibility for office and length of term, election to and removal from office, the oath of office, and the enumerated executive powers. <i>(Sections 5.1–5.4, Case Study)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Sections 5.1, 5.4)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">Energy and Anxiety</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The presidency was conceived as a solution to the administrative paralysis of the Articles of Confederation, designed to provide a single, energetic leader capable of swift action while remaining anchored by constitutional law.</p>
+        <p>When the delegates to the Constitutional Convention gathered in Philadelphia in 1787, Article II of the proposed Constitution was a source of profound, almost paralyzing anxiety. Having just fought a bloody revolution to escape the tyranny of King George III, the Framers were deeply suspicious of centralized executive power. They viewed a strong single executive as a potential "fetus of monarchy," a gateway back to the oppression they had just escaped. Yet, the failures of the Articles of Confederation—which lacked a separate executive branch entirely—had taught them a hard lesson: a government without a head is paralyzed. Without an executive to enforce laws, collect revenue, or coordinate defense, the young nation was vulnerable to internal rebellion and foreign invasion.</p>
+        <p>The challenge, therefore, was to thread a constitutional needle. They needed to create an office with enough "energy," as Alexander Hamilton famously argued in Federalist No. 70, to lead the nation during crises, but with enough safety mechanisms to prevent the rise of an American despot. They needed a leader who could act with "decision, activity, secrecy, and dispatch," yet remain strictly bound by the rule of law.</p>
+        <p>The result was a presidency defined by a unique tension between vague constitutional authority and immense political expectation. The Constitution itself is surprisingly brief regarding the president. While Article I provides an exhaustive, specific list of congressional powers, Article II offers broad, often ambiguous grants of authority, vesting the "executive Power" in a single individual. It commands the president to ensure laws are "faithfully executed" and names them commander of the military, yet it leaves the mechanics of these powers largely undefined. This ambiguity was not an oversight; it was a compromise that has allowed the office to evolve significantly over two centuries.</p>
+        <p>What began as a modest role intended primarily for administration has grown into the "modern presidency"—a central position of global leadership that would likely be unrecognizable to George Washington or Thomas Jefferson. Today, the public looks to the White House to solve economic crises, respond to natural disasters, manage global conflicts, and even comfort the nation during cultural tragedies. This creates a "paradox of expectations," where the president is held responsible for every aspect of national life, yet often lacks the explicit constitutional authority to act alone. To bridge this gap between limited legal power and unlimited public demand, presidents have developed a strategic arsenal of tools—from the veto to the executive order—to negotiate with Congress and the courts.</p>
+        <p>This chapter explores that evolution and the strategic operation of the executive branch today. We will examine how the president manages the impossible balancing act of conflicting roles, serving simultaneously as the head of government and the head of state. We will investigate the tools of unilateral action that allow presidents to bypass a gridlocked Congress. We will analyze the source of the president's legitimacy through the lens of the Electoral College and the "bully pulpit." Finally, we will confront the hard boundaries of presidential power, looking at how the Supreme Court and Congress have used constitutional checks to rein in executives who overstep their legal bounds. Throughout this inquiry, the essential question remains: In a system designed to limit power, how does the president actually lead?</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Take Care Clause</span> The Article II duty of the President to “take Care that the Laws be faithfully executed.” <span class="sp">Spanish: cláusula de ejecución fiel de las leyes</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1787</span>Year the Framers wrote Article II at the Philadelphia Convention, after Congress under the Articles had no executive branch.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapter 2 explained why the Articles of Confederation had no separate executive. Article II is the answer.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20inauguration%20of%20Washington-%20as%20first%20President%20of%20the%20United%20States%2C%20April%2030th%201789%3B%20at%20the%20old%20city%20hall%2C%20New%20York%20LCCN2002699702.jpg?width=1400" alt="A lithograph of a crowd gathered on a balcony and in the street outside a stone building, with a figure taking an oath on the balcony." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The first inauguration</span>This 1876 lithograph shows George Washington taking the oath of office as the first President on April 30, 1789, at Federal Hall in New York City. Artists of the 1800s made many prints of this scene.<span class="credit">Image: Popular Graphic Arts (lithograph, 1876); Library of Congress / <a href="https://commons.wikimedia.org/wiki/File:The_inauguration_of_Washington-_as_first_President_of_the_United_States,_April_30th_1789;_at_the_old_city_hall,_New_York_LCCN2002699702.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>5.1</b></div>
+    <h2>The Many Hats of the President</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E0C888" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1F4EE" stroke-width="5"/><path d="M14 100h132" stroke="#E0C888" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 5.1, you will</p>
+      <ul><li>Distinguish the constitutional roles of the President from the roles that come from politics and custom</li><li>Explain how the Cabinet and the Commander-in-Chief role show both power and limits</li><li>Explain why the combined roles of Chief of State and Party Leader create tension</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-cabinet">Cabinet</a></li><li><a href="#t-commander-in-chief">Commander-in-Chief</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each presidential role, an example from the text, and the check on that role.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: role, example, check on it"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Role</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Check on it</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Many Hats of the President</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American presidency fuses ceremonial duties with administrative and political powers, requiring a single individual to act as both the symbolic head of the nation and the active head of its government.</p>
+        <p>When a citizen looks at the White House, they see a single building occupied by a single individual. However, in terms of constitutional function and political reality, the American presidency is a crowded office. The President of the United States is required to perform a series of distinct, often conflicting roles that, in many other democracies, are separated into different offices. In the United Kingdom, for example, the monarch serves as the Head of State, a ceremonial symbol of national unity who remains above the fray of partisan politics. The Prime Minister, conversely, is the Head of Government, a purely political figure who runs the administration and battles in Parliament.</p>
+        <p>The American framers, however, fused these two functions into one office. The result is that the president must simultaneously be the "majestic" symbol of the American people—lighting the national Christmas tree, comforting the grieving after a tragedy, and welcoming foreign dignitaries —while also acting as the gritty, partisan "prime minister" responsible for passing controversial budgets and enforcing polarizing laws. This fusion creates a unique burden: the president must try to unify the nation while simultaneously leading only one political party. To understand the American presidency, one must deconstruct these overlapping "hats," or institutional roles, and examine how history has forced presidents to wear them all at once.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Head of State</span> The officer who is the ceremonial symbol of the nation. In the United Kingdom this is the monarch. <span class="sp">Spanish: jefe de Estado</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Head of Government</span> The officer who runs the administration and fights political battles. In the United Kingdom this is the Prime Minister. <span class="sp">Spanish: jefe de gobierno</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1 office, 2 jobs</span>In the United States one person is both Head of State and Head of Government.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 1 vests “the executive Power” in “a President,” one person, not a council.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.1</span>Two Jobs, One Office</p>
+      <p class="figsub">The United States combines roles that the United Kingdom separates.</p>
+      <table class="cmp"><thead><tr><th>Job</th><th>United Kingdom</th><th>United States</th></tr></thead><tbody><tr><td>Head of State (the symbol of the nation)</td><td>The monarch, who stays above partisan politics</td><td>The President, acting as Chief of State</td></tr><tr><td>Head of Government (the political leader)</td><td>The Prime Minister, who runs the administration and battles in Parliament</td><td>The same President, acting as Chief Executive and Party Leader</td></tr><tr><td>Number of offices</td><td>Two</td><td>One</td></tr></tbody></table>
+      <p class="source">Source: Chapter text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the biggest difference between the two systems?</li><li>Why might it be hard for one person to be both a unifying symbol and a partisan fighter?</li><li>Which job in the American column would you expect to bring the most criticism? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Chief Executive: The Administrator of the State</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">As Chief Executive, the president manages a vast federal bureaucracy through the Cabinet, though department heads often face conflicting loyalties between the White House and the Congress that oversees their budgets.</p>
+        <p>The most foundational role of the president is that of Chief Executive. This authority is derived from the "Take Care Clause" of Article II, which mandates that the president "take Care that the Laws be faithfully executed." While this sounds like a simple administrative instruction, in practice, it makes the president the CEO of the largest organization in human history: the federal bureaucracy. When George Washington took office in 1789, the executive branch consisted of a handful of clerks and a few distinct departments. Today, the Chief Executive oversees a workforce of nearly three million civilians and a budget of trillions of dollars.</p>
+        <p>To manage this sprawling apparatus, the president relies on the <dfn id="t-cabinet">Cabinet</dfn>, an advisory body composed of the heads of the 15 executive departments, such as the Department of State, the Department of Defense, and the Department of the Treasury. The Cabinet represents the first major test of a president’s administrative skill. Cabinet secretaries are appointed by the president, but they must be confirmed by the Senate. This creates a dual loyalty; while secretaries serve at the pleasure of the president, they are also beholden to the Congress that funds their departments and the specific laws that govern their agencies.</p>
+        <p>A skilled Chief Executive, like Washington, assembles a "team of rivals"—diverse voices who can debate policy before the president makes a final decision. Washington famously balanced the opposing views of Thomas Jefferson (State) and Alexander Hamilton (Treasury). Conversely, a president who lacks administrative focus may find that the bureaucracy runs itself, often ignoring the White House’s directives. The challenge of the Chief Executive is to ensure that the massive machinery of government actually reflects the policy goals of the person elected to run it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cabinet</span> An advisory body made up of the heads of the executive departments. <span class="sp">Spanish: gabinete</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bureaucracy</span> The many agencies and officials who carry out the government’s work. <span class="sp">Spanish: burocracia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">15</span>Executive departments whose heads make up the Cabinet, according to the chapter.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 2 says the President nominates officers “by and with the Advice and Consent of the Senate.” That is why Cabinet secretaries need Senate approval.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Commander-in-Chief: Civilian Control of the Military</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The role of Commander-in-Chief ensures that the nation's military remains under the ultimate authority of an elected civilian official, preventing the rise of independent military power.</p>
+        <p>Perhaps the most consequential "hat" is that of <dfn id="t-commander-in-chief">Commander-in-Chief</dfn>. The Constitution explicitly places the nation's armed forces under the command of the president. This was a deliberate choice by the Framers to ensure "civilian control of the military." They feared that a military led by a general, independent of civilian oversight, could easily turn into a tyranny. By placing a civilian— elected by the people—in charge, the military becomes an instrument of democratic policy rather than a force unto itself.</p>
+        <p>This role requires the president to make life-and-death decisions, often with imperfect information. The weight of this responsibility was most vividly illustrated during the Korean War in 1951. General Douglas MacArthur, a legendary military hero, publicly disagreed with President Harry Truman’s strategy. MacArthur wanted to expand the war into China, potentially using nuclear weapons, while Truman wanted to keep the conflict limited to avoid World War III. When MacArthur continued to publicly criticize the president’s policy, Truman faced a crisis of authority.</p>
+        <p>Despite MacArthur’s immense popularity and Truman’s low approval ratings, Truman fired the general. It was a politically unpopular move, but it affirmed a critical constitutional principle: the Commander-in-Chief, not the generals, decides the nation's strategy. The military advises, but the civilian president commands. This role has only grown in complexity as the definition of "war" has shifted from formal declarations by Congress to ongoing counter-terrorism operations, drone strikes, and cyber-warfare, all of which are directed from the Oval Office.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Civilian control of the military</span> The principle that elected civilians, not generals, hold final authority over the armed forces. <span class="sp">Spanish: control civil de las fuerzas armadas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">April 1951</span>Month Truman relieved General Douglas MacArthur of his command during the Korean War.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 2: “The President shall be Commander in Chief of the Army and Navy of the United States.”</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Pentagon%20January%202008.jpg?width=1400" alt="An aerial view of the five-sided Pentagon, with parking lots, roads, and a courtyard in the middle." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Pentagon</span>The Pentagon, near Washington, D.C., is the headquarters of the Department of Defense. The President commands the armed forces through civilian leaders at this department. David B. Gleason photographed it from an airplane in January 2008.<span class="credit">Photo: David B. Gleason / <a href="https://commons.wikimedia.org/wiki/File:The_Pentagon_January_2008.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></span></figcaption></figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Chief Diplomat: The Face of the Nation</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">While the president acts as the primary architect of foreign policy and has the power to recognize foreign governments, the Senate serves as a critical check by requiring a two-thirds majority for treaty ratification.</p>
+        <p>While Congress has significant power over domestic law, the president is the primary architect of American foreign policy, serving as the Chief Diplomat. The Constitution grants the president the power to make treaties (subject to Senate approval) and to receive ambassadors. This second power—receiving ambassadors—implies the power of "recognition." When the president accepts the credentials of a foreign diplomat, the United States effectively recognizes the legitimacy of that government.</p>
+        <p>This power allows presidents to alter the geopolitical landscape overnight. In 1948, President Truman recognized the new state of Israel just minutes after it declared independence, committing the United States to a long-term alliance in the Middle East without consulting Congress. Similarly, in 1972, President Richard Nixon traveled to Beijing to meet with Mao Zedong. For decades, the U.S. had refused to recognize the communist government of the People's Republic of China. Nixon’s trip—and his handshake with Mao—effectively ended that isolation, splitting the communist bloc and reshaping the Cold War.</p>
+        <p>However, the role of Chief Diplomat is not absolute. The Senate’s power to ratify treaties acts as a severe check. The most tragic example of this limit occurred in 1919. President Woodrow Wilson spent months in Europe negotiating the Treaty of Versailles to end World War I, which included his dream of a League of Nations. He campaigned across the country to sell the treaty to the American people. Yet, the Senate, led by Wilson's political rivals, refused to ratify it. Wilson, the Chief Diplomat, had made a promise to the world that his own government refused to keep. This failure illustrates that while the president can negotiate on the world stage, they cannot bind the nation without legislative support.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Recognition</span> A formal decision to accept another government as legitimate. <span class="sp">Spanish: reconocimiento (diplomático)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Treaty</span> A formal agreement between nations. <span class="sp">Spanish: tratado</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2/3</span>Share of Senators present who must agree for a treaty to be ratified.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Senate voted on the Treaty of Versailles in 1919 and again in 1920. Neither vote reached the two-thirds needed.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Chief Legislator: The Agenda Setter</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The president serves as the primary agenda setter for the nation, using a combination of personal persuasion, political leverage, and the threat of the veto to drive the legislative process.</p>
+        <p>The Constitution calls for the president to give Congress information on the "State of the Union" and recommend measures they judge "necessary and expedient." Over time, this modest requirement has evolved into the role of Chief Legislator. Modern presidents are expected to act as the primary drafters of public policy. Voters rarely choose a president based on how well they will manage the bureaucracy; they choose them based on what laws they promise to pass—whether it is healthcare reform, tax cuts, or infrastructure investment.</p>
+        <p>The gold standard for this role was set by Franklin D. Roosevelt in 1933. Taking office during the depths of the Great Depression, FDR did not wait for Congress to propose solutions. He sent a flurry of bills to Capitol Hill—banking reform, agricultural relief, public works programs—that became known as the "First Hundred Days." Congress, desperate for leadership, passed nearly everything he requested. This established the modern expectation that the president should drive the legislative agenda.</p>
+        <p>To succeed as Chief Legislator, a president must master the art of persuasion. They must use the threat of the veto to shape bills and the allure of patronage (federal projects or support) to win votes. President Lyndon B. Johnson, a former Senate Majority Leader, was a master of this internal game. He would famously "give the treatment" to reluctant Senators—bullying, flattering, and horse-trading until he secured the votes for the Civil Rights Act of 1964. A president who cannot navigate the halls of Congress acts merely as a spectator to the lawmaking process.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Patronage</span> Federal projects or support that a leader offers in exchange for votes. <span class="sp">Spanish: clientelismo (patronazgo)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1933</span>Year of Franklin D. Roosevelt’s “First Hundred Days,” which set the modern model of a President who drives the legislative agenda.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 3: the President “shall from time to time give to the Congress Information of the State of the Union, and recommend to their Consideration such Measures as he shall judge necessary and expedient.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Partisan Dilemma: Party Leader vs. Chief of State</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The fusion of the symbolic Chief of State and the partisan Party Leader creates an inherent tension, as the president must attempt to unify the country while simultaneously fighting for a specific political agenda.</p>
+        <p>Finally, the president serves as the unofficial Party Leader. They choose the chairperson of their national party committee, headline fundraising dinners, and campaign for members of Congress. Their success or failure often dictates the fate of their party in midterm elections. This role is strictly political; it is about winning and maintaining power.</p>
+        <p>This creates the fundamental tension of the office. As Chief of State, the president is the symbolic "parent" of the country, expected to represent all citizens regardless of their politics. We see this role when a president speaks at a funeral for victims of a national tragedy or awards the Medal of Honor. In those moments, they speak for "We the People." Yet, an hour later, that same president may stand at a podium to attack the opposition party as dangerous or incompetent.</p>
+        <p>This toggling between unifier and fighter is exhausting and often confusing for the public. When a president attacks their political opponents, half the country feels alienated, making it harder for the president to then pivot back to the role of unifying Chief of State. In the modern era of hyper-partisanship, the role of Party Leader often overshadows the role of Chief of State, making it increasingly difficult for any president to claim they truly represent the entire nation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Chief of State</span> The President’s symbolic role as the representative of all Americans. <span class="sp">Spanish: jefe de Estado (símbolo nacional)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Party Leader</span> The President’s unofficial role as head of a political party. <span class="sp">Spanish: líder del partido</span></div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.2</span>The President’s Six Hats</p>
+      <p class="figsub">Each role comes with its own source of power and its own limit.</p>
+      <table class="cmp"><thead><tr><th>Role</th><th>Where it comes from</th><th>Example in the chapter</th><th>A limit on the role</th></tr></thead><tbody><tr><td>Chief Executive</td><td>Article II: the Take Care Clause</td><td>The Cabinet of 15 departments</td><td>The Senate confirms Cabinet secretaries, and Congress funds their departments</td></tr><tr><td>Commander-in-Chief</td><td>Article II, Section 2</td><td>Truman fires General MacArthur (1951)</td><td>Congress controls the money for the military</td></tr><tr><td>Chief Diplomat</td><td>Article II: treaties, receiving ambassadors</td><td>Truman recognizes Israel (1948); Nixon travels to Beijing (1972)</td><td>The Senate must approve treaties by a two-thirds vote</td></tr><tr><td>Chief Legislator</td><td>Article II: State of the Union and recommending measures</td><td>FDR’s First Hundred Days (1933); LBJ and the Civil Rights Act (1964)</td><td>Congress writes and passes the laws</td></tr><tr><td>Chief of State</td><td>Custom, not a clause of the Constitution</td><td>Speaking at a funeral after a national tragedy</td><td>Public trust, which can be lost when the President acts as a partisan</td></tr><tr><td>Party Leader</td><td>Custom and politics</td><td>Fundraising dinners; campaigning for members of Congress</td><td>Voters in midterm elections</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; U.S. Constitution, Article II. Table created for this textbook. The roles of Chief of State and Party Leader come from custom and politics, not from the text of Article II.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which roles come from the text of the Constitution? Which come from custom?</li><li>Pick one role. Name the limit on it and explain how that limit protects against the “fetus of monarchy” fear.</li><li>Which role would be hardest to do at the same time as Party Leader? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>The Student Body President Wears Many Hats</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A student body president cuts the ribbon at a new building, runs weekly meetings, speaks for the school at a ceremony, and campaigns for a candidate in the next election. The same student has to be a symbol for everyone, an administrator, and a political team leader. Some students will cheer one job and dislike another. Presidents of the United States face the same problem on a national scale.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Fire the General?</div></div>
+      <div class="box-b">
+        <p>You are a President in wartime. A famous general publicly criticizes your plan and says you should expand the war. Many voters admire the general, and your own approval rating is low.</p>
+        <div class="opts"><div class="opt"><h5>Remove the general</h5>You make clear that civilians decide strategy, but you may lose public support.</div><div class="opt"><h5>Keep the general</h5>You avoid a political fight, but you weaken the principle that the elected President commands the military.</div></div>
+        <p class="ask">Which would you choose, and what principle of the Constitution does your choice protect?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Splitting the Jobs</div></div>
+      <div class="box-b">
+<p style="margin:0">Many democracies divide the two jobs the American President combines. In the United Kingdom, a monarch is Head of State and a Prime Minister is Head of Government. In Germany, the Federal President is a largely ceremonial Head of State and the Chancellor leads the government. India also has a President as Head of State and a Prime Minister as Head of Government. Why might a country want its symbol of unity to stay out of daily political fights?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING THE ROLES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 5.1. Explain in your own words why the text calls the President both a “majestic” symbol and a “gritty” partisan leader.</li><li>Use Figure 5.2. Choose one role and explain how a check on that role protects liberty.</li><li>Write a Counter-Argument to this claim: “One person should not be both Chief of State and Party Leader.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 5.1 ASSESSMENT</b>Complete the Section 5.1 Assessment in your <i>Chapter 5 Assignment</i> packet before you move on to Section 5.2.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>5.2</b></div>
+    <h2>Executive Authority: Orders, Vetoes, and Unilateral Action</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E0C888" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1F4EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E0C888" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 5.2, you will</p>
+      <ul><li>Explain how executive orders, vetoes, and signing statements let a President act without or against Congress</li><li>Compare a regular veto with a pocket veto</li><li>Evaluate why unilateral tools can be both necessary and dangerous to the separation of powers</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-executive-order">Executive Order</a></li><li><a href="#t-veto">Veto</a></li><li><a href="#t-signing-statement">Signing Statement</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each unilateral tool, an example, and the weakness of the tool.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tool, example, weakness"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Weakness</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Executive Authority: Orders, Vetoes, and Unilateral Action</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">When the traditional legislative process stalls, presidents often utilize unilateral tools—such as executive orders—to implement policy, though these actions lack the permanence of law.</p>
+        <p>When a president cannot persuade Congress to act, or when a crisis demands an immediate response, they often turn to tools of unilateral action. These are powers that allow the executive branch to implement policy without the direct consent of the legislature. While these tools are essential for the operation of government, their use often sparks intense debate about the separation of powers and the potential for executive overreach. The modern presidency is defined by the strategic use of these tools to bypass legislative gridlock.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Unilateral action</span> Action by the President alone, without the direct consent of Congress. <span class="sp">Spanish: acción unilateral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Gridlock</span> A situation in which opposing sides block each other so that nothing gets done. <span class="sp">Spanish: estancamiento legislativo</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 5.4 explains how Congress and the courts can respond when a President goes too far.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Power of the Pen: Executive Orders</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/US%20Executive%20Order%209981%20p1.jpg?width=1400" alt="The first page of a typed government document with a centered heading and several numbered paragraphs." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Executive Order 9981</span>The first page of Executive Order 9981, signed July 26, 1948. It established the policy of equality of treatment and opportunity for people in the armed services.<span class="credit">Document: Harry S. Truman (signed document, 1948) / <a href="https://commons.wikimedia.org/wiki/File:US_Executive_Order_9981_p1.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Executive orders allow presidents to bypass legislative hurdles to implement significant social and military policies, yet they also possess the potential to infringe upon civil liberties during times of crisis.</p>
+        <p>The <dfn id="t-executive-order">Executive Order</dfn> is the most direct tool of unilateral power. It is a directive issued by the president to federal agencies that has the force of law. Constitutionally, executive orders are derived from the president's Article II power to "take Care that the Laws be faithfully executed." In theory, they are meant to be instructions on how to enforce existing laws—for example, telling the Department of the Interior how to manage a new national park. In practice, however, they are often used to create new policy when Congress is unable or unwilling to act.</p>
+        <p>History provides stark examples of the power and peril of executive orders. In 1948, President Harry Truman issued Executive Order 9981, which desegregated the U.S. military. At the time, Congress was dominated by Southern segregationists who would never have passed such legislation. Truman used his authority as Commander-in-Chief to bypass Congress and advance civil rights. Conversely, executive orders have been used to restrict civil liberties. In 1942, President Franklin D. Roosevelt issued Executive Order 9066, which authorized the internment of over 100,000 Japanese Americans during World War II. This order illustrated the terrifying scope of executive power during wartime, a move later upheld by the Supreme Court in Korematsu v. United States (1944) but condemned by history and formally apologized for decades later.</p>
+        <p>Modern presidents from both parties rely heavily on executive orders because of legislative polarization. If Congress cannot pass an immigration bill or environmental regulations, the president may order the Department of Homeland Security or the EPA to alter their enforcement priorities. However, this power has a significant weakness: an executive order issued by one president can be immediately revoked by the next. This creates a "pendulum effect" in policy, where regulations on industry or social policy can swing wildly from one administration to the next, lacking the stability of permanent legislation passed by Congress.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Executive order</span> A directive from the President to federal agencies that has the force of law. <span class="sp">Spanish: orden ejecutiva</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Korematsu v. United States (1944)</span> A Supreme Court decision that upheld the government’s power to remove Japanese Americans from the West Coast during World War II. Later courts have condemned it. <span class="sp">Spanish: caso Korematsu contra Estados Unidos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">July 26, 1948</span>Date President Truman signed Executive Order 9981, which declared a policy of equal treatment and opportunity in the armed forces.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Executive orders rest on the Take Care Clause, but Congress can pass a law that overrides one, and a court can strike one down.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.3</span>Executive Orders Issued by Selected Presidents</p>
+      <p class="figsub">Total executive orders per presidential term. Counts before Truman include some unnumbered orders.</p>
+      <svg viewBox="0 0 860 414" role="img" aria-label="Bar chart of executive orders: Washington 8, Lincoln 48, Theodore Roosevelt 1,081, Franklin Roosevelt 3,726, Truman 907, Eisenhower 484, Reagan 381, Clinton 364, George W. Bush 291, Obama 276, Trump first term 220, Biden 162"><line x1="170.0" y1="10" x2="170.0" y2="370" stroke="#e6e8ec"/><text x="170.0" y="388" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="320.0" y1="10" x2="320.0" y2="370" stroke="#e6e8ec"/><text x="320.0" y="388" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">1,000</text><line x1="470.0" y1="10" x2="470.0" y2="370" stroke="#e6e8ec"/><text x="470.0" y="388" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">2,000</text><line x1="620.0" y1="10" x2="620.0" y2="370" stroke="#e6e8ec"/><text x="620.0" y="388" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">3,000</text><line x1="770.0" y1="10" x2="770.0" y2="370" stroke="#e6e8ec"/><text x="770.0" y="388" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">4,000</text><text x="160" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Washington</text><g><title>Washington: 8</title><path d="M170 16 h-2.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h--2.8z" fill="#2F6B57"/></g><text x="179.2" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">8</text><text x="160" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Lincoln</text><g><title>Lincoln: 48</title><path d="M170 46 h3.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-3.2z" fill="#2F6B57"/></g><text x="185.2" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">48</text><text x="160" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Theodore Roosevelt</text><g><title>Theodore Roosevelt: 1,081</title><path d="M170 76 h158.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-158.2z" fill="#2F6B57"/></g><text x="340.1" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">1,081</text><text x="160" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Franklin Roosevelt</text><g><title>Franklin Roosevelt: 3,726</title><path d="M170 106 h554.9 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-554.9z" fill="#B58B3A"/></g><text x="736.9" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">3,726</text><text x="160" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Truman</text><g><title>Truman: 907</title><path d="M170 136 h132.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-132.1z" fill="#2F6B57"/></g><text x="314.1" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">907</text><text x="160" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Eisenhower</text><g><title>Eisenhower: 484</title><path d="M170 166 h68.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-68.6z" fill="#2F6B57"/></g><text x="250.6" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">484</text><text x="160" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Reagan</text><g><title>Reagan: 381</title><path d="M170 196 h53.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-53.1z" fill="#2F6B57"/></g><text x="235.2" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">381</text><text x="160" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Clinton</text><g><title>Clinton: 364</title><path d="M170 226 h50.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-50.6z" fill="#2F6B57"/></g><text x="232.6" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">364</text><text x="160" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">George W. Bush</text><g><title>George W. Bush: 291</title><path d="M170 256 h39.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-39.6z" fill="#2F6B57"/></g><text x="221.7" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">291</text><text x="160" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Obama</text><g><title>Obama: 276</title><path d="M170 286 h37.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-37.4z" fill="#2F6B57"/></g><text x="219.4" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">276</text><text x="160" y="330.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Trump, first term</text><g><title>Trump, first term: 220</title><path d="M170 316 h29.0 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-29.0z" fill="#2F6B57"/></g><text x="211.0" y="330.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">220</text><text x="160" y="360.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Biden</text><g><title>Biden: 162</title><path d="M170 346 h20.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-20.3z" fill="#2F6B57"/></g><text x="202.3" y="360.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">162</text><line x1="170" y1="10" x2="170" y2="370" stroke="#6f7787" stroke-width="1.5"/><text x="470.0" y="410" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Executive orders</text></svg>
+      <p class="source">Source: The American Presidency Project, University of California, Santa Barbara (data from Ragsdale, <i>Vital Statistics on the Presidency</i>, the National Archives, and the Federal Register). Counts for Truman and later presidents include numbered orders only. Highlighted bar: the largest total.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>President</th><th>Executive orders</th></tr></thead><tbody><tr><td>Washington</td><td>8</td></tr><tr><td>Lincoln</td><td>48</td></tr><tr><td>Theodore Roosevelt</td><td>1,081</td></tr><tr><td>Franklin Roosevelt</td><td>3,726</td></tr><tr><td>Truman</td><td>907</td></tr><tr><td>Eisenhower</td><td>484</td></tr><tr><td>Reagan</td><td>381</td></tr><tr><td>Clinton</td><td>364</td></tr><tr><td>George W. Bush</td><td>291</td></tr><tr><td>Obama</td><td>276</td></tr><tr><td>Trump, first term</td><td>220</td></tr><tr><td>Biden</td><td>162</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which president issued the most executive orders? Which events from the text might help explain why?</li><li>Compare the counts for Clinton, George W. Bush, Obama, and Biden. Does the chart support the claim that “modern presidents from both parties rely heavily on executive orders”? Explain.</li><li>Why might a count of orders not fully measure a president’s power? (Hint: think about what one order can do.)</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Veto as a Weapon of Policy</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The veto serves as the president's most powerful legislative weapon, with the mere threat of its use often being enough to force Congress to alter the content of proposed bills.</p>
+        <p>The <dfn id="t-veto">Veto</dfn> is the president's primary weapon in the legislative process. It allows the president to reject a bill passed by Congress, sending it back with objections. Congress can override a veto, but it requires a difficult two-thirds majority in both the House and Senate. Because overrides are rare —occurring in less than 5% of all vetoes throughout history—the mere threat of a veto gives the president immense leverage. By threatening to veto a bill while it is still in committee, the president can force Congress to rewrite the legislation to suit the administration's preferences.</p>
+        <p>The philosophy behind the veto has shifted dramatically over time. Early presidents, like George Washington and James Madison, believed the veto should only be used if a bill was strictly unconstitutional. They did not believe the president should veto a bill simply because they disagreed with the policy; that was a decision for the people's representatives in Congress. This changed forever in 1832 with Andrew Jackson. Jackson vetoed the re-charter of the Second Bank of the United States not just because he questioned its legality, but because he believed it was bad for the common man and favored the elite. In his veto message, Jackson asserted that the president, as the only official elected by the entire country, had a right to judge the merit of legislation. This precedent transformed the president from an administrator into a major player in the legislative process.</p>
+        <p>There are two distinct types of vetoes. The Regular Veto is a formal rejection where the president returns the bill to Congress with a message explaining their objections. The Pocket Veto is a more passive, procedural tool. The Constitution states that if the president does not sign a bill within ten days, it becomes law—unless Congress adjourns during that ten-day period. If Congress adjourns and the president does nothing, the bill dies. This "pocket veto" cannot be overridden, making it a powerful strategic tool at the end of a legislative session when Congress is rushing to leave Washington.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Veto</span> The President’s power to reject a bill passed by Congress. <span class="sp">Spanish: veto</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pocket veto</span> A bill dies without a signature when the President does nothing and Congress has adjourned. <span class="sp">Spanish: veto de bolsillo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Override</span> A vote of two-thirds of both chambers that turns a vetoed bill into law. <span class="sp">Spanish: anular (el veto)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">112 of 2,599</span>Vetoes overridden out of all vetoes in the U.S. Senate’s count, about 4.3 percent.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 7 gives the President ten days, Sundays excepted, to act on a bill. This is the source of the pocket veto.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.4</span>A Bill on the President’s Desk</p>
+      <p class="figsub">Four paths after Congress sends a bill to the President.</p>
+      <table class="cmp"><thead><tr><th>What the President does</th><th>What happens next</th></tr></thead><tbody><tr><td>Signs the bill</td><td>The bill becomes law.</td></tr><tr><td>Vetoes the bill (regular veto)</td><td>The bill goes back to Congress with the President’s objections. A two-thirds vote in both the House and the Senate overrides the veto and makes it law.</td></tr><tr><td>Does nothing while Congress is in session</td><td>After ten days, not counting Sundays, the bill becomes law without a signature.</td></tr><tr><td>Does nothing after Congress has adjourned (pocket veto)</td><td>The bill does not become law. Congress cannot override a pocket veto.</td></tr></tbody></table>
+      <p class="source">Sources: U.S. Constitution, Article I, Section 7; chapter text. Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which path gives Congress the strongest response? Why does the text call it “difficult”?</li><li>Why is a pocket veto especially useful at the end of a legislative session?</li><li>What happens if the President does nothing and Congress stays in session?</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.5</span>Vetoes by Selected Presidents</p>
+      <p class="figsub">Total regular and pocket vetoes. The overall record is 2,599 vetoes and 112 overrides.</p>
+      <svg viewBox="0 0 860 354" role="img" aria-label="Bar chart of vetoes: Washington 2, Jackson 12, Cleveland across two terms 584, Franklin Roosevelt 635, Truman 250, Eisenhower 181, Ford 66, Obama 12, Trump 2017 to 2021 10, Biden 13"><line x1="200.0" y1="10" x2="200.0" y2="310" stroke="#e6e8ec"/><text x="200.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="362.9" y1="10" x2="362.9" y2="310" stroke="#e6e8ec"/><text x="362.9" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">200</text><line x1="525.7" y1="10" x2="525.7" y2="310" stroke="#e6e8ec"/><text x="525.7" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">400</text><line x1="688.6" y1="10" x2="688.6" y2="310" stroke="#e6e8ec"/><text x="688.6" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">600</text><text x="190" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Washington</text><g><title>Washington: 2</title><path d="M200 16 h-2.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h--2.4z" fill="#2F6B57"/></g><text x="209.6" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">2</text><text x="190" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Jackson</text><g><title>Jackson: 12</title><path d="M200 46 h5.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-5.8z" fill="#2F6B57"/></g><text x="217.8" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">12</text><text x="190" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Cleveland (two terms)</text><g><title>Cleveland (two terms): 584</title><path d="M200 76 h471.5 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-471.5z" fill="#2F6B57"/></g><text x="683.5" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">584</text><text x="190" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Franklin Roosevelt</text><g><title>Franklin Roosevelt: 635</title><path d="M200 106 h513.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-513.1z" fill="#B58B3A"/></g><text x="725.1" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">635</text><text x="190" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Truman</text><g><title>Truman: 250</title><path d="M200 136 h199.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-199.6z" fill="#2F6B57"/></g><text x="411.6" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">250</text><text x="190" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Eisenhower</text><g><title>Eisenhower: 181</title><path d="M200 166 h143.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-143.4z" fill="#2F6B57"/></g><text x="355.4" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">181</text><text x="190" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Ford</text><g><title>Ford: 66</title><path d="M200 196 h49.7 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-49.7z" fill="#2F6B57"/></g><text x="261.7" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">66</text><text x="190" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Obama</text><g><title>Obama: 12</title><path d="M200 226 h5.8 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-5.8z" fill="#2F6B57"/></g><text x="217.8" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">12</text><text x="190" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Trump (2017–2021)</text><g><title>Trump (2017–2021): 10</title><path d="M200 256 h4.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-4.1z" fill="#2F6B57"/></g><text x="216.1" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">10</text><text x="190" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Biden</text><g><title>Biden: 13</title><path d="M200 286 h6.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-6.6z" fill="#2F6B57"/></g><text x="218.6" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">13</text><line x1="200" y1="10" x2="200" y2="310" stroke="#6f7787" stroke-width="1.5"/><text x="485.0" y="350" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Vetoes (regular plus pocket)</text></svg>
+      <p class="source">Source: U.S. Senate, Vetoes, 1789 to Present (senate.gov). Cleveland’s total adds his two non-consecutive terms (414 and 170). Highlighted bar: the largest total.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>President</th><th>Regular</th><th>Pocket</th><th>Total</th><th>Overridden</th></tr></thead><tbody><tr><td>Washington</td><td>2</td><td>0</td><td>2</td><td>0</td></tr><tr><td>Jackson</td><td>5</td><td>7</td><td>12</td><td>0</td></tr><tr><td>Cleveland (1885–1889)</td><td>304</td><td>110</td><td>414</td><td>2</td></tr><tr><td>Cleveland (1893–1897)</td><td>42</td><td>128</td><td>170</td><td>5</td></tr><tr><td>Franklin Roosevelt</td><td>372</td><td>263</td><td>635</td><td>9</td></tr><tr><td>Truman</td><td>180</td><td>70</td><td>250</td><td>12</td></tr><tr><td>Eisenhower</td><td>73</td><td>108</td><td>181</td><td>2</td></tr><tr><td>Ford</td><td>48</td><td>18</td><td>66</td><td>12</td></tr><tr><td>Obama</td><td>12</td><td>0</td><td>12</td><td>1</td></tr><tr><td>Trump (2017–2021)</td><td>10</td><td>0</td><td>10</td><td>1</td></tr><tr><td>Biden</td><td>13</td><td>0</td><td>13</td><td>0</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which president vetoed the most bills? What was going on in the country during those years?</li><li>Compare Washington’s total with Franklin Roosevelt’s. How does that fit the text’s account of how the veto’s purpose changed?</li><li>Using the overall record, explain why the text says the mere threat of a veto gives a President leverage.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Interpretive Power: Signing Statements</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Signing statements allow presidents to offer their own interpretation of a law, sometimes declaring intent to ignore specific provisions they deem unconstitutional, effectively bypassing the formal veto process.</p>
+        <p>In recent decades, presidents have increasingly used the <dfn id="t-signing-statement">Signing Statement</dfn> to expand their interpretive power. When signing a bill into law, a president may issue a written statement declaring that they believe a specific part of the law is unconstitutional and that they will not enforce that specific provision. This allows the president to technically sign a bill—avoiding a political fight or a veto override—while effectively nullifying the parts they dislike. It is a way of saying, "I am signing this law, but I will enforce it as I see fit."</p>
+        <p>This practice became highly controversial during the administration of George W. Bush. In 2005, Congress passed the Detainee Treatment Act, which prohibited the torture of prisoners. President Bush signed the bill but issued a signing statement asserting his right as Commander-in-Chief to bypass the ban if necessary for national security. Critics argue that signing statements violate the separation of powers, as they effectively give the president a "line-item veto"—the ability to strike out parts of a law—which the Supreme Court has previously ruled unconstitutional.</p>
+        <p>The strategic logic of these unilateral tools—orders, vetoes, and signing statements—points to a broader trend in American politics: the expansion of the "administrative state." As society has become more complex, Congress has often written broad laws that leave the details to be filled in by executive agencies. This delegation of power gives the president vast discretion. Whether it is the Environmental Protection Agency setting air quality standards or the Department of Education managing student loans, the president directs the daily reality of American law. This creates a friction that the Framers might not have anticipated—a system where the execution of the law is often as consequential, and as political, as the writing of it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Signing statement</span> A written statement a President issues when signing a bill, often explaining how the President reads the law. <span class="sp">Spanish: declaración de promulgación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Line-item veto</span> The power to strike individual items out of a bill. The Supreme Court held a federal version unconstitutional in 1998. <span class="sp">Spanish: veto parcial (de partidas)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Administrative state</span> The large set of agencies that fill in the details of laws. <span class="sp">Spanish: estado administrativo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Dec. 30, 2005</span>Date President Bush signed the Detainee Treatment Act and issued a signing statement about it.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>In <i>Clinton v. City of New York</i> (1998), the Supreme Court ruled that the Line Item Veto Act violated the Constitution’s rules for making laws.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>The Principal’s Memo</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A principal can send a memo telling teachers how to carry out a new district rule. That memo is like an executive order: it directs people who work for the principal. It may help the rule run smoothly. But a later principal can cancel the memo, and the district can pass a rule that overrides it. The memo works only as long as it stays within the rule and within the principal’s authority.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Order or Bill?</div></div>
+      <div class="box-b">
+        <p>You are a President. Congress has refused to pass a bill on an issue you think is urgent. You could issue an executive order that takes effect immediately.</p>
+        <div class="opts"><div class="opt"><h5>Issue the order</h5>The policy begins at once, but the next President could cancel it, and critics may say you bypassed Congress.</div><div class="opt"><h5>Keep working for a bill</h5>It may take years, and the problem could grow, but a law passed by Congress would last longer.</div></div>
+        <p class="ask">Which would you choose, and which part of the separation of powers does your choice protect?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; UNILATERAL TOOLS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use the chapter text and Figure 5.3. Explain what the chapter means by the “pendulum effect” and why a law passed by Congress would not swing the same way.</li><li>Use Figure 5.4. Describe the difference between a regular veto and a pocket veto in your own words.</li><li>Write a Counter-Argument to this claim: “Executive orders are always an abuse of the President’s power.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 5.2 ASSESSMENT</b>Complete the Section 5.2 Assessment in your <i>Chapter 5 Assignment</i> packet before you move on to Section 5.3.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>5.3</b></div>
+    <h2>Electoral Legitimacy and the Modern Presidency</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E0C888" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1F4EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E0C888" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 5.3, you will</p>
+      <ul><li>Explain how the Electoral College works and how winner-take-all affects campaigns</li><li>Describe how the modern presidency grew during the Great Depression and World War II</li><li>Explain how the bully pulpit works and why its power has limits</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-electoral-college">Electoral College</a></li><li><a href="#t-bully-pulpit">Bully Pulpit</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each source of presidential legitimacy, how it works, and a limit.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: source, how it works, limit"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Source</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">How it works</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Limit</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Electoral Legitimacy and the Modern Presidency</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">A president's ability to lead depends not just on legal authority, but on political legitimacy. Unlike a monarch who rules by birthright, a president must claim a mandate from the people. However, the unique and often misunderstood mechanics of the American electoral system mean that this mandate is rarely straightforward. The path to the White House shapes how presidents govern and how they view their obligation to the electorate.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Legitimacy</span> The widely held belief that a government or leader has the right to rule. <span class="sp">Spanish: legitimidad</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Mandate</span> A claim that an election victory gives a president the authority to carry out a platform. <span class="sp">Spanish: mandato</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 5.3 covers three sources of presidential strength: the election, the growth of the modern office, and the bully pulpit.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Electoral College Framework</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Electoral College forces presidential candidates to focus their strategy and resources on a small number of "swing states," often leading to a focus on regional interests over the national popular vote.</p>
+        <p>The president is not elected by the national popular vote, but by the <dfn id="t-electoral-college">Electoral College</dfn>. This system was a compromise reached at the Constitutional Convention between delegates who wanted Congress to select the president and those who wanted a direct popular vote. The Framers feared that a direct vote would lead to "mob rule" or that citizens in a vast, pre-industrial nation wouldn't have enough information to judge candidates. They created an intermediate body of electors chosen by the states, hoping this group would be a buffer of wisdom and deliberation.</p>
+        <p>Today, there are 538 electoral votes (corresponding to the number of Representatives and Senators for each state, plus three for Washington D.C.), and a candidate needs 270 to win. Most states award their electors on a "winner-take-all" basis. If a candidate wins California by one vote or one million votes, they receive all of California's electoral votes. This structure fundamentally dictates campaign strategy. Candidates rarely campaign in "safe" states where the outcome is certain; instead, they pour resources into a handful of "swing states" like Pennsylvania, Michigan, or Florida. This state-centric model ensures the president must appeal to a geographically diverse coalition rather than just the population centers of the coasts.</p>
+        <p>However, this system can produce a misalignment between the popular will and the electoral outcome. In the election of 1824, Andrew Jackson won the most popular votes but failed to secure an Electoral College majority, leading the House of Representatives to select John Quincy Adams —a result Jackson denounced as a "corrupt bargain." More recently, in 2000 and 2016, the winner of the presidency received fewer popular votes than their opponent. This phenomenon challenges the democratic legitimacy of the office. When a president enters the White House without a popular majority, they often face a "legitimacy gap," making it harder to claim they speak for the entire nation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Electoral College</span> The system of electors chosen by the states that formally elects the President. <span class="sp">Spanish: Colegio Electoral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Winner-take-all</span> A rule in which the candidate who wins a state’s popular vote receives all of that state’s electoral votes. <span class="sp">Spanish: el ganador se lleva todo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Swing state</span> A state where the outcome is uncertain and either party might win. <span class="sp">Spanish: estado decisivo (estado bisagra)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">538 and 270</span>Total electoral votes, and the number a candidate needs. The 538 equals 435 Representatives, 100 Senators, and 3 for Washington, D.C.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Maine and Nebraska do not use winner-take-all. Each gives two electoral votes to the statewide winner and one to the winner of each congressional district.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.6</span>Residents Per Electoral Vote, 2020 Census</p>
+      <p class="figsub">Each state’s 2020 population divided by its number of electoral votes in the 2024 and 2028 elections.</p>
+      <svg viewBox="0 0 860 258" role="img" aria-label="Bar chart of thousands of residents per electoral vote: California 732, Texas 729, Florida 718, New York 721, Vermont 214, Wyoming 192"><line x1="140.0" y1="10" x2="140.0" y2="214" stroke="#e6e8ec"/><text x="140.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="297.5" y1="10" x2="297.5" y2="214" stroke="#e6e8ec"/><text x="297.5" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">200</text><line x1="455.0" y1="10" x2="455.0" y2="214" stroke="#e6e8ec"/><text x="455.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">400</text><line x1="612.5" y1="10" x2="612.5" y2="214" stroke="#e6e8ec"/><text x="612.5" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">600</text><line x1="770.0" y1="10" x2="770.0" y2="214" stroke="#e6e8ec"/><text x="770.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">800</text><text x="130" y="32.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">California</text><g><title>California: 732</title><path d="M140 16 h572.6 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-572.6z" fill="#B58B3A"/></g><text x="724.6" y="32.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">732</text><text x="130" y="66.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Texas</text><g><title>Texas: 729</title><path d="M140 50 h569.8 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-569.8z" fill="#2F6B57"/></g><text x="721.8" y="66.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">729</text><text x="130" y="100.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Florida</text><g><title>Florida: 718</title><path d="M140 84 h561.4 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-561.4z" fill="#2F6B57"/></g><text x="713.4" y="100.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">718</text><text x="130" y="134.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New York</text><g><title>New York: 721</title><path d="M140 118 h564.2 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-564.2z" fill="#2F6B57"/></g><text x="716.2" y="134.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">721</text><text x="130" y="168.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Vermont</text><g><title>Vermont: 214</title><path d="M140 152 h164.8 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-164.8z" fill="#2F6B57"/></g><text x="316.8" y="168.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">214</text><text x="130" y="202.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Wyoming</text><g><title>Wyoming: 192</title><path d="M140 186 h147.4 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-147.4z" fill="#B58B3A"/></g><text x="299.4" y="202.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">192</text><line x1="140" y1="10" x2="140" y2="214" stroke="#6f7787" stroke-width="1.5"/><text x="455.0" y="254" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Residents per electoral vote (thousands)</text></svg>
+      <p class="source">Sources: U.S. Census Bureau, 2020 Census resident population (California 39,538,223; Texas 29,145,505; Florida 21,538,187; New York 20,201,249; Vermont 643,077; Wyoming 576,851); National Archives, electoral votes for the 2024 and 2028 elections (California 54, Texas 40, Florida 30, New York 28, Vermont 3, Wyoming 3). Per-vote figures calculated for this textbook. Highlighted bars: the largest and smallest.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>State</th><th>2020 population</th><th>Electoral votes</th><th>Residents per electoral vote</th></tr></thead><tbody><tr><td>California</td><td>39,538,223</td><td>54</td><td>732,189</td></tr><tr><td>Texas</td><td>29,145,505</td><td>40</td><td>728,637</td></tr><tr><td>Florida</td><td>21,538,187</td><td>30</td><td>717,939</td></tr><tr><td>New York</td><td>20,201,249</td><td>28</td><td>721,473</td></tr><tr><td>Vermont</td><td>643,077</td><td>3</td><td>214,359</td></tr><tr><td>Wyoming</td><td>576,851</td><td>3</td><td>192,283</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many times more residents does each California electoral vote represent than each Wyoming electoral vote? (Divide the two numbers.)</li><li>Every state has at least three electoral votes. Which feature of the Great Compromise does this resemble?</li><li>Does the chart show that every vote counts the same in the Electoral College? Explain.</li></ol>
+      </div>
+    </figure>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Florida%20Case%20before%20the%20Electoral%20Commission%2C%20oil%20on%20canvas%20by%20Cornelia%20Adele%20Strong%20Fassett%2C%201879.png?width=1400" alt="A painting of a crowded, domed chamber in which dozens of men in dark coats sit and stand at desks, with a gallery of spectators on the left." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Electoral Commission of 1877</span>After the disputed election of 1876, Congress created an Electoral Commission of five senators, five representatives, and five Supreme Court justices to decide which electoral votes to count. It met in the Capitol’s Supreme Court chamber in early February 1877. Cornelia Adele Strong Fassett painted its hearing on the Florida votes in 1879.<span class="credit">Image: Cornelia Adele Strong Fassett (painting, 1879); U.S. Senate collection / <a href="https://commons.wikimedia.org/wiki/File:The_Florida_Case_before_the_Electoral_Commission,_oil_on_canvas_by_Cornelia_Adele_Strong_Fassett,_1879.png">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.7</span>When the Popular Winner Did Not Win</p>
+      <p class="figsub">Two recent elections in which the winner received fewer popular votes than the runner-up.</p>
+      <table class="cmp"><thead><tr><th>Election</th><th>Winner (electoral votes)</th><th>Popular votes for the winner</th><th>Runner-up (electoral votes)</th><th>Popular votes for the runner-up</th></tr></thead><tbody><tr><td>2000</td><td>George W. Bush (271)</td><td>50,456,002</td><td>Al Gore (266)</td><td>50,999,897</td></tr><tr><td>2016</td><td>Donald Trump (304)</td><td>62,984,828</td><td>Hillary Clinton (227)</td><td>65,853,514</td></tr></tbody></table>
+      <p class="source">Sources: U.S. National Archives, Electoral College results (electoral votes counted for each candidate; 270 of 538 were needed); Federal Election Commission, official results (2016: 65,853,514 and 62,984,828; 2000: 50,999,897 and 50,456,002). Table created for this textbook. The chapter also describes 1824, when the House chose the President.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>In which election was the popular vote gap larger? Use subtraction to find out.</li><li>How could a candidate win fewer popular votes but still win 270 electoral votes? Use winner-take-all in your answer.</li><li>What does the text mean by a “legitimacy gap,” and how might it affect a president’s ability to lead?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Rise of the Modern Presidency</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The modern presidency, characterized by central leadership in economic and social policy, was largely forged during the crises of the Great Depression and World War II under Franklin D. Roosevelt.</p>
+        <p>The role of the president has transformed significantly since the Founding. While the early executive was largely an administrator, the modern presidency is a "singular" figure of national power. The turning point was the presidency of Franklin D. Roosevelt (FDR). Before FDR, the federal government was relatively small, and presidents generally deferred to Congress. The Great Depression and World War II demanded a massive expansion of federal power. FDR reorganized the executive branch, creating the Executive Office of the President to provide the support staff necessary to manage the growing bureaucracy.</p>
+        <p>This era birthed the concept of the "Modern Presidency," characterized by a president who is the lead policy maker, the manager of a massive economy, and the central figure in American culture. Technology accelerated this shift. Radio, television, and eventually social media allowed presidents to bypass Congress and the press to speak directly to the people. FDR’s "Fireside Chats" brought his voice into American living rooms, creating a personal bond between the citizen and the leader. This connection fueled the expectation that the president—not Congress—is responsible for the voter's well-being.</p>
+        <p>As the office evolved, so did the concept of the "Presidential Mandate." Presidents often claim that their election victory gives them authorization to enact their platform. However, mandates are often overstated. A president who wins by a narrow margin in the Electoral College may claim a broad mandate to transform society, but Congress—which may be controlled by the opposing party—often disagrees. This clash between the president's perception of their mandate and Congress's resistance is a defining feature of modern governance.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Modern presidency</span> The model of a president as lead policymaker, economic manager, and central figure in national life. <span class="sp">Spanish: la presidencia moderna</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fireside chat</span> A radio address by Franklin D. Roosevelt that spoke directly to the public. <span class="sp">Spanish: charla junto a la chimenea</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1939</span>Year the Executive Office of the President was created, giving the President a permanent staff.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Chapters 1 and 2 showed Americans afraid of a strong executive. The Depression and World War II changed what many Americans expected of the office.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Bully Pulpit: Persuasion as Power</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The "Bully Pulpit" provides the president with a unique platform to mobilize public opinion, creating political pressure that can compel an otherwise reluctant Congress to act.</p>
+        <p>Theodore Roosevelt, serving decades before FDR, famously described the presidency as a <dfn id="t-bully-pulpit">Bully Pulpit</dfn>. In the slang of his time, "bully" meant "excellent" or "superb." He meant that the presidency provided a terrific platform from which to advocate for an agenda. The prestige of the office allows the president to command media attention and shape public opinion in a way no Senator or Governor can. When the president speaks, the world listens.</p>
+        <p>Effective use of the bully pulpit can force Congress to act. When President Lyndon B. Johnson advocated for the Voting Rights Act of 1965, he used a televised address to frame the issue as a moral crisis for the nation, famously adopting the anthem of the civil rights movement, "We Shall Overcome." By mobilizing public sentiment, Johnson made it politically difficult for Congress to block the legislation. Similarly, Ronald Reagan used televised addresses to rally public support for his tax cuts, putting pressure on Democrats in Congress to acquiesce.</p>
+        <p>However, the bully pulpit has limits. If a president is unpopular, their attempts to persuade the public can backfire, polarizing the issue rather than building consensus. In the modern era of fragmented media, where citizens get their news from highly partisan sources, the unifying power of the bully pulpit has diminished. Presidents often find themselves speaking only to their own base of supporters, rather than persuading the undecided. This "preaching to the choir" limits the ability of the modern president to build the broad coalitions necessary for major legislative achievements.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bully pulpit</span> The President’s unique platform to use the prestige of the office to shape public opinion. <span class="sp">Spanish: la tribuna (plataforma) presidencial</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">March 15, 1965</span>Date of President Johnson’s televised address to Congress urging passage of the Voting Rights Act. Congress passed the act, and he signed it that August.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article II, Section 3 requires the President to report on “the State of the Union.” Presidents use this and other occasions to speak directly to the nation.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>The Assembly Microphone</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> The principal can call an assembly and speak to every student at once, something no teacher can do. If students respect the principal, a speech can build support for a new rule faster than any memo. If students distrust the principal, the same speech may only harden opposition. The microphone is a source of power, but whether it works depends on trust.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Speak to the Nation?</div></div>
+      <div class="box-b">
+        <p>You are a President whose bill is stuck in Congress. You can give a televised address that asks the public to press Congress to act, but you know that many voters already oppose you.</p>
+        <div class="opts"><div class="opt"><h5>Give the address</h5>You use the bully pulpit and may gain pressure on Congress, but you may also polarize the debate.</div><div class="opt"><h5>Negotiate quietly</h5>You avoid a public fight and may win a smaller bill, but the public learns little about your goals.</div></div>
+        <p class="ask">Which would you choose, and what does the chapter say about the limits of the bully pulpit?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Choosing the Head of Government</div></div>
+      <div class="box-b">
+<p style="margin:0">Countries choose their leaders in many ways. In the United States, electors chosen by the states formally elect the President. In most parliamentary democracies, voters elect a legislature, and the legislature’s majority chooses the Prime Minister. In France, voters elect the President directly in a two-round vote. How might the way a leader is chosen affect whom that leader tries to please?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; LEGITIMACY AND PERSUASION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 5.6. Explain why candidates may pay more attention to some states than others under winner-take-all.</li><li>Use Figure 5.7. Explain how a candidate can win the Electoral College while losing the national popular vote.</li><li>Write a Counter-Argument to this claim: “A president who loses the popular vote cannot lead effectively.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 5.3 ASSESSMENT</b>Complete the Section 5.3 Assessment in your <i>Chapter 5 Assignment</i> packet before you move on to Section 5.4.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>5.4</b></div>
+    <h2>Institutional Constraints: Checks and Balances</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E0C888" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1F4EE" stroke-width="5"/><path d="M14 100h132" stroke="#E0C888" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 5.4, you will</p>
+      <ul><li>Explain how Congress uses the power of the purse and oversight to check the President</li><li>Explain how the Supreme Court limits presidential power, using United States v. Nixon and Youngstown</li><li>Describe how impeachment works and why the Senate has never removed a President</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-executive-privilege">Executive Privilege</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each check, who uses it, and an example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: check, who uses it, example"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Check</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who uses it</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Institutional Constraints: Checks and Balances</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">To prevent the rise of a "monarchy," the U.S. system places specific institutional constraints—from funding control to judicial review—on the president's ability to act unilaterally.</p>
+        <p>If the presidency is an engine of energy and action, the other branches of government are the brakes. The Framers knew that a singular executive would naturally seek to expand its power. To prevent tyranny, they designed a system of friction. They granted Congress and the Judiciary specific tools to investigate, limit, and even remove a president. These checks are not merely technicalities; they are the active defense mechanisms of the republic, ensuring that the president remains a servant of the law rather than a master of it.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Overreach</span> Taking more power than the Constitution or the law allows. <span class="sp">Spanish: extralimitación (abuso de poder)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 branches</span>Each branch has tools to check the others. The President faces checks from Congress and from the courts.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 51 says “Ambition must be made to counteract ambition.” Section 5.4 shows how that idea works against the President.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Congressional Funding Control and Oversight</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Congress holds the "power of the purse," a fundamental check that ensures no executive policy can be sustained without the explicit financial authorization of the legislature.</p>
+        <p>Congress possesses the most potent weapon against executive overreach: the "power of the purse." The president is the Commander-in-Chief, but they cannot pay a single soldier, launch a single ship, or buy a single bullet without money appropriated by Congress. This funding power can stop executive policies in their tracks. While presidents can order military action, they cannot sustain it indefinitely without congressional financial support.</p>
+        <p>A prime example of this check occurred in the 1970s regarding the Vietnam War. As the war became increasingly unpopular, Congress grew frustrated with the executive branch's continued escalation. Eventually, Congress passed legislation prohibiting the use of funds for combat operations in Southeast Asia. This effectively forced the executive branch to end the war, not because of a change in military strategy, but because the checkbook had been closed. Similarly, in domestic policy, a president may want to build a border wall or expand a social program, but if Congress refuses to allocate the funds, the president’s policy remains merely a wish.</p>
+        <p>Congress also holds the power of oversight and investigation. Committees in the House and Senate can subpoena administration officials, demand documents, and hold hearings to expose executive misconduct. This was vividly displayed during the Watergate scandal in the 1970s, where Senate hearings revealed President Nixon's involvement in the cover-up of the Democratic National Committee headquarters break-in. These investigations eroded Nixon's political support and demonstrated that the executive branch is not immune to public scrutiny.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Power of the purse</span> Congress’s authority to tax and spend, which controls the funding for the executive branch. <span class="sp">Spanish: poder de la bolsa (control del gasto)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Subpoena</span> A legal order that forces a person to testify or hand over documents. <span class="sp">Spanish: citación (subpoena)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Case–Church, 1973</span>The law that barred funds for U.S. combat in Southeast Asia after August 15, 1973, signed July 1, 1973.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 9: “No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law.”</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Judicial Review and Executive Privilege</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">While presidents claim executive privilege to protect internal communications, the Supreme Court has ruled that this right is limited and cannot be used to obstruct the judicial process or conceal evidence.</p>
+        <p>The Supreme Court serves as the arbiter of the boundaries of presidential power. While presidents often claim <dfn id="t-executive-privilege">Executive Privilege</dfn>—the right to keep internal communications confidential to ensure candid advice from aides—the Court has ruled that this right is not absolute. The courts act as a referee, stepping in when the president claims authority that the Constitution does not grant.</p>
+        <p>The landmark case United States v. Nixon (1974) established this limit. President Nixon attempted to use executive privilege to withhold audio recordings of Oval Office conversations sought by a special prosecutor investigating the Watergate scandal. Nixon argued that the separation of powers gave the president absolute confidentiality. The Supreme Court ruled unanimously that while the need for confidential advice is valid, it cannot be used to conceal evidence of a crime. Nixon was forced to release the tapes, which contained incriminating evidence leading to his resignation.</p>
+        <p>Another critical limitation came in Youngstown Sheet &amp; Tube Co. v. Sawyer (1952). During the Korean War, President Truman attempted to seize private steel mills to prevent a labor strike that threatened war production. He argued his powers as Commander-in-Chief gave him inherent authority to act during a national emergency. The Supreme Court struck down Truman's action, ruling that the president could not seize private property without congressional authorization. Justice Robert Jackson’s concurring opinion in this case remains the standard for assessing presidential power, establishing that the president’s authority is at its "lowest ebb" when they act against the expressed will of Congress.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Executive privilege</span> The President’s claimed right to keep some internal communications confidential. <span class="sp">Spanish: privilegio ejecutivo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Judicial review</span> The power of courts to decide whether an action of the government is constitutional. <span class="sp">Spanish: revisión judicial</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Concurring opinion</span> A separate opinion by a justice who agrees with the result but gives different reasons. <span class="sp">Spanish: opinión concurrente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">8–0</span>Vote in United States v. Nixon, decided July 24, 1974. <i>Youngstown</i> was decided 6–3 on June 2, 1952.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article III vests “the judicial Power” in the Supreme Court and other federal courts. <i>Youngstown</i> and <i>Nixon</i> show courts applying that power to the President.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.8</span>Justice Jackson’s Three Zones of Presidential Power</p>
+      <p class="figsub">From his concurring opinion in Youngstown Sheet &amp; Tube Co. v. Sawyer (1952).</p>
+      <table class="cmp"><thead><tr><th>Zone</th><th>Justice Jackson’s description</th><th>Presidential power</th><th>Example</th></tr></thead><tbody><tr><td>1. Congress has authorized the action</td><td>The President acts with an express or implied authorization of Congress</td><td>At its maximum</td><td>A President carrying out a law Congress passed</td></tr><tr><td>2. Congress is silent</td><td>The President acts when Congress has neither granted nor denied authority (the “zone of twilight”)</td><td>Uncertain; depends on the facts</td><td>Truman’s order desegregating the military (1948), when Congress had not acted</td></tr><tr><td>3. Congress opposes the action</td><td>The President acts against the expressed or implied will of Congress</td><td>At its “lowest ebb”</td><td>Truman’s seizure of the steel mills (1952), struck down in <i>Youngstown</i></td></tr></tbody></table>
+      <p class="source">Sources: <i>Youngstown Sheet &amp; Tube Co. v. Sawyer</i>, 343 U.S. 579 (1952), Justice Jackson, concurring (descriptions paraphrased from the opinion); chapter text. Examples classified for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>In which zone is a President’s power the greatest? Which zone is the most uncertain?</li><li>Why was Truman’s steel mill seizure placed in the third zone? Use the chapter’s explanation.</li><li>How does this figure help you evaluate when a unilateral action, such as an executive order, is on firm ground?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Impeachment: The Ultimate Check</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Impeachment serves as the ultimate constitutional check on executive misconduct, though the high threshold for conviction ensures it remains a rare and politically difficult process.</p>
+        <p>The Constitution provides a final, "break-glass-in-case-of-emergency" check: Impeachment. Article II states that the President can be removed for "Treason, Bribery, or other high Crimes and Misdemeanors." The process requires the House of Representatives to impeach (essentially an indictment or formal accusation) by a simple majority, and the Senate to hold a trial, requiring a two-thirds vote to convict and remove.</p>
+        <p>Impeachment is a political, not criminal, process. History has seen only a handful of presidential impeachments—Andrew Johnson, Bill Clinton, and Donald Trump (twice). In none of these cases did the Senate reach the two-thirds threshold to remove the president. Andrew Johnson was impeached in 1868 primarily over a fierce policy disagreement regarding Reconstruction. Bill Clinton was impeached in 1998 for perjury and obstruction of justice. Donald Trump was impeached in 2019 for abuse of power regarding Ukraine and in 2021 for incitement of insurrection. While no president has been removed through this process, the threat of impeachment serves as a powerful deterrent and a reminder that the president is not above the law.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Impeachment</span> A formal accusation by the House of Representatives, similar to an indictment. The Senate then holds the trial. <span class="sp">Spanish: juicio político (acusación formal)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Convict</span> To find an official guilty in an impeachment trial. A two-thirds vote of the Senate is required to convict and remove. <span class="sp">Spanish: condenar (declarar culpable)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">67 of 100</span>Senators needed to convict a president if all 100 vote. That is two-thirds.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The House impeached Andrew Johnson on February 24, 1868, after he tried to remove Secretary of War Edwin Stanton, an action Congress said violated the Tenure of Office Act.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Andrew%20Johnson%20impeachment%20trial.jpg?width=1400" alt="An engraving of a crowded Senate chamber with a central dais, galleries filled with spectators, and rows of senators at desks." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Senate as a court</span>Artist Theodore R. Davis drew the Senate sitting as a court of impeachment for the trial of President Andrew Johnson in 1868. The Senate fell one vote short of the two-thirds needed to convict.<span class="credit">Image: Theodore R. Davis (engraving, 1868) / <a href="https://commons.wikimedia.org/wiki/File:Andrew_Johnson_impeachment_trial.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 5.9</span>How Close Did the Senate Come to Removing a President?</p>
+      <p class="figsub">Percent of the Senate that voted “guilty” on each article. Conviction requires two-thirds (66.7 percent).</p>
+      <svg viewBox="0 0 860 246" role="img" aria-label="Bar chart of the percent of senators voting guilty: Johnson 1868 64.8 percent, Clinton perjury 45, Clinton obstruction 50, Trump 2020 abuse of power 48, Trump 2020 obstruction 47, Trump 2021 incitement 57. Two-thirds, 66.7 percent, was needed."><line x1="220.0" y1="10" x2="220.0" y2="202" stroke="#e6e8ec"/><text x="220.0" y="220" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0.0%</text><line x1="357.5" y1="10" x2="357.5" y2="202" stroke="#e6e8ec"/><text x="357.5" y="220" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25.0%</text><line x1="495.0" y1="10" x2="495.0" y2="202" stroke="#e6e8ec"/><text x="495.0" y="220" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50.0%</text><line x1="586.9" y1="10" x2="586.9" y2="202" stroke="#e6e8ec"/><text x="586.9" y="220" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">66.7%</text><line x1="770.0" y1="10" x2="770.0" y2="202" stroke="#e6e8ec"/><text x="770.0" y="220" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100.0%</text><text x="210" y="31.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Johnson, 1868 (35 of 54)</text><g><title>Johnson, 1868 (35 of 54): 64.8%</title><path d="M220 16 h352.5 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-352.5z" fill="#B58B3A"/></g><text x="584.5" y="31.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">64.8%</text><text x="210" y="63.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Clinton, 1999: perjury</text><g><title>Clinton, 1999: perjury: 45.0%</title><path d="M220 48 h243.5 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-243.5z" fill="#2F6B57"/></g><text x="475.5" y="63.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">45.0%</text><text x="210" y="95.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Clinton, 1999: obstruction</text><g><title>Clinton, 1999: obstruction: 50.0%</title><path d="M220 80 h271.0 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-271.0z" fill="#2F6B57"/></g><text x="503.0" y="95.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">50.0%</text><text x="210" y="127.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Trump, 2020: abuse of power</text><g><title>Trump, 2020: abuse of power: 48.0%</title><path d="M220 112 h260.0 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-260.0z" fill="#2F6B57"/></g><text x="492.0" y="127.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">48.0%</text><text x="210" y="159.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Trump, 2020: obstruction</text><g><title>Trump, 2020: obstruction: 47.0%</title><path d="M220 144 h254.5 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-254.5z" fill="#2F6B57"/></g><text x="486.5" y="159.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">47.0%</text><text x="210" y="191.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Trump, 2021: incitement</text><g><title>Trump, 2021: incitement: 57.0%</title><path d="M220 176 h309.5 a4 4 0 0 1 4 4 v12 a4 4 0 0 1 -4 4 h-309.5z" fill="#2F6B57"/></g><text x="541.5" y="191.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">57.0%</text><line x1="220" y1="10" x2="220" y2="202" stroke="#6f7787" stroke-width="1.5"/><text x="495.0" y="242" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent voting guilty</text></svg>
+      <p class="source">Sources: U.S. Senate, Andrew Johnson impeachment trial (35 guilty and 19 not guilty on the votes of May 16 and 26, 1868; 36 needed); CBS News summary of the Senate votes (Clinton, 45 and 50 guilty; Trump 2020, 52–48 and 53–47 for acquittal; Trump 2021, 57 guilty and 43 not guilty). Percentages calculated for this textbook. Highlighted bar: the closest vote.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Trial</th><th>Article</th><th>Votes to convict</th><th>Needed</th></tr></thead><tbody><tr><td>Andrew Johnson, 1868</td><td>Articles 2, 3, and 11</td><td>35 of 54</td><td>36</td></tr><tr><td>Bill Clinton, 1999</td><td>Perjury</td><td>45 of 100</td><td>67</td></tr><tr><td>Bill Clinton, 1999</td><td>Obstruction of justice</td><td>50 of 100</td><td>67</td></tr><tr><td>Donald Trump, 2020</td><td>Abuse of power</td><td>48 of 100</td><td>67</td></tr><tr><td>Donald Trump, 2020</td><td>Obstruction of Congress</td><td>47 of 100</td><td>67</td></tr><tr><td>Donald Trump, 2021</td><td>Incitement of insurrection</td><td>57 of 100</td><td>67</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which trial came closest to the two-thirds threshold? How many votes was it short?</li><li>The text says the high threshold makes impeachment “rare and politically difficult.” Use the chart to support that claim.</li><li>Does the fact that no president has been removed mean impeachment has failed as a check? Explain both sides.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American presidency is defined by the constant negotiation between the need for decisive executive energy and the constitutional requirement for accountability and shared power.</p>
+        <p>The American presidency is a paradox of power. It is an office of immense authority, capable of launching nuclear weapons and commanding the world's largest economy. Yet, it is also an office of profound constraints, hemmed in by the courts, Congress, the press, and the realities of the electoral map. The essential question—"What are the limits of executive power?"—has no permanent answer. It is renegotiated by every administration.</p>
+        <p>From the administrative modesty of George Washington to the expansive "modern presidency" of the 20th and 21st centuries, the office has grown to meet the demands of a changing world. Presidents leverage their many roles, from Commander-in-Chief to Party Leader, and utilize tools like executive orders and the bully pulpit to advance their agendas. However, the Constitution ensures that this "energy" in the executive is always checked by the "deliberation" of the legislature and the judgment of the courts.</p>
+        <p>Ultimately, the presidency is a "negotiated office." A president cannot simply command; they must persuade. They must persuade Congress to pass laws, persuade the courts to uphold them, and persuade the public to support them. When this negotiation fails, the system gridlocks. But when it succeeds, the presidency can be the engine of immense national progress. As we move forward to study the Federal Bureaucracy in the next chapter, keep in mind that the president sits atop a vast pyramid of non-elected officials. The will of the president must filter down through layers of civil servants before it impacts the daily life of the citizen, adding yet another layer of complexity to the execution of democracy.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 questions</span>Persuade Congress, persuade the courts, persuade the public. The chapter says a President who cannot do all three will gridlock.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 6 turns to the Judiciary, the branch that decides where presidential power ends.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>The Student Council and the Principal</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A principal who wants to cancel an event cannot do it alone if the student council controls the funds. If the principal acts against the council’s vote, a district office can step in as referee. If the principal breaks a serious rule, the district can remove the principal, but only through a long process with a high bar. Each step looks like a check the Constitution places on a President.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Use the Impeachment Power?</div></div>
+      <div class="box-b">
+        <p>You are a Representative. The President has acted in a way you believe goes beyond the Constitution. Impeachment needs a House majority, but a Senate conviction needs two-thirds, and no President has ever been removed.</p>
+        <div class="opts"><div class="opt"><h5>Vote to impeach</h5>You use the strongest check the Constitution offers, but it will likely end in acquittal and deepen political division.</div><div class="opt"><h5>Use other checks</h5>Hearings, a funding limit, or a lawsuit may work without a trial, but they may not stop the action.</div></div>
+        <p class="ask">Which would you choose, and why?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; LIMITS ON POWER</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 5.8. Explain how <i>Youngstown</i> shows the courts acting as a “referee.”</li><li>Use Figure 5.9. Explain why the text says the threat of impeachment is a deterrent even though no President has been removed.</li><li>Write a Counter-Argument to this claim: “Congress and the courts should never limit a President during a crisis.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 5.4 ASSESSMENT</b>Complete the Section 5.4 Assessment in your <i>Chapter 5 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Can the President act when Congress will not? Read four original documents from 1788 to 1952 and decide where each source draws the line.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Sources on Presidential Power</h3>
+        <p>The documents below follow the argument about presidential power from the Founding to the Supreme Court. A <i>Federalist</i> essay from 1788 defends a strong executive. Article II gives the powers and the checks. Theodore Roosevelt’s 1913 autobiography argues for a President who acts unless forbidden. A Supreme Court justice’s 1952 opinion sets out when that kind of action is on firm ground.</p>
+        <p>As you read, notice what each source fears, what it trusts, and what it says the President may do. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1788 to 1952, from a newspaper essay to a Supreme Court opinion.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FEDERALIST ESSAY</small><b>Alexander Hamilton, <i>Federalist No. 70</i> (1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Energy in the Executive is a leading character in the definition of good government. . . . [It is essential] to the security of liberty against the enterprises and assaults of ambition, of faction, and of anarchy. . . . Decision, activity, secrecy, and despatch will generally characterize the proceedings of one man in a much more eminent degree than the proceedings of any greater number.”<cite><i>Federalist No. 70</i>, The Executive Department Further Considered, signed “Publius,” March 18, 1788. Text from the Avalon Project, Yale Law School. Ellipses mark omitted words; the bracketed words are added for clarity.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What qualities does Hamilton want in the executive, and why does he think one person has them more than a group? How does he connect “energy” to liberty?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · FOUNDING DOCUMENT</small><b>The Constitution of the United States, Article II (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Section 1: “The executive Power shall be vested in a President of the United States of America.”<br><br>Section 2: “The President shall be Commander in Chief of the Army and Navy of the United States . . . He shall have Power, by and with the Advice and Consent of the Senate, to make Treaties, provided two thirds of the Senators present concur . . .”<br><br>Section 3: “. . . he shall take Care that the Laws be faithfully executed . . .”<br><br>Section 4: “The President, Vice President and all civil Officers of the United States, shall be removed from Office on Impeachment for, and Conviction of, Treason, Bribery, or other high Crimes and Misdemeanors.”<cite>U.S. Constitution, Article II, Sections 1, 2, 3, and 4. Text from the National Archives transcription. Spelling and capitalization are original. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which words give the President power? Which words limit or check it? Which of these clauses does Section 5.4 use?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · AUTOBIOGRAPHY</small><b>Theodore Roosevelt, <i>An Autobiography</i> (1913)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“I declined to adopt the view that what was imperatively necessary for the Nation could not be done by the President unless he could find some specific authorization to do it. My belief was that it was not only his right but his duty to do anything that the needs of the Nation demanded unless such action was forbidden by the Constitution or by the laws.”<cite>Theodore Roosevelt, <i>An Autobiography</i> (New York: Macmillan, 1913), chapter on the Presidency, “Making an Old Party Progressive.” Text from Standard Ebooks. Roosevelt called this approach the “stewardship” of the presidency.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What must a President find before acting, in Roosevelt’s view? How does this differ from the view that a President may do only what the Constitution specifically allows?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b>Justice Robert H. Jackson, concurring, <i>Youngstown Sheet &amp; Tube Co. v. Sawyer</i> (1952)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“1. When the President acts pursuant to an express or implied authorization of Congress, his authority is at its maximum, for it includes all that he possesses in his own right plus all that Congress can delegate. . . . 3. When the President takes measures incompatible with the expressed or implied will of Congress, his power is at its lowest ebb, for then he can rely only upon his own constitutional powers minus any constitutional powers of Congress over the matter.”<cite><i>Youngstown Sheet &amp; Tube Co. v. Sawyer</i>, 343 U.S. 579 (1952), Justice Jackson, concurring. Text from the Cornell Legal Information Institute. Ellipses mark omitted words, including the middle category about the “zone of twilight.”</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which category describes Truman’s seizure of the steel mills? Why does Jackson say the President’s power is weakest there?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Documents A and B. Which words in Article II supply the “energy” Hamilton wants, and which words limit it?</li>
+        <li>Use Document C and Section 5.2. How is Roosevelt’s view different from the view that a President may act only when a specific clause allows it? Which tool from Section 5.2 fits his view?</li>
+        <li>Use Document D and Section 5.4. Explain why the Court ruled against Truman in <i>Youngstown</i>, and name the category in which Jackson placed the steel mill seizure.</li>
+        <li>Which document would a supporter of strong unilateral power cite most often? Which would a supporter of strict limits cite most often? Explain both choices.</li>
+        <li><b>Making a Claim</b> Can the President act when Congress will not? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>5</b></div>
+    <h2>Chapter 5 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#E0C888" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F1F4EE" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F1F4EE" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>In a system designed to limit power, how does the president actually lead?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>The Many Hats</h5>The President is Chief Executive, Commander-in-Chief, Chief Diplomat, Chief Legislator, Chief of State, and Party Leader. Some roles come from Article II and others from custom, and each has a check. The combination of Chief of State and Party Leader creates tension.</div><div><h5>Executive Authority</h5>Executive orders, vetoes, and signing statements let a President act without or against Congress. They can be fast and powerful, but an order can be reversed by the next President, and Congress and the courts can respond.</div><div><h5>Electoral Legitimacy</h5>The Electoral College and winner-take-all shape campaigns and can produce a winner who lost the popular vote. The modern presidency grew from the Depression and World War II, and the bully pulpit gives the President a platform with limits.</div><div><h5>Checks and Balances</h5>Congress checks the President with the power of the purse, oversight, and impeachment. The courts act as a referee, as in <i>United States v. Nixon</i> and <i>Youngstown</i>. The presidency is a negotiated office.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 5 ASSESSMENT AND SIMULATION</b>Complete the Chapter 5 Assessment (vocabulary, multiple choice, guided analysis, the Federalist No. 70 source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 5 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.4, 12.4.4, 12.1.5): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>Alexander Hamilton, Federalist No. 70, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/fed70.asp">avalon.law.yale.edu/18th_century/fed70.asp</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li>Theodore Roosevelt, <i>An Autobiography</i> (1913), Standard Ebooks: <a href="https://standardebooks.org/ebooks/theodore-roosevelt/an-autobiography/text/chapter-10">standardebooks.org</a></li><li><i>Youngstown Sheet &amp; Tube Co. v. Sawyer</i>, 343 U.S. 579 (1952), Legal Information Institute, Cornell Law School: <a href="https://www.law.cornell.edu/supremecourt/text/343/579">law.cornell.edu</a></li><li>U.S. Senate, Vetoes, 1789 to Present: <a href="https://www.senate.gov/legislative/vetoes/vetoCounts.htm">senate.gov</a></li><li>The American Presidency Project, University of California, Santa Barbara, Executive Orders: <a href="https://www.presidency.ucsb.edu/statistics/data/executive-orders">presidency.ucsb.edu</a></li><li>U.S. National Archives, Electoral College results and electoral vote allocation: <a href="https://www.archives.gov/electoral-college">archives.gov/electoral-college</a></li><li>Federal Election Commission, Federal Elections 2016 and 2000 (popular vote results): <a href="https://www.fec.gov">fec.gov</a></li><li>U.S. Census Bureau, 2020 Census resident population: <a href="https://www.census.gov">census.gov</a></li><li>U.S. Senate, Impeachment (Andrew Johnson trial and impeachment cases); CBS News, “Impeached presidents” (Senate vote counts for Clinton and Trump)</li><li>Executive Order 9981 (1948); <i>United States v. Nixon</i> (1974); <i>Korematsu v. United States</i> (1944); <i>Clinton v. City of New York</i> (1998); Case–Church Amendment (1973)</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Cezary Piwowarczyk (CC BY-SA 4.0, White House); David B. Gleason (CC BY-SA 2.0, Pentagon); Public-domain documents, prints, and paintings: Cornelia Adele Strong Fassett, The Florida Case before the Electoral Commission (painting, 1879); the 1876 lithograph of Washington’s inauguration (Library of Congress); Executive Order 9981 (National Archives); Theodore R. Davis, engraving of the Senate trial of Andrew Johnson (1868). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

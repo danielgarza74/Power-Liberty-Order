@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 17: Social Policy and the Welfare State | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#FAFBFC; --white:#ffffff;
+  --unit:#3D6580; --unit-dk:#23394B; --unit-lt:#EEF2F5; --unit-mid:#9AAFBD;
+  --amber:#D08C23; --amber-lt:#F0C77E; --amber-dk:#8D5F18;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#FAECD3; --cream:#EEF2F5; --pale:#F0C77E;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#D9DEE3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E8EDF0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(35,57,75,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#D8E0E6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#F9FAFB}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#F1F4F6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #DCE3E8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #E8EDF0}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#F9FAFB;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#EFF3F5;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#E8EDF0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#E8EDF0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,57,75,.80) 0%,rgba(35,57,75,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 17 · SOCIAL POLICY AND THE WELFARE STATE</span>
+  <a href="#opener">Opener</a><a href="#s1">17.1 Two Faces</a><a href="#s2">17.2 History</a><a href="#s3">17.3 Healthcare</a><a href="#s4">17.4 Education</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Depression%2C%20Breadlines-long%20line%20of%20people%20waiting%20to%20be%20fed%2C%20New%20York%20City%2C%20in%20the%20absence%20of%20substantial%20government...%20-%20NARA%20-%20196506.tif?width=2000" alt="A long line of men in overcoats, caps, and hats waiting outside a building for free food. A man in a dark jacket hands out a box at the door." style="object-position:50% 10%"></div>
+  <div class="opener-head">
+    <div class="chapnum">17</div>
+    <div>
+      <div class="unitline">Unit 5 · Public Policy and Global Leadership</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Social Policy<br>and the Welfare State</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>When private help was not enough.</b> Men wait in line for free food in New York City, around February 1932, during the Great Depression. Crises like this one led to the programs this chapter examines. <span class="credit">Photo: unknown photographer, U.S. National Archives / <a href="https://commons.wikimedia.org/wiki/File:Depression,_Breadlines-long_line_of_people_waiting_to_be_fed,_New_York_City,_in_the_absence_of_substantial_government..._-_NARA_-_196506.tif">Wikimedia Commons</a>, public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 17.1</span><span class="sl-title">The Two Faces of Welfare</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 17.2</span><span class="sl-title">The Historical Evolution of Social Policy</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 17.3</span><span class="sl-title">Healthcare Policy: The Great Debate</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 17.4</span><span class="sl-title">Education and Federalism</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Voices, One Question: What Do Citizens and Government Owe Each Other?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the American government balance the strategic goal of social stability with the constitutional values of individual responsibility and limited government?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Distinguish entitlement programs from means-tested programs, and explain why they have different political profiles.</li>
+          <li>Trace how the New Deal, the Great Society, and the 1996 welfare reform shaped the American safety net.</li>
+          <li>Analyze the trade-offs among access, quality, and cost in healthcare, and the debate over the Affordable Care Act.</li>
+          <li>Evaluate how federalism shapes education policy, including conditional funding and school choice.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Social Welfare Policy</span><span>Entitlement Programs</span><span>Means-Tested Programs</span><span>Social Security Act of 1935</span><span>Medicare</span><span>Medicaid</span><span>Transfer Payments</span><span>Poverty Line</span><span>Affordable Care Act (ACA)</span><span>Personal Responsibility and Work Opportunity Reconciliation Act (1996)</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 17 Key Concept</p>
+        <p><b>Balance.</b> Americans value both security and self-reliance, and both national action and local control. Every social program picks a point between those values: who qualifies, who pays, and which level of government decides. Voters and leaders disagree about the right balance, and the programs in this chapter show what each choice looks like in practice.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine your class has a fund for emergencies. One rule says everyone who paid in gets help. Another rule says only students who can show a real need get help. Each rule feels fair to some members and unfair to others, and a third group argues that the fund should be run by each classroom, not the whole school. American social policy faces the same questions on a scale of hundreds of millions of people, and its answers affect your family’s health coverage, your school’s funding, and the taxes you will pay.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1787 to 1996 and answer one question: <a href="#case">what do citizens and government owe each other?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.7</code> Students analyze and compare the powers and procedures of the national, state, tribal, and local governments. <i>(Sections 17.3, 17.4)</i></li>
+            <li><code>HSS-PoAD.12.7.8</code> Understand the scope of presidential power and decision making through examination of case studies such as the Cuban Missile Crisis, passage of Great Society legislation, War Powers Act, Gulf War, and Bosnia. <i>(Section 17.2, Great Society legislation)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.10</code> Students formulate questions about and defend their analyses of tensions within our constitutional democracy and the importance of maintaining a balance between the following concepts: majority rule and individual rights; liberty and equality; state and national authority in a federal system; civil disobedience and the rule of law; freedom of the press and the right to a fair trial; the relationship of religion and government. <i>(Sections 17.3, 17.4)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">When Private Help Was Not Enough</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">In the winter of 1932, in the depths of the Great Depression, approximately one in four American workers was unemployed. In cities across the country, breadlines stretched around blocks. Families who had worked steadily for decades found themselves unable to pay rent, unable to buy food, and unable to access medical care for sick children. Private charities, local governments, and extended families — the traditional American mechanisms for addressing individual misfortune — were overwhelmed to the point of collapse. For the first time in the nation's history, the scale and duration of economic suffering forced a fundamental reckoning with a question that American political culture had long resisted: what does a democratic government owe to citizens who, through no fault of their own, cannot sustain themselves and their families?</p>
+        <p>The answer that Franklin Roosevelt's New Deal began to construct in 1933 — and that Lyndon Johnson's Great Society expanded dramatically in the 1960s — was a system of social insurance and income support programs that collectively constitute what Americans call the "welfare state." This term is often used pejoratively in American political discourse, but its descriptive content is precise: it refers to the collection of government programs through which the federal and state governments provide financial assistance, healthcare coverage, nutritional support, housing subsidies, and educational opportunity to citizens who lack adequate access to these necessities through the private market. The American welfare state is not a single, unified system designed according to a coherent plan; it is a historical accumulation of programs created in response to specific crises, guided by competing ideological visions, and shaped by the constraints of federalism and political compromise.</p>
+        <p>Understanding the American welfare state requires grasping two fundamental distinctions. The first is between programs designed as universal social insurance — in which all citizens who meet age or work history criteria are entitled to benefits regardless of their current income — and programs designed as targeted means-tested assistance — in which only those whose income falls below specified thresholds qualify for help. Social Security and Medicare are the preeminent examples of the first category; Medicaid, food stamps, and cash assistance programs are the primary examples of the second. This distinction is not merely administrative; it reflects fundamentally different theories of what government owes its citizens and generates dramatically different levels of political support.</p>
+        <p>The second fundamental distinction is ideological: the ongoing debate over how much government assistance is appropriate, how it should be structured to avoid creating counterproductive incentives, and how responsibility for social welfare should be divided between federal and state governments. This debate has structured American social policy for nearly a century, and it has produced a welfare state that is, by the standards of comparable democracies, both unusually limited in its scope and unusually complex in its architecture. Whether this complexity is a virtue — reflecting appropriate deference to state-level variation and individual responsibility — or a deficiency — reflecting the incomplete fulfillment of a social contract that other democracies have more fully honored — is the central contested question of American social policy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term"><dfn id="t-social-welfare">Social welfare policy</dfn></span> Government programs that provide financial help, healthcare, food, housing, or education to people who cannot easily get them through the private market. <span class="sp">Spanish: política de bienestar social</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Welfare state</span> The collection of government programs through which a nation provides economic security and basic services to its people. <span class="sp">Spanish: estado de bienestar</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">About 1 in 4</span>Share of American workers unemployed in the winter of 1932, according to the chapter’s text.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 17.1 compares two kinds of programs. Section 17.2 follows their history. Section 17.3 covers healthcare. Section 17.4 covers education.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>17.1</b></div>
+    <h2>The Two Faces of Welfare</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#F0C77E" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 17.1, you will</p>
+      <ul><li>Distinguish entitlement programs from means-tested programs</li><li>Explain how funding shapes the political support each type receives</li><li>Describe Medicaid, SNAP, and TANF and how states and the federal government share them</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-social-welfare">Social Welfare Policy</a></li><li><a href="#t-entitlement">Entitlement Programs</a></li><li><a href="#t-means-tested">Means-Tested Programs</a></li><li><a href="#t-transfer">Transfer Payments</a></li><li><a href="#t-medicare">Medicare</a></li><li><a href="#t-medicaid">Medicaid</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each program, list who qualifies, how it is funded, and one political strength or weakness.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: program, who qualifies, how it is funded"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Program</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who qualifies</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">How funded</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Two Faces of Welfare: Entitlements vs. Means-Tested Programs</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American social safety net is not a single system but two parallel systems built on different philosophical foundations, funded through different mechanisms, and serving different constituencies with dramatically different political profiles. Understanding the distinction between <dfn id="t-entitlement">entitlement programs</dfn> — the universal social insurance programs that most Americans regard as earned rights — and <dfn id="t-means-tested">means-tested programs</dfn> — the targeted assistance programs that remain politically vulnerable — is the essential starting point for any serious analysis of American social policy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Entitlement programs</span> Programs, such as Social Security and Medicare, whose benefits go to everyone who meets set rules, usually about age and work history, without a test of current income. <span class="sp">Spanish: programas de derechos (beneficios garantizados)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Means-tested programs</span> Programs, such as Medicaid and SNAP, that give help only to people whose income or assets fall below a set limit. <span class="sp">Spanish: programas basados en recursos</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CHAPTER 16</span>Section 16.4 explained how Social Security and Medicare are funded and why their trust funds face a long-term shortfall.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.1</span>Two Tiers of the American Safety Net</p>
+      <p class="figsub">The two tiers differ in who qualifies, who pays, and how much political protection they have.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Entitlement programs</th><th>Means-tested programs</th></tr></thead><tbody><tr><td>Who qualifies</td><td>Everyone who meets age and work-history rules</td><td>Only households below income or asset limits</td></tr><tr><td>How it is funded</td><td>Dedicated payroll taxes (Social Security, Medicare Part A)</td><td>General tax revenue</td></tr><tr><td>Main examples</td><td>Social Security, Medicare</td><td>Medicaid, SNAP, TANF, housing aid, Earned Income Tax Credit</td></tr><tr><td>Political profile</td><td>Broad, intense support across income groups</td><td>Support more open to challenge</td></tr><tr><td>Strongest case for it</td><td>Workers earned it; a program for everyone is hard to cut</td><td>Money goes to those with the greatest need; cost can be held down</td></tr><tr><td>Strongest criticism</td><td>Costs rise as the population ages; some benefits go to people who do not need them</td><td>Critics call it taxpayer-to-nontaxpayer transfer and argue it can discourage work</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text; table created for this textbook. The strongest case and strongest criticism rows summarize arguments made by each side.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row explains why a proposal to cut Social Security would meet different resistance than a proposal to cut SNAP?</li><li>Which tier do you think a taxpayer with no children would find easier to support? Explain your reasoning.</li><li>Write a Counter-Argument to this claim: “A program that serves only the poor is the fairest way to spend public money.”</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Entitlement Programs: The Architecture of Social Insurance</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The defining characteristic of entitlement programs is that eligibility depends not on demonstrated financial need but on meeting specified categorical criteria — most commonly, age and work history. Social Security's retirement benefits flow to workers who have accumulated a specified number of work credits over their career and who have reached the designated retirement age; <dfn id="t-medicare">Medicare</dfn> covers virtually all Americans over sixty-five regardless of their current income or wealth. A retired corporate executive with substantial investment income receives the same Medicare coverage as a retired factory worker living on Social Security alone — because both are sixty-five, and age is the criterion that confers entitlement.</p>
+        <p>This universal structure has profound political consequences. Because the benefits of Social Security and Medicare are received by citizens across the income distribution — including the large and politically active middle class and the wealthy — these programs have a broad and intensely committed constituency that crosses partisan lines. A proposal to reduce Social Security benefits is not experienced by middle-class recipients as an abstract policy debate about fiscal sustainability; it is experienced as a threat to their retirement security that they have spent their working lives contributing to. The political language of entitlement programs — the sense that workers have "paid in" to a system and have a right to what they were promised — reflects this contributory structure and generates a kind of political protection that purely redistributive programs cannot easily achieve.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Medicare</span> The federal health insurance program, created in 1965, that covers nearly all Americans age 65 and older. <span class="sp">Spanish: Medicare (seguro médico para personas de 65 años o más)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Aug. 14, 1935</span>The day President Roosevelt signed the Social Security Act (Social Security Administration).</div>
+        <div class="connect"><span class="tag">COUNTER-ARGUMENT</span>Some critics note that paying the same benefit regardless of wealth sends money to people who do not need it. Supporters reply that a universal program keeps broad public support.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Social Security has undergone substantial evolution since its creation in 1935. What began as a relatively modest supplemental retirement benefit — never intended by its architects to serve as the primary source of retirement income — has become for many Americans the foundation of their retirement security, filling a gap that private pension coverage and personal savings have increasingly failed to provide. The program also expanded well beyond retirement insurance to include disability benefits for workers who become unable to work before reaching retirement age, and survivor benefits for the spouses and dependent children of deceased workers. These expansions transformed Social Security from a program serving a specific, relatively limited population into a comprehensive social insurance system touching the lives of nearly every American family.</p>
+        <p>Medicare has followed a parallel trajectory of expansion from a program designed to address a specific gap in private insurance coverage to a comprehensive, publicly financed healthcare system for the elderly. When it was created in 1965, Medicare covered hospital care and physician services; subsequent decades brought the addition of managed care options, prescription drug coverage, and preventive care services. Today, Medicare is one of the largest single purchasers of healthcare services in the world, and its coverage and reimbursement decisions shape the operation of the entire American healthcare system in ways that extend far beyond its direct beneficiary population.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1965</span>The year Medicare began covering hospital care and physician services, according to the text.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 17.2 describes the Social Security Amendments of 1965, which created Medicare and Medicaid together.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#F0C77E"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#23394B">E</text></svg><div><small>EXAMPLE</small>Two Retirees</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A retired executive and a retired factory worker both turn 65. Both qualify for Medicare because both are 65 and paid payroll taxes. Now suppose a different program offers help with groceries only to households under an income limit. The executive does not qualify, the factory worker might, and a neighbor just above the limit does not. Supporters of limits say the help should go where the need is greatest. Critics say limits create a gap between those who get help and those who just miss it.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Means-Tested Programs: The Targeted Safety Net and Its Political Vulnerabilities</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Means-tested programs represent the second tier of the American social safety net — programs designed not for universal participation but for targeted assistance to those whose income or assets fall below specified thresholds. <dfn id="t-medicaid">Medicaid</dfn>, the Supplemental Nutrition Assistance Program (commonly known as SNAP or food stamps), Temporary Assistance for Needy Families (TANF), housing assistance, and the Earned Income Tax Credit are the primary components of this targeted system. Unlike Social Security and Medicare, which are funded through dedicated payroll taxes and framed as returns on workers' contributions, means-tested programs are funded through general tax revenues and are explicitly redistributive — transferring resources from taxpayers to non-taxpayers or from higher-income citizens to lower-income ones.</p>
+        <p>This distinction in funding structure and program philosophy produces a dramatically different political environment. Because means-tested program recipients do not "pay in" to these programs in the direct way that Social Security and Medicare participants do, the political justification for their benefits is more vulnerable to challenge. Critics can frame these programs as <dfn id="t-transfer">transfers</dfn> from taxpayers to non-taxpayers — as redistribution that violates the principle that government assistance should reflect individual contribution and personal responsibility rather than mere membership in a needy category. This framing has been particularly potent in a political culture that places unusually strong emphasis on individualism and self-reliance, and it has made means-tested programs politically vulnerable in ways that their entitlement counterparts are not.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term"><dfn id="t-transfer-payment">Transfer payments</dfn></span> Payments from the government to individuals for which no good or service is received in return, such as benefits from a means-tested program. <span class="sp">Spanish: pagos de transferencia</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Medicaid</span> A joint federal-state program, created in 1965, that provides health coverage to eligible low-income people. <span class="sp">Spanish: Medicaid (seguro médico para personas de bajos ingresos)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 sources</span>Medicaid, SNAP, and TANF are three of the means-tested programs named in the text.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Medicaid is the largest means-tested program by expenditure and one of the most complex by design. Created alongside Medicare in 1965, Medicaid is a joint federal-state program: the federal government sets minimum eligibility and coverage requirements and contributes a substantial share of program costs through matching funds, while states administer the program, supplement the federal minimum with their own coverage decisions, and bear a significant portion of the cost. This structure produces substantial variation in the generosity and quality of Medicaid coverage across states — states with more generous matching formulas and more expansive eligibility criteria provide substantially better coverage than states that maintain the minimum federally required standards. The Affordable Care Act of 2010 attempted to reduce this variation by establishing a national Medicaid eligibility floor, but the Supreme Court's ruling in National Federation of Independent Business v. Sebelius (2012) made the Medicaid expansion optional for states, resulting in a patchwork of coverage that left millions of low-income Americans in states that declined the expansion without access to either Medicaid or affordable private insurance.</p>
+        <p>SNAP — the program that replaced the original food stamp program in 2008 — provides monthly benefits on electronic benefit cards that can be used to purchase groceries. The program served approximately 42 million Americans at its peak during the COVID-19 pandemic and has consistently been among the most effective anti-hunger interventions in the American policy toolkit, with research demonstrating significant impacts on food security, child development outcomes, and long-term economic mobility among recipients. <dfn id="t-tanf">TANF</dfn>, by contrast, is a block grant program that gives states substantial discretion in how they design and administer cash assistance — a structure that reflects the welfare reform philosophy of 1996 and that has resulted in widely varying caseloads, benefit levels, and work requirement implementations across states.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">SNAP</span> The Supplemental Nutrition Assistance Program, formerly the Food Stamp Program, which gives eligible households monthly benefits on an electronic card to buy groceries. <span class="sp">Spanish: Programa de Asistencia Nutricional Suplementaria</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Block grant</span> A fixed sum the federal government gives to states to run a program with their own design, within federal guidelines. <span class="sp">Spanish: subvención en bloque</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Oct. 1, 2008</span>The date the Food Stamp Program was renamed SNAP under the 2008 Farm Bill (USDA Food and Nutrition Service).</div>
+        <div class="connect"><span class="tag">CHECK THE DATA</span>The text says SNAP’s peak was about 42 million people during the pandemic. USDA’s Economic Research Service reports a record 47.6 million participants in fiscal year 2013, so the pandemic years were not the all-time high.</div>
+      </div>
+    </div>
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Brooklyn%20Deli%20with%20%22We%20Accept%20Food%20Stamps%2C%20EBT%22%20sign.jpg?width=1400" alt="A glass shop window with a handwritten sign reading We Accept Food Stamps EBT, with MasterCard and Visa stickers beside it." loading="lazy" style="height:auto"><figcaption><span class="phlabel">How SNAP is used</span>A shop window in Brooklyn, New York, with a sign reading “We Accept Food Stamps, EBT,” photographed on March 4, 2009. SNAP benefits are issued on electronic benefit transfer (EBT) cards, which every state operated by July 2004 (USDA).<span class="credit">Photo: Clementine Gallot / <a href="https://commons.wikimedia.org/wiki/File:Brooklyn_Deli_with_"We_Accept_Food_Stamps,_EBT"_sign.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a></span></figcaption></figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Who Should Be Eligible?</div></div>
+      <div class="box-b">
+        <p>A state has a limited budget for a new food assistance program. Two designs are proposed.</p>
+        <div class="opts"><div class="opt"><h5>Open to everyone in the state</h5>A universal program is simple, has broad support, and avoids the gap between those who qualify and those who just miss, but it costs far more per person helped.</div><div class="opt"><h5>Open only below an income limit</h5>Money goes to the households with the least income, but the program may lose political support and some families just above the limit receive nothing.</div></div>
+        <p class="ask">Which design would you choose, and what evidence would persuade you that you were wrong?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; TWO TIERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 17.1. Describe in your own words how Medicare and SNAP differ in who qualifies and how each is funded.</li><li>Use the text. Explain why the chapter says means-tested programs are “politically vulnerable.” Then give the reply a supporter of those programs might make.</li><li>Write a Counter-Argument to this claim: “Programs should help only those who cannot help themselves.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 17.1 ASSESSMENT</b>Complete the Section 17.1 Assessment in your <i>Chapter 17 Assignment</i> packet before you move on to Section 17.2.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>17.2</b></div>
+    <h2>The Historical Evolution of Social Policy</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#F0C77E" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EEF2F5" stroke-width="5"/><path d="M14 100h132" stroke="#F0C77E" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 17.2, you will</p>
+      <ul><li>Explain how the New Deal changed the federal government’s role</li><li>Describe the Great Society programs and the theory of poverty behind them</li><li>Explain the 1996 welfare reform and the arguments for and against it</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-ss-act">Social Security Act of 1935</a></li><li><a href="#t-prwora">Personal Responsibility and Work Opportunity Reconciliation Act (1996)</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each era, list the crisis, the main law, and one criticism.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: era, main law, criticism"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Era</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Main law</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Criticism</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Historical Evolution of Social Policy</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American welfare state did not emerge from a premeditated design or a coherent philosophical blueprint. It is the product of a series of responses to specific crises — economic collapse, racial inequality, healthcare insecurity — each of which produced policy innovations that reflected both the urgency of the problem and the constraints imposed by the existing political culture, constitutional structure, and balance of political forces. Tracing this historical evolution is essential to understanding why the American welfare state looks the way it does — why it is structured around contributory social insurance rather than universal provision, why it relies on federalism and variation rather than national uniformity, and why the expansion of means-tested assistance has been so contested.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social contract</span> The idea that people and their government have mutual obligations: citizens accept rules and pay taxes, and government provides protection and services. <span class="sp">Spanish: contrato social</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Three crises shaped the system: the Depression, the discovery of persistent poverty, and rising healthcare costs.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The New Deal: The Federal Government as Economic Stabilizer</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/CCC-poster-1935.jpg?width=1400" alt="A poster of a figure in blue holding a pickaxe, with the letters CCC and the words For work, play, study and health." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The New Deal at work</span>A Civilian Conservation Corps recruiting poster, made around 1935 by the Illinois WPA Art Project in Chicago. The Corps was a New Deal relief program that employed young men on public projects.<span class="credit">Image: Works Progress Administration, Federal Art Project (designer Albert M. Bender) / <a href="https://commons.wikimedia.org/wiki/File:CCC-poster-1935.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The New Deal programs of the 1930s represented the most fundamental transformation of the federal government's domestic role in American history — a transformation forced by the scale of the Great Depression and the utter inadequacy of existing institutions to address it. Before the Depression, the prevailing American view held that poverty was fundamentally a personal failure — the consequence of individual character deficiencies, poor decisions, or simple bad luck — and that its remedy lay in private charity, local community support, and the individual's own efforts to improve their circumstances. The federal government had no significant role in providing economic security to individuals, and the political culture regarded any such role with deep suspicion as contrary to the values of self-reliance and limited government.</p>
+        <p>The Great Depression demolished this framework. When unemployment reached twenty-five percent and stayed there for years, when banks collapsed by the thousands and wiped out the savings of millions of families who had done nothing wrong, when the scale of suffering overwhelmed every private and local institution capable of responding, it became impossible to maintain the fiction that poverty on this scale was primarily the product of individual failure. The Depression was a systemic crisis — the product of market failures, banking panics, and the interconnected vulnerability of a modern industrial economy — and addressing it required a systemic response at the scale only the federal government could mount.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">New Deal</span> President Franklin Roosevelt’s programs of the 1930s that aimed to provide relief, recovery, and reform during the Great Depression. <span class="sp">Spanish: el Nuevo Trato</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">25%</span>The unemployment rate the text gives for the worst years of the Depression.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Franklin Roosevelt's New Deal assembled this response through a remarkable series of legislative innovations enacted in the first one hundred days of his administration in 1933 and extended through subsequent legislation. The centerpiece of the New Deal's social policy legacy was the <dfn id="t-ss-act">Social Security Act of 1935</dfn>, which established federal old-age insurance for the first time — a contributory system in which workers paid payroll taxes throughout their careers and received monthly benefits upon retirement. The Act also created unemployment insurance, funded through employer taxes and providing temporary income replacement for workers who lost their jobs through no fault of their own. These programs did not constitute a comprehensive welfare state; they left enormous gaps, and their original structure explicitly excluded many of the most vulnerable workers — including agricultural laborers and domestic servants, categories that disproportionately included Black workers in the South — through the political compromises required to secure Southern Democratic support. But they established the principle that the federal government bore a permanent responsibility for the basic economic security of its citizens, and they created institutional precedents that subsequent generations would build upon.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Unemployment insurance</span> A program, funded by employer taxes, that provides temporary income to workers who lose their jobs through no fault of their own. <span class="sp">Spanish: seguro de desempleo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1935</span>The Social Security Act created federal old-age insurance and unemployment insurance.</div>
+        <div class="connect"><span class="tag">CONNECT TO CHAPTER 11</span>The Act’s original exclusions of farm and domestic workers affected Black workers in the South most. Chapter 11 examines the Fourteenth Amendment and civil rights.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Surplus%20Commodities%20Program%20grocery%20display%20USA%201936.gif?width=1400" alt="A black-and-white photograph of a grocery display of fruits and vegetables with signs reading Surplus Foods Are Quality Foods and We Gladly Accept Your Federal Food Stamps." loading="lazy" style="height:auto"><figcaption><span class="phlabel">An early food stamp program</span>A 1936 grocery display for the Surplus Commodities Program, which used “federal food stamps” in the 1930s. The photograph is from the Franklin D. Roosevelt Presidential Library and Museum. Today’s SNAP is a later program.<span class="credit">Photo: Franklin D. Roosevelt Presidential Library and Museum / <a href="https://commons.wikimedia.org/wiki/File:Surplus_Commodities_Program_grocery_display_USA_1936.gif">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Great Society: Expanding the Social Contract</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/New%20US%20Medicare%20Card%20Sample%202018.jpg?width=1400" alt="A sample Medicare card with a red, white, and blue design, the words Medicare Health Insurance, and the name John L Smith." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Medicare today</span>A sample of the Medicare card issued since 2018, distributed by the Centers for Medicare and Medicaid Services. Medicare was created by the Social Security Amendments of 1965.<span class="credit">Photo: Centers for Medicare and Medicaid Services / <a href="https://commons.wikimedia.org/wiki/File:New_US_Medicare_Card_Sample_2018.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">If the New Deal established the principle of federal responsibility for economic security, Lyndon Johnson's Great Society programs of the 1960s represented the most ambitious attempt to translate that principle into a comprehensive social policy architecture. Johnson, who had grown up in poverty in rural Texas and who possessed both a deep personal commitment to social justice and extraordinary legislative skill honed through decades in the Senate, launched what he called the "War on Poverty" in his first State of the Union address in January 1964. The legislative output of the following two years was remarkable in its scope and ambition: the Economic Opportunity Act of 1964, which created programs including Head Start for early childhood education, the Job Corps for youth employment training, and VISTA (Volunteers in Service to America); the Civil Rights Act of 1964 and the Voting Rights Act of 1965, which addressed the structural exclusion of Black Americans from economic opportunity; the Elementary and Secondary Education Act of 1965, which established significant federal funding for public schools for the first time; and most consequentially, the Social Security Amendments of 1965, which created Medicare and Medicaid.</p>
+        <p>Medicare and Medicaid addressed a healthcare gap that had become increasingly visible and increasingly urgent. Before 1965, private health insurance was organized primarily through employment — workers received coverage through employer-sponsored plans, but the elderly, who had typically left the workforce, and the poor, who often worked in jobs without benefits, were left largely without coverage. Medical costs for a serious illness could be catastrophic, and the inability to afford care was both a major cause of poverty among the elderly and a persistent barrier to economic security for low-income families. Medicare created a universal healthcare entitlement for Americans over sixty-five, while Medicaid created a means-tested program providing coverage to low-income individuals and families — a structure that reflected the political need to build a coalition supporting reform while maintaining the contributory principle that distinguished social insurance from welfare.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Great Society</span> President Lyndon Johnson’s 1960s agenda to reduce poverty and expand opportunity, including Medicare, Medicaid, Head Start, and federal aid to schools. <span class="sp">Spanish: la Gran Sociedad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">July 30, 1965</span>The date Medicare and Medicaid were signed into law.</div>
+        <div class="connect"><span class="tag">CHECK THE TEXT</span>The text says the 1965 education law funded public schools “for the first time.” The federal government gave some school aid earlier, so the 1965 law is better described as the first large general program.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The Great Society programs reflected a particular theory of poverty — that it was produced by "structural" factors, including lack of access to education, healthcare, and economic opportunity, rather than by individual character deficiencies — and that addressing these structural factors would break cycles of poverty and enable poor Americans to achieve economic self-sufficiency. This theory was contested at the time and became more contested in subsequent decades, as critics argued that the programs had created perverse incentives that undermined the work and family formation decisions of poor Americans rather than empowering their economic independence. But the measurable impact of Great Society programs on poverty rates was substantial: between 1964 and 1973, the official poverty rate fell from approximately nineteen percent to approximately eleven percent, one of the largest and most rapid reductions in poverty in American history.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Poverty rate</span> The percentage of people whose family income is below the official poverty threshold. <span class="sp">Spanish: tasa de pobreza</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">19.0% to 11.1%</span>Official poverty rate in 1964 and 1973 (Census Bureau).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.2</span>The Official Poverty Rate, 1959–2025</p>
+      <p class="figsub">Share of all people below the official poverty line, by year.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of the official U.S. poverty rate from 1959 to 2025. It falls from 22.4 percent in 1959 to 11.1 percent in 1973, then moves between about 11 and 15 percent, and is 10.2 percent in 2025."><rect x="111.1" y="22" width="88.4" height="292" fill="#EEF2F5" opacity=".9"/><text x="155.3" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600">1964–1973</text><line x1="62" y1="314.0" x2="710" y2="314.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="318.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="257.8" x2="710" y2="257.8" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="261.8" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">5%</text><line x1="62" y1="201.7" x2="710" y2="201.7" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="205.7" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">10%</text><line x1="62" y1="145.5" x2="710" y2="145.5" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="149.5" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">15%</text><line x1="62" y1="89.4" x2="710" y2="89.4" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="93.4" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="62" y1="33.2" x2="710" y2="33.2" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="37.2" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">25%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1959</text><line x1="170.0" y1="314" x2="170.0" y2="319" stroke="#6f7787"/><text x="170.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1970</text><line x1="268.2" y1="314" x2="268.2" y2="319" stroke="#6f7787"/><text x="268.2" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1980</text><line x1="366.4" y1="314" x2="366.4" y2="319" stroke="#6f7787"/><text x="366.4" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1990</text><line x1="464.5" y1="314" x2="464.5" y2="319" stroke="#6f7787"/><text x="464.5" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2000</text><line x1="562.7" y1="314" x2="562.7" y2="319" stroke="#6f7787"/><text x="562.7" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2010</text><line x1="660.9" y1="314" x2="660.9" y2="319" stroke="#6f7787"/><text x="660.9" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2020</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="425.3" y1="25" x2="425.3" y2="314" stroke="#6f7787" stroke-dasharray="3 4"/><text x="425.3" y="21" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#4a5263" text-anchor="middle" font-weight="600">1996 welfare reform</text><g><title>Poverty rate</title><path d="M62.0 62.4 L71.8 64.7 L81.6 68.0 L91.5 78.2 L101.3 95.0 L111.1 100.6 L120.9 119.7 L130.7 148.9 L140.5 154.5 L150.4 170.2 L160.2 178.1 L170.0 172.5 L179.8 173.6 L189.6 180.4 L199.5 189.3 L209.3 188.2 L219.1 175.9 L228.9 181.5 L238.7 183.7 L248.5 186.0 L258.4 182.6 L268.2 168.0 L278.0 156.8 L287.8 145.5 L297.6 143.3 L307.5 152.3 L317.3 156.8 L327.1 161.3 L336.9 163.5 L346.7 168.0 L356.5 170.2 L366.4 162.4 L376.2 154.5 L386.0 147.8 L395.8 144.4 L405.6 151.2 L415.5 159.0 L425.3 160.1 L435.1 164.6 L444.9 171.4 L454.7 180.4 L464.5 187.1 L474.4 182.6 L484.2 178.1 L494.0 173.6 L503.8 171.4 L513.6 172.5 L523.5 175.9 L533.3 173.6 L543.1 165.8 L552.9 153.4 L562.7 144.4 L572.5 145.5 L582.4 145.5 L592.2 147.8 L602.0 147.8 L611.8 162.4 L621.6 171.4 L631.5 175.9 L641.3 181.5 L651.1 196.1 L660.9 184.8 L670.7 183.7 L680.5 184.8 L690.4 189.3 L700.2 193.8 L710.0 199.4" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="199.4" r="4" fill="#3D6580"/><text x="718.0" y="189.4" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Poverty rate</text><text x="718.0" y="203.4" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">10.2% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent of people</text></svg>
+      <p class="source">Source: U.S. Census Bureau, Current Population Survey Annual Social and Economic Supplement, Historical Poverty Table 2 (all people). The official measure counts cash income before taxes and does not count noncash benefits such as SNAP. Where Census lists two estimates for a year because of method changes, the first is used.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Poverty rate</th></tr></thead><tbody><tr><td>1959</td><td>22.4%</td></tr><tr><td>1964</td><td>19.0%</td></tr><tr><td>1973</td><td>11.1%</td></tr><tr><td>1983</td><td>15.2%</td></tr><tr><td>1996</td><td>13.7%</td></tr><tr><td>2010</td><td>15.1%</td></tr><tr><td>2020</td><td>11.5%</td></tr><tr><td>2025</td><td>10.2%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>By how many percentage points did the rate fall between 1964 and 1973? (Subtract.)</li><li>Does the table show the rate continuing to fall after 1973? Describe the pattern.</li><li>The measure leaves out noncash benefits. Explain how that could change what the line shows.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Welfare Reform and the Limits of the Social Contract</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">By the late 1980s and early 1990s, a sustained political and intellectual critique of the welfare state had fundamentally changed the terms of the debate about social policy. Critics from across the ideological spectrum — including neoconservative intellectuals like Charles Murray, who argued in his 1984 book "Losing Ground" that welfare programs had created perverse incentives that discouraged work and family formation, and centrist Democrats who were searching for a new political framework that could compete with Reagan-era conservatism — argued that the existing means-tested welfare system had failed its stated goal of reducing poverty and had instead created a "culture of dependency" in which recipients were trapped in long-term welfare receipt rather than progressing toward economic self-sufficiency.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Perverse incentive</span> A rule that rewards the opposite of what it was meant to encourage, such as a benefit that shrinks when a person earns more. <span class="sp">Spanish: incentivo perverso</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1984</span>The year Charles Murray published <i>Losing Ground</i>, which argued that welfare programs discouraged work and family formation.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p class="lead">This critique provided the intellectual foundation for the most significant restructuring of means-tested social programs since the Great Society: the <dfn id="t-prwora">Personal Responsibility and Work Opportunity Reconciliation Act of 1996</dfn>, signed by President Bill Clinton after he had vetoed two earlier versions that he considered too harsh. The 1996 welfare reform law replaced the existing Aid to Families with Dependent Children program — an open-ended entitlement that provided cash assistance to low-income families with children without time limits or work requirements — with Temporary Assistance for Needy Families, a <dfn id="t-block-grant">block grant</dfn> to states that imposed a five-year lifetime limit on federally funded cash assistance and required recipients to engage in work or work-related activities within two years of receiving benefits.</p>
+        <p>The welfare reform law embodied a fundamental philosophical shift: from viewing public assistance as an entitlement to which needy families had an ongoing legal right, to viewing it as a transitional resource to be used while recipients moved toward self-sufficiency through employment. The shift to block grants gave states substantial discretion to design their own programs within federal guidelines, reflecting the conservative argument that states were better positioned than the federal government to understand the needs of their specific populations and to design effective programs. The results of welfare reform have been persistently contested: supporters point to sharp declines in TANF caseloads and improvements in employment rates among single mothers in the years following the law's passage as evidence of its success; critics note that caseloads fell at least partially because economic growth during the late 1990s provided employment opportunities that would not exist in a recession, and that many former recipients cycled into low-wage, unstable employment that did not provide genuine economic security for their families.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">AFDC</span> Aid to Families with Dependent Children, the cash assistance program for poor families that the 1996 law replaced with TANF. <span class="sp">Spanish: Ayuda a Familias con Hijos Dependientes</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Counter-Argument</span> A reasoned reply to a claim. Strong writers state the best version of the other side before responding. <span class="sp">Spanish: contraargumento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Aug. 22, 1996</span>The day President Clinton signed the welfare reform law (Public Papers of the Presidents).</div>
+        <div class="connect"><span class="tag">TWO READINGS</span>Supporters point to falling caseloads and rising work among single mothers. Critics say caseloads fell partly because of a strong economy, and that many families moved into unstable low-wage work.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.3</span>Five Laws That Built the Safety Net</p>
+      <p class="figsub">Major laws named in this chapter, with signing dates.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Timeline: Social Security Act 1935, Economic Opportunity Act 1964, Medicare and Medicaid 1965, welfare reform 1996, Affordable Care Act 2010."><line x1="40" y1="125" x2="820" y2="125" stroke="#3D6580" stroke-width="4" stroke-linecap="round"/><line x1="40.0" y1="119" x2="40.0" y2="131" stroke="#6f7787" stroke-width="1.5"/><text x="40.0" y="147" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1930</text><line x1="223.5" y1="119" x2="223.5" y2="131" stroke="#6f7787" stroke-width="1.5"/><text x="223.5" y="147" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1950</text><line x1="407.1" y1="119" x2="407.1" y2="131" stroke="#6f7787" stroke-width="1.5"/><text x="407.1" y="147" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1970</text><line x1="590.6" y1="119" x2="590.6" y2="131" stroke="#6f7787" stroke-width="1.5"/><text x="590.6" y="147" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">1990</text><line x1="774.1" y1="119" x2="774.1" y2="131" stroke="#6f7787" stroke-width="1.5"/><text x="774.1" y="147" font-family="Inter, Arial, sans-serif" font-size="11" fill="#6f7787" text-anchor="middle" font-weight="400">2010</text><line x1="85.9" y1="125" x2="85.9" y2="113" stroke="#3D6580" stroke-width="2"/><g><title>1935: Social Security Act Aug. 14, 1935</title><circle cx="85.9" cy="125" r="8" fill="#3D6580" stroke="#fff" stroke-width="2.5"/></g><text x="85.9" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#23394B" text-anchor="start" font-weight="800">1935</text><text x="85.9" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="start" font-weight="700">Social Security Act</text><text x="85.9" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="start" font-weight="400">Aug. 14, 1935</text><line x1="352.0" y1="125" x2="352.0" y2="113" stroke="#3D6580" stroke-width="2"/><g><title>1964: Economic Opportunity Act Aug. 20, 1964</title><circle cx="352.0" cy="125" r="8" fill="#3D6580" stroke="#fff" stroke-width="2.5"/></g><text x="352.0" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#23394B" text-anchor="middle" font-weight="800">1964</text><text x="352.0" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Economic Opportunity Act</text><text x="352.0" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Aug. 20, 1964</text><line x1="361.2" y1="125" x2="361.2" y2="135" stroke="#3D6580" stroke-width="2"/><g><title>1965: Medicare and Medicaid July 30, 1965</title><circle cx="361.2" cy="125" r="8" fill="#3D6580" stroke="#fff" stroke-width="2.5"/></g><text x="361.2" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#23394B" text-anchor="middle" font-weight="800">1965</text><text x="361.2" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Medicare and Medicaid</text><text x="361.2" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">July 30, 1965</text><line x1="645.6" y1="125" x2="645.6" y2="113" stroke="#D08C23" stroke-width="2"/><g><title>1996: Welfare reform (PRWORA) Aug. 22, 1996</title><circle cx="645.6" cy="125" r="8" fill="#D08C23" stroke="#fff" stroke-width="2.5"/></g><text x="645.6" y="85" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#8D5F18" text-anchor="middle" font-weight="800">1996</text><text x="645.6" y="101" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Welfare reform (PRWORA)</text><text x="645.6" y="116" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Aug. 22, 1996</text><line x1="774.1" y1="125" x2="774.1" y2="135" stroke="#3D6580" stroke-width="2"/><g><title>2010: Affordable Care Act Mar. 23, 2010</title><circle cx="774.1" cy="125" r="8" fill="#3D6580" stroke="#fff" stroke-width="2.5"/></g><text x="774.1" y="161" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#23394B" text-anchor="end" font-weight="800">2010</text><text x="774.1" y="177" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="end" font-weight="700">Affordable Care Act</text><text x="774.1" y="192" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="end" font-weight="400">Mar. 23, 2010</text></svg>
+      <p class="source">Sources: Social Security Administration (1935); Public Papers of the Presidents (1996); signing dates for 1964, 1965, and 2010 from the text and National Archives records. Timeline created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Which two laws came one year apart? What problem did each address?</li><li>Which law is highlighted, and how did it change the structure of cash assistance?</li><li>Name one question a historian could ask about why these laws passed when they did.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>A Block Grant or a Federal Rule?</div></div>
+      <div class="box-b">
+        <p>A state and the federal government disagree about how to deliver cash help to poor families.</p>
+        <div class="opts"><div class="opt"><h5>Give states a fixed sum and wide choice</h5>States design programs for local conditions, but benefits and rules vary, and the fixed sum does not rise automatically in a recession.</div><div class="opt"><h5>Set national rules and guarantee help</h5>Families in every state get the same basic help, but the program may fit local needs less well and may cost more in a downturn.</div></div>
+        <p class="ask">Which would you choose, and what would a supporter of the other option say?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING HISTORY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 17.3. Name the law that created each of: federal old-age insurance, Medicare, and TANF.</li><li>Use Figure 17.2. The text says the rate fell from about 19 percent to about 11 percent. Does the table agree? Cite two numbers.</li><li>Write a Counter-Argument to this claim: “The Great Society failed because the poverty rate is still above 10 percent.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 17.2 ASSESSMENT</b>Complete the Section 17.2 Assessment in your <i>Chapter 17 Assignment</i> packet before you move on to Section 17.3.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>17.3</b></div>
+    <h2>Healthcare Policy: The Great Debate</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#F0C77E" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 17.3, you will</p>
+      <ul><li>Explain the triple challenge of access, quality, and cost</li><li>Describe the three pillars of the Affordable Care Act</li><li>Compare the arguments of the ACA’s supporters and critics</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-aca">Affordable Care Act (ACA)</a></li><li><a href="#t-poverty-line">Poverty Line</a></li><li><a href="#t-adverse">Adverse Selection</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each ACA pillar, list what it does and one criticism.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: pillar, what it does, criticism"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Pillar</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it does</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Criticism</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Healthcare Policy: The Great Debate</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">No domain of American social policy is more consequential, more expensive, or more politically contentious than healthcare. The United States spends more per capita on healthcare than any other nation in the world — approximately twice the average of other developed democracies — yet remains the only major industrialized nation that does not provide universal health coverage to its population. Tens of millions of Americans lack health insurance, and medical costs are a leading cause of personal bankruptcy even among the insured. The quality of American medical care is exceptional at the frontier of innovation — in the development of new drugs, devices, and procedures — but access to that care is distributed with radical inequality across income, racial, and geographic lines. Understanding why the American healthcare system has produced these outcomes requires understanding both the structure of the system and the political dynamics that have prevented more comprehensive reform.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Universal coverage</span> A system in which nearly everyone has health insurance or access to care. <span class="sp">Spanish: cobertura universal</span></div>
+        <div class="connect"><span class="tag">CHECK THE DATA</span>The text says the U.S. is the “only” major industrialized nation without universal coverage and that medical costs are a “leading cause” of bankruptcy. Both claims are widely repeated but depend on how countries and causes are defined, so check each source before relying on them.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.4</span>Health Spending per Person, 2024</p>
+      <p class="figsub">U.S. spending compared with the average of comparable countries.</p>
+      <svg viewBox="0 0 860 114" role="img" aria-label="Bar chart: U.S. health spending per person was $14,775 in 2024 and the comparable-country average was $7,860."><line x1="250.0" y1="10" x2="250.0" y2="70" stroke="#e6e8ec"/><text x="250.0" y="88" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$0</text><line x1="380.0" y1="10" x2="380.0" y2="70" stroke="#e6e8ec"/><text x="380.0" y="88" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$4,000</text><line x1="510.0" y1="10" x2="510.0" y2="70" stroke="#e6e8ec"/><text x="510.0" y="88" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$8,000</text><line x1="640.0" y1="10" x2="640.0" y2="70" stroke="#e6e8ec"/><text x="640.0" y="88" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$12,000</text><line x1="770.0" y1="10" x2="770.0" y2="70" stroke="#e6e8ec"/><text x="770.0" y="88" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">$16,000</text><text x="240" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">United States</text><g><title>United States: $14,775</title><path d="M250 16 h476.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-476.2z" fill="#3D6580"/></g><text x="738.2" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$14,775</text><text x="240" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Comparable-country average</text><g><title>Comparable-country average: $7,860</title><path d="M250 46 h251.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-251.4z" fill="#D08C23"/></g><text x="513.5" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">$7,860</text><line x1="250" y1="10" x2="250" y2="70" stroke="#6f7787" stroke-width="1.5"/><text x="510.0" y="110" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Dollars per person, 2024</text></svg>
+      <p class="source">Source: Peterson-KFF Health System Tracker, “How does health spending in the U.S. compare to other countries?” (March 11, 2026). Peer figures from the OECD Health Statistics database; U.S. figures from CMS National Health Expenditure data. Current U.S. dollars.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Measure</th><th>United States</th><th>Comparable-country average</th></tr></thead><tbody><tr><td>Spending per person</td><td>$14,775</td><td>$7,860</td></tr><tr><td>Share of GDP</td><td>17.2%</td><td>11.2%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Divide $14,775 by $7,860. About how many times larger is U.S. spending? Does the text’s “approximately twice” fit?</li><li>Use the table. What share of GDP does each group spend on health?</li><li>Spending does not by itself show quality or access. What other measures would you want?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Triple Challenge: Access, Quality, and Cost</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The challenge facing any serious healthcare reform effort in the United States can be usefully framed as a "triple challenge" in which the three most important dimensions of healthcare performance — access, quality, and cost — are linked by trade-offs that make it difficult to improve all three simultaneously. Expanding access — ensuring that more Americans have coverage and can afford to use it — generally requires either increasing government spending or compelling individuals and businesses to purchase insurance. Maintaining quality — preserving the incentives for medical innovation and the availability of the most effective treatments — generally favors a market-based system in which providers compete for patients and payment is linked to performance. Controlling costs — preventing the growth of healthcare spending from consuming an ever-larger share of the national economy — often requires constraints on the volume or price of services that can conflict with both access and quality goals.</p>
+        <p>The complexity of managing these trade-offs is compounded by the distinctive economics of healthcare markets, which violate several of the assumptions underlying standard market theory. In most markets, consumers can compare prices, evaluate quality, and make informed purchasing decisions; competition among providers drives prices down and quality up. Healthcare markets work differently: patients often lack the expertise to evaluate the quality of care they need, face emergencies in which they have no time to shop for the best price, and depend on providers who have far more information about necessary treatments than they do. Insurance — which insulates patients from the full cost of the care they consume — reduces the price sensitivity that would otherwise discipline healthcare spending. The result is a market that tends systematically toward higher spending than would occur if consumers bore the full cost of their healthcare choices, and one in which the conventional mechanisms of market competition operate imperfectly.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Access, quality, cost</span> The three dimensions of healthcare performance. Improving one often costs something in another. <span class="sp">Spanish: acceso, calidad, costo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 trade-offs</span>Expanding access usually raises spending or requires people to join; limiting cost can limit access or choice.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Affordable Care Act: Reform and Its Discontents</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The <dfn id="t-aca">Affordable Care Act</dfn>, signed by President Barack Obama on March 23, 2010, was the most significant expansion of the American social safety net since the creation of Medicare and Medicaid in 1965. The law did not create a universal public healthcare system — it preserved the existing structure of private insurance markets and employer-sponsored coverage — but it fundamentally restructured those markets in an attempt to extend coverage to the tens of millions of Americans who lacked it, while introducing regulatory requirements designed to prevent the most harmful insurance industry practices.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Affordable Care Act (ACA)</span> The 2010 federal law that expanded Medicaid eligibility, created insurance marketplaces with subsidies, and required most people to have coverage or pay a penalty. <span class="sp">Spanish: Ley de Cuidado de Salud Asequible</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Mar. 23, 2010</span>The date the ACA was signed.</div>
+        <div class="connect"><span class="tag">CONNECT TO THE JUDICIARY</span>The Supreme Court heard challenges to the ACA in <i>National Federation of Independent Business v. Sebelius</i> (2012). Chapter 6 explains how courts review federal laws.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The law's core architecture rested on three interconnected pillars. The first was an expansion of Medicaid eligibility to cover all non-elderly adults with incomes up to 138 percent of the <dfn id="t-poverty-line">federal poverty line</dfn> — a provision intended to extend coverage to millions of low-income adults who were previously ineligible for Medicaid in most states because they lacked children or met other categorical exclusions. The second was the creation of regulated insurance marketplaces — "exchanges" — in which individuals and small businesses could compare and purchase insurance plans meeting federal coverage standards, with subsidies available to help those with moderate incomes afford the premiums. The third was the individual mandate — a requirement that virtually all Americans maintain health insurance coverage or pay a financial penalty — which was included because insurance markets function well only when the insured pool includes a broad mix of healthy and sick individuals; without some mechanism to bring healthy people into the pool, insurance markets tend toward the "<dfn id="t-adverse">adverse selection</dfn>" death spiral in which only sick people buy coverage, driving premiums up and healthy people out in a self-reinforcing cycle.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Poverty line</span> The income level the federal government uses to decide whether a household is in poverty and to set eligibility for many programs. <span class="sp">Spanish: línea de pobreza</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Adverse selection</span> A problem in insurance when mostly sick people buy coverage, pushing premiums up and driving healthy people out. <span class="sp">Spanish: selección adversa</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">138%</span>The income limit, as a share of the poverty line, for the ACA’s Medicaid expansion, as the text states.</div>
+        <div class="connect"><span class="tag">CHECK THE TEXT</span>The law itself sets the limit at 133 percent, and a 5-percent income disregard makes the effective limit 138 percent (Kaiser Family Foundation).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.5</span>The Three Pillars of the ACA</p>
+      <p class="figsub">Each pillar does one job, and each drew a legal or political challenge.</p>
+      <table class="cmp"><thead><tr><th>Pillar</th><th>What it does</th><th>What happened</th></tr></thead><tbody><tr><td>Medicaid expansion</td><td>Extends Medicaid to adults with incomes up to 138% of the poverty line</td><td>Supreme Court made it optional for states in 2012</td></tr><tr><td>Insurance marketplaces</td><td>Lets people and small businesses compare federally approved plans, with subsidies for moderate incomes</td><td>Critics cite premiums and compliance costs</td></tr><tr><td>Individual mandate</td><td>Required most people to have coverage or pay a penalty, to keep healthy people in the insurance pool</td><td>Penalty set to zero by Congress in 2017</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text; table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which pillar addresses adverse selection? Explain how.</li><li>Which pillar depended on the choice of each state? Why?</li><li>Write a Counter-Argument a critic might offer to the claim that the ACA reduced the number of uninsured people.</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>Each of these pillars generated significant controversy. The Medicaid expansion was challenged by twenty-six states in the Supreme Court, which upheld the law's core provisions in National Federation of Independent Business v. Sebelius (2012) but ruled that the federal government could not threaten states with the loss of existing Medicaid funding if they declined the expansion — effectively making the expansion optional. By 2024, most but not all states had adopted the expansion, leaving a coverage gap in holdout states where low-income adults earn too much to qualify for their existing Medicaid programs but too little to afford subsidized marketplace coverage. The individual mandate was zeroed out by Congress in the Tax Cuts and Jobs Act of 2017, removing the financial penalty for remaining uninsured and raising concerns about adverse selection in the individual market. And the prohibition on denying coverage based on pre-existing conditions — one of the law's most popular provisions — has been subject to ongoing legal and legislative challenge.</p>
+        <p>The political debate over the ACA has reflected the broader ideological conflict over the proper scope of government's role in the healthcare market. Supporters argue that the law has substantially reduced the uninsured rate, protected millions of Americans with pre-existing conditions from being denied coverage, and established important precedents for consumer protection in insurance markets. Critics argue that it represents an unconstitutional overreach of federal power into a domain that should be left to states and markets, that it has imposed compliance costs and premium increases on individuals and businesses that outweigh its benefits, and that its preservation of the private insurance system has perpetuated inefficiencies that a more comprehensive public system would eliminate.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pre-existing condition</span> A health problem a person had before applying for insurance. The ACA bars insurers from denying coverage because of one. <span class="sp">Spanish: condición preexistente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">41 of 51</span>Number of states, including the District of Columbia, that had adopted Medicaid expansion, with 10 not adopting (KFF; page dated Nov. 6, 2026).</div>
+        <div class="connect"><span class="tag">TWO READINGS</span>Supporters say the ACA lowered the uninsured rate and protected people with pre-existing conditions. Critics say it overreached into a state and market domain and raised premiums.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.6</span>The Share of Americans Without Health Insurance, 2009–2025</p>
+      <p class="figsub">Percent of all people uninsured for the entire calendar year, Census Bureau survey.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of the percent of Americans without health insurance. It falls from 16.3 percent in 2010 to 8.8 percent in 2016, then ranges from 7.9 to 8.6 percent from 2017 to 2025."><rect x="248.3" y="22" width="32.4" height="292" fill="#EEF2F5" opacity=".9"/><text x="264.5" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600"></text><line x1="62" y1="314.0" x2="710" y2="314.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="318.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="241.0" x2="710" y2="241.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="245.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">5%</text><line x1="62" y1="168.0" x2="710" y2="168.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="172.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">10%</text><line x1="62" y1="95.0" x2="710" y2="95.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="99.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">15%</text><line x1="62" y1="22.0" x2="710" y2="22.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="26.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2009</text><line x1="143.0" y1="314" x2="143.0" y2="319" stroke="#6f7787"/><text x="143.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2011</text><line x1="224.0" y1="314" x2="224.0" y2="319" stroke="#6f7787"/><text x="224.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2013</text><line x1="305.0" y1="314" x2="305.0" y2="319" stroke="#6f7787"/><text x="305.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2015</text><line x1="386.0" y1="314" x2="386.0" y2="319" stroke="#6f7787"/><text x="386.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2017</text><line x1="467.0" y1="314" x2="467.0" y2="319" stroke="#6f7787"/><text x="467.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2019</text><line x1="548.0" y1="314" x2="548.0" y2="319" stroke="#6f7787"/><text x="548.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2021</text><line x1="629.0" y1="314" x2="629.0" y2="319" stroke="#6f7787"/><text x="629.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2023</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><g><title>2009–2016</title><path d="M62.0 78.9 L102.5 76.0 L143.0 84.8 L183.5 89.2 L224.0 119.8 L264.5 162.2 L305.0 181.1 L345.5 185.5" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="345.5" cy="185.5" r="4" fill="#3D6580"/><text x="353.5" y="157.5" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">2009–2016</text><text x="353.5" y="171.5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">8.8% in 2016</text><g><title>2017–2025</title><path d="M386.0 198.7 L426.5 189.9 L467.0 197.2 L507.5 188.4 L548.0 192.8 L588.5 198.7 L629.0 197.2 L669.5 197.2 L710.0 198.7" fill="none" stroke="#8D5F18" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="198.7" r="4" fill="#8D5F18"/><text x="718.0" y="186.7" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">2017–2025</text><text x="718.0" y="200.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">7.9% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent uninsured</text></svg>
+      <p class="source">Source: U.S. Census Bureau, Current Population Survey Annual Social and Economic Supplement: Historical Health Insurance Table HIB-1 (2009–2012), Census reports P60-253 and P60-260 (2013–2016), and Table HHI-01 (2017–2025). The two lines come from different Census tables and are not strictly comparable. The ACA’s main coverage provisions began in 2014.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Uninsured</th></tr></thead><tbody><tr><td>2010</td><td>16.3%</td></tr><tr><td>2013</td><td>13.3%</td></tr><tr><td>2014</td><td>10.4%</td></tr><tr><td>2016</td><td>8.8%</td></tr><tr><td>2017</td><td>7.9%</td></tr><tr><td>2020</td><td>8.6%</td></tr><tr><td>2024</td><td>8.0%</td></tr><tr><td>2025</td><td>7.9%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What was the rate in 2013 and in 2014? By how many points did it change?</li><li>Why does the source note say not to compare the two lines directly?</li><li>The chart cannot show why the rate fell. Name two other factors besides the ACA that a researcher would need to consider.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Another Model: Britain’s National Health Service</div></div>
+      <div class="box-b">
+<p style="margin:0">The United Kingdom launched its National Health Service on July 5, 1948. It is paid for mainly through general taxes and is free at the point of use. The United States instead mixes employer insurance, private plans, and public programs such as Medicare and Medicaid. Supporters of a single public system point to universal access. Supporters of a mixed system point to choice and innovation. Each system makes different trade-offs among access, quality, and cost.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Coverage Rules</div></div>
+      <div class="box-b">
+        <p>A state must decide how to cover more of its uninsured residents.</p>
+        <div class="opts"><div class="opt"><h5>Expand a public program</h5>More low-income adults get coverage and the federal government pays most of the cost, but state budgets and taxes carry part of it.</div><div class="opt"><h5>Use subsidies and private plans</h5>People choose among private plans with help paying premiums, but those just above the cutoff may still find coverage costly.</div></div>
+        <p class="ask">Which would you choose? What would you want to know about cost before deciding?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; HEALTHCARE POLICY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 17.4. Explain the difference between spending more and getting more.</li><li>Use Figure 17.6. Describe the pattern between 2013 and 2016 and give one possible reason from the text.</li><li>Write a Counter-Argument to this claim: “The government should have no role in how Americans get health coverage.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 17.3 ASSESSMENT</b>Complete the Section 17.3 Assessment in your <i>Chapter 17 Assignment</i> packet before you move on to Section 17.4.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>17.4</b></div>
+    <h2>Education and Federalism</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#F0C77E" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EEF2F5" stroke-width="5"/><path d="M14 100h132" stroke="#F0C77E" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 17.4, you will</p>
+      <ul><li>Explain why K-12 education is mainly a state and local responsibility</li><li>Describe how the federal government uses conditional funding</li><li>Compare charter schools and vouchers and the arguments for and against school choice</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-title-i">Title I</a></li><li><a href="#t-charter">Charter Schools</a></li><li><a href="#t-voucher">School Vouchers</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each policy, list who pays, who decides, and one criticism.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: policy, who decides, criticism"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Policy</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who decides</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Criticism</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Education and Federalism</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><div class="crop" style="aspect-ratio:5000/4019"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Washington%20school%2C%20entry%2C%20facing%20north.%20-%20Washington%20Primary%20School%2C%201436%20Polk%20Street%2C%20Napa%2C%20Napa%20County%2C%20CA%20HABS%20CAL%2C28-NAPA%2C3-6.tif?width=1400" alt="A black-and-white photograph of the front entrance of a two-story school building, with a pair of arched double doors under a small porch roof and rows of windows." loading="lazy" style="position:absolute;max-width:none;height:auto;width:112%;left:-6%;top:-5.5%"></div><figcaption><span class="phlabel">A local school</span>Washington Primary School, 1436 Polk Street, Napa, California, photographed from the north at the entry for the Historic American Buildings Survey. Local school districts govern most American schools.<span class="credit">Image: Historic American Buildings Survey / Library of Congress / <a href="https://commons.wikimedia.org/wiki/File:Washington_school,_entry,_facing_north._-_Washington_Primary_School,_1436_Polk_Street,_Napa,_Napa_County,_CA_HABS_CAL,28-NAPA,3-6.tif">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Education occupies a distinctive position in the landscape of American social policy. Unlike healthcare, retirement security, or poverty assistance — domains in which the federal government has assumed a substantial and sometimes dominant role — education has been and remains primarily a state and local responsibility. The vast majority of K-12 public school funding comes from state and local governments, primarily through property taxes and state income and sales tax revenues. Local school boards govern the curriculum, personnel, and policies of local school systems. State legislatures set educational standards, certification requirements, and the formulas by which state funding is distributed among districts.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federalism</span> A system that divides power between a national government and state governments. <span class="sp">Spanish: federalismo</span></div>
+        <div class="connect"><span class="tag">CONNECT TO THE CONSTITUTION</span>The Constitution does not mention education. The Tenth Amendment reserves powers not given to the national government to the states or the people.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.7</span>Who Pays for Public Schools, 2020–21</p>
+      <p class="figsub">Shares of public elementary and secondary school revenue, by source.</p>
+      <svg viewBox="0 0 860 300" role="img" aria-label="Bar chart of public school revenue by source in 2020-21: federal 11 percent, state 46 percent, local 44 percent."><line x1="62" y1="252.0" x2="830" y2="252.0" stroke="#e6e8ec"/><text x="54" y="256.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="174.0" x2="830" y2="174.0" stroke="#e6e8ec"/><text x="54" y="178.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="62" y1="96.0" x2="830" y2="96.0" stroke="#e6e8ec"/><text x="54" y="100.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">40%</text><line x1="62" y1="18.0" x2="830" y2="18.0" stroke="#e6e8ec"/><text x="54" y="22.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">60%</text><line x1="62" y1="252.0" x2="830" y2="252.0" stroke="#6f7787" stroke-width="1.5"/><g><title>Federal: 11%</title><rect x="97.8" y="209.1" width="184.3" height="42.9" rx="3" fill="#D08C23"/></g><text x="190.0" y="203.1" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">11%</text><text x="190.0" y="270" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Federal</text><g><title>State: 46%</title><rect x="353.8" y="72.6" width="184.3" height="179.4" rx="3" fill="#3D6580"/></g><text x="446.0" y="66.6" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">46%</text><text x="446.0" y="270" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">State</text><g><title>Local: 44%</title><rect x="609.8" y="80.4" width="184.3" height="171.6" rx="3" fill="#3D6580"/></g><text x="702.0" y="74.4" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">44%</text><text x="702.0" y="270" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Local</text><text transform="rotate(-90 14 135.0)" x="14" y="135.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent of revenue</text></svg>
+      <p class="source">Source: National Center for Education Statistics, Condition of Education, “Public School Revenue Sources” (2020–21, in constant 2022–23 dollars: federal $101 billion, state $437 billion, local $416 billion). Percents are rounded and total slightly more than 100. 2020–21 was a pandemic year, so the federal share can differ in other years.</p>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which two sources provide most school funding? What taxes does the text say support them?</li><li>The text says the federal share is about 10 percent. How does the figure compare?</li><li>Why might a source that pays only a small share still have a large influence?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Federal Leverage Through Conditional Funding</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal government's role in elementary and secondary education, while substantial in its influence, is relatively modest in its direct financial contribution — accounting for approximately ten percent of total K-12 education spending nationally. What gives federal education policy its leverage is not the size of the federal contribution but the conditions attached to it: by making federal funding conditional on compliance with federal requirements, Congress and the Department of Education have been able to shape educational practice in ways that extend far beyond what their financial contribution would suggest.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Conditional funding</span> Federal money given to states or schools on the condition that they follow federal rules. <span class="sp">Spanish: financiamiento condicional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">About 11%</span>The federal share of public school revenue in 2020–21 (NCES).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 17.8</span>How Conditional Funding Works</p>
+      <p class="figsub">Congress sets conditions, and states choose whether to accept the money.</p>
+      <svg viewBox="0 0 860 130" role="img" aria-label="Flow diagram: Congress passes a law and funds a program, attaches conditions, the state decides to accept or decline, and if it accepts it must meet the requirements."><g><title>Congress: passes a law and funds a program</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#3D6580" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="700">Congress</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">passes a law and funds a</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">program</text><g><title>Conditions: attaches rules for using the money</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#3D6580" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="700">Conditions</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">attaches rules for using</text><text x="329.3" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">the money</text><g><title>State decides: accepts or declines the offer</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#3D6580" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="700">State decides</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">accepts or declines the</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">offer</text><g><title>Accepted: state must meet the requirements</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#D08C23" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="700">Accepted</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">state must meet the</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">requirements</text><path d="M219.0 45.0 L236.3 45.0" stroke="#D08C23" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#D08C23"/><path d="M420.3 45.0 L437.7 45.0" stroke="#D08C23" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#D08C23"/><path d="M621.7 45.0 L639.0 45.0" stroke="#D08C23" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#D08C23"/></svg>
+      <p class="source">Source: Description in this chapter’s text and <i>National Federation of Independent Business v. Sebelius</i> (2012), which limited the threat of losing existing Medicaid funds. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>At which step does a state have a choice? Why does that matter for federalism?</li><li>The text says the ACA decision made Medicaid expansion optional. Which step of the diagram did the Court protect?</li><li>Write a Counter-Argument to this claim: “Federal strings on school money are an unfair intrusion on states.”</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Elementary and Secondary Education Act of 1965, passed as part of the Great Society, established the pattern of conditional federal education funding that has defined the federal role ever since. The Act directed significant federal resources to schools serving high concentrations of low-income students — the <dfn id="t-title-i">Title I</dfn> program that remains a cornerstone of federal education policy today — and attached requirements related to how the money would be used and what outcomes would be measured. The No Child Left Behind Act of 2001, passed with broad bipartisan support in the wake of growing concern about persistently low academic achievement among low-income and minority students, dramatically expanded federal testing and accountability requirements as conditions of Title I funding, requiring states to develop academic standards, administer annual standardized tests in reading and mathematics, and meet ambitious annual proficiency targets with consequences for schools that repeatedly missed their goals.</p>
+        <p>No Child Left Behind represented a significant expansion of federal influence over educational practice — one that proved deeply controversial among educators, state officials, and both conservative federalists who objected to the intrusion of federal mandates into a traditionally state domain and progressive educators who questioned whether the law's emphasis on standardized testing was improving or actually narrowing educational quality. The Every Student Succeeds Act of 2015, which replaced No Child Left Behind with broad bipartisan support, preserved the federal testing requirements while returning substantial discretion to states over how to evaluate and support school performance — a rebalancing that reflected lessons learned from a decade of experience with the more prescriptive federal approach.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Title I</span> The part of the Elementary and Secondary Education Act that sends federal money to schools serving many low-income students. <span class="sp">Spanish: Título I</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1965, 2002, 2015</span>Dates of the ESEA, No Child Left Behind (signed January 2002), and the Every Student Succeeds Act (December 2015).</div>
+        <div class="connect"><span class="tag">CHECK THE TEXT</span>The text calls it the No Child Left Behind Act of 2001. Congress passed the law in late 2001, and President Bush signed it on January 8, 2002.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#F0C77E"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#23394B">E</text></svg><div><small>EXAMPLE</small>Strings on a Grant</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose Congress offers each state money for reading programs, but only if the state tests every student each year. State A accepts and gets the money. State B declines and spends its own funds on a different plan. Supporters of the strings say taxpayers deserve proof that money works. Critics say the strings push every state toward one approach.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">School Choice, Federalism, and the Market Model in Education</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">One of the most persistently contentious debates in American education policy concerns the question of school choice: whether public education funding should be directed exclusively to traditional public schools, or whether it should follow students to whatever school — public, charter, private, or religious — their families choose. This debate reflects the same fundamental tension between public institution and market mechanism that runs through virtually every domain of American social policy, and it maps closely onto the broader ideological conflicts between those who see public institutions as the appropriate vehicle for delivering common civic goods and those who see market competition as the most effective mechanism for driving quality and efficiency.</p>
+        <p><dfn id="t-charter">Charter schools</dfn> — publicly funded but independently operated schools that operate under a charter from a state or local authorizing agency — represent a middle ground in this debate. They are public schools in the sense that they receive public funding, do not charge tuition, and must serve all students without religious instruction; but they operate with significant autonomy from the traditional public school system, free from many of the collective bargaining agreements and bureaucratic requirements that govern traditional public schools. Charter schools have expanded dramatically since the 1990s, and the research on their effectiveness is genuinely mixed: some charter school networks — particularly urban "no-excuses" schools serving low-income minority students — have produced impressive academic gains; many others perform no better than comparable traditional public schools, and some perform significantly worse.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Charter school</span> A publicly funded school run independently under a charter from a state or local authorizer. It charges no tuition. <span class="sp">Spanish: escuela autónoma (charter)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Mixed</span>The text describes research on charter school results as genuinely mixed.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-voucher">School voucher programs</dfn> — which provide public funding directly to families, who may use it to pay tuition at private or religious schools — go further in the market direction by removing the public school as the intermediary between public funding and educational service delivery. Voucher programs have been upheld by the Supreme Court in Zelman v. Simmons-Harris (2002), which held that public funding of private religious school tuition through a generally applicable voucher program does not violate the Establishment Clause of the First Amendment when the routing of funds through private family choice prevents the government from directly funding religious education. The political debate over vouchers reflects both empirical disagreements about whether they improve educational outcomes for participating students and ideological disagreements about whether public education funding should be used to support private and religious schools whose curricula and admissions practices are not subject to the same public accountability requirements as traditional public schools.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">School voucher</span> Public funding that goes to families, who may use it for tuition at private or religious schools. <span class="sp">Spanish: cupón escolar</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2002</span>Year of <i>Zelman v. Simmons-Harris</i>, the Supreme Court case upholding a generally available voucher program.</div>
+        <div class="connect"><span class="tag">CONNECT TO THE FIRST AMENDMENT</span>Zelman concerned the Establishment Clause, which Chapter 8 examines.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Schools in Another Federal System</div></div>
+      <div class="box-b">
+<p style="margin:0">Germany is also a federal country. Its 16 states (<i>Länder</i>) hold primary responsibility for schools, so curriculum and school rules differ by state. The United States and Germany both leave schooling mostly to lower levels of government, but they use different tools to coordinate across states.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Public Money, Private School?</div></div>
+      <div class="box-b">
+        <p>A state considers letting families use public funds at any school they choose.</p>
+        <div class="opts"><div class="opt"><h5>Let funding follow the student</h5>Families gain options and schools compete, but public schools may lose money and private schools face less public accountability.</div><div class="opt"><h5>Keep funding in public schools</h5>Money stays in schools open to all and held to public rules, but families have fewer options if their school is not working.</div></div>
+        <p class="ask">Which would you choose? What evidence would you want about results?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; FEDERALISM IN SCHOOLS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 17.7. Which level of government pays the least, and how does it still shape policy?</li><li>Use Figure 17.8. Explain conditional funding in your own words using one example from the text.</li><li>Write a Counter-Argument to this claim: “Education should be decided only by local school boards.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Social policy in the American republic is, as this chapter has demonstrated, the institutional expression of a continuously contested negotiation over what citizens owe each other and what government owes its citizens. The welfare state that has accumulated through the New Deal, the Great Society, and subsequent decades of legislation represents a substantial commitment of public resources to the economic security, health, and educational opportunity of the population — a commitment that, by the standards of comparable democracies, remains incomplete and unevenly distributed but that has nonetheless transformed the material conditions of American life in ways that are difficult to overstate.</p>
+        <p>The essential question that animates this chapter — how the American government balances the strategic goal of social stability with the constitutional values of individual responsibility and limited government — captures a tension that has never been fully resolved and will not be. The history traced in this chapter demonstrates that every major expansion of the welfare state has been the product of a specific crisis — the Depression, the discovery of persistent poverty amid postwar prosperity, the healthcare cost catastrophe facing elderly Americans before Medicare — that made the political case for government intervention compelling enough to overcome the deep cultural resistance to federal assumption of responsibilities that had previously been left to individuals, families, and communities.</p>
+        <p>The programs created by these episodes of crisis-driven expansion have become embedded in the expectations and plans of tens of millions of Americans, creating constituencies whose political power makes subsequent contraction extremely difficult. Social Security and Medicare have become, in the political sense, untouchable — "third rails" that even fiscally conservative politicians approach with extreme caution. The Affordable Care Act, despite years of politically intense opposition, has survived in substantially its original form because the coverage it provides has become a real and valued feature of millions of lives. This institutional stickiness is not simply political inertia; it reflects the genuine value that social policy provides to real people in concrete circumstances.</p>
+        <p>The challenges ahead — an aging population, rising healthcare costs, the disruptions of automation and the gig economy, and the persistent gaps in the existing safety net — will require the same combination of crisis recognition, political will, and creative policy design that produced the historic expansions of the past. As the next chapter examines, the international context in which these domestic choices are made — the complex, competitive, and interdependent world of foreign policy and national security — adds another dimension to the strategic calculus through which the American republic must navigate its future.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 crises</span>The Depression, persistent poverty, and healthcare costs produced each major expansion, according to the text.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 18 turns from domestic policy to foreign policy and national security.</div>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 17.4 ASSESSMENT</b>Complete the Section 17.4 Assessment in your <i>Chapter 17 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Voices,<br>One Question</h2>
+    <p>What do citizens and government owe each other? Read the Constitution’s spending and reserved-powers clauses, a president’s 1887 veto, and two presidents’ statements on signing landmark laws.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading Four Government Sources</h3>
+        <p>The documents come from 1787 to 1996. The first sets the constitutional ground rules. Grover Cleveland vetoed a bill in 1887 that would have given federal money to Texas farmers hurt by drought. Franklin Roosevelt signed the Social Security Act in 1935. Bill Clinton signed the 1996 welfare reform law. The authors disagree about what government should do, and each makes a serious case.</p>
+        <p>As you read, notice what each source says government may do, what it fears, and who it says should help people in need. Answer the question after each document, then the Synthesizing questions.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1787 to 1996</span>The documents span 209 years of debate about the same question.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · CONSTITUTION</small><b>The Constitution: Spending and Reserved Powers</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article I, Section 8, Clause 1: “The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States.”<br><br>Tenth Amendment (1791): “The powers not delegated to the United States by the Constitution, nor prohibited by it to the States, are reserved to the States respectively, or to the people.”<cite>U.S. Constitution (National Archives transcription). Capitalization is original.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which phrase would a supporter of federal social programs emphasize? Which would a supporter of state control emphasize?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · PRESIDENTIAL VETO</small><b>Grover Cleveland, Veto of the Texas Seed Bill (February 16, 1887)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“I can find no warrant for such an appropriation in the Constitution”<br><br>“. . . though the people support the Government the Government should not support the people.”<br><br>“The friendliness and charity of our countrymen can always be relied upon to relieve their fellow-citizens in misfortune.”<cite>Grover Cleveland, veto message, February 16, 1887, <i>Journal of the House of Representatives</i> (1886), 634–635, as reproduced by The American Yawp and the Miller Center.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What limits does Cleveland see on federal power? Who does he say should help people in misfortune?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SIGNING STATEMENT</small><b>Franklin D. Roosevelt, Statement on Signing the Social Security Act (August 14, 1935)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“We can never insure one hundred percent of the population against one hundred percent of the hazards . . . we have tried to frame a law which will give some measure of protection to the average citizen . . .”<cite>Franklin D. Roosevelt, statement on signing the Social Security Act, August 14, 1935. Social Security Administration, Social Security History. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Roosevelt admit the law cannot do? What does he say it tries to do?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SIGNING REMARKS</small><b>Bill Clinton, Remarks on Signing the Welfare Reform Law (August 22, 1996)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Today we are ending welfare as we know it. But I hope this day will be remembered not for what it ended but for what it began . . .”<cite>William J. Clinton, remarks on signing the Personal Responsibility and Work Opportunity Reconciliation Act, August 22, 1996. <i>Public Papers of the Presidents of the United States: William J. Clinton, 1996, Book II</i>, 1327–1328. Ellipsis marks omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Clinton say the law ended? What does he hope it begins? What do you need to read next to learn what he means?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Documents B and C. Name one thing each author says about the limits of government and one thing each says about who should help people in need.</li>
+        <li>Use Document A and Section 17.4. Explain how both the “general Welfare” clause and the Tenth Amendment could be used in an argument about education funding.</li>
+        <li>Use Document D and Section 17.2. Explain what “ending welfare as we know it” changed in the structure of cash assistance.</li>
+        <li>Use Figure 17.2. Do the documents help explain why Americans disagree about whether programs reduced poverty? Cite one number.</li>
+        <li><b>Making a Claim</b> What do citizens and government owe each other? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>17</b></div>
+    <h2>Chapter 17 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#EEF2F5" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the American government balance the strategic goal of social stability with the constitutional values of individual responsibility and limited government?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Two Tiers</h5>Entitlement programs such as Social Security and Medicare are tied to age and work history and funded by payroll taxes. Means-tested programs such as Medicaid, SNAP, and TANF are funded by general revenue and are more politically vulnerable.</div><div><h5>History</h5>The New Deal, the Great Society, and the 1996 welfare reform each answered a crisis or critique. The official poverty rate fell from 19.0 percent (1964) to 11.1 percent (1973) and was 10.2 percent in 2025.</div><div><h5>Healthcare</h5>Healthcare policy balances access, quality, and cost. The ACA expanded Medicaid, created marketplaces, and set a mandate. The Court made Medicaid expansion optional, and the uninsured rate has been about 8 percent in recent years.</div><div><h5>Education</h5>K-12 schooling is mainly state and local, with the federal government shaping policy through conditional funding such as Title I. School choice, through charters and vouchers, raises questions about public institutions and markets.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 17 ASSESSMENT AND SIMULATION</b>Complete the Chapter 17 Assessment (vocabulary, multiple choice, guided analysis, visual analysis, the Great Society source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 17 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Statistics are labeled with their years. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy (HSS-PoAD.12.7, 12.7.8, 12.10): <a href="https://www.cde.ca.gov/be/st/ss/hstgrade12.asp">cde.ca.gov/be/st/ss</a></li><li>U.S. Census Bureau, Historical Poverty Tables, Table 2 (CPS ASEC): <a href="https://www.census.gov/data/tables/time-series/demo/income-poverty/historical-poverty-people.html">census.gov</a></li><li>U.S. Census Bureau, Historical Health Insurance Tables HIB-1 and HHI-01; reports P60-253 (2014), P60-260 (2016), P60-288 (2024): <a href="https://www.census.gov/topics/health/health-insurance.html">census.gov/topics/health</a></li><li>Peterson-KFF Health System Tracker, “How does health spending in the U.S. compare to other countries?” (March 11, 2026): <a href="https://www.healthsystemtracker.org/chart-collection/health-spending-u-s-compare-countries/">healthsystemtracker.org</a></li><li>KFF, “Status of State Medicaid Expansion Decisions”: <a href="https://www.kff.org">kff.org</a></li><li>USDA Food and Nutrition Service, SNAP history; USDA Economic Research Service, SNAP participation data: <a href="https://www.fns.usda.gov/snap">fns.usda.gov/snap</a></li><li>National Center for Education Statistics, Condition of Education, Public School Revenue Sources: <a href="https://nces.ed.gov/programs/coe/">nces.ed.gov/programs/coe</a></li><li>Social Security Administration, Social Security History, Presidential Statement Signing the Social Security Act (1935): <a href="https://www.ssa.gov/history/fdrstmts.html">ssa.gov/history</a></li><li>Grover Cleveland, Veto of the Texas Seed Bill (1887), The American Yawp Reader: <a href="https://www.americanyawp.com/reader/16-capital-and-labor/grover-clevelands-veto-of-the-texas-seed-bill-february-16-1887/">americanyawp.com</a></li><li>William J. Clinton, Remarks on Signing the Welfare Reform Act (1996), Public Papers of the Presidents: <a href="https://www.govinfo.gov/content/pkg/PPP-1996-book2/html/PPP-1996-book2-doc-pg1325.htm">govinfo.gov</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov</a></li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons. Public domain: men in a food line, New York City, c. February 1932 (U.S. National Archives); Civilian Conservation Corps poster, c. 1935 (Works Progress Administration, Federal Art Project, designer Albert M. Bender); Surplus Commodities Program grocery display, 1936 (Franklin D. Roosevelt Presidential Library and Museum); sample Medicare card (Centers for Medicare and Medicaid Services); Washington Primary School, Napa, California (Historic American Buildings Survey, Library of Congress). Licensed <a href="https://creativecommons.org/licenses/by/2.0/">CC BY 2.0</a>: “We Accept Food Stamps, EBT” shop window, Brooklyn, March 4, 2009, by Clementine Gallot. Images appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

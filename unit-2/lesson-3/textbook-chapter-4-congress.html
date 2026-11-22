@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 4: Congress | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fbfaf6; --white:#ffffff;
+  --unit:#2F6B57; --unit-dk:#1F3D33; --unit-lt:#F1F4EE; --unit-mid:#9DBBAE;
+  --amber:#B58B3A; --amber-lt:#E0C888; --amber-dk:#6E5217;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#F7F0DC; --cream:#F1F4EE; --pale:#E0C888;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#e9e7e0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(31,61,51,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d8cfb8}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf7ef}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f3efe6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #e0d7c6;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #eee4d3}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf7f1;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1f0eb;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#e9e7e0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#e9e7e0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,61,51,.80) 0%,rgba(31,61,51,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 4 · CONGRESS</span>
+  <a href="#opener">Opener</a><a href="#s1">4.1 House vs. Senate</a><a href="#s2">4.2 Lawmaking</a><a href="#s3">4.3 Representation</a><a href="#s4">4.4 Oversight</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/United%20States%20Capitol%20-%20west%20front.jpg?width=2000" alt="The west front of the United States Capitol, with its white dome and long wings, seen across a lawn." style="object-position:50% 40%"></div>
+  <div class="opener-head">
+    <div class="chapnum">4</div>
+    <div>
+      <div class="unitline">Unit 2 · Interactions Among Branches of Government</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Congress</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the First Branch meets.</b> The west front of the United States Capitol in Washington, D.C., where the House of Representatives and the Senate hold their sessions in two separate chambers. <span class="credit">Photo: Architect of the Capitol / <a href="https://commons.wikimedia.org/wiki/File:United_States_Capitol_-_west_front.jpg">Wikimedia Commons</a>, public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 4.1</span><span class="sl-title">The Structural Equilibrium: House vs. Senate</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 4.2</span><span class="sl-title">The Legislative Process: Committees, Leadership, and Lawmaking</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 4.3</span><span class="sl-title">Representation vs. Governance</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 4.4</span><span class="sl-title">Congressional Oversight: Constraining the Executive</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Should Congress Be Built to Be Slow?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the structure of Congress reflect the strategic compromise between state interests, popular will, and the "Logic of Internal Restraints"?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Analyze the structural and philosophical differences between the House of Representatives and the Senate to understand bicameralism.</li><li>Evaluate the strategic roles of committees, leadership, and procedural rules like the filibuster in the lawmaking process.</li><li>Examine the tension between local representation and national governance, specifically through the lenses of incumbency, gerrymandering, and pork barrel legislation.</li><li>Assess the mechanisms of congressional oversight, including the power of the purse and investigative hearings, as checks on executive power.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Bicameralism</span><span>Constituent</span><span>Incumbency Advantage</span><span>Gerrymandering</span><span>Power of the Purse</span><span>Filibuster</span><span>Cloture</span><span>Seniority System</span><span>Logrolling</span><span>Pork Barrel Legislation</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 4 Key Concept</p>
+        <p><b>Institutional friction</b> is the slowing effect that comes from dividing power. Congress has two chambers, many committees, and rules that let a minority delay a vote. Each one is a place where a bill can be stopped, so only ideas with broad and lasting support become law.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine that a rule change at Shafter High needed approval from a student council elected by class size <i>and</i> a committee with one member from every club. A rule that excited one group could still be stopped by the other. It would be slow and sometimes annoying, but anything that passed would have wide support. That is how Congress is built, and it explains why Congress often seems frustrating yet produces laws that last.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1774 to 1787 and answer one question: <a href="#case">should Congress be built to be slow?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoAD.12.4</code> Students analyze the unique roles and responsibilities of the three branches of government as established by the U.S. Constitution.</li>
+            <li><code>12.4.1</code> Discuss Article I of the Constitution as it relates to the legislative branch, including eligibility for office and lengths of terms of representatives and senators; election to office; the roles of the House and Senate in impeachment proceedings; the role of the vice president; the enumerated legislative powers; and the process by which a bill becomes a law. <i>(Sections 4.1, 4.2, 4.4, Case Study)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.1.5</code> Describe the systems of separated and shared powers, the role of organized interests (Federalist Paper Number 10), checks and balances (Federalist Paper Number 51), the importance of an independent judiciary (Federalist Paper Number 78), enumerated powers, rule of law, federalism, and civilian control of the military. <i>(Sections 4.1, 4.4)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">A Strategic Bargain</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Roger%20Sherman%201721-1793%20by%20Ralph%20Earl.jpeg?width=1400" alt="A painted portrait of an older man in a dark coat and white neckcloth, seated and looking toward the viewer." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Roger Sherman of Connecticut</span>Ralph Earl painted this portrait of Roger Sherman around 1775. Sherman, a delegate from Connecticut, proposed the compromise that gave Congress two chambers.<span class="credit">Image: Ralph Earl (painter, c. 1775) / <a href="https://commons.wikimedia.org/wiki/File:Roger_Sherman_1721-1793_by_Ralph_Earl.jpeg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The foundation of the American legislature is a strategic bargain. By satisfying large states with population-based representation and small states with equal representation, the Framers created a bicameral system that balances the weight of people against the sovereignty of states.</p>
+        <p>In the summer of 1787, the delegates to the Constitutional Convention were deadlocked. The small states, fearing they would be swallowed up by the larger states, demanded equal representation in the new national legislature. The large states, believing that power should derive from the people, insisted that representation should be based on population. The convention nearly collapsed until Roger Sherman of Connecticut proposed a solution that would become known as the Great Compromise. He suggested a legislature divided into two distinct chambers: a House of Representatives based on population to satisfy the large states, and a Senate based on equal state representation to satisfy the small states. This moment created the concept of American <dfn id="t-bicameralism">bicameralism</dfn>, the division of a legislature into two distinct houses with distinct powers and constituencies.</p>
+        <p>However, this division was not merely a political deal to save the convention; it was a deliberate philosophical choice. James Madison and the other Framers of the Constitution intended for Article I—the Legislative Branch—to be the "First Branch" of government, the engine that translates the will of the people into law. Yet, they were equally terrified of what they called the "tyranny of the majority." They feared that a single, powerful legislative body could act too quickly, swept up by the passions of the moment to strip away the rights of the minority. By splitting the legislature in two, they created an internal check. For a bill to become law, it cannot simply pass; it must survive two entirely different gauntlets. It must pass the House, which is designed to be hot, loud, and responsive to the immediate demands of the people. Then, it must pass the Senate, which is designed to be cool, slow, and insulated from public pressure.</p>
+        <p>This structural design creates a government that is intentionally inefficient. In the American system, efficiency is not the primary goal; liberty is. The logic of internal restraints suggests that if it is difficult to pass laws, the government will only act when there is a broad, sustained consensus. This dynamic creates a perpetual friction between the two chambers. The House often views the Senate as an elitist graveyard for good ideas, while the Senate views the House as a chaotic source of radicalism. This chapter explores how this friction is not a bug in the system, but its primary feature. We will examine how the complex machinery of committees, the strategic use of the filibuster, and the pressure of gerrymandering shape the laws that govern the United States. We will look beyond the diagrams of how a bill becomes a law to understand the political realities of logrolling, the incumbency advantage, and the fierce battle for the power of the purse. Ultimately, we will see that Congress is the arena where the diverse and often conflicting interests of 330 million Americans are forced to meet, argue, and, occasionally, compromise.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bicameralism</span> The division of a legislature into two chambers with different powers and constituencies. <span class="sp">Spanish: bicameralismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">535</span>Voting members of Congress: 435 Representatives and 100 Senators.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 4.1 compares the House and the Senate. Sections 4.2 and 4.3 follow a bill through Congress and ask whom members really serve. Section 4.4 shows how Congress checks the President.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>4.1</b></div>
+    <h2>The Structural Equilibrium: House vs. Senate</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E0C888" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1F4EE" stroke-width="5"/><path d="M14 100h132" stroke="#E0C888" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 4.1, you will</p>
+      <ul><li>Compare the House and the Senate by size, term length, and rules of debate</li><li>Explain why the Framers called the Senate a “cooling saucer”</li><li>Explain how institutional friction protects against the tyranny of the majority</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-bicameralism">Bicameralism</a></li><li><a href="#t-constituent">Constituent</a></li><li><a href="#t-filibuster">Filibuster</a></li><li><a href="#t-cloture">Cloture</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a feature, how the House handles it, and how the Senate handles it.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: feature, House, Senate"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Feature</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">House</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Senate</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Structural Equilibrium of Congress: House vs. Senate</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The architecture of the U.S. Congress is a study in contrasts. While both the House of Representatives and the Senate are responsible for writing federal law, they were built to represent different slices of American society and to operate on different timelines. This concept, often called "institutional differentiation," ensures that the legislative branch can simultaneously be responsive to the people and responsible for the long-term stability of the state. To understand how Congress functions, one must understand that the House and Senate are not just different in size; they are different in soul.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Institutional differentiation</span> The idea that two institutions built differently can serve different purposes within one system. <span class="sp">Spanish: diferenciación institucional</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 1 gives “all legislative Powers” to a Congress that “shall consist of a Senate and House of Representatives.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.1</span>The House and the Senate Compared</p>
+      <p class="figsub">Two chambers built on purpose to be different.</p>
+      <table class="cmp"><thead><tr><th>Feature</th><th>House of Representatives</th><th>Senate</th></tr></thead><tbody><tr><td>Members</td><td>435 voting members, divided among the states by population</td><td>100 Senators, two from each state</td></tr><tr><td>Term</td><td>2 years; every seat is up for election every two years</td><td>6 years; one-third of the seats are up every two years</td></tr><tr><td>Minimum age and citizenship</td><td>25 years old; citizen for 7 years</td><td>30 years old; citizen for 9 years</td></tr><tr><td>Represents</td><td>A district of about the same population as every other district</td><td>An entire state, large or small</td></tr><tr><td>Debate</td><td>Limited, controlled by the majority and the Speaker</td><td>Traditionally unlimited, which makes the filibuster possible</td></tr><tr><td>Votes to pass a bill</td><td>A simple majority (218 of 435 if every member votes)</td><td>51 of 100, but 60 to end a filibuster</td></tr></tbody></table>
+      <p class="source">Sources: U.S. Constitution, Article I, Sections 2 and 3 (terms, age, citizenship); chapter text (size, rules, votes). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the biggest difference in how each chamber is connected to voters? Explain.</li><li>Use the Term row. Why would a Representative be more likely to follow the mood of the public than a Senator?</li><li>Which features of the Senate make it harder for a majority to act quickly?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The People’s House: Immediacy and Majoritarianism</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The House is the "gas pedal" of government. Designed to be hyper-responsive to public opinion, its short terms and majoritarian rules allow it to translate shifts in the national mood into immediate legislative action.</p>
+        <p>The House of Representatives was designed to be the most democratic institution in the federal government. The Framers referred to it as the "Grand Inquest of the Nation." With 435 voting members, it is the larger of the two chambers, and its structure is defined by the frequency of its elections. Every member of the House serves a two-year term. This is an incredibly short period in political time. A member of the House is effectively always running for reelection. The moment they take the oath of office, they are looking toward the next campaign. This creates a chamber that is hyper-responsive to shifts in public opinion. When the mood of the country changes, the composition of the House changes with it.</p>
+        <p>For example, in the midterm elections of 1994, American voters, frustrated with the Democratic administration, swept the Republican party into power in the House for the first time in forty years. This "Republican Revolution" was immediate and dramatic, reflecting the specific frustrations of voters in that specific year. Similarly, in 2018, a wave of dissatisfaction with the presidency led to a Democratic takeover of the House. In both cases, the House functioned exactly as intended: it acted as a barometer of the national mood.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Majoritarian</span> A system in which the largest group, a majority, decides. The House is majoritarian. <span class="sp">Spanish: mayoritario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">230 of 435</span>House seats won by the Republican Party in the 1994 election, giving it a majority for the first time since the 1952 election.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The House elects all of its members every two years, so a wave election can change control quickly. The Senate renews only one-third of its seats each time.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Because the House represents the population, the number of representatives varies wildly between states. California, with its massive population, sends dozens of representatives to Washington, while Wyoming sends only one. Each representative serves a specific geographic area known as a district. The residents of this district are the representative's <dfn id="t-constituent">constituent</dfn>s. The link between a House member and their constituent is intended to be intimate and direct. If a local factory closes or a natural disaster strikes, the House member is expected to respond immediately.</p>
+        <p>To manage 435 members, the House relies on strict, hierarchical rules. It is a majoritarian institution, meaning a simple majority (218 votes) can do almost anything it wants, provided the leadership stays united. Debate is limited, often to just minutes per member. The Speaker of the House holds immense power to control what bills reach the floor and how they are debated. There is no room for a lone wolf to stop the gears of the House; the majority rules, and it rules with an iron fist. This structure allows the House to move quickly, passing sweeping legislation regarding taxes, budgets, and regulations—assuming the majority party agrees.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Constituent</span> A person who lives in the district or state that an elected official represents. <span class="sp">Spanish: elector del distrito (constituyente)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">52 and 1</span>House seats held by California and Wyoming after the 2020 Census. Every state has at least one.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 4.3 explains how members serve their constituents and how district lines are drawn.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Samuel%20F.%20B.%20Morse%2C%20The%20House%20of%20Representatives%2C%201822%2C%20probably%20reworked%201823%2C%20NGA%20166463.jpg?width=1400" alt="A painting of the House chamber at night. Dozens of men in dark coats stand and sit in groups under a large chandelier as a man lights it." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The House at work</span>Samuel F. B. Morse painted the House of Representatives chamber in 1822 and probably reworked the painting in 1823. The scene is an evening session: a clock reads 6:14, and a man on a ladder lights the chandelier. The National Gallery of Art notes that an 1827 exhibition listing described the work as containing 88 portraits.<span class="credit">Image: Samuel F. B. Morse (painter, 1822–1823) / <a href="https://commons.wikimedia.org/wiki/File:Samuel_F._B._Morse,_The_House_of_Representatives,_1822,_probably_reworked_1823,_NGA_166463.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span></figcaption></figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Senate: The Cooling Saucer</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Senate serves as the "cooling saucer" for legislation. Its staggered six-year terms and unlimited debate rules are intentional brakes, designed to cool the "hot" passions of the House and prevent the passage of impulsive laws.</p>
+        <p>If the House is the gas pedal of American government, the Senate is the brakes. The Senate consists of 100 members, two from each state, regardless of population. This means that the 40 million residents of California have the same number of votes in the Senate as the 600,000 residents of Wyoming. This design feature creates a federalist balance, ensuring that the interests of sovereign states are protected against the sheer demographic weight of the large population centers.</p>
+        <p>Senators serve six-year terms, with only one-third of the chamber up for election every two years. This "staggered" timeline is crucial. It insulates the Senate from the sudden "transient passions" of the electorate. While a political wave might wipe out a majority in the House, it rarely flips the entire Senate in a single cycle. This allows Senators to take a longer view of policy, theoretically making decisions based on long-term national interest rather than immediate popularity.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cooling saucer</span> A name for the Senate, taken from a story in which a saucer cools hot coffee as the Senate cools “hot” legislation. <span class="sp">Spanish: el platillo (para enfriar el café)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2 per state</span>Every state has two Senators, whatever its population.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Constitution originally had state legislatures choose Senators. The Seventeenth Amendment (1913) moved the choice to voters.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.2</span>Residents Per Senator, 2020</p>
+      <p class="figsub">Each state has two Senators. This chart divides each state’s 2020 Census population by two.</p>
+      <svg viewBox="0 0 860 258" role="img" aria-label="Bar chart of residents per Senator: California 19.77 million, Texas 14.57 million, Florida 10.77 million, New York 10.10 million, Vermont 0.32 million, Wyoming 0.29 million"><line x1="140.0" y1="10" x2="140.0" y2="214" stroke="#e6e8ec"/><text x="140.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0.00 million</text><line x1="297.5" y1="10" x2="297.5" y2="214" stroke="#e6e8ec"/><text x="297.5" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">5.00 million</text><line x1="455.0" y1="10" x2="455.0" y2="214" stroke="#e6e8ec"/><text x="455.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">10.00 million</text><line x1="612.5" y1="10" x2="612.5" y2="214" stroke="#e6e8ec"/><text x="612.5" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">15.00 million</text><line x1="770.0" y1="10" x2="770.0" y2="214" stroke="#e6e8ec"/><text x="770.0" y="232" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20.00 million</text><text x="130" y="32.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">California</text><g><title>California: 19.77 million</title><path d="M140 16 h618.7 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-618.7z" fill="#B58B3A"/></g><text x="770.7" y="32.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">19.77 million</text><text x="130" y="66.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Texas</text><g><title>Texas: 14.57 million</title><path d="M140 50 h455.0 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-455.0z" fill="#2F6B57"/></g><text x="607.0" y="66.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">14.57 million</text><text x="130" y="100.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Florida</text><g><title>Florida: 10.77 million</title><path d="M140 84 h335.2 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-335.2z" fill="#2F6B57"/></g><text x="487.2" y="100.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">10.77 million</text><text x="130" y="134.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New York</text><g><title>New York: 10.10 million</title><path d="M140 118 h314.2 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-314.2z" fill="#2F6B57"/></g><text x="466.2" y="134.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">10.10 million</text><text x="130" y="168.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Vermont</text><g><title>Vermont: 0.32 million</title><path d="M140 152 h6.1 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-6.1z" fill="#2F6B57"/></g><text x="158.1" y="168.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">0.32 million</text><text x="130" y="202.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Wyoming</text><g><title>Wyoming: 0.29 million</title><path d="M140 186 h5.1 a4 4 0 0 1 4 4 v14 a4 4 0 0 1 -4 4 h-5.1z" fill="#B58B3A"/></g><text x="157.1" y="202.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">0.29 million</text><line x1="140" y1="10" x2="140" y2="214" stroke="#6f7787" stroke-width="1.5"/><text x="455.0" y="254" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Residents per Senator (millions)</text></svg>
+      <p class="source">Source: U.S. Census Bureau, 2020 Census resident population (California 39,538,223; Texas 29,145,505; Florida 21,538,187; New York 20,201,249; Vermont 643,077; Wyoming 576,851). Per-Senator figures calculated for this textbook. Highlighted bars: the largest and smallest.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>State</th><th>2020 population</th><th>Residents per Senator</th></tr></thead><tbody><tr><td>California</td><td>39,538,223</td><td>19,769,111</td></tr><tr><td>Texas</td><td>29,145,505</td><td>14,572,752</td></tr><tr><td>Florida</td><td>21,538,187</td><td>10,769,093</td></tr><tr><td>New York</td><td>20,201,249</td><td>10,100,624</td></tr><tr><td>Vermont</td><td>643,077</td><td>321,538</td></tr><tr><td>Wyoming</td><td>576,851</td><td>288,425</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many times more residents does a California Senator represent than a Wyoming Senator? (Divide the two numbers.)</li><li>Does California have more votes in the Senate than Wyoming? Explain what the chart shows about that design.</li><li>Which feature of the Great Compromise does this chart illustrate?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>There is a famous, perhaps apocryphal, story involving George Washington and Thomas Jefferson that illustrates this dynamic. Jefferson, who had been in France during the Constitutional Convention, asked Washington why they had created a second chamber. Washington asked Jefferson, "Why do you pour your coffee into your saucer?" Jefferson replied, "To cool it." Washington answered, "Even so, we pour legislation into the senatorial saucer to cool it."</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Apocryphal</span> Told as true, but of doubtful authenticity. <span class="sp">Spanish: apócrifo</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The chapter calls this story “perhaps apocryphal.” No one can show that Washington and Jefferson had this conversation, but the image of the saucer has stuck.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Because it is smaller, the Senate operates with much looser rules than the House. It prizes deliberation over speed. In the Senate, the minority has tremendous power. Unlike the House, where the majority can cut off debate at will, the Senate has traditionally operated on the principle of unlimited debate. This tradition gave rise to the <dfn id="t-filibuster">filibuster</dfn>, a tactic used by a minority of senators to delay or block a vote on a bill by holding the floor and refusing to yield. To stop a filibuster, the Senate requires a procedure called <dfn id="t-cloture">cloture</dfn>, which demands a supermajority of 60 votes. This means that in the modern Senate, passing a controversial law effectively requires 60 votes, not 51. This high threshold forces bipartisan compromise, but it also leads to frequent gridlock.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Filibuster</span> A tactic in which senators delay or block a vote by holding the floor and refusing to yield. <span class="sp">Spanish: obstruccionismo parlamentario (filibusterismo)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cloture</span> The Senate procedure that ends debate. It usually requires 60 votes. <span class="sp">Spanish: cierre del debate</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">60 of 100</span>Votes needed for cloture on most bills. For nominations, the Senate changed its rules in 2013 and 2017 so that a simple majority is enough.</div>
+      </div>
+    </div>
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Flickr%20-%20USCapitol%20-%20Old%20Senate%20Chamber%20%281%29.jpg?width=1400" alt="A semicircular chamber with rows of wooden desks facing a raised desk and a gallery above, lit by a half-dome." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Senate’s old home</span>The Old Senate Chamber in the Capitol is a semicircular, half-domed room north of the Rotunda. The Senate met here from 1810 to 1859. The Supreme Court used the room from 1860 to 1935.<span class="credit">Image: USCapitol (Architect of the Capitol) / <a href="https://commons.wikimedia.org/wiki/File:Flickr_-_USCapitol_-_Old_Senate_Chamber_(1).jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.3</span>What Share of a Chamber Must Agree?</p>
+      <p class="figsub">Percent of members needed at each step, if every member votes.</p>
+      <svg viewBox="0 0 860 214" role="img" aria-label="Bar chart: House passage 50.1 percent, Senate passage 51 percent, Senate cloture 60 percent, veto override 66.7 percent"><line x1="270.0" y1="10" x2="270.0" y2="170" stroke="#e6e8ec"/><text x="270.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0.0%</text><line x1="395.0" y1="10" x2="395.0" y2="170" stroke="#e6e8ec"/><text x="395.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25.0%</text><line x1="520.0" y1="10" x2="520.0" y2="170" stroke="#e6e8ec"/><text x="520.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50.0%</text><line x1="645.0" y1="10" x2="645.0" y2="170" stroke="#e6e8ec"/><text x="645.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75.0%</text><line x1="770.0" y1="10" x2="770.0" y2="170" stroke="#e6e8ec"/><text x="770.0" y="188" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100.0%</text><text x="260" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">House passage (218 of 435)</text><g><title>House passage (218 of 435): 50.1%</title><path d="M270 16 h246.6 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-246.6z" fill="#2F6B57"/></g><text x="528.6" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">50.1%</text><text x="260" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Senate passage (51 of 100)</text><g><title>Senate passage (51 of 100): 51.0%</title><path d="M270 56 h251.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-251.0z" fill="#2F6B57"/></g><text x="533.0" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">51.0%</text><text x="260" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Cloture in the Senate (60 of 100)</text><g><title>Cloture in the Senate (60 of 100): 60.0%</title><path d="M270 96 h296.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-296.0z" fill="#B58B3A"/></g><text x="578.0" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">60.0%</text><text x="260" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Override a veto (two-thirds)</text><g><title>Override a veto (two-thirds): 66.7%</title><path d="M270 136 h329.5 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-329.5z" fill="#2F6B57"/></g><text x="611.5" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">66.7%</text><line x1="270" y1="10" x2="270" y2="170" stroke="#6f7787" stroke-width="1.5"/><text x="520.0" y="210" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of members needed</text></svg>
+      <p class="source">Sources: Chapter text (218 and 60 votes); U.S. Constitution, Article I, Section 7 (two-thirds to override a veto). Percentages calculated for this textbook. Highlighted bar: the filibuster threshold.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>Votes needed</th><th>Share of members</th></tr></thead><tbody><tr><td>House passage</td><td>218 of 435</td><td>50.1%</td></tr><tr><td>Senate passage</td><td>51 of 100</td><td>51.0%</td></tr><tr><td>Cloture in the Senate</td><td>60 of 100</td><td>60.0%</td></tr><tr><td>Override a veto</td><td>290 in the House and 67 in the Senate</td><td>66.7%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How much higher is the share needed for cloture than for passing a bill in the Senate?</li><li>Why does the threat of a filibuster make the “real” threshold for a controversial bill 60 and not 51?</li><li>Which of the four steps is hardest to reach? Explain what that suggests about the Framers’ goals.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Necessity of Institutional Friction</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Institutional friction is a feature, not a bug. The clash between the democratic pressure of the House and the federalist caution of the Senate forces the government to slow down, ensuring that only laws with broad, sustained consensus can survive the grind.</p>
+        <p>The contrast between the House and the Senate creates a purposeful legislative friction. In 2010, the House passed a cap-and-trade bill to address climate change. It passed because the majority party in the House could push it through quickly. However, when the bill reached the Senate, it died. The Senate, representing different constituencies and requiring a higher threshold for action, refused to take it up. To some, this was a failure of government. To the Framers, this was the system working.</p>
+        <p>The requirement that a bill must pass two chambers with different bases of power ensures that no law is passed simply because it is popular in the moment. It must have broad, sustained support across both the population (House) and the states (Senate). This dynamic can be frustrating, especially during times of crisis when the public demands action. Yet, this friction is the primary defense against authoritarianism. By dividing the legislative power against itself, the Constitution forces the government to slow down, encouraging negotiation and preventing any single faction from dominating the entire apparatus of the state. The "Logic of Internal Restraints" posits that a government that moves too fast is dangerous; therefore, the House pushes, the Senate pulls, and the result is a slow, steady, often agonizing march toward policy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Institutional friction</span> The slowing effect that comes from dividing power among institutions that must all agree. <span class="sp">Spanish: fricción institucional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">219–212</span>House vote on June 26, 2009, to pass the American Clean Energy and Security Act, a cap-and-trade bill. The Senate never voted on it.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Madison wrote that the legislative authority “necessarily predominates,” so the remedy is to divide it. You will read that passage in the Chapter Assessment.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>A Rule With Two Gatekeepers</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A student club proposes a longer lunch at Shafter High. A council elected by class size votes yes. A second council with one seat per club votes no. The proposal fails, even though most students might like it. Supporters can complain about delay. Defenders will point out that the rule would have changed lunch for everyone on the strength of only one kind of majority. Congress works the same way: a bill must win in both chambers.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Speed or Brakes?</div></div>
+      <div class="box-b">
+        <p>You are designing a new national legislature. You must choose between two systems.</p>
+        <div class="opts"><div class="opt"><h5>One chamber</h5>Laws pass quickly when the majority agrees, and voters know whom to blame.</div><div class="opt"><h5>Two chambers</h5>Laws pass slowly, and each chamber can stop the other, so only widely supported bills survive.</div></div>
+        <p class="ask">Which would you choose, and whose rights would your choice protect or put at risk?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Two Chambers Around the World</div></div>
+      <div class="box-b">
+<p style="margin:0">Many national legislatures have two chambers, but they are built differently. Germany’s upper chamber, the Bundesrat, is made up of members of the governments of the sixteen German states. Canada’s Senate has appointed, not elected, members. In the United States, Nebraska is the only state with a one-chamber legislature, which it adopted in 1937. Why might a country with strong regional governments choose a second chamber that represents those regions?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING THE CHAMBERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 4.1. Name two differences between the House and the Senate and explain how each helps the chamber serve its purpose.</li><li>Use Figure 4.2. Explain why equal representation in the Senate protects the interests of small states.</li><li>Write a Counter-Argument to this claim: “Congress should be reorganized into one chamber so that it can act faster.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 4.1 ASSESSMENT</b>Complete the Section 4.1 Assessment in your <i>Chapter 4 Assignment</i> packet before you move on to Section 4.2.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>4.2</b></div>
+    <h2>The Legislative Process: Committees, Leadership, and Lawmaking</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#E0C888" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1F4EE" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#E0C888" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 4.2, you will</p>
+      <ul><li>Explain why committees are the main gatekeepers of legislation</li><li>Compare the leadership of the Speaker of the House with the leadership of the Senate</li><li>Explain how veto points, logrolling, and pork barrel legislation shape what becomes law</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-seniority-system">Seniority system</a></li><li><a href="#t-logrolling">Logrolling</a></li><li><a href="#t-pork">Pork barrel legislation</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each stage of a bill and who can stop it there.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: stage, who decides, who can stop it"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Stage</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who decides</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who can stop it</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Legislative Process: Committees, Leadership, and Lawmaking</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">For the average observer, Congress appears to be a room where people make speeches. C-SPAN cameras show members standing in the well of the House or at the desks of the Senate, delivering impassioned arguments about justice and liberty. However, this is largely theater. The real work of legislating—the drafting, the arguing, the compromising, and the deal-making—happens not on the floor, but in committee rooms. Woodrow Wilson, a political scientist before he was President, famously wrote, "Congress in session is Congress on public exhibition, whilst Congress in its committee-rooms is Congress at work."</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Committee</span> A group of members who study bills and issues in one policy area. <span class="sp">Spanish: comité (comisión)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1885</span>Year Woodrow Wilson published <i>Congressional Government</i>, which contains the line about the committee rooms.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 5 says each house “may determine the Rules of its Proceedings,” which is the constitutional source of the committee system.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Committee System: Where Laws are Born (and Buried)</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Committees act as the primary gatekeepers of legislation. The vast majority of bills introduced in Congress die quietly in committee, "pigeonholed" and forgotten, allowing members to focus only on the few measures that have genuine political traction.</p>
+        <p>It is impossible for any single member of Congress to be an expert on everything. A representative cannot simultaneously master the intricacies of nuclear energy policy, agricultural subsidies, interstate highway engineering, and healthcare tax codes. To manage this vast workload, Congress divides itself into specialized groups called committees.</p>
+        <p>Standing committees are permanent panels with jurisdiction over specific policy areas. In the House, the Ways and Means Committee is one of the most powerful because it controls tax law. In the Senate, the Judiciary Committee holds immense sway because it vets federal judges and oversees the legal system. When a bill is introduced, it is not immediately debated by the whole Congress. Instead, it is referred to the relevant committee. This is where the "weeding out" process begins. Of the thousands of bills introduced in each session of Congress, the vast majority die in committee. They are "pigeonholed," meaning they are set aside and never looked at again.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Standing committee</span> A permanent committee with authority over a specific policy area. <span class="sp">Spanish: comisión permanente</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pigeonhole</span> To set a bill aside so that it is never considered. <span class="sp">Spanish: archivar un proyecto (guardarlo en un casillero)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Ways and Means</span>The House committee that controls tax law. The Senate counterpart for confirming judges is the Judiciary Committee.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>For the bills that survive, the committee process involves hearings and "markups." During hearings, experts, bureaucrats, and citizens testify about the merits and flaws of the bill. During markup, the committee members go through the bill line by line, rewriting the text, adding amendments, and removing sections. This is where the technical details of the law are hammered out. For example, during the drafting of the Clean Air Act, it was in the committees that scientists and industry lobbyists argued over the exact parts per million of pollutants that would be permissible.</p>
+        <p>Committee assignments are crucial for a legislator's career. A representative from rural Iowa will fight for a seat on the Agriculture Committee to protect the interests of their farming constituents. A representative from New York City might seek a seat on the Financial Services Committee to oversee Wall Street. Historically, committee leadership was determined strictly by the <dfn id="t-seniority-system">seniority system</dfn>, which awarded the position of Committee Chair to the member of the majority party who had served on the committee the longest. While this system ensured experienced leadership, it also meant that younger, more energetic members were shut out of power. Today, while seniority is still a major factor, parties also consider loyalty and fundraising ability when selecting chairs.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Markup</span> The stage when a committee goes through a bill line by line, rewriting and amending it. <span class="sp">Spanish: revisión y enmienda del proyecto (markup)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Seniority system</span> A tradition that gave committee chairs to the majority-party member who had served longest on the committee. <span class="sp">Spanish: sistema de antigüedad</span></div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Clean Air Act is the chapter’s example of a law whose technical details were fought over in committee.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Leadership and the Iron Triangle of Power</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Leadership styles are dictated by chamber rules. The Speaker of the House commands a hierarchy with the power to silence dissent, while the Senate Majority Leader must act as a diplomat, negotiating with 100 independent power centers who can each stop the show.</p>
+        <p>While committees do the work, the party leadership directs the traffic. In the House of Representatives, the Speaker of the House is the most powerful figure. The Speaker is elected by the majority party and serves as both the presiding officer of the chamber and the political leader of their party. The Speaker decides which bills reach the floor, appoints members to committees, and controls the flow of debate. A strong Speaker can essentially dictate the legislative agenda.</p>
+        <p>In the early 20th century, Speaker Joe Cannon was known as "Czar Cannon" because of his absolute control over the House. He could single-handedly kill any bill he disliked. Modern Speakers have less absolute power but still wield tremendous influence through negotiation and the control of information. Assisting the Speaker are the Majority Leader and the "Whips." The Whips are responsible for counting votes and enforcing party discipline, ensuring that members vote the way the leadership wants them to.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Speaker of the House</span> The presiding officer of the House and the leader of the majority party. <span class="sp">Spanish: presidente de la Cámara (Speaker)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Whip</span> A party leader who counts votes and works to keep members united. <span class="sp">Spanish: coordinador de votos del partido (whip)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1903–1911</span>Years Joseph Cannon served as Speaker. In 1910 a coalition in the House stripped him of many of his powers.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Article I, Section 2 says the House “shall chuse their Speaker,” and Section 3 makes the Vice President the President of the Senate.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>In the Senate, the leadership structure is different. The Constitution names the Vice President of the United States as the President of the Senate, but they have no real power and only vote to break a tie. The true power lies with the Senate Majority Leader. However, because the Senate gives so much power to individual senators, the Majority Leader cannot simply command the room like the Speaker of the House. They must function more like a diplomat, negotiating with all 100 distinct egos to move legislation forward.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Majority Leader</span> The Senate’s most powerful party leader, who schedules business but cannot command senators the way the Speaker commands the House. <span class="sp">Spanish: líder de la mayoría</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 5 explains the Vice President’s place in the executive branch.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Logic of Legislative Procedure</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The legislative process is a gauntlet of "veto points." Because opponents only need to win once to kill a bill, while proponents must win every single stage, the system is heavily biased against change, requiring strategic deal-making to succeed.</p>
+        <p>The process of a bill becoming a law is often described as a maze, but it is more accurately described as a series of veto points—places where a bill can be killed. The opponents of a bill have a structural advantage over the proponents. To pass a law, you must win at every stage: the subcommittee, the full committee, the Rules Committee (in the House), the floor vote, the other chamber's committee, the other chamber's floor, and finally, the President's desk. To kill a law, you only have to win once.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Veto point</span> A step in the process where a bill can be stopped. <span class="sp">Spanish: punto de veto</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">7 steps</span>Stages the text lists between a bill’s introduction and the President’s desk. A bill must win at every one.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.4</span>A Bill’s Path: Eight Places It Can Die</p>
+      <p class="figsub">Opponents only need to win once. Proponents must win every time.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Flow chart of a bill’s path: subcommittee, full committee, Rules Committee, House floor, other chamber committees, other chamber floor, conference committee, President’s desk"><g><title>1. Subcommittee: Hearings and a first vote</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">1. Subcommittee</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Hearings and a first vote</text><g><title>2. Full committee: Markup and a vote</title><rect x="241.3" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="329.3" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">2. Full committee</text><text x="329.3" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Markup and a vote</text><g><title>3. Rules Committee: House only: sets the terms of debate</title><rect x="442.7" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#B58B3A" stroke-width="2.5"/></g><text x="530.7" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">3. Rules Committee</text><text x="530.7" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">House only: sets the terms</text><text x="530.7" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">of debate</text><g><title>4. House floor: Debate and vote</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">4. House floor</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Debate and vote</text><g><title>5. Second chamber: Its committees review the bill</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">5. Second chamber</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Its committees review the</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">bill</text><g><title>6. Second-chamber vote: Floor debate and vote</title><rect x="241.3" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="329.3" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">6. Second-chamber vote</text><text x="329.3" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Floor debate and vote</text><g><title>7. Conference committee: If the versions differ, members reconcile them</title><rect x="442.7" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#B58B3A" stroke-width="2.5"/></g><text x="530.7" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">7. Conference committee</text><text x="530.7" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">If the versions differ,</text><text x="530.7" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">members reconcile them</text><g><title>8. President’s desk: Sign or veto</title><rect x="644.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#2F6B57" stroke-width="2.5"/></g><text x="732.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1F3D33" text-anchor="middle" font-weight="700">8. President’s desk</text><text x="732.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Sign or veto</text><path d="M219.0 45.0 L236.3 45.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M236.3 39.0 l8 6 l-8 6z" fill="#B58B3A"/><path d="M420.3 45.0 L437.7 45.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M437.7 39.0 l8 6 l-8 6z" fill="#B58B3A"/><path d="M621.7 45.0 L639.0 45.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#B58B3A"/><path d="M732.0 84 V104 H128.0 V124" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#B58B3A"/><path d="M219.0 165.0 L236.3 165.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M236.3 159.0 l8 6 l-8 6z" fill="#B58B3A"/><path d="M420.3 165.0 L437.7 165.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M437.7 159.0 l8 6 l-8 6z" fill="#B58B3A"/><path d="M621.7 165.0 L639.0 165.0" stroke="#B58B3A" stroke-width="3" fill="none"/><path d="M639.0 159.0 l8 6 l-8 6z" fill="#B58B3A"/></svg>
+      <p class="source">Sources: Chapter text (stages); conference committee added from the Chapter Assessment (to reconcile House and Senate versions). Diagram created for this textbook. Highlighted boxes: steps that are not part of every bill’s path (the Rules Committee is House only; a conference committee meets only if the versions differ).</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Count the places where a bill can be stopped. Why does the text say opponents have a structural advantage?</li><li>Which step exists only in the House? Which step appears only when the two chambers pass different versions?</li><li>Who benefits more from the number of steps, supporters of change or supporters of the status quo? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>This bias against action leads to unique legislative strategies. One such strategy is <dfn id="t-logrolling">logrolling</dfn>, a practice where members trade votes to ensure the passage of their own priorities. A representative from Florida might agree to vote for a corn subsidy that helps a representative from Iowa, in exchange for the Iowa representative voting for a hurricane relief bill that helps Florida. While critics call this vote-trading, defenders argue it is the only way to build national coalitions in a diverse country.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Logrolling</span> A practice in which members trade votes so that each can pass their own priorities. <span class="sp">Spanish: intercambio de votos (logrolling)</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Federalist No. 10 warned that factions pursue narrow interests. Logrolling is one way separate interests team up to pass laws.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Another controversial aspect of this process is <dfn id="t-pork">pork barrel legislation</dfn>. This refers to government spending for localized projects intended primarily to bring money to a representative's district. The famous "Bridge to Nowhere" in Alaska became a symbol of this practice—a multimillion-dollar federal project to connect a small town to an island with 50 residents. While often ridiculed as wasteful, "pork" is the grease that turns the gears of Congress. A leader often secures a reluctant member's vote for a major bill by promising a new federally funded hospital or highway in that member's district.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Pork barrel legislation</span> Government spending on local projects meant mainly to bring money to a member’s district. <span class="sp">Spanish: gasto clientelista (pork barrel)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">$398 million</span>Estimated cost of the Gravina Island Bridge in Alaska, called the “Bridge to Nowhere.” Alaska canceled the project in 2015.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 16 returns to the federal budget and how Congress spends money.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This complex interplay of committees, leadership pressure, and vote-trading means that the law is rarely pure. It is a patchwork of compromises. The "Logic of Internal Restraints" ensures that legislation is not the result of a single brilliant author, but the product of a thousand small concessions. This makes the process ugly to watch, but it ensures that the final product has enough buy-in to survive the turbulent political landscape of the United States.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">A thousand concessions</span>The chapter’s description of a law: a patchwork of compromises, not the work of one author.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>Trading Votes in Student Government</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> The senior class wants a prom budget increase. The sophomore class wants a new water fountain. Neither has enough votes alone. The two class representatives agree: seniors vote for the fountain, and sophomores vote for the prom budget. Both pass. That trade is logrolling. A critic might say the council spent money for the wrong reasons. A defender might say it built the majority the council needed.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Take the Hospital?</div></div>
+      <div class="box-b">
+        <p>You are a Representative. The Speaker asks you to vote for a major bill that you feel only lukewarm about. In return, she offers a new federally funded hospital in your district.</p>
+        <div class="opts"><div class="opt"><h5>Accept the deal</h5>Your district gets a hospital and the bill passes, but critics may call it pork.</div><div class="opt"><h5>Refuse the deal</h5>You keep your independence, but the bill may fail and your district gets nothing.</div></div>
+        <p class="ask">Which would you choose, and how would you explain your choice to voters?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; FOLLOWING A BILL</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 4.4. Pick one step and explain who could stop a bill there.</li><li>Explain how logrolling helps build a majority. Give one reason critics dislike it and one reason defenders support it.</li><li>Write a Counter-Argument to this claim: “Pork barrel spending is always wasteful.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 4.2 ASSESSMENT</b>Complete the Section 4.2 Assessment in your <i>Chapter 4 Assignment</i> packet before you move on to Section 4.3.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>4.3</b></div>
+    <h2>Representation vs. Governance</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E0C888" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1F4EE" stroke-width="5"/><path d="M14 100h132" stroke="#E0C888" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 4.3, you will</p>
+      <ul><li>Compare the Trustee, Delegate, and Politico models of representation</li><li>Explain how the incumbency advantage and gerrymandering protect members from losing elections</li><li>Explain how the permanent campaign pulls Congress toward short-term decisions</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-incumbency-advantage">Incumbency advantage</a></li><li><a href="#t-gerrymandering">Gerrymandering</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each pressure on a member and how it changes how the member acts.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: pressure, effect on elections, effect on lawmaking"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Pressure</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect on elections</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect on lawmaking</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Representation vs. Governance: Constituents, Interests, and Oversight</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">A member of Congress wears two hats. In one capacity, they are a national legislator, responsible for writing laws that affect the economy, national security, and the welfare of the entire United States. In the other capacity, they are a local representative, hired by the voters of a specific geographic area to fight for their specific needs. These two roles—governance and representation —are often in direct conflict. This tension defines the career of every member of Congress and explains many of the seemingly contradictory actions taken by the legislative branch.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Representation</span> Acting for the people of a district or state who elected you. <span class="sp">Spanish: representación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Governance</span> Making and carrying out decisions for the whole country. <span class="sp">Spanish: gobernanza</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Two hats</span>Every member is both a national lawmaker and a local representative.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Two Modes of Representation</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Portrait%20of%20Edmund%20Burke%20128.jpg?width=1400" alt="A painted portrait of a man in a powdered wig and dark coat, looking to one side." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Edmund Burke</span>James Barry painted this portrait of Edmund Burke in 1774, the year Burke gave his speech to the voters of Bristol.<span class="credit">Image: James Barry (painter, 1774) / <a href="https://commons.wikimedia.org/wiki/File:Portrait_of_Edmund_Burke_128.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The "Politico" balances two philosophies. The Delegate acts as a mouthpiece for the voters, while the Trustee acts on their own wisdom. Most legislators switch between these roles depending on whether the issue is a hot-button scandal or a complex technical regulation.</p>
+        <p>Political philosophers have long debated how a representative should act. Edmund Burke, an 18th-century British philosopher and politician, articulated the "Trustee Model." He argued that a representative is elected for their judgment and wisdom. Once in office, they should vote based on what they believe is best for the nation, even if it goes against the wishes of their constituents. Burke famously told his voters, "Your representative owes you, not his industry only, but his judgment; and he betrays, instead of serving you, if he sacrifices it to your opinion."</p>
+        <p>Opposed to this is the "Delegate Model." This theory argues that a representative is merely the mouthpiece of the people who elected them. If the constituents want a specific policy, the representative must vote for it, regardless of their own personal feelings. In reality, most members of Congress operate as "Politicos," switching between these models depending on the issue. On a high-profile, emotional issue like gun control or abortion, they act as delegates, closely following public opinion to avoid being voted out of office. On complex, technical issues like international trade regulations, where the public pays less attention, they act as trustees, relying on their own judgment and expert advice.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Trustee Model</span> A representative is chosen for judgment and votes for what is best for the nation, even against constituents’ wishes. <span class="sp">Spanish: modelo de fiduciario</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Delegate Model</span> A representative acts as a mouthpiece and votes as the constituents want. <span class="sp">Spanish: modelo de delegado</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Politico</span> A representative who switches between the two models depending on the issue. <span class="sp">Spanish: político (modelo mixto)</span></div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.5</span>Three Models of Representation</p>
+      <p class="figsub">How members decide how to vote.</p>
+      <table class="cmp"><thead><tr><th>Model</th><th>How the member votes</th><th>When members use it (per the text)</th><th>Risk</th></tr></thead><tbody><tr><td>Trustee</td><td>By personal judgment about the national good</td><td>Complex, technical issues such as trade regulations</td><td>Ignoring voters</td></tr><tr><td>Delegate</td><td>By what constituents want</td><td>High-profile, emotional issues such as gun control or abortion</td><td>Following a passing mood</td></tr><tr><td>Politico</td><td>Switches between the two</td><td>Most members, most of the time</td><td>Looking inconsistent</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Edmund Burke, Speech to the Electors of Bristol (1774). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which model gives voters the most direct control? Which gives the representative the most freedom?</li><li>Why would a member use different models on different issues?</li><li>Which model would Burke approve? Use the table in your answer.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fortress of Incumbency</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The "<dfn id="t-incumbency-advantage">Incumbency Advantage</dfn>" creates a fortress around sitting members. Through free mail, constituent service, and established fundraising, incumbents build a barrier that makes it statistically improbable for them to lose, insulating them from national political waves.</p>
+        <p>While the theory of representation suggests that voters can easily fire a representative they dislike, the reality of modern politics is different. The single most powerful force in congressional elections is the incumbency advantage. An incumbent is the current holder of the office. In the House of Representatives, incumbents win reelection at staggering rates, often exceeding 90%.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Incumbent</span> The person who currently holds an office. <span class="sp">Spanish: titular (el que ocupa el cargo)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">96.6%</span>Share of House incumbents seeking reelection who won in 2024, according to OpenSecrets.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This advantage is structural. Incumbents have name recognition; voters know who they are. They have the "franking privilege," which allows them to send mail to their constituents for free, keeping their accomplishments in the public eye. They have an established fundraising network of donors and interest groups who want to back a winner. But most importantly, they have a record of "casework." Casework is the service a member provides to individual constituents—helping a grandmother get her Social Security check, helping a veteran navigate the VA hospital system, or helping a high school student get a nomination to West Point. When a member of Congress solves a personal problem for a voter, that voter often becomes a supporter for life, regardless of the member's political party.</p>
+        <p>This dynamic creates a class of professional legislators who can become insulated from national political waves. Even when Congress as an institution has an approval rating of 15%, individual members remain popular in their own districts. Voters tend to believe that "Congress is broken, but my representative is doing a good job."</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Franking privilege</span> The right of members of Congress to send official mail to constituents for free. <span class="sp">Spanish: franquicia postal</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Casework</span> Help a member provides to individual constituents, such as dealing with a federal agency. <span class="sp">Spanish: atención a los electores (casework)</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The same House members who see a low approval rating for Congress as a whole still win their own districts, which the text sums up as “Congress is broken, but my representative is doing a good job.”</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.6</span>House Incumbents Who Won Reelection, 2006–2024</p>
+      <p class="figsub">Percent of House members seeking another term who won.</p>
+      <svg viewBox="0 0 860 354" role="img" aria-label="Bar chart of the share of House incumbents reelected: 94.1 percent in 2006, 94.3 in 2008, 85.4 in 2010, 89.8 in 2012, 95.4 in 2014, 96.7 in 2016, 91.0 in 2018, 94.7 in 2020, 93.2 in 2022, 96.6 in 2024"><line x1="80.0" y1="10" x2="80.0" y2="310" stroke="#e6e8ec"/><text x="80.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0.0%</text><line x1="252.5" y1="10" x2="252.5" y2="310" stroke="#e6e8ec"/><text x="252.5" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25.0%</text><line x1="425.0" y1="10" x2="425.0" y2="310" stroke="#e6e8ec"/><text x="425.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50.0%</text><line x1="597.5" y1="10" x2="597.5" y2="310" stroke="#e6e8ec"/><text x="597.5" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75.0%</text><line x1="770.0" y1="10" x2="770.0" y2="310" stroke="#e6e8ec"/><text x="770.0" y="328" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100.0%</text><text x="70" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2006</text><g><title>2006: 94.1%</title><path d="M80 16 h645.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-645.3z" fill="#2F6B57"/></g><text x="737.3" y="30.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">94.1%</text><text x="70" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2008</text><g><title>2008: 94.3%</title><path d="M80 46 h646.7 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-646.7z" fill="#2F6B57"/></g><text x="738.7" y="60.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">94.3%</text><text x="70" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2010</text><g><title>2010: 85.4%</title><path d="M80 76 h585.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-585.3z" fill="#B58B3A"/></g><text x="677.3" y="90.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">85.4%</text><text x="70" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2012</text><g><title>2012: 89.8%</title><path d="M80 106 h615.6 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-615.6z" fill="#2F6B57"/></g><text x="707.6" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">89.8%</text><text x="70" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2014</text><g><title>2014: 95.4%</title><path d="M80 136 h654.3 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-654.3z" fill="#2F6B57"/></g><text x="746.3" y="150.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">95.4%</text><text x="70" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2016</text><g><title>2016: 96.7%</title><path d="M80 166 h663.2 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-663.2z" fill="#2F6B57"/></g><text x="755.2" y="180.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">96.7%</text><text x="70" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2018</text><g><title>2018: 91.0%</title><path d="M80 196 h623.9 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-623.9z" fill="#2F6B57"/></g><text x="715.9" y="210.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">91.0%</text><text x="70" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2020</text><g><title>2020: 94.7%</title><path d="M80 226 h649.4 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-649.4z" fill="#2F6B57"/></g><text x="741.4" y="240.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">94.7%</text><text x="70" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2022</text><g><title>2022: 93.2%</title><path d="M80 256 h639.1 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-639.1z" fill="#2F6B57"/></g><text x="731.1" y="270.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">93.2%</text><text x="70" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2024</text><g><title>2024: 96.6%</title><path d="M80 286 h662.5 a4 4 0 0 1 4 4 v10 a4 4 0 0 1 -4 4 h-662.5z" fill="#2F6B57"/></g><text x="754.5" y="300.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">96.6%</text><line x1="80" y1="10" x2="80" y2="310" stroke="#6f7787" stroke-width="1.5"/><text x="425.0" y="350" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent of incumbents reelected</text></svg>
+      <p class="source">Source: OpenSecrets, “Reelection Rates in Congress, 1964–2024” (Center for Responsive Politics). Highlighted bar: the lowest rate in the period.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Election year</th><th>House incumbents reelected</th><th>Senate incumbents reelected</th></tr></thead><tbody><tr><td>2006</td><td>94.1%</td><td>79.3%</td></tr><tr><td>2008</td><td>94.3%</td><td>83.3%</td></tr><tr><td>2010</td><td>85.4%</td><td>84.0%</td></tr><tr><td>2012</td><td>89.8%</td><td>91.3%</td></tr><tr><td>2014</td><td>95.4%</td><td>82.1%</td></tr><tr><td>2016</td><td>96.7%</td><td>93.1%</td></tr><tr><td>2018</td><td>91.0%</td><td>84.4%</td></tr><tr><td>2020</td><td>94.7%</td><td>83.9%</td></tr><tr><td>2022</td><td>93.2%</td><td>100.0%</td></tr><tr><td>2024</td><td>96.6%</td><td>88.0%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What was the lowest House reelection rate in the chart? What was the highest?</li><li>Look at the data table. Which chamber has a higher reelection rate in most years? What does that tell you about the chamber’s design?</li><li>If about 90 percent of members are reelected, how can voters change the direction of government? (Use the term <i>incumbency advantage</i>.)</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Geometry of Power: Gerrymandering</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Gerry-Mander%20Edit.png?width=1400" alt="A black-and-white cartoon of an oddly shaped district map drawn as a winged, clawed creature with a long tail." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The first “Gerry-Mander”</span>This cartoon, which first appeared in the <i>Boston Gazette</i> on March 26, 1812, and is usually attributed to the engraver Elkanah Tisdale, turned an oddly shaped Massachusetts state senate district into a creature. It gave the practice its name.<span class="credit">Image: Elkanah Tisdale (cartoon, 1812; attribution commonly given) / <a href="https://commons.wikimedia.org/wiki/File:The_Gerry-Mander_Edit.png">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead"><dfn id="t-gerrymandering">Gerrymandering</dfn> manipulates the geometry of representation. By packing opponents into a single district or cracking them apart, parties can draw "safe seats" that predetermine the winner, reducing competition and encouraging extremism.</p>
+        <p>The House of Representatives is further shaped by the practice of gerrymandering. Every ten years, following the U.S. Census, states must redraw their congressional district lines to account for population changes. The goal is to ensure that each district has roughly the same number of people. However, in most states, this process is controlled by the state legislature. This allows the majority party in the state to draw the lines in a way that benefits their own party.</p>
+        <p>The term comes from Elbridge Gerry, an early 19th-century governor of Massachusetts, who signed a bill creating a district so misshapen it resembled a salamander. Today, computers allow mapmakers to draw these lines with surgical precision. They can "pack" opposition voters into a single district to limit their influence, or "crack" them across multiple districts to dilute their vote.</p>
+        <p>Gerrymandering creates "safe seats"—districts where the winner is effectively determined in the primary election because the general election is mathematically impossible for the other party to win. If a district is drawn to be 80% Republican, the Republican representative has no fear of losing to a Democrat. Their only fear is losing to a more conservative Republican in the primary. This pulls the representative away from the political center and toward the ideological extremes. The same is true for Democrats in safe blue districts. Consequently, gerrymandering reduces the incentive for compromise. If a member of Congress compromises with the other side, they risk looking weak to their base, which is the only group that can remove them from office.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Gerrymandering</span> Drawing district lines to give one party an advantage. <span class="sp">Spanish: manipulación de distritos electorales (gerrymandering)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Packing and cracking</span> Packing puts opponents’ voters into one district. Cracking splits them among many districts. <span class="sp">Spanish: concentrar y dividir</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Safe seat</span> A district where one party is so strong that the general election is not competitive. <span class="sp">Spanish: distrito seguro</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1812</span>Year the word <i>gerrymander</i> first appeared, after Massachusetts Governor Elbridge Gerry signed a bill redrawing state senate districts.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.7</span>Same Voters, Three Maps</p>
+      <p class="figsub">Thirty voters support Party A and twenty support Party B. The only thing that changes is where the lines are drawn.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Three maps of the same 50 voters, 30 for Party A and 20 for Party B, split into five districts of ten. Map 1 gives Party A all five seats, Map 2 gives A three and B two, Map 3 gives Party B three seats and Party A two."><text x="140.0" y="22" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1F3D33" text-anchor="middle" font-weight="700">Map 1: Voters spread evenly</text><rect x="10" y="36" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="20" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D1</text><circle cx="54" cy="56" r="6.5" fill="#2F6B57"/><circle cx="69" cy="56" r="6.5" fill="#2F6B57"/><circle cx="84" cy="56" r="6.5" fill="#2F6B57"/><circle cx="99" cy="56" r="6.5" fill="#2F6B57"/><circle cx="114" cy="56" r="6.5" fill="#2F6B57"/><circle cx="129" cy="56" r="6.5" fill="#2F6B57"/><circle cx="144" cy="56" r="6.5" fill="#B58B3A"/><circle cx="159" cy="56" r="6.5" fill="#B58B3A"/><circle cx="174" cy="56" r="6.5" fill="#B58B3A"/><circle cx="189" cy="56" r="6.5" fill="#B58B3A"/><text x="260" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="10" y="82" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="20" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D2</text><circle cx="54" cy="102" r="6.5" fill="#2F6B57"/><circle cx="69" cy="102" r="6.5" fill="#2F6B57"/><circle cx="84" cy="102" r="6.5" fill="#2F6B57"/><circle cx="99" cy="102" r="6.5" fill="#2F6B57"/><circle cx="114" cy="102" r="6.5" fill="#2F6B57"/><circle cx="129" cy="102" r="6.5" fill="#2F6B57"/><circle cx="144" cy="102" r="6.5" fill="#B58B3A"/><circle cx="159" cy="102" r="6.5" fill="#B58B3A"/><circle cx="174" cy="102" r="6.5" fill="#B58B3A"/><circle cx="189" cy="102" r="6.5" fill="#B58B3A"/><text x="260" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="10" y="128" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="20" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D3</text><circle cx="54" cy="148" r="6.5" fill="#2F6B57"/><circle cx="69" cy="148" r="6.5" fill="#2F6B57"/><circle cx="84" cy="148" r="6.5" fill="#2F6B57"/><circle cx="99" cy="148" r="6.5" fill="#2F6B57"/><circle cx="114" cy="148" r="6.5" fill="#2F6B57"/><circle cx="129" cy="148" r="6.5" fill="#2F6B57"/><circle cx="144" cy="148" r="6.5" fill="#B58B3A"/><circle cx="159" cy="148" r="6.5" fill="#B58B3A"/><circle cx="174" cy="148" r="6.5" fill="#B58B3A"/><circle cx="189" cy="148" r="6.5" fill="#B58B3A"/><text x="260" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="10" y="174" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="20" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D4</text><circle cx="54" cy="194" r="6.5" fill="#2F6B57"/><circle cx="69" cy="194" r="6.5" fill="#2F6B57"/><circle cx="84" cy="194" r="6.5" fill="#2F6B57"/><circle cx="99" cy="194" r="6.5" fill="#2F6B57"/><circle cx="114" cy="194" r="6.5" fill="#2F6B57"/><circle cx="129" cy="194" r="6.5" fill="#2F6B57"/><circle cx="144" cy="194" r="6.5" fill="#B58B3A"/><circle cx="159" cy="194" r="6.5" fill="#B58B3A"/><circle cx="174" cy="194" r="6.5" fill="#B58B3A"/><circle cx="189" cy="194" r="6.5" fill="#B58B3A"/><text x="260" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="10" y="220" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="20" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D5</text><circle cx="54" cy="240" r="6.5" fill="#2F6B57"/><circle cx="69" cy="240" r="6.5" fill="#2F6B57"/><circle cx="84" cy="240" r="6.5" fill="#2F6B57"/><circle cx="99" cy="240" r="6.5" fill="#2F6B57"/><circle cx="114" cy="240" r="6.5" fill="#2F6B57"/><circle cx="129" cy="240" r="6.5" fill="#2F6B57"/><circle cx="144" cy="240" r="6.5" fill="#B58B3A"/><circle cx="159" cy="240" r="6.5" fill="#B58B3A"/><circle cx="174" cy="240" r="6.5" fill="#B58B3A"/><circle cx="189" cy="240" r="6.5" fill="#B58B3A"/><text x="260" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="10" y="272" width="260" height="46" rx="8" fill="#1F3D33"/><text x="140.0" y="291" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">Party A: 5 seats · Party B: 0 seats</text><text x="140.0" y="309" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#E0C888" text-anchor="middle" font-weight="400">Same voters: 30 for A, 20 for B</text><text x="420.0" y="22" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1F3D33" text-anchor="middle" font-weight="700">Map 2: A 3 seats, B 2 seats</text><rect x="290" y="36" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="300" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D1</text><circle cx="334" cy="56" r="6.5" fill="#2F6B57"/><circle cx="349" cy="56" r="6.5" fill="#2F6B57"/><circle cx="364" cy="56" r="6.5" fill="#2F6B57"/><circle cx="379" cy="56" r="6.5" fill="#2F6B57"/><circle cx="394" cy="56" r="6.5" fill="#2F6B57"/><circle cx="409" cy="56" r="6.5" fill="#2F6B57"/><circle cx="424" cy="56" r="6.5" fill="#2F6B57"/><circle cx="439" cy="56" r="6.5" fill="#2F6B57"/><circle cx="454" cy="56" r="6.5" fill="#B58B3A"/><circle cx="469" cy="56" r="6.5" fill="#B58B3A"/><text x="540" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="290" y="82" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="300" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D2</text><circle cx="334" cy="102" r="6.5" fill="#2F6B57"/><circle cx="349" cy="102" r="6.5" fill="#2F6B57"/><circle cx="364" cy="102" r="6.5" fill="#2F6B57"/><circle cx="379" cy="102" r="6.5" fill="#2F6B57"/><circle cx="394" cy="102" r="6.5" fill="#2F6B57"/><circle cx="409" cy="102" r="6.5" fill="#2F6B57"/><circle cx="424" cy="102" r="6.5" fill="#2F6B57"/><circle cx="439" cy="102" r="6.5" fill="#2F6B57"/><circle cx="454" cy="102" r="6.5" fill="#B58B3A"/><circle cx="469" cy="102" r="6.5" fill="#B58B3A"/><text x="540" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="290" y="128" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="300" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D3</text><circle cx="334" cy="148" r="6.5" fill="#2F6B57"/><circle cx="349" cy="148" r="6.5" fill="#2F6B57"/><circle cx="364" cy="148" r="6.5" fill="#2F6B57"/><circle cx="379" cy="148" r="6.5" fill="#2F6B57"/><circle cx="394" cy="148" r="6.5" fill="#2F6B57"/><circle cx="409" cy="148" r="6.5" fill="#2F6B57"/><circle cx="424" cy="148" r="6.5" fill="#2F6B57"/><circle cx="439" cy="148" r="6.5" fill="#2F6B57"/><circle cx="454" cy="148" r="6.5" fill="#B58B3A"/><circle cx="469" cy="148" r="6.5" fill="#B58B3A"/><text x="540" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="290" y="174" width="260" height="40" rx="8" fill="#fff" stroke="#B58B3A" stroke-width="3"/><text x="300" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D4</text><circle cx="334" cy="194" r="6.5" fill="#2F6B57"/><circle cx="349" cy="194" r="6.5" fill="#2F6B57"/><circle cx="364" cy="194" r="6.5" fill="#2F6B57"/><circle cx="379" cy="194" r="6.5" fill="#B58B3A"/><circle cx="394" cy="194" r="6.5" fill="#B58B3A"/><circle cx="409" cy="194" r="6.5" fill="#B58B3A"/><circle cx="424" cy="194" r="6.5" fill="#B58B3A"/><circle cx="439" cy="194" r="6.5" fill="#B58B3A"/><circle cx="454" cy="194" r="6.5" fill="#B58B3A"/><circle cx="469" cy="194" r="6.5" fill="#B58B3A"/><text x="540" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6E5217" text-anchor="end" font-weight="700">B wins</text><rect x="290" y="220" width="260" height="40" rx="8" fill="#fff" stroke="#B58B3A" stroke-width="3"/><text x="300" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D5</text><circle cx="334" cy="240" r="6.5" fill="#2F6B57"/><circle cx="349" cy="240" r="6.5" fill="#2F6B57"/><circle cx="364" cy="240" r="6.5" fill="#2F6B57"/><circle cx="379" cy="240" r="6.5" fill="#B58B3A"/><circle cx="394" cy="240" r="6.5" fill="#B58B3A"/><circle cx="409" cy="240" r="6.5" fill="#B58B3A"/><circle cx="424" cy="240" r="6.5" fill="#B58B3A"/><circle cx="439" cy="240" r="6.5" fill="#B58B3A"/><circle cx="454" cy="240" r="6.5" fill="#B58B3A"/><circle cx="469" cy="240" r="6.5" fill="#B58B3A"/><text x="540" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6E5217" text-anchor="end" font-weight="700">B wins</text><rect x="290" y="272" width="260" height="46" rx="8" fill="#1F3D33"/><text x="420.0" y="291" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">Party A: 3 seats · Party B: 2 seats</text><text x="420.0" y="309" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#E0C888" text-anchor="middle" font-weight="400">Same voters: 30 for A, 20 for B</text><text x="700.0" y="22" font-family="Inter, Arial, sans-serif" font-size="14" fill="#1F3D33" text-anchor="middle" font-weight="700">Map 3: Packed and cracked</text><rect x="570" y="36" width="260" height="40" rx="8" fill="#fff" stroke="#B58B3A" stroke-width="3"/><text x="580" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D1</text><circle cx="614" cy="56" r="6.5" fill="#2F6B57"/><circle cx="629" cy="56" r="6.5" fill="#2F6B57"/><circle cx="644" cy="56" r="6.5" fill="#2F6B57"/><circle cx="659" cy="56" r="6.5" fill="#2F6B57"/><circle cx="674" cy="56" r="6.5" fill="#B58B3A"/><circle cx="689" cy="56" r="6.5" fill="#B58B3A"/><circle cx="704" cy="56" r="6.5" fill="#B58B3A"/><circle cx="719" cy="56" r="6.5" fill="#B58B3A"/><circle cx="734" cy="56" r="6.5" fill="#B58B3A"/><circle cx="749" cy="56" r="6.5" fill="#B58B3A"/><text x="820" y="61" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6E5217" text-anchor="end" font-weight="700">B wins</text><rect x="570" y="82" width="260" height="40" rx="8" fill="#fff" stroke="#B58B3A" stroke-width="3"/><text x="580" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D2</text><circle cx="614" cy="102" r="6.5" fill="#2F6B57"/><circle cx="629" cy="102" r="6.5" fill="#2F6B57"/><circle cx="644" cy="102" r="6.5" fill="#2F6B57"/><circle cx="659" cy="102" r="6.5" fill="#2F6B57"/><circle cx="674" cy="102" r="6.5" fill="#B58B3A"/><circle cx="689" cy="102" r="6.5" fill="#B58B3A"/><circle cx="704" cy="102" r="6.5" fill="#B58B3A"/><circle cx="719" cy="102" r="6.5" fill="#B58B3A"/><circle cx="734" cy="102" r="6.5" fill="#B58B3A"/><circle cx="749" cy="102" r="6.5" fill="#B58B3A"/><text x="820" y="107" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6E5217" text-anchor="end" font-weight="700">B wins</text><rect x="570" y="128" width="260" height="40" rx="8" fill="#fff" stroke="#B58B3A" stroke-width="3"/><text x="580" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D3</text><circle cx="614" cy="148" r="6.5" fill="#2F6B57"/><circle cx="629" cy="148" r="6.5" fill="#2F6B57"/><circle cx="644" cy="148" r="6.5" fill="#2F6B57"/><circle cx="659" cy="148" r="6.5" fill="#2F6B57"/><circle cx="674" cy="148" r="6.5" fill="#B58B3A"/><circle cx="689" cy="148" r="6.5" fill="#B58B3A"/><circle cx="704" cy="148" r="6.5" fill="#B58B3A"/><circle cx="719" cy="148" r="6.5" fill="#B58B3A"/><circle cx="734" cy="148" r="6.5" fill="#B58B3A"/><circle cx="749" cy="148" r="6.5" fill="#B58B3A"/><text x="820" y="153" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6E5217" text-anchor="end" font-weight="700">B wins</text><rect x="570" y="174" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="580" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D4</text><circle cx="614" cy="194" r="6.5" fill="#2F6B57"/><circle cx="629" cy="194" r="6.5" fill="#2F6B57"/><circle cx="644" cy="194" r="6.5" fill="#2F6B57"/><circle cx="659" cy="194" r="6.5" fill="#2F6B57"/><circle cx="674" cy="194" r="6.5" fill="#2F6B57"/><circle cx="689" cy="194" r="6.5" fill="#2F6B57"/><circle cx="704" cy="194" r="6.5" fill="#2F6B57"/><circle cx="719" cy="194" r="6.5" fill="#2F6B57"/><circle cx="734" cy="194" r="6.5" fill="#2F6B57"/><circle cx="749" cy="194" r="6.5" fill="#B58B3A"/><text x="820" y="199" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="570" y="220" width="260" height="40" rx="8" fill="#fff" stroke="#2F6B57" stroke-width="3"/><text x="580" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#4a5263" text-anchor="start" font-weight="700">D5</text><circle cx="614" cy="240" r="6.5" fill="#2F6B57"/><circle cx="629" cy="240" r="6.5" fill="#2F6B57"/><circle cx="644" cy="240" r="6.5" fill="#2F6B57"/><circle cx="659" cy="240" r="6.5" fill="#2F6B57"/><circle cx="674" cy="240" r="6.5" fill="#2F6B57"/><circle cx="689" cy="240" r="6.5" fill="#2F6B57"/><circle cx="704" cy="240" r="6.5" fill="#2F6B57"/><circle cx="719" cy="240" r="6.5" fill="#2F6B57"/><circle cx="734" cy="240" r="6.5" fill="#2F6B57"/><circle cx="749" cy="240" r="6.5" fill="#B58B3A"/><text x="820" y="245" font-family="Inter, Arial, sans-serif" font-size="12" fill="#2F6B57" text-anchor="end" font-weight="700">A wins</text><rect x="570" y="272" width="260" height="46" rx="8" fill="#1F3D33"/><text x="700.0" y="291" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="700">Party A: 2 seats · Party B: 3 seats</text><text x="700.0" y="309" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#E0C888" text-anchor="middle" font-weight="400">Same voters: 30 for A, 20 for B</text></svg>
+      <p class="source">Source: Hypothetical example created for this textbook to illustrate packing and cracking. Parties are labeled A and B to focus on the method, which either party can use. Each circle is one voter.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Map</th><th>District results (votes for A–B)</th><th>Seats won by A</th><th>Seats won by B</th></tr></thead><tbody><tr><td>Map 1</td><td>6–4 in all five districts</td><td>5</td><td>0</td></tr><tr><td>Map 2</td><td>8–2 in three districts, 3–7 in two</td><td>3</td><td>2</td></tr><tr><td>Map 3</td><td>4–6 in three districts, 9–1 in two</td><td>2</td><td>3</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which map gives Party B three seats even though it has only 20 of the 50 voters? Describe what was done to Party A’s voters.</li><li>Where in Map 3 are Party A’s voters packed, and where are they cracked?</li><li>How might a member in a safe seat behave differently from a member in a competitive seat? Use the text’s explanation.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Permanent Campaign</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The "Permanent Campaign" forces governance to take a backseat to survival. With the House facing reelection every two years, decisions on long-term national problems are often deferred in favor of short-term actions that satisfy the immediate demands of the next election cycle.</p>
+        <p>The combination of the incumbency advantage and gerrymandering means that for many members of Congress, the primary goal is not necessarily legislating, but maintaining their coalition. The modern Congress operates in a state of the "permanent campaign." Decisions on governance are filtered through the lens of electoral survival. This helps explain why Congress struggles to tackle long-term problems like the national debt or entitlement reform. Solving these problems requires painful sacrifices—raising taxes or cutting benefits—that act as poison in an election.</p>
+        <p>However, this focus on the local is also what tethers the government to the people. A senator might block a defense bill until it guarantees that a fighter jet engine is built in their state. Critics call this corruption; supporters call it representation. By fighting for the specific economic interests of their state, the legislator ensures that the federal government does not ignore the local realities of the citizens. The tension between the national need for efficient governance and the local need for specific representation is the engine that drives the political strategy of the legislative branch.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Permanent campaign</span> The condition in which members focus on reelection all the time, so campaigning shapes how they govern. <span class="sp">Spanish: campaña permanente</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2 years</span>The House term. A Representative starts running for the next election almost as soon as the last one ends.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 14 follows what happens in election campaigns.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Delegate or Trustee?</div></div>
+      <div class="box-b">
+        <p>You are a Representative. A trade bill would help the national economy, but 70 percent of your district opposes it because local factories might close.</p>
+        <div class="opts"><div class="opt"><h5>Vote as a delegate</h5>You follow your district and likely win reelection, but the bill fails.</div><div class="opt"><h5>Vote as a trustee</h5>You follow your own judgment and risk losing the next election.</div></div>
+        <p class="ask">Which would you choose? What does your choice say about how you view your job?</p>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Who Draws the Lines?</div></div>
+      <div class="box-b">
+<p style="margin:0">In Canada, independent boundary commissions in each province propose the borders of federal electoral districts, not the parties that benefit from them. In California, voters created a Citizens Redistricting Commission through Propositions 11 (2008) and 20 (2010). It drew the state’s congressional districts after the 2010 and 2020 censuses. In November 2025, California voters approved Proposition 50, which put legislature-drawn congressional maps in place through the 2030 elections. How might the person who draws the lines change what a district looks like?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; REPRESENTATION AND PRESSURE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 4.5. Identify an issue on which you would want a member to act as a delegate and one on which you would want a member to act as a trustee. Explain each.</li><li>Use Figure 4.6. Explain how the incumbency advantage, and not just voter satisfaction, helps explain these rates.</li><li>Write a Counter-Argument to this claim: “Gerrymandering is the only reason incumbents win.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 4.3 ASSESSMENT</b>Complete the Section 4.3 Assessment in your <i>Chapter 4 Assignment</i> packet before you move on to Section 4.4.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>4.4</b></div>
+    <h2>Congressional Oversight: Constraining the Executive</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#E0C888" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1F4EE" stroke-width="5"/><path d="M14 100h132" stroke="#E0C888" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 4.4, you will</p>
+      <ul><li>Explain how the power of the purse lets Congress check the President</li><li>Describe how investigations and confirmations are used as oversight tools</li><li>Explain why the text calls oversight a constant struggle for supremacy</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-power-of-the-purse">Power of the Purse</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each oversight tool and one example.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tool, example, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Example</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#2F6B57"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Congressional Oversight: Constraining the Executive</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Constitution does not just give Congress the power to write laws; it gives Congress the duty to watch over the people who enforce them. This is the function of oversight. As the federal bureaucracy has grown into a massive apparatus of agencies, departments, and commissions, the role of Congress as a watchdog has become increasingly vital. If the President is the CEO of the government, Congress is the Board of Directors, with the power to investigate, defund, and even remove the executives.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Oversight</span> Congress’s duty to watch over, investigate, and review the executive branch. <span class="sp">Spanish: supervisión (control legislativo)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Board and CEO</span>The chapter’s comparison: the President is the CEO of the government and Congress is the Board of Directors.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 5 shows the other side of this relationship: the President’s tools for leading and resisting Congress.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Power of the Purse</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Us-treasury-building.jpg?width=1400" alt="An aerial view of the columned Treasury Building with the Washington Monument rising in the background." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Where the money is managed</span>The United States Treasury Building in Washington, D.C., with the Washington Monument in the background. Under Article I, Section 9, the executive branch can spend money from the Treasury only as Congress appropriates it.<span class="credit">Photo: MeanieHyaena / <a href="https://commons.wikimedia.org/wiki/File:Us-treasury-building.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></span></figcaption></figure>
+        <p class="lead">The "<dfn id="t-power-of-the-purse">Power of the Purse</dfn>" is the ultimate check. By controlling the flow of money, Congress can starve specific agencies or wars of the resources they need, effectively forcing the President to change course without passing a new law.</p>
+        <p>The most potent weapon in Congress's arsenal is the power of the purse. Article I, Section 9 of the Constitution states, "No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law." This means the President cannot spend a single dime unless Congress gives it to them. This financial authority is the ultimate check on executive ambition.</p>
+        <p>History is filled with examples of Congress using this power to change national policy. In the 1970s, as the Vietnam War dragged on, public support collapsed. Presidents Nixon and Ford wanted to continue supporting the South Vietnamese government. However, in 1973, Congress passed the Case-Church Amendment, which prohibited the use of government funds for U.S. military operations in Vietnam, Laos, and Cambodia. By cutting off the money, Congress effectively ended the war.</p>
+        <p>More recently, the power of the purse has led to high-stakes brinkmanship known as government shutdowns. If Congress and the President cannot agree on a budget, the funding for the government expires, and non-essential services close. In 2018-2019, the government shut down for 35 days due to a dispute over funding for a border wall. These conflicts highlight the reality that while the President commands the military and the bureaucracy, Congress supplies the fuel. Without the legislature's financial consent, the executive engine stalls.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Appropriation</span> Money that Congress sets aside by law for a specific purpose. <span class="sp">Spanish: asignación presupuestaria</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Government shutdown</span> A lapse in funding when Congress and the President cannot agree on a budget. Non-essential services close. <span class="sp">Spanish: cierre del gobierno</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">35 days</span>Length of the 2018–2019 shutdown, from December 22, 2018 to January 25, 2019. The 2025 shutdown, from October 1 to November 12, 2025, lasted 43 days.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Madison called this power “the most complete and effectual weapon” for the people’s representatives. You will read his words in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 4.8</span>Congress’s Oversight Tools in Action</p>
+      <p class="figsub">Five examples the chapter uses, with the tool and the result.</p>
+      <table class="cmp"><thead><tr><th>Tool</th><th>Example</th><th>Date</th><th>Result</th></tr></thead><tbody><tr><td>Power of the purse</td><td>Case–Church Amendment</td><td>Signed July 1, 1973</td><td>Barred use of funds for U.S. combat in or over Cambodia, Laos, North Vietnam, and South Vietnam after August 15, 1973</td></tr><tr><td>Power of the purse</td><td>Government shutdown</td><td>December 22, 2018 – January 25, 2019</td><td>35-day lapse in funding over a dispute about funding for a border wall</td></tr><tr><td>Investigation</td><td>Senate Watergate Committee hearings</td><td>Began May 17, 1973</td><td>Televised hearings that revealed corruption in the Nixon White House; Nixon resigned August 9, 1974</td></tr><tr><td>Advice and consent</td><td>Rejection of Robert Bork for the Supreme Court</td><td>October 23, 1987</td><td>Senate vote of 42 to 58</td></tr><tr><td>Advice and consent</td><td>No hearings for Merrick Garland</td><td>2016</td><td>The Senate Judiciary Committee held no hearings on the nomination</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; U.S. Senate, Select Committee on Presidential Campaign Activities (Watergate Committee) history; Case–Church Amendment (Public Law 93-52, July 1, 1973); U.S. Senate roll call on the Bork nomination (October 23, 1987). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which tool works by cutting off money? Which works by questioning officials in public?</li><li>Which example involved the Senate’s confirmation power? What did the Senate decide in each case?</li><li>Why might a President call these actions “meddling,” while Congress calls them accountability?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Investigative Authority and "Advice and Consent"</h3>
+    <div class="pair">
+      <div class="body">
+        <p>Oversight shines a light on the executive branch. Through subpoena power and public hearings, committees expose corruption and malfunction, forcing unelected bureaucrats to answer to the people's representatives.</p>
+        <p>Beyond money, Congress uses its committee structure to investigate executive behavior. Committees have the power of subpoena, allowing them to force documents to be released and witnesses to testify under oath. The most famous example of this is the Watergate investigation in 1973. The Senate Watergate Committee, led by Senator Sam Ervin, held televised hearings that revealed the depth of corruption in the Nixon White House. These hearings were not a criminal trial, but a public education. They unraveled the cover-up and eventually led to Nixon's resignation.</p>
+        <p>Similarly, the "Advice and Consent" power of the Senate serves as a quality control check on the President's personnel. The President appoints cabinet secretaries, ambassadors, and federal judges, but the Senate must confirm them. This process was originally intended to ensure that nominees were qualified and free of corruption. However, in the modern era, it has become a tool of political warfare. The rejection of Robert Bork to the Supreme Court in 1987 and the refusal to hold hearings for Merrick Garland in 2016 demonstrate how the Senate uses its confirmation power to shape the ideological direction of the judicial and executive branches.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Subpoena</span> A legal order that forces a person to testify or hand over documents. <span class="sp">Spanish: citación (subpoena)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Advice and consent</span> The Senate’s power to confirm or reject the President’s major appointments and treaties. <span class="sp">Spanish: consejo y consentimiento</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Oct. 23, 1987</span>Date the Senate rejected Robert Bork’s nomination to the Supreme Court by a vote of 42 to 58.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Article II, Section 2 requires the “Advice and Consent of the Senate” for judges, ambassadors, and other officers.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Struggle for Supremacy</h3>
+    <div class="pair">
+      <div class="body">
+        <p>The struggle for supremacy is constant. Oversight is inherently adversarial, a necessary conflict where Congress pushes to restrain the executive and the President pushes to expand their authority, maintaining the delicate balance of the Constitution.</p>
+        <p>Congressional oversight is the practical application of checks and balances. It is inherently adversarial. An executive branch that is never questioned will naturally expand its power, hide its mistakes, and interpret the law to suit its own ends. Congress acts as the "Logic of Internal Restraints" brought to life. By hauling agency directors before committees, auditing agency budgets, and scrutinizing presidential appointees, Congress forces the executive branch to justify its actions.</p>
+        <p>This relationship is often hostile. Presidents of all parties complain about congressional "meddling" and "micromanagement." Yet, this hostility is necessary. The separation of powers was not designed to maximize efficiency; it was designed to maximize accountability. When Congress aggressively oversees the executive, it is not obstructing the government; it is ensuring that the government remains a servant of the law, rather than a tool of the ruler.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Accountability</span> Being answerable for one’s actions. <span class="sp">Spanish: rendición de cuentas</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The text describes oversight as “the ‘Logic of Internal Restraints’ brought to life.” Federalist No. 51 supports that idea.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#E0C888"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#1F3D33">E</text></svg><div><small>EXAMPLE</small>The Student Council’s Treasurer</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A principal wants to buy a new scoreboard. The student council controls the activity fund, and no money may be spent without its vote. The council asks the principal to explain the cost before it approves. The principal may be annoyed at the questions, but the council is using its control of the money to hold the principal accountable. That is Congress’s power of the purse.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Cut the Funding?</div></div>
+      <div class="box-b">
+        <p>You are a Senator. The President is carrying out a policy you think is a mistake, but most Americans have not noticed it. You could threaten to cut the funding.</p>
+        <div class="opts"><div class="opt"><h5>Cut the funds</h5>The policy stops, but you may be accused of blocking the executive and creating a crisis.</div><div class="opt"><h5>Hold hearings instead</h5>The public learns what is happening, but the policy continues for now.</div></div>
+        <p class="ask">Which would you choose, and why?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Congress is a designed battlefield. The noise, the delay, and the frustration are the visible signs of diverse interests being forced to negotiate. It is an arena where the "Logic of Internal Restraints" turns conflict into the slow, steady progress of democratic law.</p>
+        <p>The United States Congress is a paradox. It is the most powerful legislature in the world, yet it often seems paralyzed by its own internal divisions. It is designed to represent the will of the people, yet it frequently acts to frustrate the immediate desires of the majority. To understand Congress, one must return to the Essential Question: How does the structure of Congress reflect the strategic compromise between state interests, popular will, and the "Logic of Internal Restraints"?</p>
+        <p>The answer lies in the realization that Congress was never intended to be a streamlined machine for passing laws. It was designed as a battlefield. The House brings the raw energy of popular sentiment, demanding immediate action. The Senate brings the caution of the states, demanding deliberation and consensus. The committee system disperses power, ensuring that expertise guides policy, while the filibuster and procedural rules protect the minority from being steamrolled by the majority.</p>
+        <p>The frustrations that Americans feel with Congress—the gridlock, the pork barrel spending, the slow pace of change—are often the byproducts of its design. The structure forces compromise. It forces the rural interests of Wyoming to sit at the table with the urban interests of New York. It forces the trustee to listen to the delegate. In a nation as vast and diverse as the United States, this forced negotiation is the only alternative to disunion. The friction of Congress is the heat generated by democracy working exactly as it was designed: slowly, argumentatively, and publicly. As we move to the next chapter, we will see how the Executive Branch attempts to navigate this legislative maze to lead the nation.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">535 members</span>Congress’s voting members: 435 Representatives and 100 Senators, the “designed battlefield” the chapter describes.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 5 turns to the executive branch and asks how a President navigates this legislative maze.</div>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; POWER AND ACCOUNTABILITY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 4.8. Pick one example and explain how it checked the executive branch.</li><li>Explain why the text says the power of the purse lets Congress force the President to change course “without passing a new law.”</li><li>Write a Counter-Argument to this claim: “Oversight just creates conflict and prevents the government from working.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 4.4 ASSESSMENT</b>Complete the Section 4.4 Assessment in your <i>Chapter 4 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Should Congress be built to be slow? Read four original documents from 1774 to 1788 and decide how the founders and their predecessors answered.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Sources on Congress</h3>
+        <p>The documents below come from the years when Americans designed their legislature. Two <i>Federalist</i> essays, written for New York newspapers in 1788, defend the Senate and the power of the purse. Edmund Burke’s 1774 speech, delivered to voters in Bristol, England, shaped the debate about how a representative should act. The last document is the text of Article I, which creates Congress.</p>
+        <p>As you read, notice what each source fears, what it trusts, and what it asks Congress to do. Use the Thinking Like a Citizen questions after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1774 to 1788, from a speech to voters to the text that created Congress.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FEDERALIST ESSAY</small><b>James Madison (or Alexander Hamilton), <i>Federalist No. 63</i> (1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“[S]uch an institution may be sometimes necessary as a defense to the people against their own temporary errors and delusions. As the cool and deliberate sense of the community ought, in all governments, and actually will, in all free governments, ultimately prevail over the views of its rulers; so there are particular moments in public affairs when the people, stimulated by some irregular passion, or some illicit advantage, or misled by the artful misrepresentations of interested men, may call for measures which they themselves will afterwards be the most ready to lament and condemn. In these critical moments, how salutary will be the interference of some temperate and respectable body of citizens, in order to check the misguided career, and to suspend the blow meditated by the people against themselves, until reason, justice, and truth can regain their authority over the public mind?”<cite><i>Federalist No. 63</i>, The Senate Continued, signed “Publius,” March 1, 1788. Text from the Avalon Project, Yale Law School. Authorship is attributed to Madison or Hamilton.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What “temporary errors and delusions” does the author fear, and what does the author want a Senate to do about them? Which feature from Section 4.1 does this describe?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · POLITICAL SPEECH</small><b>Edmund Burke, Speech to the Electors of Bristol (November 3, 1774)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Your representative owes you, not his industry only, but his judgment; and he betrays, instead of serving you, if he sacrifices it to your opinion. . . . Parliament is not a congress of ambassadors from different and hostile interests; which interests each must maintain, as an agent and advocate, against other agents and advocates; but parliament is a deliberative assembly of one nation, with one interest, that of the whole.”<cite>Edmund Burke, Speech to the Electors of Bristol, November 3, 1774. Text from The Founders’ Constitution, University of Chicago Press. The ellipsis marks omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which model of representation from Section 4.3 does Burke describe? How would a Delegate answer him?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · FEDERALIST ESSAY</small><b>James Madison, <i>Federalist No. 58</i> (1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“This power over the purse may, in fact, be regarded as the most complete and effectual weapon with which any constitution can arm the immediate representatives of the people, for obtaining a redress of every grievance, and for carrying into effect every just and salutary measure.”<cite><i>Federalist No. 58</i>, February 20, 1788, signed “Publius.” Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Madison say Congress can do with its control of money? Which example from Section 4.4 shows this idea at work?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · FOUNDING DOCUMENT</small><b>The Constitution of the United States, Article I (1787)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Section 1: “All legislative Powers herein granted shall be vested in a Congress of the United States, which shall consist of a Senate and House of Representatives.”<br><br>Section 2: “The House of Representatives shall be composed of Members chosen every second Year by the People of the several States . . .”<br><br>Section 3: “The Senate of the United States shall be composed of two Senators from each State, chosen by the Legislature thereof, for six Years; and each Senator shall have one Vote.”<br><br>Section 5: “Each House may determine the Rules of its Proceedings . . .”<cite>U.S. Constitution, Article I, Sections 1, 2, 3, and 5. Text from the National Archives transcription. Spelling and capitalization are original. The Seventeenth Amendment (1913) changed the choice of Senators from state legislatures to voters. Ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which words explain why the House and the Senate were built differently? Which clause lets the Senate create the filibuster?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Documents A and D. How does the author of Document A explain the Senate’s six-year terms and equal state representation?</li>
+        <li>Use Document B and Section 4.3. Explain how the Trustee Model and the Politico Model differ. Which would Burke call the better description of a good legislator?</li>
+        <li>Use Document C and Section 4.4. How can control of the money change what a President does without a new law? Cite one example.</li>
+        <li>Which document would a supporter of speed cite least often? Which would a supporter of deliberation cite most often? Explain both choices.</li>
+        <li><b>Making a Claim</b> Should Congress be built to be slow? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>4</b></div>
+    <h2>Chapter 4 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#E0C888" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F1F4EE" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F1F4EE" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the structure of Congress reflect the strategic compromise between state interests, popular will, and the "Logic of Internal Restraints"?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>The Structure of Congress</h5>The Great Compromise gave Congress two chambers: a House based on population and a Senate with two members per state. Different terms and rules make the House fast and the Senate slow, so institutional friction protects against the tyranny of the majority.</div><div><h5>The Legislative Process</h5>Committees decide which bills survive. Party leaders, veto points, logrolling, and pork barrel legislation shape what passes. Opponents need to win only once, so the process favors compromise.</div><div><h5>Representation and Governance</h5>Members balance the Trustee and Delegate models, but the incumbency advantage, gerrymandering, and the permanent campaign protect them from voters. Local interests and national needs often pull in different directions.</div><div><h5>Oversight</h5>Congress checks the executive through the power of the purse, investigations, and advice and consent. Oversight is adversarial by design and keeps government answerable to the law.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#2F6B57" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#B58B3A" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 4 ASSESSMENT AND SIMULATION</b>Complete the Chapter 4 Assessment (vocabulary, multiple choice, guided analysis, visual analysis, the Federalist No. 51 source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 4 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of American Democracy, Grade 12 (HSS-PoAD.12.4, 12.4.1, 12.1.5): <a href="https://www2.cde.ca.gov/cacs/history">www2.cde.ca.gov/cacs/history</a></li><li>James Madison, Federalist Nos. 51, 58, and 63, The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu/18th_century/fed63.asp">avalon.law.yale.edu/18th_century/fed63.asp</a></li><li>Edmund Burke, Speech to the Electors of Bristol (1774), The Founders’ Constitution, University of Chicago Press: <a href="https://press-pubs.uchicago.edu/founders/documents/v1ch13s7.html">press-pubs.uchicago.edu/founders/documents/v1ch13s7.html</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li>Woodrow Wilson, <i>Congressional Government</i> (1885), excerpt, U.S. Senate: <a href="https://www.senate.gov/about/origins-foundations/idea-of-the-senate/1885Wilson.htm">senate.gov</a></li><li>U.S. Census Bureau, 2020 Census apportionment results: <a href="https://census.gov/newsroom/press-releases/2021/2020-census-apportionment-results.html">census.gov</a></li><li>OpenSecrets, Reelection Rates in Congress, 1964–2024: <a href="https://www.opensecrets.org/elections-hub/reelection-rates">opensecrets.org</a></li><li>Clerk of the U.S. House of Representatives, Roll Call 477 (H.R. 2454, June 26, 2009): <a href="https://clerk.house.gov/evs/2009/roll477">clerk.house.gov</a></li><li>Case–Church Amendment (Public Law 93-52, 1973); 1994 U.S. House elections; Robert Bork nomination; Senate Watergate Committee; Gravina Island Bridge; U.S. government shutdowns (dates and vote counts)</li><li>National Gallery of Art, <i>The House of Representatives</i> (Samuel F. B. Morse), for the painting caption</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photograph: Architect of the Capitol (public domain, Capitol west front and Old Senate Chamber); MeanieHyaena (CC BY 4.0, Treasury Building). Public-domain and CC0 paintings and prints: Ralph Earl, portrait of Roger Sherman (c. 1775); Samuel F. B. Morse, <i>The House of Representatives</i> (1822–1823, National Gallery of Art, CC0); James Barry, portrait of Edmund Burke (1774); and the 1812 “Gerry-Mander” cartoon (attributed to Elkanah Tisdale). All images are hosted by Wikimedia Commons and appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 2 · INTERACTIONS AMONG BRANCHES OF GOVERNMENT | LESSON 3 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

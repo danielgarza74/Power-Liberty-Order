@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 16: Public Policy and the Economy | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#FAFBFC; --white:#ffffff;
+  --unit:#3D6580; --unit-dk:#23394B; --unit-lt:#EEF2F5; --unit-mid:#9AAFBD;
+  --amber:#D08C23; --amber-lt:#F0C77E; --amber-dk:#8D5F18;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#FAECD3; --cream:#EEF2F5; --pale:#F0C77E;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#D9DEE3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#E8EDF0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(35,57,75,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#D8E0E6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#F9FAFB}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#F1F4F6;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ffe3c2;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #DCE3E8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #E8EDF0}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#F9FAFB;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#EFF3F5;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#E8EDF0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#E8EDF0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(35,57,75,.80) 0%,rgba(35,57,75,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 16 · PUBLIC POLICY AND THE ECONOMY</span>
+  <a href="#opener">Opener</a><a href="#s1">16.1 Fiscal Policy</a><a href="#s2">16.2 The Fed</a><a href="#s3">16.3 Regulation</a><a href="#s4">16.4 The Safety Net</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Eccles%20Building%20%2826088200676%29.jpg?width=2000" alt="The Eccles Building of the Federal Reserve in Washington, D.C., a long white stone building with a central columned entrance, a flagpole above it, and a blue sky." style="object-position:50% 60%"></div>
+  <div class="opener-head">
+    <div class="chapnum">16</div>
+    <div>
+      <div class="unitline">Unit 5 · Public Policy and Global Leadership</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Public Policy<br>and the Economy</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the money supply is managed.</b> The Eccles Building in Washington, D.C., headquarters of the Board of Governors of the Federal Reserve System, photographed in 2011. The Fed is the one economic institution this chapter treats as deliberately insulated from elections. <span class="credit">Photo: Federal Reserve / <a href="https://commons.wikimedia.org/wiki/File:Eccles_Building_(26088200676).jpg">Wikimedia Commons</a>, public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 16.1</span><span class="sl-title">Fiscal Policy: The Power of the Purse</span></a>
+      <a href="#s2"><span class="sl-tag">SECTION 16.2</span><span class="sl-title">Monetary Policy: The Federal Reserve System</span></a>
+      <a href="#s3"><span class="sl-tag">SECTION 16.3</span><span class="sl-title">Regulation and the Public Interest</span></a>
+      <a href="#s4"><span class="sl-tag">SECTION 16.4</span><span class="sl-title">The Social Safety Net and Entitlements</span></a>
+      <a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: How Much Should Government Steer the Economy?</span></a>
+      <a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the federal government strategically utilize fiscal and monetary policy to balance economic stability with individual liberty?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul>
+          <li>Differentiate fiscal policy, set by Congress and the president, from monetary policy, set by the independent Federal Reserve.</li>
+          <li>Compare Keynesian and supply-side economic theories and the roles for government each prescribes.</li>
+          <li>Analyze the budget squeeze between mandatory and discretionary spending.</li>
+          <li>Evaluate the trade-offs of regulation, and assess the long-term sustainability of entitlement programs.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Public Policy</span><span>Fiscal Policy</span><span>Monetary Policy</span><span>The Federal Reserve</span><span>Keynesian Economic Theory</span><span>Supply-Side Economics</span><span>GDP</span><span>Inflation</span><span>Entitlement Programs</span><span>Deficit Spending</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 16 Key Concept</p>
+        <p><b>Trade-offs.</b> Every economic policy gives up something to get something. A tax cut leaves less for public services, an interest-rate hike slows hiring to slow prices, and a safety rule raises costs to lower risk. Economists can measure many of these trade-offs, but citizens and voters decide which ones are worth it.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine the Shafter High student store has $1,000 to spend this year. It can buy more inventory, lower prices, or save money for a bad year. Each choice helps one group and costs another, and nobody can have everything. The federal government faces the same kind of choice with a budget measured in trillions of dollars, and its decisions change your future paycheck, your loan rates, and the taxes you will pay.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents and answer one question: <a href="#case">how much should government steer the economy?</a></p>
+      <div class="standards">
+        <div class="stdbox">
+          <h4>CALIFORNIA CONTENT STANDARDS</h4>
+          <ul>
+            <li><code>HSS-PoE.12.3</code> Students analyze the influence of the federal government on the American economy.</li>
+            <li><code>12.3.3</code> Describe the aims of government fiscal policies (taxation, borrowing, spending) and their influence on production, employment, and price levels. <i>(Section 16.1)</i></li>
+            <li><code>12.3.4</code> Understand the aims and tools of monetary policy and their influence on economic activity (e.g., the Federal Reserve). <i>(Section 16.2)</i></li>
+          </ul>
+        </div>
+        <div class="stdbox">
+          <h4>ALSO SUPPORTS</h4>
+          <ul>
+            <li><code>12.3.1</code> Understand how the role of government in a market economy often includes providing for national defense, addressing environmental concerns, defining and enforcing property rights, attempting to make markets more competitive, and protecting consumers’ rights. <i>(Section 16.3)</i></li>
+            <li><code>HSS-PoAD.12.7.5</code> Explain how public policy is formed, including the setting of the public agenda and implementation of it through regulations and executive orders. <i>(Section 16.3)</i></li>
+            <li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The Crash That Changed the Question</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">In the autumn of 1929, the New York Stock Exchange collapsed with a speed and severity that left economists, politicians, and ordinary citizens struggling to comprehend what had happened. Within three years, the unemployment rate had climbed to nearly twenty-five percent. Banks failed by the thousands. Farms were foreclosed across the Great Plains. Families who had considered themselves securely middle class found themselves dependent on charity for food. The Great Depression was not merely an economic catastrophe; it was a political and philosophical crisis that forced the American republic to confront a question it had never fully resolved: What responsibility does the federal government bear for the economic security of its citizens, and what tools can it legitimately use to fulfill that responsibility?</p>
+        <p>The answers that emerged from the Depression — through the policy experiments of Franklin Roosevelt's New Deal, the theoretical frameworks developed by British economist John Maynard Keynes, and the institutional innovations that reshaped the relationship between government and economy over the following decades — continue to define the landscape of American economic policy today. The federal government now deploys two primary categories of tools to manage the national economy: fiscal policy, which involves decisions about taxing, spending, and borrowing made by Congress and the president, and monetary policy, which involves decisions about the supply of money and the level of interest rates made by the Federal Reserve System. Together, these instruments give the government an unprecedented capacity to influence the pace of economic growth, the rate of inflation, the level of employment, and the distribution of wealth across the population.</p>
+        <p>Yet the existence of these tools does not resolve the underlying political and philosophical questions about when and how they should be used. Every decision about fiscal and monetary policy reflects judgments — contested, politically charged, and often ideologically driven — about the relationship between government and the market, about the proper distribution of the tax burden, about what the economy owes to those at the bottom of the income distribution, and about what trade-offs between present consumption and future fiscal responsibility are acceptable. The debate between Keynesian economists who emphasize the government's responsibility to sustain demand during downturns and supply-side economists who emphasize the importance of limiting government's burden on private enterprise is not merely a technical dispute among professionals; it is a manifestation of the deepest ideological divisions in American political life.</p>
+        <p>This chapter examines the full scope of the federal government's role as economic manager: the fiscal tools of taxing and spending, the monetary tools of the Federal Reserve, the regulatory apparatus that governs the conduct of private business, and the entitlement programs that represent the largest and most politically sensitive component of the federal budget. Running through each of these topics is the fundamental tension that has characterized American economic policy since the New Deal — between the market's capacity for wealth creation and innovation, and the government's obligation to ensure that the benefits of that wealth are broadly shared and that its volatility does not devastate the lives of ordinary citizens.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term"><dfn id="t-public-policy">Public policy</dfn></span> A choice that government makes in response to a political issue: a course of action taken to deal with some problem. <span class="sp">Spanish: política pública</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term"><dfn id="t-gdp">Gross Domestic Product (GDP)</dfn></span> The total value of all goods and services produced in a nation in a year, and the main measure of the size of its economy. <span class="sp">Spanish: producto interno bruto (PIB)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Nearly 25%</span>The unemployment rate in the early 1930s, according to the chapter’s text.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 16.1 covers taxing and spending. Section 16.2 covers the Federal Reserve. Section 16.3 covers regulation. Section 16.4 covers Social Security and Medicare.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>16.1</b></div>
+    <h2>Fiscal Policy: The Power of the Purse</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#F0C77E" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 16.1, you will</p>
+      <ul><li>Define fiscal policy and explain who controls it</li><li>Compare the Keynesian and supply-side diagnoses of economic problems</li><li>Explain how mandatory spending narrows the room for discretionary spending</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-fiscal-policy">Fiscal Policy</a></li><li><a href="#t-keynesian">Keynesian Economic Theory</a></li><li><a href="#t-supply-side">Supply-Side Economics</a></li><li><a href="#t-inflation">Inflation</a></li><li><a href="#t-deficit-spending">Deficit Spending</a></li><li><a href="#t-entitlement">Entitlement Programs</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each theory, list its diagnosis, its prescription, and its risk.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: theory, prescription, risk"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Theory</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Prescription</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Risk</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Fiscal Policy: The Power of the Purse</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead"><dfn id="t-fiscal-policy">Fiscal policy</dfn> is the most powerful and most politically consequential of the federal government's economic tools. Because it involves decisions about who pays taxes, how much, and how the resulting revenues are spent, fiscal policy is inherently a statement of political values — a reflection of judgments about fairness, efficiency, and the proper scope of government activity that no amount of technical economic expertise can fully resolve. Every federal budget is simultaneously an economic document and a political manifesto, encoding choices about national priorities that affect the lives of every American.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fiscal policy</span> Decisions about taxing, spending, and borrowing made by Congress and the president to influence the economy. <span class="sp">Spanish: política fiscal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Art. I, §9</span>“No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law.” Congress holds the power of the purse.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 4 explains Congress and the appropriations process. Chapter 5 explains the president’s budget role.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.1</span>Federal Receipts and Outlays, 1930–2025</p>
+      <p class="figsub">Federal revenue and spending as a percent of GDP, by fiscal year.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of federal outlays and receipts as a percent of GDP, 1930 to 2025. Outlays peak at 42.6 percent in 1943; in 2025 outlays are 23.1 percent and receipts 17.3 percent."><rect x="137.0" y="22" width="27.3" height="292" fill="#EEF2F5" opacity=".9"/><text x="150.7" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600">WWII</text><line x1="62" y1="314.0" x2="710" y2="314.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="318.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="249.1" x2="710" y2="249.1" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="253.1" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">10%</text><line x1="62" y1="184.2" x2="710" y2="184.2" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="188.2" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="62" y1="119.3" x2="710" y2="119.3" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="123.3" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">30%</text><line x1="62" y1="54.4" x2="710" y2="54.4" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="58.4" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">40%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1930</text><line x1="198.4" y1="314" x2="198.4" y2="319" stroke="#6f7787"/><text x="198.4" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1950</text><line x1="334.8" y1="314" x2="334.8" y2="319" stroke="#6f7787"/><text x="334.8" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1970</text><line x1="471.3" y1="314" x2="471.3" y2="319" stroke="#6f7787"/><text x="471.3" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1990</text><line x1="607.7" y1="314" x2="607.7" y2="319" stroke="#6f7787"/><text x="607.7" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2010</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="675.9" y1="26" x2="675.9" y2="314" stroke="#6f7787" stroke-dasharray="3 4"/><text x="675.9" y="22" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#4a5263" text-anchor="middle" font-weight="600">COVID-19</text><g><title>Outlays</title><path d="M62.0 291.9 L68.8 286.7 L75.6 269.9 L82.5 262.7 L89.3 245.2 L96.1 255.0 L102.9 247.2 L109.7 258.8 L116.6 264.7 L123.4 248.5 L130.2 251.7 L137.0 238.1 L143.9 159.6 L150.7 37.6 L157.5 36.9 L164.3 48.0 L171.1 157.0 L178.0 220.6 L184.8 240.0 L191.6 223.2 L198.4 214.7 L205.2 223.8 L212.1 190.7 L218.9 184.9 L225.7 195.3 L232.5 205.0 L239.3 209.5 L246.2 206.9 L253.0 201.1 L259.8 195.3 L266.6 201.7 L273.5 197.8 L280.3 195.9 L287.1 197.2 L293.9 197.8 L300.7 205.6 L307.6 202.4 L314.4 192.0 L321.2 185.5 L328.0 192.7 L334.8 192.7 L341.7 192.0 L348.5 190.7 L355.3 195.9 L362.1 195.9 L368.9 179.7 L375.8 179.0 L382.6 182.9 L389.4 182.9 L396.2 186.8 L403.1 176.4 L409.9 173.8 L416.7 168.0 L423.5 165.4 L430.3 173.8 L437.2 169.9 L444.0 171.9 L450.8 177.1 L457.6 179.7 L464.4 180.3 L471.3 176.4 L478.1 173.2 L484.9 174.5 L491.7 179.0 L498.5 181.6 L505.4 184.2 L512.2 186.8 L519.0 191.4 L525.8 194.0 L532.7 197.2 L539.5 199.1 L546.3 199.1 L553.1 193.3 L559.9 189.4 L566.8 190.1 L573.6 188.8 L580.4 187.5 L587.2 190.1 L594.0 182.9 L600.9 156.3 L607.7 163.5 L614.5 162.8 L621.3 171.9 L628.1 179.7 L635.0 183.6 L641.8 182.3 L648.6 179.7 L655.4 180.3 L662.3 183.6 L669.1 178.4 L675.9 116.1 L682.7 121.9 L689.5 155.0 L696.4 168.6 L703.2 162.8 L710.0 164.1" fill="none" stroke="#8D5F18" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="164.1" r="4" fill="#8D5F18"/><text x="718.0" y="158.1" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Outlays</text><text x="718.0" y="172.1" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">23.1% in 2025</text><g><title>Receipts</title><path d="M62.0 287.4 L68.8 290.0 L75.6 295.8 L82.5 291.9 L89.3 282.9 L96.1 280.9 L102.9 282.2 L109.7 274.4 L116.6 265.3 L123.4 268.6 L130.2 270.5 L137.0 265.3 L143.9 249.8 L150.7 229.6 L157.5 181.0 L164.3 184.9 L171.1 202.4 L178.0 209.5 L184.8 210.8 L191.6 221.2 L198.4 221.9 L205.2 211.5 L212.1 194.0 L218.9 195.9 L225.7 197.2 L232.5 209.5 L239.3 203.7 L246.2 201.7 L253.0 205.0 L259.8 212.1 L266.6 201.7 L273.5 201.7 L280.3 203.7 L287.1 202.4 L293.9 203.7 L300.7 206.9 L307.6 205.0 L314.4 198.5 L321.2 203.7 L328.0 190.1 L334.8 194.6 L341.7 205.0 L348.5 203.7 L355.3 203.0 L362.1 198.5 L368.9 201.1 L375.8 205.6 L382.6 199.8 L389.4 199.8 L396.2 196.6 L403.1 194.0 L409.9 190.1 L416.7 193.3 L423.5 203.7 L430.3 204.3 L437.2 202.4 L444.0 203.7 L450.8 197.8 L457.6 199.1 L464.4 198.5 L471.3 200.4 L478.1 201.7 L484.9 203.7 L491.7 203.7 L498.5 200.4 L505.4 197.8 L512.2 195.3 L519.0 192.7 L525.8 188.8 L532.7 188.8 L539.5 184.2 L546.3 191.4 L553.1 203.0 L559.9 211.5 L566.8 212.8 L573.6 205.0 L580.4 199.8 L587.2 197.2 L594.0 203.0 L600.9 219.9 L607.7 219.9 L614.5 217.3 L621.3 215.4 L628.1 206.3 L635.0 201.7 L641.8 197.8 L648.6 200.4 L655.4 203.0 L662.3 208.2 L669.1 208.2 L675.9 210.2 L682.7 199.8 L689.5 189.4 L696.4 208.9 L703.2 203.7 L710.0 201.7" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="201.7" r="4" fill="#3D6580"/><text x="718.0" y="209.7" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Receipts</text><text x="718.0" y="223.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">17.3% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent of GDP</text></svg>
+      <p class="source">Source: White House Office of Management and Budget, Historical Tables, Table 1.2, FY 2027 Budget (April 2026). Percent of GDP.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Receipts</th><th>Outlays</th><th>Balance</th></tr></thead><tbody><tr><td>1933</td><td>3.4%</td><td>7.9%</td><td>-4.5%</td></tr><tr><td>1943</td><td>13.0%</td><td>42.6%</td><td>-29.6%</td></tr><tr><td>1946</td><td>17.2%</td><td>24.2%</td><td>-7.0%</td></tr><tr><td>1960</td><td>17.3%</td><td>17.3%</td><td>0.1%</td></tr><tr><td>1980</td><td>18.5%</td><td>21.2%</td><td>-2.6%</td></tr><tr><td>2000</td><td>20.0%</td><td>17.7%</td><td>2.3%</td></tr><tr><td>2009</td><td>14.5%</td><td>24.3%</td><td>-9.8%</td></tr><tr><td>2020</td><td>16.0%</td><td>30.5%</td><td>-14.5%</td></tr><tr><td>2025</td><td>17.3%</td><td>23.1%</td><td>-5.9%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>In which year shown in the table did outlays reach their highest share of GDP? What was happening?</li><li>The gap between the two lines is the deficit. In what years does the table show a surplus?</li><li>Compare 2000 with 2025. Describe how receipts and outlays changed.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Keynesian Economics and the Case for Active Government</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/WPA-Work-Pays-America-Poster.jpg?width=1400" alt="A colorful poster of a farmer with a rake and a laborer with a broom shaking hands beside a stalk of wheat, with the words Work Pays America and Works Progress Administration." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A New Deal message</span>The Work Pays America poster, made by the Federal Art Project of the Works Progress Administration between 1936 and 1941 and designed by Vera Bock. The Federal Art Project hired artists as part of the New Deal.<span class="credit">Image: Works Progress Administration, Federal Art Project (designer Vera Bock) / <a href="https://commons.wikimedia.org/wiki/File:WPA-Work-Pays-America-Poster.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The theoretical foundation for using fiscal policy as an active tool of economic management was laid most systematically by the British economist John Maynard Keynes in his landmark 1936 work, "The General Theory of Employment, Interest and Money." Keynes was writing in response to the Great Depression — a crisis that had shattered the prevailing classical economic assumption that market economies were self-correcting, that wages and prices would adjust naturally to restore full employment after any disturbance, and that government intervention in the economy was therefore unnecessary and counterproductive. The Depression demonstrated, with brutal clarity, that markets could get stuck — that an economy could remain mired in high unemployment and depressed output for years without any tendency toward automatic recovery — and that the classical prescription of austerity and patience was not a solution but a continuation of the problem.</p>
+        <p>Keynes's central insight was that the level of economic activity in any economy is determined by the total level of spending — what economists call "aggregate demand" — and that during a recession, the problem is a collapse of aggregate demand that no individual actor has an incentive or capacity to reverse. When consumers, fearing unemployment, reduce their spending; when businesses, fearing weak demand, reduce their investment; and when banks, fearing default, tighten their lending — the result is a downward spiral in which each actor's individually rational response to economic uncertainty makes the collective situation worse. The solution, Keynes argued, was for the government to step in as the "spender of last resort," injecting money into the economy through increased public spending — on infrastructure, relief programs, public employment — even if this required running a budget deficit. The <dfn id="t-deficit-spending">deficit spending</dfn> was not a failure of fiscal discipline but a deliberate strategy to break the downward spiral by restoring the level of aggregate demand that private actors could no longer sustain.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Keynesian economic theory</span> The idea that government spending and deficits can sustain demand and shorten recessions. <span class="sp">Spanish: teoría económica keynesiana</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Deficit spending</span> Spending more than the government collects in revenue and borrowing to cover the gap. <span class="sp">Spanish: gasto deficitario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1936</span>Year Keynes published <i>The General Theory of Employment, Interest and Money</i>.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Keynes was answering the Great Depression, when classical economics expected markets to heal themselves and they did not.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The practical application of <dfn id="t-keynesian">Keynesian theory</dfn> in American economic policy began with Roosevelt's New Deal programs — the Works Progress Administration that put millions of unemployed Americans to work building roads, bridges, schools, and public buildings; the Agricultural Adjustment Act that supported farm incomes; the Social Security Act that created the first national system of economic security for the elderly and unemployed. These programs did not fully end the Depression — the economy did not fully recover until the massive government spending of World War II — but they demonstrated that targeted government intervention could mitigate economic suffering and that the government's fiscal choices had powerful real-world consequences for economic conditions. The Keynesian framework became the dominant approach to macroeconomic management in the United States and most other developed democracies for the decades following World War II, informing the economic policies of both Democratic and Republican administrations through the 1960s.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">WWII</span>The chapter says full recovery came only with the massive government spending of World War II.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 16.4 returns to Social Security, the New Deal program that is now the largest in the federal budget.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#F0C77E"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#23394B">E</text></svg><div><small>EXAMPLE</small>A Family Budget in a Bad Year</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose every family in a town cuts spending at once because they fear losing their jobs. Stores sell less, so stores lay off workers, which makes families more afraid and cut spending again. Each family is acting sensibly, but together they make things worse. Keynes argued that only a very large buyer, the government, can interrupt this loop. Supply-side critics reply that the government must get the money from somewhere, either taxes or borrowing, and that the better way to help is to leave families and businesses with more of their own money.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Supply-Side Economics and the Conservative Alternative</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Line%20at%20a%20gas%20station%2C%20June%2015%2C%201979.jpg?width=1400" alt="A black-and-white photograph of cars and a Datsun pickup truck packed in a line at a gas station." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The 1970s energy shock</span>Cars line up for gasoline at a service station in Maryland on June 15, 1979. Energy shocks were part of the decade’s stagflation, when prices and unemployment rose together.<span class="credit">Photo: Warren K. Leffler (photographer, U.S. News & World Report) / <a href="https://commons.wikimedia.org/wiki/File:Line_at_a_gas_station,_June_15,_1979.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The Keynesian consensus that dominated American economic policy for three decades began to fracture in the stagflation crisis of the 1970s — a period of simultaneously high <dfn id="t-inflation">inflation</dfn> and high unemployment that Keynesian theory had difficulty explaining, since its framework generally treated inflation and unemployment as inversely related. The policy prescriptions of Keynesian demand management seemed unable to address an economy suffering from both problems at once, and the intellectual credibility of the approach was significantly damaged. Into this vacuum stepped a revived and reformulated case for limiting government's economic role — an approach that became known as <dfn id="t-supply-side">supply-side economics</dfn> and that provided the theoretical foundation for the economic program of Ronald Reagan's presidency.</p>
+        <p>Supply-side economics begins from a different diagnosis of the economy's primary problem. Where Keynesian theory focuses on the demand side of the economy — the level of consumer and business spending — supply-side theory focuses on the supply side: the incentives that determine how much businesses invest, how much workers work, and how much entrepreneurs risk their capital on new ventures. Supply-siders argue that the primary obstacle to economic growth is not insufficient demand but excessive government: tax rates that are high enough to discourage investment and work, regulations that impose compliance costs and restrict business flexibility, and government spending that crowds out private investment by absorbing capital that would otherwise be available for productive use. The solution, accordingly, is to reduce the government's burden on the private sector — by cutting tax rates, particularly on businesses and higher-income individuals who make most investment decisions, and by deregulating industries where government rules are seen as hampering competition and innovation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Supply-side economics</span> The theory that cutting tax rates and regulation increases the supply of goods by rewarding work, saving, and investment. <span class="sp">Spanish: economía de la oferta</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Inflation</span> A rise in the general level of prices that lowers the purchasing power of the dollar. <span class="sp">Spanish: inflación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Stagflation</span>A period of high inflation and high unemployment at the same time, as in the 1970s.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.2</span>Inflation and Unemployment, 1955–2025</p>
+      <p class="figsub">The two rates moved together in the 1970s, which the chapter says Keynesian theory had difficulty explaining.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of the U.S. inflation rate and unemployment rate, 1955 to 2025. Inflation reaches 13.5 percent in 1980; unemployment reaches 9.7 percent in 1982."><rect x="228.6" y="22" width="83.3" height="292" fill="#EEF2F5" opacity=".9"/><text x="270.3" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600">Stagflation era</text><line x1="62" y1="296.8" x2="710" y2="296.8" stroke="#6f7787" stroke-width="1.6"/><text x="54" y="300.8" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="228.1" x2="710" y2="228.1" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="232.1" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">4%</text><line x1="62" y1="159.4" x2="710" y2="159.4" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="163.4" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">8%</text><line x1="62" y1="90.7" x2="710" y2="90.7" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="94.7" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">12%</text><line x1="62" y1="22.0" x2="710" y2="22.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="26.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">16%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1955</text><line x1="154.6" y1="314" x2="154.6" y2="319" stroke="#6f7787"/><text x="154.6" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1965</text><line x1="247.1" y1="314" x2="247.1" y2="319" stroke="#6f7787"/><text x="247.1" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1975</text><line x1="339.7" y1="314" x2="339.7" y2="319" stroke="#6f7787"/><text x="339.7" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1985</text><line x1="432.3" y1="314" x2="432.3" y2="319" stroke="#6f7787"/><text x="432.3" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1995</text><line x1="524.9" y1="314" x2="524.9" y2="319" stroke="#6f7787"/><text x="524.9" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2005</text><line x1="617.4" y1="314" x2="617.4" y2="319" stroke="#6f7787"/><text x="617.4" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2015</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><g><title>Inflation</title><path d="M62.0 300.3 L71.3 271.1 L80.5 238.4 L89.8 250.4 L99.0 281.4 L108.3 271.1 L117.5 279.6 L126.8 276.2 L136.1 274.5 L145.3 274.5 L154.6 269.3 L163.8 245.3 L173.1 248.7 L182.3 224.7 L191.6 204.1 L200.9 195.5 L210.1 224.7 L219.4 240.1 L228.6 190.3 L237.9 107.9 L247.1 140.5 L256.4 197.2 L265.7 185.2 L274.9 166.3 L284.2 102.7 L293.4 64.9 L302.7 118.2 L311.9 190.3 L321.2 241.9 L330.5 221.2 L339.7 236.7 L349.0 264.2 L358.2 235.0 L367.5 226.4 L376.7 214.4 L386.0 204.1 L395.3 224.7 L404.5 245.3 L413.8 245.3 L423.0 252.2 L432.3 248.7 L441.5 247.0 L450.8 257.3 L460.1 271.1 L469.3 259.0 L478.6 238.4 L487.8 248.7 L497.1 269.3 L506.3 257.3 L515.6 250.4 L524.9 238.4 L534.1 241.9 L543.4 247.0 L552.6 231.6 L561.9 302.0 L571.1 269.3 L580.4 243.6 L589.7 260.8 L598.9 271.1 L608.2 269.3 L617.4 295.1 L626.7 274.5 L635.9 260.8 L645.2 255.6 L654.5 265.9 L663.7 274.5 L673.0 216.1 L682.2 159.4 L691.5 226.4 L700.7 245.3 L710.0 252.2" fill="none" stroke="#8D5F18" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="252.2" r="4" fill="#8D5F18"/><text x="718.0" y="262.2" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Inflation</text><text x="718.0" y="276.2" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">2.6% in 2025</text><g><title>Unemployment</title><path d="M62.0 221.2 L71.3 226.4 L80.5 223.0 L89.8 180.0 L99.0 202.4 L108.3 202.4 L117.5 181.7 L126.8 200.6 L136.1 200.6 L145.3 207.5 L154.6 219.5 L163.8 231.6 L173.1 231.6 L182.3 235.0 L191.6 236.7 L200.9 210.9 L210.1 193.8 L219.4 200.6 L228.6 212.7 L237.9 200.6 L247.1 150.8 L256.4 164.6 L265.7 174.9 L274.9 192.0 L284.2 195.5 L293.4 173.2 L302.7 166.3 L311.9 130.2 L321.2 131.9 L330.5 168.0 L339.7 173.2 L349.0 176.6 L358.2 190.3 L367.5 202.4 L376.7 205.8 L386.0 200.6 L395.3 178.3 L404.5 168.0 L413.8 178.3 L423.0 192.0 L432.3 200.6 L441.5 204.1 L450.8 212.7 L460.1 219.5 L469.3 224.7 L478.6 228.1 L487.8 216.1 L497.1 197.2 L506.3 193.8 L515.6 202.4 L524.9 209.2 L534.1 217.8 L543.4 217.8 L552.6 197.2 L561.9 137.1 L571.1 131.9 L580.4 144.0 L589.7 157.7 L598.9 169.7 L608.2 190.3 L617.4 205.8 L626.7 212.7 L635.9 221.2 L645.2 229.8 L654.5 233.3 L663.7 157.7 L673.0 204.1 L682.2 233.3 L691.5 235.0 L700.7 228.1 L710.0 223.0" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="223.0" r="4" fill="#3D6580"/><text x="718.0" y="213.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Unemployment</text><text x="718.0" y="227.0" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">4.3% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent</text></svg>
+      <p class="source">Sources: Inflation is the yearly change in the Consumer Price Index (CPI-U annual average); unemployment is the annual average civil unemployment rate. Both from FRED, Federal Reserve Bank of St. Louis, using U.S. Bureau of Labor Statistics data; calculations for this textbook.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Inflation</th><th>Unemployment</th></tr></thead><tbody><tr><td>1960</td><td>1.5%</td><td>5.5%</td></tr><tr><td>1974</td><td>11.0%</td><td>5.6%</td></tr><tr><td>1980</td><td>13.5%</td><td>7.2%</td></tr><tr><td>1982</td><td>6.2%</td><td>9.7%</td></tr><tr><td>2000</td><td>3.4%</td><td>4.0%</td></tr><tr><td>2009</td><td>-0.3%</td><td>9.3%</td></tr><tr><td>2022</td><td>8.0%</td><td>3.7%</td></tr><tr><td>2025</td><td>2.6%</td><td>4.3%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>In which year in the table was inflation highest? What was unemployment that year?</li><li>Between 1974 and 1982, did both rates fall at the same time? Describe the pattern.</li><li>Why would an economist who expected inflation and unemployment to move in opposite directions be puzzled by the 1970s?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The supply-side argument rests on a particular theory of how tax cuts affect economic behavior. If reducing the marginal tax rate on income or capital gains increases the after-tax return on investment and work, individuals and businesses will have stronger incentives to invest more, work more, and take entrepreneurial risks — generating more economic activity that, through the resulting growth, produces more total tax revenue even at the lower rate. This argument, sometimes illustrated through the "<dfn id="t-laffer">Laffer curve</dfn>" — a diagram showing that tax revenue is zero at both zero percent and one hundred percent tax rates, and must reach a maximum at some rate in between — provided the theoretical justification for the Reagan administration's claim that significant income tax cuts could stimulate enough economic growth to avoid increasing the federal deficit. Critics called this argument "trickle-down economics," arguing that the primary beneficiaries of tax cuts skewed toward higher-income individuals were those at the top of the income distribution, and that the promised growth benefits would not reach working and middle-class Americans in the substantial form supply-side proponents claimed.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Laffer curve</span> A diagram claiming tax revenue is zero at a 0 percent and a 100 percent tax rate, with a maximum somewhere in between. <span class="sp">Spanish: curva de Laffer</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Illustration</span>Figure 16.3 is a teaching sketch. It shows the shape of the idea, not measured data.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.3</span>The Laffer Curve (Teaching Sketch)</p>
+      <p class="figsub">Supply-siders argue that a very high tax rate can reduce revenue. Economists disagree about where the peak lies and whether a given tax cut would raise or lower revenue.</p>
+      <svg viewBox="0 0 860 300" role="img" aria-label="Illustrative Laffer curve: tax revenue is zero at a zero percent tax rate and zero at a one hundred percent tax rate, with a maximum somewhere in between"><line x1="90" y1="250" x2="640" y2="250" stroke="#6f7787" stroke-width="1.5"/><line x1="90" y1="24" x2="90" y2="250" stroke="#6f7787" stroke-width="1.5"/><path d="M90.0 250.0 L101.0 234.1 L112.0 218.8 L123.0 204.1 L134.0 190.1 L145.0 176.8 L156.0 164.1 L167.0 152.0 L178.0 140.7 L189.0 129.9 L200.0 119.8 L211.0 110.4 L222.0 101.6 L233.0 93.5 L244.0 86.0 L255.0 79.1 L266.0 73.0 L277.0 67.4 L288.0 62.5 L299.0 58.3 L310.0 54.7 L321.0 51.8 L332.0 49.5 L343.0 47.9 L354.0 46.9 L365.0 46.6 L376.0 46.9 L387.0 47.9 L398.0 49.5 L409.0 51.8 L420.0 54.7 L431.0 58.3 L442.0 62.5 L453.0 67.4 L464.0 73.0 L475.0 79.1 L486.0 86.0 L497.0 93.5 L508.0 101.6 L519.0 110.4 L530.0 119.8 L541.0 129.9 L552.0 140.7 L563.0 152.0 L574.0 164.1 L585.0 176.8 L596.0 190.1 L607.0 204.1 L618.0 218.8 L629.0 234.1 L640.0 250.0" fill="none" stroke="#3D6580" stroke-width="4"/><circle cx="365.0" cy="46.6" r="7" fill="#D08C23" stroke="#fff" stroke-width="2.5"/><text x="365.0" y="32.599999999999994" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#23394B" text-anchor="middle" font-weight="700">Maximum revenue (location unknown)</text><circle cx="90.0" cy="250.0" r="5" fill="#23394B"/><circle cx="640.0" cy="250.0" r="5" fill="#23394B"/><text x="90" y="270" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><text x="640" y="270" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100%</text><text x="365.0" y="290" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="600">Tax rate</text><text transform="rotate(-90 40 137.0)" x="40" y="137.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" font-weight="600">Government revenue</text><text x="167.0" y="213.32" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="700">Rate too low:</text><text x="167.0" y="227.32" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">little revenue</text><text x="530.0" y="213.32" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="700">Rate too high: less work,</text><text x="530.0" y="227.32" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">saving, and investment</text><rect x="668" y="60" width="180" height="150" rx="10" fill="#FAECD3" stroke="#D08C23" stroke-width="2"/><text x="758" y="84" font-family="Inter, Arial, sans-serif" font-size="13" fill="#23394B" text-anchor="middle" font-weight="800">Read with care</text><text x="758" y="104" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">This is a teaching</text><text x="758" y="119" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">sketch, not data.</text><text x="758" y="139" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Economists disagree</text><text x="758" y="154" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">about where today’s</text><text x="758" y="169" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">rates fall on the</text><text x="758" y="184" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">curve.</text></svg>
+      <p class="source">Source: Illustrative sketch created for this textbook. The vertical and horizontal values are not measurements.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>What is government revenue at a tax rate of 0 percent? At 100 percent? Explain each.</li><li>Why does the curve rise and then fall? Use the word <i>incentive</i>.</li><li>What would a critic of the supply-side argument need to show to challenge the claim that a tax cut can pay for itself?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The debate between Keynesian and supply-side approaches has never been definitively resolved, and it continues to shape every major fiscal policy debate in American politics. Democratic administrations have generally favored Keynesian-style responses to recessions — the Obama administration's 2009 stimulus package of approximately $800 billion in spending increases and tax cuts was explicitly framed as demand management during the Great Recession. Republican administrations have generally pursued supply-side-oriented tax reductions — the Reagan tax cuts of 1981, the Bush tax cuts of 2001 and 2003, and the Tax Cuts and Jobs Act of 2017 all reflected the supply-side premise that reducing tax rates on income, capital, and business would stimulate growth. The persistence of this debate reflects the fact that it is not simply a technical disagreement about how economies work, but a political disagreement about the proper distribution of the tax burden and the appropriate scope of government's economic role.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Tax Cuts and Jobs Act</span> A 2017 law that cut federal tax rates on individuals and corporations, named in the chapter as a supply-side example. <span class="sp">Spanish: Ley de Recortes de Impuestos y Empleos</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Both parties have used both ideas in practice. The chapter says the debate is about values, such as who should bear the tax burden, as well as about economics.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.4</span>Two Theories of Fiscal Policy</p>
+      <p class="figsub">Each theory has a diagnosis, a prescription, and a defense against its critics.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Keynesian</th><th>Supply-side</th></tr></thead><tbody><tr><td>Diagnosis of the problem</td><td>Weak demand: people and firms stop spending</td><td>Excess burden: high taxes and rules discourage work and investment</td></tr><tr><td>Main tool</td><td>Government spending and tax cuts, even with a deficit</td><td>Lower tax rates and fewer regulations</td></tr><tr><td>Role for government</td><td>Active “spender of last resort” in a downturn</td><td>Smaller, with limits on its burden on private enterprise</td></tr><tr><td>Best-known policy example</td><td>New Deal programs; the 2009 stimulus (from the chapter)</td><td>Reagan tax cuts of 1981; 2001 and 2003; 2017 (from the chapter)</td></tr><tr><td>Strongest criticism</td><td>Deficits grow and can feed inflation</td><td>Gains may go mostly to higher incomes; revenue may fall</td></tr><tr><td>Strongest reply</td><td>The cost of a long slump is larger than the deficit</td><td>Growth and investment help workers through jobs and wages</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text; table created for this textbook. The criticisms and replies are summarized from the chapter and from the arguments each side makes.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which row shows the sharpest disagreement? Explain.</li><li>Which theory would you expect to be more popular during a deep recession? During a period of high inflation? Explain each answer.</li><li>Write a Counter-Argument a supply-side economist might offer to the Keynesian claim that deficits end slumps.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Stimulus or Tax Cut?</div></div>
+      <div class="box-b">
+        <p>The economy has slowed and unemployment is rising. Congress can spend about the same amount of money in either of two ways.</p>
+        <div class="opts"><div class="opt"><h5>Spend on projects and benefits</h5>Roads, school repairs, and unemployment benefits put money into the economy quickly, but the debt rises and projects take time.</div><div class="opt"><h5>Cut tax rates</h5>Households and firms keep more of their income to save, spend, or invest, but the benefit goes mostly to those who pay the most tax and the debt rises.</div></div>
+        <p class="ask">Which would you choose, and what evidence would persuade you that you were wrong?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; COMPARING THE TWO THEORIES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 16.4. Describe in your own words how each theory explains a recession.</li><li>Use Figure 16.2. Why did stagflation damage the credibility of the Keynesian approach, according to the text?</li><li>Use Figure 16.3. Explain the supply-side claim in one sentence, then state one criticism of it.</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Budgetary Squeeze: Mandatory, Discretionary, and the Fiscal Horizon</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal budget is not a single unified document in which all spending choices are made simultaneously each year; it is a complex mixture of spending commitments that differ fundamentally in their legal character, their political sensitivity, and the degree to which they can be modified through the annual appropriations process. Understanding this distinction — between mandatory spending, which flows automatically from existing law, and discretionary spending, which must be actively appropriated each year — is essential to understanding why the federal budget process has become so politically contentious and why the room for fiscal maneuver has steadily narrowed over time.</p>
+        <p>Mandatory spending encompasses all the programs for which the law automatically provides benefits to anyone who meets specified eligibility criteria, without requiring annual congressional action. Social Security, Medicare, Medicaid, and a range of other <dfn id="t-entitlement">entitlement programs</dfn> fall into this category. When a worker reaches the retirement age specified in law and applies for Social Security benefits, the government is legally obligated to pay those benefits regardless of whether Congress has specifically appropriated funds for that purpose in the current fiscal year. The size of mandatory spending therefore depends not on annual congressional decisions but on the number of people who qualify for benefits and the benefit levels specified in existing law — and both of those variables are shaped by demographic trends, economic conditions, and the structure of the programs themselves rather than by the deliberate year-to-year choices of the appropriations committees.</p>
+        <p>Discretionary spending, by contrast, encompasses all the programs that Congress must actively fund through annual appropriations bills: national defense, education, transportation, scientific research, law enforcement, foreign aid, and the operational budgets of virtually all executive branch departments and agencies. Congressional appropriations committees examine these programs each year, decide how much money to allocate to each, and pass appropriations bills that give agencies the legal authority to spend the funds. While mandatory spending is, in a practical sense, on autopilot — it grows or shrinks in response to demographic and economic forces rather than deliberate congressional choices — discretionary spending is genuinely subject to annual legislative control.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Entitlement programs</span> Programs, such as Social Security and Medicare, that give benefits to everyone who meets the legal eligibility rules without a yearly vote. <span class="sp">Spanish: programas de derechos (beneficios garantizados)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Mandatory vs. discretionary</span> Mandatory spending follows existing law. Discretionary spending must be approved each year in appropriations bills. <span class="sp">Spanish: obligatorio vs. discrecional</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">59.4%</span>Mandatory spending’s share of federal outlays in 2025, up from 31.2% in 1970 (OMB Table 8.3).</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The central fiscal challenge of the twenty-first century is that mandatory spending has grown substantially as a share of the total federal budget, driven primarily by the aging of the baby boom generation, which has swelled the ranks of Social Security and Medicare recipients, and by the persistent growth of healthcare costs, which has increased the per-beneficiary cost of Medicare and Medicaid. As mandatory spending claims a larger and larger share of total federal revenues, the space available for discretionary spending contracts, forcing increasingly intense competition for a shrinking pool of resources. Defense spending — which represents the largest single category of discretionary spending and which successive administrations and congressional majorities have treated as a near-inviolable priority — competes with education, infrastructure, scientific research, and the operational capacity of civilian agencies for the funds that remain after mandatory obligations are met. When total spending exceeds total revenue — as it has in most years of the past two decades — the gap is financed through deficit spending, adding to the national debt and creating obligations that will constrain future fiscal flexibility.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">13.8%</span>Net interest on the debt took 13.8% of outlays in 2025, up from 7.4% in 1970 (OMB).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The debt is the total of past deficits. The text notes that spending has exceeded revenue in most years of the past two decades (Figure 16.1).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.5</span>Where the Federal Dollar Goes, 1970–2025</p>
+      <p class="figsub">Mandatory, discretionary, and net interest spending as a percent of federal outlays.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of mandatory, discretionary, and net interest spending as a percent of federal outlays, 1970 to 2025. Mandatory rises from 31.2 percent to 59.4 percent; discretionary falls from 61.5 percent to 26.7 percent."><rect x="191.6" y="22" width="47.1" height="292" fill="#EEF2F5" opacity=".9"/><text x="215.2" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600">Defense buildup</text><line x1="62" y1="314.0" x2="710" y2="314.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="318.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="241.0" x2="710" y2="241.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="245.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">20%</text><line x1="62" y1="168.0" x2="710" y2="168.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="172.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">40%</text><line x1="62" y1="95.0" x2="710" y2="95.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="99.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">60%</text><line x1="62" y1="22.0" x2="710" y2="22.0" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="26.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">80%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1970</text><line x1="179.8" y1="314" x2="179.8" y2="319" stroke="#6f7787"/><text x="179.8" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1980</text><line x1="297.6" y1="314" x2="297.6" y2="319" stroke="#6f7787"/><text x="297.6" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1990</text><line x1="415.5" y1="314" x2="415.5" y2="319" stroke="#6f7787"/><text x="415.5" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2000</text><line x1="533.3" y1="314" x2="533.3" y2="319" stroke="#6f7787"/><text x="533.3" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2010</text><line x1="651.1" y1="314" x2="651.1" y2="319" stroke="#6f7787"/><text x="651.1" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2020</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="651.1" y1="28" x2="651.1" y2="314" stroke="#6f7787" stroke-dasharray="3 4"/><text x="651.1" y="24" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#4a5263" text-anchor="middle" font-weight="600">COVID-19</text><g><title>Mandatory</title><path d="M62.0 200.1 L73.8 187.7 L85.6 176.8 L97.3 168.4 L109.1 165.4 L120.9 147.9 L132.7 147.6 L144.5 151.6 L156.3 151.2 L168.0 153.8 L179.8 151.9 L191.6 151.6 L203.4 150.1 L215.2 149.0 L226.9 159.2 L238.7 159.2 L250.5 160.7 L262.3 160.7 L274.1 160.3 L285.9 158.9 L297.6 148.7 L309.4 149.8 L321.2 142.8 L333.0 140.3 L344.8 134.8 L356.5 136.2 L368.3 130.0 L380.1 129.3 L391.9 124.2 L403.7 120.9 L415.5 119.8 L427.2 116.5 L439.0 113.2 L450.8 114.3 L462.6 116.9 L474.4 119.1 L486.1 119.8 L497.9 120.2 L509.7 118.7 L521.5 96.8 L533.3 111.8 L545.1 108.9 L556.8 103.8 L568.6 99.4 L580.4 95.7 L592.2 87.0 L604.0 84.1 L615.7 83.0 L627.5 89.9 L639.3 89.5 L651.1 59.6 L662.9 55.6 L674.7 73.5 L686.4 90.6 L698.2 94.6 L710.0 97.2" fill="none" stroke="#8D5F18" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="97.2" r="4" fill="#8D5F18"/><text x="718.0" y="95.2" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Mandatory</text><text x="718.0" y="109.2" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">59.4% in 2025</text><g><title>Discretionary</title><path d="M62.0 89.5 L73.8 101.2 L85.6 110.7 L97.3 120.2 L109.1 126.8 L120.9 140.6 L132.7 141.7 L144.5 138.1 L156.3 139.9 L168.0 140.3 L179.8 143.2 L191.6 148.3 L203.4 154.5 L215.2 154.5 L226.9 151.6 L238.7 153.8 L250.5 152.3 L262.3 152.7 L274.1 154.9 L285.9 158.1 L297.6 168.0 L309.4 166.9 L321.2 173.1 L333.0 174.2 L344.8 178.9 L356.5 183.0 L368.3 189.5 L380.1 189.2 L391.9 192.1 L403.7 191.4 L415.5 188.4 L427.2 187.0 L439.0 180.8 L450.8 174.6 L462.6 171.7 L474.4 170.9 L486.1 174.2 L497.9 174.6 L509.7 174.9 L521.5 185.5 L533.3 171.7 L545.1 177.5 L556.8 181.9 L568.6 187.0 L580.4 191.4 L592.2 198.3 L604.0 201.6 L615.7 204.1 L627.5 201.9 L639.3 204.1 L651.1 222.8 L662.9 226.4 L674.7 217.3 L686.4 211.8 L698.2 215.8 L710.0 216.5" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="216.5" r="4" fill="#3D6580"/><text x="718.0" y="214.5" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Discretionary</text><text x="718.0" y="228.5" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">26.7% in 2025</text><g><title>Net interest</title><path d="M62.0 287.0 L73.8 288.1 L85.6 289.5 L97.3 288.1 L109.1 284.8 L120.9 288.4 L132.7 287.7 L144.5 287.4 L156.3 285.9 L168.0 283.0 L179.8 281.5 L191.6 277.1 L203.4 272.4 L215.2 273.5 L226.9 266.6 L238.7 264.0 L250.5 264.0 L262.3 263.6 L274.1 261.8 L285.9 260.0 L297.6 260.3 L309.4 260.3 L321.2 261.4 L333.0 262.5 L344.8 263.3 L356.5 258.2 L368.3 257.8 L380.1 258.5 L391.9 260.7 L403.7 264.7 L415.5 268.4 L427.2 273.5 L439.0 283.0 L450.8 288.1 L462.6 288.4 L474.4 287.0 L486.1 283.0 L497.9 282.2 L509.7 283.0 L521.5 294.7 L533.3 293.2 L545.1 290.6 L556.8 291.4 L568.6 290.6 L580.4 290.3 L592.2 292.1 L604.0 291.4 L615.7 289.9 L627.5 285.2 L639.3 283.3 L651.1 294.7 L662.9 295.0 L674.7 286.3 L686.4 274.9 L698.2 266.2 L710.0 263.6" fill="none" stroke="#b04630" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="263.6" r="4" fill="#b04630"/><text x="718.0" y="269.6" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Net interest</text><text x="718.0" y="283.6" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">13.8% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent of outlays</text></svg>
+      <p class="source">Source: White House Office of Management and Budget, Historical Tables, Table 8.3, FY 2027 Budget (April 2026). Mandatory spending peaked at 70.8% in 2021, the second year of pandemic relief, then fell to 59.4% by 2025.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Mandatory</th><th>Discretionary</th><th>Net interest</th></tr></thead><tbody><tr><td>1970</td><td>31.2%</td><td>61.5%</td><td>7.4%</td></tr><tr><td>1980</td><td>44.4%</td><td>46.8%</td><td>8.9%</td></tr><tr><td>1990</td><td>45.3%</td><td>40.0%</td><td>14.7%</td></tr><tr><td>2000</td><td>53.2%</td><td>34.4%</td><td>12.5%</td></tr><tr><td>2010</td><td>55.4%</td><td>39.0%</td><td>5.7%</td></tr><tr><td>2020</td><td>69.7%</td><td>25.0%</td><td>5.3%</td></tr><tr><td>2021</td><td>70.8%</td><td>24.0%</td><td>5.2%</td></tr><tr><td>2025</td><td>59.4%</td><td>26.7%</td><td>13.8%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>By how many percentage points did mandatory spending’s share rise from 1970 to 2025? (Subtract.)</li><li>Which two lines moved in opposite directions? What does the text say drives the mandatory line upward?</li><li>Why does a rising share for interest and mandatory spending limit what Congress can do with the rest of the budget?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; THE BUDGET SQUEEZE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Explain the difference between mandatory and discretionary spending. Which one is on autopilot?</li><li>Use Figure 16.5. In which year shown in the table was the discretionary share closest to the mandatory share? What is the gap in 2025?</li><li>Write a Counter-Argument to this claim: “The budget squeeze means Congress should cut entitlement programs first.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 16.1 ASSESSMENT</b>Complete the Section 16.1 Assessment in your <i>Chapter 16 Assignment</i> packet before you move on to Section 16.2.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>16.2</b></div>
+    <h2>Monetary Policy: The Federal Reserve System</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#F0C77E" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EEF2F5" stroke-width="5"/><path d="M14 100h132" stroke="#F0C77E" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 16.2, you will</p>
+      <ul><li>Explain how the Federal Reserve influences interest rates and credit</li><li>Describe the Fed’s main tools, including how they have changed</li><li>Explain why the Fed was designed to be independent, and how that independence has been tested</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-monetary-policy">Monetary Policy</a></li><li><a href="#t-fed">The Federal Reserve</a></li><li><a href="#t-ffr">Federal Funds Rate</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list each tool, what the Fed does, and the effect on borrowing.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tool, Fed action, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Fed action</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Monetary Policy: The Federal Reserve System</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/US%20Federal%20Reserve%20Eccles%20Building%201937.jpg?width=1400" alt="A black-and-white photograph of the Federal Reserve Board building, a stone building with tall columns, framed by tree leaves and a lawn." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The Fed’s building in 1937</span>The building of the Board of Governors of the Federal Reserve System in Washington, D.C., photographed on October 20, 1937.<span class="credit">Photo: Federal Reserve / <a href="https://commons.wikimedia.org/wiki/File:US_Federal_Reserve_Eccles_Building_1937.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">While fiscal policy operates through the slow, deliberate, and intensely political process of congressional legislation and presidential approval, <dfn id="t-monetary-policy">monetary policy</dfn> operates through a different institutional channel — one deliberately designed to be insulated from the immediate pressures of electoral politics. The <dfn id="t-fed">Federal Reserve System</dfn>, created by the Federal Reserve Act of 1913 and substantially reformed in the decades since, is the institution charged with managing the nation's money supply and credit conditions in ways that promote maximum employment, stable prices, and moderate long-term interest rates. Understanding how the Fed operates, what tools it uses, and why it was designed to be politically independent is essential to understanding the full scope of the federal government's economic management capacity.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Monetary policy</span> Government control of the supply of money and credit, handled mainly by the Federal Reserve. <span class="sp">Spanish: política monetaria</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">The Federal Reserve (the Fed)</span> The central bank of the United States, created in 1913 and designed to be independent of the president and Congress. <span class="sp">Spanish: la Reserva Federal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">12 U.S.C. § 225a</span>Law that tells the Fed to promote “maximum employment, stable prices, and moderate long-term interest rates.”</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>The Fed’s goals come from a federal law, so Congress can change those goals by passing a new law.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Tools of Monetary Management</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Federal Reserve's primary mechanism for influencing economic conditions is control over the <dfn id="t-ffr">federal funds rate</dfn> — the interest rate at which banks lend money to each other overnight to meet their reserve requirements. This rate serves as the foundation for the entire structure of interest rates in the American economy: changes in the federal funds rate ripple outward through credit markets, affecting the rates that consumers pay on mortgages, auto loans, and credit cards, the rates that businesses pay on commercial loans, and ultimately the willingness of both consumers and businesses to borrow and spend. When the Fed raises the federal funds rate, borrowing becomes more expensive throughout the economy, which tends to reduce spending and investment and put downward pressure on inflation. When the Fed lowers the rate, borrowing becomes cheaper, which tends to stimulate spending and investment and support employment and growth.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federal funds rate</span> The interest rate banks charge each other for overnight loans. The Fed sets a target range for it. <span class="sp">Spanish: tasa de los fondos federales</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Raise vs. lower</span>Raising the rate makes borrowing cost more and cools prices. Lowering it makes borrowing cheaper and supports jobs.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The interest rate is the Fed's most powerful and most frequently used tool, but it operates alongside two others. The reserve requirement — the proportion of deposits that banks are legally required to hold in reserve rather than lending out — determines how much of the money deposited with banks can be multiplied through the process of bank lending. When the Fed reduces the reserve requirement, banks can lend a larger proportion of their deposits, effectively increasing the amount of money circulating in the economy. When the Fed increases the reserve requirement, the opposite effect is achieved. In practice, the reserve requirement has been used relatively infrequently as a monetary policy tool, partly because changes to it can produce disruptive effects on the banking system and partly because the interest rate is a more flexible and precise instrument.</p>
+        <p>Open market operations — the purchase and sale of U.S. government securities by the Federal Reserve — represent the third major tool of monetary policy and the one most actively used in day-to-day operations. When the Fed purchases government bonds from banks and other financial institutions, it credits those institutions' reserve accounts with newly created money, increasing the money supply and putting downward pressure on interest rates. When the Fed sells government bonds, it absorbs money from the financial system, reducing the money supply and putting upward pressure on rates. The scale on which the Fed has used open market operations expanded dramatically following the 2008 financial crisis, when the central bank engaged in a series of large-scale asset purchase programs — collectively known as "quantitative easing" — that injected trillions of dollars into the financial system in an attempt to prevent a complete collapse of credit markets and stimulate economic recovery.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Open market operations</span> The Fed’s purchase and sale of U.S. government securities to change the money supply and interest rates. <span class="sp">Spanish: operaciones de mercado abierto</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Quantitative easing</span> Large-scale asset purchases by the Fed, used after 2008 to support credit markets. <span class="sp">Spanish: flexibilización cuantitativa</span></div>
+        <div class="connect"><span class="tag">UPDATE TO THE TEXT</span>The Fed reduced reserve requirement ratios to zero percent on March 26, 2020, so it no longer relies on that tool. It now steers rates mainly through interest on reserve balances and open market operations (Federal Reserve Board).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.6</span>The Fed’s Tools Today</p>
+      <p class="figsub">Each panel shows what the Fed does and how the economy responds.</p>
+      <svg viewBox="0 0 860 316" role="img" aria-label="Three-panel diagram of the Federal Reserve tools: interest rates, reserve requirements, and open market operations"><rect x="8" y="6" width="272" height="254" rx="12" fill="#fff" stroke="#3D6580" stroke-width="2"/><rect x="8" y="6" width="272" height="50" rx="12" fill="#3D6580"/><rect x="8" y="40" width="272" height="16" fill="#3D6580"/><text x="144.0" y="30" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">1  Interest rates</text><text x="144.0" y="48" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#EEF2F5" text-anchor="middle" font-weight="400">Fed sets the target for the federal funds rate</text><rect x="294" y="6" width="272" height="254" rx="12" fill="#fff" stroke="#3D6580" stroke-width="2"/><rect x="294" y="6" width="272" height="50" rx="12" fill="#3D6580"/><rect x="294" y="40" width="272" height="16" fill="#3D6580"/><text x="430.0" y="30" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">2  Interest on reserves</text><text x="430.0" y="48" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#EEF2F5" text-anchor="middle" font-weight="400">The rate the Fed pays banks on reserves</text><rect x="580" y="6" width="272" height="254" rx="12" fill="#fff" stroke="#3D6580" stroke-width="2"/><rect x="580" y="6" width="272" height="50" rx="12" fill="#3D6580"/><rect x="580" y="40" width="272" height="16" fill="#3D6580"/><text x="716.0" y="30" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">3  Open market operations</text><text x="716.0" y="48" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#EEF2F5" text-anchor="middle" font-weight="400">Fed buys or sells U.S. government securities</text><rect x="18" y="70" width="252" height="80" rx="8" fill="#FAECD3" stroke="#D08C23" stroke-width="2"/><text x="144.0" y="92" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▲ Raise rates</text><text x="144.0" y="112" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">borrowing costs more → less</text><text x="144.0" y="127" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">spending → fights inflation</text><rect x="18" y="162" width="252" height="80" rx="8" fill="#EEF2F5" stroke="#3D6580" stroke-width="2"/><text x="144.0" y="184" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▼ Lower rates</text><text x="144.0" y="204" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">borrowing costs less → more</text><text x="144.0" y="219" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">spending → fights recession</text><rect x="304" y="70" width="252" height="80" rx="8" fill="#FAECD3" stroke="#D08C23" stroke-width="2"/><text x="430.0" y="92" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▲ Raise the rate paid</text><text x="430.0" y="112" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">banks lend less unless paid more →</text><text x="430.0" y="127" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">rates rise</text><rect x="304" y="162" width="252" height="80" rx="8" fill="#EEF2F5" stroke="#3D6580" stroke-width="2"/><text x="430.0" y="184" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▼ Lower the rate paid</text><text x="430.0" y="204" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">banks lend more at lower rates →</text><text x="430.0" y="219" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">rates fall</text><rect x="590" y="70" width="252" height="80" rx="8" fill="#FAECD3" stroke="#D08C23" stroke-width="2"/><text x="716.0" y="92" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▲ Fed sells securities</text><text x="716.0" y="112" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">money flows to the Fed → money</text><text x="716.0" y="127" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">supply falls</text><rect x="590" y="162" width="252" height="80" rx="8" fill="#EEF2F5" stroke="#3D6580" stroke-width="2"/><text x="716.0" y="184" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#23394B" text-anchor="middle" font-weight="800">▼ Fed buys securities</text><text x="716.0" y="204" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">money flows to banks → money</text><text x="716.0" y="219" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">supply rises</text><rect x="8" y="272" width="844" height="34" rx="8" fill="#FAECD3" stroke="#D08C23" stroke-width="1.5"/><text x="430.0" y="293" font-family="Inter, Arial, sans-serif" font-size="12" fill="#23394B" text-anchor="middle" font-weight="600">Reserve requirements, a fourth tool in older textbooks: the Fed set them to 0 percent on March 26, 2020.</text></svg>
+      <p class="source">Sources: Federal Reserve Board, “Monetary Policy Tools”; reserve requirements set to 0 percent effective March 26, 2020. Diagram created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>In the left panel, what does the Fed do to fight inflation? What happens to spending?</li><li>Which tool does the text call the one most actively used in day-to-day operations?</li><li>Why might the Fed prefer tools it can adjust quickly and in small steps?</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.7</span>The Federal Funds Rate and Inflation, 1955–2025</p>
+      <p class="figsub">The Fed’s rate rose in the high-inflation years and fell after financial crises.</p>
+      <svg viewBox="0 0 860 360" role="img" aria-label="Line chart of the federal funds rate and inflation, 1955 to 2025. The funds rate peaks at 16.4 percent in 1981 and is near zero in 2021."><rect x="552.6" y="22" width="64.8" height="292" fill="#EEF2F5" opacity=".9"/><text x="585.0" y="34" font-family="Inter, Arial, sans-serif" font-size="10.5" fill="#6f7787" text-anchor="middle" font-weight="600">After 2008</text><line x1="62" y1="298.6" x2="710" y2="298.6" stroke="#6f7787" stroke-width="1.6"/><text x="54" y="302.6" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="221.8" x2="710" y2="221.8" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="225.8" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">5%</text><line x1="62" y1="144.9" x2="710" y2="144.9" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="148.9" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">10%</text><line x1="62" y1="68.1" x2="710" y2="68.1" stroke="#e6e8ec" stroke-width="1"/><text x="54" y="72.1" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">15%</text><line x1="62.0" y1="314" x2="62.0" y2="319" stroke="#6f7787"/><text x="62.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1955</text><line x1="154.6" y1="314" x2="154.6" y2="319" stroke="#6f7787"/><text x="154.6" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1965</text><line x1="247.1" y1="314" x2="247.1" y2="319" stroke="#6f7787"/><text x="247.1" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1975</text><line x1="339.7" y1="314" x2="339.7" y2="319" stroke="#6f7787"/><text x="339.7" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1985</text><line x1="432.3" y1="314" x2="432.3" y2="319" stroke="#6f7787"/><text x="432.3" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">1995</text><line x1="524.9" y1="314" x2="524.9" y2="319" stroke="#6f7787"/><text x="524.9" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2005</text><line x1="617.4" y1="314" x2="617.4" y2="319" stroke="#6f7787"/><text x="617.4" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2015</text><line x1="710.0" y1="314" x2="710.0" y2="319" stroke="#6f7787"/><text x="710.0" y="333" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="middle" font-weight="400">2025</text><line x1="62" y1="314" x2="710" y2="314" stroke="#6f7787" stroke-width="1.5"/><line x1="62" y1="22" x2="62" y2="314" stroke="#6f7787" stroke-width="1.5"/><g><title>Fed funds rate</title><path d="M62.0 271.1 L71.3 256.7 L80.5 250.8 L89.8 274.5 L99.0 247.8 L108.3 249.1 L117.5 268.5 L126.8 257.0 L136.1 249.8 L145.3 244.8 L154.6 235.9 L163.8 220.1 L173.1 233.8 L182.3 211.6 L191.6 172.6 L200.9 188.3 L210.1 227.0 L219.4 230.5 L228.6 164.5 L237.9 137.3 L247.1 209.2 L256.4 221.0 L265.7 213.5 L274.9 176.8 L284.2 126.7 L293.4 93.3 L302.7 46.9 L311.9 110.2 L321.2 158.9 L330.5 141.4 L339.7 174.1 L349.0 194.0 L358.2 196.3 L367.5 182.3 L376.7 156.9 L386.0 174.1 L395.3 211.2 L404.5 244.5 L413.8 252.2 L423.0 234.1 L432.3 208.9 L441.5 217.2 L450.8 214.7 L460.1 216.4 L469.3 222.3 L478.6 202.7 L487.8 238.8 L497.1 273.0 L506.3 281.3 L515.6 277.9 L524.9 249.3 L534.1 222.4 L543.4 221.5 L552.6 269.0 L561.9 296.2 L571.1 295.9 L580.4 297.1 L589.7 296.5 L598.9 296.9 L608.2 297.2 L617.4 296.6 L626.7 292.5 L635.9 283.3 L645.2 270.5 L654.5 265.4 L663.7 292.8 L673.0 297.4 L682.2 272.8 L691.5 221.5 L700.7 219.6 L710.0 233.9" fill="none" stroke="#3D6580" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="233.9" r="4" fill="#3D6580"/><text x="718.0" y="221.9" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Fed funds rate</text><text x="718.0" y="235.9" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">4.21% in 2025</text><g><title>Inflation</title><path d="M62.0 301.7 L71.3 275.6 L80.5 246.4 L89.8 257.1 L99.0 284.8 L108.3 275.6 L117.5 283.3 L126.8 280.2 L136.1 278.7 L145.3 278.7 L154.6 274.0 L163.8 252.5 L173.1 255.6 L182.3 234.1 L191.6 215.6 L200.9 208.0 L210.1 234.1 L219.4 247.9 L228.6 203.3 L237.9 129.6 L247.1 158.8 L256.4 209.5 L265.7 198.7 L274.9 181.8 L284.2 125.0 L293.4 91.2 L302.7 138.8 L311.9 203.3 L321.2 249.5 L330.5 231.0 L339.7 244.8 L349.0 269.4 L358.2 243.3 L367.5 235.6 L376.7 224.9 L386.0 215.6 L395.3 234.1 L404.5 252.5 L413.8 252.5 L423.0 258.7 L432.3 255.6 L441.5 254.1 L450.8 263.3 L460.1 275.6 L469.3 264.8 L478.6 246.4 L487.8 255.6 L497.1 274.0 L506.3 263.3 L515.6 257.1 L524.9 246.4 L534.1 249.5 L543.4 254.1 L552.6 240.2 L561.9 303.2 L571.1 274.0 L580.4 251.0 L589.7 266.4 L598.9 275.6 L608.2 274.0 L617.4 297.1 L626.7 278.7 L635.9 266.4 L645.2 261.7 L654.5 271.0 L663.7 278.7 L673.0 226.4 L682.2 175.7 L691.5 235.6 L700.7 252.5 L710.0 258.7" fill="none" stroke="#8D5F18" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/></g><circle cx="710.0" cy="258.7" r="4" fill="#8D5F18"/><text x="718.0" y="270.7" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="start" font-weight="700">Inflation</text><text x="718.0" y="284.7" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="start" font-weight="400">2.6% in 2025</text><text transform="rotate(-90 14 168.0)" x="14" y="168.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent</text></svg>
+      <p class="source">Sources: Effective federal funds rate (annual average) from Board of Governors of the Federal Reserve System, H.15, via FRED, Federal Reserve Bank of St. Louis; inflation is the yearly change in CPI-U (BLS via FRED); calculations for this textbook.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Fed funds rate</th><th>Inflation</th></tr></thead><tbody><tr><td>1974</td><td>10.50%</td><td>11.0%</td></tr><tr><td>1980</td><td>13.36%</td><td>13.5%</td></tr><tr><td>1981</td><td>16.38%</td><td>10.4%</td></tr><tr><td>2009</td><td>0.16%</td><td>-0.3%</td></tr><tr><td>2021</td><td>0.08%</td><td>4.7%</td></tr><tr><td>2022</td><td>1.68%</td><td>8.0%</td></tr><tr><td>2025</td><td>4.21%</td><td>2.6%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>What happened to the funds rate between 1980 and 1981 while inflation was still high? Use the table.</li><li>What was the rate in 2021? What does the text say the Fed did after the 2008 financial crisis?</li><li>Inflation was 8.0% in 2022. What happened to the funds rate in 2025 compared with 2021?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Necessity of Federal Reserve Independence</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Federal Reserve's independence from direct political control is not an accident or an oversight; it is the product of a deliberate institutional design choice rooted in a clear-eyed understanding of the political pressures that can distort economic policy when monetary decisions are made by elected officials with short-term electoral incentives. The structure of the Federal Reserve System — with its Board of Governors serving staggered fourteen-year terms, its chair appointed by the president but not easily removed, and its policy decisions insulated from congressional override — reflects the judgment that sound monetary management requires a degree of political insulation that is incompatible with direct democratic control.</p>
+        <p>The reason for this judgment is straightforward: the economic policies that produce the best long-term outcomes are frequently different from — and sometimes directly opposed to — the policies that are most politically popular in the short term. Raising interest rates to combat inflation is painful in the short run, because it increases the cost of mortgages, car loans, and business credit, and can slow economic growth and increase unemployment. The political incentive for elected officials facing an imminent election is to avoid this pain by keeping rates low, even when allowing inflation to persist will ultimately impose larger costs on the economy. Similarly, reducing the money supply to control an overheating economy may be the right policy for long-term stability, but it is politically costly in ways that elected officials are reluctant to accept. By placing these decisions in the hands of officials whose terms are long enough to insulate them from immediate electoral pressure, the Federal Reserve's institutional design attempts to ensure that monetary policy is made on the basis of economic analysis rather than electoral calculation.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">14 years</span>Length of a Federal Reserve governor’s term. The seven governors serve staggered terms (Federal Reserve Board).</div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">12 votes</span>The Federal Open Market Committee has 12 voting members: the seven governors, the New York Fed president, and four other Reserve Bank presidents who rotate.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Governors are nominated by the president and confirmed by the Senate. That is how an independent body still has democratic roots.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This independence is not absolute, and it has been tested repeatedly throughout the Fed's history. Presidents from Lyndon Johnson, who reportedly pressured Fed Chairman William McChesney Martin to keep rates low to support Great Society spending, to Richard Nixon, who is widely believed to have pressured Chairman Arthur Burns to stimulate the economy before the 1972 election, to more recent presidents who have publicly criticized Fed policy on social media — have all challenged the principle of central bank independence in ways that reflect the persistent political temptation to subordinate monetary policy to short-term electoral interests. The Fed's ability to resist these pressures depends not on any formal legal protection but on the institutional culture, professional norms, and public credibility of the institution itself.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO TODAY</span>In June 2026 the Supreme Court ruled 5–4 in <i>Trump v. Cook</i> that Governor Lisa Cook could stay in office while her challenge to the president’s attempt to remove her goes forward. The Court rested its decision on narrow grounds and the case continues (SCOTUSblog, June 29, 2026).</div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Central bank independence</span> The idea that interest-rate decisions should be insulated from short-term election pressure. <span class="sp">Spanish: independencia del banco central</span></div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Another Country Chooses Independence</div></div>
+      <div class="box-b">
+<p style="margin:0">On May 6, 1997, Britain’s Chancellor of the Exchequer, Gordon Brown, announced that the Bank of England would set interest rates on its own, while the government kept the power to set the goals (Federal Reserve Bank of San Francisco). The British government gave up control of the tool but kept control of the target. Compare that with the U.S. system, where Congress’s law sets the Fed’s goals and the Fed chooses the interest rate.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Who Should Set Interest Rates?</div></div>
+      <div class="box-b">
+        <p>A country’s leaders are deciding who decides the cost of borrowing.</p>
+        <div class="opts"><div class="opt"><h5>Independent experts</h5>Long terms protect experts from election pressure, but voters cannot vote them out.</div><div class="opt"><h5>Elected officials</h5>Voters can hold them accountable, but they may cut rates before elections.</div></div>
+        <p class="ask">Which would you choose, and how would you answer the strongest objection to your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; THE FED AND ITS CRITICS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 16.6. Which Fed action would the Fed take if inflation were rising? Explain the effect.</li><li>Use Figure 16.7. In which year in the table did the funds rate peak? What was the Fed trying to do?</li><li>Write a Counter-Argument to this claim: “The Fed should answer directly to the president.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 16.2 ASSESSMENT</b>Complete the Section 16.2 Assessment in your <i>Chapter 16 Assignment</i> packet before you move on to Section 16.3.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>16.3</b></div>
+    <h2>Regulation and the Public Interest</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#F0C77E" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 16.3, you will</p>
+      <ul><li>Distinguish economic regulation from social regulation</li><li>Weigh the benefits and costs of regulation</li><li>Explain how presidents, Congress, and the courts shape regulatory policy</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-economic-reg">Economic Regulation</a></li><li><a href="#t-social-reg">Social Regulation</a></li><li><a href="#t-externality">Negative Externality</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a regulation, who it protects, and who pays.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: regulation, who it protects, who bears the cost"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Regulation</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Protects</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Costs</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">Regulation and the Public Interest</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Beyond fiscal and monetary policy, the federal government shapes the economic environment through a vast apparatus of regulation — rules that govern how businesses may operate, what products they may sell and under what conditions, how they must treat their employees and customers, and what effects their activities may have on the natural environment. Regulation is one of the most politically contested dimensions of government economic policy, because it sits at the intersection of two powerful values that Americans hold simultaneously and that frequently conflict: the desire for a market economy in which private enterprise is free to innovate, compete, and generate wealth, and the recognition that unregulated markets can produce outcomes — pollution, unsafe products, financial fraud, labor exploitation — that impose serious costs on individuals and communities who have no practical recourse without government protection.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Regulation</span> Rules the government makes that govern how businesses operate, what they may sell, and how they treat workers, customers, and the environment. <span class="sp">Spanish: regulación</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Agencies write most regulations under laws Congress passes. Chapter 7 explains the bureaucracy and how rulemaking works.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Economic and Social Regulation</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The regulatory apparatus of the federal government encompasses two broad and distinct categories of regulation, each reflecting a different theory of where markets fail and what government intervention can accomplish. <dfn id="t-economic-reg">Economic regulation</dfn> focuses on the structure and conduct of specific industries — controlling the prices that regulated firms may charge, the conditions under which new competitors may enter a market, or the terms on which companies in a given industry may do business. The historical justification for economic regulation has generally been the existence of "<dfn id="t-natural-mono">natural monopolies</dfn>" — industries, like electrical utilities and railroads, in which the economics of production favor the emergence of a single dominant provider and in which competition is therefore unlikely to emerge naturally or to produce efficient outcomes. When a single company controls the only electrical grid in a city, it can charge whatever price it chooses for an essential service; economic regulation provides a substitute for the competitive discipline that would otherwise constrain its behavior.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Natural monopoly</span> An industry, such as an electric grid, where one provider is cheapest to run, so competition is unlikely. <span class="sp">Spanish: monopolio natural</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Prices and entry</span>Economic regulation controls what firms charge and who may enter the market.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo "><img src="https://commons.wikimedia.org/wiki/Special:FilePath/SETTING%20SUN%20AND%20SMOKESTACKS%20-%20NARA%20-%20544708.jpg?width=1400" alt="Dark silhouettes of an industrial plant with smoke rising from its stacks against a deep red sky and a low sun." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Pollution in 1972</span>Smokestacks at sunset, photographed in August 1972 by Belinda Rain for the Environmental Protection Agency’s DOCUMERICA project, which documented environmental problems in the early 1970s.<span class="credit">Photo: Belinda Rain (photographer, EPA DOCUMERICA) / <a href="https://commons.wikimedia.org/wiki/File:SETTING_SUN_AND_SMOKESTACKS_-_NARA_-_544708.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead"><dfn id="t-social-reg">Social regulation</dfn> takes a different approach, focusing not on market structure but on the external costs that economic activity imposes on parties who are not directly involved in the transaction — what economists call "<dfn id="t-externality">negative externalities</dfn>." When a factory discharges pollutants into a river, the costs of that pollution are borne by the communities downstream, not by the factory or its customers; the market, left to itself, has no mechanism for forcing the factory to account for these costs. When a pharmaceutical company sells a drug with undisclosed side effects, the patients who suffer those effects are not in a position to have evaluated the risk before consenting to treatment. Social regulation — through agencies like the Environmental Protection Agency, the Occupational Safety and Health Administration, the Food and Drug Administration, and the Consumer Financial Protection Bureau — is designed to internalize these external costs by requiring businesses to meet standards that protect the environment, workers, consumers, and the public from harms that market transactions do not naturally prevent.</p>
+        <p>The political debate over regulation reflects a genuine tension between these protective purposes and the economic costs that regulation imposes on the businesses it governs. Complying with regulatory requirements costs money — for equipment, for personnel, for legal advice, for reporting and record-keeping — and these costs are ultimately passed along to consumers in the form of higher prices or absorbed by shareholders in the form of lower returns. Critics of regulation argue that these costs are often underestimated by regulators, that they make American businesses less competitive in global markets where their foreign counterparts may face lighter regulatory burdens, and that they can suppress innovation by creating compliance requirements that favor established large businesses capable of bearing the cost while deterring new entrants. Defenders of regulation respond that these costs must be weighed against the benefits — the lives saved by safer workplaces and cleaner air, the financial losses prevented by consumer protection rules, the environmental damage avoided by emissions standards — and that markets left unregulated have repeatedly demonstrated their capacity to impose enormous costs on individuals and communities.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Negative externality</span> A cost an activity imposes on people who are not part of the transaction, such as pollution downstream. <span class="sp">Spanish: externalidad negativa</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social regulation</span> Rules that protect health, safety, workers, consumers, and the environment. <span class="sp">Spanish: regulación social</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 agencies</span>The chapter names the EPA, OSHA, FDA, and CFPB as social regulators.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.8</span>Two Kinds of Regulation</p>
+      <p class="figsub">They respond to different market failures and have different costs.</p>
+      <table class="cmp"><thead><tr><th>Question</th><th>Economic regulation</th><th>Social regulation</th></tr></thead><tbody><tr><td>What it controls</td><td>Prices, entry into a market, terms of service</td><td>Pollution, product safety, workplace safety, consumer finance</td></tr><tr><td>Problem it addresses</td><td>Market power, especially natural monopolies</td><td>Costs imposed on people outside the transaction</td></tr><tr><td>Example from the chapter</td><td>An electric utility with the only grid in a city</td><td>A factory discharging pollutants into a river</td></tr><tr><td>Agency examples</td><td>State utility commissions (economic)</td><td>EPA, OSHA, FDA, CFPB (named in the text)</td></tr><tr><td>Main benefit</td><td>Prices for essential services stay fair</td><td>Lives saved, injuries and fraud prevented</td></tr><tr><td>Main cost</td><td>Fewer choices; slower change</td><td>Compliance costs passed to consumers or shareholders</td></tr></tbody></table>
+      <p class="source">Source: Descriptions in this chapter’s text; table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which kind of regulation is designed to substitute for competition? Explain.</li><li>Which row would a business owner most worry about? Which would a parent most worry about?</li><li>Write a Counter-Argument a critic of regulation might offer to the claim that the benefits outweigh the costs.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#F0C77E"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#23394B">E</text></svg><div><small>EXAMPLE</small>The Cost of a Safety Rule</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Suppose a rule requires every school bus to carry a new safety device that costs $2,000. The district pays for it, so something else in the budget shrinks. Supporters of the rule say it protects children. Critics say a district that cannot afford the device may keep older buses running longer. Regulators call the first part a benefit and the second part a cost, and the political argument is about which one weighs more.</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Regulatory Equilibrium: Benefits, Costs, and the Political Contest</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">No regulatory decision is made in a political vacuum. The process through which federal regulations are developed, promulgated, and enforced is deeply embedded in the political system, and the outcomes of that process reflect not only the technical judgments of expert agencies but the relative power of the organized interests that have stakes in regulatory outcomes. Businesses subject to regulation have strong incentives to organize, fund lobbying operations, and engage in the regulatory process at every stage — from the legislative authorization of regulatory programs to the administrative rulemaking through which the specific content of regulations is determined to the litigation through which they are challenged after promulgation. Public interest organizations and advocacy groups represent the diffuse beneficiaries of regulatory protection — consumers, workers, communities living near polluting facilities — but these groups typically have fewer resources and face more significant collective action problems than the organized industry interests they confront.</p>
+        <p>The net result of this political dynamic is a regulatory process that is genuinely contested and whose outputs reflect ongoing negotiation among competing interests rather than the unconstrained application of technical expertise. Presidential administrations set the general direction of regulatory policy — through executive orders directing agencies to prioritize deregulation or to pursue more aggressive enforcement, through their appointments to agency leadership positions, and through the review process that the Office of Management and Budget uses to evaluate the cost-benefit analyses underlying major regulatory rules. Congressional oversight, appropriations decisions, and occasional legislative interventions further shape the regulatory environment. And the courts provide a final check, reviewing the legal authority and procedural adequacy of agency rulemaking in ways that can require agencies to go back and redo their work or that can invalidate rules altogether.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Rulemaking</span> The process in which an agency writes the detailed regulations that carry out a law. <span class="sp">Spanish: reglamentación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Cost-benefit analysis</span> A comparison of what a rule costs with the benefits it is expected to produce. <span class="sp">Spanish: análisis de costo-beneficio</span></div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Presidents set direction, Congress oversees, and the courts review. Chapter 5 and Chapter 6 return to each of these checks.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>A New Rule for a New Industry</div></div>
+      <div class="box-b">
+        <p>A new online industry is growing fast, and some customers have lost money to scams.</p>
+        <div class="opts"><div class="opt"><h5>Write strict rules now</h5>Customers are protected early, but new firms must pay for compliance.</div><div class="opt"><h5>Wait and see</h5>New firms can grow without added costs, but some customers may be harmed before rules arrive.</div></div>
+        <p class="ask">Which would you choose? Which group has the stronger organized voice in the process, according to the text?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; WEIGHING REGULATION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 16.8. Name one example of economic regulation and one of social regulation, and tell which problem each addresses.</li><li>Use the text. Why do businesses often have more influence in the regulatory process than the people who benefit from protection?</li><li>Write a Counter-Argument to this claim: “Regulation always makes American businesses less competitive.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 16.3 ASSESSMENT</b>Complete the Section 16.3 Assessment in your <i>Chapter 16 Assignment</i> packet before you move on to Section 16.4.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>16.4</b></div>
+    <h2>The Social Safety Net and Entitlements</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#F0C77E" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#EEF2F5" stroke-width="5"/><path d="M14 100h132" stroke="#F0C77E" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 16.4, you will</p>
+      <ul><li>Explain how Social Security and Medicare work as social insurance</li><li>Identify the demographic and cost pressures on both programs</li><li>Explain the “third rail” and how reform has happened anyway</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-social-insurance">Social Insurance</a></li><li><a href="#t-third-rail">Third Rail</a></li><li><a href="#t-payroll-tax">Payroll Tax</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: list a pressure on the programs, its cause, and a possible response.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: pressure, cause, possible response"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Pressure</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Cause</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#3D6580"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Response</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#3D6580" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head" style="margin-bottom:2px">The Social Safety Net and Entitlements</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The most politically charged and fiscally consequential dimension of federal domestic policy is the system of social insurance and income support programs that together constitute what Americans call the "social safety net." These programs — primarily Social Security, Medicare, and Medicaid — represent the largest single category of federal spending, the programs most directly connected to the economic security of the largest number of Americans, and the policy area that presents the most daunting long-term fiscal challenges. Understanding how these programs work, why they have grown to dominate the federal budget, and what forces threaten their long-term sustainability is essential to understanding the central fiscal challenge facing the American republic in the twenty-first century.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social safety net</span> Programs, mainly Social Security, Medicare, and Medicaid, that protect people from economic hardship. <span class="sp">Spanish: red de seguridad social</span></div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 17 covers poverty, healthcare, and education policy, including Medicaid.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Social Security, Medicare, and the Architecture of Social Insurance</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Poster%2C%20%22Hold%20on%20to%20Your%20Social%20Security%20Card%22%20-%20NARA%20-%20514504.jpg?width=1400" alt="A purple poster with a cartoon character holding up a Social Security card and the words Hold on to your Social Security card." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Keep your card</span>A poster urging workers to hold on to their Social Security cards, made between 1941 and 1945 and kept by the National Archives. Workers’ records of payroll-tax contributions determine their benefits.<span class="credit">Image: Unknown (U.S. government poster) / <a href="https://commons.wikimedia.org/wiki/File:Poster,_"Hold_on_to_Your_Social_Security_Card"_-_NARA_-_514504.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">Social Security was created by the Social Security Act of 1935 as part of Franklin Roosevelt's New Deal response to the Great Depression. Its original purpose was to provide a floor of economic security for elderly Americans who, in a society without significant private retirement savings and with family structures unable to absorb the needs of a rapidly aging population, faced a real risk of destitution in old age. The program was structured as a <dfn id="t-social-insurance">social insurance</dfn> system rather than a traditional welfare program: workers and their employers contribute to the system through <dfn id="t-payroll-tax">payroll taxes</dfn> throughout their working lives, and upon reaching retirement age they receive benefits proportional to their earnings history. This contributory structure — the sense that workers are receiving benefits they have "earned" through their own contributions — has been one of the program's most politically potent features, giving it a constituency of beneficiaries who view it not as government charity but as the return of their own investment.</p>
+        <p>Medicare, created in 1965 as part of Lyndon Johnson's Great Society initiative, extended the social insurance model to healthcare for the elderly. Before Medicare, a large proportion of elderly Americans had no health insurance — private insurers found this population expensive and unprofitable to cover — and the cost of medical care was a major driver of poverty among seniors.</p>
+        <p>Medicare created a federal program that covers hospital care (Part A) and physician services (Part B) for virtually all Americans over the age of sixty-five, financed through a combination of payroll taxes, premiums, and general federal revenues. The program has been expanded over the decades to cover prescription drugs (Part D, added in 2003) and to allow seniors to receive Medicare coverage through private managed care plans (Part C, Medicare Advantage).</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Social insurance</span> A program in which workers and employers pay in during their working lives and receive benefits later based on their earnings record. <span class="sp">Spanish: seguro social</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Payroll tax</span> A tax on wages paid by workers and employers that funds Social Security and Medicare Part A. <span class="sp">Spanish: impuesto sobre la nómina</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1935 and 1965</span>Years Social Security and Medicare were created.</div>
+        <div class="connect"><span class="tag">CONNECT TO DATA</span>Figures 16.9 and 16.10 use the 2026 Social Security Trustees Report, the most recent at the time of writing.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Both programs are enormously popular — consistently among the highest-rated government programs in public opinion surveys — and both face serious long-term fiscal pressure from the same demographic forces. The baby boom generation, the 76 million Americans born between 1946 and 1964, began reaching Social Security retirement age in 2008 and will continue to do so through the mid-2030s. As this large cohort moves from contributing payroll taxes to receiving Social Security and Medicare benefits, the ratio of workers supporting each beneficiary — which was approximately 16 to 1 when Social Security was created — falls toward 2 to 1. Simultaneously, the per-beneficiary cost of Medicare has grown steadily as medical technology has advanced, enabling more treatments at higher cost, and as the share of beneficiaries who are very elderly — and therefore more medically intensive — has increased.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2.6 workers</span>Covered workers per Social Security beneficiary in 2025, according to the 2026 Trustees Report (estimate).</div>
+        <div class="connect"><span class="tag">CHECK THE DATA</span>Figure 16.9 starts in 1950, when the Social Security Administration counts 16.5 covered workers per beneficiary. The first retirees drew benefits after only a few years of contributions, so early ratios were very high.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.9</span>Covered Workers per Social Security Beneficiary, 1950–2100</p>
+      <p class="figsub">The ratio has fallen as the population has aged. Bars from 2030 on are projections.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Bar chart of covered workers per Social Security beneficiary: 16.5 in 1950, 5.1 in 1960, 3.7 in 1970, 3.2 in 1980, 2.9 in 2010, 2.7 in 2020, 2.4 in 2030 projected, 1.9 in 2100 projected."><line x1="62" y1="282.0" x2="830" y2="282.0" stroke="#e6e8ec"/><text x="54" y="286.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0.0</text><line x1="62" y1="223.3" x2="830" y2="223.3" stroke="#e6e8ec"/><text x="54" y="227.3" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">4.0</text><line x1="62" y1="164.7" x2="830" y2="164.7" stroke="#e6e8ec"/><text x="54" y="168.7" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">8.0</text><line x1="62" y1="106.0" x2="830" y2="106.0" stroke="#e6e8ec"/><text x="54" y="110.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">12.0</text><line x1="62" y1="47.3" x2="830" y2="47.3" stroke="#e6e8ec"/><text x="54" y="51.3" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">16.0</text><line x1="62" y1="282.0" x2="830" y2="282.0" stroke="#6f7787" stroke-width="1.5"/><g><title>1950: 16.5</title><rect x="71.0" y="40.0" width="46.1" height="242.0" rx="3" fill="#3D6580"/></g><text x="94.0" y="34.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">16.5</text><text x="94.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">1950</text><g><title>1960: 5.1</title><rect x="135.0" y="207.2" width="46.1" height="74.8" rx="3" fill="#3D6580"/></g><text x="158.0" y="201.2" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">5.1</text><text x="158.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">1960</text><g><title>1970: 3.7</title><rect x="199.0" y="227.7" width="46.1" height="54.3" rx="3" fill="#3D6580"/></g><text x="222.0" y="221.73333333333332" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">3.7</text><text x="222.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">1970</text><g><title>1980: 3.2</title><rect x="263.0" y="235.1" width="46.1" height="46.9" rx="3" fill="#3D6580"/></g><text x="286.0" y="229.06666666666666" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">3.2</text><text x="286.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">1980</text><g><title>1990: 3.4</title><rect x="327.0" y="232.1" width="46.1" height="49.9" rx="3" fill="#3D6580"/></g><text x="350.0" y="226.13333333333333" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">3.4</text><text x="350.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">1990</text><g><title>2000: 3.4</title><rect x="391.0" y="232.1" width="46.1" height="49.9" rx="3" fill="#3D6580"/></g><text x="414.0" y="226.13333333333333" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">3.4</text><text x="414.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2000</text><g><title>2010: 2.9</title><rect x="455.0" y="239.5" width="46.1" height="42.5" rx="3" fill="#3D6580"/></g><text x="478.0" y="233.46666666666667" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">2.9</text><text x="478.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2010</text><g><title>2020: 2.7</title><rect x="519.0" y="242.4" width="46.1" height="39.6" rx="3" fill="#3D6580"/></g><text x="542.0" y="236.4" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">2.7</text><text x="542.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2020</text><g><title>2030: 2.4</title><rect x="583.0" y="246.8" width="46.1" height="35.2" rx="3" fill="#D08C23"/></g><text x="606.0" y="240.8" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">2.4</text><text x="606.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2030</text><g><title>2050: 2.2</title><rect x="647.0" y="249.7" width="46.1" height="32.3" rx="3" fill="#D08C23"/></g><text x="670.0" y="243.73333333333332" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">2.2</text><text x="670.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2050</text><g><title>2070: 2.0</title><rect x="711.0" y="252.7" width="46.1" height="29.3" rx="3" fill="#D08C23"/></g><text x="734.0" y="246.66666666666666" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">2.0</text><text x="734.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2070</text><g><title>2100: 1.9</title><rect x="775.0" y="254.1" width="46.1" height="27.9" rx="3" fill="#D08C23"/></g><text x="798.0" y="248.13333333333333" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">1.9</text><text x="798.0" y="300" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">2100</text><text transform="rotate(-90 14 150.0)" x="14" y="150.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Workers per beneficiary</text></svg>
+      <p class="source">Source: Social Security Administration, 2026 OASDI Trustees Report, Table IV.B4 (covered workers per beneficiary, OASDI). Amber bars are the Trustees’ intermediate projections; 2025 is an estimate (2.6).</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Workers per beneficiary</th></tr></thead><tbody><tr><td>1960</td><td>5.1</td></tr><tr><td>1980</td><td>3.2</td></tr><tr><td>2000</td><td>3.4</td></tr><tr><td>2010</td><td>2.9</td></tr><tr><td>2020</td><td>2.7</td></tr><tr><td>2025</td><td>2.6</td></tr><tr><td>2030</td><td>2.4</td></tr><tr><td>2050</td><td>2.2</td></tr><tr><td>2100</td><td>1.9</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Describe the trend from 1960 to 2020 in the data table.</li><li>Did the ratio ever rise between 1980 and 2000? What does that tell you about the trend?</li><li>The text says the ratio falls “toward 2 to 1.” In which projected year does the table show it reaching about 2.2?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The "Third Rail" and the Politics of Entitlement Reform</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The fiscal mathematics of Social Security and Medicare are, in principle, not mysterious: programs whose benefit commitments grow faster than their revenue sources will eventually face insolvency unless benefits are reduced, revenues are increased, or some combination of the two is achieved. Social Security trustees have for years projected that without legislative changes, the program's <dfn id="t-trust-fund">trust fund</dfn> — the accumulated excess of past contributions over past benefits — will be exhausted within the coming decades, at which point the program would be able to pay only a fraction of scheduled benefits from current payroll tax revenues. Medicare faces similar, and in some respects more severe, long-term fiscal challenges, driven by the combination of demographic pressure and healthcare cost growth.</p>
+        <p>Yet the political obstacles to addressing these challenges are formidable. Seniors and near-retirees — the population most directly affected by any changes to Social Security and Medicare — are also the population most likely to vote, most intensely engaged with politics, and most effectively organized through advocacy groups like AARP. Any proposal to reduce benefits, raise the retirement age, adjust cost-of-living calculations, or increase payroll taxes faces immediate and intense political opposition from this constituency. The phrase "<dfn id="t-third-rail">third rail</dfn> of American politics" — derived from the electrified rail in subway systems that kills instantly on contact — has been applied to Social Security since the Reagan years, when the administration's early proposals for benefit reductions provoked such fierce political backlash that they were rapidly withdrawn, establishing a political lesson that subsequent administrations have been reluctant to unlearn.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Trust fund</span> The accounts that hold Social Security and Medicare Part A payroll-tax revenue until it is paid out. <span class="sp">Spanish: fondo fiduciario</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Third rail</span> A political issue so dangerous that politicians avoid touching it, like the electrified rail in a subway. <span class="sp">Spanish: riel electrificado (tema intocable)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2032 and 2034</span>The 2026 Trustees project the retirement trust fund (OASI) will be depleted in 2032 and the combined retirement and disability funds (OASDI) in 2034.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 16.10</span>What Could Be Paid After the Trust Fund Is Depleted</p>
+      <p class="figsub">Share of scheduled benefits payable from continuing tax income, 2026 Trustees projections.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Bar chart of the share of scheduled benefits payable after depletion: OASI 78 percent in 2032, combined OASDI 83 percent in 2034, Medicare Part A 89 percent in 2033."><line x1="62" y1="282.0" x2="830" y2="282.0" stroke="#e6e8ec"/><text x="54" y="286.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">0%</text><line x1="62" y1="216.0" x2="830" y2="216.0" stroke="#e6e8ec"/><text x="54" y="220.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">25%</text><line x1="62" y1="150.0" x2="830" y2="150.0" stroke="#e6e8ec"/><text x="54" y="154.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">50%</text><line x1="62" y1="84.0" x2="830" y2="84.0" stroke="#e6e8ec"/><text x="54" y="88.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">75%</text><line x1="62" y1="18.0" x2="830" y2="18.0" stroke="#e6e8ec"/><text x="54" y="22.0" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787" text-anchor="end" font-weight="400">100%</text><line x1="62" y1="282.0" x2="830" y2="282.0" stroke="#6f7787" stroke-width="1.5"/><g><title>Retirement (OASI), 2032: 78%</title><rect x="97.8" y="76.1" width="184.3" height="205.9" rx="3" fill="#3D6580"/></g><text x="190.0" y="70.08000000000001" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">78%</text><text x="190.0" y="300" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Retirement (OASI), 2032</text><g><title>Retirement + disability, 2034: 83%</title><rect x="353.8" y="62.9" width="184.3" height="219.1" rx="3" fill="#3D6580"/></g><text x="446.0" y="56.879999999999995" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">83%</text><text x="446.0" y="300" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Retirement + disability, 2034</text><g><title>Medicare Part A (HI), 2033: 89%</title><rect x="609.8" y="47.0" width="184.3" height="235.0" rx="3" fill="#3D6580"/></g><text x="702.0" y="41.03999999999999" font-family="Inter, Arial, sans-serif" font-size="12" fill="#1c2230" text-anchor="middle" font-weight="700">89%</text><text x="702.0" y="300" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Medicare Part A (HI), 2033</text><text transform="rotate(-90 14 150.0)" x="14" y="150.0" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#6f7787">Percent of scheduled benefits</text></svg>
+      <p class="source">Source: Social Security Administration and Centers for Medicare and Medicaid Services, 2026 Trustees Reports (certified June 5, 2026). Depletion years are projections under the Trustees’ intermediate assumptions. Congress can change the law before then.</p>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>If benefits were scheduled at $1,000 a month, how much would the OASI bar show could be paid after 2032? (Multiply.)</li><li>Which program does the figure show has the highest share payable? Which has the lowest?</li><li>What are the three kinds of fixes the text names? (Hint: reduce benefits, raise revenue, or both.)</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>This political dynamic does not make reform impossible — Congress has modified Social Security and Medicare on numerous occasions, most significantly in the 1983 legislation that gradually raised the full retirement age from sixty-five to sixty-seven and that subjected a portion of Social Security benefits to income tax for higher-income recipients. But it does mean that reform tends to be incremental, delayed, and politically organized around the protection of current beneficiaries rather than the long-term sustainability of the system. The challenge for future policymakers is to find a path to fiscal sustainability that is politically achievable — one that distributes the necessary adjustments in ways that are perceived as fair by the broad coalition of stakeholders whose political support is required.</p>
+      </div>
+      <div class="side">
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The 1983 amendments passed after a commission recommended changes; the text says they raised the full retirement age from 65 to 67 and taxed some benefits for higher-income recipients.</div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Full retirement age</span> The age at which a worker may receive full Social Security benefits. It rose from 65 to 67 under the 1983 law, phased in over time. <span class="sp">Spanish: edad plena de jubilación</span></div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>The First Old-Age Insurance</div></div>
+      <div class="box-b">
+<p style="margin:0">Germany was the first nation to adopt an old-age social insurance program, in 1889. Contributions came from the employee, the employer, and the government, and benefits at first began at age 70; Germany lowered the age to 65 in 1916 (Social Security Administration, History). The American program of 1935 borrowed the idea of social insurance, with workers and employers paying in and benefits tied to work.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Protecting the Programs</div></div>
+      <div class="box-b">
+        <p>Lawmakers must close a long-term funding gap. Two broad approaches are available.</p>
+        <div class="opts"><div class="opt"><h5>Adjust benefits</h5>Changing the retirement age or benefit formula lowers long-run costs but affects people who planned around current rules.</div><div class="opt"><h5>Raise revenue</h5>Raising payroll taxes or the income taxed protects benefits but asks workers or employers to pay more.</div></div>
+        <p class="ask">Which approach would you choose, and who would object most strongly?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; SOCIAL INSURANCE AND ITS FUTURE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 16.9. Describe the trend and explain two causes the text gives.</li><li>Use Figure 16.10. What share of scheduled retirement benefits would be payable in 2032? What does this tell you about the difference between “running out of money” and “being unable to pay anything”?</li><li>Write a Counter-Argument to this claim: “Politicians avoid reforming Social Security only because they are afraid of seniors.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The federal government's role as economic manager is one of the most consequential and most contested dimensions of American governance — consequential because the policy choices made in this domain affect the material welfare of every American, and contested because those choices inevitably reflect value judgments about the proper distribution of wealth, the appropriate scope of government activity, and the trade-offs between present consumption and future fiscal responsibility that no amount of technical expertise can fully resolve.</p>
+        <p>The essential question that animates this chapter — how the federal government strategically utilizes fiscal and monetary policy to balance economic stability with individual liberty — captures a tension that is genuinely unresolvable in the abstract. The tools of fiscal and monetary management represent a genuine and valuable capacity to mitigate the extremes of the business cycle, to invest in public goods that the market will not provide adequately, and to ensure that the gains of economic growth are broadly shared rather than concentrated in the hands of a few. But every exercise of these tools involves trade-offs: deficit spending today constrains fiscal flexibility tomorrow; monetary accommodation can generate inflation that erodes the purchasing power of ordinary citizens; regulation protects the public but imposes costs that can reduce competitiveness and innovation; entitlement programs provide essential security but create fiscal commitments that grow faster than the economy that must support them.</p>
+        <p>The enduring debate between Keynesian and supply-side approaches, between more and less active regulation, and between the expansion and reform of entitlement programs reflects the fact that these trade-offs are genuinely difficult and that reasonable people with different values and different assessments of the evidence can reach different conclusions about where the right balance lies. What the constitutional framework of the American republic provides is not a resolution of these debates but a set of institutional mechanisms — fiscal decisions through Congress and the president, monetary decisions through the independent Fed — through which the debates are conducted and their outcomes determined. As the next chapter examines, these economic choices intersect directly with the social policy decisions that determine how the government addresses poverty, healthcare, and education — the dimensions of American life in which the relationship between economic resources and individual opportunity is most directly at stake.</p>
+      </div>
+      <div class="side">
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 questions</span>Taxes and spending, the Fed, regulation, and entitlements: each answers the same question differently.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 17 turns from the economy to social policy: poverty, healthcare, and education.</div>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 16.4 ASSESSMENT</b>Complete the Section 16.4 Assessment in your <i>Chapter 16 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>How much should government steer the economy? Read two inaugural addresses, the constitutional and legal rules for money, and a trustees’ report, and decide how each answers.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading Four Government Sources</h3>
+        <p>The documents below come from different moments. Franklin Roosevelt spoke in March 1933, at the bottom of the Great Depression. Ronald Reagan spoke in January 1981, after a decade of stagflation. The third document gives the constitutional and legal rules for taxing, spending, and money. The fourth reports how Social Security and Medicare stand in 2026.</p>
+        <p>As you read, notice what each source says government should do, what it fears, and what it asks the reader to accept. Answer the Thinking Like a Citizen question after each document, then answer the Synthesizing questions at the end.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1933 to 2026</span>The documents span 93 years of arguments about the same question.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · INAUGURAL ADDRESS</small><b>Franklin D. Roosevelt, First Inaugural Address (March 4, 1933)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“In their need they have registered a mandate that they want direct, vigorous action. They have asked for discipline and direction under leadership. They have made me the present instrument of their wishes.”<br><br>“Our greatest primary task is to put people to work.”<cite>Franklin D. Roosevelt, First Inaugural Address, March 4, 1933. Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Roosevelt say the voters have asked for? What role does he claim for the federal government?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · INAUGURAL ADDRESS</small><b>Ronald Reagan, First Inaugural Address (January 20, 1981)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“In this present crisis, government is not the solution to our problem; government is the problem.”<br><br>“Now, so there will be no misunderstanding, it is not my intention to do away with government. It is, rather, to make it work—work with us, not over us; to stand by our side, not ride on our back.”<cite>Ronald Reagan, First Inaugural Address, January 20, 1981. Text from the Avalon Project, Yale Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What does Reagan say the problem is? What role does he still claim for government?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · CONSTITUTION AND STATUTE</small><b>The Constitution and the Federal Reserve Act’s Goals</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">Article I, Section 8, Clause 1: “The Congress shall have Power To lay and collect Taxes, Duties, Imposts and Excises, to pay the Debts and provide for the common Defence and general Welfare of the United States.”<br><br>Article I, Section 9, Clause 7: “No Money shall be drawn from the Treasury, but in Consequence of Appropriations made by Law.”<br><br>12 U.S.C. § 225a: The Federal Reserve Board and the Federal Open Market Committee “shall maintain long run growth of the monetary and credit aggregates commensurate with the economy’s long run potential to increase production, so as to promote effectively the goals of maximum employment, stable prices, and moderate long-term interest rates.”<cite>U.S. Constitution, Article I (National Archives transcription); 12 U.S.C. § 225a (Legal Information Institute, Cornell Law School). Capitalization is original.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Which branch holds the power over taxes and spending? Who, according to the statute, sets the Fed’s goals, and who sets how it reaches them?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · GOVERNMENT REPORT</small><b>The 2026 Social Security and Medicare Trustees Reports (summary)</b></div></div>
+      <div class="doc-b">
+<p style="margin:0"><b>Summary written for this textbook from the reports certified June 5, 2026.</b></p><ul style="margin:6px 0 0;padding-left:22px"><li>The retirement trust fund (OASI) is projected to be depleted in the fourth quarter of 2032, after which about 78 percent of scheduled benefits would be payable.</li><li>The combined retirement and disability funds (OASDI) are projected to be depleted in the third quarter of 2034, after which about 83 percent would be payable.</li><li>Medicare Part A (HI) is projected to be depleted in the second quarter of 2033, after which about 89 percent would be payable.</li><li>In 2025, Social Security’s cost exceeded its total income by $160.2 billion.</li></ul>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Based on this report, is Social Security a program that is “out of money” or one that faces a shortfall? Which choices, from the chapter, could Congress make?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px">
+        <li>Compare Documents A and B. Name one thing both presidents say government should do and one thing they disagree about.</li>
+        <li>Use Document C and Section 16.1. Explain how Congress, not the president alone, controls federal taxing and spending.</li>
+        <li>Use Document C and Section 16.2. Explain who sets the Fed’s goals and who chooses the tools. Why might Congress have chosen that division?</li>
+        <li>Use Document D and Section 16.4. Explain why the trustees’ projections have not led to quick legislation. Name two reasons from the chapter.</li>
+        <li><b>Making a Claim</b> How much should government steer the economy? State a claim, support it with evidence from at least two documents, and then write a Counter-Argument.</li>
+      </ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>16</b></div>
+    <h2>Chapter 16 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#F0C77E" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#EEF2F5" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#EEF2F5" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the federal government strategically utilize fiscal and monetary policy to balance economic stability with individual liberty?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>Fiscal Policy</h5>Congress and the president use taxing, spending, and borrowing. Keynesians stress spending to restore demand; supply-siders stress lower tax rates and fewer rules. Mandatory spending has grown to 59.4 percent of outlays (2025) and narrows the room for everything else.</div><div><h5>Monetary Policy</h5>The Fed, designed to be independent, sets interest rates and manages the money supply. Its tools include the federal funds rate target, interest on reserves, and open market operations. Presidents have pressured it, and the law that sets its goals can be changed by Congress.</div><div><h5>Regulation</h5>Economic regulation addresses market power, while social regulation addresses costs imposed on others. Regulation brings benefits and compliance costs, and the process is shaped by organized interests, presidents, Congress, and courts.</div><div><h5>Entitlements</h5>Social Security and Medicare are social insurance. The 2026 Trustees project OASI depletion in 2032 and OASDI in 2034. Reform is hard because seniors vote at high rates, though Congress changed Social Security in 1983.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#3D6580" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#D08C23" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 16 ASSESSMENT AND SIMULATION</b>Complete the Chapter 16 Assessment (vocabulary, multiple choice, guided analysis, visual analysis, the Roosevelt source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 16 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Statistics are labeled with their years. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>California Department of Education, History–Social Science Content Standards, Principles of Economics (HSS-PoE.12.3) and Principles of American Democracy (HSS-PoAD.12.7.5): <a href="https://www.cde.ca.gov/be/st/ss/hstgrade12.asp">cde.ca.gov/be/st/ss</a></li><li>White House Office of Management and Budget, Historical Tables 1.2, 7.1, and 8.3, FY 2027 Budget (April 2026): <a href="https://www.whitehouse.gov/omb/information-resources/budget/historical-tables/">whitehouse.gov/omb/…/historical-tables</a></li><li>FRED, Federal Reserve Bank of St. Louis: federal funds rate (Board of Governors, H.15), Consumer Price Index and unemployment rate (U.S. Bureau of Labor Statistics): <a href="https://fred.stlouisfed.org">fred.stlouisfed.org</a></li><li>Board of Governors of the Federal Reserve System, “Monetary Policy Tools,” “The Fed Explained,” and reserve requirement announcement of March 15, 2020 (effective March 26, 2020): <a href="https://www.federalreserve.gov">federalreserve.gov</a></li><li>12 U.S.C. § 225a, Legal Information Institute, Cornell Law School: <a href="https://www.law.cornell.edu/uscode/text/12/225a">law.cornell.edu/uscode/text/12/225a</a></li><li>Franklin D. Roosevelt, First Inaugural Address (1933) and Ronald Reagan, First Inaugural Address (1981), The Avalon Project, Yale Law School: <a href="https://avalon.law.yale.edu">avalon.law.yale.edu</a></li><li>The Constitution of the United States: A Transcription, U.S. National Archives: <a href="https://www.archives.gov/founding-docs/constitution-transcript">archives.gov/founding-docs/constitution-transcript</a></li><li>Social Security Administration, 2026 OASDI Trustees Report (Table IV.B4) and Social Security history pages on Germany, 1889: <a href="https://www.ssa.gov/oact/TR/">ssa.gov/oact/TR</a>; <a href="https://www.ssa.gov/history/ottob.html">ssa.gov/history/ottob.html</a></li><li>Federal Reserve Bank of San Francisco, “British Central Bank Independence and Inflation Expectations,” Economic Letter, November 1997</li><li>SCOTUSblog, <i>Trump v. Cook</i> (decided June 29, 2026)</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are in the public domain: the Federal Reserve (Eccles Building, 2011 and 1937); Warren K. Leffler (gas line, June 15, 1979); Belinda Rain, EPA DOCUMERICA (smokestacks, August 1972); the Work Pays America poster (Works Progress Administration, Federal Art Project; designer Vera Bock); and the “Hold on to Your Social Security Card” poster (U.S. government, 1941–1945). Images appear only when you are online.</p>
+  </div>
+  <div class="runfoot">UNIT 5 · PUBLIC POLICY AND GLOBAL LEADERSHIP │ LESSON 9 │ POWER, LIBERTY, AND ORDER │ DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

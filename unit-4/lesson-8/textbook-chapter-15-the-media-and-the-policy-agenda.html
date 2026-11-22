@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 15: The Media and the Policy Agenda | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fcfbfd; --white:#ffffff;
+  --unit:#574B86; --unit-dk:#33284F; --unit-lt:#F1EEF6; --unit-mid:#ABA5C2;
+  --amber:#C8742F; --amber-lt:#EDB98A; --amber-dk:#8A4A14;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#FAF1EA; --cream:#F1EEF6; --pale:#EDB98A;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ebe8f0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(51,40,79,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d9d2e6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf8fc}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f1eef7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ece7f4;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #dcd5e8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #ece7f4}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf8fc;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1eef7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#ebe8f0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#ebe8f0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(51,40,79,.80) 0%,rgba(51,40,79,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 15 · THE MEDIA AND THE POLICY AGENDA</span>
+  <a href="#opener">Opener</a><a href="#s1">15.1 Media Roles</a><a href="#s2">15.2 Framing and Exposure</a><a href="#s3">15.3 The Media Landscape</a><a href="#s4">15.4 Politicians and the Press</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20New%20York%20Times%20newsroom%201942.jpg?width=2000" alt="A large newsroom with rows of desks, typewriters, and papers, with reporters and editors working at the desks." style="object-position:50% 50%"></div>
+  <div class="opener-head">
+    <div class="chapnum">15</div>
+    <div>
+      <div class="unitline">Unit 4 · American Political Ideologies and Beliefs</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>The Media and<br>the Policy Agenda</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Who decides what you see, and who watches the people in power?</b> Reporters and rewrite men at work in the newsroom of the New York Times, New York City, September 1942. Photographer Marjory Collins. <span class="credit">Photo: Marjory Collins (1942) / <a href="https://commons.wikimedia.org/wiki/File:The_New_York_Times_newsroom_1942.jpg">Wikimedia Commons</a>, public domain</span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 15.1</span><span class="sl-title">The Media’s Three Roles: Gatekeeper, Watchdog, and Scorekeeper</span></a><a href="#s2"><span class="sl-tag">SECTION 15.2</span><span class="sl-title">Framing, Selective Exposure, and the Echo Chamber</span></a><a href="#s3"><span class="sl-tag">SECTION 15.3</span><span class="sl-title">The Evolution of the Media Landscape</span></a><a href="#s4"><span class="sl-tag">SECTION 15.4</span><span class="sl-title">Politicians and the Press</span></a><a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Is a Free Press Enough to Give Citizens Good Information?</span></a><a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How does the media serve as a “gatekeeper” and “watchdog” to influence the strategic priorities of the American government?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Explain the gatekeeper, watchdog, and scorekeeper roles of the media and how agenda setting links coverage to government action.</li><li>Analyze how framing, selective exposure, and echo chambers shape public understanding.</li><li>Compare the broadcasting era with narrowcasting, and evaluate the effects of media consolidation and citizen journalism.</li><li>Describe how politicians use press conferences, trial balloons, sound bites, and social media, and what disintermediation changes.</li><li>Evaluate whether constitutional protection of a free press is enough to give citizens good information.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Mass Media</span><span>Agenda Setting</span><span>Gatekeeper</span><span>Watchdog</span><span>Framing</span><span>Horse-Race Journalism</span><span>Selective Exposure</span><span>Echo Chamber</span><span>Media Consolidation</span><span>Investigative Journalism</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 15 Key Concept</p>
+        <p><b>The media are a political institution.</b> By choosing what to cover, how to describe it, and whom to question, the media shape what citizens think about and what officials do. This chapter asks whether today’s media can still perform those functions for self-government.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Think about how you learn what is happening at school. Someone decides which announcements are read aloud and which are never mentioned, and the words they choose make some news sound good and some sound bad. If students can also post directly, the announcer no longer filters anything. The same is true in national politics: editors, reporters, officials, and platforms all decide what you see and how you see it. Knowing how that works helps you judge the information you use to make decisions.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1791 to 1971 and answer one question: <a href="#case">is a free press enough to give citizens good information?</a></p>
+      <div class="standards">
+        <div class="stdbox"><h4>CALIFORNIA CONTENT STANDARDS</h4><ul><li><code>HSS-PoAD.12.8.1</code> Discuss the meaning and importance of a free and responsible press. <i>(Sections 15.1, 15.2; Case Study)</i></li><li><code>HSS-PoAD.12.8.2</code> Describe the roles of broadcast, print, and electronic media, including the Internet, as means of communication in American politics. <i>(Sections 15.1, 15.3)</i></li><li><code>HSS-PoAD.12.8.3</code> Explain how public officials use the media to communicate with the citizenry and to shape public opinion. <i>(Section 15.4)</i></li></ul></div>
+        <div class="stdbox"><h4>ALSO SUPPORTS</h4><ul><li><code>HSS-PoAD.12.8</code> Students evaluate and take and defend positions on the influence of the media on American political life. <i>(Chapter)</i></li><li><code>HSS-PoAD.12.10</code> Students formulate questions about and defend their analyses of tensions within our constitutional democracy and the importance of maintaining a balance between the following concepts: majority rule and individual rights; liberty and equality; state and national authority in a federal system; civil disobedience and the rule of law; freedom of the press and the right to a fair trial; the relationship of religion and government. <i>(Introduction, Case Study)</i></li><li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li></ul></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The Pentagon Papers</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">On June 13, 1971, the New York Times began publishing excerpts from a classified Defense Department study that would come to be known as the Pentagon Papers — a seven-thousand-page internal history of American decision-making in Vietnam that revealed, in meticulous detail, that four successive administrations had systematically misled the public and Congress about the nature, scope, and prospects of the war. The Nixon administration immediately sought a court order blocking further publication, arguing that the release of classified information endangered national security. Seventeen days later, the Supreme Court ruled against the government in a landmark First Amendment decision that has shaped the legal relationship between the press and government ever since. The Court held, in New York Times Co. v. United States (1971), that the government had not met the heavy burden required to justify prior restraint of publication — that even in matters of national security, the press retained the right to publish information it had obtained, and the government's remedy lay in prosecuting those who leaked classified information, not in silencing the newspapers that printed it.</p>
+        <p>The Pentagon Papers case crystallized, in a single dramatic episode, the fundamental constitutional vision of the American press: an independent, adversarial institution whose function is not to serve the government but to scrutinize it, not to amplify official narratives but to challenge them, not to reassure the public but to inform it of what those in power would prefer it not know. This vision — embodied in the First Amendment's protection of freedom of the press — is rooted in the recognition that a self-governing republic requires citizens to know what their government is actually doing, and that the only reliable mechanism for ensuring this knowledge is a press that operates independently of government control and is willing to publish information that government officials would prefer to suppress.</p>
+        <p>More than half a century after the Pentagon Papers, the American media landscape bears almost no resemblance to the world of print newspapers and broadcast television networks that existed in 1971. The technological revolution that began with cable television in the 1980s, accelerated with the public internet in the 1990s, and reached a new intensity with the proliferation of smartphones and social media platforms in the 2000s and 2010s has transformed every dimension of how Americans produce, distribute, and consume political information. The number of available information sources has multiplied exponentially. The economic model that sustained traditional journalism — advertising revenue tied to mass audiences — has been largely destroyed by digital platforms that aggregate audiences without producing journalism. The common factual reference points that once gave citizens a shared informational foundation for democratic deliberation have been eroded by an environment in which Americans can, and increasingly do, inhabit entirely separate informational realities defined by their partisan and ideological identities.</p>
+        <p>These changes have not eliminated the media's fundamental political functions — gatekeeping, agenda setting, watchdog journalism, and the framing of public issues. But they have transformed the institutional context in which those functions are performed, the incentive structures that shape how media organizations perform them, and the consequences of their performance for the quality of democratic governance. Understanding the media's role in American political life requires understanding both the constitutional principles that have governed press freedom from the founding era and the technological and economic forces that have reshaped the media industry in ways the Framers could not have imagined.</p>
+        <p>This chapter examines the full arc of the media's political role: the three core functions that define its relationship to democratic governance; the mechanisms of agenda setting and framing through which media coverage shapes public opinion and political priorities; the transformation of the media landscape from broadcasting to narrowcasting and its consequences for political polarization; the strategic relationship between politicians and the press that defines one of the most consequential and contentious dynamics in American political life; and the challenges posed by media consolidation, citizen journalism, and the fragmentation of the information environment for the democratic project of an informed and engaged citizenry.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Prior restraint</span> A government order blocking publication before it happens. <span class="sp">Spanish: censura previa</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">17 days</span>The chapter says the Supreme Court ruled seventeen days after the Times began publishing; the Court decided the case on June 30, 1971 (Case Study, Document D).</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 8 covers the First Amendment. This chapter asks how the press uses that protection and what else it needs.</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>15.1</b></div>
+    <h2>The Media’s Three Roles: Gatekeeper, Watchdog, and Scorekeeper</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#EDB98A" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 15.1, you will</p>
+      <ul><li>Explain the gatekeeper, watchdog, and scorekeeper roles</li><li>Explain how agenda setting connects media coverage to government action</li><li>Describe investigative journalism and horse-race journalism</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-mass-media">Mass media</a></li><li><a href="#t-gatekeeper">Gatekeeper</a></li><li><a href="#t-agenda-setting">Agenda setting</a></li><li><a href="#t-watchdog">Watchdog</a></li><li><a href="#t-investigative-journalism">Investigative journalism</a></li><li><a href="#t-horse-race">Horse-race journalism</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each media role, write what it does and one risk the chapter describes.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: media role, what it does, risk"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Role</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it does</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Risk</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Media's Three Roles: Gatekeeper, Watchdog, and Scorekeeper</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The American <dfn id="t-mass-media">media</dfn> does not occupy a single, unified role in the political system. Rather, it performs multiple distinct functions simultaneously — sometimes in tension with each other — each of which shapes the relationship between citizens and government in different ways. Political scientists have identified three functions as most fundamental to the media's democratic significance: the gatekeeper function, through which the media determines which events and issues receive public attention; the watchdog function, through which the media investigates and exposes government misconduct; and the scorekeeper function, through which the media tracks and interprets the competitive dynamics of political contest. Understanding each function, and the tensions among them, is essential to understanding the media's role in the American political system.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Mass media</span> Forms of communication, such as newspapers, television, and websites, that reach large audiences. <span class="sp">Spanish: medios de comunicación masiva</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">3 roles</span>Political scientists identify gatekeeper, watchdog, and scorekeeper as the media’s most fundamental functions, the chapter says.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 covered how people form political opinions. The media are one of the main sources of the information behind them.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Gatekeeper: Defining the Boundaries of Political Reality</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Pressroom%20of%20the%20New%20York%20Times%20newspaper.%208d22695v.jpg?width=1400" alt="A black-and-white photo of stacks of freshly printed newspapers on a moving belt in a pressroom." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Before the paper is printed</span>Finished papers come out of cutting and folding machines in the pressroom of the New York Times, New York City, September 1942. Editors had already decided which stories would fill them.<span class="credit">Photo: Marjory Collins (1942) / <a href="https://commons.wikimedia.org/wiki/File:Pressroom_of_the_New_York_Times_newspaper._8d22695v.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The <dfn id="t-gatekeeper">gatekeeper</dfn> function is perhaps the most powerful of the media's political roles, precisely because it is the least visible. When a journalist decides that a particular story is worth covering — and by implication, that thousands of other potential stories are not — they are making a consequential political decision, even if it is framed as a purely professional judgment about newsworthiness. The stories that appear in the news shape what citizens think about, what concerns they bring to their representatives, what issues politicians believe they must address, and ultimately what problems the government attempts to solve. Stories that do not appear might as well not exist from the standpoint of democratic politics, because the public and its representatives have no reliable way to know about issues that the media has not reported.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Gatekeeper</span> The role of deciding which events and issues receive public attention. <span class="sp">Spanish: guardián de la información</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Newsworthiness</span> A professional judgment about whether a story is worth covering. <span class="sp">Spanish: interés periodístico</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Least visible</span>The chapter calls the gatekeeper function the most powerful of the three roles because it is the least visible.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 7 covers the bureaucracy. Section 15.1 notes that agencies, too, respond to the issues that get attention.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The concept of <dfn id="t-agenda-setting">agenda setting</dfn>, developed most systematically by political scientists Maxwell McCombs and Donald Shaw in their landmark study of the 1968 presidential election, captures this gatekeeping power in its political dimension. McCombs and Shaw found a striking correspondence between the issues that local newspapers covered most prominently in Chapel Hill, North Carolina, and the issues that voters in that community identified as the most important problems facing the country. The media did not tell voters what to think about these issues — but it powerfully influenced which issues they thought about at all. The causal mechanism is straightforward: most citizens have no direct experience with most policy questions and depend entirely on media coverage to know that those issues exist, what arguments are being made about them, and how urgently they deserve attention. A media that devotes sustained, prominent coverage to the federal deficit signals to its audience that the deficit is an important problem; a media that ignores the deficit signals that it is not, regardless of whether the deficit is actually growing or shrinking.</p>
+        <p>The practical consequences of agenda setting extend well beyond individual public opinion and into the operation of the legislative process. Congressional committees schedule hearings, introduce legislation, and conduct oversight investigations in response to issues that have achieved sufficient public visibility — and public visibility is substantially a function of media coverage.</p>
+        <p>Regulatory agencies develop and enforce rules in areas that attract media attention, while neglecting issues that do not. Presidents develop and announce policy initiatives in response to the pressure of a media-driven public agenda. The agenda-setting power of the media means that the decision about which stories to cover — made daily by editors, producers, and reporters across thousands of media organizations — is, in aggregate, a consequential exercise of political power, even when it is made on entirely commercial or professional grounds.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Agenda setting</span> The media’s power to influence which issues the public treats as important. <span class="sp">Spanish: establecimiento de la agenda</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1968</span>The chapter says McCombs and Shaw studied the 1968 presidential election in Chapel Hill, North Carolina.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 4 covers congressional committees, which the chapter says schedule hearings in response to visible issues.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.1</span>The Media’s Three Roles</p>
+      <p class="figsub">The function, the example the chapter gives, and the risk the chapter names for each role.</p>
+      <table class="cmp"><thead><tr><th></th><th>Gatekeeper</th><th>Watchdog</th><th>Scorekeeper</th></tr></thead><tbody><tr><td>What it does</td><td>Decides which events and issues receive public attention</td><td>Investigates and exposes wrongdoing by those in power</td><td>Covers election campaigns as a competition</td></tr><tr><td>Example in the chapter</td><td>Agenda setting: coverage shapes which problems citizens call important</td><td>The Pentagon Papers (1971) and Watergate reporting (from 1972)</td><td>Coverage of who is ahead in the polls</td></tr><tr><td>Risk the chapter names</td><td>Invisible bias in story selection</td><td>Declining resources for investigative reporting</td><td>Entertainment over substance</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of the three roles. All three roles operate under the same commercial pressures: ratings, advertising revenue, and audience share.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which role does the chapter call the most constitutionally significant?</li><li>Which role depends most on money and time for a reporter to dig into one subject, and why?</li><li>Choose one role and explain how the commercial pressures named in the source note could weaken it.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.2</span>How Agenda Setting Reaches Government</p>
+      <p class="figsub">The chapter’s chain from a newsroom decision to government action.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Five boxes showing a chain: editors choose stories, coverage builds on some issues, the public pays attention, officials respond, and issues without coverage are left out"><g><title>Editors choose: Which stories run</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Editors choose</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Which stories run</text><g><title>Coverage builds: Some issues repeated</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Coverage builds</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Some issues repeated</text><g><title>Public attention: Public names top issues</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Public attention</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Public names top issues</text><g><title>Officials respond: Hearings, bills, rules</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Officials respond</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Hearings, bills, rules</text><g><title>Left out: Uncovered issues fade</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#C8742F" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Left out</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Uncovered issues fade</text><path d="M219.0 45.0 L337.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M521.0 45.0 L639.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M732.0 84 V104 H128.0 V124" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#C8742F"/><path d="M219.0 165.0 L337.0 165.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#C8742F"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of gatekeeping and agenda setting.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Editors choose</td><td>Editors, producers, and reporters across thousands of organizations decide daily which stories to cover.</td></tr><tr><td>Public attention</td><td>The chapter reports that McCombs and Shaw found a strong correspondence between the issues covered most prominently and the issues voters named as most important.</td></tr><tr><td>Officials respond</td><td>Congressional committees schedule hearings and introduce legislation, regulatory agencies enforce rules, and presidents announce initiatives in response to issues with public visibility.</td></tr><tr><td>Left out</td><td>Agencies neglect issues that do not attract media attention.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>According to the chapter, who makes the choices at the first step?</li><li>Name two kinds of officials who the chapter says respond to media-driven visibility.</li><li>The chapter says story selection is a consequential exercise of power “even when it is made on entirely commercial or professional grounds.” What does that mean?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>The Story That Never Ran</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A town’s only news site has room for four stories a day. On Monday it covers a ribbon-cutting, a sports win, a car crash, and a council fight over parking. It does not cover a county report showing that the water system needs repairs. By Friday, residents are talking about parking and have not heard about the report. When the council meets, no one asks about water. The editors never chose to hide the report; they chose what fit. The chapter calls the effect of such choices agenda setting.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE EVIDENCE ON MEDIA ROLES</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.1. What risk does the chapter name for the gatekeeper role?</li><li>Use Figure 15.2. Which step shows officials acting on an issue the media have made visible?</li><li>Write a Counter-Argument to this claim: “Choosing which stories to cover is a neutral professional decision with no political effect.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Watchdog: Accountability Through Adversarial Journalism</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The <dfn id="t-watchdog">watchdog</dfn> function of the press represents its most constitutionally significant role — the function that most directly animates the First Amendment's protection of press freedom and most clearly articulates the relationship between independent journalism and democratic self-governance. The theory underlying watchdog journalism is straightforward: those who hold power will, in the absence of external accountability, tend to abuse it. The mechanisms of democratic accountability built into the Constitution — elections, separation of powers, legislative oversight — are powerful but imperfect. They operate on irregular cycles, they depend on information that powerful actors can often suppress, and they are subject to the same political pressures they are supposed to check. An independent press that investigates government conduct continuously, that is legally protected from government interference, and that has both the institutional interest and the professional capacity to uncover what those in power would prefer to conceal provides a form of accountability that complements and reinforces the constitutional structure.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Watchdog</span> The role of holding powerful people and institutions accountable by investigating and exposing wrongdoing. <span class="sp">Spanish: perro guardián</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Adversarial</span>The chapter describes the ideal press as independent and adversarial: it scrutinizes government instead of amplifying official narratives.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Unit 1 explained checks and balances. The chapter says the press adds accountability from outside the government.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The history of American <dfn id="t-investigative-journalism">investigative journalism</dfn> is, in significant part, the history of democratic accountability operating through nongovernmental channels. The muckraking journalists of the Progressive era — Ida Tarbell's investigation of Standard Oil's monopolistic practices, Upton Sinclair's exposure of conditions in the meatpacking industry, Lincoln Steffens's documentation of municipal corruption across major American cities — produced public outrage that translated directly into legislative action, including the Sherman Antitrust Act's enforcement, the Pure Food and Drug Act of 1906, and a wave of municipal reform. The exposure of the Watergate scandal by Washington Post reporters Bob Woodward and Carl Bernstein, beginning in 1972, uncovered a pattern of criminal conduct in the Nixon White House that eventually produced the first presidential resignation in American history. The publication of the Pentagon Papers forced a public reckoning with the gap between the official narrative of American success in Vietnam and the internal government assessment that the war was being lost.</p>
+        <p>Each of these episodes illustrates the watchdog function at its most consequential — journalism producing accountability that the ordinary political process had failed to generate. They also illustrate why the watchdog function depends on institutional conditions that are not automatically maintained: the financial capacity to support time-intensive investigative reporting, the editorial independence to pursue stories that powerful interests would prefer be suppressed, the legal protection against government retaliation for publication of embarrassing or classified information, and the professional norms that distinguish investigative journalism from mere rumor-mongering or partisan attack. When these conditions erode — as critics argue they have in significant respects in the contemporary media environment — the watchdog function weakens, and the accountability it provides is diminished.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Investigative journalism</span> In-depth reporting that uncovers hidden information about wrongdoing or abuse of power. <span class="sp">Spanish: periodismo de investigación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Muckraker</span> A Progressive-era journalist who exposed corruption and abuses. <span class="sp">Spanish: periodista de denuncia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1906</span>The chapter links muckraking to the Pure Food and Drug Act of 1906.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Pentagon Papers (Introduction) and the First Amendment case that followed appear in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.3</span>Watchdog Journalism Produces Accountability</p>
+      <p class="figsub">Four episodes the chapter uses to show the watchdog role.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Timeline of four episodes: early 1900s muckrakers, the 1906 Pure Food and Drug Act, the 1971 Pentagon Papers, and 1972 Watergate reporting"><line x1="40" y1="145" x2="820" y2="145" stroke="#574B86" stroke-width="4" stroke-linecap="round"/><line x1="137.5" y1="145" x2="137.5" y2="133" stroke="#574B86" stroke-width="2"/><g><title>Early 1900s: Muckrakers: Tarbell, Sinclair, Steffens </title><circle cx="137.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="137.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Early 1900s</text><text x="137.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Muckrakers: Tarbell, Sinclair, Steffens</text><text x="137.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="332.5" y1="145" x2="332.5" y2="155" stroke="#574B86" stroke-width="2"/><g><title>1906: Pure Food and Drug Act </title><circle cx="332.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="332.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">1906</text><text x="332.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Pure Food and Drug Act</text><text x="332.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="527.5" y1="145" x2="527.5" y2="133" stroke="#C8742F" stroke-width="2"/><g><title>1971: Pentagon Papers published </title><circle cx="527.5" cy="145" r="8" fill="#C8742F" stroke="#fff" stroke-width="2.5"/></g><text x="527.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#8A4A14" text-anchor="middle" font-weight="800">1971</text><text x="527.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Pentagon Papers published</text><text x="527.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="722.5" y1="145" x2="722.5" y2="155" stroke="#574B86" stroke-width="2"/><g><title>1972: Watergate reporting begins </title><circle cx="722.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="722.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">1972</text><text x="722.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Watergate reporting begins</text><text x="722.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text></svg>
+      <p class="source">Source: Chapter text. Timeline created for this textbook; the chapter gives “beginning in 1972” for the Watergate reporting and dates the Pentagon Papers to 1971 (Introduction). Highlighted: the episode that opens this chapter.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Episode</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Early 1900s</td><td>Tarbell investigated Standard Oil, Sinclair exposed meatpacking, and Steffens documented municipal corruption; public outrage led to legislative action.</td></tr><tr><td>1906</td><td>The Pure Food and Drug Act is named as one result.</td></tr><tr><td>1971</td><td>The Pentagon Papers forced a public reckoning with the gap between the official narrative and the internal assessment.</td></tr><tr><td>1972</td><td>Reporting by Woodward and Bernstein uncovered criminal conduct in the Nixon White House and led to the first presidential resignation.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Which episode in the figure led to a law, according to the chapter?</li><li>What did the Pentagon Papers show, according to the chapter?</li><li>The chapter says the watchdog role depends on “institutional conditions that are not automatically maintained.” Name one condition it lists.</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.4</span>Newsroom Employment, 2008 and 2020</p>
+      <p class="figsub">Approximate number of newsroom employees in three kinds of news organizations. Employment in broadcast television was roughly stable and is not shown.</p>
+      <svg viewBox="0 0 860 282" role="img" aria-label="Bar chart of approximate newsroom employees: newspapers 71,000 in 2008 and 31,000 in 2020; digital-native 7,400 in 2008 and 18,000 in 2020; radio 4,600 in 2008 and 3,400 in 2020"><line x1="190.0" y1="10" x2="190.0" y2="238" stroke="#e6e8ec"/><text x="190.0" y="256" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="335.0" y1="10" x2="335.0" y2="238" stroke="#e6e8ec"/><text x="335.0" y="256" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20,000</text><line x1="480.0" y1="10" x2="480.0" y2="238" stroke="#e6e8ec"/><text x="480.0" y="256" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">40,000</text><line x1="625.0" y1="10" x2="625.0" y2="238" stroke="#e6e8ec"/><text x="625.0" y="256" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">60,000</text><line x1="770.0" y1="10" x2="770.0" y2="238" stroke="#e6e8ec"/><text x="770.0" y="256" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">80,000</text><text x="180" y="34.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Newspapers, 2008</text><g><title>Newspapers, 2008: 71,000</title><path d="M190 16 h510.8 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-510.8z" fill="#574B86"/></g><text x="712.8" y="34.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">71,000</text><text x="180" y="72.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Newspapers, 2020</text><g><title>Newspapers, 2020: 31,000</title><path d="M190 54 h220.8 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-220.8z" fill="#C8742F"/></g><text x="422.8" y="72.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">31,000</text><text x="180" y="110.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Digital-native, 2008</text><g><title>Digital-native, 2008: 7,400</title><path d="M190 92 h49.6 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-49.6z" fill="#574B86"/></g><text x="251.7" y="110.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">7,400</text><text x="180" y="148.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Digital-native, 2020</text><g><title>Digital-native, 2020: 18,000</title><path d="M190 130 h126.5 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-126.5z" fill="#C8742F"/></g><text x="328.5" y="148.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">18,000</text><text x="180" y="186.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Radio, 2008</text><g><title>Radio, 2008: 4,600</title><path d="M190 168 h29.4 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-29.4z" fill="#574B86"/></g><text x="231.3" y="186.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">4,600</text><text x="180" y="224.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Radio, 2020</text><g><title>Radio, 2020: 3,400</title><path d="M190 206 h20.6 a4 4 0 0 1 4 4 v18 a4 4 0 0 1 -4 4 h-20.6z" fill="#C8742F"/></g><text x="222.7" y="224.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">3,400</text><line x1="190" y1="10" x2="190" y2="238" stroke="#6f7787" stroke-width="1.5"/><text x="480.0" y="278" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Newsroom employees</text></svg>
+      <p class="source">Source: Pew Research Center, “U.S. newsroom employment has fallen 26% since 2008,” July 13, 2021, using Bureau of Labor Statistics data. Figures are approximate; the 2020 data do not fully reflect effects of the COVID-19 pandemic. Highlighted bars: 2020.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Sector</th><th>2008 (about)</th><th>2020 (about)</th><th>Change</th></tr></thead><tbody><tr><td>Newspapers</td><td>71,000</td><td>31,000</td><td>−57%</td></tr><tr><td>Digital-native news</td><td>7,400</td><td>18,000</td><td>+144%</td></tr><tr><td>Radio</td><td>4,600</td><td>3,400</td><td>−26%</td></tr><tr><td>All newsroom employees</td><td>114,000</td><td>85,000</td><td>−26%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>About how many fewer newspaper newsroom employees were there in 2020 than in 2008?</li><li>Which sector grew, and by about how much?</li><li>The chapter says the watchdog role needs the financial capacity to support time-intensive reporting. How do these data bear on that claim, and what do they not show?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Scorekeeper: Elections as Horse Race</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The third major function the media performs — the scorekeeper role during election campaigns — represents a significant departure from the civic ideals that animate the watchdog and gatekeeper functions. <dfn id="t-horse-race">Horse-race journalism</dfn>, as it is disparagingly known, refers to the pattern in which media coverage of electoral campaigns focuses disproportionately on the competitive dynamics of the race — who is ahead in the polls, which candidate had a good week and which had a bad one, what the latest fundraising numbers reveal about relative momentum — at the expense of substantive engagement with the policy questions that the election is nominally about.</p>
+        <p>The incentives that produce horse-race journalism are not difficult to identify, and they are deeply embedded in the commercial logic of the modern media industry. Electoral competition, like athletic competition, has a natural drama that makes it engaging to audiences regardless of their level of policy interest: there are winners and losers, momentum shifts, unexpected developments, and a definitive resolution that satisfies the narrative structure of a story. Polling data provides a continuous stream of quantifiable updates that can be reported, graphed, and analyzed on a daily basis, creating the appearance of informative content with minimal investment in the substantive expertise required to evaluate competing policy proposals. The horse-race frame also has the advantage of apparent neutrality — reporting on who is winning avoids the editorial judgment required to evaluate whose policy positions are more sound, more fiscally responsible, or more consistent with the candidate's own record.</p>
+        <p>The consequences of horse-race journalism for democratic deliberation are significant and well-documented. Studies of election news coverage consistently find that the proportion of coverage devoted to polls, strategy, and competitive dynamics dramatically exceeds the proportion devoted to policy substance in most media outlets. Candidates whose campaign narratives are shaped by the scorekeeper media learn to perform for the daily news cycle rather than to engage substantively with complex policy questions — to generate the kind of dramatic moments, pointed attacks, and memorable sound bites that drive competitive coverage rather than the kind of detailed, nuanced policy discussion that would enable citizens to make genuinely informed electoral choices. The result is an information environment in which many voters know who is winning but are poorly equipped to evaluate which candidate's proposals for healthcare, immigration, or economic policy would actually serve their interests.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Horse-race journalism</span> Coverage of campaigns that focuses on who is ahead, not on policy. <span class="sp">Spanish: periodismo de carrera de caballos</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Scorekeeper</span> The media’s role of tracking the competition between candidates. <span class="sp">Spanish: cronista de la contienda</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Sound bites</span>The chapter says candidates learn to generate dramatic moments, attacks, and memorable sound bites that drive competitive coverage.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 covered primaries and campaigns. This section asks how coverage of those races shapes what voters learn.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.5</span>Why Horse-Race Coverage Persists</p>
+      <p class="figsub">Three incentives the chapter identifies and what each means for deliberation.</p>
+      <table class="cmp"><thead><tr><th>Incentive</th><th>How the chapter describes it</th><th>What it means for voters</th></tr></thead><tbody><tr><td>Drama</td><td>Winners, losers, momentum shifts, and a clear ending make a story</td><td>Engaging whatever the audience’s interest in policy</td></tr><tr><td>Polls</td><td>A steady stream of numbers to report, graph, and analyze daily</td><td>Looks informative with little policy expertise required</td></tr><tr><td>Apparent neutrality</td><td>Reporting who is ahead avoids judging whose positions are sounder</td><td>Voters may know who is winning but not which proposals serve them</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of horse-race journalism.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which incentive does the chapter say needs the least policy expertise?</li><li>Why does the chapter say the race frame has “apparent neutrality”?</li><li>The chapter says many voters “know who is winning” but cannot judge proposals. How does the third column connect to that claim?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Should Campaign Coverage Change?</div></div>
+      <div class="box-b">
+        <p>The chapter says horse-race coverage persists for commercial reasons while crowding out policy. Reasonable people disagree about what, if anything, should change.</p>
+        <div class="opts"><div class="opt"><h5>Audiences should demand more policy</h5>Voters should reward coverage that explains proposals, and news organizations should respond to that demand.</div><div class="opt"><h5>Newsrooms should set their own standards</h5>News organizations should limit race coverage and give more space to policy, even if it draws fewer viewers.</div></div>
+        <p class="ask">Which would you choose, and how would you answer the strongest concern about your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; WATCHDOGS AND SCOREKEEPERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.3. Which episode did the chapter say produced the first presidential resignation?</li><li>Use Figure 15.4. Which sector shown grew between 2008 and 2020?</li><li>Write a Counter-Argument to this claim: “Reporting on polls is the most informative way to cover a campaign.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 15.1 ASSESSMENT</b>Complete the Section 15.1 Assessment in your <i>Chapter 15 Assignment</i> packet before you move on to Section 15.2.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>15.2</b></div>
+    <h2>Framing, Selective Exposure, and the Echo Chamber</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#EDB98A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1EEF6" stroke-width="5"/><path d="M14 100h132" stroke="#EDB98A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 15.2, you will</p>
+      <ul><li>Explain what a frame is and how it changes public opinion</li><li>Explain the marketplace-of-ideas theory and why selective exposure challenges it</li><li>Describe how an echo chamber forms</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-framing">Framing</a></li><li><a href="#t-selective-exposure">Selective exposure</a></li><li><a href="#t-echo-chamber">Echo chamber</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each concept, write what it means and its effect on deliberation.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: concept, what it means, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Concept</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it means</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Framing and the Power of Perception</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/The%20Yellow%20Press%20by%20L.M.%20Glackens.jpg?width=1400" alt="A colorful cartoon showing a jester-like figure tossing large printed newspapers into the air beside a printing press while people at the right grab at them." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A critique of sensational news</span>“The Yellow Press,” a cartoon by L. M. Glackens, October 12, 1910. It criticizes sensational newspapers; the headlines in the cartoon include “Appeals to Passion” and “Sensationalism.” Critics of newspaper coverage have long argued that how a story is told shapes how readers react.<span class="credit">Image: L. M. Glackens (1910) / <a href="https://commons.wikimedia.org/wiki/File:The_Yellow_Press_by_L.M._Glackens.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">If the gatekeeper function determines which events and issues receive public attention, the <dfn id="t-framing">framing</dfn> function determines how the events and issues that do receive coverage are understood. Framing is the process through which media organizations — through their choice of language, images, experts, and narrative context — provide an interpretive lens through which audiences make sense of political events. The same set of facts, presented within different frames, can produce dramatically different public reactions and political consequences. Understanding how framing works, why it is so powerful, and how both media organizations and political actors use it strategically is essential to becoming an informed consumer of political information.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Framing</span> Presenting an issue through certain language, images, and context so that some aspects stand out and others recede. <span class="sp">Spanish: encuadre</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Same facts</span>The chapter says the same set of facts presented in different frames can produce dramatically different public reactions.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 explained how opinions form. Framing shapes which considerations seem most important when people evaluate an issue.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Logic of Framing</h3>
+    <div class="pair">
+      <div class="body">
+        <p>A frame, in the political communication sense, is a way of organizing and presenting information that emphasizes certain aspects of reality while de-emphasizing others — that makes some considerations more cognitively accessible when audiences evaluate an issue, while pushing others into the background. Frames are not necessarily fabrications or distortions; a reporter who covers a labor strike by focusing on the economic demands of the workers and a reporter who covers the same strike by focusing on the disruption to commerce and the public inconvenience are both reporting accurately on real aspects of the situation. But the frame each chooses will shape how their audience understands the event — who is sympathetic and who is not, what is at stake, and what kind of response is appropriate.</p>
+        <p>The political significance of framing was demonstrated with particular clarity in experiments conducted by political scientists in the 1990s examining public responses to different framings of the same social issues. When public support for a hate group's rally in a city was presented to research subjects as a question about public order — should the rally be permitted given the risk of violence and community disruption? — a majority opposed permitting it. When the same question was presented as a question about free speech — should the government be allowed to prohibit political expression it finds offensive? — a majority supported permitting it. The underlying facts were identical; only the frame had changed. The implications for democratic deliberation are significant: public opinion on virtually any issue is not a fixed expression of citizens' underlying values, but a response to the specific presentation of the issue they encounter — a presentation they can rarely choose and often barely notice.</p>
+        <p>Strategic political actors have understood this dynamic for generations, and the contest over which frame governs public understanding of a major policy issue is often as consequential as any other dimension of political competition. When the estate tax was rebranded as the "death tax" by conservative advocacy organizations and Republican political operatives in the late 1990s, the change in label produced measurable shifts in public opinion on the policy — framing a tax that applied only to the wealthiest estates as a punitive burden on all who died rather than a levy on inherited wealth. When healthcare reform advocates framed their proposals in terms of "coverage" and "protection" rather than "government control" and "mandate," they were making a strategic choice about which frame was most likely to generate public support. Political professionals who work on message development and communications strategy spend enormous resources testing different frames in focus groups and surveys to determine which formulation of their preferred position resonates most effectively with target audiences — a practice that represents, at its most benign, effective communication and at its most troubling, the deliberate manipulation of democratic deliberation.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Frame</span> A way of organizing information that emphasizes some aspects of reality and downplays others. <span class="sp">Spanish: marco (encuadre)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1990s experiments</span>The chapter says experiments in the 1990s showed that a majority opposed a hate group’s rally under one frame and a majority supported permitting it under another.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 covers free speech. The experiment in the chapter involves the very issue the First Amendment addresses.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.6</span>One Rally, Two Frames</p>
+      <p class="figsub">The chapter’s example of how a frame changes public support for the same event.</p>
+      <table class="cmp"><thead><tr><th></th><th>Public-order frame</th><th>Free-speech frame</th></tr></thead><tbody><tr><td>Question asked as…</td><td>A question about public order: should the rally be permitted given the risk of violence and community disruption?</td><td>A question about free speech: should government be allowed to prohibit political expression it finds offensive?</td></tr><tr><td>Result the chapter reports</td><td>A majority opposed permitting the rally</td><td>A majority supported permitting the rally</td></tr><tr><td>The facts</td><td>Identical</td><td>Identical</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s description of experiments by political scientists in the 1990s. The chapter does not give the percentages.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What changed between the two versions of the question, according to the chapter?</li><li>What stayed the same?</li><li>The chapter concludes that opinion on an issue is “a response to the specific presentation of the issue.” Use the figure to explain that conclusion.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>Two Headlines, One Vote</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A city council votes to add a fee to rental scooters. One headline reads, “Council Raises Fees on Riders.” Another reads, “Council Funds Safer Streets with New Scooter Charge.” Both are accurate. A reader of the first headline may focus on the cost to riders, while a reader of the second may focus on safety. The chapter says that frames are not necessarily distortions; they emphasize some aspects of reality and push others into the background.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; FRAMING AND PERCEPTION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.6. Which frame led a majority to oppose the rally?</li><li>Use the text. Does the chapter say frames are necessarily fabrications? Explain.</li><li>Write a Counter-Argument to this claim: “If a headline is accurate, its frame cannot affect what readers think.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Selective Exposure, the Marketplace of Ideas, and the Echo Chamber</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The Framers who designed the American republic were deeply invested in a particular theory of how free political expression produces good democratic outcomes. Writing in an era of competing pamphlets, newspapers, and public debates, they believed that the unrestricted exchange of political ideas — what Justice Oliver Wendell Holmes would later call the "<dfn id="t-marketplace">marketplace of ideas</dfn>" in a 1919 dissenting opinion — would, over time, allow truth to emerge from the competition. Bad ideas would be exposed and rejected; good ideas would win adherents through the force of their argument and evidence. Freedom of speech and press was therefore not just a right to be protected for its own sake, but a mechanism through which democratic self-governance was supposed to produce informed, rational public opinion.</p>
+        <p>The marketplace-of-ideas theory depends on a critical assumption: that citizens are genuinely exposed to a diversity of perspectives and arguments, that they encounter viewpoints that challenge as well as confirm their existing beliefs, and that they are willing to update their opinions in response to good arguments and new evidence. For most of American history, this assumption was at least partially satisfied by the structure of the information environment. When most Americans received their news from one of three major television networks, or from local newspapers that covered a range of perspectives because they were trying to reach a general audience, citizens were exposed to a relatively common set of facts and frames — not a perfectly balanced or fully representative one, but a shared informational foundation that made a degree of common democratic deliberation possible.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Marketplace of ideas</span> The theory that open competition among ideas lets truth emerge. <span class="sp">Spanish: mercado de ideas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1919</span>The chapter says Justice Holmes used the phrase in a dissenting opinion in 1919. The Case Study, Document B, quotes it.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 covers free speech. The marketplace theory is one of the main justifications for protecting it.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The transition to an information environment of essentially unlimited choice has undermined this assumption in ways that have profound implications for democratic deliberation. When citizens can choose from thousands of media sources, each calibrated to a specific ideological audience, the psychological tendency toward confirmation bias — the preference for information that confirms existing beliefs — becomes an operational principle of media consumption rather than just a cognitive limitation. Research on <dfn id="t-selective-exposure">selective exposure</dfn> consistently shows that citizens who have the option to choose ideologically congenial media sources tend to do so, and that the political information they consume in self-selected media environments is significantly more ideologically homogeneous than what they would encounter in a common media environment.</p>
+        <p>The <dfn id="t-echo-chamber">echo chamber</dfn> — the information environment in which citizens encounter only perspectives that reinforce their existing views, never being challenged by contrary evidence or alternative frameworks — is the extreme version of this dynamic. Social media algorithms that optimize for engagement tend to produce echo chambers because ideologically consistent, emotionally resonant content generates more engagement than nuanced, cross-cutting content. A user who engages intensely with conservative political content will be shown more conservative political content; a user who engages with progressive content will be shown more progressive content. Over time, the algorithm's learning process drives users deeper into ideologically uniform information environments, systematically depriving them of the cross-cutting exposure that the marketplace-of-ideas theory requires. The result, as extensive research has documented, is an electorate that is not merely divided in its opinions but increasingly divided in its basic understanding of political facts — a condition that makes democratic deliberation across partisan lines not just difficult but, in many cases, practically impossible.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Selective exposure</span> Choosing media that match one’s existing beliefs. <span class="sp">Spanish: exposición selectiva</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Echo chamber</span> An information environment in which people encounter only views that reinforce their own. <span class="sp">Spanish: cámara de resonancia</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Confirmation bias</span>The chapter calls the preference for information that confirms existing beliefs confirmation bias.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 15.3 shows how cable, the internet, and social media gave audiences more choice.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.7</span>From Choice to Echo Chamber</p>
+      <p class="figsub">The chapter’s chain from unlimited choice to divided understanding.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Five boxes showing a chain: many sources, selective exposure, algorithms, echo chamber, and divided understanding of facts"><g><title>Many sources: Thousands of outlets</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Many sources</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Thousands of outlets</text><g><title>Selective exposure: People pick what fits</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Selective exposure</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">People pick what fits</text><g><title>Algorithms: Feeds show more of same</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Algorithms</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Feeds show more of same</text><g><title>Echo chamber: Few challenges to views</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#C8742F" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Echo chamber</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Few challenges to views</text><g><title>Divided facts: Even facts disputed</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Divided facts</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Even facts disputed</text><path d="M219.0 45.0 L337.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M521.0 45.0 L639.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M732.0 84 V104 H128.0 V124" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#C8742F"/><path d="M219.0 165.0 L337.0 165.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#C8742F"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of selective exposure and echo chambers.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Selective exposure</td><td>Citizens who can choose ideologically congenial sources tend to do so, and the information they consume is more ideologically homogeneous.</td></tr><tr><td>Algorithms</td><td>Social media algorithms that optimize for engagement tend to show more of the content a user engages with.</td></tr><tr><td>Echo chamber</td><td>Users may be deprived of the cross-cutting exposure the marketplace-of-ideas theory requires.</td></tr><tr><td>Divided facts</td><td>The chapter says the electorate may be divided in its basic understanding of political facts.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which assumption of the marketplace-of-ideas theory does the chapter say selective exposure undermines?</li><li>Why does the chapter say algorithms tend to produce echo chambers?</li><li>Does the chapter claim every citizen lives in an echo chamber? Explain what the text supports.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; SELECTIVE EXPOSURE AND DELIBERATION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.7. Which box shows the point where people choose sources that fit their beliefs?</li><li>Use the text. Name the two things the marketplace-of-ideas theory assumes citizens do.</li><li>Write a Counter-Argument to this claim: “More choices of media always make citizens better informed.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 15.2 ASSESSMENT</b>Complete the Section 15.2 Assessment in your <i>Chapter 15 Assignment</i> packet before you move on to Section 15.3.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>15.3</b></div>
+    <h2>The Evolution of the Media Landscape</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#EDB98A" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 15.3, you will</p>
+      <ul><li>Compare the broadcasting era with narrowcasting</li><li>Explain media consolidation and why it is called a paradox</li><li>Evaluate the virtues and risks of citizen journalism</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-narrowcasting">Narrowcasting</a></li><li><a href="#t-media-consolidation">Media consolidation</a></li><li><a href="#t-citizen-journalism">Citizen journalism</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each stage of the media landscape, write who the audience is and one democratic effect.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: stage, audience, democratic effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Stage</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Audience</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Democratic effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Evolution of the Media Landscape</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The political functions of the media — gatekeeping, agenda setting, watchdog journalism, and framing — do not operate in a technological vacuum. The technology through which news is produced and distributed shapes the economic incentives of media organizations, the kinds of content they produce, the audiences they reach, and the relationship between media coverage and public opinion. The most consequential transformation in the history of American media — a transformation whose political consequences are still unfolding — has been the shift from the broadcasting model of the mid-twentieth century, in which a small number of organizations delivered a common narrative to a mass national audience, to the narrowcasting model of the digital era, in which a virtually unlimited array of organizations delivers specialized content to self-selected audiences defined by their ideological, cultural, and social identities.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Media landscape</span> The mix of outlets, technologies, and audiences that make up the news environment. <span class="sp">Spanish: panorama mediático</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Technology matters</span>The chapter says the technology that produces and distributes news shapes incentives, content, and audiences.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 described how parties and interest groups communicate. Each new medium changes how they reach voters.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Broadcasting Era and Its Democratic Logic</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Family%20watching%20television%201958%20cropped2.jpg?width=1400" alt="A black-and-white photo of several people sitting on a couch and the floor of a living room, facing a television set." loading="lazy" style="height:auto"><figcaption><span class="phlabel">The broadcasting audience</span>A family gathered around a television set, circa 1958. The chapter says three networks reached most of the national audience in this era.<span class="credit">Photo: Evert F. Baumgardner / National Archives (c. 1958) / <a href="https://commons.wikimedia.org/wiki/File:Family_watching_television_1958_cropped2.jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a></span></figcaption></figure>
+        <p class="lead">The broadcasting era of American journalism, which reached its peak from the late 1950s through the 1980s, was characterized by a degree of audience consolidation that is almost unimaginable by contemporary standards. The three major commercial television networks — ABC, CBS, and NBC — collectively reached the overwhelming majority of the American viewing public with their evening news programs, which represented the primary source of national political information for most Americans for three decades. These programs, typically anchored by authoritative figures like Walter Cronkite at CBS and Chet Huntley and David Brinkley at NBC, combined to produce something close to a national common narrative: a shared set of facts, images, and frames around which public discussion of political events could organize.</p>
+        <p>The broadcasting model had significant democratic virtues. Because the three networks were competing for the same large, demographically diverse national audience, they had strong incentives to produce journalism that appealed broadly across partisan and ideological lines — journalism that prioritized widely shared civic values like accuracy, fairness, and comprehensiveness over the more extreme partisan positioning that might appeal intensely to a committed ideological minority but alienate the broader audience. The Federal Communications Commission's Fairness Doctrine, which from 1949 to 1987 required broadcasters to present contrasting viewpoints on controversial public issues as a condition of their federal licenses, reinforced this centripetal tendency by creating legal obligations to present diverse perspectives.</p>
+        <p>The broadcasting era also had significant limitations. The small number of dominant media organizations meant that the perspectives of women, racial minorities, and those outside the cultural and geographic mainstream were systematically underrepresented in news coverage. The broadcast networks' dependence on large advertising revenues from major corporations created subtle incentives to avoid coverage that might alienate those advertisers — a commercial pressure that was not always successfully resisted. And the authority of major broadcast news organizations was sometimes used to suppress important stories that powerful actors — including government officials with whom the networks had close relationships — preferred not see reported. The common narrative of the broadcasting era was not a neutral one; it reflected the perspectives and priorities of a relatively homogeneous class of professional journalists whose social position shaped what they considered newsworthy.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Broadcasting</span> Sending the same programming to a large, general audience. <span class="sp">Spanish: radiodifusión</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fairness Doctrine</span> A rule that required broadcasters to present contrasting views on controversial public issues; in effect 1949 to 1987, the chapter says. <span class="sp">Spanish: Doctrina de la Equidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Red Lion</span>In 1969 the Supreme Court decided Red Lion Broadcasting v. FCC, a case about FCC fairness requirements for broadcasters. See Document C in the Case Study.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 7 covered the bureaucracy. The FCC is an agency that licensed broadcasters.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.8</span>Two Media Eras Compared</p>
+      <p class="figsub">The chapter’s comparison of the broadcasting era and the narrowcasting era.</p>
+      <table class="cmp"><thead><tr><th></th><th>Broadcasting era</th><th>Narrowcasting era</th></tr></thead><tbody><tr><td>Audience</td><td>Three networks shared a large, diverse national audience</td><td>Hundreds of channels and unlimited online sources divide the audience into segments</td></tr><tr><td>Incentive</td><td>Appeal broadly across partisan lines</td><td>Win engagement and loyalty from one segment</td></tr><tr><td>Tendency in content</td><td>Accuracy, fairness, and comprehensiveness; a shared set of facts</td><td>Ideological consistency and emotional resonance</td></tr><tr><td>Rule of the era</td><td>Fairness Doctrine, 1949 to 1987</td><td>The chapter’s dates for the Fairness Doctrine end in 1987</td></tr><tr><td>Limits the chapter names</td><td>Perspectives of women, racial minorities, and outsiders underrepresented; advertiser pressure</td><td>Content pulled away from balanced coverage for the whole public</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion in Section 15.3. The chapter dates the Fairness Doctrine from 1949 to 1987.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>According to the chapter, why did the networks have an incentive to appeal across partisan lines?</li><li>What limits does the chapter name for the broadcasting era?</li><li>Which era does the chapter say makes it harder to maintain a common set of facts? Cite the table.</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Narrowcasting, Cable News, and the Fragmentation of the Media Landscape</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The transformation of the American media landscape from broadcasting to <dfn id="t-narrowcasting">narrowcasting</dfn> began with the development of cable television in the 1970s and 1980s and accelerated dramatically with the commercial internet in the 1990s and the proliferation of smartphones and social media platforms in the 2000s. Cable television, by offering dozens and eventually hundreds of channels to subscribers, created the economic conditions for media outlets to serve specific niche audiences rather than competing for the mass national audience that the three broadcast networks had divided among themselves. CNN, launched in 1980 as the first twenty-four-hour news network, demonstrated that there was a profitable audience for continuous news coverage. Fox News, launched in 1996, demonstrated that there was a profitable audience for news coverage that appealed explicitly to a conservative ideological sensibility. MSNBC's subsequent pivot toward progressive programming confirmed that both major partisan audiences were willing to support ideologically calibrated news networks.</p>
+        <p>The economic logic of ideologically oriented narrowcasting is straightforward. In a media environment of hundreds of channels and unlimited internet sources, no single outlet can realistically hope to capture the attention of the broad national audience that the broadcast networks once commanded. The rational commercial strategy for a new entrant is to identify a specific audience segment — defined by ideology, age, interest, or cultural identity — and to serve that segment with content specifically calibrated to its preferences and values, producing high levels of engagement and loyalty that translate into reliable advertising revenue. The result is a media landscape in which the production of journalism is increasingly driven not by the question of what a general national audience needs to know about important public matters, but by the question of what specific audience segments find most engaging and affirming — a commercial incentive that pulls media content toward ideological consistency and emotional resonance rather than toward the comprehensive, balanced coverage that democratic deliberation theoretically requires.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Narrowcasting</span> Aiming programming at a specific audience segment instead of the whole public. <span class="sp">Spanish: difusión segmentada</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">CNN, 1980</span>The chapter says CNN launched in 1980 as the first twenty-four-hour news network.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 explained political socialization. Narrowcasting lets audiences choose sources that reinforce what they already believe.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.9</span>Where U.S. Adults Get News, 2026</p>
+      <p class="figsub">Percent of U.S. adults who get news from each platform often or sometimes.</p>
+      <svg viewBox="0 0 860 254" role="img" aria-label="Bar chart: digital devices 88 percent, television 63, social media 59, radio 43, printed newspapers or magazines 22"><line x1="250.0" y1="10" x2="250.0" y2="210" stroke="#e6e8ec"/><text x="250.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="380.0" y1="10" x2="380.0" y2="210" stroke="#e6e8ec"/><text x="380.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25%</text><line x1="510.0" y1="10" x2="510.0" y2="210" stroke="#e6e8ec"/><text x="510.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50%</text><line x1="640.0" y1="10" x2="640.0" y2="210" stroke="#e6e8ec"/><text x="640.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75%</text><line x1="770.0" y1="10" x2="770.0" y2="210" stroke="#e6e8ec"/><text x="770.0" y="228" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100%</text><text x="240" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Digital devices</text><g><title>Digital devices: 88%</title><path d="M250 16 h453.6 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-453.6z" fill="#574B86"/></g><text x="715.6" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">88%</text><text x="240" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Television</text><g><title>Television: 63%</title><path d="M250 56 h323.6 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-323.6z" fill="#574B86"/></g><text x="585.6" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">63%</text><text x="240" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Social media</text><g><title>Social media: 59%</title><path d="M250 96 h302.8 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-302.8z" fill="#C8742F"/></g><text x="564.8" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">59%</text><text x="240" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Radio</text><g><title>Radio: 43%</title><path d="M250 136 h219.6 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-219.6z" fill="#574B86"/></g><text x="481.6" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">43%</text><text x="240" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Printed newspapers or magazines</text><g><title>Printed newspapers or magazines: 22%</title><path d="M250 176 h110.4 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-110.4z" fill="#574B86"/></g><text x="372.4" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">22%</text><line x1="250" y1="10" x2="250" y2="210" stroke="#6f7787" stroke-width="1.5"/><text x="510.0" y="250" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent who get news often or sometimes</text></svg>
+      <p class="source">Source: Pew Research Center, News Platform Fact Sheet, survey conducted August 24–30, 2026 (n = 5,166), published October 19, 2026. Adults can use more than one platform, so the bars add to more than 100%. Highlighted bar: social media.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Platform or group</th><th>Often or sometimes</th></tr></thead><tbody><tr><td>Digital devices</td><td>88%</td></tr><tr><td>Television</td><td>63%</td></tr><tr><td>Social media</td><td>59%</td></tr><tr><td>Radio</td><td>43%</td></tr><tr><td>Printed newspapers or magazines</td><td>22%</td></tr><tr><td>Social media, ages 18–29</td><td>75%</td></tr><tr><td>Social media, ages 30–49</td><td>69%</td></tr><tr><td>Social media, ages 50–64</td><td>53%</td></tr><tr><td>Social media, ages 65 and older</td><td>37%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>Which platform is used by the largest share of adults? How many points higher is it than television?</li><li>Why do the bars add up to more than 100%?</li><li>Use the data table. How many points separate adults 18 to 29 from adults 65 and older in their use of social media for news? What might that gap mean for the chapter’s argument about citizen journalism and social media?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-media-consolidation">Media consolidation</dfn> — the trend through which a diminishing number of large corporations have come to own a growing proportion of the country's media outlets — represents a paradox within this fragmented landscape. Even as the number of distinct media "channels" has multiplied dramatically, ownership has concentrated. Studies of media ownership patterns have documented that a small number of major conglomerates control a substantial majority of the television stations, radio stations, newspapers, and major digital platforms that reach mass audiences in the United States. The practical consequence of this consolidation is that while the surface-level diversity of the media landscape appears vast — hundreds of local television stations, thousands of newspapers and digital outlets — much of the content produced across these nominally distinct outlets originates from the same handful of corporate owners and reflects the editorial priorities, commercial interests, and political sensibilities that those owners bring to their control of the information environment.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Media consolidation</span> The trend of fewer corporations owning more of the media outlets. <span class="sp">Spanish: concentración de medios</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Paradox</span>The chapter calls consolidation a paradox: channels multiplied while ownership concentrated.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 15.4 turns from who owns the media to how officials use them.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.10</span>Many Outlets, Few Owners (Hypothetical)</p>
+      <p class="figsub">Twelve outlets that look separate can share three owners.</p>
+      <svg viewBox="0 0 860 330" role="img" aria-label="Hypothetical illustration. Twelve outlets appear to be separate, but Owner X owns five, Owner Y owns four, and Owner Z owns three."><text x="20" y="24" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="start" font-weight="700">What viewers see: 12 separate outlets</text><rect x="20" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="49" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 1</text><rect x="88" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="117" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 2</text><rect x="156" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="185" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 3</text><rect x="224" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="253" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 4</text><rect x="292" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="321" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 5</text><rect x="360" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="389" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 6</text><rect x="428" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="457" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 7</text><rect x="496" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="525" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 8</text><rect x="564" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="593" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 9</text><rect x="632" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="661" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 10</text><rect x="700" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="729" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 11</text><rect x="768" y="36" width="58" height="38" rx="7" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="797" y="60" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#33284F" text-anchor="middle" font-weight="600">Outlet 12</text><text x="20" y="128" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="start" font-weight="700">Who owns them (hypothetical)</text><path d="M49 76 V96 H321 V76" fill="none" stroke="#574B86" stroke-width="2"/><path d="M389 76 V96 H593 V76" fill="none" stroke="#C8742F" stroke-width="2"/><path d="M661 76 V96 H797 V76" fill="none" stroke="#574B86" stroke-width="2"/><rect x="20" y="146" width="330" height="62" rx="10" fill="#574B86" stroke="#33284F" stroke-width="2"/><text x="185.0" y="172" font-family="Inter, Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="800">Owner X</text><text x="185.0" y="194" font-family="Inter, Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="500">5 of 12 outlets</text><rect x="360" y="146" width="262" height="62" rx="10" fill="#C8742F" stroke="#33284F" stroke-width="2"/><text x="491.0" y="172" font-family="Inter, Arial, sans-serif" font-size="16" fill="#33284F" text-anchor="middle" font-weight="800">Owner Y</text><text x="491.0" y="194" font-family="Inter, Arial, sans-serif" font-size="13" fill="#33284F" text-anchor="middle" font-weight="500">4 of 12 outlets</text><rect x="632" y="146" width="194" height="62" rx="10" fill="#ABA5C2" stroke="#33284F" stroke-width="2"/><text x="729.0" y="172" font-family="Inter, Arial, sans-serif" font-size="16" fill="#33284F" text-anchor="middle" font-weight="800">Owner Z</text><text x="729.0" y="194" font-family="Inter, Arial, sans-serif" font-size="13" fill="#33284F" text-anchor="middle" font-weight="500">3 of 12 outlets</text><rect x="20" y="236" width="820" height="60" rx="10" fill="#F1EEF6" stroke="#574B86" stroke-width="1.5"/><text x="430" y="262" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Many names and channels, few owners and editorial priorities</text><text x="430" y="283" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="middle" font-weight="400">Illustration only: the numbers are invented to show the idea in the chapter.</text></svg>
+      <p class="source">Source: Hypothetical illustration created for this textbook. The numbers are invented to show the chapter’s point about consolidation; they do not describe any real company.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Owner</th><th>Outlets owned (hypothetical)</th></tr></thead><tbody><tr><td>Owner X</td><td>5</td></tr><tr><td>Owner Y</td><td>4</td></tr><tr><td>Owner Z</td><td>3</td></tr><tr><td>Total outlets</td><td>12</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>How many outlets does each hypothetical owner control?</li><li>If a viewer counted only outlet names, how many sources would that viewer think there are? How many owners are there?</li><li>What does the chapter say may be shared across outlets with the same owner?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Rise of Citizen Journalism and the Challenges of the Digital Information Environment</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The same digital technologies that enabled the fragmentation and narrowcasting of traditional journalism have also produced a genuinely new form of political communication: <dfn id="t-citizen-journalism">citizen journalism</dfn>, the production and dissemination of news content by individuals without formal journalistic training or institutional affiliation. Blogs, social media accounts, podcasts, and video platforms like YouTube have created channels through which ordinary citizens, subject-matter experts, and political activists can publish information and commentary that reaches audiences comparable to or exceeding those of major traditional media organizations. The most significant political stories of the past two decades — from the emergence of the Arab Spring uprisings to the documentation of police misconduct through bystander smartphone video — have been driven substantially by citizen-produced content rather than traditional journalism.</p>
+        <p>Citizen journalism has genuine democratic virtues. It has democratized access to the means of public communication, enabling voices and perspectives that were systematically excluded from traditional media to reach significant audiences. It has enabled the rapid dissemination of information that traditional media organizations — with their slower production cycles and more cautious editorial standards — might have delayed or declined to publish. And it has created new forms of accountability journalism in which citizens document the conduct of public officials in real time, without the institutional intermediaries that sometimes slow or suppress accountability reporting in traditional media organizations.</p>
+        <p>But citizen journalism also operates without the institutional safeguards that, at their best, give traditional journalism its credibility: editorial review, fact-checking, standards of sourcing, professional ethical codes, legal accountability, and the reputational stakes that incentivize accuracy over speed or emotional impact. The result is an information environment in which false information, partisan fabrications, and deliberately misleading content circulate alongside accurate reporting — often with comparable or greater viral reach, because false and emotionally resonant content tends to generate more engagement on social platforms than accurate but less stimulating reporting. The challenge of distinguishing reliable from unreliable information has become one of the most significant civic competencies required of American citizens, and one that the educational system and the traditional media have been poorly equipped to develop.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Citizen journalism</span> News content produced by individuals without formal training or institutional affiliation. <span class="sp">Spanish: periodismo ciudadano</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fact-checking</span> Checking claims against evidence before or after they are published. <span class="sp">Spanish: verificación de datos</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Safeguards</span>The chapter lists editorial review, fact-checking, sourcing standards, ethics codes, legal accountability, and reputational stakes as safeguards of traditional journalism.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 covers the First Amendment. Legal accountability is one of the safeguards the chapter lists.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.11</span>Trust in the Mass Media, 1972 to 2026</p>
+      <p class="figsub">Percent of U.S. adults who say they have a great deal or fair amount of trust in the mass media. Selected years.</p>
+      <svg viewBox="0 0 860 222" role="img" aria-label="Bar chart of trust in the mass media: 68 percent in 1972, 72 in 1976, 28 in 2025, 33 in 2026"><line x1="90.0" y1="10" x2="90.0" y2="178" stroke="#e6e8ec"/><text x="90.0" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="260.0" y1="10" x2="260.0" y2="178" stroke="#e6e8ec"/><text x="260.0" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20%</text><line x1="430.0" y1="10" x2="430.0" y2="178" stroke="#e6e8ec"/><text x="430.0" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">40%</text><line x1="600.0" y1="10" x2="600.0" y2="178" stroke="#e6e8ec"/><text x="600.0" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">60%</text><line x1="770.0" y1="10" x2="770.0" y2="178" stroke="#e6e8ec"/><text x="770.0" y="196" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">80%</text><text x="80" y="36.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1972</text><g><title>1972: 68%</title><path d="M90 16 h574.0 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-574.0z" fill="#574B86"/></g><text x="676.0" y="36.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">68%</text><text x="80" y="78.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1976</text><g><title>1976: 72%</title><path d="M90 58 h608.0 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-608.0z" fill="#574B86"/></g><text x="710.0" y="78.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">72%</text><text x="80" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2025</text><g><title>2025: 28%</title><path d="M90 100 h234.0 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-234.0z" fill="#574B86"/></g><text x="336.0" y="120.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">28%</text><text x="80" y="162.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">2026</text><g><title>2026: 33%</title><path d="M90 142 h276.5 a4 4 0 0 1 4 4 v22 a4 4 0 0 1 -4 4 h-276.5z" fill="#C8742F"/></g><text x="378.5" y="162.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">33%</text><line x1="90" y1="10" x2="90" y2="178" stroke="#6f7787" stroke-width="1.5"/><text x="430.0" y="218" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent with a great deal or fair amount of trust</text></svg>
+      <p class="source">Source: Gallup, “U.S. Media Trust: Edges Up From Record Low,” survey conducted September 1–17, 2026, published September 29, 2026. Gallup’s trend begins in 1972; the 2025 reading of 28% was the record low. Highlighted bar: 2026.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Group, 2026</th><th>Great deal or fair amount of trust</th></tr></thead><tbody><tr><td>All adults</td><td>33%</td></tr><tr><td>Republicans</td><td>22%</td></tr><tr><td>Independents</td><td>31%</td></tr><tr><td>Democrats</td><td>50%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>By how many points did trust fall between 1976 and 2025?</li><li>Did trust rise or fall between 2025 and 2026, and by how much?</li><li>The chapter says the media are one of the least formally accountable institutions. Does low trust change that? Explain in one or two sentences.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>A Video From the Sidewalk</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A resident films a dispute outside a store and posts the video. It reaches thousands of people within an hour, much faster than a newsroom could confirm what happened. Later, the store owner posts a longer video showing events before the clip began. The chapter says citizen journalism can spread information quickly and give voices access to public communication, but it works without the editorial review, sourcing standards, and legal accountability that give traditional journalism its credibility.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Who Should Protect the Quality of Information?</div></div>
+      <div class="box-b">
+        <p>The chapter says the information environment is fragile and that responses are possible. Reasonable people disagree about where the responsibility should sit.</p>
+        <div class="opts"><div class="opt"><h5>Citizens and schools</h5>Rely on media literacy: citizens learn to judge sources, framing, and incentives for themselves.</div><div class="opt"><h5>Rules for media and platforms</h5>Rely on rules or standards for companies, such as transparency about how feeds choose content, while respecting the First Amendment’s limits on government.</div></div>
+        <p class="ask">Which would you choose, and what is the strongest concern about your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; THE MEDIA LANDSCAPE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.8. Which era does the chapter say had the Fairness Doctrine?</li><li>Use Figure 15.9. Which platform do adults use for news more, television or radio?</li><li>Write a Counter-Argument to this claim: “Because there are thousands of outlets, media ownership no longer matters.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 15.3 ASSESSMENT</b>Complete the Section 15.3 Assessment in your <i>Chapter 15 Assignment</i> packet before you move on to Section 15.4.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>15.4</b></div>
+    <h2>Politicians and the Press</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#EDB98A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1EEF6" stroke-width="5"/><path d="M14 100h132" stroke="#EDB98A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 15.4, you will</p>
+      <ul><li>Describe the press conference, the trial balloon, and the sound bite</li><li>Explain disintermediation and why it is called the end of the press filter</li><li>Evaluate the chapter’s view of how fragile democratic information is</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-disintermediation">Disintermediation</a></li><li><a href="#t-sound-bite">Sound bite</a></li><li><a href="#t-trial-balloon">Trial balloon</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each tool, write how an official uses it and what the press can do in response.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: tool, how officials use it, press response"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Tool</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">How officials use it</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Press response</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Strategic Relationship: Politicians and the Press</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The relationship between elected officials and the journalists who cover them is one of the most consequential and most carefully managed dynamics in American political life. It is characterized by mutual dependence and mutual suspicion — each side needs the other to perform its core function, and each side has strong incentives to manipulate the other in pursuit of its own objectives. Politicians need media coverage to communicate with the public, to build the name recognition and favorable image that electoral success requires, and to frame their policy proposals and political positions in the most favorable light. Journalists need access to political figures to obtain the information, statements, and reactions that constitute political news. This mutual need creates the conditions for a complex, ongoing negotiation over the terms on which information is exchanged and how it is presented.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Press corps</span> The reporters who regularly cover a government institution, such as the White House. <span class="sp">Spanish: cuerpo de prensa</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Mutual need</span>The chapter says politicians need coverage and journalists need access; each side has incentives to manipulate the other.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 5 covered the presidency. The president is the official who holds the most prominent press conferences.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Managing the Message: Press Conferences, Trial Balloons, and Sound Bites</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The modern presidential press conference is among the most highly produced and carefully managed events in American political life. What appears on its surface to be a spontaneous exchange between the president and the White House press corps is in practice the product of extensive preparation: communications staff who anticipate questions and develop preferred answers, advance work that structures the physical setting to maximize favorable optics, and strategic decisions about when to hold press conferences — and when to avoid them — based on the current news environment and the president's political interests.</p>
+        <p>Press conferences serve a dual purpose from the perspective of the administration. They provide an opportunity for the president to speak directly to the public, delivering carefully crafted messages in a format that signals confidence, accessibility, and command — qualities that enhance the perception of effective leadership. But they also create exposure to the adversarial questioning of a press corps that has both the knowledge and the institutional interest to ask hard questions, to follow up when answers are evasive, and to challenge claims that do not match the available evidence. The tension between the strategic communication objectives of the administration and the accountability function of the press corps is permanently embedded in the press conference format, making it one of the most genuinely dynamic and unpredictable venues in American political life.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Press conference</span> A scheduled event at which an official answers reporters’ questions. <span class="sp">Spanish: conferencia de prensa</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Dual purpose</span>The chapter says press conferences let a president speak directly to the public and also expose the president to adversarial questions.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 covered campaigns. Candidates use similar tools to reach voters.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p><dfn id="t-trial-balloon">Trial balloons</dfn> represent a more indirect strategy for managing the relationship between government officials and the press. When an administration is considering a policy initiative that carries significant political risk — a new tax, a military intervention, a major regulatory change — it may arrange for information about the proposal to be "leaked" to selected journalists without official attribution. The media report the story, public and political reaction is observed, and if the reaction is sufficiently negative, the administration can disavow the leaked information and abandon the proposal without having made a formal commitment. The trial balloon strategy exploits the press's need for exclusive information by providing it with genuinely newsworthy content while allowing the administration to maintain what insiders call "plausible deniability" — the ability to deny official knowledge or endorsement of a proposal that has failed its market test.</p>
+        <p>The <dfn id="t-sound-bite">sound bite</dfn> — the brief, memorable quote or clip extracted from a longer speech or interview that becomes the defining media representation of a politician's statement — represents a third dimension of the media-political relationship. The average length of a presidential sound bite in major broadcast news coverage has declined dramatically over the past half century, from approximately forty seconds in the 1960s to under ten seconds in recent decades. This compression has profound consequences for the character of political communication: it creates strong incentives for politicians to develop and deliver short, punchy, emotionally resonant statements rather than the nuanced, evidence-based arguments that complex policy questions require. Politicians who are skilled at generating memorable sound bites receive coverage; those who communicate primarily in careful, qualified, multi-clause sentences are often treated as poor communicators regardless of the substantive quality of what they are saying.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Trial balloon</span> A leaked proposal used to test public reaction before an official commitment. <span class="sp">Spanish: globo de prueba</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Sound bite</span> A short, memorable quote or clip taken from a longer statement. <span class="sp">Spanish: cita breve</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Plausible deniability</span>The chapter says insiders use this phrase for the ability to deny official knowledge of a proposal that failed its test.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 16 turns to public policy and the economy, where media coverage can shape which proposals gain support.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.12</span>Four Ways Officials Manage the Message</p>
+      <p class="figsub">How each tool works, what it gives the official, and what it costs.</p>
+      <table class="cmp"><thead><tr><th>Tool</th><th>How it works</th><th>Benefit to the official</th><th>Cost or response</th></tr></thead><tbody><tr><td>Press conference</td><td>Prepared and staged; the president speaks directly to the public</td><td>Projects confidence and command</td><td>Reporters can ask hard questions and follow up</td></tr><tr><td>Trial balloon</td><td>A proposal is leaked to selected journalists without attribution</td><td>Tests reaction without a formal commitment</td><td>The press gets news but may be used; the leak can be disavowed</td></tr><tr><td>Sound bite</td><td>A brief, memorable clip stands for a longer statement</td><td>Short, memorable lines get coverage</td><td>Nuance and evidence may be lost</td></tr><tr><td>Social media post</td><td>Posted directly to followers</td><td>Full control of message and frame</td><td>No editor, fact-check, or follow-up question</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion in Section 15.4.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which tool lets an official deny a proposal if it fails, because no one on record made it?</li><li>Which tools put the official in direct contact with reporters’ questions?</li><li>Which tool gives the official the most control over the message, according to the chapter? What does the official give up?</li></ol>
+      </div>
+    </figure>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.13</span>Shrinking Sound Bites, 1968 and 1988</p>
+      <p class="figsub">Average length, in seconds, of a presidential candidate’s sound bite on the ABC, CBS, and NBC evening news.</p>
+      <svg viewBox="0 0 860 166" role="img" aria-label="Bar chart of average presidential candidate sound bite length: 42.3 seconds in 1968 and 9.8 seconds in 1988"><line x1="90.0" y1="10" x2="90.0" y2="122" stroke="#e6e8ec"/><text x="90.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0 s</text><line x1="226.0" y1="10" x2="226.0" y2="122" stroke="#e6e8ec"/><text x="226.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">10 s</text><line x1="362.0" y1="10" x2="362.0" y2="122" stroke="#e6e8ec"/><text x="362.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">20 s</text><line x1="498.0" y1="10" x2="498.0" y2="122" stroke="#e6e8ec"/><text x="498.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">30 s</text><line x1="634.0" y1="10" x2="634.0" y2="122" stroke="#e6e8ec"/><text x="634.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">40 s</text><line x1="770.0" y1="10" x2="770.0" y2="122" stroke="#e6e8ec"/><text x="770.0" y="140" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50 s</text><text x="80" y="43.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1968</text><g><title>1968: 42.3 s</title><path d="M90 16 h571.3 a4 4 0 0 1 4 4 v36 a4 4 0 0 1 -4 4 h-571.3z" fill="#574B86"/></g><text x="673.3" y="43.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">42.3 s</text><text x="80" y="99.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">1988</text><g><title>1988: 9.8 s</title><path d="M90 72 h129.3 a4 4 0 0 1 4 4 v36 a4 4 0 0 1 -4 4 h-129.3z" fill="#C8742F"/></g><text x="231.3" y="99.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">9.8 s</text><line x1="90" y1="10" x2="90" y2="122" stroke="#6f7787" stroke-width="1.5"/><text x="430.0" y="162" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Seconds</text></svg>
+      <p class="source">Source: Kiku Adatto, Shorenstein Center on the Press, Politics and Public Policy, Harvard University; study of network evening news in campaign coverage. The data cover 1968 and 1988 only. The chapter’s claim that sound bites have stayed under ten seconds “in recent decades” goes beyond these two years. Highlighted bar: 1988.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Average sound bite (seconds)</th></tr></thead><tbody><tr><td>1968</td><td>42.3</td></tr><tr><td>1988</td><td>9.8</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>By how many seconds did the average sound bite shrink between 1968 and 1988?</li><li>About how many times as long was the 1968 average as the 1988 average?</li><li>What kind of political statement fits more easily into a 10-second clip than into a 42-second clip? What does the chapter say politicians learn as a result?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Social Media, Disintermediation, and the End of the Press Filter</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The most consequential development in the relationship between politicians and the press in the past decade has been the rise of social media as a direct communication channel through which political figures can reach their audiences without the mediation of journalistic organizations. The phenomenon political scientists call <dfn id="t-disintermediation">disintermediation</dfn> — the removal of the institutional intermediary between the speaker and the audience — has fundamentally altered the power dynamics of political communication, creating both new opportunities for direct democratic engagement and new risks for the quality of public political discourse.</p>
+        <p>When a president, senator, or major political figure communicates through social media platforms — posting directly to millions of followers without the intervention of reporters, editors, or fact-checkers — they bypass entirely the filtering and accountability functions that traditional journalism performs. A statement that a traditional press operation would have verified, contextualized, or declined to publish can reach millions of people in seconds through a social media post, with no editorial review and no journalistic standard applied to its accuracy or relevance. The political leader who communicates primarily through social media retains complete control over their message, their frame, and their narrative — and they are insulated from the adversarial questioning that press conferences and interviews provide. From the perspective of message management, social media disintermediation is the most powerful tool political communicators have ever had.</p>
+        <p>The democratic implications of this development are deeply contested. Proponents argue that social media enables a form of direct democracy that the Framers could not have imagined — allowing political leaders to speak to the public in their own voice, without the distortions introduced by journalistic editing, framing, and selection, and enabling citizens to engage directly with their representatives in ways that were previously impossible. Critics argue that disintermediation removes the accountability function that journalism provides, creating a political communication environment in which false or misleading information can be distributed at scale without the correction that journalistic fact-checking would supply, and in which political leaders are never meaningfully challenged in the structured, adversarial environment of a properly conducted press conference or interview.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Disintermediation</span> Removing the intermediary between a speaker and an audience. <span class="sp">Spanish: desintermediación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Intermediary</span> A person or organization that stands between two parties, such as a news organization between an official and the public. <span class="sp">Spanish: intermediario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Contested</span>The chapter says the democratic implications of disintermediation are deeply contested.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 14 described micro-targeting. Direct messages reach voters without a news organization in between.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 15.14</span>The Press Filter and the Direct Path</p>
+      <p class="figsub">Two paths from an official’s statement to the public.</p>
+      <svg viewBox="0 0 860 300" role="img" aria-label="Two paths from an official to the public. Traditional path: official, then reporters and editors who verify, frame, and select, then public. Direct path: official posts straight to the public with no filter."><text x="20" y="26" font-family="Inter, Arial, sans-serif" font-size="14" fill="#33284F" text-anchor="start" font-weight="800">Traditional path (through the press)</text><rect x="20" y="40" width="200" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="120.0" y="73.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Official</text><text x="120.0" y="91.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#33284F" text-anchor="middle" font-weight="400">makes a statement</text><line x1="222" y1="77" x2="294.0" y2="77.0" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/><polygon points="300.0,77.0 289.2,82.2 289.2,71.8" fill="#C8742F"/><rect x="302" y="32" width="250" height="90" rx="10" fill="#F1EEF6" stroke="#C8742F" stroke-width="2"/><text x="427.0" y="64.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Reporters and editors</text><text x="427.0" y="82.0" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#33284F" text-anchor="middle" font-weight="400">verify · add context</text><text x="427.0" y="100.0" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#33284F" text-anchor="middle" font-weight="400">frame · select · question</text><line x1="554" y1="77" x2="630.0" y2="77.0" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/><polygon points="636.0,77.0 625.2,82.2 625.2,71.8" fill="#C8742F"/><rect x="638" y="40" width="200" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="738.0" y="73.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Public</text><text x="738.0" y="91.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#33284F" text-anchor="middle" font-weight="400">hears the filtered story</text><line x1="20" y1="150" x2="840" y2="150" stroke="#ABA5C2" stroke-width="1.5" stroke-dasharray="6 6"/><text x="20" y="182" font-family="Inter, Arial, sans-serif" font-size="14" fill="#33284F" text-anchor="start" font-weight="800">Direct path (disintermediation)</text><rect x="20" y="196" width="200" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="120.0" y="229.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Official</text><text x="120.0" y="247.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#33284F" text-anchor="middle" font-weight="400">posts directly</text><line x1="222" y1="233" x2="630.0" y2="233.0" stroke="#C8742F" stroke-width="4" stroke-linecap="round"/><polygon points="636.0,233.0 625.2,238.2 625.2,227.8" fill="#C8742F"/><text x="430" y="222" font-family="Inter, Arial, sans-serif" font-size="13" fill="#8A4A14" text-anchor="middle" font-weight="700">no editor · no fact-check · no follow-up question</text><rect x="638" y="196" width="200" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2"/><text x="738.0" y="229.0" font-family="Inter, Arial, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Public</text><text x="738.0" y="247.0" font-family="Inter, Arial, sans-serif" font-size="12" fill="#33284F" text-anchor="middle" font-weight="400">hears the unfiltered post</text></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of disintermediation.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Path</th><th>What happens to the statement</th></tr></thead><tbody><tr><td>Through the press</td><td>Reporters and editors can verify it, add context, frame it, decide whether to publish it, and ask follow-up questions.</td></tr><tr><td>Direct</td><td>The official controls the message, the frame, and the narrative; no editorial review is applied to accuracy or relevance.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Name two things reporters and editors can do on the traditional path that are missing on the direct path.</li><li>What do proponents say disintermediation allows, according to the chapter?</li><li>What do critics say is lost? State one claim from each side in your own words.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Press Freedom Around the World</div></div>
+      <div class="box-b">
+<p style="margin:0">Reporters Without Borders (RSF) publishes a World Press Freedom Index that ranks 180 countries. In its 2026 index, Norway ranked first (score 92.72), the Netherlands second (88.92), and Estonia third (88.54). The United States ranked 64th (62.61). RSF builds its scores from its own methodology, which includes political, economic, legal, social, and security indicators, so the rankings reflect RSF’s judgments, not a government measure. What do such rankings suggest about the difference between a legal protection for the press and the conditions in which journalists work? <i>(Source: Reporters Without Borders, World Press Freedom Index 2026, rsf.org.)</i></p>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>The Leaked Proposal</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> An administration is thinking about a new fee but fears the reaction. An unnamed official tells two reporters about the idea. The story runs, and many people object. The next day, a spokesperson says no such plan exists. The administration never made a formal decision, so it did not have to reverse one. The chapter calls this a trial balloon, and says it works because the press needs exclusive information and the administration keeps plausible deniability.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MANAGING THE MESSAGE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.12. Which tool does the chapter say can expose the official to hard questions and follow-ups?</li><li>Use Figure 15.13. By about how many seconds did the average sound bite shrink between 1968 and 1988?</li><li>Write a Counter-Argument to this claim: “Posting directly to the public always makes officials more accountable.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Fragility of Democratic Information</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The cumulative effect of the developments this chapter has examined — the transition from broadcasting to narrowcasting, the rise of echo chambers and selective exposure, the fragmentation and consolidation of the media landscape, the erosion of traditional watchdog journalism, and the disintermediation of political communication through social media — is a democratic information environment that is, in significant respects, less capable of supporting the kind of informed, cross-cutting public deliberation that democratic self-governance theoretically requires than the imperfect but somewhat more functional environment of earlier eras.</p>
+        <p>This is not a counsel of despair. Investigative journalism of significant quality continues to be produced by major national organizations and by a growing ecosystem of nonprofit news organizations explicitly committed to the public interest journalism that commercial pressures have made economically difficult. Fact-checking organizations provide real-time assessment of political claims. Academic researchers and civic organizations develop and distribute media literacy resources. And citizens who understand the strategic incentives of the media industry — the drive for engagement over accuracy, the power of framing, the distorting effects of horse-race coverage — are better equipped to consume political information critically than those who accept media representations uncritically.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Media literacy</span> The ability to find, judge, and use information from media critically. <span class="sp">Spanish: alfabetización mediática</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Not despair</span>The chapter says investigative journalism of quality continues, nonprofit news organizations are growing, and fact-checkers and civic groups offer resources.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 19 covers how citizens take part beyond voting, including by using information well.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>Reading a Claim Critically</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> You see a post claiming a new program “will cost every family thousands.” Before sharing it, you ask the questions the chapter suggests: Who posted it, and what do they gain? Is the number checked by anyone? How would the issue sound under a different frame? Which sources would give a different view? Those questions turn a reader from a passive audience into a critical one.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; DEMOCRATIC INFORMATION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 15.14. Which path has no editorial review?</li><li>Use the text. Name two resources the chapter says help citizens evaluate political information.</li><li>Write a Counter-Argument to this claim: “The press’s only threat is government censorship.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The media's role in American democracy is irreducibly paradoxical. It is, at once, one of the most powerful institutions in the political system and one of the least formally accountable; one of the most essential to democratic self-governance and one of the most capable of distorting it; one of the most protected by the Constitution and one of the most subject to the commercial pressures and technological disruptions that have transformed its capacity to perform its democratic functions. The First Amendment's protection of press freedom reflects the Framers' conviction that democratic self-governance requires an independent institution capable of telling citizens what their government is doing — even, and especially, when those in power would prefer they not know. That conviction has not changed; what has changed is the institutional context in which press freedom operates and the forces that shape whether its exercise produces the informed democratic deliberation it was designed to support.</p>
+        <p>This chapter's essential question — how the media serves as gatekeeper and watchdog to influence the strategic priorities of American government — has multiple and sometimes competing answers. As a gatekeeper, the media exercises consequential power over which issues receive public attention and which remain invisible, shaping the political agenda of both the public and the institutions that respond to it. As a watchdog, it provides a form of accountability that complements the constitutional mechanisms of separated powers and elections, exposing misconduct that would otherwise remain hidden. As a scorekeeper, it often fails the democratic ideals it is supposed to serve, prioritizing competitive entertainment over substantive policy engagement. And as a framing institution, it shapes not just what citizens think about but how they think about it — a power that is all the more consequential for being largely invisible.</p>
+        <p>The transition from broadcasting to narrowcasting, the rise of social media and citizen journalism, the consolidation of media ownership, and the disintermediation of political communication have transformed the institutional landscape in which all of these functions are performed. Whether the resulting information environment is capable of supporting the quality of democratic deliberation that self-governance requires is one of the most consequential open questions facing the American republic. The answer will depend not just on the choices made by media organizations and political actors, but on the media literacy, critical engagement, and civic commitment of the citizens whose ability to govern themselves ultimately depends on their ability to distinguish between information that illuminates and manipulation that obscures. As the next chapter explores, the institutions through which the outputs of this political information environment are ultimately translated into public policy — Congress, the presidency, the bureaucracy, and the courts — must operate within the constraints and opportunities that this complex and rapidly evolving information landscape provides.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Free press</span> A press that operates independently of government control. <span class="sp">Spanish: prensa libre</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Paradox</span>The chapter calls the media at once one of the most powerful and one of the least formally accountable institutions.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 16 begins Unit 5 with public policy and the economy.</div>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 15.4 ASSESSMENT</b>Complete the Section 15.4 Assessment in your <i>Chapter 15 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Is a free press enough to give citizens good information? Read four original documents from 1791 to 1971 and decide how each one answers.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Law of a Free Press</h3>
+        <p>The press is the only private business the Constitution names. The First Amendment, ratified in 1791, says what government may not do. In 1919 Justice Holmes explained, in a dissent, why free expression might lead to truth. In 1969 the Court decided a case about broadcasters, who use limited airwaves. In 1971, seventeen days after the New York Times began publishing the Pentagon Papers (Introduction), the Court decided that the government could not stop publication in advance.</p><p>As you read, notice what each document protects and whom it trusts. Use the Thinking Like a Citizen question after each document, then answer the Synthesizing questions.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1791 to 1971, from a constitutional text to a Supreme Court decision.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · CONSTITUTIONAL AMENDMENT</small><b>First Amendment (ratified December 15, 1791)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“… or abridging the freedom of speech, or of the press; …”<cite>U.S. Constitution, Amendment I (Bill of Rights ratified December 15, 1791). National Archives, “The Bill of Rights: A Transcription.” The ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> The amendment limits what government may do. According to the Introduction, what remedy did the Court say the government still had in the Pentagon Papers case?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · SUPREME COURT DISSENT</small><b>Justice Oliver Wendell Holmes, dissenting, <i>Abrams v. United States</i>, 250 U.S. 616 (November 10, 1919)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“… the best test of truth is the power of the thought to get itself accepted in the competition of the market …”<cite><i>Abrams v. United States</i>, 250 U.S. 616 (1919), Holmes, J., dissenting. Legal Information Institute, Cornell Law School. The ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Holmes compares ideas to goods in a market. What must be true of citizens for that kind of competition to work? Use Section 15.2.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · SUPREME COURT OPINION</small><b><i>Red Lion Broadcasting Co. v. FCC</i>, 395 U.S. 367 (June 9, 1969)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“It is the right of the viewers and listeners, not the right of the broadcasters, which is paramount.”<cite><i>Red Lion Broadcasting Co. v. FCC</i>, 395 U.S. 367 (1969). Justia U.S. Supreme Court Center.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Whose right does the Court call paramount? Connect your answer to the Fairness Doctrine in Section 15.3.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b><i>New York Times Co. v. United States</i>, 403 U.S. 713 (June 30, 1971), per curiam</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“Any system of prior restraints of expression comes to this Court bearing a heavy presumption against its constitutional validity.”<cite><i>New York Times Co. v. United States</i>, 403 U.S. 713 (1971), per curiam opinion. Legal Information Institute, Cornell Law School.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> What kind of government action does the Court say it views with a “heavy presumption” against it? Connect to the Pentagon Papers in the Introduction.</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px"><li>Use Documents A and B. The First Amendment restrains government, and Holmes offers a theory of why free expression leads to truth. What assumption does the theory make about citizens, and how does selective exposure (Section 15.2) challenge it? Cite both documents.</li><li>Use Documents C and D. In one the Court calls the right of viewers and listeners paramount; in the other it places a heavy presumption against prior restraint. What do the two documents suggest about whom the Court says press freedom serves? Cite both.</li><li>Use Documents A–D and Figure 15.4. The documents protect the press from government. Figure 15.4 shows newsroom employment falling in newspapers. Is protection from government enough to give citizens good information? Defend your answer, then state the best Counter-Argument to it.</li></ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>15</b></div>
+    <h2>Chapter 15 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F1EEF6" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How does the media serve as a “gatekeeper” and “watchdog” to influence the strategic priorities of the American government?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>15.1 The Media’s Three Roles</h5>The media act as gatekeeper (which issues get attention, linked to agenda setting), watchdog (investigative journalism such as the Pentagon Papers and Watergate), and scorekeeper (horse-race coverage). Commercial pressure and shrinking newsrooms challenge all three.</div><div><h5>15.2 Framing and Exposure</h5>Framing shows that the same facts can produce different reactions. The marketplace-of-ideas theory assumes citizens meet diverse views, but selective exposure and engagement-driven algorithms can produce echo chambers.</div><div><h5>15.3 The Media Landscape</h5>Broadcasting gave three networks a shared audience, with limits of its own. Narrowcasting divides audiences, consolidation concentrates ownership, and citizen journalism widens access but lacks traditional safeguards. Trust in the mass media fell to a record low in 2025 and edged up in 2026.</div><div><h5>15.4 Politicians and the Press</h5>Officials use press conferences, trial balloons, and sound bites to manage the message, and social media lets them bypass the press filter altogether. The chapter calls democratic information fragile but says media literacy, fact-checking, and quality journalism offer reasons for hope.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 15 ASSESSMENT AND SIMULATION</b>Complete the Chapter 15 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the primary source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 15 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>Pew Research Center, “News Platform Fact Sheet,” survey conducted August 24–30, 2026, published October 19, 2026.</li><li>Gallup, “U.S. Media Trust: Edges Up From Record Low,” September 29, 2026 (survey September 1–17, 2026).</li><li>Pew Research Center, “U.S. newsroom employment has fallen 26% since 2008,” July 13, 2021 (Bureau of Labor Statistics data).</li><li>Kiku Adatto, study of presidential candidate sound bites on network evening news, 1968 and 1988, Shorenstein Center on the Press, Politics and Public Policy, Harvard University.</li><li>Reporters Without Borders, World Press Freedom Index 2026, rsf.org.</li><li>National Archives, “The Bill of Rights: A Transcription” (First Amendment, ratified December 15, 1791).</li><li><i>Abrams v. United States</i>, 250 U.S. 616 (1919), Holmes, J., dissenting. Legal Information Institute, Cornell Law School.</li><li><i>Red Lion Broadcasting Co. v. FCC</i>, 395 U.S. 367 (1969). Justia U.S. Supreme Court Center.</li><li><i>New York Times Co. v. United States</i>, 403 U.S. 713 (1971). Legal Information Institute, Cornell Law School.</li><li>California Department of Education, <i>History–Social Science Content Standards</i>, Principles of American Democracy (12.8, 12.10) and RH.11-12.7.</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs by Marjory Collins (public domain; the New York Times newsroom and pressroom, 1942) and Evert F. Baumgardner / National Archives and Records Administration (CC0; a family watching television, c. 1958). Public-domain image: L. M. Glackens, “The Yellow Press” (1910). Diagrams, charts, and tables were created for this textbook from the sources listed above.</p>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>

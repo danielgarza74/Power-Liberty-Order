@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chapter 14: Elections and the Campaign Process | Power, Liberty, and Order | Daniel Garza, M.A.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  color-scheme: light;
+  --ink:#1c2230; --ink-2:#4a5263; --ink-3:#6f7787;
+  --paper:#fcfbfd; --white:#ffffff;
+  --unit:#574B86; --unit-dk:#33284F; --unit-lt:#F1EEF6; --unit-mid:#ABA5C2;
+  --amber:#C8742F; --amber-lt:#EDB98A; --amber-dk:#8A4A14;
+  --coral:#b04630; --coral-lt:#f6e4de; --amber-wash:#FAF1EA; --cream:#F1EEF6; --pale:#EDB98A;
+  --sage:#4e7d4a; --sage-lt:#e8f1e5;
+  --violet:#5b4bb7; --violet-lt:#ecebfa;
+  --rule:#d9dde3; --grid:#e6e8ec;
+  --s1:#2a78d6; --s2:#eb6834; --s3:#1baf7a; --s4:#eda100; --s5:#e87ba4; --other:#9aa1ad;
+  --serif:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --sans:"Inter", "Segoe UI", Arial, sans-serif;
+  --cond:"Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#ebe8f0;color:var(--ink);font-family:var(--serif);font-size:18.5px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%;height:auto;display:block}
+a{color:var(--unit)}
+.book{max-width:1180px;margin:0 auto;background:var(--paper);box-shadow:0 0 40px rgba(0,0,0,.08)}
+
+/* ---------- top navigation ---------- */
+.topnav{position:sticky;top:0;z-index:50;background:rgba(51,40,79,.97);color:#fff;font-family:var(--sans);font-size:13px;display:flex;align-items:center;gap:6px;padding:0 18px;height:46px;overflow-x:auto;white-space:nowrap}
+.topnav .brand{font-family:var(--cond);font-weight:700;letter-spacing:.08em;font-size:16px;margin-right:14px;color:var(--pale)}
+.topnav a{color:var(--cream);text-decoration:none;padding:6px 10px;border-radius:6px}
+.topnav a:hover{background:rgba(255,255,255,.12)}
+.progress{position:sticky;top:46px;z-index:49;height:4px;background:#d9d2e6}
+.progress span{display:block;height:100%;width:0;background:var(--amber)}
+
+/* ---------- chapter opener ---------- */
+.opener{position:relative;background:linear-gradient(160deg,var(--unit-dk) 0%,var(--unit) 70%);color:#fff;overflow:hidden}
+.opener-art{width:100%}
+.opener-head{position:absolute;left:0;right:0;top:0;padding:46px 56px 0;display:flex;gap:28px;align-items:flex-start}
+.chapnum{font-family:var(--cond);font-weight:800;font-size:170px;line-height:.78;color:var(--pale);text-shadow:0 4px 0 rgba(0,0,0,.18)}
+.chapword{font-family:var(--cond);letter-spacing:.32em;font-size:15px;font-weight:600;color:var(--pale);margin-bottom:4px}
+.unitline{font-family:var(--sans);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--cream);margin-bottom:10px}
+.opener h1{font-family:var(--cond);font-weight:700;font-size:72px;line-height:.95;margin:0;letter-spacing:.01em;text-shadow:0 2px 10px rgba(0,0,0,.25)}
+.opener-caption{background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:13.5px;line-height:1.5;padding:12px 56px}
+.opener-caption b{color:var(--pale)}
+.opener-grid{display:grid;grid-template-columns:300px 1fr;background:var(--paper);color:var(--ink)}
+.sectionlist{background:var(--unit-lt);padding:30px 28px;border-right:1px solid var(--unit-mid)}
+.sectionlist h3{font-family:var(--cond);font-size:15px;letter-spacing:.2em;color:var(--unit);margin:0 0 14px}
+.sectionlist a{display:block;text-decoration:none;color:var(--ink);padding:12px 0;border-bottom:1px solid var(--unit-mid)}
+.sectionlist a:last-child{border-bottom:0}
+.sectionlist .sl-tag{display:block;font-family:var(--cond);font-weight:700;font-size:14px;letter-spacing:.15em;color:var(--unit)}
+.sectionlist .sl-title{display:block;font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.25}
+.sectionlist .cs .sl-tag{color:var(--coral)}
+.opener-main{padding:30px 44px 34px}
+.kicker{font-family:var(--cond);font-weight:700;letter-spacing:.2em;font-size:15px;color:var(--unit);margin:0 0 6px;text-transform:uppercase}
+.keyconcept{background:var(--white);border-left:6px solid var(--amber);padding:16px 20px;margin:12px 0 22px;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.keyconcept .kicker{color:var(--amber-dk)}
+.keyconcept p{margin:0;font-size:20px;line-height:1.45}
+.standards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
+.stdbox{border:1px solid var(--rule);background:#fff;border-radius:10px;padding:14px 16px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.stdbox h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.12em;color:var(--unit)}
+.stdbox ul{margin:0;padding-left:0;list-style:none}
+.stdbox li{margin:0 0 7px}
+.stdbox code{font-family:var(--sans);font-weight:700;color:var(--unit-dk);background:var(--unit-lt);padding:1px 6px;border-radius:4px;font-size:12px}
+
+/* ---------- section openers ---------- */
+.section{padding:0 0 10px;scroll-margin-top:56px}
+.sec-banner{display:grid;grid-template-columns:130px 1fr 210px;align-items:stretch;background:var(--unit);color:#fff;min-height:150px}
+.sec-banner .num{background:var(--unit-dk);display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--cond)}
+.sec-banner .num small{letter-spacing:.3em;font-size:14px;color:var(--pale);font-weight:600}
+.sec-banner .num b{font-size:64px;line-height:.9;color:var(--pale)}
+.sec-banner h2{font-family:var(--cond);font-size:50px;line-height:1;margin:0;padding:30px 30px;align-self:center;font-weight:700}
+.sec-banner .icon{display:flex;align-items:center;justify-content:center;padding:14px;background:rgba(255,255,255,.06)}
+.sec-preview{display:grid;grid-template-columns:1.1fr 1fr 1.1fr;gap:0;border-bottom:3px solid var(--unit);background:#fff;font-family:var(--sans);font-size:14.5px;line-height:1.5}
+.sec-preview > div{padding:18px 22px;border-right:1px solid var(--rule)}
+.sec-preview > div:last-child{border-right:0}
+.sec-preview h4{margin:0 0 8px;font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit)}
+.sec-preview ul{margin:0;padding-left:18px}
+.sec-preview li{margin-bottom:4px}
+.terms{columns:2;column-gap:16px;list-style:none;padding-left:0!important}
+.terms li{break-inside:avoid}
+.terms a{color:var(--ink);text-decoration:none;border-bottom:1px dotted var(--unit)}
+.organizer svg{margin-top:8px}
+
+/* ---------- body text grid ---------- */
+.content{padding:8px 56px 10px}
+.pair{display:grid;grid-template-columns:minmax(0,1fr) 250px;column-gap:38px;align-items:start}
+.pair > .side{padding-top:22px}
+.wide{margin:26px 0}
+h3.kc{font-family:var(--cond);font-size:15px;letter-spacing:.22em;color:var(--amber-dk);margin:34px 0 0;text-transform:uppercase}
+h3.head{font-family:var(--cond);font-size:36px;line-height:1.05;color:var(--unit-dk);margin:4px 0 10px;font-weight:700}
+h4.sub{font-family:var(--sans);font-size:19px;color:var(--unit);margin:22px 0 4px;font-weight:700}
+p{margin:0 0 14px}
+.lead::first-letter{font-family:var(--cond);float:left;font-size:78px;line-height:.82;padding:6px 10px 0 0;color:var(--unit);font-weight:700}
+dfn,.kt{font-style:normal;font-weight:700;color:var(--unit-dk);background:linear-gradient(transparent 62%,var(--amber-lt) 62%)}
+.es{font-style:italic;color:var(--ink-3);font-size:.92em}
+
+/* margin notes */
+.qr{background:#fff;border-top:4px solid var(--unit);padding:12px 14px 12px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.qr .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--unit);margin-bottom:4px}
+.qr .term{font-weight:700;color:var(--unit-dk)}
+.qr .sp{display:block;margin-top:6px;color:var(--ink-3);font-size:12.5px}
+.fact{background:var(--amber-wash);border-top:4px solid var(--amber);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.fact .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);margin-bottom:4px}
+.fact .big{font-family:var(--cond);font-weight:800;font-size:40px;line-height:1;color:var(--amber-dk);display:block;margin:2px 0 4px}
+.math{background:var(--violet-lt);border-top:4px solid var(--violet);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.math .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--violet);margin-bottom:4px}
+.connect{background:var(--sage-lt);border-top:4px solid var(--sage);padding:12px 14px;margin:0 0 18px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.connect .tag{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--sage);margin-bottom:4px}
+
+/* feature boxes */
+.box{border-radius:12px;margin:28px 0;overflow:hidden;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.07)}
+.box-h{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#fff;font-family:var(--cond);font-size:21px;font-weight:700;letter-spacing:.06em}
+.box-h small{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.2em;opacity:.85;display:block}
+.box-b{padding:18px 22px 16px;font-size:17px}
+.box-b p:last-child{margin-bottom:0}
+.example .box-h{background:var(--unit)}
+.example{border:2px solid var(--unit)}
+.choices .box-h{background:var(--coral)}
+.choices{border:2px solid var(--coral)}
+.choices .opts{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.choices .opt{background:var(--coral-lt);border-radius:10px;padding:14px;font-size:16px}
+.choices .opt h5{margin:8px 0 4px;font-family:var(--sans);font-size:16px;color:var(--coral)}
+.choices .ask{margin-top:14px;font-family:var(--sans);font-weight:600;font-size:15px}
+.global .box-h{background:var(--sage)}
+.global{border:2px solid var(--sage)}
+.app{border:2px dashed var(--amber);background:var(--amber-wash);box-shadow:none}
+.app .box-h{background:transparent;color:var(--amber-dk);padding-bottom:0}
+.app .box-b{font-family:var(--sans);font-size:15.5px}
+.skill .box-h{background:var(--violet)}
+.skill{border:2px solid var(--violet)}
+.skill ol{font-family:var(--sans);font-size:15.5px;padding-left:22px}
+.skill li{margin-bottom:6px}
+.thinking{border-left:6px solid var(--unit);background:var(--unit-lt);padding:14px 18px;border-radius:0 10px 10px 0;margin:16px 0 22px;font-family:var(--sans);font-size:15px}
+.thinking b.t{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:14px;display:block}
+
+/* figures */
+figure{margin:28px 0;background:#fff;border:1px solid var(--rule);border-radius:12px;padding:18px 20px 14px}
+figure.bare{background:none;border:0;padding:0}
+.figlabel{font-family:var(--cond);font-weight:700;font-size:20px;letter-spacing:.05em;color:var(--unit-dk);margin:0 0 2px}
+.figlabel span{color:var(--amber-dk);margin-right:8px}
+.figsub{font-family:var(--sans);font-size:13.5px;color:var(--ink-2);margin:0 0 10px}
+figcaption,.source{font-family:var(--sans);font-size:12.5px;color:var(--ink-3);margin-top:8px;line-height:1.45}
+.analyze{margin-top:12px;border-top:1px solid var(--rule);padding-top:10px;font-family:var(--sans);font-size:14.5px}
+.analyze b{font-family:var(--cond);letter-spacing:.16em;color:var(--amber-dk);font-size:14px;margin-right:6px}
+.analyze ol{margin:4px 0 0;padding-left:20px}
+details.dt{margin-top:8px;font-family:var(--sans);font-size:13px}
+details.dt summary{cursor:pointer;color:var(--unit);font-weight:600}
+table.data{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:14px;margin:8px 0}
+table.data th{background:var(--unit);color:#fff;text-align:left;padding:7px 10px;font-weight:600}
+table.data td{padding:7px 10px;border-bottom:1px solid var(--rule)}
+table.data tr:nth-child(even) td{background:#faf8fc}
+table.data td.num,table.data th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.data tr.hl td{background:var(--amber-wash)!important;font-weight:600}
+.essentials{border:3px solid var(--unit);background:#fff}
+.essentials .es-head{background:var(--unit);color:#fff;margin:-18px -20px 16px;padding:10px 20px;font-family:var(--cond);font-size:22px;font-weight:700;letter-spacing:.06em;border-radius:9px 9px 0 0}
+.essentials .es-head small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.22em;color:var(--pale)}
+.fop{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.fop > div{border-radius:10px;padding:12px;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+.fop h5{font-family:var(--cond);font-size:22px;margin:6px 0 2px;letter-spacing:.04em}
+.fop .what{font-weight:600;margin-bottom:6px}
+.fop ul{margin:0;padding-left:16px}
+.questions3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.questions3 > div{background:var(--unit-lt);border-radius:10px;padding:14px;font-family:var(--sans);font-size:14px}
+.questions3 h5{margin:6px 0 4px;font-family:var(--cond);font-size:22px;color:var(--unit-dk)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.chart svg text{font-family:var(--sans)}
+svg .bar:hover,svg .pt:hover,svg .slice:hover{opacity:.82}
+
+/* pacesetter */
+.pacesetter{display:grid;grid-template-columns:240px 1fr;border:2px solid var(--unit-dk);border-radius:12px;overflow:hidden;margin:30px 0;background:#fff}
+.pacesetter .ps-side{background:var(--unit-dk);color:var(--cream);padding:18px;font-family:var(--sans);font-size:13.5px;line-height:1.45}
+.pacesetter .ps-side h5{font-family:var(--cond);color:var(--pale);letter-spacing:.2em;font-size:15px;margin:12px 0 8px}
+.pacesetter .ps-side dt{font-weight:700;color:var(--pale);margin-top:8px}
+.pacesetter .ps-side dd{margin:0}
+.pacesetter .ps-main{padding:18px 24px}
+.pacesetter .ps-main .kicker{color:var(--amber-dk)}
+.pacesetter h4{font-family:var(--cond);font-size:34px;margin:0 0 10px;color:var(--unit-dk);line-height:1}
+.pacesetter h4 span{display:block;font-size:20px;color:var(--ink-2);font-weight:600}
+
+.ps-photo{margin:0 0 6px;padding:0;border:0;background:none;border-radius:0}
+.ps-photo img{width:100%;border-radius:8px;display:block}
+.ps-photo figcaption{color:var(--cream);font-size:12.5px;line-height:1.45;margin-top:8px}
+.ps-photo figcaption span{display:block;margin-top:4px;font-size:11px;color:var(--unit-mid)}
+.ps-photo figcaption a{color:var(--unit-mid)}
+.packet-note{display:flex;gap:16px;align-items:center;margin:32px 0 10px;padding:16px 20px;border:3px solid var(--unit);border-radius:14px;background:var(--unit-lt);font-family:var(--sans);font-size:15.5px;line-height:1.5}
+.packet-note svg{flex:none}
+.packet-note b{display:block;font-family:var(--cond);font-size:20px;letter-spacing:.1em;color:var(--unit-dk)}
+/* assessments */
+.assess{margin:34px 0 10px;border:3px solid var(--unit);border-radius:14px;overflow:hidden;background:#fff}
+.assess-h{background:var(--unit);color:#fff;padding:12px 22px;display:flex;align-items:baseline;gap:14px;font-family:var(--cond)}
+.assess-h b{font-size:28px;letter-spacing:.06em}
+.assess-h span{font-family:var(--sans);font-size:12px;letter-spacing:.2em;color:var(--pale)}
+.assess-grid{display:grid;grid-template-columns:1fr 1fr;font-family:var(--sans);font-size:15px;line-height:1.5}
+.assess-grid > div{padding:16px 22px}
+.assess-grid > div:first-child{border-right:1px solid var(--rule)}
+.assess h5{font-family:var(--cond);font-size:16px;letter-spacing:.16em;color:var(--unit);margin:4px 0 8px}
+.assess ol{padding-left:22px;margin:0 0 10px}
+.assess li{margin-bottom:8px}
+.inpractice{background:var(--amber-wash);border-top:1px solid var(--rule);padding:16px 22px;font-family:var(--sans);font-size:15px}
+.inpractice h5{color:var(--amber-dk)}
+.inpractice table.data{background:#fff}
+.inpractice td.blank{color:#b0b5bd}
+
+/* case study */
+.case{background:#f1eef7;padding:0 0 20px}
+.case-banner{background:var(--coral);color:#fff;padding:34px 56px 28px;position:relative;overflow:hidden}
+.case-banner .kicker{color:#ece7f4;letter-spacing:.3em}
+.case-banner h2{font-family:var(--cond);font-size:58px;margin:4px 0 6px;line-height:1}
+.case-banner p{font-family:var(--sans);font-size:15px;max-width:720px;margin:0;color:#fff3ee}
+.doc{background:#fff;border:1px solid #dcd5e8;border-radius:10px;margin:22px 0;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.doc-h{display:flex;gap:14px;align-items:center;padding:12px 18px;border-bottom:1px solid #ece7f4}
+.doc-h .letter{width:44px;height:44px;border-radius:50%;background:var(--coral);color:#fff;font-family:var(--cond);font-weight:800;font-size:26px;display:flex;align-items:center;justify-content:center;flex:none}
+.doc-h b{font-family:var(--cond);font-size:22px;color:var(--ink)}
+.doc-h small{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-3);letter-spacing:.06em}
+.doc-b{padding:14px 20px;font-size:16.5px}
+.doc .think{background:var(--coral-lt);padding:10px 20px;font-family:var(--sans);font-size:14.5px;border-radius:0 0 10px 10px}
+.doc .think b{color:var(--coral)}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.voice{background:#faf8fc;border-radius:10px;padding:14px;font-size:15.5px}
+.voice h6{margin:0 0 6px;font-family:var(--sans);font-size:14px;color:var(--coral)}
+
+/* chapter assessment */
+.chap-assess .sec-banner{background:var(--ink)}
+.chap-assess .sec-banner .num{background:#0f131c}
+.wordbank{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 14px}
+.wordbank span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:3px 12px;font-family:var(--sans);font-size:14px}
+.cloze{font-size:17.5px;line-height:1.9}
+.cloze .bl{display:inline-block;min-width:34px;border-bottom:2px solid var(--ink);text-align:center;font-family:var(--sans);font-weight:700;font-size:13px;color:var(--unit)}
+.summary-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.summary-grid > div{background:#fff;border:1px solid var(--rule);border-left:5px solid var(--unit);border-radius:8px;padding:12px 16px;font-family:var(--sans);font-size:14.5px}
+.summary-grid h5{margin:0 0 6px;font-family:var(--cond);font-size:19px;color:var(--unit-dk)}
+.sim{border:3px solid var(--violet);border-radius:14px;background:#fff;overflow:hidden;margin:28px 0}
+.sim .box-h{background:var(--violet)}
+.sim .box-b{font-family:var(--sans);font-size:15.5px}
+.steps{counter-reset:st;list-style:none;padding:0}
+.steps li{counter-increment:st;position:relative;padding:0 0 10px 44px}
+.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;background:var(--violet);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:14px}
+.credits{font-family:var(--sans);font-size:13px;color:var(--ink-2);padding:22px 56px;background:#f1eef7;border-top:1px solid var(--rule)}
+.credits h4{font-family:var(--cond);letter-spacing:.16em;color:var(--unit);font-size:16px;margin:0 0 8px}
+.credits li{margin-bottom:4px}
+
+/* running footer */
+.runfoot{display:block;text-align:center;background:var(--unit-dk);color:var(--cream);font-family:var(--sans);font-size:11.5px;letter-spacing:.16em;font-weight:600;padding:10px 56px;margin-top:26px}
+
+
+/* photos */
+figure.photo{padding:0;overflow:hidden;background:#fff}
+figure.photo img{width:100%;display:block;background:#ebe8f0}
+figure.photo .crop{position:relative;overflow:hidden;width:100%;background:#ebe8f0}
+.kl{position:absolute;left:50%;transform:translateX(-50%);font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.2em;color:#fff;background:rgba(0,0,0,.6);padding:3px 12px;border-radius:3px;white-space:nowrap}.kn{top:12px}.ks{bottom:12px}
+figure.photo.sidefig{float:left;width:270px;margin:4px 28px 14px 0}
+.pair > .body{display:flow-root}
+figure.photo figcaption{margin:0;padding:10px 16px 12px;font-family:var(--sans);font-size:13.5px;line-height:1.5;color:var(--ink-2);border-top:4px solid var(--amber)}
+figure.photo .phlabel{display:block;font-family:var(--cond);font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--amber-dk);text-transform:uppercase;margin-bottom:2px}
+figure.photo .credit{display:block;margin-top:5px;font-size:11.5px;color:var(--ink-3)}
+figure.photo .credit a{color:var(--ink-3)}
+.side figure.photo{margin:0 0 18px}
+.side figure.photo figcaption{font-size:12.5px;padding:8px 12px 10px}
+figure.photo.sidefig figcaption{font-size:12.5px;padding:8px 12px 10px}
+.photo-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:26px 0}
+.photo-row figure.photo{margin:0}
+.opener-photo{position:relative;height:560px;overflow:hidden}
+.opener-photo img{width:100%;height:100%;object-fit:cover;object-position:center 70%;display:block}
+.opener-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(51,40,79,.80) 0%,rgba(51,40,79,.38) 45%,rgba(0,0,0,0) 70%)}
+.opener-head{z-index:2}
+.opener-caption .credit{display:block;font-size:11.5px;color:var(--unit-mid);margin-top:4px}
+.opener-caption .credit a{color:var(--unit-mid)}
+@media (max-width:900px){.photo-row{grid-template-columns:1fr}.opener-photo{height:300px}}
+
+/* added for Government */
+.src-quote{margin:0;padding:14px 20px;background:#fff;border-left:6px solid var(--amber);font-size:17px;line-height:1.55}
+.src-quote cite{display:block;margin-top:8px;font-family:var(--sans);font-size:12.5px;font-style:normal;color:var(--ink-3)}
+table.cmp{border-collapse:collapse;width:100%;font-family:var(--sans);font-size:13.5px;line-height:1.4}
+table.cmp th{background:var(--unit);color:#fff;text-align:left;padding:8px 10px;font-weight:600;vertical-align:top}
+table.cmp td{padding:8px 10px;border-bottom:1px solid var(--rule);vertical-align:top;background:#fff}
+table.cmp td:first-child{font-weight:700;color:var(--unit-dk);background:var(--unit-lt)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 0}
+.chips span{background:var(--unit-lt);border:1px solid var(--unit-mid);border-radius:20px;padding:2px 12px;font-family:var(--sans);font-size:13.5px;color:var(--unit-dk);font-weight:600}
+.obj-term{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:18px}
+.obj-term > div{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:12px 16px;font-family:var(--sans);font-size:14px;line-height:1.45}
+.obj-term h4{margin:0 0 6px;font-family:var(--cond);font-size:16px;letter-spacing:.14em;color:var(--unit)}
+.obj-term ul{margin:0;padding-left:18px}
+.reviewbox{border:3px solid var(--unit);border-radius:12px;background:#fff;padding:14px 20px;margin:12px 0 22px;font-family:var(--sans);font-size:15.5px}
+.reviewbox .kicker{margin-bottom:4px}
+@media (max-width:900px){.obj-term{grid-template-columns:1fr}}
+
+/* responsive */
+@media (max-width:900px){
+  body{font-size:17px}
+  .content{padding:8px 20px}
+  .pair{grid-template-columns:1fr}
+  figure.photo.sidefig{float:none;width:100%;max-width:380px;margin:12px auto}
+  .opener-head{position:static;padding:24px 20px 0;background:var(--unit-dk)}
+  .chapnum{font-size:110px}
+  .opener h1{font-size:48px}
+  .opener-grid,.sec-preview,.standards,.assess-grid,.two,.choices .opts,.pacesetter,.voices,.summary-grid{grid-template-columns:1fr}
+  .fop,.questions3{grid-template-columns:1fr 1fr}
+  .sec-banner{grid-template-columns:90px 1fr}
+  .sec-banner .icon{display:none}
+  .sec-banner h2{font-size:34px;padding:20px}
+  .case-banner{padding:26px 20px}
+  .runfoot{padding:10px 20px;grid-template-columns:1fr;text-align:center}
+  
+}
+@media print{
+  body{background:#fff;font-size:11pt}
+  .topnav,.progress{display:none}
+  .book{box-shadow:none}
+  .section,.case,.chap-assess{break-before:page}
+  figure,.box,.assess,.doc,.pacesetter{break-inside:avoid}
+  details.dt{display:none}
+}
+</style>
+</head>
+<body>
+<div class="book">
+<nav class="topnav" aria-label="Chapter sections">
+  <span class="brand">CH. 14 · ELECTIONS AND THE CAMPAIGN PROCESS</span>
+  <a href="#opener">Opener</a><a href="#s1">14.1 Primaries and Caucuses</a><a href="#s2">14.2 General Election</a><a href="#s3">14.3 Campaign Finance</a><a href="#s4">14.4 Participation</a><a href="#case">Case Study</a><a href="#assess">Chapter Review</a>
+</nav>
+<div class="progress"><span id="bar"></span></div>
+
+
+<!-- ===================== CHAPTER OPENER ===================== -->
+<header class="opener" id="opener">
+  <div class="opener-photo"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Early%20voters%20seated%20inside%20the%20polling%20place%20waiting%20%282965035649%29.jpg?width=2000" alt="Rows of people seated on chairs along a bright indoor hallway at a polling place, with stanchions and tape marking the line." style="object-position:50% 50%"></div>
+  <div class="opener-head">
+    <div class="chapnum">14</div>
+    <div>
+      <div class="unitline">Unit 4 · American Political Ideologies and Beliefs</div>
+      <div class="chapword">CHAPTER</div>
+      <h1>Elections and<br>the Campaign Process</h1>
+    </div>
+  </div>
+  <div class="opener-caption"><b>Where the rules of the game meet the voters.</b> Early voters wait inside a polling place in Plantation, Florida, on October 22, 2008. The photographer reported that the lines lasted about three hours. <span class="credit">Photo: Alex Johnson (Ft. Lauderdale FL) / <a href="https://commons.wikimedia.org/wiki/File:Early_voters_seated_inside_the_polling_place_waiting_(2965035649).jpg">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a></span></div>
+  <div class="opener-grid">
+    <aside class="sectionlist">
+      <h3>IN THIS CHAPTER</h3>
+      <a href="#s1"><span class="sl-tag">SECTION 14.1</span><span class="sl-title">Primaries and Caucuses: Choosing the Nominee</span></a><a href="#s2"><span class="sl-tag">SECTION 14.2</span><span class="sl-title">The General Election and the Electoral College</span></a><a href="#s3"><span class="sl-tag">SECTION 14.3</span><span class="sl-title">Campaign Finance: The Cost of Admission</span></a><a href="#s4"><span class="sl-tag">SECTION 14.4</span><span class="sl-title">Voter Behavior and Participation</span></a><a href="#case" class="cs"><span class="sl-tag">CASE STUDY</span><span class="sl-title">Four Documents, One Question: Do the Rules of Elections Make Government More or Less Accountable to the People?</span></a><a href="#assess"><span class="sl-tag">CHAPTER REVIEW</span><span class="sl-title">Summary and Sources</span></a>
+    </aside>
+    <div class="opener-main">
+      <p class="kicker">Essential Question</p>
+      <p style="font-size:21px;line-height:1.4;font-weight:600;color:var(--unit-dk)">How do the structural mechanics of American elections shape the strategic behavior of candidates and the ultimate expression of popular sovereignty?</p>
+      <div class="obj-term">
+        <div><h4>CORE OBJECTIVES</h4><ul><li>Explain how presidential nominations moved from party conventions to primaries and caucuses, and how frontloading changed the calendar.</li><li>Compare the nomination phase with the general election phase, and explain how the Electoral College’s winner-take-all rule shapes campaigns.</li><li>Describe the incumbency advantage and the main stages of campaign finance law from FECA through Citizens United.</li><li>Analyze voter turnout by education and age, and identify structural barriers to participation.</li><li>Evaluate how micro-targeting changes campaign communication and accountability.</li></ul></div>
+        <div><h4>KEY TERMS</h4><div class="chips"><span>Primary Election</span><span>Caucus</span><span>General Election</span><span>Electoral College</span><span>Frontloading</span><span>Incumbency Advantage</span><span>Federal Election Commission (FEC)</span><span>Soft Money</span><span>527 Groups</span><span>Voter Turnout</span></div></div>
+      </div>
+      <div class="keyconcept" style="margin-top:20px">
+        <p class="kicker">Chapter 14 Key Concept</p>
+        <p><b>The rules shape the game.</b> Nomination rules, the Electoral College, campaign finance law, and registration rules all change what candidates do and whose voices count. This chapter asks whether those rules serve popular sovereignty.</p>
+      </div>
+      <p class="kicker">Why the Concept Matters</p>
+      <p>Imagine two class elections. In the first, whoever gets the most votes in the whole school wins. In the second, the school is split into five groups, and whoever wins a group gets all of that group’s points. A candidate would campaign very differently in each. The same is true of real elections: the rules shape who runs, where they go, and whose votes count the most. Knowing the rules helps you judge the results.</p>
+      <p class="kicker" style="margin-top:18px">Case Study Preview</p>
+      <p style="margin-bottom:0">At the end of this chapter you will read four original documents from 1788 to 1976 and answer one question: <a href="#case">do the rules of elections make government more or less accountable to the people?</a></p>
+      <div class="standards">
+        <div class="stdbox"><h4>CALIFORNIA CONTENT STANDARDS</h4><ul><li><code>HSS-PoAD.12.6.2</code> Discuss the history of the nomination process for presidential candidates and the increasing importance of primaries in general elections. <i>(Section 14.1)</i></li><li><code>HSS-PoAD.12.6.6</code> Analyze trends in voter turnout; the causes and effects of reapportionment and redistricting, with special attention to spatial districting and the rights of minorities; and the function of the Electoral College. <i>(Sections 14.2, 14.4)</i></li><li><code>HSS-PoAD.12.6.3</code> Evaluate the roles of polls, campaign advertising, and the controversies over campaign funding. <i>(Section 14.3)</i></li></ul></div>
+        <div class="stdbox"><h4>ALSO SUPPORTS</h4><ul><li><code>HSS-PoAD.12.6.4</code> Describe the means that citizens use to participate in the political process (e.g., voting, campaigning, lobbying, filing a legal challenge, demonstrating, petitioning, picketing, running for political office). <i>(Section 14.4)</i></li><li><code>HSS-PoAD.12.10</code> Students formulate questions about and defend their analyses of tensions within our constitutional democracy and the importance of maintaining a balance between the following concepts: majority rule and individual rights; liberty and equality; state and national authority in a federal system; civil disobedience and the rule of law; freedom of the press and the right to a fair trial; the relationship of religion and government. <i>(Introduction, Case Study)</i></li><li><code>RH.11-12.7</code> Integrate and evaluate multiple sources of information presented in diverse formats and media (e.g., visually, quantitatively, as well as in words) in order to address a question or solve a problem. <i>(Figures, Case Study)</i></li></ul></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section class="section" id="intro">
+  <div class="content" style="padding-top:34px">
+    <h3 class="kc">Introduction</h3>
+    <h3 class="head">The Election of 1800</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">On the evening of November 4, 1800, the outcome of the presidential election was not yet known, and it would not be resolved for months. The contest between John Adams and Thomas Jefferson — the second time these two foundational figures of the republic had faced each other for the nation's highest office — produced not just a change of power but a constitutional crisis. Jefferson and his running mate Aaron Burr received the same number of electoral votes, throwing the election into the House of Representatives, where thirty-six ballots were required before Jefferson was finally declared the winner. The election of 1800 was, by any measure, the most dramatic and consequential electoral contest in American history — and it revealed, in the republic's first decade of existence, that the mechanisms through which Americans chose their leaders were as consequential as the leaders themselves.</p>
+        <p>More than two centuries later, American elections remain one of the most complex, consequential, and contested institutional features of the republic. They are the formal mechanism through which the fundamental promise of democratic self-government is fulfilled — the periodic opportunity for citizens to hold their leaders accountable, to choose between competing visions of the public good, and to exercise the sovereign power that in a republic ultimately belongs to the people. But elections are not simply moments of popular expression; they are highly structured, legally regulated, and strategically contested competitions in which the rules of the game shape the strategies of the competitors in profound and sometimes counterintuitive ways. The structure of the primary system, the logic of the Electoral College, the legal framework governing campaign finance, and the demographic patterns of voter participation all determine not just who wins elections but what kinds of candidates run, what policies they advocate, and whose preferences the political system ultimately serves.</p>
+        <p>Understanding American elections requires understanding the full arc of the campaign process: the grueling internal competition of the nomination phase, during which candidates must win their own party's support before they can face the opposition; the general election phase, in which the strategic calculus shifts from appealing to partisan base voters to assembling the coalition needed to win a majority of Electoral College votes; the permanent and escalating battle over campaign finance, in which the constitutional protection of political speech continuously collides with democratic concerns about the disproportionate influence of organized money; and the patterns of voter participation that determine which segments of the American public actually exercise their formal right to choose their government.</p>
+        <p>Each of these dimensions of the electoral process reflects specific historical choices and constitutional decisions — choices about how to structure competition, who gets to participate, and what resources candidates can deploy — that have accumulated over more than two centuries and continue to be contested today. The Framers who designed the Electoral College were trying to solve a specific problem in the context of a specific political moment. The legislators who created the primary system were responding to a different set of problems in a different era. The courts that have shaped campaign finance law over the past five decades have been applying constitutional principles developed in one technological and political context to an environment those principles were never designed to address. Understanding elections means understanding these historical layers — and understanding that the rules that govern who wins power are never neutral, never permanent, and always contested.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Elector</span> A person chosen by a state to cast that state’s vote for president. <span class="sp">Spanish: elector</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">36 ballots</span>The chapter says the House of Representatives needed 36 ballots to settle the tie of 1800.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 14.2 explains the Electoral College. The Twelfth Amendment, ratified June 15, 1804, changed how electors vote (Case Study, Document B).</div>
+      </div>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s1">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>14.1</b></div>
+    <h2>Primaries and Caucuses: Choosing the Nominee</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#EDB98A" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 14.1, you will</p>
+      <ul><li>Explain how nominations moved from party conventions to primaries</li><li>Compare open and closed primaries, and caucuses with primaries</li><li>Explain the Iowa effect and frontloading</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-primary-election">Primary election</a></li><li><a href="#t-caucus">Caucus</a></li><li><a href="#t-frontloading">Frontloading</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each nomination method, write who may take part and one likely effect.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: nomination method, who may vote, likely effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Method</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who may vote</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Likely effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Road to the Nomination: Primaries and Caucuses</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Before a candidate can claim the right to represent a political party in the general election, they must survive the internal competition of the nomination process — the phase of the campaign in which the party itself decides which of its aspirants will carry its standard into the decisive contest. For most of American history, this decision was made not by ordinary voters but by professional politicians: the party bosses, committee chairs, and organizational leaders who gathered at national conventions and negotiated, traded, and sometimes coerced their way to a nominee. The shift from boss-controlled nominations to voter-driven primaries is one of the most consequential reforms in the history of American electoral politics — and its consequences, both intended and unintended, continue to shape the character of American democracy today.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Nomination</span> A party’s choice of the candidate who will carry its label into the general election. <span class="sp">Spanish: nominación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Bosses to voters</span>The chapter calls the shift from boss-controlled nominations to voter-driven primaries one of the most consequential reforms in American electoral history.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 described the party as an organization that recruits candidates. This section follows how it chooses them.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">From Smoke-Filled Rooms to Popular Primaries</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Nast-Tammany.jpg?width=1400" alt="A black-and-white engraving of a large tiger attacking a figure in an arena while a crowd looks on from the stands." loading="lazy" style="height:auto"><figcaption><span class="phlabel">A reformers’ target</span>Thomas Nast’s cartoon “The Tammany Tiger Loose,” published in Harper’s Weekly on November 11, 1871. Nast attacked Tammany Hall, the New York party organization of the kind that the Progressive reformers later targeted.<span class="credit">Image: Thomas Nast (1871) / <a href="https://commons.wikimedia.org/wiki/File:Nast-Tammany.jpg">Wikimedia Commons</a>, Public domain</span></figcaption></figure>
+        <p class="lead">The <dfn id="t-primary-election">direct primary</dfn> — the election in which registered voters, rather than party officials, choose the party's nominee — emerged in the early twentieth century as a product of the Progressive movement's sustained campaign against what reformers viewed as the corrupt, undemocratic power of party machines. In cities like New York, Chicago, and Philadelphia, the dominant party organizations of the late nineteenth century had perfected the art of controlling nominations: picking candidates who were loyal to the machine, rewarding supporters with government jobs and contracts, and delivering votes through a combination of patronage, community organization, and when necessary, outright fraud. The direct primary was designed to cut through this web of organizational control and restore the nomination decision to the party's rank-and-file supporters.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Direct primary</span> An election in which registered voters, not party officials, choose a party’s nominee. <span class="sp">Spanish: elección primaria directa</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Patronage</span> Rewarding supporters with government jobs and contracts. <span class="sp">Spanish: clientelismo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Early 1900s</span>The chapter dates the direct primary to the early twentieth century and the Progressive movement.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>In Chapter 13’s terms, the party organization once controlled the nominee. Primaries moved that choice to voters.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The adoption of primaries for presidential nominations was more gradual and more contested than their use in state and local races. For much of the twentieth century, presidential nominations remained substantially under the control of party leaders who gathered at national conventions with significant discretion to negotiate and bargain over the eventual nominee. The turning point came after the chaotic 1968 Democratic National Convention in Chicago, where Vice President Hubert Humphrey secured the nomination without having won a single primary election, amid bitter intra-party conflict over the Vietnam War and violent clashes between police and anti-war demonstrators outside the convention hall. The sense that the nomination process had been captured by party insiders at the expense of the party's actual voters produced a sweeping reform effort — led by the McGovern-Fraser Commission — that fundamentally restructured the Democratic primary process to give rank-and-file voters a decisive role in delegate selection. Republicans made parallel, if less dramatic, reforms in subsequent years.</p>
+        <p>The result of these reforms was a nomination system in which presidential primaries became the decisive mechanism for selecting nominees, replacing the brokered convention as the primary site of party decision-making. This shift had far-reaching consequences for the kinds of candidates who could succeed in the nomination process, the strategies they employed, and the policy positions they advocated. Success in the pre-reform system required the ability to build relationships with party leaders and organizational elites; success in the primary system requires the ability to communicate directly with mass audiences of voters, to raise funds from a broad donor base, and to mobilize supporters to turn out in election after election across dozens of states over a campaign season that stretches from the year before the general election to the summer of election year itself.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">McGovern-Fraser Commission</span> A Democratic Party commission that restructured delegate selection after 1968 to give rank-and-file voters a decisive role. <span class="sp">Spanish: Comisión McGovern-Fraser</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Brokered convention</span> A convention where party leaders bargain to choose the nominee. <span class="sp">Spanish: convención negociada</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1968</span>Hubert Humphrey won the Democratic nomination without winning a single primary, the chapter says.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 5 covers the presidency that these nominees compete to win.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.1</span>From Party Leaders to Primary Voters</p>
+      <p class="figsub">Four steps in the chapter’s account of how presidential nominations changed hands.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Timeline of four steps: late 1800s party machines, early 1900s direct primary, the 1968 Democratic convention in Chicago, and the McGovern-Fraser reforms after 1968"><line x1="40" y1="145" x2="820" y2="145" stroke="#574B86" stroke-width="4" stroke-linecap="round"/><line x1="137.5" y1="145" x2="137.5" y2="133" stroke="#574B86" stroke-width="2"/><g><title>Late 1800s: Party machines pick nominees </title><circle cx="137.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="137.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Late 1800s</text><text x="137.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Party machines pick nominees</text><text x="137.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="332.5" y1="145" x2="332.5" y2="155" stroke="#574B86" stroke-width="2"/><g><title>Early 1900s: Progressives create the direct primary</title><circle cx="332.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="332.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">Early 1900s</text><text x="332.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Progressives create</text><text x="332.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">the direct primary</text><line x1="527.5" y1="145" x2="527.5" y2="133" stroke="#574B86" stroke-width="2"/><g><title>1968: Chaotic convention in Chicago </title><circle cx="527.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="527.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">1968</text><text x="527.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Chaotic convention in Chicago</text><text x="527.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="722.5" y1="145" x2="722.5" y2="155" stroke="#C8742F" stroke-width="2"/><g><title>After 1968: McGovern-Fraser reforms Primaries become decisive</title><circle cx="722.5" cy="145" r="8" fill="#C8742F" stroke="#fff" stroke-width="2.5"/></g><text x="722.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#8A4A14" text-anchor="middle" font-weight="800">After 1968</text><text x="722.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">McGovern-Fraser reforms</text><text x="722.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Primaries become decisive</text></svg>
+      <p class="source">Source: Chapter text. Timeline created for this textbook; the chapter does not give a year for the McGovern-Fraser reforms. Highlighted: the reform that made primaries decisive.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Late 1800s</td><td>Dominant party organizations in cities such as New York, Chicago, and Philadelphia controlled nominations through patronage, community organization, and sometimes fraud.</td></tr><tr><td>Early 1900s</td><td>Progressive reformers created the direct primary to return the choice to rank-and-file supporters.</td></tr><tr><td>1968</td><td>Humphrey secured the Democratic nomination without winning a primary, amid conflict over the Vietnam War.</td></tr><tr><td>After 1968</td><td>Reforms led by the McGovern-Fraser Commission gave rank-and-file voters a decisive role; Republicans made parallel reforms.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Who chose the nominee in the late 1800s, according to the chapter?</li><li>What event does the chapter say turned the tide toward reform?</li><li>The chapter says primaries changed what skills a nominee needs. Name one skill that mattered before and one that matters now.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; READING THE EVIDENCE ON NOMINATIONS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.1. Which step does the chapter say made primaries the decisive way to pick nominees?</li><li>Use the text. Name one tool party machines used to control nominations.</li><li>Write a Counter-Argument to this claim: “Primaries made nominations more democratic, so they have no downsides.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Open and Closed Primaries: The Rules of Participation</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Not all primary elections operate by the same rules, and the differences between them have significant consequences for who participates, which candidates succeed, and what the nomination process reveals about the preferences of the broader electorate. The most fundamental distinction is between open and closed primaries — two different approaches to determining who is eligible to participate in a party's nomination contest.</p>
+        <p>A closed primary is one in which participation is restricted to voters who have registered with the party in advance — typically weeks or months before the election itself. Only registered Democrats may vote in a closed Democratic primary; only registered Republicans may vote in a closed Republican primary. The logic of the closed primary reflects a particular theory of what primary elections are for: they are the internal decision-making process of a private political organization, and the right to participate in that process should be reserved for individuals who have made a meaningful commitment to the party by registering as members. Closed primaries tend to produce electorates that are more ideologically homogeneous than the general electorate — since the voters who register with a party and participate in its primary tend to hold more consistently partisan views than the broader public — which generally advantages candidates who appeal to the party's ideological base rather than its moderate center.</p>
+        <p>An open primary takes the opposite approach: any registered voter may participate in either party's primary regardless of their own party registration, or in some variants, voters may participate without any prior registration at all. Some states allow registered independents to choose which party's primary to vote in on Election Day; others allow any voter to participate in any primary. The open primary reflects a different theory: that primary elections are a public function, conducted with public resources and serving the public interest in producing qualified candidates, and that participation should therefore be broadly available. Open primaries tend to produce more moderate nominees because the electorate includes not just committed partisans but independents and occasionally cross-party voters who may prefer candidates closer to the political center.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Closed primary</span> A primary limited to voters who registered with the party in advance. <span class="sp">Spanish: primaria cerrada</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Open primary</span> A primary in which any registered voter may take part in either party’s contest. <span class="sp">Spanish: primaria abierta</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2 theories</span>A closed primary treats the nomination as a private party decision. An open primary treats it as a public function.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 explained party identification. A closed primary depends on it.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The choice between open and closed primaries is not merely a technical administrative question; it is a consequential political decision about the character of the nomination process and the candidates it produces. In a closed primary system, party activists and ideologically committed voters exercise disproportionate influence over who becomes the nominee, which can produce candidates whose positions are well-calibrated to the party base but may be less appealing to the general electorate. In an open primary system, the influence of independents and moderate voters can pull nominations toward the center, but it also opens the possibility of strategic voting — the deliberate participation of voters in a rival party's primary for the purpose of choosing a weaker opponent, rather than out of any genuine preference among the candidates.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Strategic voting</span> Taking part in the other party’s primary to pick a weaker opponent rather than a favorite. <span class="sp">Spanish: voto estratégico</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Trade-off</span>Open primaries can pull nominations toward the center, but they also make strategic voting possible.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 14.2 turns from choosing nominees to winning the general election.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.2</span>Closed and Open Primaries Compared</p>
+      <p class="figsub">The two basic rules for who may take part, with the chapter’s account of their effects.</p>
+      <table class="cmp"><thead><tr><th></th><th>Closed primary</th><th>Open primary</th></tr></thead><tbody><tr><td>Who may vote</td><td>Voters registered with the party in advance, often weeks or months before</td><td>Any registered voter, or in some variants any voter, even without prior registration</td></tr><tr><td>Theory behind it</td><td>The nomination is a private party decision, so members should make it</td><td>The nomination is a public function, so participation should be broad</td></tr><tr><td>Likely nominee</td><td>Tends to favor candidates who appeal to the party base</td><td>Tends to produce more moderate nominees</td></tr><tr><td>Main risk</td><td>Activists and committed voters have outsized influence</td><td>Strategic voting by supporters of a rival party</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of closed and open primaries. The effects are tendencies the chapter describes, not rules.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which type of primary does the chapter say tends to produce more moderate nominees?</li><li>Which theory treats the primary as a public function?</li><li>Which risk would worry a party that wants its own members to choose its nominee, and why?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>The Base or the Middle?</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Two candidates, Ruiz and Kim, compete in a closed primary where most voters are strong party members. Ruiz takes firm positions that excite the party base. Kim takes more moderate positions that might attract independents later. If the closed-primary electorate rewards firmness, Ruiz may win the nomination. In the general election, though, the chapter says candidates must broaden their appeal to independents and moderates. That is the tension between being competitive in a primary and being competitive in a general election.</p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Should Primaries Be Open or Closed?</div></div>
+      <div class="box-b">
+        <p>The chapter describes both theories: the primary as a private party decision, or as a public function. Reasonable people disagree about which is better.</p>
+        <div class="opts"><div class="opt"><h5>Closed primaries</h5>Let only registered party members choose the nominee, because the primary is the party’s own decision.</div><div class="opt"><h5>Open primaries</h5>Let any registered voter take part, because the primary is paid for with public resources and shapes the choices everyone gets.</div></div>
+        <p class="ask">Which would you choose, and how would you answer the strongest concern about your choice?</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Iowa Effect and the Strategy of Frontloading</h3>
+    <div class="pair">
+      <div class="body">
+        <p>One of the most distinctive and most criticized features of the American presidential nomination process is the extraordinary influence wielded by a small number of states that hold their primaries or caucuses very early in the election calendar. Iowa, which by tradition holds the nation's first nominating contest — a <dfn id="t-caucus">caucus system</dfn> in which voters gather in person at schools, churches, and community centers to deliberate and publicly declare their preferences — and New Hampshire, which holds the nation's first primary election, have occupied positions of outsized influence in the presidential nomination process for decades. The attention, resources, and media coverage lavished on these early contests is entirely disproportionate to their size, demographic representativeness, or electoral weight in the general election — a disproportion that has generated persistent criticism and intermittent reform efforts without fundamentally altering the early calendar's structure.</p>
+        <p>The influence of early states is rooted in the dynamics of momentum in the primary process. A candidate who performs strongly in Iowa and New Hampshire — even if they win by a narrow margin or simply exceed expectations — receives a surge of favorable media coverage that shapes perceptions of their viability for weeks afterward. Donors who had been hedging their bets between multiple candidates consolidate their support behind the perceived front-runner. Endorsers who had been holding back publicly commit. Rival campaigns, watching their fundraising dry up in the wake of disappointing early results, find themselves unable to sustain the organizational infrastructure needed to compete in the states that follow. Candidates who struggle in Iowa and New Hampshire often withdraw from the race entirely before many states have even begun their primary process, effectively leaving the final choice of nominee to the small and unrepresentative electorates of two relatively homogeneous early states.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Caucus</span> A meeting at which voters gather in person and publicly declare their support. <span class="sp">Spanish: caucus (asamblea partidista)</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Momentum</span> The boost from an early strong showing: better coverage, more donors, more endorsements. <span class="sp">Spanish: impulso</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">First in the nation</span>The chapter says Iowa holds the first nominating contest, a caucus, and New Hampshire holds the first primary.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 15 covers how media coverage shapes which candidates seem viable.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This dynamic has produced the phenomenon political scientists call <dfn id="t-frontloading">frontloading</dfn>: the tendency of states to move their primaries earlier in the calendar in order to capture the strategic benefits of early-state influence — the media attention, the candidate visits, the economic activity generated by major campaigns operating at full intensity. As more states moved their primaries earlier, the effective primary season compressed, creating a situation in which candidates face a rapid-fire sequence of contests in multiple states simultaneously rather than the more deliberate state-by-state process that characterized earlier nomination contests. The compressed calendar rewards candidates who enter the race with strong name recognition, established fundraising networks, and the organizational infrastructure to compete in multiple states at once — structural advantages that tend to favor better-known, better-funded candidates over lesser-known insurgents, even when the insurgents may hold positions with broad appeal among the party's voters.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Frontloading</span> States moving their primaries earlier to gain influence. <span class="sp">Spanish: adelantar el calendario</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Compressed</span>As more states moved early, the primary season became a rapid-fire sequence of contests, the chapter says.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Compare Figure 14.1: before the reforms, the convention, not the calendar, decided.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.3</span>How Early Results Snowball</p>
+      <p class="figsub">The chapter’s chain from an early result to frontloading.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Five boxes showing a chain: strong early result, media attention, donors and endorsers consolidate, rivals fade, and states respond by frontloading"><g><title>Strong early result: Iowa or New Hampshire; beating expectations counts</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Strong early result</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Iowa or New Hampshire;</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">beating expectations</text><text x="128.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">counts</text><g><title>Media attention: Favorable coverage shapes perceptions of viability</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Media attention</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Favorable coverage shapes</text><text x="430.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">perceptions of viability</text><g><title>Donors and endorsers: Hedging supporters consolidate behind the front-runner</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Donors and endorsers</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Hedging supporters</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">consolidate behind the</text><text x="732.0" y="78" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">front-runner</text><g><title>Rivals fade: Fundraising dries up; some candidates withdraw early</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Rivals fade</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Fundraising dries up; some</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">candidates withdraw early</text><g><title>Frontloading: States move their contests earlier to share the influence</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#C8742F" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Frontloading</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">States move their contests</text><text x="430.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">earlier to share the</text><text x="430.0" y="198" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">influence</text><path d="M219.0 45.0 L337.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M521.0 45.0 L639.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M732.0 84 V104 H128.0 V124" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#C8742F"/><path d="M219.0 165.0 L337.0 165.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#C8742F"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s discussion of momentum and frontloading.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Strong early result</td><td>A candidate who performs strongly, or exceeds expectations, receives favorable media coverage.</td></tr><tr><td>Donors and endorsers</td><td>Donors consolidate behind the perceived front-runner; endorsers commit.</td></tr><tr><td>Rivals fade</td><td>Rivals’ fundraising dries up; those who struggle often withdraw before many states vote.</td></tr><tr><td>Frontloading</td><td>States move their primaries earlier to capture media attention, candidate visits, and economic activity.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>Which step explains why states want to hold early contests?</li><li>What kind of candidates does the chapter say a compressed calendar favors?</li><li>The chapter says early states are small and relatively homogeneous. Why might that matter if their results shape the final choice?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; PRIMARIES, CAUCUSES, AND THE CALENDAR</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.3. Which step shows rivals withdrawing from the race?</li><li>Use Figure 14.2. Which kind of primary does the chapter say makes strategic voting possible?</li><li>Write a Counter-Argument to this claim: “Early states should keep going first because they know the candidates best.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 14.1 ASSESSMENT</b>Complete the Section 14.1 Assessment in your <i>Chapter 14 Assignment</i> packet before you move on to Section 14.2.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s2">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>14.2</b></div>
+    <h2>The General Election and the Electoral College</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#EDB98A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1EEF6" stroke-width="5"/><path d="M14 100h132" stroke="#EDB98A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 14.2, you will</p>
+      <ul><li>Compare the strategy of the nomination phase with the general election phase</li><li>Explain how electors are allocated and why winner-take-all makes margins irrelevant</li><li>Describe the incumbency advantage</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-general-election">General election</a></li><li><a href="#t-electoral-college">Electoral College</a></li><li><a href="#t-incumbency-advantage">Incumbency advantage</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each feature, write the rule and its strategic effect.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: feature, rule, strategic effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Feature</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Rule</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Strategic effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The General Election and the Electoral College</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">When the nomination contests conclude and the two major parties have selected their nominees, the strategic calculus of the presidential campaign undergoes a fundamental transformation. The primary phase, with its focus on mobilizing partisan base voters and navigating ideologically diverse party electorates, gives way to the <dfn id="t-general-election">general election</dfn> phase, with its requirement to assemble a coalition broad enough to win a majority of Electoral College votes. The transition between these phases is one of the most consequential strategic moments in any presidential campaign — the moment when candidates who have spent months appealing to their party's most committed supporters must begin the delicate task of expanding their appeal to the independents and moderate voters who typically decide the outcome.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">General election</span> The final election between candidates of different parties to decide who holds office. <span class="sp">Spanish: elección general</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Pivot</span>Nominees must widen their appeal from the party base to independents and moderates, the chapter says.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 reported that in Gallup’s 2025 surveys independents were the largest group, at 45% of adults.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.4</span>Two Campaigns in One</p>
+      <p class="figsub">The nomination phase and the general election phase pose different strategic problems.</p>
+      <table class="cmp"><thead><tr><th></th><th>Nomination phase</th><th>General election phase</th></tr></thead><tbody><tr><td>Audience</td><td>Party members and primary voters; the rules vary by state</td><td>All voters; independents and moderates often decide the outcome</td></tr><tr><td>Goal</td><td>Win the party’s nomination</td><td>Assemble a majority of electoral votes (270 of 538)</td></tr><tr><td>Message</td><td>Appeals that energize the party’s committed supporters</td><td>Appeals broad enough for independents and moderates</td></tr><tr><td>Resources that matter</td><td>Name recognition, a broad donor base, organization in many states at once</td><td>Advertising, visits, and organizing in competitive states</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion in Sections 14.1 and 14.2.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which phase focuses on mobilizing partisan base voters?</li><li>Why might a position that helps in the first phase create a risk in the second?</li><li>What does the chapter mean when it calls the transition between the phases “one of the most consequential strategic moments” in a campaign?</li></ol>
+      </div>
+    </figure>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Architecture of the Electoral College</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The <dfn id="t-electoral-college">Electoral College</dfn> is among the most distinctive and most debated features of the American constitutional system. Created by the Framers in 1787 as a compromise between those who wanted the president selected by Congress and those who wanted direct popular election, the Electoral College was designed to filter the popular will through the judgment of informed electors chosen by each state. In practice, the filtering function the Framers intended has long since disappeared — today, presidential electors are expected to vote for the candidate who wins their state's popular vote, and the vast majority of states legally require them to do so — but the structural features of the system retain enormous strategic significance.</p>
+        <p>The mathematics of the Electoral College begin with the allocation of electors. Each state receives a number of electoral votes equal to its total congressional delegation — its House seats plus its two senators. This means that every state, regardless of population, receives a minimum of three electoral votes — two for its senators and at least one for its House member. California, the nation's most populous state, receives fifty-four electoral votes; Wyoming, the least populous, receives three. A candidate needs to win a majority of the 538 total electoral votes — at least 270 — to be elected president. If no candidate achieves this threshold, the election is decided by the House of Representatives, with each state delegation casting a single vote — the same procedure that resolved the disputed election of 1800.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Electoral vote</span> One of the 538 votes cast by electors; a state has one for each House seat and Senate seat. <span class="sp">Spanish: voto electoral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Elector</span> A person chosen by a state to cast its electoral votes. <span class="sp">Spanish: elector</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">538 and 270</span>Total electoral votes, and the number needed to win (National Archives).</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Twelfth Amendment, ratified June 15, 1804, answered the tie of 1800. See Document B in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.5</span>Electoral Votes by State, 2024 and 2028</p>
+      <p class="figsub">Electoral votes for six large states and for Wyoming, which has the minimum of three. Allocations are based on the 2020 Census.</p>
+      <svg viewBox="0 0 860 334" role="img" aria-label="Bar chart of electoral votes: California 54, Texas 40, Florida 30, New York 28, Illinois 19, Pennsylvania 19, Wyoming 3"><line x1="130.0" y1="10" x2="130.0" y2="290" stroke="#e6e8ec"/><text x="130.0" y="308" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0</text><line x1="290.0" y1="10" x2="290.0" y2="290" stroke="#e6e8ec"/><text x="290.0" y="308" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">15</text><line x1="450.0" y1="10" x2="450.0" y2="290" stroke="#e6e8ec"/><text x="450.0" y="308" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">30</text><line x1="610.0" y1="10" x2="610.0" y2="290" stroke="#e6e8ec"/><text x="610.0" y="308" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">45</text><line x1="770.0" y1="10" x2="770.0" y2="290" stroke="#e6e8ec"/><text x="770.0" y="308" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">60</text><text x="120" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">California</text><g><title>California: 54</title><path d="M130 16 h572.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-572.0z" fill="#574B86"/></g><text x="714.0" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">54</text><text x="120" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Texas</text><g><title>Texas: 40</title><path d="M130 56 h422.7 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-422.7z" fill="#574B86"/></g><text x="564.7" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">40</text><text x="120" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Florida</text><g><title>Florida: 30</title><path d="M130 96 h316.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-316.0z" fill="#574B86"/></g><text x="458.0" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">30</text><text x="120" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">New York</text><g><title>New York: 28</title><path d="M130 136 h294.7 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-294.7z" fill="#574B86"/></g><text x="436.7" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">28</text><text x="120" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Illinois</text><g><title>Illinois: 19</title><path d="M130 176 h198.7 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-198.7z" fill="#574B86"/></g><text x="340.7" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">19</text><text x="120" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Pennsylvania</text><g><title>Pennsylvania: 19</title><path d="M130 216 h198.7 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-198.7z" fill="#574B86"/></g><text x="340.7" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">19</text><text x="120" y="275.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Wyoming</text><g><title>Wyoming: 3</title><path d="M130 256 h28.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-28.0z" fill="#C8742F"/></g><text x="170.0" y="275.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">3</text><line x1="130" y1="10" x2="130" y2="290" stroke="#6f7787" stroke-width="1.5"/><text x="450.0" y="330" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Electoral votes</text></svg>
+      <p class="source">Sources: National Archives, Electoral College allocations for the 2024 and 2028 elections (538 total; 270 needed). Residents per elector are computed for this textbook from the 2020 Census resident population (U.S. Census Bureau, April 26, 2021), which includes D.C.; they are approximate. Highlighted bar: Wyoming.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th></th><th>Electoral votes</th><th>2020 resident population</th><th>Residents per elector (approx.)</th></tr></thead><tbody><tr><td>California</td><td>54</td><td>39,538,223</td><td>732,189</td></tr><tr><td>Wyoming</td><td>3</td><td>576,851</td><td>192,284</td></tr><tr><td>United States (538 electors)</td><td>538</td><td>331,449,281</td><td>616,077</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many times as many electoral votes as Wyoming does California have?</li><li>How many times as many residents does California have as Wyoming? Use 39,538,223 ÷ 576,851.</li><li>What do your two answers suggest about each person’s weight in the Electoral College? Connect to the chapter’s “small-state advantage.”</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The most strategically consequential feature of the Electoral College is the winner-take-all rule that governs forty-eight of the fifty states. In these states, the candidate who wins a plurality of the popular vote — even if that plurality is a single vote — receives all of the state's electoral votes. The remaining two states — Maine and Nebraska — allocate some of their electoral votes by congressional district, making it possible for the two candidates to split a state's electoral votes, though this is rare in practice. The winner-take-all rule produces campaign dynamics that are radically different from what would emerge under a national popular vote, because it makes the margin of victory within any state irrelevant to the Electoral College outcome. Running up a large margin of victory in a state that you would have won anyway produces no additional electoral votes; the strategic premium is on winning states, not on winning them by large margins.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Winner-take-all</span> A rule giving all of a state’s electoral votes to the candidate who wins the most popular votes there. <span class="sp">Spanish: el ganador se lleva todo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Plurality</span> The most votes, even if not a majority. <span class="sp">Spanish: pluralidad</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Maine and Nebraska</span>The chapter says these two states award some electors by congressional district.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 explained how winner-take-all rules affect parties (Duverger’s Law).</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.6</span>A Narrow Win and a Landslide, the Same Result (Hypothetical)</p>
+      <p class="figsub">In a winner-take-all state, a one-point win and a sixty-point win both bring all of the state’s electors.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Two hypothetical states. In State X, Candidate P wins 51 percent to 49 percent. In State Y, Candidate P wins 80 percent to 20 percent. In both states Candidate P receives all 10 electoral votes."><text x="20" y="34" font-family="Inter, Arial, sans-serif" font-size="14" fill="#33284F" text-anchor="start" font-weight="700">State X: a narrow result</text><g><title>Candidate P: 51%</title><rect x="20" y="46" width="275.4" height="54" rx="6" fill="#574B86" stroke="#574B86" stroke-width="1.5"/></g><g><title>Candidate Q: 49%</title><rect x="295.4" y="46" width="264.6" height="54" rx="6" fill="#EDB98A" stroke="#574B86" stroke-width="1.5"/></g><text x="157.7" y="80" font-family="Inter, Arial, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="800">P  51%</text><text x="427.7" y="80" font-family="Inter, Arial, sans-serif" font-size="19" fill="#33284F" text-anchor="middle" font-weight="800">Q  49%</text><path d="M574 73 h26" stroke="#C8742F" stroke-width="3.5"/><path d="M598 65 l10 8 l-10 8z" fill="#C8742F"/><rect x="618" y="42" width="222" height="62" rx="10" fill="#33284F"/><text x="729" y="70" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">ALL 10 ELECTORS</text><text x="729" y="89" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#EDB98A" text-anchor="middle" font-weight="400">go to Candidate P</text><text x="20" y="164" font-family="Inter, Arial, sans-serif" font-size="14" fill="#33284F" text-anchor="start" font-weight="700">State Y: a landslide result</text><g><title>Candidate P: 80%</title><rect x="20" y="176" width="432.0" height="54" rx="6" fill="#574B86" stroke="#574B86" stroke-width="1.5"/></g><g><title>Candidate Q: 20%</title><rect x="452.0" y="176" width="108.0" height="54" rx="6" fill="#EDB98A" stroke="#574B86" stroke-width="1.5"/></g><text x="236.0" y="210" font-family="Inter, Arial, sans-serif" font-size="19" fill="#fff" text-anchor="middle" font-weight="800">P  80%</text><text x="506.0" y="210" font-family="Inter, Arial, sans-serif" font-size="19" fill="#33284F" text-anchor="middle" font-weight="800">Q  20%</text><path d="M574 203 h26" stroke="#C8742F" stroke-width="3.5"/><path d="M598 195 l10 8 l-10 8z" fill="#C8742F"/><rect x="618" y="172" width="222" height="62" rx="10" fill="#33284F"/><text x="729" y="200" font-family="Inter, Arial, sans-serif" font-size="15" fill="#fff" text-anchor="middle" font-weight="800">ALL 10 ELECTORS</text><text x="729" y="219" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#EDB98A" text-anchor="middle" font-weight="400">go to Candidate P</text><text x="20" y="280" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#4a5263" text-anchor="start" font-weight="400">Same electoral result in both states; only the popular-vote margin differs.</text></svg>
+      <p class="source">Source: Hypothetical example created for this textbook. Two states with 10 electors each; Candidate P wins State X 51% to 49% and State Y 80% to 20%.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>State</th><th>Candidate P</th><th>Candidate Q</th><th>Electors for P</th></tr></thead><tbody><tr><td>X</td><td>51%</td><td>49%</td><td>10</td></tr><tr><td>Y</td><td>80%</td><td>20%</td><td>10</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>How many electors does Candidate P receive in each state?</li><li>The chapter says the margin of victory “within any state” is irrelevant. How does this figure show that?</li><li>Where would a campaign with limited money spend more: in a state like X, or like Y? Explain.</li></ol>
+      </div>
+    </figure>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>The Margin That Doesn’t Matter</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> A campaign has one more week of advertising to buy. Its polls show 72% support in State Y and an even race in State Z. More ads in State Y might lift support to 74%, but State Y’s electors would not change. More ads in State Z might flip the whole state’s electors. The chapter says that is why campaigns spend their money where the outcome is “genuinely uncertain.”</p>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Battleground States and the Geography of Presidential Campaigns</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The winner-take-all structure of the Electoral College, combined with the strong partisan leanings of most states, produces the defining strategic reality of modern presidential campaigns: the concentration of candidate attention, advertising spending, and organizational effort in a small number of genuinely competitive states while the majority of the country is effectively ignored. The logic is straightforward: a Democratic presidential candidate who campaigns intensively in California is spending resources to accumulate a larger margin of victory in a state they will win regardless. A Republican who campaigns in Texas is doing the same. Neither state's outcome is in genuine doubt; pouring resources into them produces no strategic benefit.</p>
+        <p>The consequence is that presidential campaigns focus their finite resources — time, advertising dollars, staff, and candidate visits — almost exclusively on the states where the outcome is genuinely uncertain. These battleground states or swing states — in recent cycles most prominently Pennsylvania, Michigan, Wisconsin, Arizona, Georgia, Nevada, and North Carolina — are the actual sites of the presidential election. Their voters are courted with relentless advertising, personal candidate visits, intensive ground-level organizing, and targeted appeals. The residents of reliably partisan states, by contrast, may go an entire campaign season without seeing a presidential candidate in person, without being targeted by the campaign's television advertising, and without feeling that their individual votes have any meaningful impact on the outcome.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Battleground state</span> A state where the outcome is genuinely uncertain, so campaigns concentrate resources there. <span class="sp">Spanish: estado clave (disputado)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">7 states</span>The chapter names Pennsylvania, Michigan, Wisconsin, Arizona, Georgia, Nevada, and North Carolina as recent examples.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 15 covers how the media shape which parts of a campaign the public sees.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>This concentration of campaign activity in battleground states has generated persistent criticism that the Electoral College distorts democratic representation, creating a system in which some citizens' votes are functionally more consequential than others' based solely on the partisan composition of the state in which they happen to live. A voter in Ohio who is the margin of victory in a closely contested state exercises far more practical influence over the presidential election than a voter in New York or Texas who contributes to a predetermined outcome. The small-state advantage built into the Electoral College — which gives voters in small states mathematically more electoral weight per person than voters in large states — adds a second dimension to this representational distortion, though its practical significance is partially offset by the small states' tendency to be reliably partisan rather than genuinely competitive.</p>
+        <p>Defenders of the Electoral College argue that its geographic logic produces important democratic benefits that a national popular vote would not. By requiring candidates to build geographically diverse coalitions rather than simply maximizing their national vote total, the Electoral College arguably encourages attention to regional and local concerns that might otherwise be submerged in a nationwide competition for votes. It produces clear, decisive outcomes in most elections — a winner with a majority of electoral votes rather than a plurality of a fragmented popular vote — and it maintains the federal character of presidential elections by keeping states as the relevant unit of competition. The periodic divergence between the popular vote winner and the Electoral College winner — which occurred in 2000 and 2016 — has renewed debate about the system's democratic legitimacy, but the constitutional barriers to reform are substantial, requiring either a constitutional amendment or a coordinated interstate compact that has made significant but incomplete progress toward the threshold needed to take effect.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">National popular vote</span> Choosing the president by the nationwide vote total instead of by state-by-state electors. <span class="sp">Spanish: voto popular nacional</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Interstate compact</span> An agreement among states. <span class="sp">Spanish: pacto interestatal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2000 and 2016</span>The chapter says the popular-vote winner and the Electoral College winner differed in these two elections.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Document A in the Case Study gives Alexander Hamilton’s 1788 argument for choosing the president through electors.</div>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Keep the Electoral College or Move to a National Popular Vote?</div></div>
+      <div class="box-b">
+        <p>The chapter presents arguments on both sides. Defenders point to coalition-building, clear outcomes, and federalism. Critics point to unequal voter influence and campaigns that ignore most states.</p>
+        <div class="opts"><div class="opt"><h5>Keep the Electoral College</h5>Keep states as the unit of competition so that candidates must build geographically diverse coalitions and elections usually produce clear winners.</div><div class="opt"><h5>Move to a national popular vote</h5>Count every vote equally across the nation so that no voter’s location decides how much the vote matters.</div></div>
+        <p class="ask">Which would you choose, and what is the strongest argument against your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; THE ELECTORAL COLLEGE IN NUMBERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.5. Which state in the figure has the most electoral votes, and how many does a candidate need in all to win?</li><li>Use Figure 14.6. Why would a campaign not buy ads in a state where it leads 80% to 20%?</li><li>Write a Counter-Argument to this claim: “In the Electoral College, every voter’s ballot counts exactly the same.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Incumbency Advantage and the Logic of Reelection</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">One of the most consistent findings of electoral research is that candidates running for reelection — incumbents — hold a substantial structural advantage over challengers in most races. This <dfn id="t-incumbency-advantage">incumbency advantage</dfn> operates through several distinct mechanisms, each of which reflects a genuine benefit of holding office that challengers cannot easily replicate regardless of their own qualifications or resources. Understanding the incumbency advantage is essential to understanding not just the electoral success rates of sitting officeholders but the broader patterns of representation and accountability in the American political system.</p>
+        <p>The most fundamental component of the incumbency advantage is name recognition — the simple fact that voters know who their current representative is, what party they belong to, and in most cases at least something about their record. Challengers must invest enormous resources simply to reach the threshold of public awareness that incumbents possess automatically. In House races, which typically receive limited media coverage outside of major urban markets, many challengers never succeed in establishing the public presence needed to mount a serious challenge, regardless of the merits of their campaign. The cost of building name recognition from scratch is one of the primary reasons why congressional challengers face such daunting fundraising challenges: donors who evaluate candidates on the basis of their viability are reluctant to invest in a challenger who has not yet demonstrated the public profile needed to be competitive.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Incumbent</span> An officeholder running for reelection. <span class="sp">Spanish: titular</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Name recognition</span>The chapter calls it the most fundamental component of the incumbency advantage.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 4 covers the House and Senate, where the chapter says incumbents hold their edge.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>Beyond name recognition, incumbents benefit from the "franking privilege" — the ability to send official communications to constituents at government expense — and from the staff and resources of their official offices, which enable them to provide constituent services, respond to problems, and maintain ongoing visibility in their districts throughout their term, not just during the campaign season. These official resources cannot legally be used for overtly political purposes, but the goodwill and visibility generated by effective constituent service is a political asset that incumbents accumulate continuously between elections. Additionally, incumbents typically enter reelection campaigns with established fundraising networks, experienced campaign staff, and relationships with interest groups and donors that challengers must build from the beginning.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Franking privilege</span> The ability to send official communications to constituents at government expense. <span class="sp">Spanish: franquicia postal</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Between elections</span>The chapter says official resources cannot be used for political purposes, but the goodwill from constituent service is a political asset.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Section 14.3 shows how fundraising networks connect to the rules on campaign money.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.7</span>Why Incumbents Start Ahead</p>
+      <p class="figsub">The four advantages the chapter describes, and why challengers cannot easily copy them.</p>
+      <table class="cmp"><thead><tr><th>Advantage</th><th>What the incumbent has</th><th>Challenger’s problem</th></tr></thead><tbody><tr><td>Name recognition</td><td>Voters already know the officeholder and their party</td><td>Challengers must spend heavily to reach the same awareness; donors avoid unknown challengers</td></tr><tr><td>Franking privilege</td><td>Official mail to constituents at government expense</td><td>Challengers pay for every mailing</td></tr><tr><td>Office staff and services</td><td>Constituent service and visibility all term long</td><td>Challengers build visibility only during the campaign</td></tr><tr><td>Fundraising and relationships</td><td>Established donor networks, experienced staff, ties to interest groups</td><td>Challengers start from scratch</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of the incumbency advantage.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which advantage does the chapter call the most fundamental?</li><li>Why does the chapter say official resources are still a political asset even though they cannot be used for campaigning?</li><li>How does the first advantage in the table make the fourth one harder for a challenger to overcome?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; INCUMBENCY ADVANTAGE</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.7. Which two advantages come from holding office?</li><li>Use the text. Why does the chapter say House challengers often fail to mount a serious challenge?</li><li>Write a Counter-Argument to this claim: “Incumbents win only because voters like them best.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 14.2 ASSESSMENT</b>Complete the Section 14.2 Assessment in your <i>Chapter 14 Assignment</i> packet before you move on to Section 14.3.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s3">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>14.3</b></div>
+    <h2>Campaign Finance: The Cost of Admission</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><circle cx="80" cy="46" r="26" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M80 8v10M80 74v10M42 46h10M108 46h10M52 18l7 7M101 67l7 7M108 18l-7 7M59 67l-7 7" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/><path d="M50 108h60M62 96h36" stroke="#EDB98A" stroke-width="5" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 14.3, you will</p>
+      <ul><li>Explain how Watergate led to the Federal Election Campaign Act and the FEC</li><li>Explain the Buckley distinction between contributions and spending</li><li>Describe soft money, McCain-Feingold, Super PACs, and 527 groups</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-fec">Federal Election Commission</a></li><li><a href="#t-soft-money">Soft money</a></li><li><a href="#t-527-groups">527 groups</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each law or decision, write what it did and its effect on campaign money.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: law or decision, what it did, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Law or decision</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">What it did</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Campaign Finance: The Cost of Admission</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">No feature of the modern American electoral process has generated more sustained legal controversy, more ideological conflict, or more consequential Supreme Court decisions than the regulation of campaign finance. The question at the heart of this debate is one of the most fundamental in democratic theory: should the amount of money a candidate or their supporters can spend in an election campaign be limited, or does the First Amendment's protection of political speech preclude such limits? The legal and political history of campaign finance regulation over the past half-century is the story of repeated attempts to reconcile these competing values — and of the persistent failure to achieve a stable resolution.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Campaign finance</span> The raising and spending of money to win elections, and the laws that regulate it. <span class="sp">Spanish: financiamiento de campañas</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Core question</span>Should the amount candidates and supporters spend be limited, or does the First Amendment’s protection of speech forbid limits?</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 8 covers the First Amendment. Chapter 13 explained PACs and Super PACs.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">From Watergate to the FEC: The Origins of Modern Campaign Finance Law</h3>
+    <div class="pair">
+      <div class="body">
+
+<figure class="photo sidefig"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/2013%20Watergate%20complex%2001.JPG?width=1400" alt="The curved, balconied face of a large apartment and office complex seen across trees and a road, with a few cars and a pedestrian." loading="lazy" style="height:auto"><figcaption><span class="phlabel">Where a scandal got its name</span>The Watergate complex in Washington, D.C., photographed on June 15, 2013, from the direction of the Kennedy Center. The scandal discussed in this section took its name from the complex, where the break-in mentioned in the chapter occurred.<span class="credit">Photo: Farragutful (2013) / <a href="https://commons.wikimedia.org/wiki/File:2013_Watergate_complex_01.JPG">Wikimedia Commons</a>, <a href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></span></figcaption></figure>
+        <p class="lead">The modern framework of federal campaign finance regulation emerged directly from the Watergate scandal of the early 1970s. Among the many abuses of the Nixon reelection campaign that the Watergate investigation exposed was a systematic pattern of illegal campaign contributions — large cash donations from corporations and wealthy individuals that were concealed from public disclosure and used to fund illegal activities, including the Watergate break-in itself. The scandal created the political momentum for comprehensive campaign finance reform, which Congress enacted in the Federal Election Campaign Act of 1974 — a landmark law that created the <dfn id="t-fec">Federal Election Commission</dfn> as an independent enforcement agency, established limits on contributions to political candidates, required public disclosure of campaign contributions and expenditures, and created a system of public financing for presidential campaigns.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Federal Election Commission (FEC)</span> The independent agency that enforces federal campaign finance law. <span class="sp">Spanish: Comisión Federal Electoral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Disclosure</span> A legal requirement to report who gives and who spends campaign money. <span class="sp">Spanish: divulgación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">1974 amendments</span>The chapter says the 1974 FECA amendments created the FEC. Chapter 13 notes the original law dates to 1971.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 7 covers the bureaucracy, including agencies that enforce federal rules.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The new law was immediately challenged in court by a coalition of political actors across the ideological spectrum who argued that limits on campaign spending violated the First Amendment's protection of political speech. In Buckley v. Valeo (1976), the Supreme Court handed down a decision that shaped the entire subsequent development of campaign finance law. The Court accepted the government's argument that large contributions to candidates created a constitutionally sufficient risk of corruption — or at least the appearance of corruption — to justify contribution limits. But it rejected the parallel argument for spending limits. A candidate's decision to spend their own money on their own campaign, the Court held, is a direct expression of political speech that the government cannot restrict without the kind of compelling justification that the risk of corruption of a self-funded candidate does not provide. More broadly, the Court established the principle that spending money to communicate political messages is itself a constitutionally protected form of expression — a principle that has defined and constrained every subsequent attempt at campaign finance reform.</p>
+        <p>The Buckley framework drew a line that has proven increasingly difficult to maintain: contributions could be limited because they create a risk of quid pro quo corruption, but expenditures could not be limited because they represent independent expression. This distinction produced a series of regulatory problems as campaigns and their supporters developed sophisticated techniques for moving political money from the regulated contribution category to the unregulated expenditure category. The rise of <dfn id="t-soft-money">soft money</dfn> — large, unlimited contributions to political parties ostensibly designated for "party-building" activities rather than candidate advocacy — became one of the most significant of these techniques, allowing corporations, unions, and wealthy individuals to channel money into campaigns in ways that effectively evaded the contribution limits the law established.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Buckley v. Valeo (1976)</span> The Supreme Court decision that upheld contribution limits but protected spending as speech. <span class="sp">Spanish: Buckley contra Valeo</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Quid pro quo corruption</span> A direct exchange of money for official favors. <span class="sp">Spanish: corrupción de quid pro quo</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Jan. 30, 1976</span>The date the Court decided Buckley v. Valeo.</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>Document D in the Case Study reprints a passage from the opinion.</div>
+      </div>
+    </div>
+
+    <div class="pair">
+      <div class="body">
+        <p>The accumulation of soft money in the late 1980s and 1990s — which grew from a marginal practice to a multi-hundred-million-dollar industry that effectively overwhelmed the contribution limits the 1974 law had established — eventually produced a new round of reform. The Bipartisan Campaign Reform Act of 2002, known as the McCain-Feingold Act after its Senate sponsors, attempted to close the soft money loophole by prohibiting national party committees from raising or spending soft money, requiring that all national party fundraising be conducted under the "hard money" limits of the existing contribution cap system. The Act also imposed new restrictions on "electioneering communications" — broadcast advertisements that mentioned a federal candidate by name within thirty days of a primary or sixty days of a general election — regardless of whether those advertisements explicitly advocated for or against the candidate.</p>
+        <p>McCain-Feingold represented the most ambitious attempt at campaign finance reform since 1974, and it temporarily succeeded in redirecting some of the money flows that had accumulated outside the regulated system. But it was almost immediately challenged in court, and the restrictions it placed on electioneering communications proved constitutionally fragile. The decisive blow came with Citizens United v. Federal Election Commission (2010), discussed in Chapter 13, which struck down the prohibition on corporate-funded electioneering communications and established that the First Amendment prevents the government from restricting independent political expenditures by corporations, associations, and unions. The practical consequence — the rapid development of the Super PAC — transformed the campaign finance landscape in ways that have not been reversed.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Bipartisan Campaign Reform Act (2002)</span> Known as McCain-Feingold. It barred national party committees from raising or spending soft money. <span class="sp">Spanish: Ley Bipartidista de Reforma de Campañas</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Electioneering communication</span> A broadcast ad that names a federal candidate within 30 days of a primary or 60 days of a general election. <span class="sp">Spanish: comunicación electoral</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">2002 to 2010</span>The chapter says the Act’s limit on corporate-funded electioneering communications was struck down in Citizens United v. FEC (2010).</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 13 explains the Citizens United decision and Super PACs in detail.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.8</span>Four Turning Points in Campaign Finance Law</p>
+      <p class="figsub">The law and court decisions the chapter traces from Watergate to the Super PAC era.</p>
+      <svg viewBox="0 0 860 290" role="img" aria-label="Timeline of four turning points: the 1974 Federal Election Campaign Act amendments, Buckley v. Valeo in 1976, the McCain-Feingold Act of 2002, and Citizens United v. FEC in 2010"><line x1="40" y1="145" x2="820" y2="145" stroke="#574B86" stroke-width="4" stroke-linecap="round"/><line x1="137.5" y1="145" x2="137.5" y2="133" stroke="#574B86" stroke-width="2"/><g><title>1974: FECA amendments create the FEC </title><circle cx="137.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="137.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">1974</text><text x="137.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">FECA amendments create the FEC</text><text x="137.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="332.5" y1="145" x2="332.5" y2="155" stroke="#C8742F" stroke-width="2"/><g><title>1976: Buckley v. Valeo Limits OK; spending is speech</title><circle cx="332.5" cy="145" r="8" fill="#C8742F" stroke="#fff" stroke-width="2.5"/></g><text x="332.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#8A4A14" text-anchor="middle" font-weight="800">1976</text><text x="332.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Buckley v. Valeo</text><text x="332.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Limits OK; spending is speech</text><line x1="527.5" y1="145" x2="527.5" y2="133" stroke="#574B86" stroke-width="2"/><g><title>2002: McCain-Feingold bans soft money </title><circle cx="527.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="527.5" y="105" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">2002</text><text x="527.5" y="121" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">McCain-Feingold bans soft money</text><text x="527.5" y="136" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400"></text><line x1="722.5" y1="145" x2="722.5" y2="155" stroke="#574B86" stroke-width="2"/><g><title>2010: Citizens United Independent spending allowed</title><circle cx="722.5" cy="145" r="8" fill="#574B86" stroke="#fff" stroke-width="2.5"/></g><text x="722.5" y="181" font-family="Barlow Condensed, Arial Narrow, sans-serif" font-size="15" fill="#33284F" text-anchor="middle" font-weight="800">2010</text><text x="722.5" y="197" font-family="Inter, Arial, sans-serif" font-size="12.5" fill="#1c2230" text-anchor="middle" font-weight="700">Citizens United</text><text x="722.5" y="212" font-family="Inter, Arial, sans-serif" font-size="11.5" fill="#4a5263" text-anchor="middle" font-weight="400">Independent spending allowed</text></svg>
+      <p class="source">Source: Chapter text; Buckley v. Valeo, 424 U.S. 1 (decided January 30, 1976), Justia. Timeline created for this textbook. Highlighted: the decision the chapter says shaped every later reform.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Year</th><th>Law or decision</th><th>What the chapter says</th></tr></thead><tbody><tr><td>1974</td><td>FECA amendments</td><td>Created the FEC, limited contributions, required disclosure, created public financing for presidential campaigns.</td></tr><tr><td>1976</td><td>Buckley v. Valeo</td><td>Upheld contribution limits to guard against corruption; held that spending money to communicate is protected speech.</td></tr><tr><td>2002</td><td>McCain-Feingold (BCRA)</td><td>Prohibited national party committees from raising or spending soft money; restricted electioneering communications.</td></tr><tr><td>2010</td><td>Citizens United v. FEC</td><td>Struck down the ban on corporate-funded electioneering communications; independent expenditures by corporations, associations, and unions are protected.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE TIMELINES</b>
+        <ol><li>Which event does the chapter say created the political momentum for the 1974 law?</li><li>Under Buckley, which can the government limit, contributions or spending? What reason does the Court give?</li><li>Why did soft money grow after Buckley, according to the chapter?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>In the Super PAC era, major presidential and congressional campaigns operate in a complex ecosystem in which official campaigns — subject to contribution limits and disclosure requirements — exist alongside "shadow campaigns" consisting of Super PACs that can raise and spend unlimited funds on advertising, voter contact, and opposition research, subject only to the requirement of legal non-coordination with the official campaign. The <dfn id="t-527-groups">527 groups</dfn> — named for the section of the Internal Revenue Code that governs them — represent another category of outside political organization that can engage in voter mobilization, issue advocacy, and other political activities without being subject to the contribution limits that govern official campaigns, as long as their primary purpose is not the direct election or defeat of a specific candidate. The cumulative effect of these outside organizations is to dramatically increase the total amount of money flowing through the political system while simultaneously reducing the transparency and accountability that contribution limits and disclosure requirements are supposed to provide.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">527 group</span> An outside political organization named for Section 527 of the Internal Revenue Code. <span class="sp">Spanish: grupo 527</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Hard money</span> Money raised under the contribution limits. <span class="sp">Spanish: dinero duro</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Shadow campaigns</span>The chapter’s term for Super PAC activity that runs alongside the official campaign.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Figure 14.9 compares the channels.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.9</span>Four Channels for Campaign Money</p>
+      <p class="figsub">What each channel does and the rule that the chapter says governs it.</p>
+      <table class="cmp"><thead><tr><th>Channel</th><th>What it does</th><th>Rule the chapter describes</th></tr></thead><tbody><tr><td>Official campaign</td><td>Raises money from donors to run the candidate’s campaign</td><td>Contribution limits and disclosure requirements apply</td></tr><tr><td>National party soft money</td><td>Large contributions for “party-building” activities</td><td>Prohibited for national party committees by the 2002 Act</td></tr><tr><td>Super PAC</td><td>Spends unlimited funds on ads, voter contact, and opposition research</td><td>Legal non-coordination with the official campaign</td></tr><tr><td>527 group</td><td>Voter mobilization, issue advocacy, and other activity</td><td>Not subject to contribution limits if the primary purpose is not directly electing or defeating a candidate</td></tr></tbody></table>
+      <p class="source">Source: Table created for this textbook from the chapter’s discussion of campaign finance. Chapter 13’s Figures 13.8 and 13.9 give the 2025–26 contribution limits.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>Which channel does the chapter say the 2002 Act targeted?</li><li>What condition applies to Super PACs?</li><li>The chapter says outside organizations reduce “transparency and accountability.” Which feature of the first row’s rules is the chapter saying outside groups do not share?</li></ol>
+      </div>
+    </figure>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MONEY, SPEECH, AND CORRUPTION</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.8. Which decision established that spending money to communicate is protected speech?</li><li>Use Figure 14.9. Which channel may spend unlimited funds if it does not coordinate with the campaign?</li><li>Write a Counter-Argument to this claim: “After Buckley, the government can no longer regulate campaign money at all.”</li></ol>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 14.3 ASSESSMENT</b>Complete the Section 14.3 Assessment in your <i>Chapter 14 Assignment</i> packet before you move on to Section 14.4.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+<section class="section" id="s4">
+  <div class="sec-banner">
+    <div class="num"><small>SECTION</small><b>14.4</b></div>
+    <h2>Voter Behavior and Participation</h2>
+    <div class="icon">
+      <svg viewBox="0 0 160 120" width="150" aria-hidden="true"><path d="M20 100V52l60-34 60 34v48z" fill="none" stroke="#EDB98A" stroke-width="5" stroke-linejoin="round"/><path d="M44 100V62M72 100V62M100 100V62M128 100V62" stroke="#F1EEF6" stroke-width="5"/><path d="M14 100h132" stroke="#EDB98A" stroke-width="6" stroke-linecap="round"/></svg>
+    </div>
+  </div>
+  <div class="sec-preview">
+    <div>
+      <h4>OBJECTIVES</h4>
+      <p style="margin:0 0 6px">In Section 14.4, you will</p>
+      <ul><li>Describe how education and age relate to voter turnout</li><li>Explain how registration and election timing act as structural barriers</li><li>Evaluate micro-targeting and its effect on accountability</li></ul>
+    </div>
+    <div>
+      <h4>KEY TERMS</h4>
+      <ul class="terms"><li><a href="#t-voter-turnout">Voter turnout</a></li><li><a href="#t-efficacy">Political efficacy</a></li><li><a href="#t-micro-targeting">Micro-targeting</a></li></ul>
+    </div>
+    <div class="organizer">
+      <h4>TAKING NOTES</h4>
+      Complete this chart as you read: for each factor, write who it affects and how it changes participation.
+      <svg viewBox="0 0 260 120" aria-label="Three-column organizer: factor, who it affects, effect"><rect x="2.0" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="43.333333333333336" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Factor</text><rect x="88.66666666666667" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="130.0" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Who it affects</text><rect x="175.33333333333334" y="4" width="82.66666666666667" height="22" rx="4" fill="#574B86"/><text x="216.66666666666669" y="19" font-family="Inter, Arial, sans-serif" font-size="9.5" fill="#fff" text-anchor="middle" font-weight="700">Effect</text><rect x="2.0" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="30.0" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="58.66666666666667" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="2.0" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="88.66666666666667" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/><rect x="175.33333333333334" y="87.33333333333334" width="82.66666666666667" height="24.666666666666668" rx="4" fill="#fff" stroke="#574B86" stroke-width="1.5"/></svg>
+    </div>
+  </div>
+
+  <div class="content">
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Voter Behavior and Participation</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The structural mechanics of primary elections, the Electoral College, and campaign finance regulation all shape the competitive environment of American elections. But the ultimate variable — the factor that ultimately determines who holds power in a democratic republic — is who actually shows up to vote. The study of voter behavior and political participation is one of the most extensively researched areas of American political science, and its findings reveal both the remarkable persistence of certain patterns and the real consequences of the "participatory gap" — the systematic underrepresentation of certain segments of the electorate in the actual exercise of democratic power.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Participation</span> Taking part in politics, especially by voting. <span class="sp">Spanish: participación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Who actually votes</span>The chapter says the “ultimate variable” in elections is whether citizens take part.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 12 explained political socialization, how people learn their political attitudes.</div>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">The Demographics of Participation</h3>
+    <div class="pair">
+      <div class="body">
+        <p>American <dfn id="t-voter-turnout">voter turnout</dfn> is, by the standards of comparable democracies, relatively low. In presidential elections — when turnout is at its highest — the United States has typically seen between 55 and 65 percent of the voting-eligible population cast a ballot, a figure that places it near the bottom of established democracies when measured against comparable contests. In midterm congressional elections, when the presidency is not on the ballot, turnout typically falls to between 35 and 45 percent. In state and local elections, which often determine policies of direct and immediate significance to citizens' daily lives — school board composition, local tax rates, zoning decisions — turnout can fall to the single digits in some jurisdictions. This pattern means that the decisions made in elections that formally represent the "consent of the governed" often reflect the preferences of a minority — and a demographically skewed minority — of the population.</p>
+        <p>The single most powerful predictor of individual voter turnout is education level. Americans with college degrees vote at substantially higher rates than those without, and the gap widens further at the extremes: Americans with advanced degrees vote at very high rates, while those who have not completed high school vote at very low rates. This relationship between education and turnout holds across demographic groups, across types of elections, and across decades of survey research. The mechanism is not difficult to identify: higher education develops the information-processing skills that make navigating the voting process less cognitively demanding, increases awareness of political issues and their personal relevance, and reinforces social norms of civic participation that treat voting as an expected and important behavior. Education also typically increases income, and higher income correlates independently with higher turnout — wealthier Americans have more flexible work schedules, more easily available transportation, and greater confidence that their participation in the political process will produce tangible benefits.</p>
+        <p>Age is the second most powerful predictor of voter turnout. Older Americans vote at dramatically higher rates than younger ones — a pattern so consistent that it has been a near-constant feature of American political participation data for decades. The turnout gap between the youngest eligible voters (18-to-24-year-olds) and the oldest cohorts (those over 65) typically exceeds thirty percentage points in presidential elections and is even larger in off-year and local contests. The consequences of this gap are significant: policies affecting younger Americans — student loan costs, entry-level job markets, long-term environmental policy — are decided by electorates that substantially over-represent the elderly, while the interests of younger citizens are correspondingly under-weighted.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Voter turnout</span> The share of eligible voters who cast a ballot. <span class="sp">Spanish: participación electoral</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Midterm election</span> A national election held in the middle of a president’s term. <span class="sp">Spanish: elección de mitad de mandato</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">65.3%</span>Share of adult U.S. citizens who reported voting in the 2024 presidential election (U.S. Census Bureau).</div>
+        <div class="connect"><span class="tag">CONNECT TO HISTORY</span>The Twenty-Sixth Amendment, ratified July 1, 1971, set the voting age at 18. See Document C in the Case Study.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.10</span>Who Voted in 2024: Education and Age</p>
+      <p class="figsub">Percent of adult U.S. citizens who reported voting in the November 2024 presidential election, by education level and by age group.</p>
+      <svg viewBox="0 0 860 374" role="img" aria-label="Bar chart of 2024 turnout: advanced degree 82.5 percent, bachelor&#x27;s degree 77.2, high school graduate 52.5, age 65 and older 74.7, age 45 to 64 70.0, age 25 to 44 60.2, age 18 to 24 47.7, all adult citizens 65.3"><line x1="200.0" y1="10" x2="200.0" y2="330" stroke="#e6e8ec"/><text x="200.0" y="348" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">0%</text><line x1="342.5" y1="10" x2="342.5" y2="330" stroke="#e6e8ec"/><text x="342.5" y="348" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">25%</text><line x1="485.0" y1="10" x2="485.0" y2="330" stroke="#e6e8ec"/><text x="485.0" y="348" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">50%</text><line x1="627.5" y1="10" x2="627.5" y2="330" stroke="#e6e8ec"/><text x="627.5" y="348" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">75%</text><line x1="770.0" y1="10" x2="770.0" y2="330" stroke="#e6e8ec"/><text x="770.0" y="348" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">100%</text><text x="190" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Advanced degree</text><g><title>Advanced degree: 82.5%</title><path d="M200 16 h466.2 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-466.2z" fill="#574B86"/></g><text x="678.2" y="35.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">82.5%</text><text x="190" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Bachelor’s degree</text><g><title>Bachelor’s degree: 77.2%</title><path d="M200 56 h436.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-436.0z" fill="#574B86"/></g><text x="648.0" y="75.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">77.2%</text><text x="190" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">High school graduate</text><g><title>High school graduate: 52.5%</title><path d="M200 96 h295.2 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-295.2z" fill="#574B86"/></g><text x="507.2" y="115.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">52.5%</text><text x="190" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Age 65 and older</text><g><title>Age 65 and older: 74.7%</title><path d="M200 136 h421.8 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-421.8z" fill="#574B86"/></g><text x="633.8" y="155.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">74.7%</text><text x="190" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Age 45 to 64</text><g><title>Age 45 to 64: 70%</title><path d="M200 176 h395.0 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-395.0z" fill="#574B86"/></g><text x="607.0" y="195.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">70%</text><text x="190" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Age 25 to 44</text><g><title>Age 25 to 44: 60.2%</title><path d="M200 216 h339.1 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-339.1z" fill="#574B86"/></g><text x="551.1" y="235.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">60.2%</text><text x="190" y="275.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">Age 18 to 24</text><g><title>Age 18 to 24: 47.7%</title><path d="M200 256 h267.9 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-267.9z" fill="#574B86"/></g><text x="479.9" y="275.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">47.7%</text><text x="190" y="315.0" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#1c2230" text-anchor="end" font-weight="400">All adult citizens</text><g><title>All adult citizens: 65.3%</title><path d="M200 296 h368.2 a4 4 0 0 1 4 4 v20 a4 4 0 0 1 -4 4 h-368.2z" fill="#C8742F"/></g><text x="580.2" y="315.0" font-family="Inter, Arial, sans-serif" font-size="13" fill="#1c2230" text-anchor="start" font-weight="600">65.3%</text><line x1="200" y1="10" x2="200" y2="330" stroke="#6f7787" stroke-width="1.5"/><text x="485.0" y="370" font-family="Inter, Arial, sans-serif" font-size="12" fill="#6f7787" text-anchor="middle" font-weight="400">Percent who reported voting</text></svg>
+      <p class="source">Sources: U.S. Census Bureau, “2024 Presidential Election Voting and Registration Tables Now Available,” April 30, 2025 (Current Population Survey; self-reported voting; overall rate and education). Age figures are the Census Bureau’s Historical Reported Voting Rates as reproduced by USAFacts; they are a secondary source. Highlighted bar: all adult citizens.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Group</th><th>Percent who reported voting, 2024</th></tr></thead><tbody><tr><td>Advanced degree</td><td>82.5%</td></tr><tr><td>Bachelor’s degree</td><td>77.2%</td></tr><tr><td>High school graduate</td><td>52.5%</td></tr><tr><td>Age 65 and older</td><td>74.7%</td></tr><tr><td>Age 45 to 64</td><td>70.0%</td></tr><tr><td>Age 25 to 44</td><td>60.2%</td></tr><tr><td>Age 18 to 24</td><td>47.7%</td></tr><tr><td>All adult citizens</td><td>65.3%</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE GRAPHS</b>
+        <ol><li>How many percentage points separate the highest and lowest education groups shown? The highest and lowest age groups?</li><li>The chapter says the age gap “typically exceeds thirty percentage points.” Does the 2024 age gap in this figure support that statement?</li><li>Why might a candidate who wants to win in a close election pay more attention to the groups at the top of this chart?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The relatively low voter turnout rates of the United States compared to other established democracies cannot be fully explained by individual-level factors like education, age, and income. A significant portion of the turnout gap between the United States and comparable democracies is attributable to structural features of the American electoral system — specific rules and institutional arrangements that systematically increase the practical difficulty of voting for segments of the population that are already less inclined to participate.</p>
+        <p>The most significant structural barrier is the voter registration requirement. The United States is one of the few established democracies in which citizens must take an affirmative action to register to vote before they can participate in elections — and in most states, this action must be completed weeks before the election itself, at a moment when many citizens are not yet paying attention to the upcoming contest. Countries like Canada, Australia, and most of Western Europe use automatic or "opt-out" voter registration systems, in which citizens are automatically enrolled on voter rolls upon reaching voting age or upon interacting with government agencies, and must take action to be removed rather than to be included. The practical effect of the American registration requirement is to impose an additional decision and action on potential voters before they can exercise the franchise — a requirement that falls most heavily on those who move frequently, have limited experience navigating bureaucratic processes, or simply do not think ahead to the deadline when they are not yet engaged with the election.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Voter registration</span> The process of enrolling to be eligible to vote. <span class="sp">Spanish: registro de votantes</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Automatic voter registration</span> A system that registers eligible people when they deal with a government agency, unless they opt out. <span class="sp">Spanish: registro automático de votantes</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">21 + D.C.</span>States with same-day registration; 24 states plus D.C. have automatic voter registration (Congressional Research Service, 2026).</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 19 covers other ways citizens take part beyond voting.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.11</span>Two Structural Barriers</p>
+      <p class="figsub">Registration and election timing, who each affects most according to the chapter, and responses in use.</p>
+      <table class="cmp"><thead><tr><th>Barrier</th><th>What it requires</th><th>Affects most</th><th>Response in use</th></tr></thead><tbody><tr><td>Voter registration</td><td>The voter must act, usually weeks before the election</td><td>Those who move often, are new to bureaucratic processes, or are not yet engaged</td><td>21 states and D.C. allow same-day registration; 24 states and D.C. have automatic voter registration (CRS, 2026)</td></tr><tr><td>Election timing</td><td>Elections fall on a Tuesday that is not a federal holiday</td><td>Hourly workers and those with inflexible schedules, childcare, or transportation needs</td><td>Other democracies vote on weekends, make Election Day a holiday, or allow multi-day voting (chapter)</td></tr></tbody></table>
+      <p class="source">Sources: Chapter text; Congressional Research Service, report R46406, updated October 30, 2026 (state counts as of 2026). Table created for this textbook.</p>
+      <div class="analyze"><b>ANALYZE TABLES</b>
+        <ol><li>What does a voter have to do under registration rules that a voter in an automatic-registration system does not?</li><li>Which barrier does the chapter say falls on “disproportionately working-class and lower-income Americans”?</li><li>Same-day and automatic registration address the same problem in different ways. What is the difference?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The timing of American elections creates an additional structural barrier. Federal elections are held on the first Tuesday after the first Monday in November — a day that is not a federal holiday, that falls in the middle of a work and school week, and that requires most working Americans to arrange their lives around their voting participation. In contrast, many other democracies hold elections on weekends, make Election Day a national holiday, or provide multi-day voting periods that allow citizens to choose the time most convenient for them. The Tuesday election requirement falls most heavily on hourly workers, those with inflexible work schedules, and those who must arrange childcare or transportation — disproportionately working-class and lower-income Americans who are also, not coincidentally, less likely to vote for other reasons.</p>
+        <p>The concept of <dfn id="t-efficacy">political efficacy</dfn> — the individual's sense that their participation in the political process is meaningful and that the political system is genuinely responsive to their preferences — is closely connected to voter turnout and represents a psychological dimension of the participatory gap. Surveys consistently find that Americans who believe their vote matters and that the political system can be influenced by ordinary citizens turn out to vote at higher rates than those who feel that political outcomes are determined by forces beyond their control. Low political efficacy — the sense that the system is rigged, that one's vote is meaningless, or that all candidates are the same — is particularly common among lower-income Americans and members of communities that have historical reasons for skepticism about the responsiveness of political institutions to their interests.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Political efficacy</span> A person’s sense that taking part matters and that government responds. <span class="sp">Spanish: eficacia política</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">First Tuesday</span>The chapter says federal elections fall on the first Tuesday after the first Monday in November.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 19 returns to how citizens act when they feel unheard.</div>
+      </div>
+    </div>
+
+    <div class="box global">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M2 17 h30 M17 2 c-8 8 -8 22 0 30 c8 -8 8 -22 0 -30" stroke="#4e7d4a" stroke-width="2" fill="none"/></svg><div><small>GLOBAL PERSPECTIVE</small>Australia: Compulsory Voting</div></div>
+      <div class="box-b">
+<p style="margin:0">Voting in Australian federal elections is compulsory. In the 2025 federal election, 90.7% of enrolled voters took part, according to the Australian Electoral Commission. The Census figure for the United States in 2024 (65.3% of adult citizens, Figure 14.10) uses a different base, so compare with care. How might campaign strategy change if nearly everyone voted? What does a compulsory system ask of an individual citizen? <i>(Source: Australian Electoral Commission, aec.gov.au, 2025 federal election participation rates.)</i></p>
+      </div>
+    </div>
+
+    <div class="box choices">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#fff"/><path d="M10 17 h14 M19 11 l6 6 l-6 6" stroke="#b04630" stroke-width="3" fill="none" stroke-linecap="round"/></svg><div><small>YOUR CHOICE</small>Should Election Day Change?</div></div>
+      <div class="box-b">
+        <p>The chapter says Tuesday voting falls hardest on hourly workers, and that other democracies use weekends, holidays, or multi-day voting. Reasonable people disagree about whether and how to change the date.</p>
+        <div class="opts"><div class="opt"><h5>Keep a single Tuesday</h5>Keep one traditional date so that everyone votes together, and rely on other options already in use.</div><div class="opt"><h5>Make voting easier to fit into a schedule</h5>Make Election Day a holiday, move it to a weekend, or extend voting over several days to reduce the burden on workers.</div></div>
+        <p class="ask">Which would you choose, and what is the strongest concern about your choice?</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; TURNOUT AND BARRIERS</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.10. Which group in the figure reported the lowest turnout in 2024, and by how many points was it below all adult citizens?</li><li>Use Figure 14.11. Which barrier does the chapter say affects hourly workers most?</li><li>Write a Counter-Argument to this claim: “Low turnout is only about whether people care.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Technology, Micro-Targeting, and the Future of Political Mobilization</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">The transformation of political campaigning by digital technology has altered not only how campaigns communicate with voters but the granularity with which they can identify, analyze, and target specific segments of the electorate. The shift from the broadcast advertising model — in which campaigns spent the majority of their budgets on television advertisements that reached large, demographically mixed audiences with a common message — to the <dfn id="t-micro-targeting">micro-targeting</dfn> model of the digital era represents one of the most consequential changes in campaign strategy in the past quarter century.</p>
+        <p>Modern campaigns compile and analyze vast databases of voter information — combining official voter file data with commercial consumer data, social media activity, subscription records, and a wide range of other sources — to construct detailed profiles of individual voters that allow campaigns to predict with considerable accuracy which voters are likely to support their candidate, which are genuinely persuadable, which are unlikely to vote without targeted mobilization effort, and which specific issues, appeals, or messengers are most likely to resonate with each individual. This analytical capacity allows campaigns to radically increase the efficiency of their resource allocation: rather than delivering the same message to everyone, they can deliver customized messages to specific voters — pro-environmental appeals to voters identified as environmentally concerned, economic security messages to voters identified as economically anxious, public safety appeals to voters identified as concerned about crime — at a fraction of the cost of broadcasting a single message to everyone.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Micro-targeting</span> Using detailed data to tailor messages to individual voters or small groups. <span class="sp">Spanish: microsegmentación</span></div>
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Voter file</span> Official records of registered voters that campaigns combine with other data. <span class="sp">Spanish: registro de votantes (archivo)</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Past 25 years</span>The chapter calls the shift from broadcast ads to micro-targeting one of the most consequential changes in campaign strategy in the past quarter century.</div>
+        <div class="connect"><span class="tag">CONNECT TO CIVICS</span>Chapter 15 covers how the media and social media shape what voters see.</div>
+      </div>
+    </div>
+
+    <figure class="chart">
+      <p class="figlabel"><span>FIGURE 14.12</span>How Micro-Targeting Works</p>
+      <p class="figsub">From data to a tailored message, and the accountability question the chapter raises.</p>
+      <svg viewBox="0 0 860 250" role="img" aria-label="Five boxes showing a chain: data sources, voter profile, tailored message, delivery, and then the accountability question"><g><title>Data sources: Voter file, consumer, social media data</title><rect x="40.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Data sources</text><text x="128.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Voter file, consumer,</text><text x="128.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">social media data</text><g><title>Voter profile: Predicts support, persuadability, turnout</title><rect x="342.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="430.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Voter profile</text><text x="430.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Predicts support,</text><text x="430.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">persuadability, turnout</text><g><title>Tailored message: Issue, appeal, and messenger matched</title><rect x="644.0" y="8" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="732.0" y="34" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Tailored message</text><text x="732.0" y="52" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Issue, appeal, and</text><text x="732.0" y="65" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">messenger matched</text><g><title>Delivery: Customized contact at low cost</title><rect x="40.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#574B86" stroke-width="2.5"/></g><text x="128.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Delivery</text><text x="128.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Customized contact at low</text><text x="128.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">cost</text><g><title>Accountability question: Different audiences may hear different things</title><rect x="342.0" y="128" width="176" height="74" rx="10" fill="#fff" stroke="#C8742F" stroke-width="2.5"/></g><text x="430.0" y="154" font-family="Inter, Arial, sans-serif" font-size="13.5" fill="#33284F" text-anchor="middle" font-weight="700">Accountability question</text><text x="430.0" y="172" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">Different audiences may</text><text x="430.0" y="185" font-family="Inter, Arial, sans-serif" font-size="11" fill="#4a5263" text-anchor="middle" font-weight="400">hear different things</text><path d="M219.0 45.0 L337.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M521.0 45.0 L639.0 45.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M639.0 39.0 l8 6 l-8 6z" fill="#C8742F"/><path d="M732.0 84 V104 H128.0 V124" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M122.0 122 l6 8 l6 -8z" fill="#C8742F"/><path d="M219.0 165.0 L337.0 165.0" stroke="#C8742F" stroke-width="3" fill="none"/><path d="M337.0 159.0 l8 6 l-8 6z" fill="#C8742F"/></svg>
+      <p class="source">Source: Diagram created for this textbook from the chapter’s description of micro-targeting.</p>
+      <details class="dt"><summary>View data table</summary><table class="data"><thead><tr><th>Step</th><th>What the chapter says</th></tr></thead><tbody><tr><td>Data sources</td><td>Campaigns combine official voter-file data with commercial consumer data, social media activity, and subscription records.</td></tr><tr><td>Voter profile</td><td>Profiles help predict which voters will support the candidate, are persuadable, or need mobilization to vote.</td></tr><tr><td>Tailored message</td><td>Examples: pro-environment appeals to the environmentally concerned, economic-security messages to the economically anxious, public-safety appeals to those concerned about crime.</td></tr><tr><td>Accountability question</td><td>Critics say campaigns can tell different audiences different things without public accountability.</td></tr></tbody></table></details>
+      <div class="analyze"><b>ANALYZE DIAGRAMS</b>
+        <ol><li>What kinds of data does the chapter say campaigns combine?</li><li>Name one benefit the chapter says supporters claim for micro-targeting.</li><li>Why does the chapter say micro-targeting raises an accountability concern that broadcast advertising does not?</li></ol>
+      </div>
+    </figure>
+
+    <div class="pair">
+      <div class="body">
+        <p>The democratic implications of micro-targeting are contested and complex. Proponents argue that personalized political communication is more effective at informing voters about issues that are genuinely relevant to their lives and more efficient at mobilizing citizens who might otherwise not participate. Critics argue that micro-targeting enables campaigns to say different — and sometimes contradictory — things to different audiences without the accountability that comes from public political communication, that it facilitates the manipulation of voters through emotional appeals tailored to their specific vulnerabilities, and that it contributes to the fragmentation of the political information environment in ways that make it harder for citizens to form shared understandings of public problems and their solutions.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Fragmentation</span> Breaking into separate pieces, such as audiences that no longer share the same information. <span class="sp">Spanish: fragmentación</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Contested</span>The chapter says the democratic implications of micro-targeting are “contested and complex.”</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 15 asks how media choices and echo chambers affect shared understanding.</div>
+      </div>
+    </div>
+
+    <div class="box example">
+      <div class="box-h"><svg width="34" height="34" viewBox="0 0 34 34" aria-hidden="true"><circle cx="17" cy="17" r="15" fill="#EDB98A"/><text x="17" y="23" text-anchor="middle" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-weight="800" font-size="20" fill="#33284F">E</text></svg><div><small>EXAMPLE</small>Two Neighbors, Two Messages</div></div>
+      <div class="box-b">
+<p style="margin:0"><b>Hypothetical.</b> Two neighbors live next door to each other. A campaign’s data suggest one is most concerned about prices and the other about public safety. The first receives a text about the candidate’s economic plan, and the second sees an online ad about crime. Neither sees what the other received. Supporters say each neighbor learned about an issue that matters to them. Critics say the campaign can emphasize different things to different people without being held to one public message.</p>
+      </div>
+    </div>
+
+    <div class="box app">
+      <div class="box-h">APPLICATION &nbsp;·&nbsp; MICRO-TARGETING AND ACCOUNTABILITY</div>
+      <div class="box-b">
+<ol style="margin:6px 0 0;padding-left:22px"><li>Use Figure 14.12. Which step in the chain is the one the chapter says raises an accountability concern?</li><li>Use the text. What are two concerns the chapter says critics raise about micro-targeting?</li><li>Write a Counter-Argument to this claim: “Personalized campaign messages are always better for voters.”</li></ol>
+      </div>
+    </div>
+
+    <h3 class="kc">Key Concepts</h3>
+    <h3 class="head">Conclusion</h3>
+    <div class="pair">
+      <div class="body">
+        <p class="lead">Elections are, in the most fundamental sense, the mechanism through which democratic self-government is made real. They are the moments when the constitutional promise that government derives its just powers from the consent of the governed is given concrete expression — when millions of individual citizens, each exercising a formally equal right, collectively determine who will hold power and in what direction that power will be exercised. But as this chapter has demonstrated, elections are not simply free expressions of popular will; they are structured competitions whose rules, resources, and institutional arrangements shape outcomes in consequential and often unequal ways.</p>
+        <p>This chapter's essential question — how the structural mechanics of American elections shape the strategic behavior of candidates and the ultimate expression of popular sovereignty — points toward a fundamental tension that runs through every dimension of the electoral process examined here. The primary system, designed to democratize nominations by taking the decision away from party bosses, has produced new forms of skew: the outsized influence of early states, the advantages of well-funded and well-known candidates, and the disproportionate power of intensely partisan primary voters over the choices available to the broader electorate. The Electoral College, designed to moderate the selection of the president through the judgment of deliberate electors, has become a system that concentrates presidential campaigns in a small number of swing states while leaving most of the country's voters on the political sidelines. The campaign finance system, designed to balance the constitutional protection of political speech with democratic concerns about corruption, has produced an environment in which unlimited outside spending has created new forms of influence that formal contribution limits cannot reach.</p>
+        <p>The patterns of voter participation that determine who actually exercises the formal right to vote compound these structural distortions. A political system in which higher-income, better-educated, and older Americans vote at dramatically higher rates than their lower-income, less-educated, and younger counterparts is a system in which the effective electorate is systematically different from the eligible electorate — and in which the policies produced by electoral competition are likely to reflect the preferences of those who participate more faithfully than those of the broader public.</p>
+        <p>None of these structural features is immutable. Voter registration rules can be reformed; the Electoral College can be modified by interstate compact or constitutional amendment; campaign finance law can be restructured within the boundaries the First Amendment permits; primary calendar rules can be changed by party action without any legislative requirement. Whether any of these reforms will occur, and in what form, will depend on the same political competition this chapter has examined — the contest among organized interests, parties, and citizens over the rules that govern the exercise of democratic power. As the next unit explores, the outcomes of that competition ultimately shape the policies that the American government produces and the institutions through which it governs.</p>
+      </div>
+      <div class="side">
+        <div class="qr"><span class="tag">QUICK REFERENCE</span><span class="term">Popular sovereignty</span> The principle that political power belongs to the people. <span class="sp">Spanish: soberanía popular</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">Not immutable</span>The chapter says registration rules, the Electoral College, campaign finance law, and the primary calendar can each change, by different routes.</div>
+        <div class="connect"><span class="tag">LOOK AHEAD</span>Chapter 15 turns to the media and the policy agenda.</div>
+      </div>
+    </div>
+<div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>SECTION 14.4 ASSESSMENT</b>Complete the Section 14.4 Assessment in your <i>Chapter 14 Assignment</i> packet before you move on to the Case Study.</div></div>  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CASE STUDY ===================== -->
+<section class="case section" id="case">
+  <div class="case-banner">
+    <svg viewBox="0 0 300 160" width="300" style="position:absolute;right:40px;top:14px;opacity:.28" aria-hidden="true"><path d="M30 130h240M60 130V70M110 130V70M160 130V70M210 130V70M240 130V70M40 70h220L150 20z" fill="none" stroke="#fff" stroke-width="7" stroke-linejoin="round"/></svg>
+    <p class="kicker">CASE STUDY</p>
+    <h2>Four Documents,<br>One Question</h2>
+    <p>Do the rules of elections make government more or less accountable to the people? Read four original documents from 1788 to 1976 and decide how each one answers.</p>
+  </div>
+  <div class="content">
+    <div class="pair">
+      <div class="body">
+        <h3 class="kc">Background</h3>
+        <h3 class="head">Reading the Rules of Elections</h3>
+        <p>Elections run on rules, and the rules have a history. In 1788 Alexander Hamilton explained why the framers chose to have electors, not the people directly, select the president. After the tie of 1800 that opened this chapter, the nation amended the Constitution in 1804 to change how electors vote (Section 14.2). In 1971 the nation lowered the voting age to 18 (Section 14.4). In 1976 the Supreme Court decided <i>Buckley v. Valeo</i>, which shaped every later campaign finance law (Section 14.3).</p><p>As you read, notice what each document trusts and what it fears. Use the Thinking Like a Citizen question after each document, then answer the Synthesizing questions.</p>
+      </div>
+      <div class="side">
+        <div class="qr" style="border-top-color:var(--coral)"><span class="tag" style="color:var(--coral)">QUICK REFERENCE</span><b>Primary source:</b> a document created at the time being studied by someone who was there. <span class="sp">Spanish: fuente primaria</span></div>
+        <div class="fact"><span class="tag">FAST FACT</span><span class="big">4 sources</span>Spanning 1788 to 1976, from a Federalist essay to a Supreme Court opinion.</div>
+      </div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">A</div><div><small>DOCUMENT A · FEDERALIST ESSAY</small><b>Alexander Hamilton, <i>Federalist No. 68</i> (March 1788)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“It was desirable that the sense of the people should operate in the choice of the person to whom so important a trust was to be confided.” … “A small number of persons, selected by their fellow-citizens from the general mass, will be most likely to possess the information and discernment requisite to such complicated investigations.”<cite>Alexander Hamilton, <i>Federalist No. 68</i>, 1788. Text from the Avalon Project, Yale Law School. The ellipsis marks an omitted passage.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Whom does Hamilton trust to judge, and why? Connect your answer to the Electoral College in Section 14.2.</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">B</div><div><small>DOCUMENT B · CONSTITUTIONAL AMENDMENT</small><b>Twelfth Amendment (ratified June 15, 1804)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“… they shall name in their ballots the person voted for as President, and in distinct ballots the person voted for as Vice-President …”<cite>U.S. Constitution, Amendment XII (ratified June 15, 1804). National Archives, “Constitution of the United States: Amendments 11–27.” The ellipses mark omitted words.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> The tie of 1800 (see the Introduction) was between a presidential candidate and his running mate. How does separate balloting address that problem, and what does this show about the rules of elections?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">C</div><div><small>DOCUMENT C · CONSTITUTIONAL AMENDMENT</small><b>Twenty-Sixth Amendment, Section 1 (ratified July 1, 1971)</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“The right of citizens of the United States, who are eighteen years of age or older, to vote shall not be denied or abridged by the United States or by any State on account of age.”<cite>U.S. Constitution, Amendment XXVI, Section 1 (passed by Congress March 23, 1971; ratified July 1, 1971). National Archives, “Constitution of the United States: Amendments 11–27.”</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> Who gained the right to vote? Use Figure 14.10: does having the legal right guarantee equal turnout among age groups?</div>
+    </div>
+
+    <div class="doc">
+      <div class="doc-h"><div class="letter">D</div><div><small>DOCUMENT D · SUPREME COURT OPINION</small><b><i>Buckley v. Valeo</i>, 424 U.S. 1 (January 30, 1976), per curiam</b></div></div>
+      <div class="doc-b">
+<blockquote class="src-quote">“A restriction on the amount of money a person or group can spend on political communication during a campaign necessarily reduces the quantity of expression by restricting the number of issues discussed, the depth of their exploration, and the size of the audience reached. This is because virtually every means of communicating ideas in today's mass society requires the expenditure of money.”<cite><i>Buckley v. Valeo</i>, 424 U.S. 1 (1976), per curiam opinion. Justia U.S. Supreme Court Center. A footnote marker in the original is omitted.</cite></blockquote>
+      </div>
+      <div class="think"><b>Thinking Like a Citizen:</b> State the Court’s reasoning in your own words. How does it explain why spending limits and contribution limits are treated differently (Section 14.3)?</div>
+    </div>
+
+    <div class="thinking" style="font-size:15.5px">
+      <b class="t">THINKING LIKE A CITIZEN · Synthesizing</b>
+      <ol style="margin:8px 0 0;padding-left:22px"><li>Use Documents A and B. Hamilton hoped electors would exercise informed judgment, and the Twelfth Amendment changed how electors vote after 1800. What do the two documents show about whether the rules for choosing a president have stayed fixed? Cite both.</li><li>Use Document C and Figure 14.10. The amendment gave 18-year-olds the right to vote, yet Figure 14.10 shows 18-to-24-year-olds with the lowest reported turnout. Does a legal right guarantee that officials are equally accountable to every age group? Defend your answer.</li><li>Use Document D and Figures 14.8 and 14.9. Explain the Court’s reasoning, then state one argument supporters of unlimited independent spending make and one argument critics make. Which do you find stronger, and what is the best Counter-Argument to your view?</li></ol>
+    </div>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+
+<!-- ===================== CHAPTER REVIEW ===================== -->
+<section class="section chap-assess" id="assess">
+  <div class="sec-banner">
+    <div class="num"><small>CHAPTER</small><b>14</b></div>
+    <h2>Chapter 14 Review</h2>
+    <div class="icon"><svg viewBox="0 0 160 120" width="150" aria-hidden="true"><rect x="40" y="14" width="80" height="96" rx="8" fill="none" stroke="#EDB98A" stroke-width="5"/><path d="M56 40 l8 8 l14 -16 M56 70 l8 8 l14 -16" stroke="#F1EEF6" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M88 44 h20 M88 74 h20" stroke="#F1EEF6" stroke-width="5" stroke-linecap="round"/></svg></div>
+  </div>
+  <div class="content">
+    <div class="reviewbox"><p class="kicker">Essential Question</p>How do the structural mechanics of American elections shape the strategic behavior of candidates and the ultimate expression of popular sovereignty?</div>
+    <h3 class="kc">Chapter Summary</h3>
+    <div class="summary-grid">
+      <div><h5>14.1 Primaries and Caucuses</h5>Nominations moved from party conventions to primaries and caucuses after the Progressive reforms and the 1968 convention. Closed primaries favor the party base and open primaries tend toward moderates. Early contests build momentum, so states practice frontloading.</div><div><h5>14.2 General Election</h5>The general election shifts the focus from the base to a majority of the 538 electoral votes. Winner-take-all makes margins irrelevant and concentrates campaigns in battleground states, and small states carry more weight per person. Incumbents start ahead through name recognition, franking, and fundraising networks.</div><div><h5>14.3 Campaign Finance</h5>FECA created the FEC and set limits and disclosure. Buckley allowed contribution limits but protected spending as speech. Soft money, McCain-Feingold, Citizens United, Super PACs, and 527 groups followed, shifting money to channels with fewer limits.</div><div><h5>14.4 Participation</h5>Education and age strongly predict turnout. Registration and Tuesday voting are structural barriers, and low efficacy lowers participation. Micro-targeting delivers tailored messages and raises accountability concerns. The rules can be changed by different routes.</div>
+    </div>
+    <div class="packet-note"><svg viewBox="0 0 48 48" width="46" height="46" aria-hidden="true"><rect x="9" y="5" width="30" height="38" rx="4" fill="#fff" stroke="#574B86" stroke-width="3"/><path d="M16 17h16M16 25h16M16 33h10" stroke="#C8742F" stroke-width="3" stroke-linecap="round"/></svg><div><b>CHAPTER 14 ASSESSMENT AND SIMULATION</b>Complete the Chapter 14 Assessment (vocabulary, multiple choice, guided reading, visual analysis, the primary source analysis, and the Modern Reflection) and the partner Simulation in your <i>Chapter 14 Assignment</i> packet.</div></div>
+  </div>
+  <div class="credits">
+    <h4>SOURCES AND ATTRIBUTION</h4>
+    <p style="margin:0 0 8px">Chapter text by Daniel Garza, M.A. Figures, tables, margin notes, Application questions, and the Case Study framing were created for this textbook. Primary-source excerpts are in the public domain.</p>
+    <p style="margin:0 0 6px"><b>Sources:</b></p>
+    <ul style="margin:0;padding-left:18px"><li>U.S. Census Bureau, “2024 Presidential Election Voting and Registration Tables Now Available,” press release, April 30, 2025.</li><li>USAFacts, voter turnout by age group, citing the U.S. Census Bureau’s Historical Reported Voting Rates (secondary source for the 2024 age figures).</li><li>U.S. Census Bureau, 2020 Census apportionment results (California 39,538,223; Wyoming 576,851; United States 331,449,281), April 26, 2021.</li><li>National Archives, “Electoral College Allocation” for the 2024 and 2028 elections (538 total; 270 needed).</li><li>Alexander Hamilton, <i>Federalist No. 68</i> (1788). Avalon Project, Yale Law School.</li><li>National Archives, “Constitution of the United States: Amendments 11–27” (Twelfth and Twenty-Sixth Amendments).</li><li><i>Buckley v. Valeo</i>, 424 U.S. 1 (1976). Justia U.S. Supreme Court Center.</li><li>Australian Electoral Commission, 2025 federal election participation rates, aec.gov.au.</li><li>Congressional Research Service, report R46406 (updated October 30, 2026), on same-day and automatic voter registration.</li><li>Gallup, “U.S. Political Party Preferences,” January 12, 2026 (cited in the Section 14.2 margin note).</li><li>California Department of Education, <i>History–Social Science Content Standards</i>, Principles of American Democracy (12.6, 12.10) and RH.11-12.7.</li></ul>
+    <p style="margin:10px 0 6px"><b>Photo and image credits:</b> All images are from Wikimedia Commons and are used under the license named in each caption. Photographs: Alex Johnson (CC BY-SA 2.0; early voters at a Florida polling place, 2008) and Farragutful (CC BY-SA 3.0; the Watergate complex, 2013). Public-domain image: Thomas Nast, “The Tammany Tiger Loose,” <i>Harper’s Weekly</i> (1871). Diagrams, charts, and tables were created for this textbook from the sources listed above.</p>
+  </div>
+  <div class="runfoot">UNIT 4 · AMERICAN POLITICAL IDEOLOGIES AND BELIEFS | LESSON 8 | POWER, LIBERTY, AND ORDER | DANIEL GARZA, M.A.</div>
+</section>
+
+</div>
+<script>
+(function(){var b=document.getElementById('bar');function u(){var h=document.documentElement;var m=h.scrollHeight-h.clientHeight;b.style.width=(m>0?(h.scrollTop/m*100):0)+'%';}window.addEventListener('scroll',u,{passive:true});u();})();
+</script>
+</body>
+</html>
